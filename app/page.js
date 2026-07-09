@@ -13,16 +13,18 @@
       useEffect(() => {
         async function fetchData() {
           try {
-            const [catRes, resultsRes, admitRes, upcomingRes] = await Promise.all([
+            const [catRes, resultsRes, admitRes, upcomingRes, countRes] = await Promise.all([
               supabase.from('categories').select('*').order('name'),
               supabase.from('exams').select('*').order('created_at', { ascending: false }).limit(10),
               supabase.from('exams').select('*').order('created_at', { ascending: false }).limit(10),
               supabase.from('exams').select('*').order('created_at', { ascending: false }).limit(10),
+              supabase.from('exams').select('*', { count: 'exact', head: true }),
             ]);
             if (catRes.data) setCategories(catRes.data);
             if (resultsRes.data) setLatestResults(resultsRes.data);
             if (admitRes.data) setAdmitCards(admitRes.data);
             if (upcomingRes.data) setUpcomingExams(upcomingRes.data);
+            if (countRes.count) setTotalExams(countRes.count);
           } catch (err) {
             console.error('Error fetching data:', err);
           } finally {
@@ -43,9 +45,9 @@
         'UP Board 10th Result 2026 Available Now',
       ];
 
-      const totalExams = 520;
-      const totalResults = 89;
-      const totalAdmitCards = 56;
+      const [totalExams, setTotalExams] = useState(0);
+      const [totalResults, setTotalResults] = useState(0);
+      const [totalAdmitCards, setTotalAdmitCards] = useState(0);
 
       if (loading) {
         return (
