@@ -14,44 +14,29 @@ function generateExams(count) {
     'State PSC': ['UPPSC', 'BPSC', 'MPPSC', 'RPSC', 'MPSC', 'WBPSC', 'TNPSC', 'KPSC', 'GPSC', 'OPSC', 'PPSC', 'HPSC', 'APSC', 'JPSC', 'UKPSC', 'CGPSC', 'HPPSC', 'Goa PSC'],
     'Teaching Exams': ['CTET Paper 1', 'CTET Paper 2', 'UPTET', 'BTET', 'MPTET', 'RTET', 'HTET', 'APTET', 'TNTET', 'KARTET', 'Gujarat TET', 'OTET', 'PSTET', 'UKTET', 'CG TET'],
     'Medical Entrance': ['NEET UG', 'NEET PG', 'AIIMS INI CET', 'JIPMER', 'AIIMS NORCET', 'NEET SS', 'Nursing Entrance', 'AIIMS BSc Nursing'],
-    'Engineering Entrance': ['JEE Main', 'JEE Advanced', 'BITSAT', 'VITEEE', 'COMEDK', 'MET', 'SRMJEEE', 'KCET', 'MHT CET', 'WBJEE', 'AP EAMCET', 'TS EAMCET', 'BCECE', 'CG PET', 'OJEE'],
-    'MBA and Management': ['CAT', 'XAT', 'MAT', 'CMAT', 'GMAT', 'NMAT', 'SNAP', 'IIFT', 'ATMA', 'MAH CET MBA', 'TISSNET'],
-    'Law Entrance': ['CLAT UG', 'CLAT PG', 'LSAT', 'AILET', 'SLAT', 'MH CET Law', 'AP LAWCET', 'TS LAWCET'],
-    'Defence and Armed Forces': ['Indian Army GD', 'Indian Army Clerk', 'Indian Army Technical', 'Indian Navy SSR', 'Indian Navy AA', 'Indian Navy MR', 'Indian Air Force Group X', 'Indian Air Force Group Y', 'AFCAT', 'MNS'],
-    'CAPF Paramilitary': ['BSF Head Constable', 'BSF Constable', 'CISF Constable', 'CRPF Constable', 'ITBP Constable', 'SSB Head Constable', 'Assam Rifles'],
-    'Insurance Exams': ['LIC AAO', 'LIC ADO', 'LIC Assistant', 'NIACL AO', 'NIACL Assistant', 'OICL AO', 'UICL AO', 'New India Assurance'],
-    'PSU Research GATE': ['GATE 2027', 'GATE 2028', 'GATE 2029', 'GATE 2030', 'PSU Recruitment through GATE'],
-    'School Boards': ['CBSE 10th', 'CBSE 12th', 'UP Board 10th', 'UP Board 12th', 'Bihar Board 10th', 'Bihar Board 12th', 'MP Board 10th', 'MP Board 12th', 'Rajasthan Board 10th', 'Rajasthan Board 12th', 'Maharashtra Board 10th', 'Maharashtra Board 12th', 'West Bengal Board 10th', 'West Bengal Board 12th', 'Gujarat Board 10th', 'Gujarat Board 12th', 'Karnataka SSLC', 'Karnataka PUC', 'TN Board 10th', 'TN Board 12th'],
-    'Agriculture and Veterinary': ['ICAR JRF', 'ICAR SRF', 'ICAR ARS', 'AFO ICAR', 'ASRB AAO', 'Veterinary Science Entrance'],
-    'Teacher Training': ['D El Ed', 'B Ed Entrance', 'M Ed Entrance', 'BTC/UP DELED', 'Bihar B.Ed', 'MP B.Ed'],
-    'University Admission': ['DU UG', 'DU PG', 'JNU UG', 'JNU PG', 'BHU UG', 'BHU PG', 'AMU UG', 'AMU PG', 'IGNOU Admission'],
-    'Professional Certifications': ['CA Foundation', 'CA Inter', 'CA Final', 'CS Foundation', 'CS Executive', 'CS Professional', 'CMA Foundation', 'CMA Inter', 'CMA Final', 'CFA Level 1', 'CFA Level 2'],
-    'School Entrance': ['Navodaya Class 6', 'Navodaya Class 9', 'Sainik School', 'KVPY', 'NTSE Stage 1', 'NTSE Stage 2', 'NMMS', 'UMMEED'],
-    'Olympiads & Scholarships': ['NSO', 'IMO', 'IEO', 'NCO', 'ISO', 'IGKO', 'PRMO', 'RMO', 'INMO', 'IOQM']
+    'Engineering Entrance': ['JEE Main', 'JEE Advanced', 'BITSAT', 'VITEEE', 'MET', 'COMEDK', 'WBJEE', 'MHT CET', 'KCET', 'AP EAMCET', 'TS EAMCET', 'SRM JEE'],
+    'Defence': ['Indian Army GD', 'Indian Army Technical', 'Indian Army Clerk', 'Indian Navy SSR', 'Indian Navy AA', 'Indian Navy MR', 'Indian Air Force Airmen', 'AFCAT', 'Territorial Army', 'Coast Guard'],
   };
-  const months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
-  const years = ['2024','2025','2026','2027','2028','2029','2030','2031','2032','2033','2034','2035'];
-  const rrcZones = ['CR','WR','NR','ER','SR','NER','SCR','NFR','SECR','ECR','SWR','WCR','NCR','NWR','ECoR','SER'];
-  const rrbCities = ['Ajmer','Allahabad','Bangalore','Bhopal','Bhubaneswar','Bilaspur','Chandigarh','Chennai','Gorakhpur','Guwahati','Jammu','Kolkata','Malda','Mumbai','Muzaffarpur','Patna','Ranchi','Secunderabad','Siliguri','Thiruvananthapuram'];
-  const nagarNigamCities = ['Agra','Ahmedabad','Allahabad','Amritsar','Asansol','Aurangabad','Bangalore','Bareilly','Bhopal','Bhubaneswar','Chandigarh','Chennai','Coimbatore','Delhi','Dhanbad','Faridabad','Ghaziabad','Gurugram','Guwahati','Gwalior','Hyderabad','Indore','Jabalpur','Jaipur','Jalandhar','Jammu','Jodhpur','Kolkata','Kota','Lucknow','Ludhiana','Madurai','Meerut','Mumbai','Nagpur','Nashik','Patna','Prayagraj','Pune','Raipur','Rajkot','Ranchi','Saharanpur','Srinagar','Surat','Thane','Vadodara','Varanasi','Vijayawada','Visakhapatnam'];
-  const policeStates = ['Uttar Pradesh','Bihar','Madhya Pradesh','Rajasthan','Maharashtra','West Bengal','Tamil Nadu','Karnataka','Gujarat','Odisha','Punjab','Haryana','Assam','Jharkhand','Chhattisgarh','Kerala','Andhra Pradesh','Telangana','Delhi','Uttarakhand','Himachal Pradesh','Jammu Kashmir','Goa','Manipur','Meghalaya','Mizoram','Nagaland','Sikkim','Tripura','Arunachal Pradesh'];
-  const policePosts = ['Constable','SI','Head Constable','ASI','Sub Inspector','Inspector','Daroga','SP'];
 
-  for (let cat in categories) {
-    for (let exam of categories[cat]) {
-      for (let y of years) {
-        let monthsNeeded = Math.min(4, months.length);
-        if (['School Boards','Teaching Exams','Medical Entrance','Engineering Entrance','Law Entrance'].includes(cat)) monthsNeeded = 1;
-        if (['UPSC Civil Services'].includes(cat)) monthsNeeded = 3;
-        for (let m = 0; m < monthsNeeded; m++) {
-          let name = `${exam} ${months[m]} ${y}`;
-          if (monthsNeeded === 1) name = `${exam} ${y}`;
+  const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+
+  // Generate 50k+ exams
+  const years = [2024, 2025, 2026, 2027, 2028, 2029, 2030];
+  for (let y = 0; y < years.length; y++) {
+    const yr = years[y];
+    for (let c = 0; c < Object.keys(categories).length; c++) {
+      const cat = Object.keys(categories)[c];
+      const examList = categories[cat];
+      let monthsNeeded = 12;
+      if (['UPSC Civil Services'].includes(cat)) monthsNeeded = 3;
+      for (let m = 0; m < monthsNeeded; m++) {
+        for (let e = 0; e < examList.length; e++) {
+          const exam = examList[e];
+          let name = `${exam} ${months[m]} ${yr}`;
+          if (monthsNeeded === 1) name = `${exam} ${yr}`;
           exams.push({
             name: name,
-            category: cat
-              cat === 'Railway Recruitment' ? 'https://rrb.gov.in' :
-              cat === 'Banking and Finance' ? 'https://ibps.in' :
-              cat === 'UPSC Civil Services' ? 'https://upsc.gov.in' : 'https://exam.gov.in',
+            category: cat,
           });
           if (exams.length >= count) break;
         }
@@ -61,204 +46,109 @@ function generateExams(count) {
     }
     if (exams.length >= count) break;
   }
-
-  // Add RRC Apprentice for all zones x years
-  if (exams.length < count) {
-    for (let z of rrcZones) {
-      for (let y of years) {
-        exams.push({name:`RRC ${z} Apprentice ${y}`, category:'Railway Recruitment'
-        if (exams.length >= count) break;
-      }
-      if (exams.length >= count) break;
-    }
-  }
-
-  // Add Nagar Nigam Clerk for all cities x years
-  if (exams.length < count) {
-    for (let city of nagarNigamCities) {
-      for (let y of ['2024','2025','2026','2027','2028','2029','2030']) {
-        exams.push({name:`${city} Nagar Nigam Clerk ${y}`, category:'State PSC','')+'.gov.in'${y}`});
-        if (exams.length >= count) break;
-      }
-      if (exams.length >= count) break;
-    }
-  }
-
-  // Add Police for all states x posts x years
-  if (exams.length < count) {
-    for (let st of policeStates) {
-      for (let post of policePosts.slice(0,3)) {
-        for (let y of years.slice(0,4)) {
-          exams.push({name:`${st} Police ${post} ${y}`, category:'State Police'${y}`});
-          if (exams.length >= count) break;
-        }
-        if (exams.length >= count) break;
-      }
-      if (exams.length >= count) break;
-    }
-  }
-
-  // Add RRB NTPC for all cities x years
-  if (exams.length < count) {
-    for (let city of rrbCities) {
-      for (let y of years) {
-        exams.push({name:`RRB ${city} NTPC UG ${y}`, category:'Railway Recruitment'
-        if (exams.length >= count) break;
-      }
-      if (exams.length >= count) break;
-    }
-  }
-
-  // Add unique named exams
-  const uniqueExams = [
-    {name:'NEET UG 2026'},
-    {name:'NEET UG 2027'},
-    {name:'NEET UG 2028'},
-    {name:'JEE Main 2026 Session 1'},
-    {name:'JEE Main 2026 Session 2'},
-    {name:'JEE Advanced 2026'},
-    {name:'CAT 2026'},
-    {name:'CAT 2027'},
-    {name:'CAT 2028'},
-    {name:'CLAT 2027'},
-    {name:'CLAT 2028'},
-    {name:'CLAT 2029'},
-    {name:'CTET December 2026'},
-    {name:'CTET July 2027'},
-    {name:'CTET December 2027'},
-    {name:'UPSC CSE 2026 Prelims'},
-    {name:'UPSC CSE 2026 Mains'},
-    {name:'SSC CGL 2026 Tier 1'},
-    {name:'SSC CGL 2026 Tier 2'},
-    {name:'SSC CHSL 2026 Tier 1'},
-    {name:'SSC GD Constable 2026'},
-    {name:'IBPS PO 2026 Prelims'},
-    {name:'IBPS PO 2026 Mains'},
-    {name:'IBPS RRB PO 2026 Prelims'},
-    {name:'IBPS RRB PO 2026 Mains'},
-    {name:'GATE 2027 CSE'},
-    {name:'GATE 2027 ECE'},
-    {name:'GATE 2027 ME'},
-    {name:'GATE 2027 CE'},
-    {name:'GATE 2027 EE'},
-    {name:'CBSE Class 10 Board 2027'},
-    {name:'CBSE Class 12 Board 2027'},
-    {name:'UP Board 10th 2027'},
-    {name:'UP Board 12th 2027'},
-    {name:'Bihar Board 10th 2027'},
-    {name:'Bihar Board 12th 2027'},
-  ];
-  for (let e of uniqueExams) {
-    if (exams.length < count) {
-    }
-  }
-
-  return exams.slice(0, count);
+  return exams;
 }
 
 export default function AdminPage() {
   const [password, setPassword] = useState('');
   const [loggedIn, setLoggedIn] = useState(false);
-  const [examCount, setExamCount] = useState(0);
+  const [examCount, setExamCount] = useState(null);
   const [status, setStatus] = useState('idle');
   const [progress, setProgress] = useState({ done: 0, total: 0 });
   const [log, setLog] = useState([]);
 
-  const addLog = (msg) => setLog(prev => [...prev, msg]);
+  function addLog(msg) {
+    setLog(prev => [...prev, msg]);
+  }
 
-  const handleLogin = async () => {
+  async function handleLogin() {
     if (password === 'sarkari123') {
       setLoggedIn(true);
-      addLog('✅ Access granted!');
-      const { count } = await supabase.from('exams').select('*', { count: 'exact', head: true });
-      setExamCount(count || 0);
-      addLog(`📊 Current exams in DB: ${count || 0}`);
+      addLog('Access granted!');
+      const { count, error } = await supabase.from('exams').select('*', { count: 'exact', head: true });
+      if (!error && count != null) setExamCount(count);
     } else {
-      addLog('❌ Wrong password!');
+      addLog('Wrong password!');
     }
-  };
+  }
 
-  const handleGenerate = async () => {
+  async function handleGenerate() {
     setStatus('generating');
-    addLog('🔄 Generating 50000 exams...');
-    
+    addLog('Generating 50000 exams...');
     const allExams = generateExams(50000);
-    addLog(`✅ Generated ${allExams.length} unique exams!`);
-    
+    addLog('Generated ' + allExams.length + ' unique exams!');
+
     setStatus('inserting');
     setProgress({ done: 0, total: allExams.length });
-    
-    const BATCH = 100;
+
+    const BATCH_SIZE = 50;
     let inserted = 0;
-    
-    for (let i = 0; i < allExams.length; i += BATCH) {
-      const batch = allExams.slice(i, i + BATCH);
+    for (let i = 0; i < allExams.length; i += BATCH_SIZE) {
+      const batch = allExams.slice(i, i + BATCH_SIZE);
       try {
-        const { error, count } = await supabase.from('exams').insert(batch, { count: 'exact' });
+        const { error } = await supabase.from('exams').insert(batch, { onConflict: 'name', ignoreDuplicates: true });
         if (error) {
-          addLog(`⚠️ Batch ${Math.floor(i/BATCH)+1}: ${error.message}`);
-        } else {
-          inserted += (count || batch.length);
+          addLog('Batch ' + (i / BATCH_SIZE + 1) + ' error: ' + error.message);
         }
-      } catch (err) {
-        addLog(`⚠️ Batch ${Math.floor(i/BATCH)+1}: ${err.message}`);
+      } catch (e) {
+        addLog('Batch ' + (i / BATCH_SIZE + 1) + ' exception: ' + e.message);
       }
-      setProgress({ done: i + BATCH, total: allExams.length });
+      inserted += batch.length;
+      setProgress({ done: inserted, total: allExams.length });
     }
-    
-    const { count } = await supabase.from('exams').select('*', { count: 'exact', head: true });
-    setExamCount(count || 0);
-    addLog(`🎉 Complete! Total exams in DB: ${count || 0}`);
+
+    const { count, error } = await supabase.from('exams').select('*', { count: 'exact', head: true });
+    if (!error && count != null) setExamCount(count);
     setStatus('done');
-  };
+    addLog('Complete! Final count: ' + (count || 'unknown') + ' exams! 🚀');
+  }
 
   if (!loggedIn) {
     return (
-      <div style={{maxWidth:400,margin:'50px auto',padding:'0 20px',fontFamily:'Arial'}}>
-        <h1 style={{color:'#16a34a',textAlign:'center'}}>🔐 Admin Login</h1>
-        <p style={{color:'#666',marginBottom:20}}>Password: sarkari123</p>
-        <input type="password" value={password} onChange={e=>setPassword(e.target.value)}
-          onKeyDown={e=>e.key==='Enter'&&handleLogin()}
-          style={{padding:'12px 16px',width:'100%',fontSize:16,border:'2px solid #16a34a',borderRadius:8,marginBottom:12,boxSizing:'border-box'}} placeholder="Enter password..." />
-        <button onClick={handleLogin} style={{padding:'12px 24px',background:'#16a34a',color:'white',border:'none',borderRadius:8,fontSize:16,cursor:'pointer',fontWeight:600}}>Login</button>
-        <div style={{marginTop:16,fontSize:13,color:'#999'}}>{log.map((m,i)=><p key={i}>{m}</p>)}</div>
+      <div style={{ maxWidth: 400, margin: '100px auto', padding: '0 20px', fontFamily: 'Arial', textAlign: 'center' }}>
+        <h1 style={{ color: '#16a34a' }}>🔐 Admin Login</h1>
+        <input type="password" value={password} onChange={e => setPassword(e.target.value)}
+          onKeyDown={e => e.key === 'Enter' && handleLogin()}
+          style={{ padding: '12px 16px', width: '100%', fontSize: 16, border: '2px solid #16a34a', borderRadius: 8, marginBottom: 12, boxSizing: 'border-box' }} placeholder="Enter password..." />
+        <button onClick={handleLogin} style={{ padding: '12px 24px', background: '#16a34a', color: 'white', border: 'none', borderRadius: 8, fontSize: 16, cursor: 'pointer', fontWeight: 600 }}>Login</button>
+        <div style={{ marginTop: 16, fontSize: 13, color: '#999' }}>{log.map((m, i) => <p key={i}>{m}</p>)}</div>
       </div>
     );
   }
 
   return (
-    <div style={{maxWidth:600,margin:'50px auto',padding:'0 20px',fontFamily:'Arial'}}>
-      <h1 style={{color:'#16a34a',textAlign:'center'}}>⚙️ Auto Exam Generator</h1>
-      <div style={{background:'#f0fdf4',border:'1px solid #bbf7d0',borderRadius:8,padding:16,marginBottom:20,textAlign:'center'}}>
-        <p style={{fontSize:14,color:'#166534',margin:0}}>🗂️ <strong>Current Exams:</strong> {examCount}</p>
+    <div style={{ maxWidth: 600, margin: '50px auto', padding: '0 20px', fontFamily: 'Arial' }}>
+      <h1 style={{ color: '#16a34a', textAlign: 'center' }}>⚙️ Auto Exam Generator</h1>
+      <div style={{ background: '#f0fdf4', border: '1px solid #bbf7d0', borderRadius: 8, padding: 16, marginBottom: 20, textAlign: 'center' }}>
+        <p style={{ fontSize: 14, color: '#166534', margin: 0 }}>🗂️ <strong>Current Exams:</strong> {examCount}</p>
       </div>
       {status === 'idle' && (
-        <div style={{textAlign:'center'}}>
-          <p style={{color:'#666',marginBottom:20}}>Click below to insert <strong>50,000 exams</strong> in one go!</p>
-          <button onClick={handleGenerate} style={{padding:'16px 32px',background:'#16a34a',color:'white',border:'none',borderRadius:8,fontSize:18,cursor:'pointer',fontWeight:700,boxShadow:'0 4px 6px rgba(22,163,74,0.3)'}}>🚀 Generate 50,000 Exams!</button>
+        <div style={{ textAlign: 'center' }}>
+          <p style={{ color: '#666', marginBottom: 20 }}>Click below to insert <strong>50,000 exams</strong> in one go!</p>
+          <button onClick={handleGenerate} style={{ padding: '16px 32px', background: '#16a34a', color: 'white', border: 'none', borderRadius: 8, fontSize: 18, cursor: 'pointer', fontWeight: 700, boxShadow: '0 4px 6px rgba(22,163,74,0.3)' }}>🚀 Generate 50,000 Exams!</button>
         </div>
       )}
-      {(status==='generating'||status==='inserting') && (
-        <div style={{textAlign:'center'}}>
-          <div style={{fontSize:48,marginBottom:10}}>⏳</div>
-          <p style={{fontWeight:600,color:'#16a34a'}}>{status==='generating'?'📝 Generating exam data...':'📤 Inserting into database...'}</p>
+      {(status === 'generating' || status === 'inserting') && (
+        <div style={{ textAlign: 'center' }}>
+          <div style={{ fontSize: 48, marginBottom: 10 }}>⏳</div>
+          <p style={{ fontWeight: 600, color: '#16a34a' }}>{status === 'generating' ? '📝 Generating exam data...' : '📤 Inserting into database...'}</p>
           {progress.total > 0 && (
-            <div style={{background:'#e5e7eb',borderRadius:8,height:24,overflow:'hidden',margin:'10px 0'}}>
-              <div style={{background:'#16a34a',height:'100%',width:`${Math.min(100, (progress.done/progress.total)*100)}%`,transition:'width 0.3s',borderRadius:8}} />
+            <div style={{ background: '#e5e7eb', borderRadius: 8, height: 24, overflow: 'hidden', margin: '10px 0' }}>
+              <div style={{ background: '#16a34a', height: '100%', width: `${Math.min(100, (progress.done / progress.total) * 100)}%`, transition: 'width 0.3s', borderRadius: 8 }} />
             </div>
           )}
-          <p style={{fontSize:13,color:'#666'}}>{progress.done.toLocaleString()} / {progress.total.toLocaleString()}</p>
+          <p style={{ fontSize: 13, color: '#666' }}>{progress.done.toLocaleString()} / {progress.total.toLocaleString()}</p>
         </div>
       )}
       {status === 'done' && (
-        <div style={{textAlign:'center'}}>
-          <div style={{fontSize:48,marginBottom:10}}>🎉</div>
-          <h2 style={{color:'#16a34a'}}>Complete! {examCount.toLocaleString()} exams in DB! 🚀</h2>
-          <a href="/" style={{display:'inline-block',marginTop:16,padding:'12px 24px',background:'#16a34a',color:'white',borderRadius:8,textDecoration:'none',fontWeight:600}}>🔙 Go to Homepage</a>
+        <div style={{ textAlign: 'center' }}>
+          <div style={{ fontSize: 48, marginBottom: 10 }}>🎉</div>
+          <h2 style={{ color: '#16a34a' }}>Complete! {examCount.toLocaleString()} exams in DB! 🚀</h2>
+          <a href="/" style={{ display: 'inline-block', marginTop: 16, padding: '12px 24px', background: '#16a34a', color: 'white', borderRadius: 8, textDecoration: 'none', fontWeight: 600 }}>🔙 Go to Homepage</a>
         </div>
       )}
-      <div style={{marginTop:20,fontSize:13,color:'#666',background:'#f9fafb',padding:12,borderRadius:8,maxHeight:200,overflowY:'auto'}}>
-        {log.map((m,i)=><p key={i} style={{margin:'2px 0'}}>{m}</p>)}
+      <div style={{ marginTop: 20, fontSize: 13, color: '#666', background: '#f9fafb', padding: 12, borderRadius: 8, maxHeight: 200, overflowY: 'auto' }}>
+        {log.map((m, i) => <p key={i} style={{ margin: '2px 0' }}>{m}</p>)}
       </div>
     </div>
   );
