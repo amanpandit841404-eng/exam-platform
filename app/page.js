@@ -10,11 +10,14 @@ export default function Home() {
   const [upcomingExams, setUpcomingExams] = useState([]);
   const [totalExams, setTotalExams] = useState(0);
   const [loading, setLoading] = useState(true);
-  const [fetchError, setFetchError] = useState(null);
+  const [dbg, setDbg] = useState([]);
 
   useEffect(() => {
     async function fetchData() {
+      const logs = [];
       try {
+        logs.push("Starting Supabase queries...");
+        
         const [catRes, resultsRes, admitRes, upcomingRes, countRes] = await Promise.all([
           supabase.from('categories').select('*').order('name'),
           supabase.from('exams').select('*').order('created_at', { ascending: false }).limit(10),
@@ -22,18 +25,22 @@ export default function Home() {
           supabase.from('exams').select('*').order('created_at', { ascending: false }).limit(10),
           supabase.from('exams').select('*', { count: 'exact', head: true }),
         ]);
+        
+        logs.push("Categories: " + (catRes.data ? catRes.data.length + " items" : "null") + (catRes.error ? " | ERROR: " + JSON.stringify(catRes.error) : ""));
+        logs.push("Results: " + (resultsRes.data ? resultsRes.data.length + " items" : "null") + (resultsRes.error ? " | ERROR: " + JSON.stringify(resultsRes.error) : ""));
+        logs.push("Count: " + (countRes.count || "null") + (countRes.error ? " | ERROR: " + JSON.stringify(countRes.error) : ""));
+        
         if (catRes.data) setCategories(catRes.data);
-        if (catRes.error) console.error('Categories error:', catRes.error);
         if (resultsRes.data) setLatestResults(resultsRes.data);
         if (admitRes.data) setAdmitCards(admitRes.data);
         if (upcomingRes.data) setUpcomingExams(upcomingRes.data);
         if (countRes.count) setTotalExams(countRes.count);
-        if (countRes.error) console.error('Count error:', countRes.error);
       } catch (err) {
-        console.error('Error fetching data:', err);
-        setFetchError(err.message || 'Failed to load data');
+        logs.push("CRASH: " + (err.message || err));
+        console.error('Error:', err);
       } finally {
         setLoading(false);
+        setDbg(logs);
       }
     }
     fetchData();
@@ -101,11 +108,16 @@ export default function Home() {
         <span>🎫 <strong>{admitCards.length}+</strong> Admit Cards</span>
       </div>
 
-      {fetchError && (
-        <div style={{ backgroundColor: '#fef2f2', color: '#dc2626', padding: '10px 20px', textAlign: 'center', fontSize: '13px', borderBottom: '1px solid #fecaca' }}>
-          ⚠️ Data loading issue: {fetchError}
+      {/* DEBUG INFO - ये बताएगा कि Supabase से कनेक्शन क्यों नहीं हो रहा */}
+      <div style={{ backgroundColor: '#1e1e1e', color: '#0f0', padding: '15px', margin: '10px', borderRadius: '8px', fontSize: '12px', fontFamily: 'monospace', whiteSpace: 'pre-wrap', wordBreak: 'break-all' }}>
+        <strong style={{ color: '#ff0' }}>🔍 DEBUG LOG:</strong>
+        {dbg.map((line, i) => (
+          <div key={i}>{line}</div>
+        ))}
+        <div style={{ color: '#0ff', marginTop: '8px' }}>
+          URL: {typeof window !== 'undefined' ? window.location.href : ''}
         </div>
-      )}
+      </div>
 
       <main style={{ maxWidth: '1200px', margin: '20px auto', padding: '0 15px' }}>
         <div style={{ backgroundColor: '#e5e7eb', textAlign: 'center', padding: '20px', marginBottom: '20px', borderRadius: '6px', color: '#6b7280', fontSize: '14px', border: '1px dashed #d1d5db' }}>
