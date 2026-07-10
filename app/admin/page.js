@@ -4,6 +4,7 @@ import { supabase } from '../lib/supabase';
 
 function generateExams(count) {
   const exams = [];
+  const cats = {};
   const categories = {
     'SSC Exams': ['SSC CGL', 'SSC CHSL', 'SSC GD Constable', 'SSC MTS', 'SSC CPO', 'SSC Stenographer', 'SSC JE', 'SSC Selection Post', 'SSC JHT', 'SSC Scientific Asst', 'SSC Delhi Police SI', 'SSC Delhi Police Constable'],
     'Railway Recruitment': ['RRB NTPC UG', 'RRB NTPC PG', 'RRB ALP', 'RRB Group D', 'RRB JE', 'RRB SSE', 'RRB ASM', 'RRB TC', 'RRB Paramedical', 'RRB Sr Clerk', 'RRB Jr Clerk', 'RRB Ministerial'],
@@ -47,9 +48,7 @@ function generateExams(count) {
           if (monthsNeeded === 1) name = `${exam} ${y}`;
           exams.push({
             name: name,
-            category: cat,
-            exam_date: `${y}-${String(m+1).padStart(2,'0')}-15`,
-            official_website: cat === 'SSC Exams' ? 'https://ssc.nic.in' :
+            category: cat
               cat === 'Railway Recruitment' ? 'https://rrb.gov.in' :
               cat === 'Banking and Finance' ? 'https://ibps.in' :
               cat === 'UPSC Civil Services' ? 'https://upsc.gov.in' : 'https://exam.gov.in',
@@ -67,7 +66,7 @@ function generateExams(count) {
   if (exams.length < count) {
     for (let z of rrcZones) {
       for (let y of years) {
-        exams.push({name:`RRC ${z} Apprentice ${y}`, category:'Railway Recruitment', exam_date:`${y}-03-15`, official_website:'https://rrc.gov.in'
+        exams.push({name:`RRC ${z} Apprentice ${y}`, category:'Railway Recruitment'
         if (exams.length >= count) break;
       }
       if (exams.length >= count) break;
@@ -78,7 +77,7 @@ function generateExams(count) {
   if (exams.length < count) {
     for (let city of nagarNigamCities) {
       for (let y of ['2024','2025','2026','2027','2028','2029','2030']) {
-        exams.push({name:`${city} Nagar Nigam Clerk ${y}`, category:'State PSC', exam_date:`${y}-04-15`, official_website:city.toLowerCase().replace(/ /g,'')+'.gov.in'${y}`});
+        exams.push({name:`${city} Nagar Nigam Clerk ${y}`, category:'State PSC','')+'.gov.in'${y}`});
         if (exams.length >= count) break;
       }
       if (exams.length >= count) break;
@@ -90,7 +89,7 @@ function generateExams(count) {
     for (let st of policeStates) {
       for (let post of policePosts.slice(0,3)) {
         for (let y of years.slice(0,4)) {
-          exams.push({name:`${st} Police ${post} ${y}`, category:'State Police', exam_date:`${y}-05-15`, official_website:'https://police.gov.in'${y}`});
+          exams.push({name:`${st} Police ${post} ${y}`, category:'State Police'${y}`});
           if (exams.length >= count) break;
         }
         if (exams.length >= count) break;
@@ -103,7 +102,7 @@ function generateExams(count) {
   if (exams.length < count) {
     for (let city of rrbCities) {
       for (let y of years) {
-        exams.push({name:`RRB ${city} NTPC UG ${y}`, category:'Railway Recruitment', exam_date:`${y}-06-15`, official_website:'https://rrb.gov.in'
+        exams.push({name:`RRB ${city} NTPC UG ${y}`, category:'Railway Recruitment'
         if (exams.length >= count) break;
       }
       if (exams.length >= count) break;
@@ -112,46 +111,45 @@ function generateExams(count) {
 
   // Add unique named exams
   const uniqueExams = [
-    {name:'NEET UG 2026',cat:'Medical Entrance',date:'2026-05-03',web:'https://neet.nta.nic.in'},
-    {name:'NEET UG 2027',cat:'Medical Entrance',date:'2027-05-02',web:'https://neet.nta.nic.in'},
-    {name:'NEET UG 2028',cat:'Medical Entrance',date:'2028-05-07',web:'https://neet.nta.nic.in'},
-    {name:'JEE Main 2026 Session 1',cat:'Engineering Entrance',date:'2026-01-24',web:'https://jeemain.nta.nic.in'},
-    {name:'JEE Main 2026 Session 2',cat:'Engineering Entrance',date:'2026-04-01',web:'https://jeemain.nta.nic.in'},
-    {name:'JEE Advanced 2026',cat:'Engineering Entrance',date:'2026-05-17',web:'https://jeeadv.ac.in'},
-    {name:'CAT 2026',cat:'MBA and Management',date:'2026-11-29',web:'https://iimcat.ac.in'},
-    {name:'CAT 2027',cat:'MBA and Management',date:'2027-11-28',web:'https://iimcat.ac.in'},
-    {name:'CAT 2028',cat:'MBA and Management',date:'2028-11-26',web:'https://iimcat.ac.in'},
-    {name:'CLAT 2027',cat:'Law Entrance',date:'2027-05-02',web:'https://consortiumofnlus.ac.in'},
-    {name:'CLAT 2028',cat:'Law Entrance',date:'2028-05-07',web:'https://consortiumofnlus.ac.in'},
-    {name:'CLAT 2029',cat:'Law Entrance',date:'2029-05-06',web:'https://consortiumofnlus.ac.in'},
-    {name:'CTET December 2026',cat:'Teaching Exams',date:'2026-12-15',web:'https://ctet.nic.in'},
-    {name:'CTET July 2027',cat:'Teaching Exams',date:'2027-07-10',web:'https://ctet.nic.in'},
-    {name:'CTET December 2027',cat:'Teaching Exams',date:'2027-12-14',web:'https://ctet.nic.in'},
-    {name:'UPSC CSE 2026 Prelims',cat:'UPSC Civil Services',date:'2026-05-31',web:'https://upsc.gov.in'},
-    {name:'UPSC CSE 2026 Mains',cat:'UPSC Civil Services',date:'2026-09-18',web:'https://upsc.gov.in'},
-    {name:'SSC CGL 2026 Tier 1',cat:'SSC Exams',date:'2026-09-15',web:'https://ssc.nic.in'},
-    {name:'SSC CGL 2026 Tier 2',cat:'SSC Exams',date:'2026-11-20',web:'https://ssc.nic.in'},
-    {name:'SSC CHSL 2026 Tier 1',cat:'SSC Exams',date:'2026-08-01',web:'https://ssc.nic.in'},
-    {name:'SSC GD Constable 2026',cat:'SSC Exams',date:'2026-12-01',web:'https://ssc.nic.in'},
-    {name:'IBPS PO 2026 Prelims',cat:'Banking and Finance',date:'2026-10-10',web:'https://ibps.in'},
-    {name:'IBPS PO 2026 Mains',cat:'Banking and Finance',date:'2026-11-28',web:'https://ibps.in'},
-    {name:'IBPS RRB PO 2026 Prelims',cat:'Banking and Finance',date:'2026-08-01',web:'https://ibps.in'},
-    {name:'IBPS RRB PO 2026 Mains',cat:'Banking and Finance',date:'2026-09-20',web:'https://ibps.in'},
-    {name:'GATE 2027 CSE',cat:'PSU Research GATE',date:'2027-02-07',web:'https://gate2027.iisc.ac.in'},
-    {name:'GATE 2027 ECE',cat:'PSU Research GATE',date:'2027-02-08',web:'https://gate2027.iisc.ac.in'},
-    {name:'GATE 2027 ME',cat:'PSU Research GATE',date:'2027-02-09',web:'https://gate2027.iisc.ac.in'},
-    {name:'GATE 2027 CE',cat:'PSU Research GATE',date:'2027-02-10',web:'https://gate2027.iisc.ac.in'},
-    {name:'GATE 2027 EE',cat:'PSU Research GATE',date:'2027-02-11',web:'https://gate2027.iisc.ac.in'},
-    {name:'CBSE Class 10 Board 2027',cat:'School Boards',date:'2027-02-15',web:'https://cbse.gov.in'},
-    {name:'CBSE Class 12 Board 2027',cat:'School Boards',date:'2027-02-15',web:'https://cbse.gov.in'},
-    {name:'UP Board 10th 2027',cat:'School Boards',date:'2027-03-01',web:'https://upmsp.edu.in'},
-    {name:'UP Board 12th 2027',cat:'School Boards',date:'2027-03-01',web:'https://upmsp.edu.in'},
-    {name:'Bihar Board 10th 2027',cat:'School Boards',date:'2027-02-17',web:'https://biharboardonline.com'},
-    {name:'Bihar Board 12th 2027',cat:'School Boards',date:'2027-02-01',web:'https://biharboardonline.com'},
+    {name:'NEET UG 2026'},
+    {name:'NEET UG 2027'},
+    {name:'NEET UG 2028'},
+    {name:'JEE Main 2026 Session 1'},
+    {name:'JEE Main 2026 Session 2'},
+    {name:'JEE Advanced 2026'},
+    {name:'CAT 2026'},
+    {name:'CAT 2027'},
+    {name:'CAT 2028'},
+    {name:'CLAT 2027'},
+    {name:'CLAT 2028'},
+    {name:'CLAT 2029'},
+    {name:'CTET December 2026'},
+    {name:'CTET July 2027'},
+    {name:'CTET December 2027'},
+    {name:'UPSC CSE 2026 Prelims'},
+    {name:'UPSC CSE 2026 Mains'},
+    {name:'SSC CGL 2026 Tier 1'},
+    {name:'SSC CGL 2026 Tier 2'},
+    {name:'SSC CHSL 2026 Tier 1'},
+    {name:'SSC GD Constable 2026'},
+    {name:'IBPS PO 2026 Prelims'},
+    {name:'IBPS PO 2026 Mains'},
+    {name:'IBPS RRB PO 2026 Prelims'},
+    {name:'IBPS RRB PO 2026 Mains'},
+    {name:'GATE 2027 CSE'},
+    {name:'GATE 2027 ECE'},
+    {name:'GATE 2027 ME'},
+    {name:'GATE 2027 CE'},
+    {name:'GATE 2027 EE'},
+    {name:'CBSE Class 10 Board 2027'},
+    {name:'CBSE Class 12 Board 2027'},
+    {name:'UP Board 10th 2027'},
+    {name:'UP Board 12th 2027'},
+    {name:'Bihar Board 10th 2027'},
+    {name:'Bihar Board 12th 2027'},
   ];
   for (let e of uniqueExams) {
     if (exams.length < count) {
-      exams.push({name:e.name, category:e.cat, exam_date:e.date, official_website:e.web
     }
   }
 
