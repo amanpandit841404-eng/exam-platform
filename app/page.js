@@ -52,15 +52,24 @@ export default function Home() {
         </div>
       </header>
 
-      <main className="max-w-4xl mx-auto px-4 py-4">
+      <div className="max-w-4xl mx-auto px-4 py-3">
+        {/* Search Bar */}
+        <form action="/search" method="GET" className="flex gap-2 mb-4">
+          <input type="text" name="q" placeholder="🔍 52,000+ exams search karein..." 
+            className="flex-1 px-4 py-3 rounded-xl bg-white border border-gray-200 text-sm shadow-sm focus:outline-none focus:ring-2 focus:ring-brand" />
+          <button type="submit" className="bg-brand text-white px-6 py-3 rounded-xl text-sm font-semibold hover:bg-brand-dark transition shadow-sm whitespace-nowrap">
+            Search
+          </button>
+        </form>
+
         {/* Ticker */}
         <div className="bg-brand text-white text-sm px-4 py-2.5 rounded-lg mb-4 overflow-hidden">
           <div className="animate-marquee whitespace-nowrap">
-            🚀 {totalExams.toLocaleString()}+ Exams  |  📢 Latest: SarkariSetu India - Aapka Sarkari Exam Dost  |  📌 SSC, UPSC, Railway, Banking, NEET, JEE
+            🚀 {totalExams.toLocaleString()}+ Exams  |  📢 SarkariSetu India - Aapka Sarkari Exam Dost  |  📌 SSC, UPSC, Railway, Banking, NEET, JEE
           </div>
         </div>
 
-        {/* Stats Cards - Redesigned */}
+        {/* Stats */}
         <div className="grid grid-cols-3 gap-3 mb-5">
           <div className="bg-gradient-to-br from-red-500 to-red-600 text-white rounded-xl p-4 text-center shadow-md">
             <div className="text-2xl font-black">{totalExams.toLocaleString()}+</div>
@@ -68,7 +77,7 @@ export default function Home() {
           </div>
           <div className="bg-gradient-to-br from-blue-500 to-blue-600 text-white rounded-xl p-4 text-center shadow-md">
             <div className="text-2xl font-black">{latestResults.length}+</div>
-            <div className="text-[11px] opacity-90 mt-0.5">🏆 Latest Results</div>
+            <div className="text-[11px] opacity-90 mt-0.5">🏆 Results</div>
           </div>
           <div className="bg-gradient-to-br from-purple-500 to-purple-600 text-white rounded-xl p-4 text-center shadow-md">
             <div className="text-2xl font-black">{admitCards.length}+</div>
@@ -76,9 +85,9 @@ export default function Home() {
           </div>
         </div>
 
-        {/* 3 Section Grid - Card Style */}
+        {/* 3 Sections */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
-          {/* Latest Results */}
+          {/* Results */}
           <section className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
             <div className="bg-red-50 px-4 py-3 border-b border-red-100">
               <h2 className="text-red-600 font-bold text-sm flex items-center gap-2">🏆 Latest Results</h2>
@@ -112,7 +121,7 @@ export default function Home() {
             </div>
           </section>
 
-          {/* Upcoming Exams */}
+          {/* Upcoming */}
           <section className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
             <div className="bg-purple-50 px-4 py-3 border-b border-purple-100">
               <h2 className="text-purple-600 font-bold text-sm flex items-center gap-2">📅 Upcoming Exams</h2>
@@ -130,22 +139,22 @@ export default function Home() {
           </section>
         </div>
 
-        {/* Categories Grid */}
+        {/* Categories */}
         <section className="bg-white rounded-xl shadow-sm border border-gray-100 p-5 mb-5">
           <h2 className="text-brand font-bold text-base mb-4 flex items-center gap-2">📍 Browse by Category</h2>
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-2.5">
+          <div className="flex flex-wrap gap-2">
             {categories.length > 0 ? categories.map((cat, i) => (
               <a key={i} href={`/category/${cat.slug || cat.name}`} 
-                className="block px-3 py-2.5 bg-green-50 rounded-lg text-brand text-xs font-semibold text-center border border-green-100 hover:bg-green-100 hover:shadow-sm transition">
+                className="px-3.5 py-2 bg-green-50 rounded-full text-brand text-xs font-semibold border border-green-100 hover:bg-green-100 hover:shadow-sm transition">
                 {cat.icon || '📁'} {cat.name.length > 20 ? cat.name.slice(0,18)+'..' : cat.name}
               </a>
             )) : (
-              <p className="col-span-full text-center text-gray-400 text-sm py-6">Loading categories...</p>
+              <p className="text-center text-gray-400 text-sm w-full py-6">Loading categories...</p>
             )}
           </div>
         </section>
 
-        {/* Ad Space */}
+        {/* Ad */}
         <div className="bg-gray-200 text-center py-6 rounded-xl text-gray-500 text-sm border-2 border-dashed border-gray-300 mb-5">
           📢 Advertisement / Google AdSense
         </div>
@@ -157,31 +166,29 @@ export default function Home() {
             {[
               {href:'/syllabus', icon:'📖', label:'Syllabus'},
               {href:'/answer-keys', icon:'🔑', label:'Answer Keys'},
-              {href:'/results', icon:'📈', label:'Cutoff Marks'},
+              {href:'/results', icon:'📈', label:'Results'},
               {href:'/notifications', icon:'📢', label:'Notifications'},
             ].map(link => (
               <a key={link.href} href={link.href} 
-                className="block px-3 py-3 bg-green-50 rounded-lg text-center text-brand text-sm font-semibold border border-green-100 hover:bg-green-100 transition">
+                className="px-3 py-3 bg-green-50 rounded-lg text-center text-brand text-sm font-semibold border border-green-100 hover:bg-green-100 transition">
                 {link.icon} {link.label}
               </a>
             ))}
           </div>
         </section>
-      </main>
+      </div>
 
-      {/* Footer */}
       <footer className="bg-dark text-gray-400 text-xs py-6 px-4 text-center">
         <div className="max-w-4xl mx-auto">
-          <p className="mb-2">© 2026 <span className="text-brand font-bold">SarkariSetu India</span> — All Rights Reserved</p>
-          <p className="leading-relaxed">Disclaimer: This website is not affiliated with any government organization. Always verify official information at respective department websites.</p>
+          <p className="mb-2">© 2026 <span className="text-brand font-bold">SarkariSetu India</span></p>
+          <p className="leading-relaxed">Disclaimer: Not affiliated with any government organization.</p>
         </div>
       </footer>
 
-      {/* Add animation for marquee */}
       <style jsx>{`
         @keyframes marquee {
-          0% { transform: translateX(0); }
-          100% { transform: translateX(-50%); }
+          0% { transform: translateX(100%); }
+          100% { transform: translateX(-100%); }
         }
         .animate-marquee {
           animation: marquee 20s linear infinite;
