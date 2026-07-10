@@ -53,7 +53,6 @@ function generateExams(count) {
               cat === 'Railway Recruitment' ? 'https://rrb.gov.in' :
               cat === 'Banking and Finance' ? 'https://ibps.in' :
               cat === 'UPSC Civil Services' ? 'https://upsc.gov.in' : 'https://exam.gov.in',
-            description: `${name} Examination`
           });
           if (exams.length >= count) break;
         }
@@ -68,7 +67,7 @@ function generateExams(count) {
   if (exams.length < count) {
     for (let z of rrcZones) {
       for (let y of years) {
-        exams.push({name:`RRC ${z} Apprentice ${y}`, category:'Railway Recruitment', exam_date:`${y}-03-15`, official_website:'https://rrc.gov.in', description:`RRC ${z} Apprentice ${y}`});
+        exams.push({name:`RRC ${z} Apprentice ${y}`, category:'Railway Recruitment', exam_date:`${y}-03-15`, official_website:'https://rrc.gov.in'
         if (exams.length >= count) break;
       }
       if (exams.length >= count) break;
@@ -79,7 +78,7 @@ function generateExams(count) {
   if (exams.length < count) {
     for (let city of nagarNigamCities) {
       for (let y of ['2024','2025','2026','2027','2028','2029','2030']) {
-        exams.push({name:`${city} Nagar Nigam Clerk ${y}`, category:'State PSC', exam_date:`${y}-04-15`, official_website:city.toLowerCase().replace(/ /g,'')+'.gov.in', description:`${city} Nagar Nigam Clerk Recruitment ${y}`});
+        exams.push({name:`${city} Nagar Nigam Clerk ${y}`, category:'State PSC', exam_date:`${y}-04-15`, official_website:city.toLowerCase().replace(/ /g,'')+'.gov.in'${y}`});
         if (exams.length >= count) break;
       }
       if (exams.length >= count) break;
@@ -91,7 +90,7 @@ function generateExams(count) {
     for (let st of policeStates) {
       for (let post of policePosts.slice(0,3)) {
         for (let y of years.slice(0,4)) {
-          exams.push({name:`${st} Police ${post} ${y}`, category:'State Police', exam_date:`${y}-05-15`, official_website:'https://police.gov.in', description:`${st} Police ${post} Recruitment ${y}`});
+          exams.push({name:`${st} Police ${post} ${y}`, category:'State Police', exam_date:`${y}-05-15`, official_website:'https://police.gov.in'${y}`});
           if (exams.length >= count) break;
         }
         if (exams.length >= count) break;
@@ -104,7 +103,7 @@ function generateExams(count) {
   if (exams.length < count) {
     for (let city of rrbCities) {
       for (let y of years) {
-        exams.push({name:`RRB ${city} NTPC UG ${y}`, category:'Railway Recruitment', exam_date:`${y}-06-15`, official_website:'https://rrb.gov.in', description:`RRB ${city} NTPC Undergraduate ${y}`});
+        exams.push({name:`RRB ${city} NTPC UG ${y}`, category:'Railway Recruitment', exam_date:`${y}-06-15`, official_website:'https://rrb.gov.in'
         if (exams.length >= count) break;
       }
       if (exams.length >= count) break;
@@ -152,7 +151,7 @@ function generateExams(count) {
   ];
   for (let e of uniqueExams) {
     if (exams.length < count) {
-      exams.push({name:e.name, category:e.cat, exam_date:e.date, official_website:e.web, description:e.name});
+      exams.push({name:e.name, category:e.cat, exam_date:e.date, official_website:e.web
     }
   }
 
