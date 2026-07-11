@@ -10,9 +10,11 @@
       const [loading, setLoading] = useState(true);
       const [watchlist, setWatchlist] = useState([]);
       const [lang, setLang] = useState("hi");
+  const [dark, setDark] = useState(false);
 
       useEffect(() => {
         setLang(localStorage.getItem("sarkarisetu_lang") || "hi");
+    setDark(localStorage.getItem("sarkarisetu_dark") === "true");
         const saved = JSON.parse(localStorage.getItem("sarkarisetu_watchlist") || "[]");
         setWatchlist(saved);
         fetchData();
@@ -79,7 +81,7 @@
       const filtered = latestResults.filter(r => !search || r.exam_name?.toLowerCase().includes(search.toLowerCase()));
 
       return (
-        <div style={{ fontFamily: "'Segoe UI',Arial,sans-serif", background: "var(--bg)", minHeight: "100vh", padding: 12, maxWidth: 900, margin: "0 auto" }}>
+        <div style={{ fontFamily: "'Segoe UI',Arial,sans-serif", dark ? "#0f172a" : "#f8fafc", minHeight: "100vh", padding: 12, maxWidth: 900, margin: "0 auto" }}>
 
           {/* Header */}
           <div style={{ background: "linear-gradient(135deg,#1e3a5f,#2563eb)", borderRadius: 14, padding: "20px 16px", color: "#fff", marginBottom: 16, textAlign: "center" }}>
@@ -105,7 +107,7 @@
             ].map(s => (
               <a key={s.label} href={s.href}
                 style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 2, padding: "10px 6px",
-                  background: "var(--card)", borderRadius: 10, textDecoration: "none", color: "var(--text)",
+                  background: dark ? "#1e293b" : "#ffffff", borderRadius: 10, textDecoration: "none", color: dark ? "#e2e8f0" : "#151515",
                   border: "1px solid var(--border)", boxShadow: "0 1px 3px rgba(0,0,0,0.04)" }}>
                 <span style={{ fontSize: 22 }}>{s.icon}</span>
                 <span style={{ fontSize: 11, fontWeight: 500, textAlign: "center" }}>{s.label}</span>
@@ -115,9 +117,9 @@
 
           {/* Upcoming Exams with Countdown */}
           {upcoming.length > 0 && (
-            <div style={{ background: "var(--card)", borderRadius: 12, padding: 16, marginBottom: 14, border: "1px solid var(--border)" }}>
+            <div style={{ background: dark ? "#1e293b" : "#ffffff", borderRadius: 12, padding: 16, marginBottom: 14, border: "1px solid var(--border)" }}>
               <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 10 }}>
-                <h2 style={{ fontSize: 15, fontWeight: 700, color: "var(--text)", margin: 0 }}>
+                <h2 style={{ fontSize: 15, fontWeight: 700, color: dark ? "#e2e8f0" : "#151515", margin: 0 }}>
                   ⏰ {t("आगामी परीक्षाएं", "Upcoming Exams")}
                 </h2>
                 <button onClick={() => shareWhatsApp("Check upcoming exams on SarkariSetu:", window.location.href)}
@@ -128,10 +130,10 @@
               <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
                 {upcoming.slice(0, 5).map((e, i) => (
                   <div key={i} style={{ display: "flex", justifyContent: "space-between", alignItems: "center",
-                    padding: "8px 10px", background: "var(--bg)", borderRadius: 8, border: "1px solid var(--border)" }}>
+                    padding: "8px 10px", dark ? "#0f172a" : "#f8fafc", borderRadius: 8, border: "1px solid var(--border)" }}>
                     <div style={{ flex: 1, minWidth: 0 }}>
-                      <div style={{ fontSize: 13, fontWeight: 600, color: "var(--text)" }}>{e.exam_name}</div>
-                      <div style={{ fontSize: 11, color: "var(--text-secondary)" }}>📅 {e.exam_date || "TBA"}</div>
+                      <div style={{ fontSize: 13, fontWeight: 600, color: dark ? "#e2e8f0" : "#151515" }}>{e.exam_name}</div>
+                      <div style={{ fontSize: 11, color: dark ? "#94a3b8" : "#717171" }}>📅 {e.exam_date || "TBA"}</div>
                     </div>
                     <div style={{ textAlign: "right", flexShrink: 0 }}>
                       {e.exam_date && (
@@ -155,19 +157,19 @@
           )}
 
           {/* Latest Results */}
-          <div style={{ background: "var(--card)", borderRadius: 12, padding: 16, marginBottom: 14, border: "1px solid var(--border)" }}>
+          <div style={{ background: dark ? "#1e293b" : "#ffffff", borderRadius: 12, padding: 16, marginBottom: 14, border: "1px solid var(--border)" }}>
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 10 }}>
-              <h2 style={{ fontSize: 15, fontWeight: 700, color: "var(--text)", margin: 0 }}>
+              <h2 style={{ fontSize: 15, fontWeight: 700, color: dark ? "#e2e8f0" : "#151515", margin: 0 }}>
                 🏆 {t("नवीनतम परिणाम", "Latest Results")}
               </h2>
             </div>
             <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
               {filtered.slice(0, 10).map((r, i) => (
                 <div key={i} style={{ display: "flex", justifyContent: "space-between", alignItems: "center",
-                  padding: "8px 10px", background: "var(--bg)", borderRadius: 8, border: "1px solid var(--border)" }}>
+                  padding: "8px 10px", dark ? "#0f172a" : "#f8fafc", borderRadius: 8, border: "1px solid var(--border)" }}>
                   <a href={`/exam/${r.exam_id}`} style={{ flex: 1, minWidth: 0, textDecoration: "none" }}>
                     <div style={{ fontSize: 13, fontWeight: 600, color: "#2563eb" }}>{r.exam_name}</div>
-                    <div style={{ fontSize: 11, color: "var(--text-secondary)" }}>🏆 Result Declared</div>
+                    <div style={{ fontSize: 11, color: dark ? "#94a3b8" : "#717171" }}>🏆 Result Declared</div>
                   </a>
                   <div style={{ display: "flex", gap: 4, flexShrink: 0 }}>
                     <button onClick={() => toggleWatchlist(r.exam_name, r.exam_id)}
@@ -183,17 +185,17 @@
           </div>
 
           {/* Admit Cards */}
-          <div style={{ background: "var(--card)", borderRadius: 12, padding: 16, marginBottom: 14, border: "1px solid var(--border)" }}>
-            <h2 style={{ fontSize: 15, fontWeight: 700, color: "var(--text)", margin: "0 0 10px" }}>
+          <div style={{ background: dark ? "#1e293b" : "#ffffff", borderRadius: 12, padding: 16, marginBottom: 14, border: "1px solid var(--border)" }}>
+            <h2 style={{ fontSize: 15, fontWeight: 700, color: dark ? "#e2e8f0" : "#151515", margin: "0 0 10px" }}>
               🎫 {t("प्रवेश पत्र", "Admit Cards")}
             </h2>
             <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
               {admitCards.slice(0, 10).map((r, i) => (
                 <div key={i} style={{ display: "flex", justifyContent: "space-between", alignItems: "center",
-                  padding: "8px 10px", background: "var(--bg)", borderRadius: 8, border: "1px solid var(--border)" }}>
+                  padding: "8px 10px", dark ? "#0f172a" : "#f8fafc", borderRadius: 8, border: "1px solid var(--border)" }}>
                   <a href={`/exam/${r.exam_id}`} style={{ flex: 1, minWidth: 0, textDecoration: "none" }}>
                     <div style={{ fontSize: 13, fontWeight: 600, color: "#ea580c" }}>{r.exam_name}</div>
-                    <div style={{ fontSize: 11, color: "var(--text-secondary)" }}>🎫 Admit Card Released</div>
+                    <div style={{ fontSize: 11, color: dark ? "#94a3b8" : "#717171" }}>🎫 Admit Card Released</div>
                   </a>
                   <button onClick={() => shareWhatsApp(`🎫 ${r.exam_name} - Admit Card Released!`, `https://exam-platform-beta.vercel.app/exam/${r.exam_id}`)}
                     style={{ padding: "4px 8px", background: "#25D366", color: "#fff", border: "none", borderRadius: 4, cursor: "pointer", fontSize: 11 }}>📱</button>
@@ -203,8 +205,8 @@
           </div>
 
           {/* Categories */}
-          <div style={{ background: "var(--card)", borderRadius: 12, padding: 16, marginBottom: 14, border: "1px solid var(--border)" }}>
-            <h2 style={{ fontSize: 15, fontWeight: 700, color: "var(--text)", margin: "0 0 10px" }}>
+          <div style={{ background: dark ? "#1e293b" : "#ffffff", borderRadius: 12, padding: 16, marginBottom: 14, border: "1px solid var(--border)" }}>
+            <h2 style={{ fontSize: 15, fontWeight: 700, color: dark ? "#e2e8f0" : "#151515", margin: "0 0 10px" }}>
               🏷️ {t("श्रेणियां", "Browse by Category")}
             </h2>
             <div style={{ display: "flex", flexWrap: "wrap", gap: 6 }}>
@@ -221,8 +223,8 @@
 
           {/* Watchlist Section */}
           {watchlist.length > 0 && (
-            <div style={{ background: "var(--card)", borderRadius: 12, padding: 16, marginBottom: 14, border: "1px solid var(--border)" }}>
-              <h2 style={{ fontSize: 15, fontWeight: 700, color: "var(--text)", margin: "0 0 10px" }}>
+            <div style={{ background: dark ? "#1e293b" : "#ffffff", borderRadius: 12, padding: 16, marginBottom: 14, border: "1px solid var(--border)" }}>
+              <h2 style={{ fontSize: 15, fontWeight: 700, color: dark ? "#e2e8f0" : "#151515", margin: "0 0 10px" }}>
                 🔔 {t("आपकी सूची", "Your Watchlist")}
               </h2>
               <div style={{ display: "flex", flexWrap: "wrap", gap: 6 }}>
@@ -237,7 +239,7 @@
           )}
 
           {/* Footer */}
-          <div style={{ textAlign: "center", padding: "20px 0", fontSize: 11, color: "var(--text-secondary)" }}>
+          <div style={{ textAlign: "center", padding: "20px 0", fontSize: 11, color: dark ? "#94a3b8" : "#717171" }}>
             <p>⚡ SarkariSetu India • {t("सरकारी निकाय से संबद्ध नहीं", "Not affiliated with any government body")}</p>
             <p style={{ marginTop: 4 }}>
               <a href="/sitemap.xml" style={{ color: "#2563eb", textDecoration: "none", margin: "0 6px" }}>Sitemap</a>
