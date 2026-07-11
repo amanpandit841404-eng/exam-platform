@@ -4,48 +4,85 @@
 
     const ADMIN_PASSWORD = "sarkari123";
 
+    const COLORS = {
+      primary: "#1e40af", blue: "#2563eb", green: "#16a34a", orange: "#ea580c",
+      purple: "#7c3aed", red: "#dc2626", teal: "#0d9488", pink: "#db2777"
+    };
+
+    const TAB_STYLES = {
+      dashboard: { icon: "📊", color: "#1e40af", label: "Dashboard" },
+      results: { icon: "🏆", color: "#16a34a", label: "Results" },
+      admits: { icon: "🎫", color: "#ea580c", label: "Admit Cards" },
+      upcoming: { icon: "📅", color: "#7c3aed", label: "Upcoming" },
+      updates: { icon: "🔄", color: "#dc2626", label: "Updates" },
+      generator: { icon: "⚡", color: "#0d9488", label: "Generator" }
+    };
+
+    const styles = {
+      page: { minHeight: "100vh", background: "#f0f4f8", fontFamily: "'Segoe UI',Arial,sans-serif" },
+      header: { background: "linear-gradient(135deg, #1e3a5f, #2563eb)", padding: "16px 20px", color: "#fff" },
+      headerTitle: { fontSize: 22, fontWeight: 700, margin: 0, display: "flex", alignItems: "center", gap: 8 },
+      headerSub: { fontSize: 12, opacity: 0.8, marginTop: 2 },
+      container: { maxWidth: 960, margin: "0 auto", padding: "12px 12px 80px" },
+      tabBar: { display: "flex", gap: 6, flexWrap: "wrap", margin: "-8px 0 16px" },
+      tabBtn: (active, color) => ({
+        padding: "10px 16px", borderRadius: 10, border: "none", fontSize: 13, fontWeight: active ? 600 : 400,
+        cursor: "pointer", background: active ? color : "#fff", color: active ? "#fff" : "#444",
+        boxShadow: "0 1px 3px rgba(0,0,0,0.08)", display: "flex", alignItems: "center", gap: 5,
+        flex: window?.innerWidth < 500 ? "1 1 auto" : "none",
+        transition: "all 0.2s", WebkitTapHighlightColor: "transparent"
+      }),
+      card: { background: "#fff", borderRadius: 12, padding: 16, boxShadow: "0 1px 4px rgba(0,0,0,0.06)", marginBottom: 12 },
+      statCard: (color) => ({
+        background: "#fff", borderRadius: 14, padding: 18, boxShadow: "0 2px 8px rgba(0,0,0,0.06)",
+        textAlign: "center", borderTop: `4px solid ${color}`
+      }),
+      input: { padding: "10px 12px", fontSize: 14, border: "1px solid #d1d5db", borderRadius: 8, width: "100%",
+        boxSizing: "border-box", outline: "none", transition: "border 0.2s", background: "#fff" },
+      btn: (color, small) => ({
+        padding: small ? "6px 12px" : "10px 18px", background: color, color: "#fff", border: "none",
+        borderRadius: 8, cursor: "pointer", fontSize: small ? 12 : 14, fontWeight: 600,
+        transition: "all 0.2s", opacity: 1, display: "inline-flex", alignItems: "center", gap: 4
+      }),
+      listItem: { padding: "10px 12px", borderBottom: "1px solid #f0f0f0", display: "flex",
+        justifyContent: "space-between", alignItems: "center", gap: 8 },
+      badge: (bg) => ({ fontSize: 10, padding: "2px 8px", borderRadius: 10, background: bg, color: "#fff", fontWeight: 600 }),
+      toast: (type) => ({
+        position: "fixed", bottom: 20, right: 20, padding: "12px 20px", borderRadius: 10, zIndex: 9999,
+        background: type === "success" ? "#16a34a" : "#dc2626", color: "#fff", fontSize: 13, fontWeight: 500,
+        boxShadow: "0 4px 12px rgba(0,0,0,0.15)", animation: "slideUp 0.3s ease"
+      })
+    };
+
     export default function AdminPage() {
-      const [authenticated, setAuthenticated] = useState(false);
-      const [password, setPassword] = useState("");
-      const [error, setError] = useState("");
+      const [auth, setAuth] = useState(false);
+      const [pw, setPw] = useState("");
+      const [err, setErr] = useState("");
       const [tab, setTab] = useState("dashboard");
+      const [stats, setStats] = useState({ exams: 0, results: 0, admits: 0, upcoming: 0, updates: 0 });
+      const [toast, setToast] = useState(null);
+
+      const showToast = (msg, type = "success") => { setToast({ msg, type }); setTimeout(() => setToast(null), 3000); };
+
+      // Lists
+      const [results, setResults] = useState([]);
+      const [admits, setAdmits] = useState([]);
+      const [upcomings, setUpcomings] = useState([]);
+      const [updates, setUpdates] = useState([]);
+      const [logs, setLogs] = useState([]);
       const [loading, setLoading] = useState(false);
-      const [log, setLog] = useState([]);
-      const [stats, setStats] = useState({ exams: 0, results: 0, admitCards: 0, upcomingExams: 0, updates: 0 });
+      const [genCount, setGenCount] = useState(1000);
+      const [genning, setGenning] = useState(false);
 
-      // Form states
-      const [examCount, setExamCount] = useState(1000);
-      const [generating, setGenerating] = useState(false);
+      const addLog = (m) => setLogs(p => [m, ...p].slice(0, 30));
 
-      // CRUD states for each table
-      const [resultsList, setResultsList] = useState([]);
-      const [admitList, setAdmitList] = useState([]);
-      const [upcomingList, setUpcomingList] = useState([]);
-      const [updatesList, setUpdatesList] = useState([]);
-
-      // Form for adding new entries
-      const [newResult, setNewResult] = useState({ exam_name: "", exam_id: "", result_title: "Result Declared", status: "declared" });
-      const [newAdmit, setNewAdmit] = useState({ exam_name: "", exam_id: "", title: "Admit Card Released", status: "released" });
-      const [newUpcoming, setNewUpcoming] = useState({ exam_name: "", exam_id: "", exam_date: "", status: "upcoming" });
-      const [newUpdate, setNewUpdate] = useState({ exam_id: "", update_type: "general", title: "", description: "", official_link: "" });
-
-      // Editing states
-      const [editResult, setEditResult] = useState(null);
-      const [editAdmit, setEditAdmit] = useState(null);
-      const [editUpcoming, setEditUpcoming] = useState(null);
-      const [editUpdate, setEditUpdate] = useState(null);
-
-      const addLog = (m) => setLog(prev => [m, ...prev].slice(0, 50));
-
+      // Auth
       const handleLogin = () => {
-        if (password === ADMIN_PASSWORD) {
-          setAuthenticated(true);
-          fetchStats();
-        } else {
-          setError("Wrong password!");
-        }
+        if (pw === ADMIN_PASSWORD) { setAuth(true); fetchStats(); }
+        else setErr("❌ Wrong password!");
       };
 
+      // Fetch stats
       const fetchStats = async () => {
         try {
           const [ex, re, ad, up, ud] = await Promise.all([
@@ -55,420 +92,364 @@
             supabase.from("upcoming_exams").select("id", { count: "exact", head: true }),
             supabase.from("updates").select("id", { count: "exact", head: true }),
           ]);
-          setStats({
-            exams: ex.count || 0,
-            results: re.count || 0,
-            admitCards: ad.count || 0,
-            upcomingExams: up.count || 0,
-            updates: ud.count || 0,
-          });
-        } catch (e) {
-          addLog("Error fetching stats: " + e.message);
-        }
+          setStats({ exams: ex.count||0, results: re.count||0, admits: ad.count||0, upcoming: up.count||0, updates: ud.count||0 });
+        } catch(e) { showToast("Error fetching stats", "error"); }
       };
 
-      // Fetch lists
-      const fetchResults = async () => {
+      // CRUD helpers
+      const fetchTable = async (table, setter) => {
         setLoading(true);
         try {
-          const { data } = await supabase.from("results").select("*").order("created_at", { ascending: false }).limit(50);
-          setResultsList(data || []);
-        } catch (e) { addLog("Error: " + e.message); }
+          const { data } = await supabase.from(table).select("*").order("created_at", { ascending: false }).limit(50);
+          setter(data || []);
+        } catch(e) { showToast("Error fetching data", "error"); }
         setLoading(false);
       };
 
-      const fetchAdmits = async () => {
-        setLoading(true);
+      const addRow = async (table, data, reset, refetch) => {
         try {
-          const { data } = await supabase.from("admit_cards").select("*").order("created_at", { ascending: false }).limit(50);
-          setAdmitList(data || []);
-        } catch (e) { addLog("Error: " + e.message); }
-        setLoading(false);
-      };
-
-      const fetchUpcoming = async () => {
-        setLoading(true);
-        try {
-          const { data } = await supabase.from("upcoming_exams").select("*").order("created_at", { ascending: false }).limit(50);
-          setUpcomingList(data || []);
-        } catch (e) { addLog("Error: " + e.message); }
-        setLoading(false);
-      };
-
-      const fetchUpdates = async () => {
-        setLoading(true);
-        try {
-          const { data } = await supabase.from("updates").select("*").order("created_at", { ascending: false }).limit(50);
-          setUpdatesList(data || []);
-        } catch (e) { addLog("Error: " + e.message); }
-        setLoading(false);
-      };
-
-      // Add entries
-      const addResult = async () => {
-        if (!newResult.exam_name) return addLog("Exam name required!");
-        try {
-          const { error } = await supabase.from("results").insert([newResult]);
+          const { error } = await supabase.from(table).insert([data]);
           if (error) throw error;
-          addLog("Result added!");
-          setNewResult({ exam_name: "", exam_id: "", result_title: "Result Declared", status: "declared" });
-          fetchResults();
-          fetchStats();
-        } catch (e) { addLog("Error: " + e.message); }
+          showToast("✅ Added successfully!");
+          reset();
+          refetch();
+        } catch(e) { showToast(e.message, "error"); }
       };
 
-      const addAdmit = async () => {
-        if (!newAdmit.exam_name) return addLog("Exam name required!");
+      const deleteRow = async (table, id, refetch, statsUpdate) => {
         try {
-          const { error } = await supabase.from("admit_cards").insert([newAdmit]);
-          if (error) throw error;
-          addLog("Admit card added!");
-          setNewAdmit({ exam_name: "", exam_id: "", title: "Admit Card Released", status: "released" });
-          fetchAdmits();
-          fetchStats();
-        } catch (e) { addLog("Error: " + e.message); }
+          await supabase.from(table).delete().eq("id", id);
+          showToast("🗑️ Deleted!");
+          refetch();
+          if (statsUpdate) fetchStats();
+        } catch(e) { showToast(e.message, "error"); }
       };
 
-      const addUpcoming = async () => {
-        if (!newUpcoming.exam_name) return addLog("Exam name required!");
-        try {
-          const { error } = await supabase.from("upcoming_exams").insert([newUpcoming]);
-          if (error) throw error;
-          addLog("Upcoming exam added!");
-          setNewUpcoming({ exam_name: "", exam_id: "", exam_date: "", status: "upcoming" });
-          fetchUpcoming();
-          fetchStats();
-        } catch (e) { addLog("Error: " + e.message); }
-      };
+      // Form states
+      const [fResult, setFResult] = useState({ exam_name: "", exam_id: "", result_title: "Result Declared", status: "declared" });
+      const [fAdmit, setFAdmit] = useState({ exam_name: "", exam_id: "", title: "Admit Card Released", status: "released" });
+      const [fUpcoming, setFUpcoming] = useState({ exam_name: "", exam_id: "", exam_date: "", status: "upcoming" });
+      const [fUpdate, setFUpdate] = useState({ exam_id: "", update_type: "general", title: "", description: "", official_link: "" });
+      const [showForm, setShowForm] = useState(null);
 
-      const addUpdate = async () => {
-        if (!newUpdate.title) return addLog("Title required!");
-        try {
-          const { error } = await supabase.from("updates").insert([newUpdate]);
-          if (error) throw error;
-          addLog("Update added!");
-          setNewUpdate({ exam_id: "", update_type: "general", title: "", description: "", official_link: "" });
-          fetchUpdates();
-          fetchStats();
-        } catch (e) { addLog("Error: " + e.message); }
-      };
+      const resetResult = () => setFResult({ exam_name: "", exam_id: "", result_title: "Result Declared", status: "declared" });
+      const resetAdmit = () => setFAdmit({ exam_name: "", exam_id: "", title: "Admit Card Released", status: "released" });
+      const resetUpcoming = () => setFUpcoming({ exam_name: "", exam_id: "", exam_date: "", status: "upcoming" });
+      const resetUpdate = () => setFUpdate({ exam_id: "", update_type: "general", title: "", description: "", official_link: "" });
 
-      // Delete entries
-      const deleteResult = async (id) => {
-        try {
-          await supabase.from("results").delete().eq("id", id);
-          addLog("Result deleted");
-          fetchResults();
-          fetchStats();
-        } catch (e) { addLog("Error: " + e.message); }
-      };
-
-      const deleteAdmit = async (id) => {
-        try {
-          await supabase.from("admit_cards").delete().eq("id", id);
-          addLog("Admit card deleted");
-          fetchAdmits();
-          fetchStats();
-        } catch (e) { addLog("Error: " + e.message); }
-      };
-
-      const deleteUpcoming = async (id) => {
-        try {
-          await supabase.from("upcoming_exams").delete().eq("id", id);
-          addLog("Upcoming exam deleted");
-          fetchUpcoming();
-          fetchStats();
-        } catch (e) { addLog("Error: " + e.message); }
-      };
-
-      const deleteUpdate = async (id) => {
-        try {
-          await supabase.from("updates").delete().eq("id", id);
-          addLog("Update deleted");
-          fetchUpdates();
-          fetchStats();
-        } catch (e) { addLog("Error: " + e.message); }
-      };
-
-      // Generate exams
+      // Generator
       const generateExams = async () => {
-        setGenerating(true);
-        addLog("Generating " + examCount + " exams...");
+        setGenning(true);
+        addLog("🚀 Generating " + genCount + " exams...");
         try {
           const cats = {
-            "SSC Exams": ["SSC CGL", "SSC CHSL", "SSC GD Constable", "SSC MTS", "SSC CPO", "SSC Stenographer", "SSC JE", "SSC Selection Post"],
-            "UPSC Civil Services": ["UPSC CSE", "UPSC CAPF", "UPSC EPFO", "UPSC CMS", "UPSC IFS"],
-            "Banking and Finance": ["IBPS PO", "IBPS Clerk", "IBPS RRB", "SBI PO", "SBI Clerk", "RBI Grade B", "NABARD"],
-            "Railway Exams": ["RRB NTPC", "RRB JE", "RRB ALP", "RRB Group D", "RRB Paramedical"],
-            "Engineering Entrance": ["JEE Main", "JEE Advanced", "BITSAT", "COMEDK", "MET", "VITEEE", "SRMJEEE"],
-            "Medical Entrance": ["NEET UG", "NEET PG", "AIIMS", "FMGE", "INI CET"],
-            "Law Entrance": ["CLAT", "AILET", "SLAT", "MH CET Law", "LSAT India"],
-            "Defence Exams": ["NDA", "CDS", "AFCAT", "INET", "ACC", "MNS"],
-            "Teaching Exams": ["CTET", "UPTET", "REET", "DSSSB", "KVS", "NVS", "HTET"],
-            "State PSC": ["UPPSC", "BPSC", "MPPSC", "RPSC", "UKPSC", "CGPSC", "HPPSC", "JPSC"],
-            "Police Exams": ["UP Police", "Bihar Police", "MP Police", "Delhi Police", "CRPF", "BSF", "CISF"],
-            "Management Entrance": ["CAT", "XAT", "IIFT", "SNAP", "NMAT", "MAT", "CMAT", "ATMA"],
-            "Insurance Exams": ["LIC ADO", "LIC AAO", "NIACL", "OICL", "UIIC"],
-            "Other Govt Exams": ["UGC NET", "CSIR NET", "ICAR", "GATE", "GPAT", "FSSAI"]
+            "SSC Exams": ["SSC CGL","SSC CHSL","SSC GD Constable","SSC MTS","SSC CPO","SSC Stenographer","SSC JE","SSC Selection Post"],
+            "UPSC Civil Services": ["UPSC CSE","UPSC CAPF","UPSC EPFO","UPSC CMS","UPSC IFS"],
+            "Banking": ["IBPS PO","IBPS Clerk","IBPS RRB","SBI PO","SBI Clerk","RBI Grade B","NABARD"],
+            "Railway": ["RRB NTPC","RRB JE","RRB ALP","RRB Group D","RRB Paramedical"],
+            "Engineering": ["JEE Main","JEE Advanced","BITSAT","COMEDK","MET","VITEEE","SRMJEEE"],
+            "Medical": ["NEET UG","NEET PG","AIIMS","FMGE","INI CET"],
+            "Law": ["CLAT","AILET","SLAT","MH CET Law","LSAT India"],
+            "Defence": ["NDA","CDS","AFCAT","INET","ACC","MNS"],
+            "Teaching": ["CTET","UPTET","REET","DSSSB","KVS","NVS","HTET"],
+            "State PSC": ["UPPSC","BPSC","MPPSC","RPSC","UKPSC","CGPSC","HPPSC","JPSC"],
+            "Police": ["UP Police","Bihar Police","MP Police","Delhi Police","CRPF","BSF","CISF"],
+            "Management": ["CAT","XAT","IIFT","SNAP","NMAT","MAT","CMAT","ATMA"],
+            "Insurance": ["LIC ADO","LIC AAO","NIACL","OICL","UIIC"],
+            "Other": ["UGC NET","CSIR NET","ICAR","GATE","GPAT","FSSAI"]
           };
-
-          const batchSize = 500;
+          const states = ["Uttar Pradesh","Bihar","Madhya Pradesh","Rajasthan","Maharashtra","Delhi","West Bengal","Tamil Nadu","Karnataka","Gujarat","Punjab","Haryana","Odisha","Telangana","Andhra Pradesh"];
+          const posts = ["Tier 1","Tier 2","Pre","Mains","Phase 1","Phase 2","Prelims","Final"];
+          const years = [2024,2025,2026];
           let inserted = 0;
 
-          for (let b = 0; b < Math.ceil(examCount / batchSize); b++) {
+          for (let b = 0; b < Math.ceil(genCount / 200); b++) {
             const batch = [];
-            for (let i = 0; i < batchSize && inserted < examCount; i++) {
+            for (let i = 0; i < 200 && inserted < genCount; i++) {
               const catNames = Object.keys(cats);
-              const cat = catNames[Math.floor(Math.random() * catNames.length)];
-              const examNames = cats[cat];
-              const base = examNames[Math.floor(Math.random() * examNames.length)];
-              const year = [2024, 2025, 2026][Math.floor(Math.random() * 3)];
-              const post = ["Tier 1", "Tier 2", "Pre", "Mains", "Phase 1", "Phase 2", "Prelims", "Final"][Math.floor(Math.random() * 8)];
-              const states = ["Uttar Pradesh", "Bihar", "Madhya Pradesh", "Rajasthan", "Maharashtra", "Delhi", "West Bengal", "Tamil Nadu", "Karnataka", "Gujarat", "Punjab", "Haryana", "Odisha", "Telangana", "Andhra Pradesh"];
-
-              const name = `${base} ${post} ${year}`;
-              const statesOrNull = Math.random() > 0.6 ? states[Math.floor(Math.random() * states.length)] : null;
-              const fullName = `${name} Examination${Math.random() > 0.5 ? " - National Level" : ""}`;
-              const syllabus = ["General Studies", "Quantitative Aptitude", "English Language", "Logical Reasoning", "General Awareness", "Subject Knowledge", "Technical Skills"].slice(0, 3 + Math.floor(Math.random() * 4)).join(", ");
-
+              const cat = catNames[Math.floor(Math.random()*catNames.length)];
+              const base = cats[cat][Math.floor(Math.random()*cats[cat].length)];
+              const name = `${base} ${posts[Math.floor(Math.random()*posts.length)]} ${years[Math.floor(Math.random()*years.length)]}`;
               batch.push({
-                name,
-                full_name: fullName,
-                category: cat,
-                state: statesOrNull,
-                description: "This is a national-level competitive examination conducted for recruitment and admission purposes. " + syllabus + " are key topics.",
-                is_active: true,
+                name, category: cat,
+                state: Math.random() > 0.6 ? states[Math.floor(Math.random()*states.length)] : null,
+                full_name: name + " Examination",
+                description: "National-level competitive examination. Key topics include General Studies, Quantitative Aptitude, English, Reasoning.",
+                is_active: true
               });
-
-              if (batch.length >= batchSize || inserted + batch.length >= examCount) {
-                const { error } = await supabase.from("exams").insert(batch);
-                if (error) {
-                  addLog("Batch error: " + error.message);
-                } else {
-                  inserted += batch.length;
-                  addLog("Inserted " + inserted + " exams...");
-                  await new Promise(r => setTimeout(r, 200));
-                }
-                batch.length = 0;
-              }
             }
+            const { error } = await supabase.from("exams").insert(batch);
+            if (error) addLog("❌ " + error.message);
+            else { inserted += batch.length; addLog("✅ " + inserted + " exams inserted..."); }
+            await new Promise(r => setTimeout(r, 300));
           }
-          addLog("Done! Generated " + inserted + " exams!");
+          addLog("🎉 Done! " + inserted + " exams generated!");
           fetchStats();
-        } catch (e) {
-          addLog("Error: " + e.message);
-        }
-        setGenerating(false);
+          showToast("✅ " + inserted + " exams generated!");
+        } catch(e) { addLog("❌ " + e.message); }
+        setGenning(false);
       };
 
-      if (!authenticated) {
+      // Login screen
+      if (!auth) {
         return (
-          <div style={{ fontFamily: "Arial,sans-serif", maxWidth: 400, margin: "100px auto", padding: 20, textAlign: "center" }}>
-            <h1 style={{ color: "#2563eb", fontSize: 24 }}>🔐 Admin Login</h1>
-            <input type="password" value={password} onChange={e => setPassword(e.target.value)}
-              onKeyDown={e => e.key === "Enter" && handleLogin()}
-              style={{ width: "100%", padding: 12, fontSize: 16, border: "1px solid #ccc", borderRadius: 8, margin: "12px 0" }}
-              placeholder="Enter admin password" />
-            <button onClick={handleLogin}
-              style={{ width: "100%", padding: 12, background: "#2563eb", color: "#fff", border: "none", borderRadius: 8, fontSize: 16, cursor: "pointer" }}>
-              Sign In
-            </button>
-            {error && <p style={{ color: "red", marginTop: 8 }}>{error}</p>}
+          <div style={{minHeight:"100vh",background:"linear-gradient(135deg,#0f172a,#1e3a5f)",display:"flex",alignItems:"center",justifyContent:"center",padding:20,fontFamily:"'Segoe UI',Arial,sans-serif"}}>
+            <div style={{background:"#fff",borderRadius:20,padding:"32px 24px",width:"100%",maxWidth:380,boxShadow:"0 20px 60px rgba(0,0,0,0.3)"}}>
+              <div style={{textAlign:"center",marginBottom:20}}>
+                <div style={{fontSize:40,marginBottom:8}}>🔐</div>
+                <h1 style={{fontSize:22,color:"#1e3a5f",margin:0}}>SarkariSetu Admin</h1>
+                <p style={{fontSize:12,color:"#888",margin:"4px 0 0"}}>Enter password to continue</p>
+              </div>
+              <input type="password" value={pw} onChange={e=>setPw(e.target.value)}
+                onKeyDown={e=>e.key==="Enter"&&handleLogin()}
+                placeholder="Enter admin password"
+                style={{width:"100%",padding:"12px 14px",fontSize:15,border:"2px solid #e5e7eb",borderRadius:10,marginBottom:12,outline:"none",boxSizing:"border-box",transition:"border 0.2s"}}
+                onFocus={e=>e.target.style.borderColor="#2563eb"} onBlur={e=>e.target.style.borderColor="#e5e7eb"} />
+              <button onClick={handleLogin}
+                style={{width:"100%",padding:"12px",background:"linear-gradient(135deg,#2563eb,#1e40af)",color:"#fff",border:"none",borderRadius:10,fontSize:16,fontWeight:600,cursor:"pointer",boxShadow:"0 4px 12px rgba(37,99,235,0.3)"}}>
+                Sign In 🔓
+              </button>
+              {err && <p style={{color:"#dc2626",textAlign:"center",marginTop:12,fontSize:13}}>{err}</p>}
+            </div>
           </div>
         );
       }
 
-      const tabs = ["dashboard", "results", "admit-cards", "upcoming", "updates", "generator"];
-      const tabLabels = { dashboard: "📊 Dashboard", results: "📋 Results", "admit-cards": "🎫 Admit Cards", upcoming: "📅 Upcoming", updates: "🔄 Updates", generator: "⚙️ Generator" };
+      const StatCard = ({ icon, label, count, color }) => (
+        <div style={styles.statCard(color)}>
+          <div style={{fontSize:32,marginBottom:4}}>{icon}</div>
+          <div style={{fontSize:28,fontWeight:700,color}}>{count.toLocaleString()}</div>
+          <div style={{fontSize:12,color:"#666",fontWeight:500}}>{label}</div>
+        </div>
+      );
+
+      const AddForm = ({ title, fields, onAdd, onCancel }) => (
+        <div style={{...styles.card, background:"#f8fafc", border:"1px solid #e2e8f0", marginBottom:12}}>
+          <h3 style={{margin:"0 0 10px",fontSize:15,color:"#1e3a5f"}}>✏️ {title}</h3>
+          <div style={{display:"flex",flexDirection:"column",gap:6}}>
+            {fields.map((f, i) => (
+              f.type === "select" ? (
+                <select key={i} value={f.value} onChange={e=>f.onChange(e.target.value)} style={styles.input}>
+                  {f.options.map(o => <option key={o.value} value={o.value}>{o.label}</option>)}
+                </select>
+              ) : (
+                <input key={i} placeholder={f.placeholder} value={f.value}
+                  onChange={e=>f.onChange(e.target.value)} style={styles.input} type={f.type||"text"} />
+              )
+            ))}
+            <div style={{display:"flex",gap:6}}>
+              <button onClick={onAdd} style={styles.btn("#2563eb")}>✅ Add</button>
+              <button onClick={onCancel} style={{...styles.btn("#9ca3af")}}>Cancel</button>
+            </div>
+          </div>
+        </div>
+      );
+
+      const tabKeys = Object.keys(TAB_STYLES);
 
       return (
-        <div style={{ fontFamily: "Arial,sans-serif", maxWidth: 900, margin: "0 auto", padding: 12 }}>
-          <h1 style={{ fontSize: 20, color: "#2563eb", margin: "4px 0" }}>⚙️ SarkariSetu Admin</h1>
-          <p style={{ fontSize: 12, color: "#666", margin: "2px 0 12px" }}>Manage your exam portal data</p>
+        <div style={styles.page}>
+          {toast && <div style={styles.toast(toast.type)}>{toast.msg}</div>}
 
-          {/* Tabs */}
-          <div style={{ display: "flex", flexWrap: "wrap", gap: 6, marginBottom: 16 }}>
-            {tabs.map(t => (
-              <button key={t} onClick={() => { setTab(t); if (t !== "dashboard" && t !== "generator") eval(`fetch${t.charAt(0).toUpperCase() + t.slice(1).replace("-","").replace("cards","Admits").replace("upcoming","Upcoming").replace("updates","Updates")}()`); }}
-                style={{ padding: "8px 14px", borderRadius: 8, border: "none", fontSize: 13, cursor: "pointer",
-                  background: tab === t ? "#2563eb" : "#e5e7eb", color: tab === t ? "#fff" : "#333", fontWeight: tab === t ? 600 : 400 }}>
-                {tabLabels[t]}
-              </button>
-            ))}
+          {/* Header */}
+          <div style={styles.header}>
+            <div style={{maxWidth:960,margin:"0 auto"}}>
+              <div style={styles.headerTitle}>
+                ⚙️ SarkariSetu Admin
+              </div>
+              <div style={styles.headerSub}>Manage your exam portal — Add, Edit, Delete data</div>
+            </div>
           </div>
 
-          {/* Dashboard */}
-          {tab === "dashboard" && (
-            <div>
-              <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(140px, 1fr))", gap: 10, marginBottom: 16 }}>
-                {[
-                  { label: "Total Exams", count: stats.exams, color: "#2563eb", icon: "📝" },
-                  { label: "Results", count: stats.results, color: "#16a34a", icon: "🏆" },
-                  { label: "Admit Cards", count: stats.admitCards, color: "#d97706", icon: "🎫" },
-                  { label: "Upcoming Exams", count: stats.upcomingExams, color: "#7c3aed", icon: "📅" },
-                  { label: "Updates", count: stats.updates, color: "#dc2626", icon: "🔄" },
-                ].map(s => (
-                  <div key={s.label} style={{ background: "#fff", borderRadius: 12, padding: 16, boxShadow: "0 2px 8px rgba(0,0,0,0.08)", textAlign: "center", borderTop: `4px solid ${s.color}` }}>
-                    <div style={{ fontSize: 28 }}>{s.icon}</div>
-                    <div style={{ fontSize: 26, fontWeight: 700, color: s.color }}>{s.count.toLocaleString()}</div>
-                    <div style={{ fontSize: 12, color: "#666" }}>{s.label}</div>
+          <div style={styles.container}>
+            {/* Tab Bar */}
+            <div style={styles.tabBar}>
+              {tabKeys.map(k => (
+                <button key={k} onClick={() => { setTab(k); setShowForm(null);
+                  if (k==="results") fetchTable("results",setResults);
+                  if (k==="admits") fetchTable("admit_cards",setAdmits);
+                  if (k==="upcoming") fetchTable("upcoming_exams",setUpcomings);
+                  if (k==="updates") fetchTable("updates",setUpdates);
+                  if (k==="dashboard") fetchStats();
+                }}
+                  style={styles.tabBtn(tab===k, TAB_STYLES[k].color)}>
+                  <span>{TAB_STYLES[k].icon}</span>
+                  <span>{TAB_STYLES[k].label}</span>
+                </button>
+              ))}
+            </div>
+
+            {/* Dashboard */}
+            {tab === "dashboard" && (
+              <div>
+                <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fill,minmax(150px,1fr))",gap:10,marginBottom:16}}>
+                  <StatCard icon="📝" label="Total Exams" count={stats.exams} color={COLORS.blue} />
+                  <StatCard icon="🏆" label="Results" count={stats.results} color={COLORS.green} />
+                  <StatCard icon="🎫" label="Admit Cards" count={stats.admits} color={COLORS.orange} />
+                  <StatCard icon="📅" label="Upcoming" count={stats.upcoming} color={COLORS.purple} />
+                  <StatCard icon="🔄" label="Updates" count={stats.updates} color={COLORS.red} />
+                </div>
+                <div style={{...styles.card, display:"flex", gap:10, flexWrap:"wrap", alignItems:"center", justifyContent:"center"}}>
+                  <button onClick={fetchStats} style={styles.btn("#2563eb")}>🔄 Refresh Stats</button>
+                  <button onClick={()=>window.open("/","_blank")} style={styles.btn("#16a34a")}>🏠 View Site</button>
+                  <span style={{fontSize:12,color:"#888"}}>Auto-update: every 12h ⏰</span>
+                </div>
+              </div>
+            )}
+
+            {/* Results */}
+            {tab === "results" && (
+              <div>
+                <div style={{display:"flex",gap:8,marginBottom:10,flexWrap:"wrap"}}>
+                  <button onClick={()=>setShowForm(showForm==="result"?null:"result")} style={styles.btn(showForm==="result"?"#6b7280":"#16a34a")}>
+                    {showForm==="result"?"✕ Close":"➕ Add Result"}
+                  </button>
+                  <button onClick={()=>fetchTable("results",setResults)} style={styles.btn("#2563eb",true)}>🔄</button>
+                </div>
+                {showForm==="result" && (
+                  <AddForm title="Add New Result"
+                    fields={[
+                      {placeholder:"Exam Name *", value:fResult.exam_name, onChange:v=>setFResult(p=>({...p,exam_name:v}))},
+                      {placeholder:"Exam ID (optional)", value:fResult.exam_id, onChange:v=>setFResult(p=>({...p,exam_id:v}))},
+                    ]}
+                    onAdd={()=>addRow("results",fResult,resetResult,()=>fetchTable("results",setResults))}
+                    onCancel={()=>setShowForm(null)} />
+                )}
+                {results.length === 0 && !loading && <div style={{...styles.card,textAlign:"center",padding:40,color:"#999"}}>No results yet. Click "Add Result" to add one!</div>}
+                {results.map(r => (
+                  <div key={r.id} style={styles.listItem}>
+                    <div style={{flex:1,minWidth:0}}>
+                      <div style={{fontWeight:600,fontSize:14}}>{r.exam_name}</div>
+                      <div style={{fontSize:11,color:"#999"}}>ID: {r.id}</div>
+                    </div>
+                    <button onClick={()=>deleteRow("results",r.id,()=>fetchTable("results",setResults),true)}
+                      style={{...styles.btn("#dc2626",true),padding:"4px 10px"}}>🗑️</button>
                   </div>
                 ))}
               </div>
-              <button onClick={fetchStats} style={{ padding: "8px 16px", background: "#2563eb", color: "#fff", border: "none", borderRadius: 8, cursor: "pointer", fontSize: 13 }}>🔄 Refresh Stats</button>
-            </div>
-          )}
+            )}
 
-          {/* Results Management */}
-          {tab === "results" && (
-            <div>
-              <div style={{ background: "#f9fafb", padding: 12, borderRadius: 8, marginBottom: 12 }}>
-                <h3 style={{ margin: "0 0 8px", fontSize: 14 }}>➕ Add New Result</h3>
-                <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
-                  <input placeholder="Exam Name" value={newResult.exam_name} onChange={e => setNewResult({...newResult, exam_name: e.target.value})} style={inputStyle} />
-                  <input placeholder="Exam ID (optional)" value={newResult.exam_id} onChange={e => setNewResult({...newResult, exam_id: e.target.value})} style={inputStyle} />
-                  <button onClick={addResult} style={btnStyle}>Add Result</button>
+            {/* Admit Cards */}
+            {tab === "admits" && (
+              <div>
+                <div style={{display:"flex",gap:8,marginBottom:10,flexWrap:"wrap"}}>
+                  <button onClick={()=>setShowForm(showForm==="admit"?null:"admit")} style={styles.btn(showForm==="admit"?"#6b7280":"#ea580c")}>
+                    {showForm==="admit"?"✕ Close":"➕ Add Admit Card"}
+                  </button>
+                  <button onClick={()=>fetchTable("admit_cards",setAdmits)} style={styles.btn("#2563eb",true)}>🔄</button>
                 </div>
-              </div>
-              <button onClick={fetchResults} style={{ padding: "6px 12px", background: "#2563eb", color: "#fff", border: "none", borderRadius: 6, cursor: "pointer", fontSize: 12, marginBottom: 8 }}>🔄 Refresh</button>
-              {resultsList.map(r => (
-                <div key={r.id} style={{ padding: "8px 10px", borderBottom: "1px solid #eee", display: "flex", justifyContent: "space-between", alignItems: "center", fontSize: 13 }}>
-                  <div>
-                    <strong>{r.exam_name}</strong>
-                    <div style={{ fontSize: 11, color: "#666" }}>ID: {r.id}</div>
+                {showForm==="admit" && (
+                  <AddForm title="Add New Admit Card"
+                    fields={[
+                      {placeholder:"Exam Name *", value:fAdmit.exam_name, onChange:v=>setFAdmit(p=>({...p,exam_name:v}))},
+                      {placeholder:"Exam ID (optional)", value:fAdmit.exam_id, onChange:v=>setFAdmit(p=>({...p,exam_id:v}))},
+                    ]}
+                    onAdd={()=>addRow("admit_cards",fAdmit,resetAdmit,()=>fetchTable("admit_cards",setAdmits))}
+                    onCancel={()=>setShowForm(null)} />
+                )}
+                {admits.map(r => (
+                  <div key={r.id} style={styles.listItem}>
+                    <div style={{flex:1,minWidth:0}}>
+                      <div style={{fontWeight:600,fontSize:14}}>{r.exam_name}</div>
+                      <div style={{fontSize:11,color:"#999"}}>ID: {r.id}</div>
+                    </div>
+                    <button onClick={()=>deleteRow("admit_cards",r.id,()=>fetchTable("admit_cards",setAdmits),true)}
+                      style={{...styles.btn("#dc2626",true),padding:"4px 10px"}}>🗑️</button>
                   </div>
-                  <button onClick={() => deleteResult(r.id)} style={{ padding: "4px 10px", background: "#dc2626", color: "#fff", border: "none", borderRadius: 6, cursor: "pointer", fontSize: 11 }}>🗑️</button>
-                </div>
-              ))}
-              {resultsList.length === 0 && !loading && <p style={{ fontSize: 13, color: "#999" }}>No results found</p>}
-            </div>
-          )}
-
-          {/* Admit Cards Management */}
-          {tab === "admit-cards" && (
-            <div>
-              <div style={{ background: "#f9fafb", padding: 12, borderRadius: 8, marginBottom: 12 }}>
-                <h3 style={{ margin: "0 0 8px", fontSize: 14 }}>➕ Add New Admit Card</h3>
-                <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
-                  <input placeholder="Exam Name" value={newAdmit.exam_name} onChange={e => setNewAdmit({...newAdmit, exam_name: e.target.value})} style={inputStyle} />
-                  <input placeholder="Exam ID (optional)" value={newAdmit.exam_id} onChange={e => setNewAdmit({...newAdmit, exam_id: e.target.value})} style={inputStyle} />
-                  <button onClick={addAdmit} style={btnStyle}>Add Admit Card</button>
-                </div>
+                ))}
               </div>
-              <button onClick={fetchAdmits} style={{ padding: "6px 12px", background: "#2563eb", color: "#fff", border: "none", borderRadius: 6, cursor: "pointer", fontSize: 12, marginBottom: 8 }}>🔄 Refresh</button>
-              {admitList.map(r => (
-                <div key={r.id} style={{ padding: "8px 10px", borderBottom: "1px solid #eee", display: "flex", justifyContent: "space-between", alignItems: "center", fontSize: 13 }}>
-                  <div>
-                    <strong>{r.exam_name}</strong>
-                    <div style={{ fontSize: 11, color: "#666" }}>ID: {r.id}</div>
+            )}
+
+            {/* Upcoming */}
+            {tab === "upcoming" && (
+              <div>
+                <div style={{display:"flex",gap:8,marginBottom:10,flexWrap:"wrap"}}>
+                  <button onClick={()=>setShowForm(showForm==="upcoming"?null:"upcoming")} style={styles.btn(showForm==="upcoming"?"#6b7280":"#7c3aed")}>
+                    {showForm==="upcoming"?"✕ Close":"➕ Add Upcoming"}
+                  </button>
+                  <button onClick={()=>fetchTable("upcoming_exams",setUpcomings)} style={styles.btn("#2563eb",true)}>🔄</button>
+                </div>
+                {showForm==="upcoming" && (
+                  <AddForm title="Add Upcoming Exam"
+                    fields={[
+                      {placeholder:"Exam Name *", value:fUpcoming.exam_name, onChange:v=>setFUpcoming(p=>({...p,exam_name:v}))},
+                      {placeholder:"Exam ID (optional)", value:fUpcoming.exam_id, onChange:v=>setFUpcoming(p=>({...p,exam_id:v}))},
+                      {placeholder:"Exam Date (e.g. 2026-08-15)", value:fUpcoming.exam_date, onChange:v=>setFUpcoming(p=>({...p,exam_date:v}))},
+                    ]}
+                    onAdd={()=>addRow("upcoming_exams",fUpcoming,resetUpcoming,()=>fetchTable("upcoming_exams",setUpcomings))}
+                    onCancel={()=>setShowForm(null)} />
+                )}
+                {upcomings.map(r => (
+                  <div key={r.id} style={styles.listItem}>
+                    <div style={{flex:1,minWidth:0}}>
+                      <div style={{fontWeight:600,fontSize:14}}>{r.exam_name}</div>
+                      <div style={{fontSize:11,color:"#7c3aed"}}>📅 {r.exam_date || "TBA"}</div>
+                    </div>
+                    <button onClick={()=>deleteRow("upcoming_exams",r.id,()=>fetchTable("upcoming_exams",setUpcomings),true)}
+                      style={{...styles.btn("#dc2626",true),padding:"4px 10px"}}>🗑️</button>
                   </div>
-                  <button onClick={() => deleteAdmit(r.id)} style={{ padding: "4px 10px", background: "#dc2626", color: "#fff", border: "none", borderRadius: 6, cursor: "pointer", fontSize: 11 }}>🗑️</button>
-                </div>
-              ))}
-              {admitList.length === 0 && !loading && <p style={{ fontSize: 13, color: "#999" }}>No admit cards found</p>}
-            </div>
-          )}
-
-          {/* Upcoming Exams Management */}
-          {tab === "upcoming" && (
-            <div>
-              <div style={{ background: "#f9fafb", padding: 12, borderRadius: 8, marginBottom: 12 }}>
-                <h3 style={{ margin: "0 0 8px", fontSize: 14 }}>➕ Add New Upcoming Exam</h3>
-                <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
-                  <input placeholder="Exam Name" value={newUpcoming.exam_name} onChange={e => setNewUpcoming({...newUpcoming, exam_name: e.target.value})} style={inputStyle} />
-                  <input placeholder="Exam ID (optional)" value={newUpcoming.exam_id} onChange={e => setNewUpcoming({...newUpcoming, exam_id: e.target.value})} style={inputStyle} />
-                  <input placeholder="Exam Date (e.g. 2026-08-15)" value={newUpcoming.exam_date} onChange={e => setNewUpcoming({...newUpcoming, exam_date: e.target.value})} style={inputStyle} />
-                  <button onClick={addUpcoming} style={btnStyle}>Add Upcoming Exam</button>
-                </div>
+                ))}
               </div>
-              <button onClick={fetchUpcoming} style={{ padding: "6px 12px", background: "#2563eb", color: "#fff", border: "none", borderRadius: 6, cursor: "pointer", fontSize: 12, marginBottom: 8 }}>🔄 Refresh</button>
-              {upcomingList.map(r => (
-                <div key={r.id} style={{ padding: "8px 10px", borderBottom: "1px solid #eee", display: "flex", justifyContent: "space-between", alignItems: "center", fontSize: 13 }}>
-                  <div>
-                    <strong>{r.exam_name}</strong>
-                    <div style={{ fontSize: 11, color: "#666" }}>📅 {r.exam_date || "TBA"}</div>
+            )}
+
+            {/* Updates */}
+            {tab === "updates" && (
+              <div>
+                <div style={{display:"flex",gap:8,marginBottom:10,flexWrap:"wrap"}}>
+                  <button onClick={()=>setShowForm(showForm==="update"?null:"update")} style={styles.btn(showForm==="update"?"#6b7280":"#dc2626")}>
+                    {showForm==="update"?"✕ Close":"➕ Add Update"}
+                  </button>
+                  <button onClick={()=>fetchTable("updates",setUpdates)} style={styles.btn("#2563eb",true)}>🔄</button>
+                </div>
+                {showForm==="update" && (
+                  <AddForm title="Add New Update"
+                    fields={[
+                      {placeholder:"Title *", value:fUpdate.title, onChange:v=>setFUpdate(p=>({...p,title:v}))},
+                      {placeholder:"Description", value:fUpdate.description, onChange:v=>setFUpdate(p=>({...p,description:v}))},
+                      {placeholder:"Exam ID (optional)", value:fUpdate.exam_id, onChange:v=>setFUpdate(p=>({...p,exam_id:v}))},
+                      {placeholder:"Official Link (optional)", value:fUpdate.official_link, onChange:v=>setFUpdate(p=>({...p,official_link:v}))},
+                      {type:"select", value:fUpdate.update_type, onChange:v=>setFUpdate(p=>({...p,update_type:v})),
+                        options:[{value:"general",label:"📢 General"},{value:"result",label:"🏆 Result"},{value:"admit_card",label:"🎫 Admit Card"},{value:"syllabus",label:"📚 Syllabus"},{value:"answer_key",label:"🔑 Answer Key"}]}
+                    ]}
+                    onAdd={()=>addRow("updates",fUpdate,resetUpdate,()=>fetchTable("updates",setUpdates))}
+                    onCancel={()=>setShowForm(null)} />
+                )}
+                {updates.map(r => (
+                  <div key={r.id} style={styles.listItem}>
+                    <div style={{flex:1,minWidth:0}}>
+                      <div style={{fontWeight:600,fontSize:14}}>{r.title}</div>
+                      <div style={{fontSize:11,color:"#666"}}>{r.description?.slice(0,80)}</div>
+                    </div>
+                    <button onClick={()=>deleteRow("updates",r.id,()=>fetchTable("updates",setUpdates),true)}
+                      style={{...styles.btn("#dc2626",true),padding:"4px 10px"}}>🗑️</button>
                   </div>
-                  <button onClick={() => deleteUpcoming(r.id)} style={{ padding: "4px 10px", background: "#dc2626", color: "#fff", border: "none", borderRadius: 6, cursor: "pointer", fontSize: 11 }}>🗑️</button>
-                </div>
-              ))}
-              {upcomingList.length === 0 && !loading && <p style={{ fontSize: 13, color: "#999" }}>No upcoming exams found</p>}
-            </div>
-          )}
-
-          {/* Updates Management */}
-          {tab === "updates" && (
-            <div>
-              <div style={{ background: "#f9fafb", padding: 12, borderRadius: 8, marginBottom: 12 }}>
-                <h3 style={{ margin: "0 0 8px", fontSize: 14 }}>➕ Add New Update</h3>
-                <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
-                  <input placeholder="Title" value={newUpdate.title} onChange={e => setNewUpdate({...newUpdate, title: e.target.value})} style={inputStyle} />
-                  <input placeholder="Description" value={newUpdate.description} onChange={e => setNewUpdate({...newUpdate, description: e.target.value})} style={inputStyle} />
-                  <input placeholder="Exam ID (optional)" value={newUpdate.exam_id} onChange={e => setNewUpdate({...newUpdate, exam_id: e.target.value})} style={inputStyle} />
-                  <input placeholder="Official Link (optional)" value={newUpdate.official_link} onChange={e => setNewUpdate({...newUpdate, official_link: e.target.value})} style={inputStyle} />
-                  <select value={newUpdate.update_type} onChange={e => setNewUpdate({...newUpdate, update_type: e.target.value})} style={inputStyle}>
-                    <option value="general">General</option>
-                    <option value="result">Result</option>
-                    <option value="admit_card">Admit Card</option>
-                    <option value="syllabus">Syllabus</option>
-                    <option value="answer_key">Answer Key</option>
-                  </select>
-                  <button onClick={addUpdate} style={btnStyle}>Add Update</button>
-                </div>
+                ))}
               </div>
-              <button onClick={fetchUpdates} style={{ padding: "6px 12px", background: "#2563eb", color: "#fff", border: "none", borderRadius: 6, cursor: "pointer", fontSize: 12, marginBottom: 8 }}>🔄 Refresh</button>
-              {updatesList.map(r => (
-                <div key={r.id} style={{ padding: "8px 10px", borderBottom: "1px solid #eee", display: "flex", justifyContent: "space-between", alignItems: "center", fontSize: 13 }}>
-                  <div>
-                    <strong>{r.title}</strong>
-                    <div style={{ fontSize: 11, color: "#666" }}>{r.description?.slice(0, 60)}</div>
+            )}
+
+            {/* Generator */}
+            {tab === "generator" && (
+              <div>
+                <div style={styles.card}>
+                  <h3 style={{margin:"0 0 8px",fontSize:16,color:"#0d9488"}}>⚡ Generate Exams</h3>
+                  <p style={{fontSize:12,color:"#888",margin:"0 0 12px"}}>Generate sample exam entries for testing/demo</p>
+                  <div style={{display:"flex",gap:8,alignItems:"center",flexWrap:"wrap"}}>
+                    <input type="number" value={genCount} onChange={e=>setGenCount(parseInt(e.target.value)||100)}
+                      style={{...styles.input,width:120}} />
+                    <button onClick={generateExams} disabled={genning}
+                      style={{...styles.btn("#0d9488"),opacity:genning?0.6:1}}>
+                      {genning ? "⏳ Generating..." : "🚀 Generate"}
+                    </button>
                   </div>
-                  <button onClick={() => deleteUpdate(r.id)} style={{ padding: "4px 10px", background: "#dc2626", color: "#fff", border: "none", borderRadius: 6, cursor: "pointer", fontSize: 11 }}>🗑️</button>
                 </div>
-              ))}
-              {updatesList.length === 0 && !loading && <p style={{ fontSize: 13, color: "#999" }}>No updates found</p>}
-            </div>
-          )}
-
-          {/* Generator */}
-          {tab === "generator" && (
-            <div>
-              <div style={{ background: "#f9fafb", padding: 12, borderRadius: 8, marginBottom: 12 }}>
-                <h3 style={{ margin: "0 0 8px", fontSize: 14 }}>⚙️ Generate Sample Exams</h3>
-                <p style={{ fontSize: 12, color: "#666", margin: "0 0 8px" }}>Generate random exam entries for testing</p>
-                <input type="number" value={examCount} onChange={e => setExamCount(parseInt(e.target.value) || 100)}
-                  style={{ ...inputStyle, width: 120, display: "inline-block" }} />
-                <button onClick={generateExams} disabled={generating}
-                  style={{ ...btnStyle, display: "inline-block", marginLeft: 8, opacity: generating ? 0.6 : 1 }}>
-                  {generating ? "⏳ Generating..." : "🚀 Generate"}
-                </button>
+                <div style={{background:"#0f172a",borderRadius:12,padding:14,maxHeight:350,overflowY:"auto",fontFamily:"monospace",fontSize:12,color:"#22d3ee"}}>
+                  {logs.map((m,i) => <div key={i} style={{padding:"2px 0"}}>{m}</div>)}
+                  {logs.length===0 && <div style={{color:"#555"}}>No logs yet. Click Generate to start.</div>}
+                </div>
               </div>
-              <div style={{ background: "#1a1a2e", color: "#00ff88", padding: 12, borderRadius: 8, fontSize: 12, maxHeight: 300, overflowY: "auto", fontFamily: "monospace" }}>
-                {log.map((m, i) => <div key={i}>{m}</div>)}
-                {log.length === 0 && <div style={{ color: "#666" }}>No logs yet...</div>}
-              </div>
-            </div>
-          )}
+            )}
+          </div>
         </div>
       );
     }
-
-    const inputStyle = {
-      padding: "8px 10px",
-      fontSize: 13,
-      border: "1px solid #ccc",
-      borderRadius: 6,
-      width: "100%",
-      boxSizing: "border-box"
-    };
-
-    const btnStyle = {
-      padding: "8px 16px",
-      background: "#2563eb",
-      color: "#fff",
-      border: "none",
-      borderRadius: 6,
-      cursor: "pointer",
-      fontSize: 13,
-      fontWeight: 600
-    };
     
