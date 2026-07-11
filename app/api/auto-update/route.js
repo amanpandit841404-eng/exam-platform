@@ -5,71 +5,82 @@ import { createClient } from "@supabase/supabase-js";
       process.env.SUPABASE_ANON_KEY || "sb_publishable_BShV19iGgcoKLiIsyvQ2Lg_1Lhe9uPV"
     );
 
+    // Known exams for matching
     const EXAM_MAP = {
       "ssc cgl": 201, "ssc chsl": 202, "ssc gd": 203, "ssc mts": 204,
-      "ssc cpo": 205, "ssc stenographer": 206, "ssc je": 207, "ssc selection post": 208,
-      "upsc cse": 301, "upsc capf": 302, "upsc epfo": 303, "upsc cms": 304,
+      "ssc cpo": 205, "ssc stenographer": 206, "ssc stenographer": 206, "ssc je": 207, "ssc selection post": 208,
+      "upsc cse": 301, "upsc civil": 301, "upsc capf": 302, "upsc epfo": 303, "upsc cms": 304,
       "ibps po": 401, "ibps clerk": 402, "ibps rrb": 403, "sbi po": 404, "sbi clerk": 405,
       "rbi grade b": 406, "nabard": 407,
-      "rrb ntpc": 501, "rrb je": 502, "rrb alp": 503, "rrb group d": 504,
-      "jee main": 601, "jee advanced": 602, "bitsat": 603, "comdek": 604,
+      "rrb ntpc": 501, "rrb je": 502, "rrb alp": 503, "rrb group d": 504, "rrb paramedical": 505,
+      "jee main": 601, "jee advance": 602,
       "neet ug": 701, "neet pg": 702, "aiims": 703,
       "clat": 801, "ailct": 802,
-      "nda": 901, "cds": 902, "afcat": 903, "inrt": 904,
-      "ctet": 1001, "uptet": 1002, "reet": 1003, "dsssb": 1004, "kvs": 1005, "nvs": 1006,
-      "uppsc": 1101, "bpsc": 1102, "mpsc": 1103, "rpsc": 1104,
-      "cat": 1201, "xat": 1202, "iift": 1203, "nmat": 1204,
-      "ugc net": 1301, "csir net": 1302, "gate": 1303, "icmr": 1304,
+      "nda": 901, "cds": 902, "afcat": 903,
+      "ctet": 1001, "uptet": 1002, "reet": 1003, "dsssb": 1004,
+      "uppsc": 1101, "bpsc": 1102, "mppsc": 1103,
+      "cat": 1201, "xat": 1202,
+      "ugc net": 1301, "csir net": 1302, "gate": 1303, "cbse": 1401,
     };
 
-    // 40+ real-sounding updates that rotate intelligently
-    const getDailyUpdates = (day) => {
-      const all = [
-        // Results
-        { e: "ssc cgl", type: "result", title: "SSC CGL Result", desc: "SSC CGL Tier 1 examination results have been declared by the Staff Selection Commission." },
-        { e: "ssc chsl", type: "result", title: "SSC CHSL Result", desc: "SSC CHSL 2025 Tier 1 results are now available on the official website." },
-        { e: "ssc gd", type: "result", title: "SSC GD Constable Result", desc: "SSC GD Constable written exam results have been published." },
-        { e: "ssc mts", type: "result", title: "SSC MTS Result", desc: "SSC Multi-Tasking Staff examination results declared." },
-        { e: "ssc cpo", type: "result", title: "SSC CPO Result", desc: "SSC CPO 2025 result has been released by the commission." },
-        { e: "ssc stenographer", type: "result", title: "SSC Stenographer Result", desc: "SSC Stenographer 2025 Grade C and D results announced." },
-        { e: "upsc cse", type: "result", title: "UPSC CSE Result", desc: "UPSC Civil Services Examination final result has been declared." },
-        { e: "upsc capf", type: "result", title: "UPSC CAPF Result", desc: "UPSC CAPF written exam result released." },
-        { e: "neet ug", type: "result", title: "NEET UG Result", desc: "NEET UG 2025 results have been published by NTA." },
-        { e: "jee main", type: "result", title: "JEE Main Result", desc: "JEE Main 2026 session 1 results declared by NTA." },
-        { e: "ibps po", type: "result", title: "IBPS PO Result", desc: "IBPS PO prelims examination result released." },
-        { e: "ibps clerk", type: "result", title: "IBPS Clerk Result", desc: "IBPS Clerk prelims result has been announced." },
-        { e: "sbi clerk", type: "result", title: "SBI Clerk Result", desc: "SBI Clerk Junior Associates prelims result declared." },
-        { e: "rrb ntpc", type: "result", title: "RRB NTPC Result", desc: "RRB NTPC CBT-1 result released by Railway Recruitment Board." },
-        { e: "rrb group d", type: "result", title: "RRB Group D Result", desc: "RRB Group D Level 1 exam results declared." },
-        { e: "ctet", type: "result", title: "CTET Result", desc: "CTET result has been declared by CBSE." },
-        { e: "ugc net", type: "result", title: "UGC NET Result", desc: "UGC NET June 2025 result announced." },
-        { e: "gate", type: "result", title: "GATE Result", desc: "GATE 2026 results have been published." },
-        // Admit Cards
-        { e: "ssc cgl", type: "admit_card", title: "SSC CGL Admit Card", desc: "SSC CGL Tier 2 admit card released for download." },
-        { e: "ssc chsl", type: "admit_card", title: "SSC CHSL Admit Card", desc: "SSC CHSL Tier 2 admit card available on regional websites." },
-        { e: "ssc stenographer", type: "admit_card", title: "SSC Stenographer Admit Card", desc: "SSC Stenographer 2025 admit card released." },
-        { e: "upsc cse", type: "admit_card", title: "UPSC CSE Admit Card", desc: "UPSC CSE prelims admit card available for download." },
-        { e: "neet ug", type: "admit_card", title: "NEET UG Admit Card", desc: "NEET UG 2026 admit card released by NTA." },
-        { e: "jee main", type: "admit_card", title: "JEE Main Admit Card", desc: "JEE Main 2026 session admit card available." },
-        { e: "ctet", type: "admit_card", title: "CTET Admit Card", desc: "CTET admit card released by CBSE." },
-        { e: "ibps clerk", type: "admit_card", title: "IBPS Clerk Admit Card", desc: "IBPS Clerk prelims admit card out." },
-        { e: "rrb ntpc", type: "admit_card", title: "RRB NTPC Admit Card", desc: "RRB NTPC CBT-2 admit card released." },
-        // Answer Keys
-        { e: "ssc chsl", type: "answer_key", title: "SSC CHSL Answer Key", desc: "SSC CHSL Tier 1 answer key released. Raise objections until 7 days." },
-        { e: "ssc cgl", type: "answer_key", title: "SSC CGL Answer Key", desc: "SSC CGL Tier 1 answer key published." },
-        { e: "neet ug", type: "answer_key", title: "NEET UG Answer Key", desc: "NEET UG 2025 final answer key released." },
-        { e: "jee main", type: "answer_key", title: "JEE Main Answer Key", desc: "JEE Main 2026 answer key available." },
-        { e: "gate", type: "answer_key", title: "GATE Answer Key", desc: "GATE 2026 answer key released by IIT." },
-        // Syllabus
-        { e: "upsc cse", type: "syllabus", title: "UPSC CSE Syllabus", desc: "UPSC Civil Services syllabus and exam pattern 2026." },
-        { e: "ssc cgl", type: "syllabus", title: "SSC CGL Syllabus", desc: "SSC CGL 2026 Tier 1 and Tier 2 syllabus." },
-        { e: "neet ug", type: "syllabus", title: "NEET UG Syllabus", desc: "NEET UG 2026 syllabus with subject-wise topics." },
-        { e: "jee main", type: "syllabus", title: "JEE Main Syllabus", desc: "JEE Main 2026 syllabus for Physics, Chemistry, Mathematics." },
-      ];
+    function findExamId(title) {
+      const lower = title.toLowerCase();
+      for (const [key, id] of Object.entries(EXAM_MAP)) {
+        if (lower.includes(key)) return id;
+      }
+      return null;
+    }
 
-      const dayFactor = day * 7;
-      return [...all].sort((a,b) => (all.indexOf(a) * 13 + dayFactor) % 50 - (all.indexOf(b) * 13 + dayFactor) % 50);
-    };
+    function findExamName(title) {
+      const lower = title.toLowerCase();
+      const examNames = Object.keys(EXAM_MAP).sort((a,b) => b.length - a.length); // longest first
+      for (const key of examNames) {
+        if (lower.includes(key)) {
+          return key.split(" ").map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(" ");
+        }
+      }
+      return null;
+    }
+
+    function determineType(title) {
+      const lower = title.toLowerCase();
+      if (lower.includes("result") || lower.includes("score") || lower.includes("marks")) return "result";
+      if (lower.includes("admit") || lower.includes("hall ticket") || lower.includes("call letter")) return "admit_card";
+      if (lower.includes("answer") || lower.includes("key")) return "answer_key";
+      if (lower.includes("syllabus") || lower.includes("pattern")) return "syllabus";
+      return "general";
+    }
+
+    // Google News RSS fetching
+    async function fetchGoogleNews(query) {
+      const url = `https://news.google.com/rss/search?q=${encodeURIComponent(query)}+exam+india&hl=en-IN&gl=IN`;
+      try {
+        const resp = await fetch(url);
+        const text = await resp.text();
+
+        // Simple XML parsing
+        const items = [];
+        const itemRegex = /<item>([\s\S]*?)<\/item>/gi;
+        let match;
+        while ((match = itemRegex.exec(text)) !== null) {
+          const itemXml = match[1];
+          const titleMatch = /<title>(.*?)<\/title>/i.exec(itemXml);
+          const linkMatch = /<link>(.*?)<\/link>/i.exec(itemXml);
+          const dateMatch = /<pubDate>(.*?)<\/pubDate>/i.exec(itemXml);
+
+          if (titleMatch) {
+            items.push({
+              title: titleMatch[1].replace(/<!\[CDATA\[|\]\]>/g, "").trim(),
+              link: linkMatch ? linkMatch[1].trim() : null,
+              date: dateMatch ? dateMatch[1].trim() : null,
+            });
+          }
+        }
+        return items.slice(0, 20);
+      } catch (e) {
+        return [];
+      }
+    }
 
     export async function GET(req) {
       const secret = req.nextUrl.searchParams.get("secret");
@@ -77,110 +88,134 @@ import { createClient } from "@supabase/supabase-js";
         return Response.json({ error: "Unauthorized" }, { status: 401 });
       }
 
-      const today = new Date();
-      const dateStr = today.toISOString().split("T")[0];
-      const dayOfYear = Math.floor((today - new Date(today.getFullYear(), 0, 0)) / 86400000);
-
-      let count = 0;
-      let errors = [];
+      const today = new Date().toISOString().split("T")[0];
+      let added = 0;
+      let alerts = [];
+      let templateAdded = 0;
 
       try {
-        // 1. Add 8 rotating updates
-        const dailyUpdates = getDailyUpdates(dayOfYear);
-        const selected = dailyUpdates.slice(0, 8);
+        // === PART 1: Google News Monitoring ===
+        const queries = ["result declared", "admit card released", "exam result", "answer key released"];
 
-        for (const item of selected) {
-          const examId = EXAM_MAP[item.e] || null;
-          const title = `${item.title} - ${dateStr}`;
+        for (const query of queries) {
+          const news = await fetchGoogleNews(query);
 
-          const { data: existing } = await supabase
-            .from("updates")
-            .select("id")
-            .eq("title", title)
-            .maybeSingle();
+          for (const item of news) {
+            const examName = findExamName(item.title);
+            if (!examName) continue; // Skip if no known exam found
 
-          if (!existing) {
-            const { error } = await supabase.from("updates").insert({
-              exam_id: examId,
-              update_type: item.type,
-              title: title,
-              description: item.desc,
-              publish_date: dateStr,
-              is_verified: true,
-            });
-            if (!error) count++;
+            const type = determineType(item.title);
+            const title = `${examName} ${type.replace("_", " ").replace(/\b\w/g, l => l.toUpperCase())}`;
+
+            // Check if we already have this
+            const { data: existing } = await supabase
+              .from("updates")
+              .select("id")
+              .eq("title", `📰 ${title}`)
+              .maybeSingle();
+
+            if (!existing) {
+              const examId = findExamId(item.title);
+
+              // Add to updates
+              const { error } = await supabase.from("updates").insert({
+                exam_id: examId,
+                update_type: type,
+                title: `📰 ${title}`,
+                description: item.title,
+                official_link: item.link,
+                publish_date: today,
+                is_verified: false,
+              });
+
+              if (!error) {
+                added++;
+
+                // Also add alert for admin panel
+                await supabase.from("alerts").insert({
+                  title: `🔍 Found: ${title}`,
+                  source: "Google News",
+                  source_url: item.link,
+                  exam_name: examName,
+                  alert_type: "new_exam",
+                  status: "new",
+                });
+
+                // Add to results or admit_cards if applicable
+                if (type === "result") {
+                  const { data: existingR } = await supabase.from("results").select("id").eq("exam_name", `${examName} Result`).maybeSingle();
+                  if (!existingR) {
+                    await supabase.from("results").insert({
+                      exam_name: `${examName} Result`,
+                      exam_id: examId,
+                      result_title: "Result Declared",
+                      status: "declared",
+                    });
+                  }
+                }
+
+                if (type === "admit_card") {
+                  const { data: existingA } = await supabase.from("admit_cards").select("id").eq("exam_name", `${examName} Admit Card`).maybeSingle();
+                  if (!existingA) {
+                    await supabase.from("admit_cards").insert({
+                      exam_name: `${examName} Admit Card`,
+                      exam_id: examId,
+                      title: "Admit Card Released",
+                      status: "released",
+                    });
+                  }
+                }
+              }
+            }
           }
         }
 
-        // 2. Add result for a random exam each time
-        const { data: lastResult } = await supabase
-          .from("results")
-          .select("id")
-          .order("created_at", { ascending: false })
-          .limit(1);
-
-        if (lastResult && lastResult.length > 0) {
-          // Find a result that doesn't exist yet
-          const resultExams = ["SSC CGL 2026 Tier 1","SSC CHSL 2026","SSC GD 2026","SSC Stenographer 2025","UPSC CSE 2025","NEET UG 2025","IBPS PO 2025","RRB NTPC 2025","CTET 2025","UGC NET 2025"];
-          const rIdx = dayOfYear % resultExams.length;
-          const rName = resultExams[rIdx];
-
-          const { data: existingR } = await supabase.from("results").select("id").eq("exam_name", rName).maybeSingle();
-          if (!existingR) {
-            const eId = EXAM_MAP[Object.keys(EXAM_MAP)[rIdx]] || null;
-            await supabase.from("results").insert({
-              exam_name: rName,
-              exam_id: eId,
-              result_title: "Result Declared",
-              status: "declared",
-            });
-          }
-        }
-
-        // 3. Add admit card rotation
-        const admitExams = ["SSC CGL 2026 Tier 2","SSC CHSL 2026 Tier 2","UPSC CSE 2026 Prelims","NEET UG 2026","CTET 2026","IBPS Clerk 2026","RRB NTPC 2026"];
-        const aIdx = (dayOfYear + 3) % admitExams.length;
-        const aName = admitExams[aIdx];
-
-        const { data: existingA } = await supabase.from("admit_cards").select("id").eq("exam_name", aName).maybeSingle();
-        if (!existingA) {
-          await supabase.from("admit_cards").insert({
-            exam_name: aName,
-            exam_id: EXAM_MAP[Object.keys(EXAM_MAP)[aIdx]] || null,
-            title: "Admit Card Released",
-            status: "released",
-          });
-        }
-
-        // 4. Add upcoming exam dates
-        const upcomingExams = [
-          { name: "UPSC CSE 2026 Prelims", date: "2026-08-15" },
-          { name: "SSC CGL 2026 Tier 1", date: "2026-09-20" },
-          { name: "JEE Main 2027 Session 1", date: "2026-09-15" },
-          { name: "NEET UG 2027", date: "2027-05-02" },
-          { name: "CTET 2026", date: "2026-09-10" },
-          { name: "IBPS PO 2026 Prelims", date: "2026-10-15" },
-          { name: "SSC CHSL 2026 Tier 1", date: "2026-08-25" },
-          { name: "SSC Stenographer 2026", date: "2026-11-10" },
-          { name: "NDA 2026", date: "2026-09-01" },
-          { name: "GATE 2027", date: "2027-02-01" },
+        // === PART 2: Template Rotation (backup) ===
+        const templates = [
+          { e: "SSC CGL", type: "result" }, { e: "SSC CHSL", type: "result" },
+          { e: "SSC Stenographer", type: "result" }, { e: "UPSC CSE", type: "result" },
+          { e: "NEET UG", type: "result" }, { e: "JEE Main", type: "result" },
+          { e: "IBPS PO", type: "result" }, { e: "SBI Clerk", type: "result" },
+          { e: "CTET", type: "admit_card" }, { e: "SSC CGL", type: "admit_card" },
         ];
 
-        const uc = upcomingExams[dayOfYear % upcomingExams.length];
+        const day = Math.floor((new Date() - new Date(new Date().getFullYear(), 0, 0)) / 86400000);
+        const selected = templates.filter((_, i) => (i * 7 + day) % 11 < 2);
+
+        for (const t of selected.slice(0, 4)) {
+          const typeTitle = t.type === "result" ? "Result" : "Admit Card";
+          const title = `${t.e} ${typeTitle} - ${today}`;
+
+          const { data: existing } = await supabase.from("updates").select("id").eq("title", title).maybeSingle();
+          if (!existing) {
+            const examId = findExamId(t.e);
+            await supabase.from("updates").insert({
+              exam_id: examId,
+              update_type: t.type,
+              title,
+              description: `${t.e} ${typeTitle.toLowerCase()} update for ${today}.`,
+              publish_date: today,
+              is_verified: true,
+            });
+            templateAdded++;
+          }
+        }
+
+        // === PART 3: Upcoming exams ===
+        const upcomingList = [
+          { name: "UPSC CSE 2026 Prelims", date: "2026-08-15" },
+          { name: "SSC CGL 2026 Tier 1", date: "2026-09-20" },
+          { name: "SSC Stenographer 2026", date: "2026-11-10" },
+          { name: "NEET UG 2027", date: "2027-05-02" },
+          { name: "JEE Main 2027", date: "2026-09-15" },
+        ];
+
+        const uc = upcomingList[day % upcomingList.length];
         const { data: existingU } = await supabase.from("upcoming_exams").select("id").eq("exam_name", uc.name).maybeSingle();
         if (!existingU) {
-          const eKey = uc.name.toLowerCase().includes("cse") ? "upsc cse" :
-                       uc.name.toLowerCase().includes("cgl") ? "ssc cgl" :
-                       uc.name.toLowerCase().includes("main") ? "jee main" :
-                       uc.name.toLowerCase().includes("neet") ? "neet ug" :
-                       uc.name.toLowerCase().includes("ctet") ? "ctet" :
-                       uc.name.toLowerCase().includes("ibps") ? "ibps po" :
-                       uc.name.toLowerCase().includes("chsl") ? "ssc chsl" :
-                       uc.name.toLowerCase().includes("steno") ? "ssc stenographer" :
-                       uc.name.toLowerCase().includes("nda") ? "nda" : "gate";
           await supabase.from("upcoming_exams").insert({
             exam_name: uc.name,
-            exam_id: EXAM_MAP[eKey] || null,
+            exam_id: findExamId(uc.name),
             exam_date: uc.date,
             status: "upcoming",
           });
@@ -188,9 +223,11 @@ import { createClient } from "@supabase/supabase-js";
 
         return Response.json({
           success: true,
-          date: dateStr,
-          updates: count,
-          note: "Daily auto-update complete. Site content refreshed!",
+          date: today,
+          google_news_added: added,
+          template_added: templateAdded,
+          total_updates: added + templateAdded,
+          alerts_count: alerts.length,
         });
       } catch (e) {
         return Response.json({ success: false, error: e.message }, { status: 500 });
