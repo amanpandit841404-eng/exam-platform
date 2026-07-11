@@ -1,26 +1,3 @@
 @import "tailwindcss";
-
-    :root {
-      --bg: #f8fafc;
-      --card: #ffffff;
-      --text: #151515;
-      --text-secondary: #717171;
-      --border: #e5e7eb;
-      --primary: #2563eb;
-    }
-
-    .dark {
-      --bg: #0f172a;
-      --card: #1e293b;
-      --text: #f1f5f9;
-      --text-secondary: #94a3b8;
-      --border: #334155;
-      --primary: #3b82f6;
-    }
-
-    body {
-      background: var(--bg);
-      color: var(--text);
-      transition: background 0.3s, color 0.3s;
-    }
+    /* SarkariSetu India - Global Styles */
     
