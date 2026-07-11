@@ -9,8 +9,10 @@
       const [loading, setLoading] = useState(true);
       const [watched, setWatched] = useState(false);
       const [lang, setLang] = useState("hi");
+  const [dark, setDark] = useState(false);
       useEffect(() => {
         setLang(localStorage.getItem("sarkarisetu_lang") || "hi");
+    setDark(localStorage.getItem("sarkarisetu_dark") === "true");
         const watchlist = JSON.parse(localStorage.getItem("sarkarisetu_watchlist") || "[]");
         setWatched(watchlist.some(w => w.id == params.id));
         if (params.id) { fetchExam(); fetchUpdates(); }
@@ -50,7 +52,7 @@
       const latestResult = updates.find(u => u.update_type === "result");
       const latestAdmit = updates.find(u => u.update_type === "admit_card");
       return (
-        <div style={{ fontFamily: "Arial,sans-serif", maxWidth: 800, margin: "0 auto", padding: 12, background: "var(--bg)", minHeight: "100vh" }}>
+        <div style={{ fontFamily: "Arial,sans-serif", maxWidth: 800, margin: "0 auto", padding: 12, background: dark ? "#0f172a" : "#f8fafc", minHeight: "100vh" }}>
           <div style={{ background: "linear-gradient(135deg,#1e3a5f,#2563eb)", borderRadius: 14, padding: 20, color: "#fff", marginBottom: 16 }}>
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start" }}>
               <div style={{ flex: 1 }}>
@@ -86,17 +88,17 @@
             </div>
           )}
           {updates.length > 0 && (
-            <div style={{ background: "var(--card)", borderRadius: 12, padding: 16, marginBottom: 12, border: "1px solid var(--border)" }}>
-              <h3 style={{ fontSize: 15, fontWeight: 700, color: "var(--text)", margin: "0 0 10px" }}>📢 {t("नवीनतम अपडेट", "Latest Updates")}</h3>
+            <div style={{ background: dark ? "#1e293b" : "#ffffff", borderRadius: 12, padding: 16, marginBottom: 12, border: "1px solid var(--border)" }}>
+              <h3 style={{ fontSize: 15, fontWeight: 700, color: dark ? "#e2e8f0" : "#151515", margin: "0 0 10px" }}>📢 {t("नवीनतम अपडेट", "Latest Updates")}</h3>
               <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
                 {updates.slice(0, 10).map(u => (
-                  <div key={u.id} style={{ padding: 10, background: "var(--bg)", borderRadius: 8, border: "1px solid var(--border)" }}>
+                  <div key={u.id} style={{ padding: 10, background: dark ? "#0f172a" : "#f8fafc", borderRadius: 8, border: "1px solid var(--border)" }}>
                     <div style={{ display: "flex", alignItems: "center", gap: 6, marginBottom: 2 }}>
                       <span>{typeIcons[u.update_type] || "📢"}</span>
                       <span style={{ fontSize: 11, padding: "1px 6px", borderRadius: 8, background: typeColors[u.update_type] || "#6b7280", color: "#fff" }}>{u.update_type?.replace("_", " ")}</span>
                     </div>
-                    <div style={{ fontSize: 13, fontWeight: 600, color: "var(--text)", marginTop: 2 }}>{u.title}</div>
-                    {u.description && <div style={{ fontSize: 12, color: "var(--text-secondary)", marginTop: 2 }}>{u.description}</div>}
+                    <div style={{ fontSize: 13, fontWeight: 600, color: dark ? "#e2e8f0" : "#151515", marginTop: 2 }}>{u.title}</div>
+                    {u.description && <div style={{ fontSize: 12, color: dark ? "#94a3b8" : "#717171", marginTop: 2 }}>{u.description}</div>}
                     {u.official_link && (
                       <a href={u.official_link} target="_blank" rel="noopener noreferrer"
                         style={{ fontSize: 12, color: "#2563eb", display: "inline-block", marginTop: 4, textDecoration: "underline" }}>
@@ -108,8 +110,8 @@
               </div>
             </div>
           )}
-          <div style={{ background: "var(--card)", borderRadius: 12, padding: 16, border: "1px solid var(--border)" }}>
-            <h3 style={{ fontSize: 15, fontWeight: 700, color: "var(--text)", margin: "0 0 10px" }}>📖 {t("परीक्षा विवरण", "Exam Details")}</h3>
+          <div style={{ background: dark ? "#1e293b" : "#ffffff", borderRadius: 12, padding: 16, border: "1px solid var(--border)" }}>
+            <h3 style={{ fontSize: 15, fontWeight: 700, color: dark ? "#e2e8f0" : "#151515", margin: "0 0 10px" }}>📖 {t("परीक्षा विवरण", "Exam Details")}</h3>
             <table style={{ width: "100%", fontSize: 13, borderCollapse: "collapse" }}>
               <tbody>
                 {[
@@ -120,8 +122,8 @@
                   [t("विवरण", "Description"), exam.description?.slice(0, 300)],
                 ].map(([label, value], i) => (
                   <tr key={i} style={{ borderBottom: "1px solid var(--border)" }}>
-                    <td style={{ padding: "8px 4px", color: "var(--text-secondary)", width: 120, fontWeight: 500 }}>{label}</td>
-                    <td style={{ padding: "8px 4px", color: "var(--text)" }}>{value || "—"}</td>
+                    <td style={{ padding: "8px 4px", color: dark ? "#94a3b8" : "#717171", width: 120, fontWeight: 500 }}>{label}</td>
+                    <td style={{ padding: "8px 4px", color: dark ? "#e2e8f0" : "#151515" }}>{value || "—"}</td>
                   </tr>
                 ))}
               </tbody>
@@ -129,10 +131,10 @@
           </div>
           <div style={{ display: "flex", gap: 8, flexWrap: "wrap", marginTop: 16 }}>
             {[{ label: "🏆 "+t("परिणाम","Results"), href:"/results" },{ label: "🎫 "+t("प्रवेश पत्र","Admit Cards"), href:"/admit-cards" },{ label: "📚 "+t("सिलेबस","Syllabus"), href:"/syllabus" },{ label: "🔑 "+t("उत्तर कुंजी","Answer Keys"), href:"/answer-keys" }].map(q => (
-              <a key={q.label} href={q.href} style={{ flex:1, minWidth:100, textAlign:"center", padding:"10px 8px", background:"var(--card)", borderRadius:8, textDecoration:"none", color:"var(--text)", fontSize:12, fontWeight:500, border:"1px solid var(--border)" }}>{q.label}</a>
+              <a key={q.label} href={q.href} style={{ flex:1, minWidth:100, textAlign:"center", padding:"10px 8px", background:dark ? "#1e293b" : "#ffffff", borderRadius:8, textDecoration:"none", color:dark ? "#e2e8f0" : "#151515", fontSize:12, fontWeight:500, border:"1px solid var(--border)" }}>{q.label}</a>
             ))}
           </div>
-          <div style={{ marginTop: 20, fontSize: 11, color: "var(--text-secondary)", textAlign: "center" }}>
+          <div style={{ marginTop: 20, fontSize: 11, color: dark ? "#94a3b8" : "#717171", textAlign: "center" }}>
             ⚡ SarkariSetu India • {t("सरकारी निकाय से संबद्ध नहीं","Not affiliated with any government body")}
           </div>
         </div>
