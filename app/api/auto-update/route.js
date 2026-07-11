@@ -92,7 +92,7 @@ import { createClient } from "@supabase/supabase-js";
               exam_id: examId, update_type: type,
               title: displayTitle,
               description: item.title.slice(0, 200),
-              official_link: item.link,
+              official_link: null,
               publish_date: today,
               is_verified: false,
             });
