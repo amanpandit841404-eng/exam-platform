@@ -52,6 +52,7 @@ export default function ExamDetailPage() {
   const params = useParams();
   const examId = params.id;
   const [exam, setExam] = useState(null);
+  const [examUpdates, setExamUpdates] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [relatedExams, setRelatedExams] = useState([]);
