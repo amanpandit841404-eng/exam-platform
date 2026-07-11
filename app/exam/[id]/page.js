@@ -35,6 +35,7 @@
             <h1 style={{ fontSize: 20, fontWeight: 700, margin: 0 }}>{exam.name || exam.full_name}</h1>
             {exam.category && <div style={{ fontSize: 12, opacity: 0.8, marginTop: 4 }}>{exam.category}</div>}
             {exam.state && <div style={{ fontSize: 12, opacity: 0.8 }}>📍 {exam.state}</div>}
+              <a href={`/check-result/${params.id}`} style={{ display: "inline-block", marginTop: 8, padding: "6px 14px", background: "rgba(255,255,255,0.2)", color: "#fff", borderRadius: 8, textDecoration: "none", fontSize: 12, fontWeight: 600 }}>🔍 Check Your Result</a>
           </div>
           {(latestResult || latestAdmit) && (
             <div style={{ marginBottom: 16 }}>
