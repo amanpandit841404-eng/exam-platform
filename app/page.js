@@ -128,7 +128,7 @@
                 </button>
               </div>
               <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
-                {upcoming.slice(0, 5).map((e, i) => (
+                {upcoming.slice(0, 25).map((e, i) => (
                   <div key={i} style={{ display: "flex", justifyContent: "space-between", alignItems: "center",
                     padding: "8px 10px", dark ? "#0f172a" : "#f8fafc", borderRadius: 8, border: dark ? "1px solid #334155" : "1px solid #e5e7eb" }}>
                     <div style={{ flex: 1, minWidth: 0 }}>
@@ -138,7 +138,7 @@
                     <div style={{ textAlign: "right", flexShrink: 0 }}>
                       {e.exam_date && (
                         <div style={{ fontSize: 13, fontWeight: 700,
-                          color: getCountdown(e.exam_date)?.includes("left") ? "#16a34a" : "#ea580c" }}>
+                          color: "#16a34a" }}>
                           ⏳ {getCountdown(e.exam_date)}
                         </div>
                       )}
@@ -164,7 +164,7 @@
               </h2>
             </div>
             <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
-              {filtered.slice(0, 10).map((r, i) => (
+              {filtered.slice(0, 25).map((r, i) => (
                 <div key={i} style={{ display: "flex", justifyContent: "space-between", alignItems: "center",
                   padding: "8px 10px", dark ? "#0f172a" : "#f8fafc", borderRadius: 8, border: dark ? "1px solid #334155" : "1px solid #e5e7eb" }}>
                   <a href={`/exam/${r.exam_id}`} style={{ flex: 1, minWidth: 0, textDecoration: "none" }}>
@@ -190,7 +190,7 @@
               🎫 {t("प्रवेश पत्र", "Admit Cards")}
             </h2>
             <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
-              {admitCards.slice(0, 10).map((r, i) => (
+              {admitCards.slice(0, 25).map((r, i) => (
                 <div key={i} style={{ display: "flex", justifyContent: "space-between", alignItems: "center",
                   padding: "8px 10px", dark ? "#0f172a" : "#f8fafc", borderRadius: 8, border: dark ? "1px solid #334155" : "1px solid #e5e7eb" }}>
                   <a href={`/exam/${r.exam_id}`} style={{ flex: 1, minWidth: 0, textDecoration: "none" }}>
@@ -228,7 +228,7 @@
                 🔔 {t("आपकी सूची", "Your Watchlist")}
               </h2>
               <div style={{ display: "flex", flexWrap: "wrap", gap: 6 }}>
-                {watchlist.slice(0, 10).map((w, i) => (
+                {watchlist.slice(0, 25).map((w, i) => (
                   <a key={i} href={`/exam/${w.id}`}
                     style={{ padding: "6px 12px", borderRadius: 8, fontSize: 12, background: "#2563eb18", color: "#2563eb", textDecoration: "none", display: "inline-flex", alignItems: "center", gap: 4 }}>
                     🔔 {w.name?.slice(0, 25)}
