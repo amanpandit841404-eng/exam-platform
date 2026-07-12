@@ -6,7 +6,7 @@ import { createClient } from "@supabase/supabase-js";
     );
 
     // Try to create admin client with service role key (if available on Vercel)
-    const serviceKey = process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.SUPABASE_SERVICE_KEY || null;
+    const serviceKey = process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.SUPABASE_SERVICE_KEY || null; // v2
     const adminClient = serviceKey ? createClient(
       process.env.SUPABASE_URL || "https://fbcvxefvvifmxaiqxiuq.supabase.co",
       serviceKey
