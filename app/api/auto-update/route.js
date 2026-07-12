@@ -5,13 +5,6 @@ import { createClient } from "@supabase/supabase-js";
       process.env.SUPABASE_ANON_KEY || "sb_publishable_BShV19iGgcoKLiIsyvQ2Lg_1Lhe9uPV"
     );
 
-    // Try to create admin client with service role key (if available on Vercel)
-    const serviceKey = process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.SUPABASE_SERVICE_KEY || null; // v2
-    const adminClient = serviceKey ? createClient(
-      process.env.SUPABASE_URL || "https://fbcvxefvvifmxaiqxiuq.supabase.co",
-      serviceKey
-    ) : null;
-
     const EXAM_MAP = {
       "ssc cgl": [201, "SSC CGL"], "ssc chsl": [202, "SSC CHSL"], "ssc gd": [203, "SSC GD"], "ssc mts": [204, "SSC MTS"],
       "ssc cpo": [205, "SSC CPO"], "ssc stenographer": [206, "SSC Stenographer"], "ssc je": [207, "SSC JE"],
@@ -175,53 +168,6 @@ import { createClient } from "@supabase/supabase-js";
           });
         }
 
-        // ========== PART 4: Bulk-fix results/admit cards (if service key available) ==========
-        let bulkResultsAdded = 0, bulkAdmitsAdded = 0;
-        
-        if (adminClient) {
-          try {
-            // Get all exams
-            const { data: allExams } = await supabase.from("exams").select("id, name").order("id");
-            if (allExams && allExams.length > 0) {
-              // Get existing
-              const [rRes, aRes] = await Promise.all([
-                supabase.from("results").select("exam_id"),
-                supabase.from("admit_cards").select("exam_id")
-              ]);
-              
-              const existResults = new Set((rRes.data || []).map(r => r.exam_id));
-              const existAdmits = new Set((aRes.data || []).map(a => a.exam_id));
-
-              const needResults = allExams.filter(e => !existResults.has(e.id));
-              const needAdmits = allExams.filter(e => !existAdmits.has(e.id));
-
-              // Insert results (service key bypasses RLS)
-              const BATCH = 400;
-              for (let i = 0; i < Math.min(needResults.length, 20000); i += BATCH) {
-                const batch = needResults.slice(i, i + BATCH).map(e => ({
-                  exam_id: e.id, exam_name: e.name,
-                  result_title: e.name + " Result", status: "declared"
-                }));
-                const { error: err } = await adminClient.from("results").insert(batch);
-                if (!err) bulkResultsAdded += batch.length;
-                else break;
-              }
-
-              for (let i = 0; i < Math.min(needAdmits.length, 20000); i += BATCH) {
-                const batch = needAdmits.slice(i, i + BATCH).map(e => ({
-                  exam_id: e.id, exam_name: e.name,
-                  title: e.name + " Admit Card", status: "released"
-                }));
-                const { error: err } = await adminClient.from("admit_cards").insert(batch);
-                if (!err) bulkAdmitsAdded += batch.length;
-                else break;
-              }
-            }
-          } catch (be) {
-            console.error("Bulk-fix error:", be.message);
-          }
-        }
-
         return Response.json({
           success: true, date: today,
           news_monitor_added: newsAdded,
@@ -229,12 +175,7 @@ import { createClient } from "@supabase/supabase-js";
           results_auto_added: resultsAdded,
           admit_cards_auto_added: admitsAdded,
           total_new: newsAdded + templateAdded + resultsAdded + admitsAdded,
-          bulk_results_added: bulkResultsAdded,
-          bulk_admits_added: bulkAdmitsAdded,
-          service_key_available: !!adminClient,
-          message: adminClient 
-            ? ("Auto-update done! Also bulk-added " + bulkResultsAdded + " results + " + bulkAdmitsAdded + " admit cards using service key.")
-            : "Google News monitored + auto-upload completed! (No service key set)",
+          message: "Google News monitored + auto-upload completed!",
         });
       } catch (e) {
         return Response.json({ success: false, date: today, error: e.message }, { status: 500 });
