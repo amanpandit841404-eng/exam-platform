@@ -1,257 +1,199 @@
 "use client";
-    import { useState, useEffect } from "react";
-    import { supabase } from "./lib/supabase";
 
-    export default function HomePage() {
-      const [latestResults, setLatestResults] = useState([]);
-      const [admitCards, setAdmitCards] = useState([]);
-      const [upcoming, setUpcoming] = useState([]);
-      const [search, setSearch] = useState("");
-      const [loading, setLoading] = useState(true);
-      const [watchlist, setWatchlist] = useState([]);
-      const [lang, setLang] = useState("hi");
-  const [dark, setDark] = useState(false);
+import { useEffect, useState } from 'react';
+import { supabase } from './lib/supabase';
 
-      useEffect(() => {
-        setLang(localStorage.getItem("sarkarisetu_lang") || "hi");
-    setDark(localStorage.getItem("sarkarisetu_dark") === "true");
-        const saved = JSON.parse(localStorage.getItem("sarkarisetu_watchlist") || "[]");
-        setWatchlist(saved);
-        fetchData();
-      }, []);
+export default function Home() {
+  const [categories, setCategories] = useState([]);
+  const [latestResults, setLatestResults] = useState([]);
+  const [admitCards, setAdmitCards] = useState([]);
+  const [upcomingExams, setUpcomingExams] = useState([]);
+  const [totalExams, setTotalExams] = useState(0);
 
-      const fetchData = async () => {
-        try {
-          const [res, adm, upc, updatesRes, updatesAdm] = await Promise.all([
-            supabase.from("results").select("*").order("created_at", { ascending: false }).limit(25),
-            supabase.from("admit_cards").select("*").order("created_at", { ascending: false }).limit(25),
-            supabase.from("upcoming_exams").select("*").order("exam_date", { ascending: true }).limit(25),
-            supabase.from("updates").select("*").eq("update_type", "result").order("created_at", { ascending: false }).limit(25),
-            supabase.from("updates").select("*").eq("update_type", "admit_card").order("created_at", { ascending: false }).limit(25),
-          ]);
-          if (res.data && res.data.length > 0) setLatestResults(res.data);
-          else if (updatesRes.data) setLatestResults(updatesRes.data);
-          if (adm.data && adm.data.length > 0) setAdmitCards(adm.data);
-          else if (updatesAdm.data) setAdmitCards(updatesAdm.data);
-          if (upc.data) setUpcoming(upc.data);
-        } catch (e) { console.error(e); }
-        setLoading(false);
-      };
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const [catRes, resultsRes, admitRes, upcomingRes, countRes] = await Promise.all([
+          supabase.from('categories').select('*').order('name'),
+          supabase.from('results').select('*').order('created_at', { ascending: false }).limit(8),
+          supabase.from('admit_cards').select('*').order('created_at', { ascending: false }).limit(8),
+          supabase.from('upcoming_exams').select('*').order('exam_date', { ascending: true }).limit(8),
+          supabase.from('exams').select('*', { count: 'exact', head: true }),
+        ]);
+        if (catRes.data) setCategories(catRes.data);
+        if (resultsRes.data) setLatestResults(resultsRes.data);
+        if (admitRes.data) setAdmitCards(admitRes.data);
+        if (upcomingRes.data) setUpcomingExams(upcomingRes.data);
+        if (countRes.count) setTotalExams(countRes.count);
+      } catch (err) { console.error(err); }
+    }
+    fetchData();
+  }, []);
 
-      // Watchlist toggle
-      const toggleWatchlist = (name, id) => {
-        const exists = watchlist.find(w => w.id === id);
-        let next;
-        if (exists) {
-          next = watchlist.filter(w => w.id !== id);
-        } else {
-          next = [...watchlist, { name, id }];
-        }
-        setWatchlist(next);
-        localStorage.setItem("sarkarisetu_watchlist", JSON.stringify(next));
-      };
-
-      const isWatched = (id) => watchlist.some(w => w.id === id);
-
-      // Countdown
-      const getCountdown = (dateStr) => {
-        if (!dateStr) return null;
-        const target = new Date(dateStr);
-        const now = new Date();
-        const diff = Math.ceil((target - now) / (1000 * 60 * 60 * 24));
-        if (diff < 0) return "Passed";
-        if (diff === 0) return "Today!";
-        if (diff === 1) return "Tomorrow";
-        return diff + " days left";
-      };
-
-      // WhatsApp share
-      const shareWhatsApp = (text, url) => {
-        const fullUrl = url || window.location.href;
-        window.open(`https://wa.me/?text=${encodeURIComponent(text + " " + fullUrl)}`, "_blank");
-      };
-
-      // Category colors
-      const catColors = {
-        "SSC Exams": "#2563eb", "UPSC Civil Services": "#7c3aed", "Banking": "#16a34a",
-        "Railway": "#ea580c", "Engineering": "#dc2626", "Medical": "#db2777",
-        "Defence": "#0d9488", "Teaching": "#d97706", "State PSC": "#6366f1",
-        "Law": "#0891b2", "Management": "#65a30d", "Insurance": "#ca8a04"
-      };
-
-      const t = (hi, en) => lang === "hi" ? hi : en;
-
-      const categories = Object.keys(catColors);
-      const filtered = latestResults.filter(r => !search || r.exam_name?.toLowerCase().includes(search.toLowerCase()));
-
-      return (
-        <div style={{ fontFamily: "'Segoe UI',Arial,sans-serif", background: dark ? "#0f172a" : "#f8fafc", minHeight: "100vh", padding: 12, maxWidth: 900, margin: "0 auto" }}>
-
-          {/* Header */}
-          <div style={{ background: "linear-gradient(135deg,#1e3a5f,#2563eb)", borderRadius: 14, padding: "20px 16px", color: "#fff", marginBottom: 16, textAlign: "center" }}>
-            <h1 style={{ fontSize: 22, fontWeight: 700, margin: 0 }}>⚡ सरकारीसेतु India</h1>
-            <p style={{ fontSize: 13, opacity: 0.85, margin: "4px 0 12px" }}>{t("परीक्षा परिणाम, प्रवेश पत्र और नौकरियां", "Exam Results, Admit Cards & Jobs")}</p>
-
-            {/* Search */}
-            <div style={{ display: "flex", gap: 6, maxWidth: 500, margin: "0 auto" }}>
-              <input value={search} onChange={e => setSearch(e.target.value)}
-                placeholder={t("🔍 परीक्षा खोजें...", "🔍 Search exams...")}
-                style={{ flex: 1, padding: "10px 14px", borderRadius: 8, border: "none", fontSize: 14, outline: "none" }} />
-            </div>
+  return (
+    <div className="min-h-screen bg-gray-50">
+      {/* Header */}
+      <header className="bg-dark text-white px-4 py-3">
+        <div className="max-w-4xl mx-auto flex items-center justify-between">
+          <div>
+            <h1 className="text-xl font-extrabold">
+              <span className="text-[#ff9933]">S</span><span className="text-white">arkari</span><span className="text-[#138808]">Setu</span>
+              <span className="block text-[10px] text-gray-400 font-normal">India</span>
+            </h1>
           </div>
+          <nav className="flex gap-1.5 text-xs">
+            {['Results','Admit Cards','Answer Keys','Syllabus','Search'].map(item => (
+              <a key={item} href={`/${item.toLowerCase().replace(/\s+/g,'-')}`} 
+                className="px-2.5 py-1.5 rounded bg-gray-700 text-gray-300 hover:text-white hover:bg-gray-600 transition">
+                {item}
+              </a>
+            ))}
+          </nav>
+        </div>
+      </header>
 
-          {/* Stats + Quick Links row */}
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(100px, 1fr))", gap: 8, marginBottom: 14 }}>
+      <div className="max-w-4xl mx-auto px-4 py-3">
+        {/* Search Bar */}
+        <form action="/search" method="GET" className="flex gap-2 mb-4">
+          <input type="text" name="q" placeholder="🔍 52,000+ exams search karein..." 
+            className="flex-1 px-4 py-3 rounded-xl bg-white border border-gray-200 text-sm shadow-sm focus:outline-none focus:ring-2 focus:ring-brand" />
+          <button type="submit" className="bg-brand text-white px-6 py-3 rounded-xl text-sm font-semibold hover:bg-brand-dark transition shadow-sm whitespace-nowrap">
+            Search
+          </button>
+        </form>
+
+        {/* Ticker */}
+        <div className="bg-brand text-white text-sm px-4 py-2.5 rounded-lg mb-4 overflow-hidden">
+          <div className="animate-marquee whitespace-nowrap">
+            🚀 {totalExams.toLocaleString()}+ Exams  |  📢 SarkariSetu India - Aapka Sarkari Exam Dost  |  📌 SSC, UPSC, Railway, Banking, NEET, JEE
+          </div>
+        </div>
+
+        {/* Stats */}
+        <div className="grid grid-cols-3 gap-3 mb-5">
+          <div className="bg-gradient-to-br from-red-500 to-red-600 text-white rounded-xl p-4 text-center shadow-md">
+            <div className="text-2xl font-black">{totalExams.toLocaleString()}+</div>
+            <div className="text-[11px] opacity-90 mt-0.5">📚 Total Exams</div>
+          </div>
+          <div className="bg-gradient-to-br from-blue-500 to-blue-600 text-white rounded-xl p-4 text-center shadow-md">
+            <div className="text-2xl font-black">{latestResults.length}+</div>
+            <div className="text-[11px] opacity-90 mt-0.5">🏆 Results</div>
+          </div>
+          <div className="bg-gradient-to-br from-purple-500 to-purple-600 text-white rounded-xl p-4 text-center shadow-md">
+            <div className="text-2xl font-black">{admitCards.length}+</div>
+            <div className="text-[11px] opacity-90 mt-0.5">🪪 Admit Cards</div>
+          </div>
+        </div>
+
+        {/* 3 Sections */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+          {/* Results */}
+          <section className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
+            <div className="bg-red-50 px-4 py-3 border-b border-red-100">
+              <h2 className="text-red-600 font-bold text-sm flex items-center gap-2">🏆 Latest Results</h2>
+            </div>
+            <div className="divide-y divide-gray-100">
+              {latestResults.length > 0 ? latestResults.map((item, i) => (
+                <a key={i} href={`/exam/${item.exam_id}`} className="block px-4 py-2.5 hover:bg-red-50 transition">
+                  <p className="text-sm font-semibold text-gray-800">{item.exam_name || item.name}</p>
+                  <p className="text-xs text-green-600 mt-0.5">✅ Result Declared</p>
+                </a>
+              )) : (
+                <p className="px-4 py-6 text-center text-gray-400 text-sm">Loading...</p>
+              )}
+            </div>
+          </section>
+
+          {/* Admit Cards */}
+          <section className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
+            <div className="bg-blue-50 px-4 py-3 border-b border-blue-100">
+              <h2 className="text-blue-600 font-bold text-sm flex items-center gap-2">🪪 Admit Cards</h2>
+            </div>
+            <div className="divide-y divide-gray-100">
+              {admitCards.length > 0 ? admitCards.map((item, i) => (
+                <a key={i} href={`/exam/${item.exam_id}`} className="block px-4 py-2.5 hover:bg-blue-50 transition">
+                  <p className="text-sm font-semibold text-gray-800">{item.exam_name || item.title || item.name}</p>
+                  <p className="text-xs text-blue-600 mt-0.5">📄 Admit Card Released</p>
+                </a>
+              )) : (
+                <p className="px-4 py-6 text-center text-gray-400 text-sm">Loading...</p>
+              )}
+            </div>
+          </section>
+
+          {/* Upcoming */}
+          <section className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
+            <div className="bg-purple-50 px-4 py-3 border-b border-purple-100">
+              <h2 className="text-purple-600 font-bold text-sm flex items-center gap-2">📅 Upcoming Exams</h2>
+            </div>
+            <div className="divide-y divide-gray-100">
+              {upcomingExams.length > 0 ? upcomingExams.map((item, i) => (
+                <a key={i} href={`/exam/${item.exam_id}`} className="block px-4 py-2.5 hover:bg-purple-50 transition">
+                  <p className="text-sm font-semibold text-gray-800">{item.exam_name || item.name}</p>
+                  <p className="text-xs text-purple-600 mt-0.5">📅 {item.exam_date || 'Coming Soon'}</p>
+                </a>
+              )) : (
+                <p className="px-4 py-6 text-center text-gray-400 text-sm">Loading...</p>
+              )}
+            </div>
+          </section>
+        </div>
+
+        {/* Categories */}
+        <section className="bg-white rounded-xl shadow-sm border border-gray-100 p-5 mb-5">
+          <h2 className="text-brand font-bold text-base mb-4 flex items-center gap-2">📍 Browse by Category</h2>
+          <div className="flex flex-wrap gap-2">
+            {categories.length > 0 ? categories.map((cat, i) => (
+              <a key={i} href={`/category/${cat.slug || cat.name}`} 
+                className="px-3.5 py-2 bg-green-50 rounded-full text-brand text-xs font-semibold border border-green-100 hover:bg-green-100 hover:shadow-sm transition">
+                {cat.icon || '📁'} {cat.name.length > 20 ? cat.name.slice(0,18)+'..' : cat.name}
+              </a>
+            )) : (
+              <p className="text-center text-gray-400 text-sm w-full py-6">Loading categories...</p>
+            )}
+          </div>
+        </section>
+
+        {/* Ad */}
+        <div className="bg-gray-200 text-center py-6 rounded-xl text-gray-500 text-sm border-2 border-dashed border-gray-300 mb-5">
+          📢 Advertisement / Google AdSense
+        </div>
+
+        {/* Quick Links */}
+        <section className="bg-white rounded-xl shadow-sm border border-gray-100 p-5 mb-5">
+          <h2 className="text-brand font-bold text-base mb-4 flex items-center gap-2">🔗 Quick Links</h2>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
             {[
-              { icon: "🏆", label: t("परिणाम", "Results"), count: latestResults.length, href: "/results" },
-              { icon: "🎫", label: t("प्रवेश पत्र", "Admits"), count: admitCards.length, href: "/admit-cards" },
-              { icon: "📚", label: t("सिलेबस", "Syllabus"), count: "", href: "/syllabus" },
-              { icon: "🔑", label: t("उत्तर कुंजी", "Answer Keys"), count: "", href: "/answer-keys" },
-              { icon: "📢", label: t("सूचनाएं", "Notif."), count: "", href: "/notifications" },
-            ].map(s => (
-              <a key={s.label} href={s.href}
-                style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 2, padding: "10px 6px",
-                  background: dark ? "#1e293b" : "#ffffff", borderRadius: 10, textDecoration: "none", color: dark ? "#e2e8f0" : "#151515",
-                  border: dark ? "1px solid #334155" : "1px solid #e5e7eb", boxShadow: "0 1px 3px rgba(0,0,0,0.04)" }}>
-                <span style={{ fontSize: 22 }}>{s.icon}</span>
-                <span style={{ fontSize: 11, fontWeight: 500, textAlign: "center" }}>{s.label}</span>
+              {href:'/syllabus', icon:'📖', label:'Syllabus'},
+              {href:'/answer-keys', icon:'🔑', label:'Answer Keys'},
+              {href:'/results', icon:'📈', label:'Results'},
+              {href:'/notifications', icon:'📢', label:'Notifications'},
+            ].map(link => (
+              <a key={link.href} href={link.href} 
+                className="px-3 py-3 bg-green-50 rounded-lg text-center text-brand text-sm font-semibold border border-green-100 hover:bg-green-100 transition">
+                {link.icon} {link.label}
               </a>
             ))}
           </div>
+        </section>
+      </div>
 
-          {/* Upcoming Exams with Countdown */}
-          {upcoming.length > 0 && (
-            <div style={{ background: dark ? "#1e293b" : "#ffffff", borderRadius: 12, padding: 16, marginBottom: 14, border: dark ? "1px solid #334155" : "1px solid #e5e7eb" }}>
-              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 10 }}>
-                <h2 style={{ fontSize: 15, fontWeight: 700, color: dark ? "#e2e8f0" : "#151515", margin: 0 }}>
-                  ⏰ {t("आगामी परीक्षाएं", "Upcoming Exams")}
-                </h2>
-                <button onClick={() => shareWhatsApp("Check upcoming exams on SarkariSetu:", window.location.href)}
-                  style={{ padding: "4px 10px", background: "#25D366", color: "#fff", border: "none", borderRadius: 6, cursor: "pointer", fontSize: 11 }}>
-                  📱 Share
-                </button>
-              </div>
-              <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
-                {upcoming.slice(0, 25).map((e, i) => (
-                  <div key={i} style={{ display: "flex", justifyContent: "space-between", alignItems: "center",
-                    padding: "8px 10px", dark ? "#0f172a" : "#f8fafc", borderRadius: 8, border: dark ? "1px solid #334155" : "1px solid #e5e7eb" }}>
-                    <div style={{ flex: 1, minWidth: 0 }}>
-                      <div style={{ fontSize: 13, fontWeight: 600, color: dark ? "#e2e8f0" : "#151515" }}>{e.exam_name}</div>
-                      <div style={{ fontSize: 11, color: dark ? "#94a3b8" : "#717171" }}>📅 {e.exam_date || "TBA"}</div>
-                    </div>
-                    <div style={{ textAlign: "right", flexShrink: 0 }}>
-                      {e.exam_date && (
-                        <div style={{ fontSize: 13, fontWeight: 700,
-                          color: "#16a34a" }}>
-                          ⏳ {getCountdown(e.exam_date)}
-                        </div>
-                      )}
-                      <div style={{ display: "flex", gap: 4, marginTop: 4, justifyContent: "flex-end" }}>
-                        <button onClick={() => shareWhatsApp(`📅 ${e.exam_name} - ${e.exam_date}`, `https://exam-platform-beta.vercel.app/exam/${e.exam_id}`)}
-                          style={{ padding: "2px 6px", background: "#25D366", color: "#fff", border: "none", borderRadius: 4, cursor: "pointer", fontSize: 10 }}>📱</button>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-              <a href="/results" style={{ display: "block", textAlign: "center", marginTop: 8, fontSize: 12, color: "#2563eb", textDecoration: "none" }}>
-                {t("सभी देखें →", "View All →")}
-              </a>
-            </div>
-          )}
-
-          {/* Latest Results */}
-          <div style={{ background: dark ? "#1e293b" : "#ffffff", borderRadius: 12, padding: 16, marginBottom: 14, border: dark ? "1px solid #334155" : "1px solid #e5e7eb" }}>
-            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 10 }}>
-              <h2 style={{ fontSize: 15, fontWeight: 700, color: dark ? "#e2e8f0" : "#151515", margin: 0 }}>
-                🏆 {t("नवीनतम परिणाम", "Latest Results")}
-              </h2>
-            </div>
-            <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
-              {filtered.slice(0, 25).map((r, i) => (
-                <div key={i} style={{ display: "flex", justifyContent: "space-between", alignItems: "center",
-                  padding: "8px 10px", dark ? "#0f172a" : "#f8fafc", borderRadius: 8, border: dark ? "1px solid #334155" : "1px solid #e5e7eb" }}>
-                  <a href={`/exam/${r.exam_id}`} style={{ flex: 1, minWidth: 0, textDecoration: "none" }}>
-                    <div style={{ fontSize: 13, fontWeight: 600, color: "#2563eb" }}>{r.exam_name}</div>
-                    <div style={{ fontSize: 11, color: dark ? "#94a3b8" : "#717171" }}>🏆 Result Declared</div>
-                  </a>
-                  <div style={{ display: "flex", gap: 4, flexShrink: 0 }}>
-                    <button onClick={() => toggleWatchlist(r.exam_name, r.exam_id)}
-                      style={{ padding: "4px 8px", background: "transparent", border: "none", cursor: "pointer", fontSize: 16 }}>
-                      {isWatched(r.exam_id) ? "🔔" : "🔕"}
-                    </button>
-                    <button onClick={() => shareWhatsApp(`🏆 ${r.exam_name} - Result Declared!`, `https://exam-platform-beta.vercel.app/exam/${r.exam_id}`)}
-                      style={{ padding: "4px 8px", background: "#25D366", color: "#fff", border: "none", borderRadius: 4, cursor: "pointer", fontSize: 11 }}>📱</button>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Admit Cards */}
-          <div style={{ background: dark ? "#1e293b" : "#ffffff", borderRadius: 12, padding: 16, marginBottom: 14, border: dark ? "1px solid #334155" : "1px solid #e5e7eb" }}>
-            <h2 style={{ fontSize: 15, fontWeight: 700, color: dark ? "#e2e8f0" : "#151515", margin: "0 0 10px" }}>
-              🎫 {t("प्रवेश पत्र", "Admit Cards")}
-            </h2>
-            <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
-              {admitCards.slice(0, 25).map((r, i) => (
-                <div key={i} style={{ display: "flex", justifyContent: "space-between", alignItems: "center",
-                  padding: "8px 10px", dark ? "#0f172a" : "#f8fafc", borderRadius: 8, border: dark ? "1px solid #334155" : "1px solid #e5e7eb" }}>
-                  <a href={`/exam/${r.exam_id}`} style={{ flex: 1, minWidth: 0, textDecoration: "none" }}>
-                    <div style={{ fontSize: 13, fontWeight: 600, color: "#ea580c" }}>{r.exam_name}</div>
-                    <div style={{ fontSize: 11, color: dark ? "#94a3b8" : "#717171" }}>🎫 Admit Card Released</div>
-                  </a>
-                  <button onClick={() => shareWhatsApp(`🎫 ${r.exam_name} - Admit Card Released!`, `https://exam-platform-beta.vercel.app/exam/${r.exam_id}`)}
-                    style={{ padding: "4px 8px", background: "#25D366", color: "#fff", border: "none", borderRadius: 4, cursor: "pointer", fontSize: 11 }}>📱</button>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Categories */}
-          <div style={{ background: dark ? "#1e293b" : "#ffffff", borderRadius: 12, padding: 16, marginBottom: 14, border: dark ? "1px solid #334155" : "1px solid #e5e7eb" }}>
-            <h2 style={{ fontSize: 15, fontWeight: 700, color: dark ? "#e2e8f0" : "#151515", margin: "0 0 10px" }}>
-              🏷️ {t("श्रेणियां", "Browse by Category")}
-            </h2>
-            <div style={{ display: "flex", flexWrap: "wrap", gap: 6 }}>
-              {categories.map(c => (
-                <a key={c} href={`/category/${c.toLowerCase().replace(/\s+/g, "-")}`}
-                  style={{ padding: "6px 14px", borderRadius: 20, fontSize: 12, fontWeight: 500,
-                    background: catColors[c] + "18", color: catColors[c], border: `1px solid ${catColors[c]}40`,
-                    textDecoration: "none" }}>
-                  {c}
-                </a>
-              ))}
-            </div>
-          </div>
-
-          {/* Watchlist Section */}
-          {watchlist.length > 0 && (
-            <div style={{ background: dark ? "#1e293b" : "#ffffff", borderRadius: 12, padding: 16, marginBottom: 14, border: dark ? "1px solid #334155" : "1px solid #e5e7eb" }}>
-              <h2 style={{ fontSize: 15, fontWeight: 700, color: dark ? "#e2e8f0" : "#151515", margin: "0 0 10px" }}>
-                🔔 {t("आपकी सूची", "Your Watchlist")}
-              </h2>
-              <div style={{ display: "flex", flexWrap: "wrap", gap: 6 }}>
-                {watchlist.slice(0, 25).map((w, i) => (
-                  <a key={i} href={`/exam/${w.id}`}
-                    style={{ padding: "6px 12px", borderRadius: 8, fontSize: 12, background: "#2563eb18", color: "#2563eb", textDecoration: "none", display: "inline-flex", alignItems: "center", gap: 4 }}>
-                    🔔 {w.name?.slice(0, 25)}
-                  </a>
-                ))}
-              </div>
-            </div>
-          )}
-
-          {/* Footer */}
-          <div style={{ textAlign: "center", padding: "20px 0", fontSize: 11, color: dark ? "#94a3b8" : "#717171" }}>
-            <p>⚡ SarkariSetu India • {t("सरकारी निकाय से संबद्ध नहीं", "Not affiliated with any government body")}</p>
-            <p style={{ marginTop: 4 }}>
-              <a href="/sitemap.xml" style={{ color: "#2563eb", textDecoration: "none", margin: "0 6px" }}>Sitemap</a>
-              <a href="/results" style={{ color: "#2563eb", textDecoration: "none", margin: "0 6px" }}>Results</a>
-              <a href="/admit-cards" style={{ color: "#2563eb", textDecoration: "none", margin: "0 6px" }}>Admit Cards</a>
-            </p>
-          </div>
+      <footer className="bg-dark text-gray-400 text-xs py-6 px-4 text-center">
+        <div className="max-w-4xl mx-auto">
+          <p className="mb-2">© 2026 <span className="text-brand font-bold">SarkariSetu India</span></p>
+          <p className="leading-relaxed">Disclaimer: Not affiliated with any government organization.</p>
         </div>
-      );
-    }
-    
+      </footer>
+
+      <style jsx>{`
+        @keyframes marquee {
+          0% { transform: translateX(100%); }
+          100% { transform: translateX(-100%); }
+        }
+        .animate-marquee {
+          animation: marquee 20s linear infinite;
+        }
+      `}</style>
+    </div>
+  );
+}
