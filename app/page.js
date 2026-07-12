@@ -85,7 +85,7 @@
       const filtered = latestResults.filter(r => !search || r.exam_name?.toLowerCase().includes(search.toLowerCase()));
 
       return (
-        <div style={{ fontFamily: "'Segoe UI',Arial,sans-serif", dark ? "#0f172a" : "#f8fafc", minHeight: "100vh", padding: 12, maxWidth: 900, margin: "0 auto" }}>
+        <div style={{ fontFamily: "'Segoe UI',Arial,sans-serif", background: dark ? "#0f172a" : "#f8fafc", minHeight: "100vh", padding: 12, maxWidth: 900, margin: "0 auto" }}>
 
           {/* Header */}
           <div style={{ background: "linear-gradient(135deg,#1e3a5f,#2563eb)", borderRadius: 14, padding: "20px 16px", color: "#fff", marginBottom: 16, textAlign: "center" }}>
