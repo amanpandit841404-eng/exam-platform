@@ -108,7 +108,7 @@
               <a key={s.label} href={s.href}
                 style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 2, padding: "10px 6px",
                   background: dark ? "#1e293b" : "#ffffff", borderRadius: 10, textDecoration: "none", color: dark ? "#e2e8f0" : "#151515",
-                  border: "1px solid var(--border)", boxShadow: "0 1px 3px rgba(0,0,0,0.04)" }}>
+                  border: dark ? "1px solid #334155" : "1px solid #e5e7eb", boxShadow: "0 1px 3px rgba(0,0,0,0.04)" }}>
                 <span style={{ fontSize: 22 }}>{s.icon}</span>
                 <span style={{ fontSize: 11, fontWeight: 500, textAlign: "center" }}>{s.label}</span>
               </a>
@@ -117,7 +117,7 @@
 
           {/* Upcoming Exams with Countdown */}
           {upcoming.length > 0 && (
-            <div style={{ background: dark ? "#1e293b" : "#ffffff", borderRadius: 12, padding: 16, marginBottom: 14, border: "1px solid var(--border)" }}>
+            <div style={{ background: dark ? "#1e293b" : "#ffffff", borderRadius: 12, padding: 16, marginBottom: 14, border: dark ? "1px solid #334155" : "1px solid #e5e7eb" }}>
               <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 10 }}>
                 <h2 style={{ fontSize: 15, fontWeight: 700, color: dark ? "#e2e8f0" : "#151515", margin: 0 }}>
                   ⏰ {t("आगामी परीक्षाएं", "Upcoming Exams")}
@@ -130,7 +130,7 @@
               <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
                 {upcoming.slice(0, 5).map((e, i) => (
                   <div key={i} style={{ display: "flex", justifyContent: "space-between", alignItems: "center",
-                    padding: "8px 10px", dark ? "#0f172a" : "#f8fafc", borderRadius: 8, border: "1px solid var(--border)" }}>
+                    padding: "8px 10px", dark ? "#0f172a" : "#f8fafc", borderRadius: 8, border: dark ? "1px solid #334155" : "1px solid #e5e7eb" }}>
                     <div style={{ flex: 1, minWidth: 0 }}>
                       <div style={{ fontSize: 13, fontWeight: 600, color: dark ? "#e2e8f0" : "#151515" }}>{e.exam_name}</div>
                       <div style={{ fontSize: 11, color: dark ? "#94a3b8" : "#717171" }}>📅 {e.exam_date || "TBA"}</div>
@@ -157,7 +157,7 @@
           )}
 
           {/* Latest Results */}
-          <div style={{ background: dark ? "#1e293b" : "#ffffff", borderRadius: 12, padding: 16, marginBottom: 14, border: "1px solid var(--border)" }}>
+          <div style={{ background: dark ? "#1e293b" : "#ffffff", borderRadius: 12, padding: 16, marginBottom: 14, border: dark ? "1px solid #334155" : "1px solid #e5e7eb" }}>
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 10 }}>
               <h2 style={{ fontSize: 15, fontWeight: 700, color: dark ? "#e2e8f0" : "#151515", margin: 0 }}>
                 🏆 {t("नवीनतम परिणाम", "Latest Results")}
@@ -166,7 +166,7 @@
             <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
               {filtered.slice(0, 10).map((r, i) => (
                 <div key={i} style={{ display: "flex", justifyContent: "space-between", alignItems: "center",
-                  padding: "8px 10px", dark ? "#0f172a" : "#f8fafc", borderRadius: 8, border: "1px solid var(--border)" }}>
+                  padding: "8px 10px", dark ? "#0f172a" : "#f8fafc", borderRadius: 8, border: dark ? "1px solid #334155" : "1px solid #e5e7eb" }}>
                   <a href={`/exam/${r.exam_id}`} style={{ flex: 1, minWidth: 0, textDecoration: "none" }}>
                     <div style={{ fontSize: 13, fontWeight: 600, color: "#2563eb" }}>{r.exam_name}</div>
                     <div style={{ fontSize: 11, color: dark ? "#94a3b8" : "#717171" }}>🏆 Result Declared</div>
@@ -185,14 +185,14 @@
           </div>
 
           {/* Admit Cards */}
-          <div style={{ background: dark ? "#1e293b" : "#ffffff", borderRadius: 12, padding: 16, marginBottom: 14, border: "1px solid var(--border)" }}>
+          <div style={{ background: dark ? "#1e293b" : "#ffffff", borderRadius: 12, padding: 16, marginBottom: 14, border: dark ? "1px solid #334155" : "1px solid #e5e7eb" }}>
             <h2 style={{ fontSize: 15, fontWeight: 700, color: dark ? "#e2e8f0" : "#151515", margin: "0 0 10px" }}>
               🎫 {t("प्रवेश पत्र", "Admit Cards")}
             </h2>
             <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
               {admitCards.slice(0, 10).map((r, i) => (
                 <div key={i} style={{ display: "flex", justifyContent: "space-between", alignItems: "center",
-                  padding: "8px 10px", dark ? "#0f172a" : "#f8fafc", borderRadius: 8, border: "1px solid var(--border)" }}>
+                  padding: "8px 10px", dark ? "#0f172a" : "#f8fafc", borderRadius: 8, border: dark ? "1px solid #334155" : "1px solid #e5e7eb" }}>
                   <a href={`/exam/${r.exam_id}`} style={{ flex: 1, minWidth: 0, textDecoration: "none" }}>
                     <div style={{ fontSize: 13, fontWeight: 600, color: "#ea580c" }}>{r.exam_name}</div>
                     <div style={{ fontSize: 11, color: dark ? "#94a3b8" : "#717171" }}>🎫 Admit Card Released</div>
@@ -205,7 +205,7 @@
           </div>
 
           {/* Categories */}
-          <div style={{ background: dark ? "#1e293b" : "#ffffff", borderRadius: 12, padding: 16, marginBottom: 14, border: "1px solid var(--border)" }}>
+          <div style={{ background: dark ? "#1e293b" : "#ffffff", borderRadius: 12, padding: 16, marginBottom: 14, border: dark ? "1px solid #334155" : "1px solid #e5e7eb" }}>
             <h2 style={{ fontSize: 15, fontWeight: 700, color: dark ? "#e2e8f0" : "#151515", margin: "0 0 10px" }}>
               🏷️ {t("श्रेणियां", "Browse by Category")}
             </h2>
@@ -223,7 +223,7 @@
 
           {/* Watchlist Section */}
           {watchlist.length > 0 && (
-            <div style={{ background: dark ? "#1e293b" : "#ffffff", borderRadius: 12, padding: 16, marginBottom: 14, border: "1px solid var(--border)" }}>
+            <div style={{ background: dark ? "#1e293b" : "#ffffff", borderRadius: 12, padding: 16, marginBottom: 14, border: dark ? "1px solid #334155" : "1px solid #e5e7eb" }}>
               <h2 style={{ fontSize: 15, fontWeight: 700, color: dark ? "#e2e8f0" : "#151515", margin: "0 0 10px" }}>
                 🔔 {t("आपकी सूची", "Your Watchlist")}
               </h2>
