@@ -5,6 +5,14 @@ import { createClient } from "@supabase/supabase-js";
       process.env.SUPABASE_ANON_KEY || "sb_publishable_BShV19iGgcoKLiIsyvQ2Lg_1Lhe9uPV"
     );
 
+    // Admin client with service_role key to bypass RLS on results/admit_cards tables
+    const adminSupabase = process.env.SUPABASE_SERVICE_ROLE_KEY
+      ? createClient(
+          process.env.SUPABASE_URL || "https://fbcvxefvvifmxaiqxiuq.supabase.co",
+          process.env.SUPABASE_SERVICE_ROLE_KEY
+        )
+      : supabase; // fallback to regular client if no service key
+
     const EXAM_MAP = {
       "ssc cgl": [201, "SSC CGL"], "ssc chsl": [202, "SSC CHSL"], "ssc gd": [203, "SSC GD"], "ssc mts": [204, "SSC MTS"],
       "ssc cpo": [205, "SSC CPO"], "ssc stenographer": [206, "SSC Stenographer"], "ssc je": [207, "SSC JE"],
@@ -98,20 +106,20 @@ import { createClient } from "@supabase/supabase-js";
             });
             newsAdded++;
 
-            // Auto-add to results table if result type
+            // Auto-add to results table if result type (using admin client to bypass RLS)
             if (type === "result") {
-              const { data: rExists } = await supabase.from("results").select("id").eq("exam_name", `${examName} Result`).maybeSingle();
+              const { data: rExists } = await adminSupabase.from("results").select("id").eq("exam_name", `${examName} Result`).maybeSingle();
               if (!rExists) {
-                await supabase.from("results").insert({ exam_name: `${examName} Result`, exam_id: examId, result_title: "Result Declared", status: "declared" });
+                await adminSupabase.from("results").insert({ exam_name: `${examName} Result`, exam_id: examId, result_title: "Result Declared", status: "declared" });
                 resultsAdded++;
               }
             }
 
-            // Auto-add to admit_cards table if admit_card type
+            // Auto-add to admit_cards table if admit_card type (using admin client to bypass RLS)
             if (type === "admit_card") {
-              const { data: aExists } = await supabase.from("admit_cards").select("id").eq("exam_name", `${examName} Admit Card`).maybeSingle();
+              const { data: aExists } = await adminSupabase.from("admit_cards").select("id").eq("exam_name", `${examName} Admit Card`).maybeSingle();
               if (!aExists) {
-                await supabase.from("admit_cards").insert({ exam_name: `${examName} Admit Card`, exam_id: examId, title: "Admit Card Released", status: "released" });
+                await adminSupabase.from("admit_cards").insert({ exam_name: `${examName} Admit Card`, exam_id: examId, title: "Admit Card Released", status: "released" });
                 admitsAdded++;
               }
             }
@@ -144,7 +152,7 @@ import { createClient } from "@supabase/supabase-js";
               exam_id: match ? match[0] : null, update_type: type,
               title, description: desc,
               publish_date: today, is_verified: true,
-      official_link: url,
+              official_link: url,
             });
             templateAdded++;
           }
@@ -181,4 +189,3 @@ import { createClient } from "@supabase/supabase-js";
         return Response.json({ success: false, date: today, error: e.message }, { status: 500 });
       }
     }
-    
