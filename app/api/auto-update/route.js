@@ -135,7 +135,7 @@ import { createClient } from "@supabase/supabase-js";
         const day = Math.floor((new Date() - new Date(new Date().getFullYear(), 0, 0)) / 86400000);
         const sorted = [...templates].sort((a, b) => (templates.indexOf(a) * 17 + day) % 30 - (templates.indexOf(b) * 17 + day) % 30);
 
-        for (const [name, type, desc] of sorted.slice(0, 4)) {
+        for (const [name, type, desc, url] of sorted.slice(0, 4)) {
           const title = `${name} ${type === "result" ? "Result" : "Admit Card"} - ${today}`;
           const { data: exists } = await supabase.from("updates").select("id").eq("title", title).maybeSingle();
           if (!exists) {
@@ -144,6 +144,7 @@ import { createClient } from "@supabase/supabase-js";
               exam_id: match ? match[0] : null, update_type: type,
               title, description: desc,
               publish_date: today, is_verified: true,
+      official_link: url,
             });
             templateAdded++;
           }
