@@ -22,13 +22,17 @@
 
       const fetchData = async () => {
         try {
-          const [res, adm, upc] = await Promise.all([
+          const [res, adm, upc, updatesRes, updatesAdm] = await Promise.all([
             supabase.from("results").select("*").order("created_at", { ascending: false }).limit(25),
             supabase.from("admit_cards").select("*").order("created_at", { ascending: false }).limit(25),
             supabase.from("upcoming_exams").select("*").order("exam_date", { ascending: true }).limit(25),
+            supabase.from("updates").select("*").eq("update_type", "result").order("created_at", { ascending: false }).limit(25),
+            supabase.from("updates").select("*").eq("update_type", "admit_card").order("created_at", { ascending: false }).limit(25),
           ]);
-          if (res.data) setLatestResults(res.data);
-          if (adm.data) setAdmitCards(adm.data);
+          if (res.data && res.data.length > 0) setLatestResults(res.data);
+          else if (updatesRes.data) setLatestResults(updatesRes.data);
+          if (adm.data && adm.data.length > 0) setAdmitCards(adm.data);
+          else if (updatesAdm.data) setAdmitCards(updatesAdm.data);
           if (upc.data) setUpcoming(upc.data);
         } catch (e) { console.error(e); }
         setLoading(false);
