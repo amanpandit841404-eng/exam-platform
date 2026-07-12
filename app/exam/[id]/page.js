@@ -88,11 +88,11 @@
             </div>
           )}
           {updates.length > 0 && (
-            <div style={{ background: dark ? "#1e293b" : "#ffffff", borderRadius: 12, padding: 16, marginBottom: 12, border: "1px solid var(--border)" }}>
+            <div style={{ background: dark ? "#1e293b" : "#ffffff", borderRadius: 12, padding: 16, marginBottom: 12, border: dark ? "1px solid #334155" : "1px solid #e5e7eb" }}>
               <h3 style={{ fontSize: 15, fontWeight: 700, color: dark ? "#e2e8f0" : "#151515", margin: "0 0 10px" }}>📢 {t("नवीनतम अपडेट", "Latest Updates")}</h3>
               <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
                 {updates.slice(0, 10).map(u => (
-                  <div key={u.id} style={{ padding: 10, background: dark ? "#0f172a" : "#f8fafc", borderRadius: 8, border: "1px solid var(--border)" }}>
+                  <div key={u.id} style={{ padding: 10, background: dark ? "#0f172a" : "#f8fafc", borderRadius: 8, border: dark ? "1px solid #334155" : "1px solid #e5e7eb" }}>
                     <div style={{ display: "flex", alignItems: "center", gap: 6, marginBottom: 2 }}>
                       <span>{typeIcons[u.update_type] || "📢"}</span>
                       <span style={{ fontSize: 11, padding: "1px 6px", borderRadius: 8, background: typeColors[u.update_type] || "#6b7280", color: "#fff" }}>{u.update_type?.replace("_", " ")}</span>
@@ -110,7 +110,7 @@
               </div>
             </div>
           )}
-          <div style={{ background: dark ? "#1e293b" : "#ffffff", borderRadius: 12, padding: 16, border: "1px solid var(--border)" }}>
+          <div style={{ background: dark ? "#1e293b" : "#ffffff", borderRadius: 12, padding: 16, border: dark ? "1px solid #334155" : "1px solid #e5e7eb" }}>
             <h3 style={{ fontSize: 15, fontWeight: 700, color: dark ? "#e2e8f0" : "#151515", margin: "0 0 10px" }}>📖 {t("परीक्षा विवरण", "Exam Details")}</h3>
             <table style={{ width: "100%", fontSize: 13, borderCollapse: "collapse" }}>
               <tbody>
@@ -121,7 +121,7 @@
                   [t("राज्य", "State"), exam.state || t("राष्ट्रीय", "National")],
                   [t("विवरण", "Description"), exam.description?.slice(0, 300)],
                 ].map(([label, value], i) => (
-                  <tr key={i} style={{ borderBottom: "1px solid var(--border)" }}>
+                  <tr key={i} style={{ borderBottom: dark ? "1px solid #334155" : "1px solid #e5e7eb" }}>
                     <td style={{ padding: "8px 4px", color: dark ? "#94a3b8" : "#717171", width: 120, fontWeight: 500 }}>{label}</td>
                     <td style={{ padding: "8px 4px", color: dark ? "#e2e8f0" : "#151515" }}>{value || "—"}</td>
                   </tr>
@@ -131,7 +131,7 @@
           </div>
           <div style={{ display: "flex", gap: 8, flexWrap: "wrap", marginTop: 16 }}>
             {[{ label: "🏆 "+t("परिणाम","Results"), href:"/results" },{ label: "🎫 "+t("प्रवेश पत्र","Admit Cards"), href:"/admit-cards" },{ label: "📚 "+t("सिलेबस","Syllabus"), href:"/syllabus" },{ label: "🔑 "+t("उत्तर कुंजी","Answer Keys"), href:"/answer-keys" }].map(q => (
-              <a key={q.label} href={q.href} style={{ flex:1, minWidth:100, textAlign:"center", padding:"10px 8px", background:dark ? "#1e293b" : "#ffffff", borderRadius:8, textDecoration:"none", color:dark ? "#e2e8f0" : "#151515", fontSize:12, fontWeight:500, border:"1px solid var(--border)" }}>{q.label}</a>
+              <a key={q.label} href={q.href} style={{ flex:1, minWidth:100, textAlign:"center", padding:"10px 8px", background:dark ? "#1e293b" : "#ffffff", borderRadius:8, textDecoration:"none", color:dark ? "#e2e8f0" : "#151515", fontSize:12, fontWeight:500, border:dark ? "1px solid #334155" : "1px solid #e5e7eb" }}>{q.label}</a>
             ))}
           </div>
           <div style={{ marginTop: 20, fontSize: 11, color: dark ? "#94a3b8" : "#717171", textAlign: "center" }}>
