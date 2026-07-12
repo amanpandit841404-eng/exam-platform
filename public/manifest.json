@@ -1,7 +1,7 @@
 {
-  "name": "SarkariSetu India",
+  "name": "SarkariSetu India - Sarkari Exam Results",
   "short_name": "SarkariSetu",
-  "description": "Sarkari Exam Results, Admit Cards, Syllabus",
+  "description": "India ka sabse bada exam portal - 52,000+ exams, results, admit cards, syllabus",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
