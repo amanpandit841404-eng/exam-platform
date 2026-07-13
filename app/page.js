@@ -176,6 +176,7 @@
                       <p style={{ margin: 0, fontSize: 12, fontWeight: 600, color: textMain, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{item.exam_name}</p>
                     </div>
                     <div style={{ display: 'flex', gap: 4, flexShrink: 0 }}>
+                      <a href={`/results/${item.id}`} style={{ fontSize: 10, padding: '3px 8px', background: '#f3f4f6', color: '#1e3a5f', borderRadius: 6, textDecoration: 'none', fontWeight: 600 }}>Details</a>
                       {item.result_url && <a href={item.result_url} target="_blank" rel="noopener noreferrer" style={{ fontSize: 10, padding: '3px 8px', background: '#2563eb', color: '#fff', borderRadius: 6, textDecoration: 'none', fontWeight: 700 }}>Official ↗</a>}
                       <span style={{ fontSize: 10, padding: '3px 8px', background: '#dcfce7', color: '#16a34a', borderRadius: 6, fontWeight: 700 }}>Declared</span>
                     </div>
@@ -196,6 +197,7 @@
                       <p style={{ margin: 0, fontSize: 12, fontWeight: 600, color: textMain, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{item.exam_name}</p>
                     </div>
                     <div style={{ display: 'flex', gap: 4, flexShrink: 0 }}>
+                      <a href={`/admit-cards/${item.id}`} style={{ fontSize: 10, padding: '3px 8px', background: '#f3f4f6', color: '#1e3a5f', borderRadius: 6, textDecoration: 'none', fontWeight: 600 }}>Details</a>
                       {item.download_url && <a href={item.download_url} target="_blank" rel="noopener noreferrer" style={{ fontSize: 10, padding: '3px 8px', background: '#7c3aed', color: '#fff', borderRadius: 6, textDecoration: 'none', fontWeight: 700 }}>Download ↗</a>}
                       <span style={{ fontSize: 10, padding: '3px 8px', background: '#ede9fe', color: '#7c3aed', borderRadius: 6, fontWeight: 700 }}>Released</span>
                     </div>
@@ -215,7 +217,7 @@
                       <p style={{ margin: '0 0 2px', fontSize: 12, fontWeight: 600, color: textMain, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>🎯 {item.exam_name}</p>
                       <p style={{ margin: 0, fontSize: 10, color: '#ea580c' }}>📅 {item.exam_date || 'Coming Soon'}</p>
                     </div>
-                    <span style={{ fontSize: 10, padding: '3px 8px', background: '#fff7ed', color: '#ea580c', borderRadius: 6, fontWeight: 700, flexShrink: 0 }}>Upcoming</span>
+                    {(() => { const d = item.exam_date ? Math.ceil((new Date(item.exam_date) - new Date()) / (1000*60*60*24)) : null; return d !== null && d > 0 ? <span style={{ fontSize: 10, padding: '3px 8px', background: d <= 30 ? '#fef2f2' : '#fff7ed', color: d <= 30 ? '#dc2626' : '#ea580c', borderRadius: 6, fontWeight: 700, flexShrink: 0 }}>{d}d left</span> : <span style={{ fontSize: 10, padding: '3px 8px', background: '#fff7ed', color: '#ea580c', borderRadius: 6, fontWeight: 700, flexShrink: 0 }}>Soon</span>; })()}
                   </div>
                 ))}
               </div>
