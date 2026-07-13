@@ -9,16 +9,20 @@ export default function Home() {
   const [admitCards, setAdmitCards] = useState([]);
   const [upcomingExams, setUpcomingExams] = useState([]);
   const [totalExams, setTotalExams] = useState(0);
+  const [totalResults, setTotalResults] = useState(0);
+  const [totalAdmits, setTotalAdmits] = useState(0);
 
   useEffect(() => {
     async function fetchData() {
       try {
-        const [catRes, resultsRes, admitRes, upcomingRes, countRes] = await Promise.all([
+        const [catRes, resultsRes, admitRes, upcomingRes, countRes, rCountRes, aCountRes] = await Promise.all([
           supabase.from('categories').select('*').order('name'),
           supabase.from('results').select('*').order('created_at', { ascending: false }).limit(8),
           supabase.from('admit_cards').select('*').order('created_at', { ascending: false }).limit(8),
           supabase.from('upcoming_exams').select('*').order('exam_date', { ascending: true }).limit(20),
           supabase.from('exams').select('*', { count: 'exact', head: true }),
+          supabase.from('results').select('*', { count: 'exact', head: true }),
+          supabase.from('admit_cards').select('*', { count: 'exact', head: true }),
         ]);
         if (catRes.data) setCategories(catRes.data);
         if (resultsRes.data) setLatestResults(resultsRes.data);
@@ -35,6 +39,8 @@ export default function Home() {
           setUpcomingExams(unique.slice(0, 8));
         }
         if (countRes.count) setTotalExams(countRes.count);
+        if (rCountRes.count) setTotalResults(rCountRes.count);
+        if (aCountRes.count) setTotalAdmits(aCountRes.count);
       } catch (err) { console.error(err); }
     }
     fetchData();
@@ -77,11 +83,11 @@ export default function Home() {
             <p className="text-[10px] opacity-90 font-semibold mt-0.5">Total Exams</p>
           </div>
           <div className="bg-gradient-to-br from-blue-500 to-blue-600 text-white rounded-xl p-4 text-center shadow-md">
-            <p className="text-2xl font-black">{latestResults.length}+</p>
+            <p className="text-2xl font-black">{totalResults ? totalResults + '+' : latestResults.length + '+'}</p>
             <p className="text-[10px] opacity-90 font-semibold mt-0.5">🏆 Results</p>
           </div>
           <div className="bg-gradient-to-br from-purple-500 to-purple-600 text-white rounded-xl p-4 text-center shadow-md">
-            <p className="text-2xl font-black">{admitCards.length}+</p>
+            <p className="text-2xl font-black">{totalAdmits ? totalAdmits + '+' : admitCards.length + '+'}</p>
             <p className="text-[10px] opacity-90 font-semibold mt-0.5">📄 Admit Cards</p>
           </div>
         </div>
