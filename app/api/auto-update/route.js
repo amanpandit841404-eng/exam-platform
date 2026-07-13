@@ -5,13 +5,13 @@ import { createClient } from "@supabase/supabase-js";
       process.env.SUPABASE_ANON_KEY || "sb_publishable_BShV19iGgcoKLiIsyvQ2Lg_1Lhe9uPV"
     );
 
-    // Admin client with service_role key to bypass RLS on results/admit_cards tables
+    // Admin client with service_role key to bypass RLS
     const adminSupabase = process.env.SUPABASE_SERVICE_ROLE_KEY
       ? createClient(
           process.env.SUPABASE_URL || "https://fbcvxefvvifmxaiqxiuq.supabase.co",
           process.env.SUPABASE_SERVICE_ROLE_KEY
         )
-      : supabase; // fallback to regular client if no service key
+      : supabase;
 
     const EXAM_MAP = {
       "ssc cgl": [201, "SSC CGL"], "ssc chsl": [202, "SSC CHSL"], "ssc gd": [203, "SSC GD"], "ssc mts": [204, "SSC MTS"],
@@ -74,9 +74,25 @@ import { createClient } from "@supabase/supabase-js";
       }
 
       const today = new Date().toISOString().split("T")[0];
-      let newsAdded = 0, templateAdded = 0, resultsAdded = 0, admitsAdded = 0;
+      let newsAdded = 0, templateAdded = 0, resultsAdded = 0, admitsAdded = 0, cleanupDone = 0;
 
       try {
+        // ========== CLEANUP: Remove duplicate upcoming exams ==========
+        const { data: allUpcoming } = await adminSupabase.from("upcoming_exams").select("id,exam_name").order("id");
+        if (allUpcoming && allUpcoming.length > 0) {
+          const seen = new Set();
+          const toDelete = [];
+          for (const item of allUpcoming) {
+            const key = item.exam_name.toLowerCase().trim();
+            if (seen.has(key)) toDelete.push(item.id);
+            else seen.add(key);
+          }
+          for (const id of toDelete) {
+            await adminSupabase.from("upcoming_exams").delete().eq("id", id);
+            cleanupDone++;
+          }
+        }
+
         // ========== PART 1: Google News Monitor ==========
         const queries = ["exam result declared", "admit card released", "answer key published"];
 
@@ -91,11 +107,9 @@ import { createClient } from "@supabase/supabase-js";
             const type = detectType(item.title);
             const displayTitle = `📰 ${examName} ${type.replace("_", " ")}`;
 
-            // Check duplicate
             const { data: exists } = await supabase.from("updates").select("id").eq("title", displayTitle).maybeSingle();
             if (exists) continue;
 
-            // Add to updates table
             await supabase.from("updates").insert({
               exam_id: examId, update_type: type,
               title: displayTitle,
@@ -106,7 +120,6 @@ import { createClient } from "@supabase/supabase-js";
             });
             newsAdded++;
 
-            // Auto-add to results table if result type (using admin client to bypass RLS)
             if (type === "result") {
               const { data: rExists } = await adminSupabase.from("results").select("id").eq("exam_name", `${examName} Result`).maybeSingle();
               if (!rExists) {
@@ -115,7 +128,6 @@ import { createClient } from "@supabase/supabase-js";
               }
             }
 
-            // Auto-add to admit_cards table if admit_card type (using admin client to bypass RLS)
             if (type === "admit_card") {
               const { data: aExists } = await adminSupabase.from("admit_cards").select("id").eq("exam_name", `${examName} Admit Card`).maybeSingle();
               if (!aExists) {
@@ -126,7 +138,7 @@ import { createClient } from "@supabase/supabase-js";
           }
         }
 
-        // ========== PART 2: Template Backup (for variety) ==========
+        // ========== PART 2: Template Backup ==========
         const templates = [
           ["SSC CGL", "result", "SSC CGL Tier 1 result update."],
           ["SSC CHSL", "result", "SSC CHSL result declared."],
@@ -158,7 +170,7 @@ import { createClient } from "@supabase/supabase-js";
           }
         }
 
-        // ========== PART 3: Upcoming Exams ==========
+        // ========== PART 3: Upcoming Exams (check by name to avoid dupes) ==========
         const upcoming = [
           ["UPSC CSE 2026 Prelims", "2026-08-15", "upsc cse"],
           ["SSC CGL 2026 Tier 1", "2026-09-20", "ssc cgl"],
@@ -167,10 +179,10 @@ import { createClient } from "@supabase/supabase-js";
           ["JEE Main 2027 Session 1", "2026-09-15", "jee main"],
         ];
         const [ucName, ucDate, ucKey] = upcoming[day % upcoming.length];
-        const { data: ucExists } = await supabase.from("upcoming_exams").select("id").eq("exam_name", ucName).maybeSingle();
+        const { data: ucExists } = await adminSupabase.from("upcoming_exams").select("id").eq("exam_name", ucName).maybeSingle();
         if (!ucExists) {
           const match = matchExam(ucKey);
-          await supabase.from("upcoming_exams").insert({
+          await adminSupabase.from("upcoming_exams").insert({
             exam_name: ucName, exam_id: match ? match[0] : null,
             exam_date: ucDate, status: "upcoming",
           });
@@ -178,12 +190,13 @@ import { createClient } from "@supabase/supabase-js";
 
         return Response.json({
           success: true, date: today,
+          duplicates_cleaned: cleanupDone,
           news_monitor_added: newsAdded,
           template_added: templateAdded,
           results_auto_added: resultsAdded,
           admit_cards_auto_added: admitsAdded,
           total_new: newsAdded + templateAdded + resultsAdded + admitsAdded,
-          message: "Google News monitored + auto-upload completed!",
+          message: "Auto-update completed with cleanup!",
         });
       } catch (e) {
         return Response.json({ success: false, date: today, error: e.message }, { status: 500 });
