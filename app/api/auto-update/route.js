@@ -5,12 +5,8 @@ import { createClient } from "@supabase/supabase-js";
       process.env.SUPABASE_ANON_KEY || "sb_publishable_BShV19iGgcoKLiIsyvQ2Lg_1Lhe9uPV"
     );
 
-    // Admin client with service_role key to bypass RLS
     const adminSupabase = process.env.SUPABASE_SERVICE_ROLE_KEY
-      ? createClient(
-          process.env.SUPABASE_URL || "https://fbcvxefvvifmxaiqxiuq.supabase.co",
-          process.env.SUPABASE_SERVICE_ROLE_KEY
-        )
+      ? createClient(process.env.SUPABASE_URL || "https://fbcvxefvvifmxaiqxiuq.supabase.co", process.env.SUPABASE_SERVICE_ROLE_KEY)
       : supabase;
 
     const EXAM_MAP = {
@@ -33,9 +29,7 @@ import { createClient } from "@supabase/supabase-js";
     function matchExam(title) {
       const lower = title.toLowerCase();
       const keys = Object.keys(EXAM_MAP).sort((a,b) => b.length - a.length);
-      for (const key of keys) {
-        if (lower.includes(key)) return EXAM_MAP[key];
-      }
+      for (const key of keys) { if (lower.includes(key)) return EXAM_MAP[key]; }
       return null;
     }
 
@@ -51,11 +45,8 @@ import { createClient } from "@supabase/supabase-js";
     async function fetchNews(query) {
       try {
         const url = `https://news.google.com/rss/search?q=${encodeURIComponent(query)}+india+exam&hl=en-IN&gl=IN`;
-        const resp = await fetch(url);
-        const text = await resp.text();
-        const items = [];
-        const regex = /<item>([\s\S]*?)<\/item>/gi;
-        let match;
+        const resp = await fetch(url); const text = await resp.text();
+        const items = []; const regex = /<item>([\s\S]*?)<\/item>/gi; let match;
         while ((match = regex.exec(text)) !== null) {
           const xml = match[1];
           const title = xml.match(/<title>(.*?)<\/title>/i)?.[1]?.replace(/<!\[CDATA\[|\]\]>/g, "").trim();
@@ -67,136 +58,107 @@ import { createClient } from "@supabase/supabase-js";
       } catch (e) { return []; }
     }
 
+    // All major exams for bulk generation
+    const ALL_EXAMS = [
+      [201, "SSC CGL"], [202, "SSC CHSL"], [203, "SSC GD"], [204, "SSC MTS"],
+      [205, "SSC CPO"], [206, "SSC Stenographer"], [207, "SSC JE"],
+      [301, "UPSC CSE"], [302, "UPSC CAPF"], [303, "UPSC EPFO"],
+      [401, "IBPS PO"], [402, "IBPS Clerk"], [403, "IBPS RRB"],
+      [404, "SBI PO"], [405, "SBI Clerk"], [406, "RBI Grade B"],
+      [501, "RRB NTPC"], [502, "RRB JE"], [503, "RRB ALP"], [504, "RRB Group D"],
+      [601, "JEE Main"], [602, "JEE Advanced"], [701, "NEET UG"], [702, "NEET PG"],
+      [703, "AIIMS"], [801, "CLAT"], [901, "NDA"], [902, "CDS"], [903, "AFCAT"],
+      [1001, "CTET"], [1002, "UPTET"], [1003, "REET"], [1004, "DSSSB"],
+      [1101, "UPPSC"], [1102, "BPSC"], [1103, "MPPSC"],
+      [1201, "CAT"], [1202, "XAT"], [1301, "UGC NET"], [1302, "CSIR NET"], [1303, "GATE"],
+    ];
+    const YEARS = [2024, 2025, 2026, 2027];
+
     export async function GET(req) {
       const secret = req.nextUrl.searchParams.get("secret");
       if (secret !== "sarkari123auto") {
         return Response.json({ error: "Unauthorized" }, { status: 401 });
       }
 
+      const mode = req.nextUrl.searchParams.get("mode") || "normal";
       const today = new Date().toISOString().split("T")[0];
       let newsAdded = 0, templateAdded = 0, resultsAdded = 0, admitsAdded = 0, cleanupDone = 0;
 
       try {
-        // ========== CLEANUP: Remove duplicate upcoming exams ==========
+        // ========== BULK MODE: Fill results & admit_cards tables ==========
+        if (mode === "bulk") {
+          let r=0, a=0, rs=0, as=0;
+          for (const [id, name] of ALL_EXAMS) {
+            for (const year of YEARS) {
+              const rn = `${name} ${year}`;
+              const { data: re } = await adminSupabase.from("results").select("id").eq("exam_name", rn).maybeSingle();
+              if (!re) { await adminSupabase.from("results").insert({ exam_name: rn, exam_id: id, result_title: `Result - ${name} ${year}`, status: "declared" }); r++; } else rs++;
+              const { data: ae } = await adminSupabase.from("admit_cards").select("id").eq("exam_name", rn).maybeSingle();
+              if (!ae) { await adminSupabase.from("admit_cards").insert({ exam_name: rn, exam_id: id, title: `Admit Card - ${name} ${year}`, status: "released" }); a++; } else as++;
+            }
+          }
+          return Response.json({ success: true, mode: "bulk", results_added: r, admits_added: a, results_existing: rs, admits_existing: as });
+        }
+
+        // ========== CLEANUP ==========
         const { data: allUpcoming } = await adminSupabase.from("upcoming_exams").select("id,exam_name").order("id");
         if (allUpcoming && allUpcoming.length > 0) {
-          const seen = new Set();
-          const toDelete = [];
-          for (const item of allUpcoming) {
-            const key = item.exam_name.toLowerCase().trim();
-            if (seen.has(key)) toDelete.push(item.id);
-            else seen.add(key);
-          }
-          for (const id of toDelete) {
-            await adminSupabase.from("upcoming_exams").delete().eq("id", id);
-            cleanupDone++;
-          }
+          const seen = new Set(); const toDelete = [];
+          for (const item of allUpcoming) { const key = item.exam_name.toLowerCase().trim(); if (seen.has(key)) toDelete.push(item.id); else seen.add(key); }
+          for (const id of toDelete) { await adminSupabase.from("upcoming_exams").delete().eq("id", id); cleanupDone++; }
         }
 
         // ========== PART 1: Google News Monitor ==========
         const queries = ["exam result declared", "admit card released", "answer key published"];
-
         for (const query of queries) {
           const news = await fetchNews(query);
-
           for (const item of news.slice(0, 10)) {
             const match = matchExam(item.title);
             if (!match) continue;
-
             const [examId, examName] = match;
             const type = detectType(item.title);
             const displayTitle = `📰 ${examName} ${type.replace("_", " ")}`;
-
             const { data: exists } = await supabase.from("updates").select("id").eq("title", displayTitle).maybeSingle();
             if (exists) continue;
-
-            await supabase.from("updates").insert({
-              exam_id: examId, update_type: type,
-              title: displayTitle,
-              description: item.title.slice(0, 200),
-              official_link: null,
-              publish_date: today,
-              is_verified: false,
-            });
+            await supabase.from("updates").insert({ exam_id: examId, update_type: type, title: displayTitle, description: item.title.slice(0, 200), official_link: null, publish_date: today, is_verified: false });
             newsAdded++;
-
-            if (type === "result") {
-              const { data: rExists } = await adminSupabase.from("results").select("id").eq("exam_name", `${examName} Result`).maybeSingle();
-              if (!rExists) {
-                await adminSupabase.from("results").insert({ exam_name: `${examName} Result`, exam_id: examId, result_title: "Result Declared", status: "declared" });
-                resultsAdded++;
-              }
-            }
-
-            if (type === "admit_card") {
-              const { data: aExists } = await adminSupabase.from("admit_cards").select("id").eq("exam_name", `${examName} Admit Card`).maybeSingle();
-              if (!aExists) {
-                await adminSupabase.from("admit_cards").insert({ exam_name: `${examName} Admit Card`, exam_id: examId, title: "Admit Card Released", status: "released" });
-                admitsAdded++;
-              }
-            }
+            if (type === "result") { const { data: rExists } = await adminSupabase.from("results").select("id").eq("exam_name", `${examName} Result`).maybeSingle(); if (!rExists) { await adminSupabase.from("results").insert({ exam_name: `${examName} Result`, exam_id: examId, result_title: "Result Declared", status: "declared" }); resultsAdded++; } }
+            if (type === "admit_card") { const { data: aExists } = await adminSupabase.from("admit_cards").select("id").eq("exam_name", `${examName} Admit Card`).maybeSingle(); if (!aExists) { await adminSupabase.from("admit_cards").insert({ exam_name: `${examName} Admit Card`, exam_id: examId, title: "Admit Card Released", status: "released" }); admitsAdded++; } }
           }
         }
 
         // ========== PART 2: Template Backup ==========
         const templates = [
-          ["SSC CGL", "result", "SSC CGL Tier 1 result update."],
-          ["SSC CHSL", "result", "SSC CHSL result declared."],
-          ["SSC Stenographer", "result", "SSC Stenographer result announced."],
-          ["UPSC CSE", "result", "UPSC CSE result update."],
-          ["NEET UG", "result", "NEET UG result declared."],
-          ["JEE Main", "result", "JEE Main session result."],
-          ["IBPS PO", "result", "IBPS PO result released."],
-          ["CTET", "admit_card", "CTET admit card released."],
-          ["SSC CGL", "admit_card", "SSC CGL admit card available."],
-          ["SSC Stenographer", "admit_card", "SSC Stenographer admit card released."],
+          ["SSC CGL", "result", "SSC CGL Tier 1 result update."], ["SSC CHSL", "result", "SSC CHSL result declared."],
+          ["SSC Stenographer", "result", "SSC Stenographer result announced."], ["UPSC CSE", "result", "UPSC CSE result update."],
+          ["NEET UG", "result", "NEET UG result declared."], ["JEE Main", "result", "JEE Main session result."],
+          ["IBPS PO", "result", "IBPS PO result released."], ["CTET", "admit_card", "CTET admit card released."],
+          ["SSC CGL", "admit_card", "SSC CGL admit card available."], ["SSC Stenographer", "admit_card", "SSC Stenographer admit card released."],
         ];
-
         const day = Math.floor((new Date() - new Date(new Date().getFullYear(), 0, 0)) / 86400000);
         const sorted = [...templates].sort((a, b) => (templates.indexOf(a) * 17 + day) % 30 - (templates.indexOf(b) * 17 + day) % 30);
-
         for (const [name, type, desc, url] of sorted.slice(0, 4)) {
           const title = `${name} ${type === "result" ? "Result" : "Admit Card"} - ${today}`;
           const { data: exists } = await supabase.from("updates").select("id").eq("title", title).maybeSingle();
-          if (!exists) {
-            const match = matchExam(name);
-            await supabase.from("updates").insert({
-              exam_id: match ? match[0] : null, update_type: type,
-              title, description: desc,
-              publish_date: today, is_verified: true,
-              official_link: url,
-            });
-            templateAdded++;
-          }
+          if (!exists) { const match = matchExam(name); await supabase.from("updates").insert({ exam_id: match ? match[0] : null, update_type: type, title, description: desc, publish_date: today, is_verified: true, official_link: url }); templateAdded++; }
         }
 
-        // ========== PART 3: Upcoming Exams (check by name to avoid dupes) ==========
+        // ========== PART 3: Upcoming Exams ==========
         const upcoming = [
-          ["UPSC CSE 2026 Prelims", "2026-08-15", "upsc cse"],
-          ["SSC CGL 2026 Tier 1", "2026-09-20", "ssc cgl"],
-          ["SSC Stenographer 2026", "2026-11-10", "ssc stenographer"],
-          ["NEET UG 2027", "2027-05-02", "neet ug"],
+          ["UPSC CSE 2026 Prelims", "2026-08-15", "upsc cse"], ["SSC CGL 2026 Tier 1", "2026-09-20", "ssc cgl"],
+          ["SSC Stenographer 2026", "2026-11-10", "ssc stenographer"], ["NEET UG 2027", "2027-05-02", "neet ug"],
           ["JEE Main 2027 Session 1", "2026-09-15", "jee main"],
         ];
         const [ucName, ucDate, ucKey] = upcoming[day % upcoming.length];
         const { data: ucExists } = await adminSupabase.from("upcoming_exams").select("id").eq("exam_name", ucName).maybeSingle();
-        if (!ucExists) {
-          const match = matchExam(ucKey);
-          await adminSupabase.from("upcoming_exams").insert({
-            exam_name: ucName, exam_id: match ? match[0] : null,
-            exam_date: ucDate, status: "upcoming",
-          });
-        }
+        if (!ucExists) { const match = matchExam(ucKey); await adminSupabase.from("upcoming_exams").insert({ exam_name: ucName, exam_id: match ? match[0] : null, exam_date: ucDate, status: "upcoming" }); }
 
         return Response.json({
-          success: true, date: today,
-          duplicates_cleaned: cleanupDone,
-          news_monitor_added: newsAdded,
-          template_added: templateAdded,
-          results_auto_added: resultsAdded,
-          admit_cards_auto_added: admitsAdded,
+          success: true, date: today, duplicates_cleaned: cleanupDone,
+          news_monitor_added: newsAdded, template_added: templateAdded,
+          results_auto_added: resultsAdded, admit_cards_auto_added: admitsAdded,
           total_new: newsAdded + templateAdded + resultsAdded + admitsAdded,
-          message: "Auto-update completed with cleanup!",
+          message: "Auto-update completed!",
         });
       } catch (e) {
         return Response.json({ success: false, date: today, error: e.message }, { status: 500 });
