@@ -43,7 +43,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
-      <header className="bg-[#1a237e] text-white px-4 py-3">
+      <header className="bg-blue-900 text-white px-4 py-3">
         <div className="max-w-6xl mx-auto flex items-center justify-between">
           <div>
             <h1 className="text-xl font-extrabold tracking-tight">
@@ -61,7 +61,7 @@ export default function Home() {
       </header>
 
       {/* Stats Banner */}
-      <div className="bg-[#1a237e]/95 text-white px-4 py-3">
+      <div className="bg-blue-900/95 text-white px-4 py-3">
         <div className="max-w-6xl mx-auto text-center">
           <p className="text-sm font-semibold tracking-wide">
             🏛️ {totalExams.toLocaleString()}+ Exams | SarkariSetu India
@@ -89,7 +89,7 @@ export default function Home() {
 
       {/* Three Column Main Content */}
       <div className="max-w-6xl mx-auto px-4 py-3">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div className="main-grid">
           
           {/* Latest Results Column */}
           <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
@@ -200,7 +200,7 @@ export default function Home() {
         </section>
       </div>
 
-      <footer className="bg-[#1a237e] text-gray-300 text-[11px] py-5 px-4 text-center">
+      <footer className="bg-blue-900 text-gray-300 text-[11px] py-5 px-4 text-center">
         <div className="max-w-6xl mx-auto">
           <p className="mb-1.5">© 2026 <span className="text-green-400 font-bold">SarkariSetu India</span></p>
           <p className="leading-relaxed opacity-80">Not affiliated with any government organization.</p>

@@ -1,5 +1,18 @@
 @tailwind base;
-    @tailwind components;
-    @tailwind utilities;
-    body { margin: 0; padding: 0; font-family: 'Segoe UI', Arial, sans-serif; }
-    
+@tailwind components;
+@tailwind utilities;
+
+body { margin: 0; padding: 0; font-family: 'Segoe UI', Arial, sans-serif; }
+
+/* Custom responsive 3-column grid for main content */
+.main-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+@media (min-width: 768px) {
+  .main-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
