@@ -288,6 +288,11 @@
                 ))}
               </div>
               <p style={{ margin: 0, fontSize: 11, opacity: 0.6 }}>© 2026 SarkariSetu India — Not affiliated with any government organization.</p>
+              <div style={{ display: "flex", gap: 16, justifyContent: "center", marginTop: 8, flexWrap: "wrap" }}>
+                <a href="/about" style={{ fontSize: 11, color: "rgba(255,255,255,0.7)", textDecoration: "none" }}>About Us</a>
+                <a href="/privacy-policy" style={{ fontSize: 11, color: "rgba(255,255,255,0.7)", textDecoration: "none" }}>Privacy Policy</a>
+                <a href="/contact" style={{ fontSize: 11, color: "rgba(255,255,255,0.7)", textDecoration: "none" }}>Contact</a>
+              </div>
             </div>
           </footer>
         </div>
