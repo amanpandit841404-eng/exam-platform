@@ -77,7 +77,9 @@
           <div style={{ background: '#1e3a5f', color: '#fff', fontSize: 11, padding: '4px 16px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 4 }}>
             <span>📅 {new Date().toLocaleDateString('en-IN', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}</span>
             <div style={{ display: 'flex', gap: 12 }}>
-              <a href="/notifications" style={{ color: '#93c5fd', textDecoration: 'none' }}>📢 Latest Updates</a>
+              <a href="/notifications" style={{ color: '#93c5fd', textDecoration: 'none' }}>📢 Updates</a>
+              <a href="/cutoff" style={{ color: '#93c5fd', textDecoration: 'none' }}>✂️ Cutoff</a>
+              <a href="/vacancy" style={{ color: '#93c5fd', textDecoration: 'none' }}>📊 Vacancy</a>
               <a href="/answer-keys" style={{ color: '#93c5fd', textDecoration: 'none' }}>🔑 Answer Keys</a>
             </div>
           </div>
