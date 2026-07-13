@@ -283,7 +283,22 @@
               ))}
             </div>
 
-            {/* AD */}
+            {/* POPULAR SEARCHES - SEO */}
+          <div style={{ maxWidth: 1100, margin: '0 auto', padding: '0 16px 16px' }}>
+            <div style={{ background: cardBg, borderRadius: 12, padding: 16, border: `1px solid ${border}` }}>
+              <h2 style={{ fontSize: 14, fontWeight: 700, color: textMain, margin: '0 0 10px' }}>🔥 Popular Searches</h2>
+              <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
+                {['SSC CGL Result 2026','UPSC Result 2026','IBPS PO Admit Card','Railway NTPC Result','NEET Result 2026','JEE Main Result','SBI PO Result','NDA Result 2026','SSC CHSL Result','IBPS Clerk Result','UP Police Result','Bihar Police Result','RPSC Result','MPPSC Result','BPSC Result'].map(term => (
+                  <a key={term} href={`/search?q=${encodeURIComponent(term)}`}
+                    style={{ fontSize: 12, padding: '4px 12px', background: darkMode ? '#1e293b' : '#f3f4f6', color: darkMode ? '#93c5fd' : '#2563eb', borderRadius: 20, textDecoration: 'none', fontWeight: 500, border: `1px solid ${border}` }}>
+                    {term}
+                  </a>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* AD */}
             <div style={{ background: '#f8fafc', border: '2px dashed #e5e7eb', borderRadius: 12, padding: '20px', textAlign: 'center', color: '#9ca3af', fontSize: 12, marginBottom: 16 }}>
               📢 Advertisement — Google AdSense
             </div>
@@ -306,6 +321,7 @@
                 <a href="/about" style={{ fontSize: 11, color: "rgba(255,255,255,0.7)", textDecoration: "none" }}>About Us</a>
                 <a href="/privacy-policy" style={{ fontSize: 11, color: "rgba(255,255,255,0.7)", textDecoration: "none" }}>Privacy Policy</a>
                 <a href="/contact" style={{ fontSize: 11, color: "rgba(255,255,255,0.7)", textDecoration: "none" }}>Contact</a>
+                <a href="/telegram" style={{ fontSize: 11, color: "#93c5fd", textDecoration: "none", fontWeight: 700 }}>📱 Telegram</a>
               </div>
             </div>
           </footer>
