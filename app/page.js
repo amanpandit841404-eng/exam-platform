@@ -129,6 +129,16 @@
             </div>
           </div>
 
+          {/* WHATSAPP SHARE BAR */}
+          <div style={{ background: '#25d366', color: '#fff', padding: '7px 16px', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 10 }}>
+            <span style={{ fontSize: 13, fontWeight: 600 }}>📲 दोस्तों को Share करें — Free में Sarkari Result पाएं</span>
+            <a href={`https://wa.me/?text=${encodeURIComponent('SarkariSetu India - Latest Sarkari Result, Admit Card 2026 🏛️\nhttps://exam-platform-beta.vercel.app')}`}
+              target="_blank" rel="noopener noreferrer"
+              style={{ padding: '4px 14px', background: '#fff', color: '#25d366', borderRadius: 20, textDecoration: 'none', fontSize: 12, fontWeight: 800, flexShrink: 0 }}>
+              WhatsApp ↗
+            </a>
+          </div>
+
           {/* NEWS TICKER */}
           {latestUpdates.length > 0 && (
             <div style={{ background: '#dc2626', color: '#fff', padding: '6px 16px', display: 'flex', alignItems: 'center', gap: 12, overflow: 'hidden' }}>
