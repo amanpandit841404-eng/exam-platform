@@ -24,26 +24,89 @@ export async function GET(req) {
 
   try {
     const adminKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
-    if (!adminKey) return Response.json({ error: "SERVICE_ROLE_KEY missing" });
+    const supabaseUrl = process.env.SUPABASE_URL || "https://fbcvxefvvifmxaiqxiuq.supabase.co";
+    
+    if (!adminKey) {
+      return Response.json({ error: "SERVICE_ROLE_KEY not set", env: !!adminKey });
+    }
 
-    const admin = createClient(
-      process.env.SUPABASE_URL || "https://fbcvxefvvifmxaiqxiuq.supabase.co",
-      adminKey
-    );
+    // Use REST API directly instead of Supabase client
+    let r = 0, a = 0, rSkipped = 0, aSkipped = 0, rErrors = 0, aErrors = 0;
 
-    let r = 0, a = 0;
     for (const [id, name] of EXAMS) {
       for (const year of YEARS) {
         const rn = `${name} ${year}`;
-        const { data: re } = await admin.from("results").select("id").eq("exam_name", rn).maybeSingle();
-        if (!re) { await admin.from("results").insert({ exam_name: rn, exam_id: id, result_title: `Result - ${name} ${year}`, status: "declared" }); r++; }
-        const { data: ae } = await admin.from("admit_cards").select("id").eq("exam_name", rn).maybeSingle();
-        if (!ae) { await admin.from("admit_cards").insert({ exam_name: rn, exam_id: id, title: `Admit Card - ${name} ${year}`, status: "released" }); a++; }
+        
+        // Insert result via REST
+        try {
+          const res = await fetch(`${supabaseUrl}/rest/v1/results`, {
+            method: "POST",
+            headers: {
+              "apikey": adminKey,
+              "Authorization": `Bearer ${adminKey}`,
+              "Content-Type": "application/json",
+              "Prefer": "return=minimal,resolution=merge-duplicates"
+            },
+            body: JSON.stringify({
+              exam_name: rn,
+              exam_id: id,
+              result_title: `Result - ${name} ${year}`,
+              status: "declared"
+            })
+          });
+          if (res.ok || res.status === 201) r++;
+          else if (res.status === 409) rSkipped++;
+          else rErrors++;
+        } catch(e) { rErrors++; }
+
+        // Insert admit card via REST
+        try {
+          const res = await fetch(`${supabaseUrl}/rest/v1/admit_cards`, {
+            method: "POST",
+            headers: {
+              "apikey": adminKey,
+              "Authorization": `Bearer ${adminKey}`,
+              "Content-Type": "application/json",
+              "Prefer": "return=minimal,resolution=merge-duplicates"
+            },
+            body: JSON.stringify({
+              exam_name: rn,
+              exam_id: id,
+              title: `Admit Card - ${name} ${year}`,
+              status: "released"
+            })
+          });
+          if (res.ok || res.status === 201) a++;
+          else if (res.status === 409) aSkipped++;
+          else aErrors++;
+        } catch(e) { aErrors++; }
       }
     }
 
-    return Response.json({ success: true, results_added: r, admits_added: a });
+    // Get final counts
+    const countRes = await fetch(`${supabaseUrl}/rest/v1/results?select=exam_name&limit=500`, {
+      headers: { "apikey": adminKey, "Authorization": `Bearer ${adminKey}` }
+    });
+    const countData = await countRes.json();
+    
+    const countAdmit = await fetch(`${supabaseUrl}/rest/v1/admit_cards?select=exam_name&limit=500`, {
+      headers: { "apikey": adminKey, "Authorization": `Bearer ${adminKey}` }
+    });
+    const admitData = await countAdmit.json();
+
+    return Response.json({
+      success: true,
+      key_available: !!adminKey,
+      results_inserted: r,
+      results_skipped: rSkipped,
+      results_errors: rErrors,
+      results_total_now: countData.length,
+      admits_inserted: a,
+      admits_skipped: aSkipped,
+      admits_errors: aErrors,
+      admits_total_now: admitData.length,
+    });
   } catch (e) {
-    return Response.json({ success: false, error: e.message }, { status: 500 });
+    return Response.json({ success: false, error: e.message, stack: e.stack }, { status: 500 });
   }
 }
