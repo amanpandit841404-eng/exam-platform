@@ -66,6 +66,12 @@
               </div>
             </div>
             <a href={`/check-result/${params.id}`} style={{ display: "inline-block", marginTop: 8, padding: "6px 14px", background: "rgba(255,255,255,0.2)", color: "#fff", borderRadius: 8, textDecoration: "none", fontSize: 12, fontWeight: 600 }}>🔍 {t("परिणाम देखें", "Check Result")}</a>
+            {exam.official_website && (
+              <a href={exam.official_website} target="_blank" rel="noopener noreferrer"
+                style={{ display: "inline-block", marginTop: 8, marginLeft: 8, padding: "6px 14px", background: "#f59e0b", color: "#fff", borderRadius: 8, textDecoration: "none", fontSize: 12, fontWeight: 600 }}>
+                🌐 {t("आधिकारिक वेबसाइट ↗", "Official Website ↗")}
+              </a>
+            )}
           </div>
           {(latestResult || latestAdmit) && (
             <div style={{ marginBottom: 16 }}>
