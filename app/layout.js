@@ -43,6 +43,7 @@
         { href: "/admit-cards", icon: "📄", label: "Admit Card" },
         { href: "/search", icon: "🔍", label: "Search" },
         { href: "/notifications", icon: "📢", label: "Updates" },
+        { href: "/jobs", icon: "💼", label: "Jobs" },
       ];
       return (
         <nav style={{
