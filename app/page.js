@@ -111,8 +111,8 @@ export default function Home() {
                     <p className="text-xs font-medium text-gray-800 truncate">{item.exam_name || item.name}</p>
                   </div>
                   <div className="flex items-center gap-1 ml-1 shrink-0">
-                    {item.official_link && (
-                      <a href={item.official_link} target="_blank" rel="noopener noreferrer"
+                    {item.result_url && (
+                      <a href={item.result_url} target="_blank" rel="noopener noreferrer"
                         className="text-[9px] px-1.5 py-0.5 bg-blue-600 text-white rounded-full font-semibold hover:bg-blue-700">Official ↗</a>
                     )}
                     <span className="text-[9px] px-1.5 py-0.5 bg-green-100 text-green-700 rounded-full font-semibold">Declared</span>
@@ -138,8 +138,8 @@ export default function Home() {
                     <p className="text-xs font-medium text-gray-800 truncate">{item.exam_name || item.name}</p>
                   </div>
                   <div className="flex items-center gap-1 ml-1 shrink-0">
-                    {item.official_link && (
-                      <a href={item.official_link} target="_blank" rel="noopener noreferrer"
+                    {item.download_url && (
+                      <a href={item.download_url} target="_blank" rel="noopener noreferrer"
                         className="text-[9px] px-1.5 py-0.5 bg-purple-600 text-white rounded-full font-semibold hover:bg-purple-700">Official ↗</a>
                     )}
                     <span className="text-[9px] px-1.5 py-0.5 bg-purple-100 text-purple-700 rounded-full font-semibold">Released</span>
