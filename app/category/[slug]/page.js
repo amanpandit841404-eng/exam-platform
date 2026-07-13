@@ -68,7 +68,16 @@
                           <p style={{ margin: "0 0 6px", fontWeight: 700, fontSize: 14, color: "#1e3a5f" }}>{exam.full_name || exam.name}</p>
                           <div style={{ display: "flex", justifyContent: "space-between" }}>
                             <span style={{ fontSize: 11, padding: "2px 8px", background: "#dbeafe", color: "#2563eb", borderRadius: 20, fontWeight: 600 }}>📁 {exam.category}</span>
-                            <span style={{ fontSize: 11, color: "#2563eb", fontWeight: 600 }}>View →</span>
+                            <div style={{ display: "flex", gap: 6 }}>
+                            {exam.official_website && (
+                              <a href={exam.official_website} target="_blank" rel="noopener noreferrer"
+                                onClick={e => e.stopPropagation()}
+                                style={{ fontSize: 11, padding: "2px 8px", background: "#1e3a5f", color: "#fff", borderRadius: 6, textDecoration: "none", fontWeight: 700 }}>
+                                🌐 Official
+                              </a>
+                            )}
+                            <span style={{ fontSize: 11, color: "#2563eb", fontWeight: 600 }}>Details →</span>
+                          </div>
                           </div>
                         </div>
                       </a>
