@@ -17,6 +17,14 @@
             <meta property="og:description" content="Latest Sarkari Result, Admit Card, Syllabus 2026" />
             <meta property="og:type" content="website" />
             <title>SarkariSetu India - Sarkari Result, Admit Card 2026</title>
+            {/* Google Analytics GA4 */}
+            <script async src="https://www.googletagmanager.com/gtag/js?id=G-FQ838B63YN"></script>
+            <script dangerouslySetInnerHTML={{ __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-FQ838B63YN');
+            ` }} />
           </head>
           <body style={{ margin: 0, padding: 0, paddingBottom: 60 }}>
             {children}
