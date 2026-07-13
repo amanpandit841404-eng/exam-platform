@@ -105,11 +105,22 @@ function SearchContent() {
                 {exams.length === 0 ? <div style={{ textAlign: "center", padding: 40, color: "#6b7280" }}>No exams found</div>
                 : exams.map((exam, i) => (
                   <a key={exam.id || i} href={"/exam/" + exam.id} style={{ background: "#fff", borderRadius: 12, padding: 14, border: "1px solid #e5e7eb", textDecoration: "none", display: "block" }}>
-                    <p style={{ margin: "0 0 4px", fontWeight: 700, fontSize: 14, color: "#1e3a5f" }}>{exam.name}</p>
-                    {exam.full_name && exam.full_name !== exam.name && <p style={{ margin: "0 0 6px", fontSize: 12, color: "#6b7280" }}>{exam.full_name}</p>}
-                    <div style={{ display: "flex", gap: 6 }}>
-                      {exam.category && <span style={{ fontSize: 11, padding: "2px 8px", background: "#eff6ff", color: "#2563eb", borderRadius: 10 }}>{exam.category}</span>}
-                      {exam.state && <span style={{ fontSize: 11, padding: "2px 8px", background: "#f3f4f6", color: "#6b7280", borderRadius: 10 }}>{exam.state}</span>}
+                    <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start" }}>
+                      <div style={{ flex: 1 }}>
+                        <p style={{ margin: "0 0 4px", fontWeight: 700, fontSize: 14, color: "#1e3a5f" }}>{exam.name}</p>
+                        {exam.full_name && exam.full_name !== exam.name && <p style={{ margin: "0 0 6px", fontSize: 12, color: "#6b7280" }}>{exam.full_name}</p>}
+                        <div style={{ display: "flex", gap: 6, flexWrap: "wrap" }}>
+                          {exam.category && <span style={{ fontSize: 11, padding: "2px 8px", background: "#eff6ff", color: "#2563eb", borderRadius: 10 }}>{exam.category}</span>}
+                          {exam.state && <span style={{ fontSize: 11, padding: "2px 8px", background: "#f3f4f6", color: "#6b7280", borderRadius: 10 }}>{exam.state}</span>}
+                        </div>
+                      </div>
+                      {exam.official_website && (
+                        <a href={exam.official_website} target="_blank" rel="noopener noreferrer"
+                          onClick={e => e.stopPropagation()}
+                          style={{ marginLeft: 8, padding: "7px 12px", background: "linear-gradient(135deg,#1e3a5f,#2563eb)", color: "#fff", borderRadius: 8, textDecoration: "none", fontSize: 12, fontWeight: 700, whiteSpace: "nowrap", flexShrink: 0 }}>
+                          🌐 Official ↗
+                        </a>
+                      )}
                     </div>
                   </a>
                 ))}
