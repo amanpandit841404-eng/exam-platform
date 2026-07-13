@@ -1,13 +1,26 @@
 import { createClient } from "@supabase/supabase-js";
 
-    const supabase = createClient(
-      process.env.SUPABASE_URL || "https://fbcvxefvvifmxaiqxiuq.supabase.co",
-      process.env.SUPABASE_ANON_KEY || "sb_publishable_BShV19iGgcoKLiIsyvQ2Lg_1Lhe9uPV"
-    );
+    const supabaseUrl = process.env.SUPABASE_URL || "https://fbcvxefvvifmxaiqxiuq.supabase.co";
+    const anonKey = process.env.SUPABASE_ANON_KEY || "sb_publishable_BShV19iGgcoKLiIsyvQ2Lg_1Lhe9uPV";
+    const serviceKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
 
-    const adminSupabase = process.env.SUPABASE_SERVICE_ROLE_KEY
-      ? createClient(process.env.SUPABASE_URL || "https://fbcvxefvvifmxaiqxiuq.supabase.co", process.env.SUPABASE_SERVICE_ROLE_KEY)
-      : supabase;
+    const supabase = createClient(supabaseUrl, anonKey);
+    const adminSupabase = serviceKey ? createClient(supabaseUrl, serviceKey) : supabase;
+
+    // Test what admin client can see
+    async function debugCheck() {
+      const { data: ad, error: ae } = await adminSupabase.from("results").select("id").limit(1);
+      const { data: sd, error: se } = await supabase.from("results").select("id").limit(1);
+      return {
+        admin_has_key: !!serviceKey,
+        admin_key_length: serviceKey ? serviceKey.length : 0,
+        admin_first_chars: serviceKey ? serviceKey.substring(0, 10) : "none",
+        admin_data: ad?.length || 0,
+        admin_error: ae?.message || null,
+        anon_data: sd?.length || 0,
+        anon_error: se?.message || null,
+      };
+    }
 
     const EXAM_MAP = {
       "ssc cgl": [201, "SSC CGL"], "ssc chsl": [202, "SSC CHSL"], "ssc gd": [203, "SSC GD"], "ssc mts": [204, "SSC MTS"],
@@ -16,20 +29,16 @@ import { createClient } from "@supabase/supabase-js";
       "ibps po": [401, "IBPS PO"], "ibps clerk": [402, "IBPS Clerk"], "ibps rrb": [403, "IBPS RRB"],
       "sbi po": [404, "SBI PO"], "sbi clerk": [405, "SBI Clerk"], "rbi grade b": [406, "RBI Grade B"],
       "rrb ntpc": [501, "RRB NTPC"], "rrb je": [502, "RRB JE"], "rrb alp": [503, "RRB ALP"], "rrb group d": [504, "RRB Group D"],
-      "jee main": [601, "JEE Main"], "jee advance": [602, "JEE Advanced"],
-      "neet ug": [701, "NEET UG"], "neet pg": [702, "NEET PG"], "aiims": [703, "AIIMS"],
-      "clat": [801, "CLAT"], "nda": [901, "NDA"], "cds": [902, "CDS"], "afcat": [903, "AFCAT"],
+      "jee main": [601, "JEE Main"], "jee advance": [602, "JEE Advanced"], "neet ug": [701, "NEET UG"], "neet pg": [702, "NEET PG"],
+      "aiims": [703, "AIIMS"], "clat": [801, "CLAT"], "nda": [901, "NDA"], "cds": [902, "CDS"], "afcat": [903, "AFCAT"],
       "ctet": [1001, "CTET"], "uptet": [1002, "UPTET"], "reet": [1003, "REET"], "dsssb": [1004, "DSSSB"],
       "uppsc": [1101, "UPPSC"], "bpsc": [1102, "BPSC"], "mppsc": [1103, "MPPSC"],
-      "cat": [1201, "CAT"], "xat": [1202, "XAT"],
-      "ugc net": [1301, "UGC NET"], "csir net": [1302, "CSIR NET"], "gate": [1303, "GATE"],
-      "cbse": [1401, "CBSE"],
+      "cat": [1201, "CAT"], "xat": [1202, "XAT"], "ugc net": [1301, "UGC NET"], "csir net": [1302, "CSIR NET"], "gate": [1303, "GATE"],
     };
 
     function matchExam(title) {
       const lower = title.toLowerCase();
-      const keys = Object.keys(EXAM_MAP).sort((a,b) => b.length - a.length);
-      for (const key of keys) { if (lower.includes(key)) return EXAM_MAP[key]; }
+      for (const key of Object.keys(EXAM_MAP).sort((a,b) => b.length - a.length)) { if (lower.includes(key)) return EXAM_MAP[key]; }
       return null;
     }
 
@@ -51,14 +60,12 @@ import { createClient } from "@supabase/supabase-js";
           const xml = match[1];
           const title = xml.match(/<title>(.*?)<\/title>/i)?.[1]?.replace(/<!\[CDATA\[|\]\]>/g, "").trim();
           const link = xml.match(/<link>(.*?)<\/link>/i)?.[1]?.trim();
-          const date = xml.match(/<pubDate>(.*?)<\/pubDate>/i)?.[1]?.trim();
-          if (title && title.length > 15) items.push({ title, link, date });
+          if (title && title.length > 15) items.push({ title, link });
         }
         return items;
       } catch (e) { return []; }
     }
 
-    // All major exams for bulk generation
     const ALL_EXAMS = [
       [201, "SSC CGL"], [202, "SSC CHSL"], [203, "SSC GD"], [204, "SSC MTS"],
       [205, "SSC CPO"], [206, "SSC Stenographer"], [207, "SSC JE"],
@@ -82,33 +89,43 @@ import { createClient } from "@supabase/supabase-js";
 
       const mode = req.nextUrl.searchParams.get("mode") || "normal";
       const today = new Date().toISOString().split("T")[0];
-      let newsAdded = 0, templateAdded = 0, resultsAdded = 0, admitsAdded = 0, cleanupDone = 0;
+
+      // ========== DEBUG MODE ==========
+      if (mode === "debug") {
+        const debug = await debugCheck();
+        return Response.json({ success: true, debug });
+      }
 
       try {
-        // ========== BULK MODE: Fill results & admit_cards tables ==========
+        // ========== BULK MODE ==========
         if (mode === "bulk") {
-          let r=0, a=0, rs=0, as=0;
+          let r=0, a=0;
           for (const [id, name] of ALL_EXAMS) {
             for (const year of YEARS) {
               const rn = `${name} ${year}`;
               const { data: re } = await adminSupabase.from("results").select("id").eq("exam_name", rn).maybeSingle();
-              if (!re) { await adminSupabase.from("results").insert({ exam_name: rn, exam_id: id, result_title: `Result - ${name} ${year}`, status: "declared" }); r++; } else rs++;
+              if (!re) { await adminSupabase.from("results").insert({ exam_name: rn, exam_id: id, result_title: `Result - ${name} ${year}`, status: "declared" }); r++; }
               const { data: ae } = await adminSupabase.from("admit_cards").select("id").eq("exam_name", rn).maybeSingle();
-              if (!ae) { await adminSupabase.from("admit_cards").insert({ exam_name: rn, exam_id: id, title: `Admit Card - ${name} ${year}`, status: "released" }); a++; } else as++;
+              if (!ae) { await adminSupabase.from("admit_cards").insert({ exam_name: rn, exam_id: id, title: `Admit Card - ${name} ${year}`, status: "released" }); a++; }
             }
           }
-          return Response.json({ success: true, mode: "bulk", results_added: r, admits_added: a, results_existing: rs, admits_existing: as });
+          // Check with anon key what was actually added
+          const { data: rc } = await supabase.from("results").select("id");
+          const { data: ac } = await supabase.from("admit_cards").select("id");
+          return Response.json({ success: true, mode: "bulk", results_added: r, admits_added: a, results_actual: rc?.length || 0, admits_actual: ac?.length || 0 });
         }
 
         // ========== CLEANUP ==========
         const { data: allUpcoming } = await adminSupabase.from("upcoming_exams").select("id,exam_name").order("id");
+        let cleanupDone = 0;
         if (allUpcoming && allUpcoming.length > 0) {
-          const seen = new Set(); const toDelete = [];
+          const seen = new Set(), toDelete = [];
           for (const item of allUpcoming) { const key = item.exam_name.toLowerCase().trim(); if (seen.has(key)) toDelete.push(item.id); else seen.add(key); }
           for (const id of toDelete) { await adminSupabase.from("upcoming_exams").delete().eq("id", id); cleanupDone++; }
         }
 
-        // ========== PART 1: Google News Monitor ==========
+        // ========== NORMAL MODE: Google News ==========
+        let newsAdded = 0, templateAdded = 0, resultsAdded = 0, admitsAdded = 0;
         const queries = ["exam result declared", "admit card released", "answer key published"];
         for (const query of queries) {
           const news = await fetchNews(query);
@@ -127,14 +144,8 @@ import { createClient } from "@supabase/supabase-js";
           }
         }
 
-        // ========== PART 2: Template Backup ==========
-        const templates = [
-          ["SSC CGL", "result", "SSC CGL Tier 1 result update."], ["SSC CHSL", "result", "SSC CHSL result declared."],
-          ["SSC Stenographer", "result", "SSC Stenographer result announced."], ["UPSC CSE", "result", "UPSC CSE result update."],
-          ["NEET UG", "result", "NEET UG result declared."], ["JEE Main", "result", "JEE Main session result."],
-          ["IBPS PO", "result", "IBPS PO result released."], ["CTET", "admit_card", "CTET admit card released."],
-          ["SSC CGL", "admit_card", "SSC CGL admit card available."], ["SSC Stenographer", "admit_card", "SSC Stenographer admit card released."],
-        ];
+        // ========== TEMPLATES ==========
+        const templates = [["SSC CGL","result","SSC CGL Tier 1 result update."],["SSC CHSL","result","SSC CHSL result declared."],["SSC Stenographer","result","SSC Stenographer result announced."],["UPSC CSE","result","UPSC CSE result update."],["NEET UG","result","NEET UG result declared."],["JEE Main","result","JEE Main session result."],["IBPS PO","result","IBPS PO result released."],["CTET","admit_card","CTET admit card released."],["SSC CGL","admit_card","SSC CGL admit card available."],["SSC Stenographer","admit_card","SSC Stenographer admit card released."]];
         const day = Math.floor((new Date() - new Date(new Date().getFullYear(), 0, 0)) / 86400000);
         const sorted = [...templates].sort((a, b) => (templates.indexOf(a) * 17 + day) % 30 - (templates.indexOf(b) * 17 + day) % 30);
         for (const [name, type, desc, url] of sorted.slice(0, 4)) {
@@ -143,23 +154,7 @@ import { createClient } from "@supabase/supabase-js";
           if (!exists) { const match = matchExam(name); await supabase.from("updates").insert({ exam_id: match ? match[0] : null, update_type: type, title, description: desc, publish_date: today, is_verified: true, official_link: url }); templateAdded++; }
         }
 
-        // ========== PART 3: Upcoming Exams ==========
-        const upcoming = [
-          ["UPSC CSE 2026 Prelims", "2026-08-15", "upsc cse"], ["SSC CGL 2026 Tier 1", "2026-09-20", "ssc cgl"],
-          ["SSC Stenographer 2026", "2026-11-10", "ssc stenographer"], ["NEET UG 2027", "2027-05-02", "neet ug"],
-          ["JEE Main 2027 Session 1", "2026-09-15", "jee main"],
-        ];
-        const [ucName, ucDate, ucKey] = upcoming[day % upcoming.length];
-        const { data: ucExists } = await adminSupabase.from("upcoming_exams").select("id").eq("exam_name", ucName).maybeSingle();
-        if (!ucExists) { const match = matchExam(ucKey); await adminSupabase.from("upcoming_exams").insert({ exam_name: ucName, exam_id: match ? match[0] : null, exam_date: ucDate, status: "upcoming" }); }
-
-        return Response.json({
-          success: true, date: today, duplicates_cleaned: cleanupDone,
-          news_monitor_added: newsAdded, template_added: templateAdded,
-          results_auto_added: resultsAdded, admit_cards_auto_added: admitsAdded,
-          total_new: newsAdded + templateAdded + resultsAdded + admitsAdded,
-          message: "Auto-update completed!",
-        });
+        return Response.json({ success: true, date: today, duplicates_cleaned: cleanupDone, news_monitor_added: newsAdded, template_added: templateAdded, results_auto_added: resultsAdded, admit_cards_auto_added: admitsAdded, message: "Auto-update completed!" });
       } catch (e) {
         return Response.json({ success: false, date: today, error: e.message }, { status: 500 });
       }
