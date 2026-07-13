@@ -3,66 +3,89 @@ import { useState, useEffect } from "react";
 import { supabase } from "../lib/supabase";
 
 export default function AnswerKeysPage() {
-  const [items, setItems] = useState([]);
+  const [keys, setKeys] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [search, setSearch] = useState('');
+  const [search, setSearch] = useState("");
+  const [category, setCategory] = useState("all");
 
   useEffect(() => {
-    document.title = 'Answer Keys 2026 | SarkariSetu India';
-    supabase.from("updates").select("*").eq("update_type", "answer_key").order("created_at", { ascending: false })
-      .then(({ data }) => { if (data) setItems(data); setLoading(false); });
+    document.title = "Answer Key 2026 - SSC UPSC Railway | SarkariSetu India";
+    supabase.from("answer_keys").select("*").order("created_at", { ascending: false })
+      .then(({ data }) => { if (data) setKeys(data); setLoading(false); });
   }, []);
 
-  const filtered = items.filter(r =>
-    !search || r.title?.toLowerCase().includes(search.toLowerCase())
-  );
+  const categories = ["all","SSC","UPSC","Banking","Railway","State PSC","Defence","Teaching"];
+
+  const filtered = keys.filter(k => {
+    const matchSearch = !search || k.exam_name?.toLowerCase().includes(search.toLowerCase()) || k.title?.toLowerCase().includes(search.toLowerCase());
+    const matchCat = category === "all" || k.category === category;
+    return matchSearch && matchCat;
+  });
 
   return (
-    <div style={{ minHeight: '100vh', background: '#f8fafc', fontFamily: 'sans-serif' }}>
-      <div style={{ background: 'linear-gradient(135deg,#ca8a04,#d97706)', color: '#fff', padding: '16px' }}>
-        <div style={{ maxWidth: 800, margin: '0 auto' }}>
-          <a href="/" style={{ color: '#fef9c3', fontSize: 13, textDecoration: 'none' }}>← Home</a>
-          <h1 style={{ margin: '8px 0 4px', fontSize: 22, fontWeight: 800 }}>🔑 Answer Keys</h1>
-          <p style={{ margin: 0, fontSize: 13, opacity: 0.8 }}>Latest answer keys for all exams</p>
+    <div style={{ minHeight: "100vh", background: "#f8fafc", fontFamily: "sans-serif" }}>
+      <div style={{ background: "linear-gradient(135deg, #ca8a04 0%, #b45309 100%)", color: "#fff", padding: "20px 16px 24px", position: "relative", overflow: "hidden" }}>
+        <div style={{ position: "absolute", top: -40, right: -40, width: 180, height: 180, borderRadius: "50%", background: "rgba(255,255,255,0.05)" }} />
+        <div style={{ maxWidth: 800, margin: "0 auto", position: "relative" }}>
+          <a href="/" style={{ color: "rgba(255,255,255,0.8)", fontSize: 13, textDecoration: "none" }}>Home</a>
+          <h1 style={{ margin: "8px 0 4px", fontSize: 22, fontWeight: 800 }}>🔑 Answer Keys 2026</h1>
+          <p style={{ margin: "0 0 16px", fontSize: 13, opacity: 0.85 }}>{keys.length} answer keys available</p>
+          <div style={{ position: "relative" }}>
+            <input placeholder="Search answer keys... (SSC CGL, IBPS...)"
+              value={search} onChange={e => setSearch(e.target.value)}
+              style={{ width: "100%", padding: "11px 16px", borderRadius: 10, border: "none", fontSize: 14, boxSizing: "border-box", outline: "none" }} />
+          </div>
         </div>
       </div>
 
-      <div style={{ maxWidth: 800, margin: '0 auto', padding: '16px' }}>
-        <input
-          placeholder="🔍 Search answer keys..."
-          value={search} onChange={e => setSearch(e.target.value)}
-          style={{ width: '100%', padding: '12px 16px', borderRadius: 12, border: '1px solid #e5e7eb', fontSize: 14, marginBottom: 16, boxSizing: 'border-box', outline: 'none' }}
-        />
+      <div style={{ display: "flex", gap: 8, padding: "10px 16px", overflowX: "auto", background: "#fff", borderBottom: "1px solid #e5e7eb" }}>
+        {categories.map(cat => (
+          <button key={cat} onClick={() => setCategory(cat)}
+            style={{ padding: "6px 14px", borderRadius: 20, border: "none", cursor: "pointer", whiteSpace: "nowrap", fontSize: 12, fontWeight: 600,
+              background: category === cat ? "#ca8a04" : "#f3f4f6", color: category === cat ? "#fff" : "#4b5563" }}>
+            {cat === "all" ? "All" : cat}
+          </button>
+        ))}
+      </div>
 
-        {loading ? <p style={{ textAlign: 'center', color: '#999', padding: 40 }}>Loading...</p> : (
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
-            {filtered.length > 0 ? filtered.map((u, i) => (
-              <div key={i} style={{ background: '#fff', borderRadius: 12, padding: '14px 16px', border: '1px solid #e5e7eb', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 12 }}>
-                <div style={{ flex: 1 }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 4 }}>
-                    <span style={{ fontSize: 16 }}>🔑</span>
-                    <p style={{ margin: 0, fontWeight: 700, fontSize: 14, color: '#1e3a5f' }}>{u.title}</p>
+      <div style={{ maxWidth: 800, margin: "0 auto", padding: "12px 16px" }}>
+        {loading ? (
+          <div style={{ textAlign: "center", padding: 60, color: "#6b7280" }}>Loading...</div>
+        ) : filtered.length === 0 ? (
+          <div style={{ textAlign: "center", padding: 60, color: "#6b7280" }}>
+            <div style={{ fontSize: 48 }}>🔑</div>
+            <p>No answer keys found</p>
+          </div>
+        ) : (
+          <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+            {filtered.map((k, i) => (
+              <div key={k.id || i} style={{ background: "#fff", borderRadius: 12, padding: 16, border: "1px solid #e5e7eb", boxShadow: "0 1px 4px rgba(0,0,0,0.04)" }}>
+                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: 10 }}>
+                  <div style={{ flex: 1 }}>
+                    <p style={{ margin: "0 0 4px", fontWeight: 700, fontSize: 14, color: "#1e3a5f" }}>{k.exam_name || k.title}</p>
+                    {k.title && k.title !== k.exam_name && <p style={{ margin: "0 0 6px", fontSize: 12, color: "#6b7280" }}>{k.title}</p>}
+                    <div style={{ display: "flex", gap: 6, flexWrap: "wrap" }}>
+                      <span style={{ fontSize: 11, padding: "2px 8px", background: "#fef9c3", color: "#ca8a04", borderRadius: 10, fontWeight: 700 }}>🔑 Released</span>
+                      {k.category && <span style={{ fontSize: 11, padding: "2px 8px", background: "#eff6ff", color: "#2563eb", borderRadius: 10 }}>{k.category}</span>}
+                      {k.exam_date && <span style={{ fontSize: 11, color: "#9ca3af" }}>📅 {new Date(k.exam_date).toLocaleDateString("en-IN", { day: "numeric", month: "short", year: "numeric" })}</span>}
+                    </div>
+                    {k.sets && (
+                      <div style={{ marginTop: 8, display: "flex", gap: 6, flexWrap: "wrap" }}>
+                        {k.sets.split(",").map((s, si) => (
+                          <span key={si} style={{ fontSize: 11, padding: "2px 8px", background: "#f3f4f6", color: "#374151", borderRadius: 6, fontWeight: 600 }}>Set {s.trim()}</span>
+                        ))}
+                      </div>
+                    )}
                   </div>
-                  {u.description && <p style={{ margin: 0, fontSize: 12, color: '#6b7280' }}>{u.description}</p>}
-                  <span style={{ fontSize: 11, color: '#9ca3af' }}>{new Date(u.created_at).toLocaleDateString('en-IN')}</span>
+                  {k.official_link && (
+                    <a href={k.official_link} target="_blank" rel="noopener noreferrer"
+                      style={{ padding: "8px 14px", background: "linear-gradient(135deg,#ca8a04,#b45309)", color: "#fff", borderRadius: 8, textDecoration: "none", fontSize: 12, fontWeight: 700, whiteSpace: "nowrap" }}>
+                      Download ↗
+                    </a>
+                  )}
                 </div>
-                {u.official_link && (
-                  <a href={u.official_link} target="_blank" rel="noopener noreferrer"
-                    style={{ padding: '8px 16px', background: 'linear-gradient(135deg,#ca8a04,#d97706)', color: '#fff', borderRadius: 8, textDecoration: 'none', fontSize: 13, fontWeight: 700, whiteSpace: 'nowrap', flexShrink: 0 }}>
-                    Download ↗
-                  </a>
-                )}
               </div>
-            )) : (
-              <div style={{ textAlign: 'center', padding: 60, color: '#999' }}>
-                <div style={{ fontSize: 50, marginBottom: 12 }}>🔑</div>
-                <h2 style={{ color: '#374151', marginBottom: 8 }}>Answer Keys Coming Soon</h2>
-                <p style={{ fontSize: 13 }}>Answer keys will appear here as soon as they are released.</p>
-                <a href="/notifications" style={{ display: 'inline-block', marginTop: 16, padding: '10px 20px', background: '#1e3a5f', color: '#fff', borderRadius: 8, textDecoration: 'none', fontSize: 13, fontWeight: 600 }}>
-                  📢 Check Notifications
-                </a>
-              </div>
-            )}
+            ))}
           </div>
         )}
       </div>
