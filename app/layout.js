@@ -16,7 +16,12 @@
             <meta property="og:title" content="SarkariSetu India - Sarkari Result 2026" />
             <meta property="og:description" content="Latest Sarkari Result, Admit Card, Syllabus 2026" />
             <meta property="og:type" content="website" />
-            <title>SarkariSetu India - Sarkari Result, Admit Card 2026</title>
+            <title>SarkariSetu India - Sarkari Result, Admit Card, Syllabus 2026</title>
+            <meta name="author" content="SarkariSetu India" />
+            <meta name="language" content="Hindi, English" />
+            <meta property="og:site_name" content="SarkariSetu India" />
+            <meta property="og:locale" content="hi_IN" />
+            <link rel="canonical" href="https://sarkarisetu.in" />
             {/* Google Analytics GA4 */}
             <script async src="https://www.googletagmanager.com/gtag/js?id=G-FQ838B63YN"></script>
             <script dangerouslySetInnerHTML={{ __html: `
@@ -44,6 +49,7 @@
         { href: "/search", icon: "🔍", label: "Search" },
         { href: "/notifications", icon: "📢", label: "Updates" },
         { href: "/jobs", icon: "💼", label: "Jobs" },
+        { href: "/telegram", icon: "📱", label: "Telegram" },
       ];
       return (
         <nav style={{
