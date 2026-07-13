@@ -22,6 +22,50 @@ import { createClient } from "@supabase/supabase-js";
       };
     }
 
+
+    const OFFICIAL_LINKS = {
+      201: 'https://ssc.gov.in',        // SSC CGL
+      202: 'https://ssc.gov.in',        // SSC CHSL
+      203: 'https://ssc.gov.in',        // SSC GD
+      204: 'https://ssc.gov.in',        // SSC MTS
+      205: 'https://ssc.gov.in',        // SSC CPO
+      206: 'https://ssc.gov.in',        // SSC Stenographer
+      207: 'https://ssc.gov.in',        // SSC JE
+      301: 'https://upsc.gov.in',       // UPSC CSE
+      302: 'https://upsc.gov.in',       // UPSC CAPF
+      303: 'https://upsc.gov.in',       // UPSC EPFO
+      401: 'https://ibps.in',           // IBPS PO
+      402: 'https://ibps.in',           // IBPS Clerk
+      403: 'https://ibps.in',           // IBPS RRB
+      404: 'https://sbi.co.in/careers', // SBI PO
+      405: 'https://sbi.co.in/careers', // SBI Clerk
+      406: 'https://rbi.org.in',        // RBI Grade B
+      501: 'https://indianrailways.gov.in', // RRB NTPC
+      502: 'https://indianrailways.gov.in', // RRB JE
+      503: 'https://indianrailways.gov.in', // RRB ALP
+      504: 'https://indianrailways.gov.in', // RRB Group D
+      601: 'https://jeemain.nta.ac.in', // JEE Main
+      602: 'https://jeeadv.ac.in',      // JEE Advanced
+      701: 'https://neet.nta.nic.in',   // NEET UG
+      702: 'https://natboard.edu.in',   // NEET PG
+      703: 'https://aiimsexams.ac.in',  // AIIMS
+      801: 'https://consortiumofnlus.ac.in', // CLAT
+      901: 'https://upsc.gov.in',       // NDA
+      902: 'https://upsc.gov.in',       // CDS
+      1001: 'https://ctet.nic.in',      // CTET
+      1002: 'https://dsssb.delhi.gov.in', // DSSSB
+      1101: 'https://bpsc.bih.nic.in',  // BPSC
+      1102: 'https://uppsc.up.nic.in',  // UPPSC
+      1103: 'https://mpsc.gov.in',      // MPSC
+      1104: 'https://rpsc.rajasthan.gov.in', // RPSC
+      1105: 'https://tnpsc.gov.in',     // TNPSC
+      1106: 'https://kpsc.kar.nic.in',  // KPSC
+      1107: 'https://mppsc.mp.gov.in',  // MPPSC
+      1108: 'https://opsc.gov.in',      // OPSC
+      1109: 'https://wbpsc.gov.in',     // WBPSC
+      1110: 'https://hpsc.gov.in',      // HPSC
+    };
+
     const EXAM_MAP = {
       "ssc cgl": [201, "SSC CGL"], "ssc chsl": [202, "SSC CHSL"], "ssc gd": [203, "SSC GD"], "ssc mts": [204, "SSC MTS"],
       "ssc cpo": [205, "SSC CPO"], "ssc stenographer": [206, "SSC Stenographer"], "ssc je": [207, "SSC JE"],
@@ -104,15 +148,34 @@ import { createClient } from "@supabase/supabase-js";
             for (const year of YEARS) {
               const rn = `${name} ${year}`;
               const { data: re } = await adminSupabase.from("results").select("id").eq("exam_name", rn).maybeSingle();
-              if (!re) { await adminSupabase.from("results").insert({ exam_name: rn, exam_id: id, result_title: `Result - ${name} ${year}`, status: "declared" }); r++; }
+              if (!re) { await adminSupabase.from("results").insert({ exam_name: rn, exam_id: id, result_title: `Result - ${name} ${year}`, status: "declared", official_link: OFFICIAL_LINKS[id] || null }); r++; }
               const { data: ae } = await adminSupabase.from("admit_cards").select("id").eq("exam_name", rn).maybeSingle();
-              if (!ae) { await adminSupabase.from("admit_cards").insert({ exam_name: rn, exam_id: id, title: `Admit Card - ${name} ${year}`, status: "released" }); a++; }
+              if (!ae) { await adminSupabase.from("admit_cards").insert({ exam_name: rn, exam_id: id, title: `Admit Card - ${name} ${year}`, status: "released", official_link: OFFICIAL_LINKS[id] || null }); a++; }
             }
           }
           // Check with anon key what was actually added
           const { data: rc } = await supabase.from("results").select("id");
           const { data: ac } = await supabase.from("admit_cards").select("id");
           return Response.json({ success: true, mode: "bulk", results_added: r, admits_added: a, results_actual: rc?.length || 0, admits_actual: ac?.length || 0 });
+        }
+
+        // ========== FIX LINKS MODE ==========
+        if (mode === "fix-links") {
+          let updated = 0;
+          for (const [id, link] of Object.entries(OFFICIAL_LINKS)) {
+            const examId = parseInt(id);
+            const { data: rRows } = await adminSupabase.from("results").select("id").eq("exam_id", examId).is("official_link", null);
+            if (rRows && rRows.length > 0) {
+              await adminSupabase.from("results").update({ official_link: link }).eq("exam_id", examId).is("official_link", null);
+              updated += rRows.length;
+            }
+            const { data: aRows } = await adminSupabase.from("admit_cards").select("id").eq("exam_id", examId).is("official_link", null);
+            if (aRows && aRows.length > 0) {
+              await adminSupabase.from("admit_cards").update({ official_link: link }).eq("exam_id", examId).is("official_link", null);
+              updated += aRows.length;
+            }
+          }
+          return Response.json({ success: true, mode: "fix-links", records_updated: updated });
         }
 
         // ========== CLEANUP ==========

@@ -105,14 +105,19 @@ export default function Home() {
             </div>
             <div className="divide-y divide-gray-50">
               {latestResults.length > 0 ? latestResults.map((item, i) => (
-                <a key={i} href={`/check-result/${item.exam_id || i}`}
-                  className="flex items-center justify-between px-3.5 py-2.5 hover:bg-blue-50 transition">
-                  <div className="flex items-center gap-2">
+                <div key={i} className="flex items-center justify-between px-3.5 py-2.5 hover:bg-blue-50 transition">
+                  <div className="flex items-center gap-2 flex-1 min-w-0">
                     <span className="text-green-500 text-xs">✅</span>
-                    <p className="text-xs font-medium text-gray-800">{item.exam_name || item.name}</p>
+                    <p className="text-xs font-medium text-gray-800 truncate">{item.exam_name || item.name}</p>
                   </div>
-                  <span className="text-[9px] px-1.5 py-0.5 bg-green-100 text-green-700 rounded-full font-semibold whitespace-nowrap">Declared</span>
-                </a>
+                  <div className="flex items-center gap-1 ml-1 shrink-0">
+                    {item.official_link && (
+                      <a href={item.official_link} target="_blank" rel="noopener noreferrer"
+                        className="text-[9px] px-1.5 py-0.5 bg-blue-600 text-white rounded-full font-semibold hover:bg-blue-700">Official ↗</a>
+                    )}
+                    <span className="text-[9px] px-1.5 py-0.5 bg-green-100 text-green-700 rounded-full font-semibold">Declared</span>
+                  </div>
+                </div>
               )) : (
                 <p className="text-center text-gray-400 text-xs py-6">Loading...</p>
               )}
@@ -127,14 +132,19 @@ export default function Home() {
             </div>
             <div className="divide-y divide-gray-50">
               {admitCards.length > 0 ? admitCards.map((item, i) => (
-                <a key={i} href={`/check-result/${item.exam_id || i}`}
-                  className="flex items-center justify-between px-3.5 py-2.5 hover:bg-purple-50 transition">
-                  <div className="flex items-center gap-2">
+                <div key={i} className="flex items-center justify-between px-3.5 py-2.5 hover:bg-purple-50 transition">
+                  <div className="flex items-center gap-2 flex-1 min-w-0">
                     <span className="text-purple-500 text-xs">📄</span>
-                    <p className="text-xs font-medium text-gray-800">{item.exam_name || item.name}</p>
+                    <p className="text-xs font-medium text-gray-800 truncate">{item.exam_name || item.name}</p>
                   </div>
-                  <span className="text-[9px] px-1.5 py-0.5 bg-purple-100 text-purple-700 rounded-full font-semibold whitespace-nowrap">Released</span>
-                </a>
+                  <div className="flex items-center gap-1 ml-1 shrink-0">
+                    {item.official_link && (
+                      <a href={item.official_link} target="_blank" rel="noopener noreferrer"
+                        className="text-[9px] px-1.5 py-0.5 bg-purple-600 text-white rounded-full font-semibold hover:bg-purple-700">Official ↗</a>
+                    )}
+                    <span className="text-[9px] px-1.5 py-0.5 bg-purple-100 text-purple-700 rounded-full font-semibold">Released</span>
+                  </div>
+                </div>
               )) : (
                 <p className="text-center text-gray-400 text-xs py-6">Loading...</p>
               )}
