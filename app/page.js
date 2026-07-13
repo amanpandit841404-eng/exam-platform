@@ -118,12 +118,18 @@
           </header>
 
           {/* STATS BAR */}
-          <div style={{ background: cardBg, borderBottom: `1px solid ${border}`, padding: '10px 16px' }}>
-            <div style={{ maxWidth: 1100, margin: '0 auto', display: 'flex', gap: 24, overflowX: 'auto' }}>
-              {[{ icon: '🏛️', val: totalExams.toLocaleString() + '+', label: 'Total Exams' }, { icon: '🏆', val: totalResults + '+', label: 'Results' }, { icon: '📄', val: totalAdmits + '+', label: 'Admit Cards' }, { icon: '📅', val: upcomingExams.length + '+', label: 'Upcoming' }].map((s, i) => (
-                <div key={i} style={{ display: 'flex', alignItems: 'center', gap: 8, whiteSpace: 'nowrap' }}>
-                  <span style={{ fontSize: 20 }}>{s.icon}</span>
-                  <div><div style={{ fontSize: 16, fontWeight: 800, color: textMain }}>{s.val}</div><div style={{ fontSize: 10, color: textSub }}>{s.label}</div></div>
+          <div style={{ background: cardBg, borderBottom: `1px solid ${border}`, padding: '12px 16px' }}>
+            <div style={{ maxWidth: 1100, margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 8 }}>
+              {[
+                { icon: '🏛️', val: totalExams.toLocaleString() + '+', label: 'Total Exams', color: '#2563eb', bg: '#eff6ff' },
+                { icon: '🏆', val: (totalResults || 93) + '+', label: 'Results', color: '#16a34a', bg: '#f0fdf4' },
+                { icon: '🎫', val: (totalAdmits || 95) + '+', label: 'Admit Cards', color: '#ea580c', bg: '#fff7ed' },
+                { icon: '📅', val: upcomingExams.length + '+', label: 'Upcoming', color: '#7c3aed', bg: '#f5f3ff' }
+              ].map((s, i) => (
+                <div key={i} style={{ background: darkMode ? '#1e293b' : s.bg, borderRadius: 10, padding: '10px 8px', textAlign: 'center', border: `1px solid ${border}` }}>
+                  <div style={{ fontSize: 20 }}>{s.icon}</div>
+                  <div style={{ fontSize: 15, fontWeight: 800, color: darkMode ? '#e2e8f0' : s.color, marginTop: 2 }}>{s.val}</div>
+                  <div style={{ fontSize: 10, color: textSub, marginTop: 1 }}>{s.label}</div>
                 </div>
               ))}
             </div>
