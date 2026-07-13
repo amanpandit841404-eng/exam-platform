@@ -266,6 +266,7 @@
                 { href: '/answer-keys', icon: '🔑', label: 'Answer Keys', color: '#ca8a04', bg: '#fef9c3' },
                 { href: '/notifications', icon: '📢', label: 'Notifications', color: '#dc2626', bg: '#fee2e2' },
                 { href: '/search', icon: '🔍', label: 'Search Exams', color: '#0891b2', bg: '#e0f2fe' },
+                { href: '/jobs', icon: '💼', label: 'Govt Jobs', color: '#ea580c', bg: '#fff7ed' },
               ].map(link => (
                 <a key={link.href} href={link.href}
                   style={{ padding: '14px 12px', background: link.bg, borderRadius: 12, textAlign: 'center', textDecoration: 'none', border: `1px solid ${border}`, display: 'block' }}>
