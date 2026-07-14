@@ -49,7 +49,7 @@
         { href: "/search", icon: "🔍", label: "Search" },
         { href: "/notifications", icon: "📢", label: "Updates" },
         { href: "/jobs", icon: "💼", label: "Jobs" },
-        { href: "/join-telegram", icon: "📱", label: "Telegram" },
+        { href: "/telegram", icon: "📱", label: "Telegram" },
       ];
       return (
         <nav style={{
