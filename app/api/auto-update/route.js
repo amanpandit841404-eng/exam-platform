@@ -1,224 +1,293 @@
 import { createClient } from "@supabase/supabase-js";
 
-    const supabaseUrl = process.env.SUPABASE_URL || "https://fbcvxefvvifmxaiqxiuq.supabase.co";
-    const anonKey = process.env.SUPABASE_ANON_KEY || "sb_publishable_BShV19iGgcoKLiIsyvQ2Lg_1Lhe9uPV";
-    const envKey = process.env.SUPABASE_SERVICE_ROLE_KEY; const serviceKey = (envKey && envKey.startsWith("eyJ")) ? envKey : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZiY3Z4ZWZ2dmlmbXhhaXF4aXVxIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc4MjEwMTg5NiwiZXhwIjoyMDk3Njc3ODk2fQ.aE96TdR-6EaqzjdI0Ift_-dpmJqFISaaYrlaQlZAZHw";
+const supabaseUrl = process.env.SUPABASE_URL || "https://fbcvxefvvifmxaiqxiuq.supabase.co";
+const anonKey = process.env.SUPABASE_ANON_KEY || "sb_publishable_BShV19iGgcoKLiIsyvQ2Lg_1Lhe9uPV";
+const envKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
+const serviceKey = (envKey && envKey.startsWith("eyJ")) ? envKey : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZiY3Z4ZWZ2dmlmbXhhaXF4aXVxIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc4MjEwMTg5NiwiZXhwIjoyMDk3Njc3ODk2fQ.aE96TdR-6EaqzjdI0Ift_-dpmJqFISaaYrlaQlZAZHw";
 
-    const supabase = createClient(supabaseUrl, anonKey);
-    const adminSupabase = serviceKey ? createClient(supabaseUrl, serviceKey) : supabase;
+const supabase = createClient(supabaseUrl, anonKey);
+const adminSupabase = serviceKey ? createClient(supabaseUrl, serviceKey) : supabase;
 
-    // Test what admin client can see
-    async function debugCheck() {
-      const { data: ad, error: ae } = await adminSupabase.from("results").select("id").limit(1);
-      const { data: sd, error: se } = await supabase.from("results").select("id").limit(1);
-      return {
-        admin_has_key: !!serviceKey,
-        admin_key_length: serviceKey ? serviceKey.length : 0,
-        admin_first_chars: serviceKey ? serviceKey.substring(0, 10) : "none",
-        admin_data: ad?.length || 0,
-        admin_error: ae?.message || null,
-        anon_data: sd?.length || 0,
-        anon_error: se?.message || null,
-      };
-    }
+const OFFICIAL_LINKS = {
+  201: 'https://ssc.gov.in', 202: 'https://ssc.gov.in', 203: 'https://ssc.gov.in',
+  204: 'https://ssc.gov.in', 205: 'https://ssc.gov.in', 206: 'https://ssc.gov.in',
+  207: 'https://ssc.gov.in', 301: 'https://upsc.gov.in', 302: 'https://upsc.gov.in',
+  303: 'https://upsc.gov.in', 401: 'https://ibps.in', 402: 'https://ibps.in',
+  403: 'https://ibps.in', 404: 'https://sbi.co.in/careers', 405: 'https://sbi.co.in/careers',
+  406: 'https://rbi.org.in', 501: 'https://indianrailways.gov.in', 502: 'https://indianrailways.gov.in',
+  503: 'https://indianrailways.gov.in', 504: 'https://indianrailways.gov.in',
+  601: 'https://jeemain.nta.ac.in', 602: 'https://jeeadv.ac.in',
+  701: 'https://neet.nta.nic.in', 702: 'https://natboard.edu.in', 703: 'https://aiimsexams.ac.in',
+  801: 'https://consortiumofnlus.ac.in', 901: 'https://upsc.gov.in', 902: 'https://upsc.gov.in',
+  1001: 'https://ctet.nic.in', 1002: 'https://dsssb.delhi.gov.in',
+  1101: 'https://bpsc.bihar.gov.in', 1102: 'https://uppsc.up.nic.in',
+  1103: 'https://mppsc.mp.gov.in', 1104: 'https://rpsc.rajasthan.gov.in',
+  1105: 'https://uppsc.up.nic.in', 1106: 'https://psc.cg.gov.in',
+  1401: 'https://joinindiancoastguard.gov.in', 1501: 'https://allindiabarexamination.ac.in',
+  1601: 'https://www.mha.gov.in', 1701: 'https://css.theig presidency.gov.in',
+  1801: 'https://rpf.indianrailways.gov.in', 1901: 'https://www.epfindia.gov.in',
+  2001: 'https://www.sebi.gov.in', 2101: 'https://www.nabard.org',
+  2201: 'https://www.rbi.org.in', 2301: 'https://www.cbi.gov.in',
+  2401: 'https://www.nia.gov.in', 2501: 'https://upsc.gov.in',
+};
 
+// Extended exam name → ID mapping
+const EXAM_IDS = {
+  "ssc cgl": 201, "ssc chsl": 202, "ssc gd": 203, "ssc mts": 204,
+  "ssc cpo": 205, "ssc stenographer": 206, "ssc je": 207,
+  "upsc cse": 301, "upsc capf": 302, "upsc epfo": 303,
+  "ibps po": 401, "ibps clerk": 402, "ibps rrb": 403,
+  "sbi po": 404, "sbi clerk": 405, "rbi grade b": 406,
+  "railway ntpc": 501, "rrb je": 502, "rrb alp": 503, "rrb group d": 504,
+  "jee main": 601, "jee advanced": 602,
+  "neet ug": 701, "neet pg": 702, "aiims": 703,
+  "clat": 801, "nda": 901, "cds": 902,
+  "ctet": 1001, "dsssb": 1002,
+  "bpsc": 1101, "uppsc": 1102, "mppsc": 1103, "rpsc": 1104,
+  "ukpsc": 1105, "cgpsc": 1106,
+  "coast guard": 1401, "aibe": 1501,
+  "ib acío": 1601, "ib security assistant": 1601,
+  "css": 1701, "rpf": 1801, "epfo": 1901,
+  "sebi": 2001, "nabard": 2101,
+  "cbi": 2301, "nia": 2401, "capf": 2501,
+};
 
-    const OFFICIAL_LINKS = {
-      201: 'https://ssc.gov.in',        // SSC CGL
-      202: 'https://ssc.gov.in',        // SSC CHSL
-      203: 'https://ssc.gov.in',        // SSC GD
-      204: 'https://ssc.gov.in',        // SSC MTS
-      205: 'https://ssc.gov.in',        // SSC CPO
-      206: 'https://ssc.gov.in',        // SSC Stenographer
-      207: 'https://ssc.gov.in',        // SSC JE
-      301: 'https://upsc.gov.in',       // UPSC CSE
-      302: 'https://upsc.gov.in',       // UPSC CAPF
-      303: 'https://upsc.gov.in',       // UPSC EPFO
-      401: 'https://ibps.in',           // IBPS PO
-      402: 'https://ibps.in',           // IBPS Clerk
-      403: 'https://ibps.in',           // IBPS RRB
-      404: 'https://sbi.co.in/careers', // SBI PO
-      405: 'https://sbi.co.in/careers', // SBI Clerk
-      406: 'https://rbi.org.in',        // RBI Grade B
-      501: 'https://indianrailways.gov.in', // RRB NTPC
-      502: 'https://indianrailways.gov.in', // RRB JE
-      503: 'https://indianrailways.gov.in', // RRB ALP
-      504: 'https://indianrailways.gov.in', // RRB Group D
-      601: 'https://jeemain.nta.ac.in', // JEE Main
-      602: 'https://jeeadv.ac.in',      // JEE Advanced
-      701: 'https://neet.nta.nic.in',   // NEET UG
-      702: 'https://natboard.edu.in',   // NEET PG
-      703: 'https://aiimsexams.ac.in',  // AIIMS
-      801: 'https://consortiumofnlus.ac.in', // CLAT
-      901: 'https://upsc.gov.in',       // NDA
-      902: 'https://upsc.gov.in',       // CDS
-      1001: 'https://ctet.nic.in',      // CTET
-      1002: 'https://dsssb.delhi.gov.in', // DSSSB
-      1101: 'https://bpsc.bih.nic.in',  // BPSC
-      1102: 'https://uppsc.up.nic.in',  // UPPSC
-      1103: 'https://mpsc.gov.in',      // MPSC
-      1104: 'https://rpsc.rajasthan.gov.in', // RPSC
-      1105: 'https://tnpsc.gov.in',     // TNPSC
-      1106: 'https://kpsc.kar.nic.in',  // KPSC
-      1107: 'https://mppsc.mp.gov.in',  // MPPSC
-      1108: 'https://opsc.gov.in',      // OPSC
-      1109: 'https://wbpsc.gov.in',     // WBPSC
-      1110: 'https://hpsc.gov.in',      // HPSC
-    };
+function matchExam(name) {
+  const key = name.toLowerCase().trim();
+  for (const [k, id] of Object.entries(EXAM_IDS)) {
+    if (key.includes(k)) return [id, key];
+  }
+  return null;
+}
 
-    const EXAM_MAP = {
-      "ssc cgl": [201, "SSC CGL"], "ssc chsl": [202, "SSC CHSL"], "ssc gd": [203, "SSC GD"], "ssc mts": [204, "SSC MTS"],
-      "ssc cpo": [205, "SSC CPO"], "ssc stenographer": [206, "SSC Stenographer"], "ssc je": [207, "SSC JE"],
-      "upsc cse": [301, "UPSC CSE"], "upsc capf": [302, "UPSC CAPF"], "upsc epfo": [303, "UPSC EPFO"],
-      "ibps po": [401, "IBPS PO"], "ibps clerk": [402, "IBPS Clerk"], "ibps rrb": [403, "IBPS RRB"],
-      "sbi po": [404, "SBI PO"], "sbi clerk": [405, "SBI Clerk"], "rbi grade b": [406, "RBI Grade B"],
-      "rrb ntpc": [501, "RRB NTPC"], "rrb je": [502, "RRB JE"], "rrb alp": [503, "RRB ALP"], "rrb group d": [504, "RRB Group D"],
-      "jee main": [601, "JEE Main"], "jee advance": [602, "JEE Advanced"], "neet ug": [701, "NEET UG"], "neet pg": [702, "NEET PG"],
-      "aiims": [703, "AIIMS"], "clat": [801, "CLAT"], "nda": [901, "NDA"], "cds": [902, "CDS"], "afcat": [903, "AFCAT"],
-      "ctet": [1001, "CTET"], "uptet": [1002, "UPTET"], "reet": [1003, "REET"], "dsssb": [1004, "DSSSB"],
-      "uppsc": [1101, "UPPSC"], "bpsc": [1102, "BPSC"], "mppsc": [1103, "MPPSC"],
-      "cat": [1201, "CAT"], "xat": [1202, "XAT"], "ugc net": [1301, "UGC NET"], "csir net": [1302, "CSIR NET"], "gate": [1303, "GATE"],
-    };
+export async function GET(req) {
+  const { searchParams } = new URL(req.url);
+  const secret = searchParams.get("secret");
+  const mode = searchParams.get("mode") || "full";
 
-    function matchExam(title) {
-      const lower = title.toLowerCase();
-      for (const key of Object.keys(EXAM_MAP).sort((a,b) => b.length - a.length)) { if (lower.includes(key)) return EXAM_MAP[key]; }
-      return null;
-    }
+  if (secret !== "sarkari123auto") {
+    return Response.json({ error: "Unauthorized" }, { status: 401 });
+  }
 
-    function detectType(title) {
-      const lower = title.toLowerCase();
-      if (lower.includes("result") || lower.includes("score") || lower.includes("marks")) return "result";
-      if (lower.includes("admit") || lower.includes("hall ticket") || lower.includes("call letter")) return "admit_card";
-      if (lower.includes("answer") || lower.includes("key")) return "answer_key";
-      if (lower.includes("syllabus") || lower.includes("pattern")) return "syllabus";
-      return "general";
-    }
+  const today = new Date().toISOString().split("T")[0];
+  let newsAdded = 0, templateAdded = 0, resultsAdded = 0, admitsAdded = 0;
+  let cleanupDone = 0, vacanciesAdded = 0, answersAdded = 0;
 
-    async function fetchNews(query) {
-      try {
-        const url = `https://news.google.com/rss/search?q=${encodeURIComponent(query)}+india+exam&hl=en-IN&gl=IN`;
-        const resp = await fetch(url); const text = await resp.text();
-        const items = []; const regex = /<item>([\s\S]*?)<\/item>/gi; let match;
-        while ((match = regex.exec(text)) !== null) {
-          const xml = match[1];
-          const title = xml.match(/<title>(.*?)<\/title>/i)?.[1]?.replace(/<!\[CDATA\[|\]\]>/g, "").trim();
-          const link = xml.match(/<link>(.*?)<\/link>/i)?.[1]?.trim();
-          if (title && title.length > 15) items.push({ title, link });
-        }
-        return items;
-      } catch (e) { return []; }
-    }
-
-    const ALL_EXAMS = [
-      [201, "SSC CGL"], [202, "SSC CHSL"], [203, "SSC GD"], [204, "SSC MTS"],
-      [205, "SSC CPO"], [206, "SSC Stenographer"], [207, "SSC JE"],
-      [301, "UPSC CSE"], [302, "UPSC CAPF"], [303, "UPSC EPFO"],
-      [401, "IBPS PO"], [402, "IBPS Clerk"], [403, "IBPS RRB"],
-      [404, "SBI PO"], [405, "SBI Clerk"], [406, "RBI Grade B"],
-      [501, "RRB NTPC"], [502, "RRB JE"], [503, "RRB ALP"], [504, "RRB Group D"],
-      [601, "JEE Main"], [602, "JEE Advanced"], [701, "NEET UG"], [702, "NEET PG"],
-      [703, "AIIMS"], [801, "CLAT"], [901, "NDA"], [902, "CDS"], [903, "AFCAT"],
-      [1001, "CTET"], [1002, "UPTET"], [1003, "REET"], [1004, "DSSSB"],
-      [1101, "UPPSC"], [1102, "BPSC"], [1103, "MPPSC"],
-      [1201, "CAT"], [1202, "XAT"], [1301, "UGC NET"], [1302, "CSIR NET"], [1303, "GATE"],
-    ];
-    const YEARS = [2024, 2025, 2026, 2027];
-
-    export async function GET(req) {
-      const secret = req.nextUrl.searchParams.get("secret");
-      if (secret !== "sarkari123auto") {
-        return Response.json({ error: "Unauthorized" }, { status: 401 });
-      }
-
-      const mode = req.nextUrl.searchParams.get("mode") || "normal";
-      const today = new Date().toISOString().split("T")[0];
-
-      // ========== DEBUG MODE ==========
-      if (mode === "debug") {
-        const debug = await debugCheck();
-        return Response.json({ success: true, debug });
-      }
-
-      try {
-        // ========== BULK MODE ==========
-        if (mode === "bulk") {
-          let r=0, a=0;
-          for (const [id, name] of ALL_EXAMS) {
-            for (const year of YEARS) {
-              const rn = `${name} ${year}`;
-              const { data: re } = await adminSupabase.from("results").select("id").eq("exam_name", rn).maybeSingle();
-              if (!re) { await adminSupabase.from("results").insert({ exam_name: rn, exam_id: id, result_title: `Result - ${name} ${year}`, status: "declared", official_link: OFFICIAL_LINKS[id] || null }); r++; }
-              const { data: ae } = await adminSupabase.from("admit_cards").select("id").eq("exam_name", rn).maybeSingle();
-              if (!ae) { await adminSupabase.from("admit_cards").insert({ exam_name: rn, exam_id: id, title: `Admit Card - ${name} ${year}`, status: "released", official_link: OFFICIAL_LINKS[id] || null }); a++; }
-            }
+  try {
+    // ========== CLEANUP: Remove stale/duplicate entries ==========
+    if (mode === "full" || mode === "cleanup") {
+      const { data: updates } = await adminSupabase.from("updates").select("id,title").order("created_at", { ascending: false });
+      if (updates) {
+        const seen = new Set();
+        for (const u of updates) {
+          const key = u.title.toLowerCase().trim();
+          if (seen.has(key)) {
+            await adminSupabase.from("updates").delete().eq("id", u.id);
+            cleanupDone++;
+          } else {
+            seen.add(key);
           }
-          // Check with anon key what was actually added
-          const { data: rc } = await supabase.from("results").select("id");
-          const { data: ac } = await supabase.from("admit_cards").select("id");
-          return Response.json({ success: true, mode: "bulk", results_added: r, admits_added: a, results_actual: rc?.length || 0, admits_actual: ac?.length || 0 });
         }
+      }
+    }
 
-        // ========== FIX LINKS MODE ==========
-        if (mode === "fix-links") {
-          let updated = 0;
-          for (const [id, link] of Object.entries(OFFICIAL_LINKS)) {
-            const examId = parseInt(id);
-            const { data: rRows } = await adminSupabase.from("results").select("id").eq("exam_id", examId).is("official_link", null);
-            if (rRows && rRows.length > 0) {
-              await adminSupabase.from("results").update({ official_link: link }).eq("exam_id", examId).is("official_link", null);
-              updated += rRows.length;
+    // ========== NEWS MONITOR: Check official sources ==========
+    if (mode === "full" || mode === "news") {
+      const sources = [
+        // SSC
+        { url: "https://ssc.gov.in", name: "SSC", match: /SSC/i },
+        // UPSC
+        { url: "https://upsc.gov.in/whats-new", name: "UPSC", match: /result|exam|admit|interview/i },
+        // NTA
+        { url: "https://nta.ac.in/NoticeBoard", name: "NTA", match: /result|exam|admit|score/i },
+        // Railway
+        { url: "https://indianrailways.gov.in/railwayboard/view_section.jsp?lang=0&id=0,1,304,366,537", name: "Railway", match: /recruitment|exam|result|rrb/i },
+        // IBPS  
+        { url: "https://ibps.in", name: "IBPS", match: /result|exam|admit|recruitment|clerk|po|rrb/i },
+        // CTET
+        { url: "https://ctet.nic.in", name: "CTET", match: /ctet|result|admit|answer/i },
+        // RBI
+        { url: "https://rbi.org.in/Scripts/BS_ViewBulletin.aspx", name: "RBI", match: /recruitment|exam|result|grade b/i },
+        // SBI
+        { url: "https://sbi.co.in/careers", name: "SBI", match: /result|admit|po|clerk|recruitment/i },
+        // Defence
+        { url: "https://upsc.gov.in/whats-new", name: "Defence", match: /nda|cds|afcat|result|admit/i },
+        // Police
+        { url: "https://bprd.nic.in", name: "Police", match: /recruitment|result|exam/i },
+      ];
+
+      for (const src of sources) {
+        try {
+          const res = await fetch(src.url, { signal: AbortSignal.timeout(5000) });
+          const html = await res.text();
+          // Extract text between specific tags or use basic text extraction
+          const text = html.replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").substring(0, 5000);
+          const lines = text.split(/\.|\n/).filter(l => l.trim().length > 15 && l.trim().length < 200);
+
+          for (const line of lines.slice(0, 15)) {
+            if (!src.match.test(line)) continue;
+
+            const lower = line.toLowerCase();
+            let type = "notification";
+            if (lower.includes("result") || lower.includes("score") || lower.includes("marks")) type = "result";
+            else if (lower.includes("admit") || lower.includes("hall ticket") || lower.includes("call letter")) type = "admit_card";
+            else if (lower.includes("syllabus") || lower.includes("curriculum") || lower.includes("pattern")) type = "syllabus";
+            else if (lower.includes("answer") || lower.includes("key") || lower.includes("solution")) type = "answer_key";
+            else if (lower.includes("vacancy") || lower.includes("recruitment") || lower.includes("apply")) type = "vacancy";
+            else if (lower.includes("cutoff") || lower.includes("cut off") || lower.includes("qualifying")) type = "cutoff";
+
+            let examName = src.name;
+            for (const [ename] of Object.entries(EXAM_IDS)) {
+              if (lower.includes(ename)) {
+                examName = ename.toUpperCase();
+                break;
+              }
             }
-            const { data: aRows } = await adminSupabase.from("admit_cards").select("id").eq("exam_id", examId).is("official_link", null);
-            if (aRows && aRows.length > 0) {
-              await adminSupabase.from("admit_cards").update({ official_link: link }).eq("exam_id", examId).is("official_link", null);
-              updated += aRows.length;
-            }
-          }
-          return Response.json({ success: true, mode: "fix-links", records_updated: updated });
-        }
 
-        // ========== CLEANUP ==========
-        const { data: allUpcoming } = await adminSupabase.from("upcoming_exams").select("id,exam_name").order("id");
-        let cleanupDone = 0;
-        if (allUpcoming && allUpcoming.length > 0) {
-          const seen = new Set(), toDelete = [];
-          for (const item of allUpcoming) { const key = item.exam_name.toLowerCase().trim(); if (seen.has(key)) toDelete.push(item.id); else seen.add(key); }
-          for (const id of toDelete) { await adminSupabase.from("upcoming_exams").delete().eq("id", id); cleanupDone++; }
-        }
-
-        // ========== NORMAL MODE: Google News ==========
-        let newsAdded = 0, templateAdded = 0, resultsAdded = 0, admitsAdded = 0;
-        const queries = ["exam result declared", "admit card released", "answer key published"];
-        for (const query of queries) {
-          const news = await fetchNews(query);
-          for (const item of news.slice(0, 10)) {
-            const match = matchExam(item.title);
-            if (!match) continue;
-            const [examId, examName] = match;
-            const type = detectType(item.title);
-            const displayTitle = `📰 ${examName} ${type.replace("_", " ")}`;
+            const displayTitle = `📰 ${examName} ${type.replace("_", " ")} Update`;
             const { data: exists } = await supabase.from("updates").select("id").eq("title", displayTitle).maybeSingle();
             if (exists) continue;
-            await supabase.from("updates").insert({ exam_id: examId, update_type: type, title: displayTitle, description: item.title.slice(0, 200), official_link: null, publish_date: today, is_verified: false });
+
+            const examMatch = matchExam(examName);
+            await supabase.from("updates").insert({
+              exam_id: examMatch ? examMatch[0] : null,
+              update_type: type,
+              title: displayTitle,
+              description: line.trim().substring(0, 200),
+              official_link: OFFICIAL_LINKS[examMatch?.[0]] || src.url,
+              publish_date: today,
+              is_verified: false,
+            });
             newsAdded++;
-            if (type === "result") { const { data: rExists } = await adminSupabase.from("results").select("id").eq("exam_name", `${examName} Result`).maybeSingle(); if (!rExists) { await adminSupabase.from("results").insert({ exam_name: `${examName} Result`, exam_id: examId, result_title: "Result Declared", status: "declared" }); resultsAdded++; } }
-            if (type === "admit_card") { const { data: aExists } = await adminSupabase.from("admit_cards").select("id").eq("exam_name", `${examName} Admit Card`).maybeSingle(); if (!aExists) { await adminSupabase.from("admit_cards").insert({ exam_name: `${examName} Admit Card`, exam_id: examId, title: "Admit Card Released", status: "released" }); admitsAdded++; } }
+
+            if (type === "result") {
+              const { data: rExists } = await adminSupabase.from("results").select("id").eq("exam_name", `${examName} Result`).maybeSingle();
+              if (!rExists) {
+                await adminSupabase.from("results").insert({ exam_name: `${examName} Result`, exam_id: examMatch?.[0] || null, result_title: "Result Declared", status: "declared" });
+                resultsAdded++;
+              }
+            }
+            if (type === "admit_card") {
+              const { data: aExists } = await adminSupabase.from("admit_cards").select("id").eq("exam_name", `${examName} Admit Card`).maybeSingle();
+              if (!aExists) {
+                await adminSupabase.from("admit_cards").insert({ exam_name: `${examName} Admit Card`, exam_id: examMatch?.[0] || null, title: "Admit Card Released", status: "released" });
+                admitsAdded++;
+              }
+            }
+            if (type === "vacancy") {
+              const { data: vExists } = await adminSupabase.from("upcoming_exams").select("id").eq("exam_name", `${examName} Vacancy`).maybeSingle();
+              if (!vExists) {
+                await adminSupabase.from("upcoming_exams").insert({ exam_name: `${examName} Vacancy`, category: examMatch?.[1] || src.name, status: "vacancy_out" });
+                vacanciesAdded++;
+              }
+            }
+            if (type === "answer_key") {
+              const { data: kExists } = await adminSupabase.from("answer_keys").select("id").eq("exam_name", `${examName} Answer Key`).maybeSingle();
+              if (!kExists) {
+                await adminSupabase.from("answer_keys").insert({ exam_name: `${examName} Answer Key`, exam_id: examMatch?.[0] || null, status: "released" });
+                answersAdded++;
+              }
+            }
           }
+        } catch (e) {
+          // Skip failed source
+          continue;
         }
-
-        // ========== TEMPLATES ==========
-        const templates = [["SSC CGL","result","SSC CGL Tier 1 result update."],["SSC CHSL","result","SSC CHSL result declared."],["SSC Stenographer","result","SSC Stenographer result announced."],["UPSC CSE","result","UPSC CSE result update."],["NEET UG","result","NEET UG result declared."],["JEE Main","result","JEE Main session result."],["IBPS PO","result","IBPS PO result released."],["CTET","admit_card","CTET admit card released."],["SSC CGL","admit_card","SSC CGL admit card available."],["SSC Stenographer","admit_card","SSC Stenographer admit card released."]];
-        const day = Math.floor((new Date() - new Date(new Date().getFullYear(), 0, 0)) / 86400000);
-        const sorted = [...templates].sort((a, b) => (templates.indexOf(a) * 17 + day) % 30 - (templates.indexOf(b) * 17 + day) % 30);
-        for (const [name, type, desc, url] of sorted.slice(0, 4)) {
-          const title = `${name} ${type === "result" ? "Result" : "Admit Card"} - ${today}`;
-          const { data: exists } = await supabase.from("updates").select("id").eq("title", title).maybeSingle();
-          if (!exists) { const match = matchExam(name); await supabase.from("updates").insert({ exam_id: match ? match[0] : null, update_type: type, title, description: desc, publish_date: today, is_verified: true, official_link: url }); templateAdded++; }
-        }
-
-        return Response.json({ success: true, date: today, duplicates_cleaned: cleanupDone, news_monitor_added: newsAdded, template_added: templateAdded, results_auto_added: resultsAdded, admit_cards_auto_added: admitsAdded, message: "Auto-update completed!" });
-      } catch (e) {
-        return Response.json({ success: false, date: today, error: e.message }, { status: 500 });
       }
     }
+
+    // ========== TEMPLATES: Rotating result/admit card templates ==========
+    if (mode === "full" || mode === "templates") {
+      const templates = [
+        ["SSC CGL","result","SSC CGL Tier 1 result update."],
+        ["SSC CHSL","result","SSC CHSL result declared."],
+        ["SSC GD","result","SSC GD Constable result update."],
+        ["SSC MTS","result","SSC MTS result announced."],
+        ["SSC Stenographer","result","SSC Stenographer result announced."],
+        ["SSC CPO","result","SSC CPO result update."],
+        ["UPSC CSE","result","UPSC CSE result update."],
+        ["UPSC CAPF","result","UPSC CAPF result announced."],
+        ["NEET UG","result","NEET UG result declared."],
+        ["JEE Main","result","JEE Main session result."],
+        ["JEE Advanced","result","JEE Advanced result declared."],
+        ["IBPS PO","result","IBPS PO result released."],
+        ["IBPS Clerk","result","IBPS Clerk result update."],
+        ["IBPS RRB","result","IBPS RRB result released."],
+        ["SBI PO","result","SBI PO result declared."],
+        ["SBI Clerk","result","SBI Clerk result update."],
+        ["RBI Grade B","result","RBI Grade B result released."],
+        ["Railway NTPC","result","RRB NTPC result update."],
+        ["RRB Group D","result","RRB Group D result declared."],
+        ["RRB JE","result","RRB JE result announced."],
+        ["NDA","result","NDA result declared."],
+        ["CDS","result","CDS result announced."],
+        ["CTET","admit_card","CTET admit card released."],
+        ["UPSC CSE","admit_card","UPSC CSE admit card available."],
+        ["SSC CGL","admit_card","SSC CGL admit card available."],
+        ["SSC CHSL","admit_card","SSC CHSL admit card released."],
+        ["SSC Stenographer","admit_card","SSC Stenographer admit card released."],
+        ["JEE Main","admit_card","JEE Main admit card released."],
+        ["NEET UG","admit_card","NEET UG admit card available."],
+        ["IBPS PO","admit_card","IBPS PO admit card released."],
+        ["IBPS Clerk","admit_card","IBPS Clerk admit card released."],
+        ["Railway NTPC","admit_card","RRB NTPC admit card available."],
+        ["RRB Group D","admit_card","RRB Group D admit card released."],
+        ["BPSC","admit_card","BPSC admit card released."],
+        ["BPSC","result","BPSC result update."],
+        ["UP Police","result","UP Police result declared."],
+        ["UPPSC","result","UPPSC result update."],
+        ["MPPSC","result","MPPSC result declared."],
+        ["RPSC","result","RPSC result announced."],
+        ["CTET","result","CTET result update."],
+        ["DSSSB","result","DSSSB result declared."],
+        ["EPFO","result","EPFO result update."],
+        ["SEBI","result","SEBI Grade A result declared."],
+        ["NABARD","result","NABARD result update."],
+        ["Coast Guard","result","Indian Coast Guard result update."],
+        ["AIBE","result","AIBE result declared."],
+        ["RPF","result","RPF result update."],
+        ["CBI","result","CBI result announced."],
+        ["CAPF","result","CAPF result declared."],
+      ];
+
+      const day = Math.floor((new Date() - new Date(new Date().getFullYear(), 0, 0)) / 86400000);
+      const sorted = [...templates].sort((a, b) => (templates.indexOf(a) * 17 + day) % 60 - (templates.indexOf(b) * 17 + day) % 60);
+
+      for (const [name, type, desc] of sorted.slice(0, 6)) {
+        const title = `${name} ${type === "result" ? "Result" : "Admit Card"} - ${today}`;
+        const { data: exists } = await supabase.from("updates").select("id").eq("title", title).maybeSingle();
+        if (!exists) {
+          const match = matchExam(name);
+          const link = OFFICIAL_LINKS[match?.[0]];
+          await supabase.from("updates").insert({
+            exam_id: match ? match[0] : null,
+            update_type: type,
+            title,
+            description: desc,
+            publish_date: today,
+            is_verified: true,
+            official_link: link || null,
+          });
+          templateAdded++;
+        }
+      }
+    }
+
+    return Response.json({
+      success: true,
+      date: today,
+      mode,
+      duplicates_cleaned: cleanupDone,
+      news_monitor_added: newsAdded,
+      template_added: templateAdded,
+      results_auto_added: resultsAdded,
+      admit_cards_auto_added: admitsAdded,
+      vacancies_auto_added: vacanciesAdded,
+      answer_keys_auto_added: answersAdded,
+      message: "Auto-update completed!",
+    });
+
+  } catch (e) {
+    return Response.json({ success: false, date: today, error: e.message }, { status: 500 });
+  }
+}

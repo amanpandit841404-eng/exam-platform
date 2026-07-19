@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SarkariSetu India — Master Index | सभी PDFs की सूची</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800&family=Noto+Serif+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --outer-bg: #E4E1DC;
+  --page-bg: #FDFCF9;
+  --surface: #FFFFFF;
+  --border: #E8E6E2;
+  --divider: #C5C0BA;
+  --text-primary: #151515;
+  --text-body: #3D3D3D;
+  --text-secondary: #717171;
+  --hero-bg: #DEE5F7;
+  --hero-deco: #A3AEEE;
+  --hero-deco2: #7F8FE0;
+  --success-bg: #E8FBCF;
+  --success-fg: #3D4826;
+  --warning-bg: #FFF0DC;
+  --warning-fg: #E47700;
+  --info-bg: #DEE5F7;
+  --info-fg: #3E54CE;
+  --error-bg: #FDECEA;
+  --error-fg: #C4433A;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  background: var(--outer-bg);
+  font-family: 'Inter Tight', sans-serif;
+  color: var(--text-body);
+  padding: 20px;
+  min-height: 100vh;
+}
+.page {
+  max-width: 1200px;
+  margin: 0 auto;
+  background: var(--page-bg);
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+}
+
+/* Hero */
+.hero {
+  background: var(--hero-bg);
+  padding: 48px 48px 36px;
+  position: relative;
+  overflow: hidden;
+}
+.hero-blob {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.15;
+  pointer-events: none;
+}
+.hero-blob-1 {
+  width: 320px; height: 320px;
+  background: var(--hero-deco);
+  top: -80px; right: -60px;
+  border-radius: 40% 60% 55% 45%;
+}
+.hero-blob-2 {
+  width: 200px; height: 200px;
+  background: var(--hero-deco2);
+  bottom: -40px; left: -30px;
+  border-radius: 55% 45% 60% 40%;
+}
+.hero-blob-3 {
+  width: 140px; height: 140px;
+  background: var(--hero-deco);
+  top: 20px; left: 40%;
+  border-radius: 50% 50% 45% 55%;
+  opacity: 0.1;
+}
+.hero-eyebrow {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 8px;
+  position: relative;
+  z-index: 1;
+}
+.hero h1 {
+  font-family: 'Noto Serif Devanagari', serif;
+  font-size: 42px;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.15;
+  position: relative;
+  z-index: 1;
+}
+.hero h1 span { color: var(--hero-deco2); }
+.hero-sub {
+  font-size: 15px;
+  color: var(--text-secondary);
+  margin-top: 10px;
+  max-width: 600px;
+  line-height: 1.5;
+  position: relative;
+  z-index: 1;
+}
+.hero-divider {
+  border: none;
+  height: 1px;
+  background: rgba(255,255,255,0.5);
+  margin: 20px 0 16px;
+  position: relative;
+  z-index: 1;
+}
+.hero-stats {
+  display: flex;
+  gap: 32px;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 1;
+}
+.hero-stat-value {
+  font-family: 'Noto Serif Devanagari', serif;
+  font-size: 36px;
+  font-weight: 600;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+.hero-stat-label {
+  font-size: 12px;
+  color: var(--text-secondary);
+  margin-top: 2px;
+}
+
+/* Content */
+.content { padding: 36px 48px 48px; }
+
+.section-title {
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+.section-sub {
+  font-size: 12px;
+  color: var(--text-secondary);
+  margin-bottom: 12px;
+}
+.section-divider {
+  border: none;
+  height: 0.5px;
+  background: var(--border);
+  margin-bottom: 24px;
+}
+
+/* Category Grid */
+.cat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 16px;
+  margin-bottom: 40px;
+}
+.cat-card {
+  background: var(--surface);
+  border: 0.5px solid var(--border);
+  border-radius: 12px;
+  padding: 18px 20px;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+.cat-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+}
+.cat-name {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 2px;
+}
+.cat-name .hi { font-family: 'Noto Serif Devanagari', serif; }
+.cat-count {
+  font-size: 12px;
+  color: var(--text-secondary);
+  margin-bottom: 10px;
+}
+.cat-file {
+  font-size: 13px;
+  font-weight: 500;
+  padding: 5px 10px;
+  background: var(--hero-bg);
+  color: var(--hero-fg, #3E54CE);
+  border-radius: 6px;
+  display: inline-block;
+  word-break: break-all;
+}
+.cat-badge {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 500;
+  padding: 3px 9px;
+  border-radius: 20px;
+  margin-right: 4px;
+  margin-top: 6px;
+}
+.badge-govt { background: var(--info-bg); color: var(--info-fg); }
+.badge-cert { background: var(--success-bg); color: var(--success-fg); }
+.badge-entrance { background: var(--warning-bg); color: var(--warning-fg); }
+.badge-recruit { background: #F0E4E1; color: #A88078; }
+
+/* Two-col list */
+.col-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 40px;
+}
+@media (max-width: 700px) {
+  .col-list { grid-template-columns: 1fr; }
+}
+
+.mini-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  background: var(--surface);
+  border: 0.5px solid var(--border);
+  border-radius: 10px;
+  padding: 14px 16px;
+}
+.mini-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+.mini-body { flex: 1; min-width: 0; }
+.mini-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+.mini-meta {
+  font-size: 12px;
+  color: var(--text-secondary);
+  margin-top: 1px;
+}
+.mini-pdf {
+  font-size: 11px;
+  color: var(--hero-deco2);
+  word-break: break-all;
+  margin-top: 4px;
+}
+
+/* Footer */
+.footer {
+  background: var(--hero-bg);
+  padding: 32px 48px;
+  position: relative;
+  overflow: hidden;
+}
+.footer-blob {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.12;
+  pointer-events: none;
+}
+.footer-blob-1 {
+  width: 200px; height: 200px;
+  background: var(--hero-deco);
+  top: -60px; right: -40px;
+  border-radius: 45% 55% 50% 50%;
+}
+.footer-blob-2 {
+  width: 120px; height: 120px;
+  background: var(--hero-deco2);
+  bottom: -30px; left: 30%;
+  border-radius: 55% 45% 40% 60%;
+}
+.footer-inner {
+  position: relative;
+  z-index: 1;
+}
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.footer-brand {
+  font-family: 'Noto Serif Devanagari', serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+.footer-brand-sub {
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+.footer-meta {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+.footer-meta strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+.footer-divider {
+  border: none;
+  height: 1px;
+  background: rgba(255,255,255,0.5);
+  margin: 16px 0;
+}
+.footer-bar {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: var(--text-secondary);
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.footer-bar a {
+  color: var(--hero-deco2);
+  text-decoration: none;
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+  body { padding: 0; }
+  .page { border-radius: 0; }
+  .hero { padding: 32px 20px 24px; }
+  .hero h1 { font-size: 28px; }
+  .hero-stats { gap: 20px; }
+  .hero-stat-value { font-size: 28px; }
+  .content { padding: 24px 20px 32px; }
+  .cat-grid { grid-template-columns: 1fr; }
+  .footer { padding: 24px 20px; }
+}
+
+/* Tabs */
+.tabs {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+.tab-btn {
+  padding: 8px 16px;
+  font-size: 13px;
+  font-weight: 500;
+  border: 0.5px solid var(--border);
+  border-radius: 20px;
+  background: var(--surface);
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.tab-btn.active {
+  background: var(--hero-bg);
+  color: var(--hero-fg, #3E54CE);
+  border-color: var(--hero-deco2);
+}
+.tab-btn:hover:not(.active) {
+  border-color: var(--text-secondary);
+}
+.tab-panel { display: none; }
+.tab-panel.active { display: block; }
+</style>
+</head>
+<body>
+<div class="page">
+
+<!-- Hero -->
+<div class="hero">
+  <div class="hero-blob hero-blob-1"></div>
+  <div class="hero-blob hero-blob-2"></div>
+  <div class="hero-blob hero-blob-3"></div>
+  <div class="hero-eyebrow">📚 सरकारी सेतु India</div>
+  <h1>Master Index <span>—</span> सभी परीक्षा PDFs</h1>
+  <p class="hero-sub">SarkariSetu India के तहत तैयार की गई सभी परीक्षा सूचियों का संपूर्ण इंडेक्स। हर PDF में उस श्रेणी की प्रमुख परीक्षाओं की विस्तृत जानकारी।</p>
+  <hr class="hero-divider">
+  <div class="hero-stats">
+    <div>
+      <div class="hero-stat-value">33</div>
+      <div class="hero-stat-label">कुल PDFs</div>
+    </div>
+    <div>
+      <div class="hero-stat-value">3,300+</div>
+      <div class="hero-stat-label">कुल एंट्रीज़</div>
+    </div>
+    <div>
+      <div class="hero-stat-value">28</div>
+      <div class="hero-stat-label">कैटेगरी (Certifications में)</div>
+    </div>
+  </div>
+</div>
+
+<!-- Content -->
+<div class="content">
+
+  <!-- Tabs -->
+  <div class="tabs">
+    <button class="tab-btn active" data-tab="all">सभी PDFs</button>
+    <button class="tab-btn" data-tab="govt">सरकारी परीक्षाएँ</button>
+    <button class="tab-btn" data-tab="entrance">प्रवेश परीक्षाएँ</button>
+    <button class="tab-btn" data-tab="cert">प्रोफेशनल सर्टिफिकेशन</button>
+  </div>
+
+  <!-- ALL PDFs -->
+  <div class="tab-panel active" id="tab-all">
+    <div class="section-title">📄 सभी 33 PDFs — पूरी सूची</div>
+    <div class="section-sub">हर PDF एक खास श्रेणी की परीक्षाओं को कवर करती है</div>
+    <hr class="section-divider">
+
+    <div class="cat-grid" id="allGrid"></div>
+  </div>
+
+  <!-- Govt Exams -->
+  <div class="tab-panel" id="tab-govt">
+    <div class="section-title">🏛️ सरकारी भर्ती परीक्षाएँ</div>
+    <div class="section-sub">UPSC, SSC, बैंकिंग, रेलवे, राज्य PSC, रक्षा, पुलिस, शिक्षक, डाक, वन, बीमा आदि</div>
+    <hr class="section-divider">
+    <div class="cat-grid" id="govtGrid"></div>
+  </div>
+
+  <!-- Entrance Exams -->
+  <div class="tab-panel" id="tab-entrance">
+    <div class="section-title">🎓 प्रवेश एवं शैक्षिक परीक्षाएँ</div>
+    <div class="section-sub">इंजीनियरिंग, मेडिकल, MBA, डिज़ाइन, होटल मैनेजमेंट, विदेश अध्ययन आदि</div>
+    <hr class="section-divider">
+    <div class="cat-grid" id="entranceGrid"></div>
+  </div>
+
+  <!-- Professional Certifications -->
+  <div class="tab-panel" id="tab-cert">
+    <div class="section-title">🎖️ प्रोफेशनल सर्टिफिकेशन</div>
+    <div class="section-sub">क्लाउड, प्रोग्रामिंग, AI, सिक्योरिटी, नेटवर्किंग, DevOps, फाइनेंस, लॉ, हेल्थकेयर और 28+ उप-श्रेणियाँ</div>
+    <hr class="section-divider">
+    <div class="cat-grid" id="certGrid"></div>
+  </div>
+
+</div>
+
+<!-- Footer -->
+<div class="footer">
+  <div class="footer-blob footer-blob-1"></div>
+  <div class="footer-blob footer-blob-2"></div>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <div class="footer-brand">सरकारी सेतु India</div>
+        <div class="footer-brand-sub">SarkariSetu India — Exam Knowledge Base</div>
+      </div>
+      <div class="footer-meta">
+        <div><strong>कुल PDFs</strong> 33</div>
+        <div><strong>कुल एंट्रीज़</strong> 3,300+</div>
+        <div><strong>अपडेट</strong> 17 July 2026</div>
+      </div>
+    </div>
+    <hr class="footer-divider">
+    <div class="footer-bar">
+      <span>SarkariSetu India — Master Index v1.0</span>
+      <span>Generated by <a href="https://allyhub.com" target="_blank">AllyHub AI</a></span>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<script>
+const pdfs = [
+  {
+    id: "railway", name: "रेलवे भर्ती परीक्षाएँ", en: "Railway Recruitment Exams",
+    count: "102", file: "railway-recruitment-exams-list.pdf", icon: "🚆",
+    badge: "recruit", badgeText: "भर्ती", tab: "govt",
+    desc: "RRB NTPC, Group D, ALP, JE, ASM, TC, Clerk, Technical, और सभी रेलवे भर्ती परीक्षाएँ"
+  },
+  {
+    id: "upsc", name: "UPSC परीक्षाएँ", en: "UPSC Exams",
+    count: "119", file: "upsc-exams-list.pdf", icon: "🏛️",
+    badge: "govt", badgeText: "सरकारी", tab: "govt",
+    desc: "UPSC Civil Services (IAS/IPS/IFS), CAPF, CDS, NDA, CMS, Engineering Services, GEO Scientist, EPFO, आदि"
+  },
+  {
+    id: "ssc", name: "SSC परीक्षाएँ", en: "SSC Exams",
+    count: "150", file: "ssc-exams-list.pdf", icon: "📋",
+    badge: "govt", badgeText: "सरकारी", tab: "govt",
+    desc: "SSC CGL, CHSL, MTS, GD, CPO, JE, Stenographer, Selection Post, Phase Exams, JHT, Scientific Assistant, आदि"
+  },
+  {
+    id: "banking", name: "बैंकिंग परीक्षाएँ", en: "Banking Exams",
+    count: "176", file: "banking-exams-list.pdf", icon: "🏦",
+    badge: "govt", badgeText: "सरकारी", tab: "govt",
+    desc: "IBPS PO, Clerk, RRB, SO; SBI PO, Clerk, SO; RBI Grade B, Assistant; NABARD, SEBI, NHB, LIC, आदि"
+  },
+  {
+    id: "state-psc", name: "राज्य PSC परीक्षाएँ", en: "State PSC Exams",
+    count: "164", file: "state-psc-exams-list.pdf", icon: "🗺️",
+    badge: "govt", badgeText: "सरकारी", tab: "govt",
+    desc: "सभी राज्यों की PSC परीक्षाएँ — UPPSC, BPSC, MPPSC, RPSC, UKPSC, CGPSC, JPSC, HPAS, WBCS, APPSC, TNPSC, KPSC, MPSC, आदि"
+  },
+  {
+    id: "teaching", name: "शिक्षक/CTET परीक्षाएँ", en: "Teaching & CTET Exams",
+    count: "154", file: "teaching-ctet-exams-list.pdf", icon: "📚",
+    badge: "govt", badgeText: "शिक्षक", tab: "govt",
+    desc: "CTET, UPTET, BTET, MPTET, HTET, REET, APTET, TNTET, BSTC, PTET, Teacher Eligibility Tests, DSSSB, KVS, NVS, आदि"
+  },
+  {
+    id: "defence", name: "रक्षा परीक्षाएँ", en: "Defence Exams",
+    count: "65", file: "defence-exams-list.pdf", icon: "🪖",
+    badge: "govt", badgeText: "रक्षा", tab: "govt",
+    desc: "Indian Army, Navy, Air Force — NDA, CDS, AFCAT, ACC, TES, SSR, AA, Airmen Group X/Y, INET, MNS, आदि"
+  },
+  {
+    id: "police", name: "पुलिस परीक्षाएँ", en: "Police Exams",
+    count: "80", file: "police-exams-list.pdf", icon: "🚔",
+    badge: "govt", badgeText: "पुलिस", tab: "govt",
+    desc: "State Police Constable, SI, ASI, DSP, CISF, CRPF, BSF, ITBP, SSB, Delhi Police, CAPF, आदि"
+  },
+  {
+    id: "insurance", name: "बीमा परीक्षाएँ", en: "Insurance Exams",
+    count: "35", file: "insurance-exams-list.pdf", icon: "🛡️",
+    badge: "govt", badgeText: "बीमा", tab: "govt",
+    desc: "LIC AAO, ADO, HFL; NIACL AO, Assistant; OICL, UIIC, AIC, New India Assurance, United India, आदि"
+  },
+  {
+    id: "postoffice", name: "डाक सेवा परीक्षाएँ", en: "Post Office Exams",
+    count: "27", file: "postoffice-exams-list.pdf", icon: "📮",
+    badge: "govt", badgeText: "डाक", tab: "govt",
+    desc: "India Post GDS, Postman, Mail Guard, MTS, PA/SA, Sorting Assistant, Postmaster Grade, आदि"
+  },
+  {
+    id: "forest", name: "वन एवं पर्यावरण परीक्षाएँ", en: "Forest & Environment Exams",
+    count: "53", file: "forest-environment-exams-list.pdf", icon: "🌲",
+    badge: "govt", badgeText: "वन", tab: "govt",
+    desc: "Forest Service, Range Forest Officer, Forest Guard, Forest Survey, Wildlife, Environment, State Forest Exams, आदि"
+  },
+  {
+    id: "judiciary", name: "न्यायपालिका/विधि परीक्षाएँ", en: "Judiciary & Law Exams",
+    count: "45", file: "judiciary-law-exams-list.pdf", icon: "⚖️",
+    badge: "govt", badgeText: "विधि", tab: "govt",
+    desc: "CLAT, AILET, LSAT, State Judiciary (PCS J), APO, Law Officer, LLM Entrance, DU LLB, आदि"
+  },
+  {
+    id: "engineering-entrance", name: "इंजीनियरिंग प्रवेश परीक्षाएँ", en: "Engineering Entrance Exams",
+    count: "53", file: "engineering-entrance-exams-list.pdf", icon: "⚙️",
+    badge: "entrance", badgeText: "प्रवेश", tab: "entrance",
+    desc: "JEE Main, JEE Advanced, BITSAT, VITEEE, MET, SRMJEEE, COMEDK, KCET, MHT CET, WBJEE, GUJCET, आदि"
+  },
+  {
+    id: "medical", name: "मेडिकल प्रवेश परीक्षाएँ", en: "Medical & Paramedical Entrance Exams",
+    count: "58", file: "medical-paramedical-entrance-exams-list.pdf", icon: "🏥",
+    badge: "entrance", badgeText: "प्रवेश", tab: "entrance",
+    desc: "NEET UG, NEET PG, AIIMS, JIPMER, PGIMER, NIPER, BDS, Nursing, Pharmacy, Paramedical, आदि"
+  },
+  {
+    id: "mba", name: "MBA/मैनेजमेंट प्रवेश", en: "MBA & Management Entrance",
+    count: "43", file: "mba-management-entrance-exams-list.pdf", icon: "💼",
+    badge: "entrance", badgeText: "प्रवेश", tab: "entrance",
+    desc: "CAT, MAT, XAT, GMAT, CMAT, NMAT, SNAP, IIFT, ATMA, IBSAT, MAH CET, TISSNET, आदि"
+  },
+  {
+    id: "hotel", name: "होटल मैनेजमेंट परीक्षाएँ", en: "Hotel Management Exams",
+    count: "26", file: "hotel-management-exams-list.pdf", icon: "🍽️",
+    badge: "entrance", badgeText: "प्रवेश", tab: "entrance",
+    desc: "NCHMCT JEE, IHM, AIHAT, PUTHAT, WAT, State HM Entrance, Hotel Management Admission Tests"
+  },
+  {
+    id: "design", name: "डिज़ाइन/फैशन परीक्षाएँ", en: "Design & Fashion Exams",
+    count: "25", file: "design-fashion-exams-list.pdf", icon: "🎨",
+    badge: "entrance", badgeText: "प्रवेश", tab: "entrance",
+    desc: "NIFT, NID DAT, CEED, UCEED, Pearl Academy, MIT ID, NATA, AIFD, NIFT Entrance, आदि"
+  },
+  {
+    id: "masscom", name: "मास कम्युनिकेशन/पत्रकारिता", en: "Mass Communication & Journalism",
+    count: "23", file: "mass-communication-journalism-exams-list.pdf", icon: "📺",
+    badge: "entrance", badgeText: "प्रवेश", tab: "entrance",
+    desc: "IIMC, JMI, DU MA Journalism, ACJ, XIC, IIT Bombay Mass Comm, MICA, Symbiosis, आदि"
+  },
+  {
+    id: "foreign", name: "विदेश अध्ययन परीक्षाएँ", en: "Foreign Study Exams",
+    count: "34", file: "foreign-study-exams-list.pdf", icon: "🌍",
+    badge: "entrance", badgeText: "विदेश", tab: "entrance",
+    desc: "IELTS, TOEFL, GRE, GMAT, SAT, ACT, PTE, Duolingo, USMLE, PLAB, AMC, आदि"
+  },
+  {
+    id: "nielit", name: "NIELIT कंप्यूटर परीक्षाएँ", en: "NIELIT Computer Exams",
+    count: "32", file: "nielit-computer-exams-list.pdf", icon: "💻",
+    badge: "cert", badgeText: "सर्टिफिकेशन", tab: "cert",
+    desc: "NIELIT CCC, O Level, A Level, B Level, C Level, DOEACC, COPA, Data Entry, आदि"
+  },
+  {
+    id: "apprenticeship", name: "अप्रेंटिसशिप एवं कौशल", en: "Apprenticeship & Trade Exams",
+    count: "24", file: "apprenticeship-trade-exams-list.pdf", icon: "🔧",
+    badge: "govt", badgeText: "कौशल", tab: "govt",
+    desc: "NAPS, NATS, ITI, NCVT, SCVT, Apprenticeship Training, Vocational, Skill India, आदि"
+  },
+  {
+    id: "scholarship", name: "स्कॉलरशिप/ओलंपियाड", en: "Scholarship & Olympiad Exams",
+    count: "37", file: "scholarship-olympiad-exams-list.pdf", icon: "🏆",
+    badge: "entrance", badgeText: "स्कॉलरशिप", tab: "entrance",
+    desc: "NTSE, NSO, IMO, KVPY, INSPIRE, Olympiads (Science/Math), National Scholarships, State Scholarships, आदि"
+  },
+  {
+    id: "research", name: "रिसर्च/फ़ेलोशिप परीक्षाएँ", en: "Research & Fellowship Exams",
+    count: "27", file: "research-fellowship-exams-list.pdf", icon: "🔬",
+    badge: "entrance", badgeText: "रिसर्च", tab: "entrance",
+    desc: "UGC NET, CSIR NET, ICAR, ICMR, DBT, GATE, IIT JAM, NBHM, DST INSPIRE, National Fellowships, आदि"
+  },
+  {
+    id: "professional-cert", name: "प्रोफेशनल सर्टिफिकेशन", en: "Professional Certifications",
+    count: "328+", file: "professional-certifications-master-list.pdf", icon: "🎖️",
+    badge: "cert", badgeText: "सर्टिफिकेशन", tab: "cert",
+    desc: "28 उप-श्रेणियों में 328+ सर्टिफिकेशन — Cloud, AI, Data, Security, DevOps, Finance, Law, Healthcare, Design, Marketing, Supply Chain, ERP, Hospitality, Aviation, Maritime, आदि"
+  },
+  {
+    id: "psu", name: "PSU भर्ती परीक्षाएँ", en: "PSU Recruitment Exams",
+    count: "90+", file: "psu-recruitment-exams-list.pdf", icon: "🏭",
+    badge: "govt", badgeText: "PSU", tab: "govt",
+    desc: "90+ PSUs — Maharatna (14), Navratna (16), Miniratna (50+) — Oil & Gas, Power, Steel, Mining, Defense, Telecom, Transport, Finance, Nuclear, Space — IOCL, ONGC, NTPC, SAIL, HAL, BEL, BHEL, ISRO, DRDO, BARC, NPCIL, DMRC, AAI, BSNL, IRCTC, आदि"
+  },
+  {
+    id: "agriculture", name: "कृषि एवं संबद्ध परीक्षाएँ", en: "Agriculture & Allied Exams",
+    count: "33+", file: "agriculture-allied-exams-list.pdf", icon: "🌾",
+    badge: "govt", badgeText: "कृषि", tab: "govt",
+    desc: "NABARD, ASRB, ICAR, FCI, IBPS AFO — Agriculture Officer, Horticulture, Fisheries, Sericulture, Dairy, Veterinary, Soil Conservation — केंद्रीय एवं राज्य स्तर"
+  },
+  {
+    id: "municipal", name: "नगर निगम एवं स्थानीय निकाय", en: "Municipal & Local Govt Exams",
+    count: "37+", file: "municipal-local-govt-exams-list.pdf", icon: "🏙️",
+    badge: "govt", badgeText: "स्थानीय", tab: "govt",
+    desc: "Municipal Corporation (BMC, PMC, MCD, AMC, KMC) — Clerk, JE, Sanitary Inspector, Fireman, Accountant, Tax Collector — Panchayati Raj — Zilla Parishad — Town Planning"
+  },
+  {
+    id: "health", name: "स्वास्थ्य विभाग भर्ती परीक्षाएँ", en: "Health Department Recruitment Exams",
+    count: "47+", file: "health-department-recruitment-exams.pdf", icon: "🏥",
+    badge: "govt", badgeText: "स्वास्थ्य", tab: "govt",
+    desc: "Staff Nurse (NORCET), ANM, GNM, Pharmacist (AIIMS/RRB/DRDO), CHO, NHM, AYUSH, Lab Technician, Radiographer, Drug Inspector, Medical Officer, Counsellor"
+  },
+  {
+    id: "specialized", name: "विशिष्ट सेक्टर परीक्षाएँ", en: "Specialized Sector Exams",
+    count: "100+", file: "specialized-sector-exams-list.pdf", icon: "🎯",
+    badge: "govt", badgeText: "विशिष्ट", tab: "govt",
+    desc: "4 सेक्टर — Cooperative (State Banks, NCDC, KRIBHCO, Amul), Sports Quota (Railways, Defence, CAPF, PSUs, SAI), Statistical (UPSC ISS/IES, SSC JSO, CSS), Translation/Language (SSC JHT, IBPS/RBI Rajbhasha, High Court Translator)"
+  },
+  {
+    id: "aviation", name: "विमानन/मर्चेंट नेवी/आर्किटेक्चर", en: "Aviation, Merchant Navy & Architecture",
+    count: "70+", file: "aviation-merchant-navy-architecture-exams-list.pdf", icon: "✈️",
+    badge: "govt", badgeText: "विविध", tab: "govt",
+    desc: "3 सेक्टर — Aviation (DGCA, CPL, AFCAT, AAI, AME, IGRUA, Ground Staff, Cabin Crew), Merchant Navy (IMU CET, DNS, GP Rating, B.Tech Marine, Deck Cadet, DGS CoC), Architecture & Town Planning (NATA, JEE Arch, GATE AR, State PSC, UPSC, PSU)"
+  },
+  {
+    id: "jnv-polytechnic-iti", name: "JNV/पॉलिटेक्निक/ITI परीक्षाएँ", en: "JNV, Polytechnic & ITI Exams",
+    count: "38+", file: "jnv-polytechnic-iti-exams-list.pdf", icon: "🎓",
+    badge: "entrance", badgeText: "स्कूल/व्यावसायिक", tab: "entrance",
+    desc: "3 सेक्टर — JNVST (Class 6/9/11 Selection Tests by NVS), Polytechnic/Diploma (AP POLYCET, TS POLYCET, JEECUP, Bihar DCECE, MP PPT, Odisha DET, 18+ राज्य), ITI & Vocational (NCVT AITT, SCVT, AIAT, राज्य ITI प्रवेश, 169+ ट्रेड्स)"
+  }
+];
+
+const allGrid = document.getElementById('allGrid');
+const govtGrid = document.getElementById('govtGrid');
+const entranceGrid = document.getElementById('entranceGrid');
+const certGrid = document.getElementById('certGrid');
+
+function renderCard(p) {
+  const badgeClass = p.badge === 'govt' ? 'badge-govt' : p.badge === 'entrance' ? 'badge-entrance' : p.badge === 'recruit' ? 'badge-recruit' : 'badge-cert';
+  return `
+    <div class="cat-card">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:4px;">
+        <span style="font-size:24px;">${p.icon}</span>
+        <div>
+          <div class="cat-name"><span class="hi">${p.name}</span></div>
+          <div class="cat-count">${p.count} एंट्रीज़ — ${p.en}</div>
+        </div>
+      </div>
+      <span class="cat-badge ${badgeClass}">${p.badgeText}</span>
+      <p style="font-size:13px;color:var(--text-body);margin:6px 0 10px;line-height:1.4;">${p.desc}</p>
+      <div class="cat-file">📄 ${p.file}</div>
+    </div>
+  `;
+}
+
+pdfs.forEach(p => {
+  allGrid.innerHTML += renderCard(p);
+  if (p.tab === 'govt') govtGrid.innerHTML += renderCard(p);
+  else if (p.tab === 'entrance') entranceGrid.innerHTML += renderCard(p);
+  else if (p.tab === 'cert') certGrid.innerHTML += renderCard(p);
+});
+
+// Tab switching
+document.querySelectorAll('.tab-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
+  });
+});
+</script>
+</body>
+</html>

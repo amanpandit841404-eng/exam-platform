@@ -287,8 +287,16 @@
           <div style={{ maxWidth: 1100, margin: '0 auto', padding: '0 16px 16px' }}>
             <div style={{ background: cardBg, borderRadius: 12, padding: 16, border: `1px solid ${border}` }}>
               <h2 style={{ fontSize: 14, fontWeight: 700, color: textMain, margin: '0 0 10px' }}>🔥 Popular Searches</h2>
+              <div style={{ background: darkMode ? '#1e293b' : '#ffffff', border: '1px solid ' + border, borderRadius: 12, padding: '12px 16px', marginBottom: 16, display: 'flex', alignItems: 'center', gap: 12 }}>
+            <div style={{ fontSize: 24 }}>📚</div>
+            <div style={{ flex: 1 }}>
+              <a href="/pdf-library" style={{ fontSize: 14, fontWeight: 700, color: textMain, textDecoration: 'none' }}>📚 Exam PDF Library</a>
+              <p style={{ margin: '2px 0 0', fontSize: 11, color: textSub }}>37 PDFs | 3,500+ Exams | Free Download</p>
+            </div>
+            <a href="/pdf-library" style={{ padding: '6px 16px', background: '#2563eb', color: '#fff', borderRadius: 8, textDecoration: 'none', fontSize: 12, fontWeight: 600, whiteSpace: 'nowrap' }}>Browse →</a>
+          </div>
               <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
-                {['SSC CGL Result 2026','UPSC Result 2026','IBPS PO Admit Card','Railway NTPC Result','NEET Result 2026','JEE Main Result','SBI PO Result','NDA Result 2026','SSC CHSL Result','IBPS Clerk Result','UP Police Result','Bihar Police Result','RPSC Result','MPPSC Result','BPSC Result'].map(term => (
+                {['SSC CGL Result 2026','UPSC Result 2026'','IBPS PO Admit Card','Railway NTPC Result','NEET Result 2026','JEE Main Result','SBI PO Result','NDA Result 2026','SSC CHSL Result','IBPS Clerk Result','UP Police Result','Bihar Police Result','RPSC Result','MPPSC Result','BPSC Result'].map(term => (
                   <a key={term} href={`/search?q=${encodeURIComponent(term)}`}
                     style={{ fontSize: 12, padding: '4px 12px', background: darkMode ? '#1e293b' : '#f3f4f6', color: darkMode ? '#93c5fd' : '#2563eb', borderRadius: 20, textDecoration: 'none', fontWeight: 500, border: `1px solid ${border}` }}>
                     {term}
@@ -310,9 +318,9 @@
               <p style={{ margin: '0 0 8px', fontSize: 16, fontWeight: 800, color: '#fff' }}>🏛️ SarkariSetu <span style={{ color: '#fbbf24' }}>India</span></p>
               <p style={{ margin: '0 0 12px', fontSize: 12 }}>Sarkari Result | Admit Card | Syllabus | Answer Key | Notification</p>
               <div style={{ display: 'flex', justifyContent: 'center', gap: 16, flexWrap: 'wrap', marginBottom: 12 }}>
-                {['/results', '/admit-cards', '/syllabus', '/answer-keys', '/notifications', '/search'].map((href, i) => (
+                {['/results', '/admit-cards', '/syllabus', '/answer-keys', '/notifications', '/search', '/pdf-library'].map((href, i) => (
                   <a key={i} href={href} style={{ color: '#93c5fd', fontSize: 11, textDecoration: 'none' }}>
-                    {['Results', 'Admit Cards', 'Syllabus', 'Answer Keys', 'Notifications', 'Search'][i]}
+                    {['Results', 'Admit Cards', 'Syllabus', 'Answer Keys', 'Notifications', 'Search', '📚 PDFs'][i]}
                   </a>
                 ))}
               </div>
