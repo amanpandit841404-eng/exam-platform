@@ -296,7 +296,7 @@
             <a href="/pdf-library" style={{ padding: '6px 16px', background: '#2563eb', color: '#fff', borderRadius: 8, textDecoration: 'none', fontSize: 12, fontWeight: 600, whiteSpace: 'nowrap' }}>Browse →</a>
           </div>
               <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
-                {['SSC CGL Result 2026','UPSC Result 2026'','IBPS PO Admit Card','Railway NTPC Result','NEET Result 2026','JEE Main Result','SBI PO Result','NDA Result 2026','SSC CHSL Result','IBPS Clerk Result','UP Police Result','Bihar Police Result','RPSC Result','MPPSC Result','BPSC Result'].map(term => (
+                {['SSC CGL Result 2026','UPSC Result 2026','IBPS PO Admit Card','Railway NTPC Result','NEET Result 2026','JEE Main Result','SBI PO Result','NDA Result 2026','SSC CHSL Result','IBPS Clerk Result','UP Police Result','Bihar Police Result','RPSC Result','MPPSC Result','BPSC Result'].map(term => (
                   <a key={term} href={`/search?q=${encodeURIComponent(term)}`}
                     style={{ fontSize: 12, padding: '4px 12px', background: darkMode ? '#1e293b' : '#f3f4f6', color: darkMode ? '#93c5fd' : '#2563eb', borderRadius: 20, textDecoration: 'none', fontWeight: 500, border: `1px solid ${border}` }}>
                     {term}
