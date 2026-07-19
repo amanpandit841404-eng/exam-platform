@@ -14,6 +14,10 @@
       const [totalAdmits, setTotalAdmits] = useState(0);
       const [searchQuery, setSearchQuery] = useState('');
       const [darkMode, setDarkMode] = useState(false);
+      useEffect(() => {
+        const saved = localStorage.getItem('sarkari-dark-mode');
+        if (saved === 'true') setDarkMode(true);
+      }, []);
 
       useEffect(() => {
         document.title = 'SarkariSetu India - Sarkari Result, Admit Card, Syllabus 2026';
@@ -318,9 +322,9 @@
               <p style={{ margin: '0 0 8px', fontSize: 16, fontWeight: 800, color: '#fff' }}>🏛️ SarkariSetu <span style={{ color: '#fbbf24' }}>India</span></p>
               <p style={{ margin: '0 0 12px', fontSize: 12 }}>Sarkari Result | Admit Card | Syllabus | Answer Key | Notification</p>
               <div style={{ display: 'flex', justifyContent: 'center', gap: 16, flexWrap: 'wrap', marginBottom: 12 }}>
-                {['/results', '/admit-cards', '/syllabus', '/answer-keys', '/notifications', '/search', '/pdf-library'].map((href, i) => (
+                {['/results', '/admit-cards', '/syllabus', '/answer-keys', '/notifications', '/search', '/pdf-library', '/calendar'].map((href, i) => (
                   <a key={i} href={href} style={{ color: '#93c5fd', fontSize: 11, textDecoration: 'none' }}>
-                    {['Results', 'Admit Cards', 'Syllabus', 'Answer Keys', 'Notifications', 'Search', '📚 PDFs'][i]}
+                    {['Results', 'Admit Cards', 'Syllabus', 'Answer Keys', 'Notifications', 'Search', '📚 PDFs', '📅 Calendar'][i]}
                   </a>
                 ))}
               </div>
