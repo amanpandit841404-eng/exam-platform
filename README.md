@@ -7,3 +7,4 @@ India's Modern Exam Results Platform
 - Results, Admit Cards, Notifications
 - Built with Next.js 14 + Supabase
 - Mobile-first design
+
