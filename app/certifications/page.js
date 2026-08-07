@@ -15,7 +15,9 @@
       "Education & Teaching": "🎓", "Government Skill Certifications": "🏛️", "Emerging Technologies": "🚀"
     };
 
-    export default function Certifications() {
+    const slugify = (s) => (s || "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+
+export default function Certifications() {
       const [certs, setCerts] = useState([]);
       const [search, setSearch] = useState("");
       const [selectedCat, setSelectedCat] = useState("All");
@@ -107,9 +109,9 @@
           <div style={{ display: "flex", gap: 8, overflowX: "auto", padding: "12px 16px", maxWidth: 1000, margin: "0 auto" }}>
             <button onClick={() => setSelectedCat("All")} style={chipStyle(selectedCat === "All", darkMode, border)}>All ({certs.length})</button>
             {cats.map(([c, n]) => (
-              <button key={c} onClick={() => setSelectedCat(c)} style={chipStyle(selectedCat === c, darkMode, border)}>
+              <a key={c} href={`/certifications/${slugify(c)}`} style={chipStyle(selectedCat === c, darkMode, border)}>
                 {CAT_EMOJI[c] || "📘"} {c} ({n})
-              </button>
+              </a>
             ))}
           </div>
 
