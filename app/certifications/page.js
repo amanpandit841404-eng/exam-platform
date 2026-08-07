@@ -120,7 +120,7 @@ export default function Certifications() {
             {!loading && filtered.length === 0 && <div style={{ textAlign: "center", color: textSub, padding: 30 }}>कोई certification नहीं मिली — दूसरा keyword try करो</div>}
             {filtered.map((c, i) => (
               <div key={i} style={{ background: cardBg, border: `1px solid ${border}`, borderRadius: 10, padding: "11px 14px", marginBottom: 8 }}>
-                <div style={{ fontSize: 14, fontWeight: 700, color: textMain }}>{c.name}</div>
+                <a href={`/certifications/${slugify(c.category.replace("Professional Certification - ", ""))}/${slugify(c.name)}`} style={{ fontSize: 14, fontWeight: 700, color: textMain, textDecoration: "none", display: "block" }}>{c.name}</a>
                 <div style={{ display: "flex", gap: 8, marginTop: 6, alignItems: "center", flexWrap: "wrap" }}>
                   <span style={{ fontSize: 10.5, background: darkMode ? "#334155" : "#dbeafe", color: darkMode ? "#93c5fd" : "#1e40af", padding: "3px 9px", borderRadius: 20 }}>
                     {c.category.replace("Professional Certification - ", "")}
