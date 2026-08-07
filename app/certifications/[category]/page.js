@@ -102,7 +102,7 @@
             <h2 style={{ fontSize: 15, fontWeight: 800, color: textMain, marginBottom: 10 }}>📜 {catName} की सारी Certifications ({list.length})</h2>
             {list.map((c, i) => (
               <div key={i} style={{ background: cardBg, border: `1px solid ${border}`, borderRadius: 10, padding: "11px 14px", marginBottom: 8 }}>
-                <div style={{ fontSize: 14, fontWeight: 700, color: textMain }}>{c.name}</div>
+                <a href={`/certifications/${slugify(catName)}/${slugify(c.name)}`} style={{ fontSize: 14, fontWeight: 700, color: textMain, textDecoration: "none", display: "block" }}>{c.name}</a>
                 <div style={{ display: "flex", gap: 8, marginTop: 6, alignItems: "center", flexWrap: "wrap" }}>
                   <span style={{ fontSize: 10.5, background: darkMode ? "#334155" : "#dbeafe", color: darkMode ? "#93c5fd" : "#1e40af", padding: "3px 9px", borderRadius: 20 }}>{catName}</span>
                   {c.official_website && (
