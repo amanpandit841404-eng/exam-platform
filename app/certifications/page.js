@@ -77,7 +77,7 @@ export default function Certifications() {
             <div style={{ maxWidth: 1000, margin: "0 auto" }}>
               <a href="/" style={{ color: "#cbd5e1", textDecoration: "none", fontSize: 12 }}>← Home</a>
               <h1 style={{ fontSize: 20, fontWeight: 800, margin: "6px 0 4px" }}>🎓 Professional Certifications</h1>
-              <div style={{ fontSize: 12.5, color: "#cbd5e1" }}>780+ certifications · 29 categories · एक जगह से पढ़ें और archive करें</div>
+              <div style={{ fontSize: 12.5, color: "#cbd5e1" }}>780+ certifications · 29 category pages · एक जगह से पढ़ें और archive करें</div>
             </div>
           </div>
 
