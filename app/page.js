@@ -116,7 +116,7 @@
 
               {/* Nav */}
               <nav style={{ display: 'flex', gap: 2, overflowX: 'auto' }}>
-                {[['/', '🏠 Home'], ['/results', '🏆 Results'], ['/admit-cards', '📄 Admit Card'], ['/syllabus', '📚 Syllabus'], ['/answer-keys', '🔑 Answer Key'], ['/notifications', '📢 Notifications']].map(([href, label]) => (
+                {[['/', '🏠 Home'], ['/results', '🏆 Results'], ['/admit-cards', '📄 Admit Card'], ['/syllabus', '📚 Syllabus'], ['/answer-keys', '🔑 Answer Key'], ['/notifications', '📢 Notifications'], ['/certifications', '🏓 Certifications']].map(([href, label]) => (
                   <a key={href} href={href} style={{ padding: '8px 14px', color: 'rgba(255,255,255,0.85)', textDecoration: 'none', fontSize: 12, fontWeight: 600, borderRadius: '8px 8px 0 0', whiteSpace: 'nowrap', background: href === '/' ? 'rgba(255,255,255,0.15)' : 'transparent' }}>{label}</a>
                 ))}
               </nav>
@@ -254,7 +254,8 @@
 
             {/* CATEGORIES */}
             <div style={{ background: cardBg, borderRadius: 14, border: `1px solid ${border}`, padding: '14px 16px', marginBottom: 16, boxShadow: '0 2px 8px rgba(0,0,0,0.06)' }}>
-              <h2 style={{ margin: '0 0 12px', fontSize: 14, fontWeight: 800, color: textMain }}>📍 Browse by Category</h2>
+              <a href="/certifications" style={{ display: "block", textDecoration: "none", marginBottom: 12, background: darkMode ? "#1e293b" : "linear-gradient(135deg,#1e3a5f,#2a5a8f)", borderRadius: 14, padding: "16px 18px", border: `1px solid ${border}` }}>  <div style={{ display: "flex", alignItems: "center", gap: 12 }}>    <span style={{ fontSize: 30 }}>🏓</span>    <div style={{ flex: 1 }}>      <div style={{ fontSize: 15, fontWeight: 800, color: "#fff" }}>Professional Certifications</div>      <div style={{ fontSize: 12, color: "#cbd5e1", marginTop: 2 }}>780+ certifications · 29 categories · AWS, Google, Microsoft, CISSP, CFA, NPTEL और बहुत कुछ</div>    </div>    <span style={{ color: "#fff", fontSize: 18 }}>→</span>  </div></a>
+<h2 style={{ margin: '0 0 12px', fontSize: 14, fontWeight: 800, color: textMain }}>📍 Browse by Category</h2>
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
                 {categories.map((cat, i) => (
                   <a key={i} href={`/category/${cat.slug || cat.name}`}
