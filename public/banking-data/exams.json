@@ -1,0 +1,509 @@
+{
+ "updated": "2026-08-08",
+ "note": "सभी जानकारी अनुमानित/संकेतात्मक है। असली details के लिए हमेशा ibps.in, sbi.co.in, rbi.org.in जैसी official websites चेक करें।",
+ "exams": [
+  {
+   "slug": "ibps-po",
+   "name": "IBPS PO",
+   "emoji": "🏦",
+   "fullName": "IBPS Probationary Officer (11+ Public Sector Banks)",
+   "tags": [
+    "Graduate",
+    "Interview",
+    "11 Banks"
+   ],
+   "officialWebsite": "https://www.ibps.in",
+   "examFee": "₹850 (UR/OBC/EWS) • ₹175 (SC/ST/PWD/Women)",
+   "latestStatus": "IBPS PO 2026-27 की notification (CRP PO/MT-XV) जल्दी आएगी — पिछली बार ~4,300+ posts के लिए। आवेदन ibps.in पर।",
+   "overview": "IBPS PO देश की 11+ Public Sector Banks (PNB, Bank of Baroda, Canara, Indian Bank आदि) में Probationary Officer बनने का सबसे बड़ा एक ही exam। एक आवेदन, कई बैंकों में नौकरी का मौका।",
+   "posts": [
+    "Probationary Officer (PO) / Management Trainee (MT)"
+   ],
+   "eligibility": "किसी भी मान्यता प्राप्त विश्वविद्यालय से Graduation। आयु: 20-30 वर्ष (आरक्षित वर्गों को छूट)।",
+   "examPattern": [
+    {
+     "stage": "Prelims",
+     "detail": "100 प्रश्न, 60 मिनट — English, Reasoning, Quantitative Aptitude (qualifying)"
+    },
+    {
+     "stage": "Mains",
+     "detail": "155 प्रश्न, 3 घंटे — Reasoning, Data Interpretation, English, GK + Descriptive (Essay/Letter)"
+    },
+    {
+     "stage": "Interview",
+     "detail": "100 अंक — साइकोमेट्रिक टेस्ट + इंटरव्यू"
+    }
+   ],
+   "syllabus": [
+    "Quantitative Aptitude",
+    "Reasoning & Computer Aptitude",
+    "English Language",
+    "General Awareness (Banking GK)",
+    "Data Analysis & Interpretation"
+   ],
+   "salary": "Basic ₹48,480 (2024 scale) — कुल emoluments ~₹55,000-60,000/माह + DA, HRA, भत्ते",
+   "selectionProcess": "Prelims → Mains → Interview → DV"
+  },
+  {
+   "slug": "ibps-clerk",
+   "name": "IBPS Clerk",
+   "emoji": "🧾",
+   "fullName": "IBPS Clerk (Office Assistant - CRP Clerk)",
+   "tags": [
+    "Graduate",
+    "No Interview",
+    "All Banks"
+   ],
+   "officialWebsite": "https://www.ibps.in",
+   "examFee": "₹850 (UR/OBC/EWS) • ₹175 (SC/ST/PWD/Women)",
+   "latestStatus": "IBPS Clerk 2026-27 की notification (CRP Clerk-XV) जल्दी आएगी — पिछली बार ~6,000+ posts।",
+   "overview": "IBPS Clerk सभी Public Sector Banks में Office Assistant (Clerk) की भर्ती है। सबसे बड़ा advantage — कोई Interview नहीं, सिर्फ Prelims + Mains। Graduates के लिए बैंक नौकरी का सबसे आसान रास्ता।",
+   "posts": [
+    "Clerk / Office Assistant (Multi-Tasking)"
+   ],
+   "eligibility": "Graduation (किसी भी stream)। आयु: 20-28 वर्ष (आरक्षित वर्गों को छूट)।",
+   "examPattern": [
+    {
+     "stage": "Prelims",
+     "detail": "100 प्रश्न, 60 मिनट — English, Reasoning, Quantitative Aptitude (qualifying)"
+    },
+    {
+     "stage": "Mains",
+     "detail": "190 प्रश्न, 160 मिनट — Reasoning, Quant, English, GK + Computer"
+    }
+   ],
+   "syllabus": [
+    "Quantitative Aptitude",
+    "Reasoning",
+    "English Language",
+    "General/Financial Awareness",
+    "Computer Knowledge"
+   ],
+   "salary": "Basic ₹19,900 (2020 scale) — कुल ~₹28,000-32,000/माह + भत्ते",
+   "selectionProcess": "Prelims → Mains → DV (कोई Interview नहीं)"
+  },
+  {
+   "slug": "ibps-so",
+   "name": "IBPS SO",
+   "emoji": "💻",
+   "fullName": "IBPS Specialist Officer (IT, HR, Marketing, Law, Agriculture)",
+   "tags": [
+    "Specialist",
+    "Graduate",
+    "Interview"
+   ],
+   "officialWebsite": "https://www.ibps.in",
+   "examFee": "₹850 (UR/OBC/EWS) • ₹175 (SC/ST/PWD/Women)",
+   "latestStatus": "IBPS SO 2026-27 की notification (CRP SPL-XV) जल्दी आएगी।",
+   "overview": "IBPS SO बैंकों में Specialist Officer की भर्ती है — IT, HR, Marketing, Agriculture, Law, Rajbhasha जैसी स्पेशलिस्ट posts। अपनी professional degree को बैंक नौकरी में बदलने का मौका।",
+   "posts": [
+    "IT Officer",
+    "HR Officer",
+    "Marketing Officer",
+    "Agriculture Officer",
+    "Law Officer",
+    "Rajbhasha Adhikari"
+   ],
+   "eligibility": "Post अनुसार: B.E./B.Tech (IT), MBA (HR/Marketing), B.Sc Agriculture, LLB, PG (Hindi) — 60%+ अंक। आयु: 20-30 वर्ष।",
+   "examPattern": [
+    {
+     "stage": "Prelims",
+     "detail": "150 प्रश्न, 2 घंटे — English + Reasoning + Quant (IT: English + Reasoning + Quant)"
+    },
+    {
+     "stage": "Mains",
+     "detail": "60 प्रश्न, 45 मिनट — Professional Knowledge (specialist subject)"
+    },
+    {
+     "stage": "Interview",
+     "detail": "स्पेशलिस्ट विषय का इंटरव्यू"
+    }
+   ],
+   "syllabus": [
+    "Professional Knowledge (IT/HR/Marketing/Agri/Law)",
+    "Reasoning",
+    "Quantitative Aptitude",
+    "English"
+   ],
+   "salary": "Basic ₹48,480 — कुल ~₹55,000-60,000/माह + भत्ते (PO जैसा scale)",
+   "selectionProcess": "Prelims → Mains (Professional) → Interview → DV"
+  },
+  {
+   "slug": "ibps-rrb",
+   "name": "IBPS RRB",
+   "emoji": "🌾",
+   "fullName": "IBPS Regional Rural Banks (Gramin Banks)",
+   "tags": [
+    "Officer",
+    "Graduate",
+    "Rural Banking"
+   ],
+   "officialWebsite": "https://www.ibps.in",
+   "examFee": "₹850 (UR) • ₹175 (SC/ST/PWD/Women)",
+   "latestStatus": "IBPS RRB 2026-27 (CRP RRB-XV) की notification जल्दी आएगी — Officer Scale I/II/III + Office Assistant।",
+   "overview": "IBPS RRB देश के Regional Rural Banks (Gramin Banks) में Officer और Office Assistant की भर्ती है। गाँव-कस्बों में बैंकिंग करियर — PO से कम competition, पक्की सरकारी नौकरी।",
+   "posts": [
+    "Officer Scale I (PO)",
+    "Officer Scale II (Generalist/Specialist)",
+    "Officer Scale III (Senior Manager)",
+    "Office Assistant (Multipurpose)"
+   ],
+   "eligibility": "Officer: Graduation (Scale III: 5 साल अनुभव)। Assistant: Graduation। आयु: Officer 18-30/33, Assistant 18-28 (छूट के साथ)।",
+   "examPattern": [
+    {
+     "stage": "Prelims",
+     "detail": "80 प्रश्न, 45 मिनट — Reasoning + Quant (qualifying)"
+    },
+    {
+     "stage": "Mains",
+     "detail": "200 प्रश्न, 2 घंटे — Reasoning, Quant, English/Hindi, GA, Computer"
+    },
+    {
+     "stage": "Interview",
+     "detail": "सिर्फ Officer posts के लिए"
+    }
+   ],
+   "syllabus": [
+    "Quantitative Aptitude",
+    "Reasoning",
+    "General Awareness (Rural Banking)",
+    "English/Hindi",
+    "Computer Knowledge"
+   ],
+   "salary": "Officer: ~₹30,000-45,000/माह • Assistant: ~₹25,000-28,000/माह + भत्ते",
+   "selectionProcess": "Prelims → Mains → Interview (Officer) → DV"
+  },
+  {
+   "slug": "sbi-po",
+   "name": "SBI PO",
+   "emoji": "🥇",
+   "fullName": "SBI Probationary Officer",
+   "tags": [
+    "Top Bank",
+    "Graduate",
+    "High Salary"
+   ],
+   "officialWebsite": "https://sbi.co.in",
+   "examFee": "₹750 (UR/OBC/EWS) • ₹125 (SC/ST/PWD)",
+   "latestStatus": "SBI PO 2026-27 की notification जल्दी आएगी — पिछली बार ~2,000 posts (2025)। sbi.co.in पर नज़र रखें।",
+   "overview": "SBI PO देश के सबसे बड़े बैंक — State Bank of India में Probationary Officer बनने का exam। सबसे अच्छा salary package और रेलवे जितनी ही prestige। Banking career का सपना।",
+   "posts": [
+    "Probationary Officer (PO)"
+   ],
+   "eligibility": "Graduation (किसी भी stream)। आयु: 21-30 वर्ष (आरक्षित वर्गों को छूट)।",
+   "examPattern": [
+    {
+     "stage": "Prelims",
+     "detail": "100 प्रश्न, 60 मिनट — English, Reasoning, Quant (qualifying)"
+    },
+    {
+     "stage": "Mains",
+     "detail": "150 प्रश्न, 3 घंटे — Reasoning, Data Analysis, English, GA + Descriptive (2 essays)"
+    },
+    {
+     "stage": "Interview",
+     "detail": "50 अंक — psychometric test + इंटरव्यू"
+    }
+   ],
+   "syllabus": [
+    "Data Analysis & Interpretation",
+    "Reasoning",
+    "English",
+    "General/Financial Awareness",
+    "Computer"
+   ],
+   "salary": "Basic ₹48,480 — कुल package ~₹10+ लाख/साल (in-hand ~₹60,000+/माह) + भत्ते",
+   "selectionProcess": "Prelims → Mains → Interview → DV"
+  },
+  {
+   "slug": "sbi-clerk",
+   "name": "SBI Clerk",
+   "emoji": "🧑‍💼",
+   "fullName": "SBI Junior Associate (Clerk)",
+   "tags": [
+    "Graduate",
+    "No Interview",
+    "Big Vacancy"
+   ],
+   "officialWebsite": "https://sbi.co.in",
+   "examFee": "₹750 (UR/OBC/EWS) • ₹125 (SC/ST/PWD)",
+   "latestStatus": "SBI Clerk 2026-27 की notification जल्दी आएगी — पिछली बार ~14,000+ posts (2025-26)।",
+   "overview": "SBI Clerk (Junior Associate) SBI की सबसे बड़ी भर्ती है — हर बार 10,000+ posts। कोई Interview नहीं, सिर्फ Prelims + Mains। SBI में पक्की नौकरी का सबसे बड़ा मौका।",
+   "posts": [
+    "Junior Associate (Customer Support & Sales)"
+   ],
+   "eligibility": "Graduation। आयु: 20-28 वर्ष (आरक्षित वर्गों को छूट)।",
+   "examPattern": [
+    {
+     "stage": "Prelims",
+     "detail": "100 प्रश्न, 60 मिनट — English, Reasoning, Quant (qualifying)"
+    },
+    {
+     "stage": "Mains",
+     "detail": "200 प्रश्न, 160 मिनट — Reasoning, Quant, English, GA + Computer"
+    }
+   ],
+   "syllabus": [
+    "Quantitative Aptitude",
+    "Reasoning",
+    "English",
+    "General/Financial Awareness",
+    "Computer"
+   ],
+   "salary": "Basic ₹19,900 — कुल ~₹30,000-33,000/माह + भत्ते",
+   "selectionProcess": "Prelims → Mains → DV"
+  },
+  {
+   "slug": "rbi-grade-b",
+   "name": "RBI Grade B",
+   "emoji": "🏛️",
+   "fullName": "RBI Officer Grade B (General / DEPR / DSIM)",
+   "tags": [
+    "Top Job",
+    "Graduate/PG",
+    "₹1 Lakh+"
+   ],
+   "officialWebsite": "https://www.rbi.org.in",
+   "examFee": "₹850 (UR/OBC/EWS) • ₹100 (SC/ST/PWD)",
+   "latestStatus": "RBI Grade B 2026-27 की notification जल्दी आएगी — बहुत कम posts (~90-450) इसलिए सबसे कठिन और सबसे प्रतिष्ठित।",
+   "overview": "RBI Grade B देश के केंद्रीय बैंक — Reserve Bank of India में Officer बनने का सबसे प्रतिष्ठित exam। कुछ ही posts, लाखों आवेदक। सरकारी नौकरी का सबसे ऊँचा स्तर।",
+   "posts": [
+    "Officer Grade B (General)",
+    "Officer Grade B (DEPR - Economics)",
+    "Officer Grade B (DSIM - Statistics)"
+   ],
+   "eligibility": "General: Graduation 60%+ (मान्यता प्राप्त)। DEPR: Economics MA/PhD। DSIM: Statistics/Math। आयु: 21-30 वर्ष।",
+   "examPattern": [
+    {
+     "stage": "Phase 1",
+     "detail": "200 प्रश्न, 2 घंटे — Reasoning, Quant, English, GK, Computer (सिर्फ qualifying)"
+    },
+    {
+     "stage": "Phase 2",
+     "detail": "3 papers — ESI (Economic & Social Issues), Finance & Management, English (Descriptive)"
+    },
+    {
+     "stage": "Interview",
+     "detail": "75 अंक"
+    }
+   ],
+   "syllabus": [
+    "Economic & Social Issues",
+    "Finance & Management",
+    "Quantitative Aptitude",
+    "Reasoning",
+    "English",
+    "Current Affairs"
+   ],
+   "salary": "Basic ₹55,200 — कुल ~₹1.16 लाख/माह (2024 scale) + DA, HRA, भत्ते",
+   "selectionProcess": "Phase 1 → Phase 2 → Interview → DV"
+  },
+  {
+   "slug": "rbi-assistant",
+   "name": "RBI Assistant",
+   "emoji": "📊",
+   "fullName": "RBI Assistant (Banking Assistant)",
+   "tags": [
+    "Graduate",
+    "No Interview",
+    "Central Bank"
+   ],
+   "officialWebsite": "https://www.rbi.org.in",
+   "examFee": "₹450 (UR/OBC/EWS) • ₹50 (SC/ST/PWD)",
+   "latestStatus": "RBI Assistant 2026-27 की notification जल्दी आएगी।",
+   "overview": "RBI Assistant RBI में ग्रुप B के सहायक पद की भर्ती है। RBI की नौकरी चाहे किसी भी level की हो — सरकारी नौकरी में सबसे अच्छी मानी जाती है। कोई Interview नहीं।",
+   "posts": [
+    "Assistant (Group B)"
+   ],
+   "eligibility": "Graduation। आयु: 20-28 वर्ष (आरक्षित वर्गों को छूट)।",
+   "examPattern": [
+    {
+     "stage": "Phase 1",
+     "detail": "100 प्रश्न, 60 मिनट — English, Reasoning, Quant (qualifying)"
+    },
+    {
+     "stage": "Phase 2",
+     "detail": "200 प्रश्न, 135 मिनट — Reasoning, Quant, English, GA + Computer"
+    }
+   ],
+   "syllabus": [
+    "Quantitative Aptitude",
+    "Reasoning",
+    "English",
+    "General Awareness",
+    "Computer"
+   ],
+   "salary": "Basic ₹21,700 — कुल ~₹45,000/माह (2024 scale) + भत्ते",
+   "selectionProcess": "Phase 1 → Phase 2 → DV"
+  },
+  {
+   "slug": "nabard-grade-a",
+   "name": "NABARD Grade A",
+   "emoji": "🌱",
+   "fullName": "NABARD Assistant Manager (Grade A)",
+   "tags": [
+    "Rural Finance",
+    "Graduate/PG",
+    "Interview"
+   ],
+   "officialWebsite": "https://www.nabard.org",
+   "examFee": "₹800 (UR/OBC/EWS) • ₹150 (SC/ST/PWD)",
+   "latestStatus": "NABARD Grade A 2026-27 की notification जल्दी आएगी।",
+   "overview": "NABARD कृषि और ग्रामीण विकास के लिए देश का सबसे बड़ा वित्तीय संस्थान है। Grade A (Assistant Manager) के लिए यह exam ग्रामीण बैंकिंग में करियर बनाने का शानदार मौका है।",
+   "posts": [
+    "Assistant Manager (Grade A) - RDBS",
+    "Assistant Manager (Grade A) - Rajbhasha",
+    "Assistant Manager (Grade A) - Legal"
+   ],
+   "eligibility": "Graduation/PG (Agriculture, Economics, Management, Law आदि)। आयु: 21-30 वर्ष।",
+   "examPattern": [
+    {
+     "stage": "Phase 1",
+     "detail": "200 प्रश्न, 2 घंटे — Reasoning, Quant, English, GA, Computer (qualifying)"
+    },
+    {
+     "stage": "Phase 2",
+     "detail": "2 papers — Agriculture & Rural Development + Economics/Farm management (Descriptive+MCQ)"
+    },
+    {
+     "stage": "Interview",
+     "detail": "अंतिम चयन"
+    }
+   ],
+   "syllabus": [
+    "Agriculture & Rural Development",
+    "Economic & Social Issues",
+    "Finance & Management",
+    "Reasoning",
+    "Quant",
+    "English"
+   ],
+   "salary": "Basic ₹28,150 — कुल ~₹62,000/माह + भत्ते",
+   "selectionProcess": "Phase 1 → Phase 2 → Interview → DV"
+  },
+  {
+   "slug": "lic-aao",
+   "name": "LIC AAO",
+   "emoji": "🛡️",
+   "fullName": "LIC Assistant Administrative Officer",
+   "tags": [
+    "Insurance",
+    "Graduate",
+    "Interview"
+   ],
+   "officialWebsite": "https://licindia.in",
+   "examFee": "₹700 (UR/OBC/EWS) • ₹85 (SC/ST/PWD)",
+   "latestStatus": "LIC AAO 2026-27 की notification जल्दी आएगी।",
+   "overview": "LIC AAO देश की सबसे बड़ी बीमा कंपनी — Life Insurance Corporation में Administrative Officer की भर्ती है। Banking जैसी salary, insurance sector की stability।",
+   "posts": [
+    "Assistant Administrative Officer (AAO) - Generalist",
+    "AAO - IT",
+    "AAO - Chartered Accountant",
+    "AAO - Actuarial",
+    "AAO - Legal",
+    "AAO - Rajbhasha"
+   ],
+   "eligibility": "Graduation 60%+ (CA/LLB/Actuary के लिए संबंधित qualification)। आयु: 21-30 वर्ष।",
+   "examPattern": [
+    {
+     "stage": "Prelims",
+     "detail": "100 प्रश्न, 60 मिनट — English, Reasoning, Quant (qualifying)"
+    },
+    {
+     "stage": "Mains",
+     "detail": "120 प्रश्न + Descriptive — Reasoning, Quant, English, GK + Professional (post अनुसार)"
+    },
+    {
+     "stage": "Interview",
+     "detail": "अंतिम चयन"
+    }
+   ],
+   "syllabus": [
+    "Quantitative Aptitude",
+    "Reasoning",
+    "English",
+    "General Knowledge",
+    "Professional Knowledge (post अनुसार)"
+   ],
+   "salary": "Basic ₹32,000 — कुल ~₹55,000-60,000/माह + भत्ते",
+   "selectionProcess": "Prelims → Mains → Interview → DV"
+  },
+  {
+   "slug": "sebi-grade-a",
+   "name": "SEBI Grade A",
+   "emoji": "📈",
+   "fullName": "SEBI Assistant Manager (Grade A)",
+   "tags": [
+    "Regulator",
+    "Top Job",
+    "High Salary"
+   ],
+   "officialWebsite": "https://www.sebi.gov.in",
+   "examFee": "₹1,000 (UR/OBC/EWS) • ₹100 (SC/ST/PWD)",
+   "latestStatus": "SEBI Grade A 2026-27 की notification जल्दी आएगी।",
+   "overview": "SEBI देश का शेयर बाजार regulator है। Grade A (Assistant Manager) के लिए यह exam RBI Grade B के बराबर प्रतिष्ठित माना जाता है — कम posts, शानदार salary और बेहतरीन career growth।",
+   "posts": [
+    "Assistant Manager (General)",
+    "Assistant Manager (IT)",
+    "Assistant Manager (Legal)",
+    "Assistant Manager (Research)"
+   ],
+   "eligibility": "Graduation 60%+ (Research: Post-Graduation; Legal: LLB)। आयु: 21-30 वर्ष।",
+   "examPattern": [
+    {
+     "stage": "Phase 1",
+     "detail": "2 papers — Paper 1 (Quant, Reasoning, English, GK) + Paper 2 (Subject/Professional)"
+    },
+    {
+     "stage": "Phase 2",
+     "detail": "2 papers — Descriptive + Professional Knowledge"
+    },
+    {
+     "stage": "Interview",
+     "detail": "अंतिम चयन"
+    }
+   ],
+   "syllabus": [
+    "Securities Market & SEBI",
+    "Economics & Finance",
+    "Quantitative Aptitude",
+    "Reasoning",
+    "English",
+    "Professional (post अनुसार)"
+   ],
+   "salary": "Basic ₹44,500 — कुल ~₹1.1 लाख/माह + भत्ते",
+   "selectionProcess": "Phase 1 → Phase 2 → Interview → DV"
+  }
+ ],
+ "stats": {
+  "exams": 11,
+  "banks": 25,
+  "posts": 100000
+ },
+ "banks": [
+  {
+   "name": "IBPS (All Bank Exams)",
+   "site": "https://www.ibps.in"
+  },
+  {
+   "name": "State Bank of India (SBI)",
+   "site": "https://sbi.co.in"
+  },
+  {
+   "name": "Reserve Bank of India (RBI)",
+   "site": "https://www.rbi.org.in"
+  },
+  {
+   "name": "NABARD",
+   "site": "https://www.nabard.org"
+  },
+  {
+   "name": "LIC (Life Insurance Corp)",
+   "site": "https://licindia.in"
+  },
+  {
+   "name": "SEBI (Securities Board)",
+   "site": "https://www.sebi.gov.in"
+  }
+ ]
+}

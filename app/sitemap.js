@@ -105,9 +105,13 @@ export default async function sitemap() {
 
   // Railway Exams Center pages
   const railwaySlugs = ["rrb-ntpc", "rrb-group-d", "rrb-alp", "rrb-je", "rrb-sse", "rrb-technician", "rpf-constable", "rpf-si", "rrb-paramedical", "rrb-ministerial", "rrc-apprentice", "railway-psu"];
+  const bankingSlugs = ["ibps-po", "ibps-clerk", "ibps-so", "ibps-rrb", "sbi-po", "sbi-clerk", "rbi-grade-b", "rbi-assistant", "nabard-grade-a", "lic-aao", "sebi-grade-a"];
   const railwayPages = [{ url: `${baseUrl}/railway`, lastModified: now, changeFrequency: "daily", priority: 0.9 }].concat(
     railwaySlugs.map(slug => ({ url: `${baseUrl}/railway/${slug}`, lastModified: now, changeFrequency: "weekly", priority: 0.8 }))
   );
+  const bankingPages = [{ url: `${baseUrl}/banking`, lastModified: now, changeFrequency: "daily", priority: 0.9 }].concat(
+    bankingSlugs.map(slug => ({ url: `${baseUrl}/banking/${slug}`, lastModified: now, changeFrequency: "weekly", priority: 0.8 }))
+  );
 
-  return [...staticPages, ...categoryPages, ...examPages, ...certPages, ...railwayPages, ...resultPages, ...admitPages];
+  return [...staticPages, ...categoryPages, ...examPages, ...certPages, ...railwayPages, ...bankingPages, ...resultPages, ...admitPages];
 }
