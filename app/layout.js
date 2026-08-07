@@ -49,6 +49,7 @@
         { href: "/search", icon: "🔍", label: "Search" },
         { href: "/notifications", icon: "📢", label: "Updates" },
         { href: "/jobs", icon: "💼", label: "Jobs" },
+        { href: "/certifications", icon: "🏓", label: "Certs" },
         { href: "/telegram", icon: "📱", label: "Telegram" },
       ];
       return (
