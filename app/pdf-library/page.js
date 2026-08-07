@@ -5,6 +5,7 @@ import { useState, useEffect, useMemo } from "react";
 const TOTAL_EXAMS = 3500;
 
 const getCategory = (filename) => {
+  if (filename.includes("sarkarisetu")) return { cat: "🏆 Complete Master", color: "#1e3a5f", bg: "#eef2ff" };
   if (filename.includes("railway")) return { cat: "🚂 Railway", color: "#dc2626", bg: "#fef2f2" };
   if (filename.includes("upsc")) return { cat: "🏛️ UPSC", color: "#1e40af", bg: "#eff6ff" };
   if (filename.includes("ssc")) return { cat: "📋 SSC", color: "#059669", bg: "#ecfdf5" };
@@ -42,6 +43,7 @@ const getCategory = (filename) => {
 const getTitle = (filename) => {
   return filename
     .replace(".pdf", "")
+    .replace("Sarkarisetu", "SarkariSetu")
     .replace(/-/g, " ")
     .replace(/\b\w/g, c => c.toUpperCase())
     .replace("Ssc", "SSC")
@@ -66,6 +68,7 @@ const getTitle = (filename) => {
 
 const getExamsCount = (filename) => {
   const size = { 
+    "sarkarisetu": 3500,
     "railway": 102, "upsc": 119, "ssc": 150, "banking": 176, 
     "state-psc": 164, "teaching": 154, "defence": 65, "police": 80,
     "insurance": 35, "postoffice": 27, "forest": 53, "judiciary": 45,
@@ -84,6 +87,7 @@ const getExamsCount = (filename) => {
 };
 
 const PDF_FILES = [
+  "sarkarisetu-complete-exam-master.pdf",
   "railway-recruitment-exams-list.pdf",
   "upsc-exams-list.pdf",
   "ssc-exams-list.pdf",
