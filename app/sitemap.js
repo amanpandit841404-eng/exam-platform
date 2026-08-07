@@ -16,7 +16,7 @@ async function restGet(path) {
 }
 
 export default async function sitemap() {
-  const baseUrl = "https://sarkarisetu.in";
+  const baseUrl = "https://exam-platform-beta.vercel.app";
   const now = new Date().toISOString();
 
   // Static pages

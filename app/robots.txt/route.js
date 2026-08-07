@@ -23,7 +23,6 @@ Disallow: /admin/
 Disallow: /api/
 Disallow: /quick-add/
 
-Sitemap: https://sarkarisetu.in/sitemap.xml
 Sitemap: https://exam-platform-beta.vercel.app/sitemap.xml
 `;
   return new NextResponse(body, {
