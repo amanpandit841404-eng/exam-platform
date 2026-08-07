@@ -25,6 +25,7 @@ export default async function sitemap() {
     { url: `${baseUrl}/about`, lastModified: now, changeFrequency: "monthly", priority: 0.4 },
     { url: `${baseUrl}/contact`, lastModified: now, changeFrequency: "monthly", priority: 0.4 },
     { url: `${baseUrl}/privacy-policy`, lastModified: now, changeFrequency: "monthly", priority: 0.3 },
+    { url: `${baseUrl}/certifications`, lastModified: now, changeFrequency: "weekly", priority: 0.9 },
   ];
 
   // Category pages
@@ -78,5 +79,24 @@ export default async function sitemap() {
     }
   } catch(e) {}
 
-  return [...staticPages, ...categoryPages, ...examPages, ...resultPages, ...admitPages];
+  // Certification Center pages - 29 category pages + all professional certification detail pages
+  let certPages = [];
+  try {
+    const certSlug = (s) => (s || "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+    const { data } = await supabase.from("exams").select("name, category").ilike("category", "Professional Certification%").eq("is_active", true).order("name");
+    if (data) {
+      const seen = {};
+      data.forEach((c) => {
+        const cat = (c.category || "").replace("Professional Certification - ", "");
+        const cs = certSlug(cat);
+        if (!seen[cs]) {
+          seen[cs] = 1;
+          certPages.push({ url: `${baseUrl}/certifications/${cs}`, lastModified: now, changeFrequency: "weekly", priority: 0.8 });
+        }
+        certPages.push({ url: `${baseUrl}/certifications/${cs}/${certSlug(c.name)}`, lastModified: now, changeFrequency: "weekly", priority: 0.7 });
+      });
+    }
+  } catch (e) { console.error("Sitemap cert fetch error:", e); }
+
+  return [...staticPages, ...categoryPages, ...examPages, ...resultPages, ...admitPages, ...certPages];
 }
