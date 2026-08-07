@@ -106,12 +106,20 @@ export default async function sitemap() {
   // Railway Exams Center pages
   const railwaySlugs = ["rrb-ntpc", "rrb-group-d", "rrb-alp", "rrb-je", "rrb-sse", "rrb-technician", "rpf-constable", "rpf-si", "rrb-paramedical", "rrb-ministerial", "rrc-apprentice", "railway-psu"];
   const bankingSlugs = ["ibps-po", "ibps-clerk", "ibps-so", "ibps-rrb", "sbi-po", "sbi-clerk", "rbi-grade-b", "rbi-assistant", "nabard-grade-a", "lic-aao", "sebi-grade-a"];
+  const sscSlugs = ["ssc-cgl", "ssc-chsl", "ssc-mts", "ssc-gd", "ssc-cpo", "ssc-je", "ssc-stenographer", "ssc-selection-post", "ssc-jht", "ssc-delhi-police-constable", "ssc-scientific-assistant", "ssc-havaldar"];
+  const upscSlugs = ["upsc-cse", "upsc-nda", "upsc-cds", "upsc-capf-ac", "upsc-cisf-ac", "upsc-ese", "upsc-cms", "upsc-ies-iss", "upsc-cgse", "upsc-epfo", "upsc-so-steno", "upsc-ifs"];
   const railwayPages = [{ url: `${baseUrl}/railway`, lastModified: now, changeFrequency: "daily", priority: 0.9 }].concat(
     railwaySlugs.map(slug => ({ url: `${baseUrl}/railway/${slug}`, lastModified: now, changeFrequency: "weekly", priority: 0.8 }))
   );
   const bankingPages = [{ url: `${baseUrl}/banking`, lastModified: now, changeFrequency: "daily", priority: 0.9 }].concat(
     bankingSlugs.map(slug => ({ url: `${baseUrl}/banking/${slug}`, lastModified: now, changeFrequency: "weekly", priority: 0.8 }))
   );
+  const sscPages = [{ url: `${baseUrl}/ssc`, lastModified: now, changeFrequency: "daily", priority: 0.9 }].concat(
+    sscSlugs.map(slug => ({ url: `${baseUrl}/ssc/${slug}`, lastModified: now, changeFrequency: "weekly", priority: 0.8 }))
+  );
+  const upscPages = [{ url: `${baseUrl}/upsc`, lastModified: now, changeFrequency: "daily", priority: 0.9 }].concat(
+    upscSlugs.map(slug => ({ url: `${baseUrl}/upsc/${slug}`, lastModified: now, changeFrequency: "weekly", priority: 0.8 }))
+  );
 
-  return [...staticPages, ...categoryPages, ...examPages, ...certPages, ...railwayPages, ...bankingPages, ...resultPages, ...admitPages];
+  return [...staticPages, ...categoryPages, ...examPages, ...certPages, ...railwayPages, ...bankingPages, ...sscPages, ...upscPages, ...resultPages, ...admitPages];
 }
