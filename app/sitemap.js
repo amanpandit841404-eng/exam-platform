@@ -1,8 +1,19 @@
-import { createClient } from "@supabase/supabase-js";
-
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || "https://fbcvxefvvifmxaiqxiuq.supabase.co";
 const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || "sb_publishable_BShV19iGgcoKLiIsyvQ2Lg_1Lhe9uPV";
-const supabase = createClient(supabaseUrl, supabaseKey);
+
+async function restGet(path) {
+  try {
+    const res = await fetch(supabaseUrl + "/rest/v1/" + path, {
+      headers: { apikey: supabaseKey, Authorization: "Bearer " + supabaseKey },
+      cache: "no-store",
+    });
+    if (!res.ok) return null;
+    return await res.json();
+  } catch (e) {
+    console.error("Sitemap fetch error:", e.message);
+    return null;
+  }
+}
 
 export default async function sitemap() {
   const baseUrl = "https://sarkarisetu.in";
@@ -26,10 +37,11 @@ export default async function sitemap() {
     { url: `${baseUrl}/contact`, lastModified: now, changeFrequency: "monthly", priority: 0.4 },
     { url: `${baseUrl}/privacy-policy`, lastModified: now, changeFrequency: "monthly", priority: 0.3 },
     { url: `${baseUrl}/certifications`, lastModified: now, changeFrequency: "weekly", priority: 0.9 },
+    { url: `${baseUrl}/pdf-library`, lastModified: now, changeFrequency: "weekly", priority: 0.6 },
   ];
 
   // Category pages
-  const categories = ["ssc","upsc","banking","railway","state-psc","defence","teaching","police","engineering","medical","law","agriculture"];
+  const categories = ["ssc", "upsc", "banking", "railway", "state-psc", "defence", "teaching", "police", "engineering", "medical", "law", "agriculture"];
   const categoryPages = categories.map(slug => ({
     url: `${baseUrl}/category/${slug}`,
     lastModified: now,
@@ -37,66 +49,59 @@ export default async function sitemap() {
     priority: 0.8,
   }));
 
-  // Exam pages - fetch top 5000 exams
+  const certSlug = (s) => (s || "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+
+  // Exam pages - top 5000 exams
   let examPages = [];
-  try {
-    const { data } = await supabase.from("exams").select("id,updated_at").order("id").limit(5000);
-    if (data) {
-      examPages = data.map(exam => ({
-        url: `${baseUrl}/exam/${exam.id}`,
-        lastModified: exam.updated_at || now,
-        changeFrequency: "weekly",
-        priority: 0.7,
-      }));
-    }
-  } catch(e) { console.error("Sitemap exam fetch error:", e); }
+  const exams = await restGet("exams?select=id,created_at&order=id.desc&limit=1000");
+  if (exams && Array.isArray(exams)) {
+    examPages = exams.map(exam => ({
+      url: `${baseUrl}/exam/${exam.id}`,
+      lastModified: exam.created_at || now,
+      changeFrequency: "weekly",
+      priority: 0.7,
+    }));
+  }
+
+  // Certification Center pages - 29 category pages + all certification detail pages
+  let certPages = [];
+  const certs = await restGet("exams?select=name,category&category=ilike.*Professional%20Certification*&is_active=eq.true&order=name.asc");
+  if (certs && Array.isArray(certs)) {
+    const seen = {};
+    certs.forEach((c) => {
+      const cat = (c.category || "").replace("Professional Certification - ", "");
+      const cs = certSlug(cat);
+      if (!seen[cs]) {
+        seen[cs] = 1;
+        certPages.push({ url: `${baseUrl}/certifications/${cs}`, lastModified: now, changeFrequency: "weekly", priority: 0.8 });
+      }
+      certPages.push({ url: `${baseUrl}/certifications/${cs}/${certSlug(c.name)}`, lastModified: now, changeFrequency: "weekly", priority: 0.7 });
+    });
+  }
 
   // Result pages
   let resultPages = [];
-  try {
-    const { data } = await supabase.from("results").select("id,created_at").order("id").limit(500);
-    if (data) {
-      resultPages = data.map(r => ({
-        url: `${baseUrl}/results/${r.id}`,
-        lastModified: r.created_at || now,
-        changeFrequency: "weekly",
-        priority: 0.8,
-      }));
-    }
-  } catch(e) {}
+  const results = await restGet("results?select=id,created_at&order=id.asc&limit=500");
+  if (results && Array.isArray(results)) {
+    resultPages = results.map(r => ({
+      url: `${baseUrl}/results/${r.id}`,
+      lastModified: r.created_at || now,
+      changeFrequency: "weekly",
+      priority: 0.8,
+    }));
+  }
 
   // Admit card pages
   let admitPages = [];
-  try {
-    const { data } = await supabase.from("admit_cards").select("id,created_at").order("id").limit(500);
-    if (data) {
-      admitPages = data.map(a => ({
-        url: `${baseUrl}/admit-cards/${a.id}`,
-        lastModified: a.created_at || now,
-        changeFrequency: "weekly",
-        priority: 0.8,
-      }));
-    }
-  } catch(e) {}
+  const admits = await restGet("admit_cards?select=id,created_at&order=id.asc&limit=500");
+  if (admits && Array.isArray(admits)) {
+    admitPages = admits.map(a => ({
+      url: `${baseUrl}/admit-cards/${a.id}`,
+      lastModified: a.created_at || now,
+      changeFrequency: "weekly",
+      priority: 0.8,
+    }));
+  }
 
-  // Certification Center pages - 29 category pages + all professional certification detail pages
-  let certPages = [];
-  try {
-    const certSlug = (s) => (s || "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
-    const { data } = await supabase.from("exams").select("name, category").ilike("category", "Professional Certification%").eq("is_active", true).order("name");
-    if (data) {
-      const seen = {};
-      data.forEach((c) => {
-        const cat = (c.category || "").replace("Professional Certification - ", "");
-        const cs = certSlug(cat);
-        if (!seen[cs]) {
-          seen[cs] = 1;
-          certPages.push({ url: `${baseUrl}/certifications/${cs}`, lastModified: now, changeFrequency: "weekly", priority: 0.8 });
-        }
-        certPages.push({ url: `${baseUrl}/certifications/${cs}/${certSlug(c.name)}`, lastModified: now, changeFrequency: "weekly", priority: 0.7 });
-      });
-    }
-  } catch (e) { console.error("Sitemap cert fetch error:", e); }
-
-  return [...staticPages, ...categoryPages, ...examPages, ...resultPages, ...admitPages, ...certPages];
+  return [...staticPages, ...categoryPages, ...examPages, ...certPages, ...resultPages, ...admitPages];
 }
