@@ -1,5 +1,5 @@
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || "https://fbcvxefvvifmxaiqxiuq.supabase.co";
-const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || "sb_publishable_BShV19iGgcoKLiIsyvQ2Lg_1Lhe9uPV";
+const supabaseUrl = "https://fbcvxefvvifmxaiqxiuq.supabase.co";
+const supabaseKey = "sb_publishable_BShV19iGgcoKLiIsyvQ2Lg_1Lhe9uPV";
 
 async function restGet(path) {
   try {
