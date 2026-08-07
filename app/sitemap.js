@@ -103,5 +103,11 @@ export default async function sitemap() {
     }));
   }
 
-  return [...staticPages, ...categoryPages, ...examPages, ...certPages, ...resultPages, ...admitPages];
+  // Railway Exams Center pages
+  const railwaySlugs = ["rrb-ntpc", "rrb-group-d", "rrb-alp", "rrb-je", "rrb-sse", "rrb-technician", "rpf-constable", "rpf-si", "rrb-paramedical", "rrb-ministerial", "rrc-apprentice", "railway-psu"];
+  const railwayPages = [{ url: `${baseUrl}/railway`, lastModified: now, changeFrequency: "daily", priority: 0.9 }].concat(
+    railwaySlugs.map(slug => ({ url: `${baseUrl}/railway/${slug}`, lastModified: now, changeFrequency: "weekly", priority: 0.8 }))
+  );
+
+  return [...staticPages, ...categoryPages, ...examPages, ...certPages, ...railwayPages, ...resultPages, ...admitPages];
 }

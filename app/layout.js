@@ -45,10 +45,11 @@
       const links = [
         { href: "/", icon: "🏠", label: "Home" },
         { href: "/results", icon: "🏆", label: "Results" },
-        { href: "/admit-cards", icon: "📄", label: "Admit Card" },
+        { href: "/admit-cards", icon: "📄", label: "Admit" },
         { href: "/search", icon: "🔍", label: "Search" },
         { href: "/notifications", icon: "📢", label: "Updates" },
         { href: "/jobs", icon: "💼", label: "Jobs" },
+        { href: "/railway", icon: "🚂", label: "Railway" },
         { href: "/certifications", icon: "🏓", label: "Certs" },
         { href: "/telegram", icon: "📱", label: "Telegram" },
       ];
