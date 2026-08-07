@@ -25,6 +25,7 @@ export default function CertDetail() {
   const certSlug = params?.cert || "";
   const [certs, setCerts] = useState([]);
   const [cats, setCats] = useState([]);
+  const [study, setStudy] = useState(null);
   const [loading, setLoading] = useState(true);
   const [darkMode, setDarkMode] = useState(false);
   const [copied, setCopied] = useState(false);
@@ -56,6 +57,14 @@ export default function CertDetail() {
     load();
   }, []);
 
+  useEffect(() => {
+    if (!categorySlug) return;
+    fetch("/certifications-data/" + categorySlug + ".json")
+      .then((r) => (r.ok ? r.json() : null))
+      .then((d) => setStudy(d))
+      .catch(() => {});
+  }, [categorySlug]);
+
   const catName = useMemo(() => {
     const match = cats.find(([c]) => slugify(c) === categorySlug);
     return match ? match[0] : null;
@@ -74,18 +83,25 @@ export default function CertDetail() {
   const enrich = cert ? ENRICHMENT[cert.name] || ["", ""] : ["", ""];
   const org = enrich[0] || "";
   const shortDesc = ((cert?.description || enrich[1] || "").trim());
+  const studyEntry = study && cert ? study.entries[cert.name] : null;
+  const fees = studyEntry?.fees || "";
+  const format = studyEntry?.format || "";
+  const validity = studyEntry?.validity || "";
+  const studySite = studyEntry?.site || cert?.official_website || "";
+  const overview = studyEntry?.overview || shortDesc || "";
 
   useEffect(() => {
     if (cert && catName) {
-      document.title = cert.name + " - " + catName + " Certification | SarkariSetu India";
+      document.title = cert.name + " - " + catName + " Certification (Fees, Exam Pattern) | SarkariSetu India";
       const meta = document.querySelector('meta[name="description"]');
       if (meta) {
-        meta.content = shortDesc
-          ? shortDesc + ". " + cert.name + " (" + catName + ") ki poori jankari, issuing organization aur official website — SarkariSetu India Certification Center."
-          : cert.name + " (" + catName + ") ki poori jankari, issuing organization aur official website — SarkariSetu India Certification Center.";
+        const base = overview
+          ? overview + ". "
+          : cert.name + " (" + catName + ") ki poori jankari. ";
+        meta.content = base + "Exam fees, pattern, validity aur official website — SarkariSetu India Certification Center.";
       }
     }
-  }, [cert, catName, shortDesc]);
+  }, [cert, catName, overview]);
 
   const shareWA = () => {
     if (!cert) return;
@@ -141,7 +157,7 @@ export default function CertDetail() {
           {org && (
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "9px 0", borderBottom: "1px solid " + border }}>
               <span style={{ fontSize: 13, color: textSub }}>🏢 Issuing Organization</span>
-              <span style={{ fontSize: 13.5, fontWeight: 700, color: textMain }}>{org}</span>
+              <span style={{ fontSize: 13.5, fontWeight: 700, color: textMain, textAlign: "right", paddingLeft: 12 }}>{org}</span>
             </div>
           )}
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "9px 0", borderBottom: "1px solid " + border }}>
@@ -152,13 +168,30 @@ export default function CertDetail() {
             <span style={{ fontSize: 13, color: textSub }}>📍 State</span>
             <span style={{ fontSize: 13.5, fontWeight: 700, color: textMain }}>All India</span>
           </div>
-          {cert.official_website && (
-            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "9px 0" }}>
-              <span style={{ fontSize: 13, color: textSub }}>🌐 Official Website</span>
-              <a href={cert.official_website} target="_blank" rel="noopener noreferrer" style={{ fontSize: 13.5, fontWeight: 700, color: "#2563eb", textDecoration: "none" }}>Visit ↗</a>
+          {fees && (
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "9px 0", borderBottom: "1px solid " + border }}>
+              <span style={{ fontSize: 13, color: textSub, flexShrink: 0 }}>💰 Exam Fees</span>
+              <span style={{ fontSize: 13.5, fontWeight: 700, color: textMain, textAlign: "right", paddingLeft: 12 }}>{fees}</span>
             </div>
           )}
-          {!cert.official_website && (
+          {format && (
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "9px 0", borderBottom: "1px solid " + border }}>
+              <span style={{ fontSize: 13, color: textSub, flexShrink: 0 }}>📝 Exam Format</span>
+              <span style={{ fontSize: 13.5, fontWeight: 600, color: textMain, textAlign: "right", paddingLeft: 12 }}>{format}</span>
+            </div>
+          )}
+          {validity && (
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "9px 0", borderBottom: "1px solid " + border }}>
+              <span style={{ fontSize: 13, color: textSub, flexShrink: 0 }}>⏳ Validity</span>
+              <span style={{ fontSize: 13.5, fontWeight: 700, color: textMain, textAlign: "right", paddingLeft: 12 }}>{validity}</span>
+            </div>
+          )}
+          {studySite ? (
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "9px 0" }}>
+              <span style={{ fontSize: 13, color: textSub }}>🌐 Official Website</span>
+              <a href={studySite} target="_blank" rel="noopener noreferrer" style={{ fontSize: 13.5, fontWeight: 700, color: "#2563eb", textDecoration: "none" }}>Visit ↗</a>
+            </div>
+          ) : (
             <div style={{ padding: "9px 0" }}>
               <span style={{ fontSize: 13, color: textSub }}>🌐 Official Website</span>
               <div style={{ fontSize: 12, color: textSub, marginTop: 4 }}>Official website ka link jald add kiya jayega.</div>
@@ -169,8 +202,8 @@ export default function CertDetail() {
         <div style={{ background: cardBg, border: "1px solid " + border, borderRadius: 14, padding: "16px", marginBottom: 12 }}>
           <h2 style={{ fontSize: 15, fontWeight: 800, color: textMain, margin: "0 0 8px" }}>📖 Kya hai ye Certification?</h2>
           <p style={{ fontSize: 13.5, color: textSub, lineHeight: 1.7, margin: 0 }}>
-            {shortDesc
-              ? shortDesc + ". Ye ek professional certification hai jise India aur global market mein maanya jata hai. Iski official website, syllabus aur exam details SarkariSetu India par update ki jati hain."
+            {overview
+              ? overview + ". Ye ek professional certification hai jo India aur global market mein maanya jata hai. Iski official website, syllabus aur exam details SarkariSetu India par update ki jati hain."
               : cert.name + " ek professional certification hai jo " + catName + " category mein aati hai. Iski official website, syllabus, exam pattern aur fees details jald add ki jayengi. Tab tak aap niche di gayi related certifications dekh sakte hain."}
           </p>
         </div>
@@ -178,6 +211,10 @@ export default function CertDetail() {
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10, marginBottom: 14 }}>
           <button onClick={shareWA} style={{ padding: "12px", fontSize: 13, fontWeight: 700, border: "none", borderRadius: 12, background: "#25d366", color: "#fff", cursor: "pointer" }}>📲 WhatsApp par Share</button>
           <button onClick={copyLink} style={{ padding: "12px", fontSize: 13, fontWeight: 700, border: "1px solid " + border, borderRadius: 12, background: cardBg, color: textMain, cursor: "pointer" }}>{copied ? "✅ Link Copy Ho Gaya" : "🔗 Link Copy Karein"}</button>
+        </div>
+
+        <div style={{ fontSize: 11.5, color: textSub, background: darkMode ? "#1e293b" : "#f8fafc", border: "1px solid " + border, borderRadius: 10, padding: "10px 14px", marginBottom: 14 }}>
+          ℹ️ Fees aur exam format अनुमानित हैं (Aug 2026 update)। Latest syllabus, fees aur dates ke liye official website zaroor check karein.
         </div>
 
         {others.length > 0 && (
