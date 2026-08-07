@@ -2,7 +2,7 @@
 
     import { useEffect, useState, useMemo } from "react";
     import { useParams } from "next/navigation";
-    import { supabase } from "../../../lib/supabase";
+    import { supabase } from "../../lib/supabase";
 
     const CAT_EMOJI = {
       "Cloud Computing": "☁️", "Programming & Development": "💻", "Web Development": "🌐",
