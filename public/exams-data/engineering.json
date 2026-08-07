@@ -1,0 +1,56 @@
+{
+ "updated": "2026-08-08",
+ "category": "Engineering",
+ "note": "Fees aur exam format anumaanit hain - official website zaroor check karein.",
+ "default": {
+  "overview": "इंजीनियरिंग क्षेत्र में GATE, JEE Main/Advanced और राज्य स्तर की entrance परीक्षाएँ — IIT, NIT, GFTI में admission और PSU नौकरी दोनों।",
+  "fees": "GATE ₹1,700-1,800 • JEE Main ₹650-850 (कैटेगरी अनुसार)",
+  "format": "GATE: एक 3 घंटे की CBT • JEE Main: 2 sessions CBT",
+  "validity": "GATE score 1 साल • JEE admission season",
+  "site": "https://gate2026.iitr.ac.in"
+ },
+ "entries": {
+  "GATE": {
+   "overview": "Graduate Aptitude Test in Engineering — MTech admission + PSU नौकरी (BHEL, IOCL, NTPC आदि) का सबसे बड़ा exam।",
+   "fees": "₹1,700 (UR) • ₹850 (SC/ST/PWD)",
+   "format": "3 घंटे CBT — 65 Q, online",
+   "validity": "Score 1 साल (कुछ IITs 2-3 साल मानते हैं)",
+   "site": "https://gate2026.iitr.ac.in"
+  },
+  "JEE Main": {
+   "overview": "Joint Entrance Exam Main — NIT, IIIT और GFTI में B.E./B.Tech admission।",
+   "fees": "₹850 (सभी papers) • ₹425 (SC/ST/PWD)",
+   "format": "2 sessions — 3 घंटे CBT (90 Q)",
+   "validity": "Admission season के लिए",
+   "site": "https://jeemain.nta.nic.in"
+  },
+  "JEE Advanced": {
+   "overview": "IIT में B.E./B.Tech admission — JEE Main टॉपर्स के लिए।",
+   "fees": "₹2,800-3,200",
+   "format": "2 papers — 3 घंटे प्रत्येक",
+   "validity": "Admission season के लिए",
+   "site": "https://jeeadv.ac.in"
+  },
+  "BITSAT": {
+   "overview": "BITS Pilani campuses में admission।",
+   "fees": "₹4,500 (सभी campuses)",
+   "format": "3 घंटे CBT — 130 Q",
+   "validity": "Admission season",
+   "site": "https://www.bitsadmission.com"
+  },
+  "WBJEE": {
+   "overview": "West Bengal Joint Entrance Exam — WB राज्य के इंजीनियरिंग कॉलेज।",
+   "fees": "₹500",
+   "format": "CBT 2 papers",
+   "validity": "Admission season",
+   "site": "https://wbjeeb.nic.in"
+  },
+  "MHT CET": {
+   "overview": "Maharashtra Common Entrance Test — Maharashtra इंजीनियरिंग कॉलेज।",
+   "fees": "₹800",
+   "format": "CBT 2 papers",
+   "validity": "Admission season",
+   "site": "https://cetcell.mahacet.org"
+  }
+ }
+}

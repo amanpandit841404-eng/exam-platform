@@ -1,0 +1,105 @@
+{
+ "updated": "2026-08-08",
+ "category": "State PSC",
+ "note": "Fees aur exam format anumaanit hain - official website zaroor check karein.",
+ "default": {
+  "overview": "राज्य लोक सेवा आयोग (State PSC) हर राज्य में अपने सिविल सर्विसेज exams कराता है — State PCS, Police, Revenue, Education आदि पदों के लिए।",
+  "fees": "₹200-600 (state अनुसार) • SC/ST/महिला को छूट",
+  "format": "Prelims (MCQ) + Mains (Descriptive) + Interview",
+  "validity": "हर साल नियमित भर्तियाँ",
+  "site": "https://uppsc.up.nic.in"
+ },
+ "entries": {
+  "UP PCS": {
+   "overview": "Uttar Pradesh PCS — PCS, PPS, PFO जैसे राज्य के top पद (UPPSC)।",
+   "fees": "₹125",
+   "format": "Prelims + Mains + Interview",
+   "validity": "हर साल",
+   "site": "https://uppsc.up.nic.in"
+  },
+  "BPSC": {
+   "overview": "Bihar PSC — 67वीं/68वीं जैसे combined competitive exams, सबसे बड़ी भर्ती।",
+   "fees": "₹750",
+   "format": "Prelims + Mains + Interview",
+   "validity": "हर साल",
+   "site": "https://bpsc.bih.nic.in"
+  },
+  "MPPSC": {
+   "overview": "Madhya Pradesh PSC — State Service Exams (MPPSC)।",
+   "fees": "₹500",
+   "format": "Prelims + Mains + Interview",
+   "validity": "हर साल",
+   "site": "https://mppsc.mp.gov.in"
+  },
+  "RPSC": {
+   "overview": "Rajasthan PSC — RAS, RTS जैसे राजस्थान के exams।",
+   "fees": "₹350",
+   "format": "Prelims + Mains + Interview",
+   "validity": "हर साल",
+   "site": "https://rpsc.rajasthan.gov.in"
+  },
+  "CGPSC": {
+   "overview": "Chhattisgarh PSC — State Service Exams।",
+   "fees": "₹400",
+   "format": "Prelims + Mains + Interview",
+   "validity": "जरूरत अनुसार",
+   "site": "https://psc.cg.gov.in"
+  },
+  "UKPSC": {
+   "overview": "Uttarakhand PSC — State Service Exams।",
+   "fees": "₹300",
+   "format": "Prelims + Mains + Interview",
+   "validity": "जरूरत अनुसार",
+   "site": "https://psc.uk.gov.in"
+  },
+  "HPPSC": {
+   "overview": "Himachal Pradesh PSC — State Service Exams।",
+   "fees": "₹600",
+   "format": "Prelims + Mains + Interview",
+   "validity": "जरूरत अनुसार",
+   "site": "https://hp.gov.in/hppsc"
+  },
+  "JPSC": {
+   "overview": "Jharkhand PSC — Civil Services Exams।",
+   "fees": "₹400",
+   "format": "Prelims + Mains + Interview",
+   "validity": "जरूरत अनुसार",
+   "site": "https://jpsc.gov.in"
+  },
+  "WBPSC": {
+   "overview": "West Bengal PSC — Civil Services (Exe) Exams।",
+   "fees": "₹240",
+   "format": "Prelims + Mains + Interview",
+   "validity": "हर साल",
+   "site": "https://wbpsc.gov.in"
+  },
+  "TNPSC": {
+   "overview": "Tamil Nadu PSC — Group 1/2/4 Exams।",
+   "fees": "₹150-400",
+   "format": "Prelims/CBT + Mains/Interview",
+   "validity": "हर साल",
+   "site": "https://www.tnpsc.gov.in"
+  },
+  "KPSC": {
+   "overview": "Karnataka PSC — KAS और अन्य exams।",
+   "fees": "₹500",
+   "format": "Prelims + Mains + Interview",
+   "validity": "हर साल",
+   "site": "https://kpsc.kar.nic.in"
+  },
+  "APPSC": {
+   "overview": "Andhra Pradesh PSC — Group 1/2/3 Exams।",
+   "fees": "₹200",
+   "format": "Prelims + Mains + Interview",
+   "validity": "हर साल",
+   "site": "https://psc.ap.gov.in"
+  },
+  "GPSC": {
+   "overview": "Gujarat PSC — Class 1/2 Exams।",
+   "fees": "₹100-500",
+   "format": "Prelims + Mains + Interview",
+   "validity": "हर साल",
+   "site": "https://gpsc.gujarat.gov.in"
+  }
+ }
+}

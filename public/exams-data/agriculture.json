@@ -1,0 +1,35 @@
+{
+ "updated": "2026-08-08",
+ "category": "Agriculture",
+ "note": "Fees aur exam format anumaanit hain - official website zaroor check karein.",
+ "default": {
+  "overview": "कृषि शिक्षा और सरकारी कृषि पदों के लिए ICAR AIEEA और राज्य स्तर की परीक्षाएँ — कृषि में career बनाने का रास्ता।",
+  "fees": "ICAR ₹1,600 (UR) • ₹800 (SC/ST/PWD)",
+  "format": "CBT 2 घंटे — 150 MCQ",
+  "validity": "हर साल",
+  "site": "https://icar.nta.nic.in"
+ },
+ "entries": {
+  "ICAR AIEEA": {
+   "overview": "ICAR All India Entrance Examination for Admission — कृषि विश्वविद्यालयों में UG/PG admission।",
+   "fees": "₹1,600 • ₹800 (SC/ST/PWD)",
+   "format": "2.5 घंटे CBT — 150 Q",
+   "validity": "हर साल",
+   "site": "https://icar.nta.nic.in"
+  },
+  "AFO": {
+   "overview": "Agriculture Field Officer — NABARD में कृषि अधिकारी।",
+   "fees": "₹800",
+   "format": "CBT (Phase 1) + Mains",
+   "validity": "जरूरत अनुसार",
+   "site": "https://www.nabard.org"
+  },
+  "Agriculture Officer": {
+   "overview": "राज्यों में कृषि विभाग के Agriculture Officer posts।",
+   "fees": "₹200-500 (state अनुसार)",
+   "format": "CBT + Interview",
+   "validity": "जरूरत अनुसार",
+   "site": "https://upagriculture.com"
+  }
+ }
+}

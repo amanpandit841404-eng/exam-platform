@@ -1,0 +1,77 @@
+{
+ "updated": "2026-08-08",
+ "category": "SSC",
+ "note": "Fees aur exam format anumaanit hain - official website zaroor check karein.",
+ "default": {
+  "overview": "Staff Selection Commission (SSC) भारत सरकार के विभागों में ग्रुप B और C के posts के लिए भर्ती परीक्षा कराती है। हर साल लाखों उम्मीदवार SSC के exams देते हैं।",
+  "fees": "₹100 (UR) • SC/ST/PWD/Women/Ex-Servicemen फ्री",
+  "format": "CBT Tier 1 (MCQ) + Tier 2 (CBT/Descriptive) + Typing/Skill Test (post अनुसार)",
+  "validity": "साल भर में कई SSC notifications आती हैं — हर notification अलग भर्ती",
+  "site": "https://ssc.gov.in"
+ },
+ "entries": {
+  "SSC CGL": {
+   "overview": "Combined Graduate Level — SSC का सबसे बड़ा exam। Group B और C के ~17,000+ posts (Assistant Section Officer, Inspector, Auditor आदि)।",
+   "fees": "₹100 (UR) • SC/ST/PWD/Women फ्री",
+   "format": "Tier 1 CBT (100 Q) + Tier 2 (Maths/Reasoning/English/GA) + Tier 3 (Descriptive) + Tier 4 (Skill/Computer)",
+   "validity": "हर साल भर्ती",
+   "site": "https://ssc.gov.in"
+  },
+  "SSC CHSL": {
+   "overview": "Combined Higher Secondary Level — 12वीं पास के लिए। LDC, DEO, PA जैसे posts।",
+   "fees": "₹100 (UR) • SC/ST/PWD/Women फ्री",
+   "format": "Tier 1 CBT (100 Q) + Tier 2 (CBT 100 Q) + Tier 3 (Typing/Skill)",
+   "validity": "हर साल भर्ती",
+   "site": "https://ssc.gov.in"
+  },
+  "SSC MTS": {
+   "overview": "Multi-Tasking Staff — 10वीं पास के लिए। Peon, Safaiwala, Helper जैसे Level 1 posts।",
+   "fees": "₹100 (UR) • SC/ST/PWD/Women फ्री",
+   "format": "CBT (90 Q) + Descriptive Paper",
+   "validity": "हर साल भर्ती",
+   "site": "https://ssc.gov.in"
+  },
+  "SSC GD": {
+   "overview": "General Duty Constable — CAPF (BSF, CISF, CRPF, SSB, ITBP, AR) में Constable भर्ती। 10वीं पास के लिए।",
+   "fees": "₹100 (UR) • महिला/SC/ST/PWD/Ex-SM फ्री",
+   "format": "CBT (80 Q) + PET/PST + DV",
+   "validity": "हर कुछ साल में",
+   "site": "https://ssc.gov.in"
+  },
+  "SSC CPO": {
+   "overview": "Central Police Organization — Delhi Police SI और CAPF SI/ASI के posts।",
+   "fees": "₹100 (UR) • महिला/SC/ST/PWD/Ex-SM फ्री",
+   "format": "Paper 1 CBT + Paper 2 (English) + PET/PST + DV",
+   "validity": "हर साल भर्ती",
+   "site": "https://ssc.gov.in"
+  },
+  "SSC JE": {
+   "overview": "Junior Engineer — Civil/Electrical/Mechanical विभागों में JE के posts।",
+   "fees": "₹100 (UR) • SC/ST/PWD/Women फ्री",
+   "format": "Paper 1 CBT (200 Q) + Paper 2 (Technical)",
+   "validity": "हर साल भर्ती",
+   "site": "https://ssc.gov.in"
+  },
+  "SSC Stenographer": {
+   "overview": "सरकारी विभागों में Stenographer (Grade C/D) की भर्ती — टाइपिंग और शॉर्टहैंड स्पीड जरूरी।",
+   "fees": "₹100 (UR) • SC/ST/PWD/Women फ्री",
+   "format": "CBT (200 Q) + Skill Test (शॉर्टहैंड 100/80 WPM)",
+   "validity": "हर साल भर्ती",
+   "site": "https://ssc.gov.in"
+  },
+  "SSC Selection Post": {
+   "overview": "विभिन्न विभागों में 10वीं/12वीं/ग्रेजुएट स्तर के mixed posts।",
+   "fees": "₹100 (UR) • SC/ST/PWD/Women फ्री",
+   "format": "CBT (100 Q) + Typing/Skill (post अनुसार)",
+   "validity": "साल में कई चरण",
+   "site": "https://ssc.gov.in"
+  },
+  "SSC Scientific Assistant": {
+   "overview": "IMD (मौसम विभाग) में Scientific Assistant (Meteorology) के posts।",
+   "fees": "₹100 (UR)",
+   "format": "CBT (60 Q, 2 घंटे)",
+   "validity": "जरूरत अनुसार",
+   "site": "https://ssc.gov.in"
+  }
+ }
+}

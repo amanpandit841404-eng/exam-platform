@@ -1,0 +1,70 @@
+{
+ "updated": "2026-08-08",
+ "category": "UPSC",
+ "note": "Fees aur exam format anumaanit hain - official website zaroor check karein.",
+ "default": {
+  "overview": "Union Public Service Commission (UPSC) भारत सरकार के top-level पदों — IAS, IPS, IFS, CDS, NDA आदि — के लिए राष्ट्रीय स्तर की परीक्षाएँ कराती है। देश की सबसे प्रतिष्ठित परीक्षाएँ।",
+  "fees": "₹100 (UR) • महिला/SC/ST/PWD/Ex-Servicemen फ्री",
+  "format": "Prelims (MCQ) + Mains (Descriptive) + Interview (परीक्षा अनुसार)",
+  "validity": "हर साल नियमित परीक्षाएँ",
+  "site": "https://upsc.gov.in"
+ },
+ "entries": {
+  "UPSC CSE": {
+   "overview": "Civil Services Examination — IAS, IPS, IFS, IRS जैसे देश के सबसे बड़े पद। तीन चरणों वाली कठिन परीक्षा।",
+   "fees": "₹100 • महिला/SC/ST/PWD फ्री",
+   "format": "Prelims (2 papers MCQ) + Mains (9 papers) + Interview",
+   "validity": "हर साल",
+   "site": "https://upsc.gov.in"
+  },
+  "UPSC NDA": {
+   "overview": "National Defence Academy — सेना, नौसेना और वायुसेना में अधिकारी बनने का रास्ता (12वीं पास)।",
+   "fees": "₹100 • SC/ST फ्री",
+   "format": "Written (Maths + GAT) + SSB Interview + Medical",
+   "validity": "साल में 2 बार",
+   "site": "https://upsc.gov.in"
+  },
+  "UPSC CDS": {
+   "overview": "Combined Defence Services — IMA, INA, AFA और OTA में अधिकारी भर्ती (ग्रेजुएट)।",
+   "fees": "₹200 • SC/ST फ्री",
+   "format": "Written (English + GK + Maths) + SSB + Medical",
+   "validity": "साल में 2 बार",
+   "site": "https://upsc.gov.in"
+  },
+  "UPSC CAPF": {
+   "overview": "Central Armed Police Forces — Assistant Commandant (AC) के posts (ग्रेजुएट)।",
+   "fees": "₹200 • महिला/SC/ST/PWD फ्री",
+   "format": "Paper 1 + Paper 2 (Descriptive) + Interview + Medical",
+   "validity": "हर साल",
+   "site": "https://upsc.gov.in"
+  },
+  "UPSC EPFO": {
+   "overview": "Employees Provident Fund Organisation — Enforcement Officer/Accounts Officer के posts।",
+   "fees": "₹25",
+   "format": "CBT (2 papers) + Interview",
+   "validity": "जरूरत अनुसार",
+   "site": "https://upsc.gov.in"
+  },
+  "UPSC CMS": {
+   "overview": "Combined Medical Services — सरकारी अस्पतालों में डॉक्टर (MBBS) के posts।",
+   "fees": "₹200 • SC/ST/PWD फ्री",
+   "format": "CBT (2 papers) + Interview",
+   "validity": "हर साल",
+   "site": "https://upsc.gov.in"
+  },
+  "UPSC IES": {
+   "overview": "Indian Engineering Services — इंजीनियरिंग सर्विसेज में top पद।",
+   "fees": "₹200 • SC/ST/PWD फ्री",
+   "format": "Prelims (2 papers) + Mains (2 papers) + Interview",
+   "validity": "हर साल",
+   "site": "https://upsc.gov.in"
+  },
+  "UPSC EPFO AO": {
+   "overview": "EPFO में Accounts Officer (AO) की भर्ती।",
+   "fees": "₹25",
+   "format": "CBT + Interview",
+   "validity": "जरूरत अनुसार",
+   "site": "https://upsc.gov.in"
+  }
+ }
+}

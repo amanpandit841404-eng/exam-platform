@@ -1,0 +1,56 @@
+{
+ "updated": "2026-08-08",
+ "category": "Defence",
+ "note": "Fees aur exam format anumaanit hain - official website zaroor check karein.",
+ "default": {
+  "overview": "भारतीय सेना, नौसेना और वायुसेना में अधिकारी और जवान स्तर की भर्तियाँ — NDA, CDS, AFCAT, Agniveer — साल भर चलती रहती हैं।",
+  "fees": "₹100-550 (exam अनुसार) • SC/ST/महिला को अक्सर छूट",
+  "format": "Written (CBT) + SSB Interview + Medical",
+  "validity": "साल भर में कई भर्तियाँ",
+  "site": "https://joinindianarmy.nic.in"
+ },
+ "entries": {
+  "Agniveer": {
+   "overview": "सेना/नौसेना/वायुसेना में Agniveer (जवान) भर्ती — 4 साल की सेवा।",
+   "fees": "₹250",
+   "format": "CBT (50 Q) + Physical Test + Medical",
+   "validity": "हर साल कई चरण",
+   "site": "https://joinindianarmy.nic.in"
+  },
+  "AFCAT": {
+   "overview": "Air Force Common Admission Test — वायुसेना में अधिकारी (ग्रेजुएट)।",
+   "fees": "₹550 • ₹250 (NCC cadets)",
+   "format": "CBT (100 Q) + AFSB Interview + Medical",
+   "validity": "साल में 2 बार",
+   "site": "https://afcat.cdac.in"
+  },
+  "Navy SSR": {
+   "overview": "भारतीय नौसेना में Senior Secondary Recruit (12वीं पास)।",
+   "fees": "₹100",
+   "format": "CBT + PFT + Medical",
+   "validity": "जरूरत अनुसार",
+   "site": "https://www.joinindiannavy.gov.in"
+  },
+  "Navy AA": {
+   "overview": "नौसेना में Artificer Apprentice (12वीं Science)।",
+   "fees": "₹100",
+   "format": "CBT + PFT + Medical",
+   "validity": "जरूरत अनुसार",
+   "site": "https://www.joinindiannavy.gov.in"
+  },
+  "Coast Guard": {
+   "overview": "भारतीय तटरक्षक बल में Navik/Assistant Commandant भर्ती।",
+   "fees": "₹300",
+   "format": "CBT + Physical + Medical",
+   "validity": "जरूरत अनुसार",
+   "site": "https://www.indiancoastguard.gov.in"
+  },
+  "Territorial Army": {
+   "overview": "Territorial Army में Officer (पार्ट-टाइम सेना)।",
+   "fees": "₹200",
+   "format": "Written + SSB + Medical",
+   "validity": "जरूरत अनुसार",
+   "site": "https://joinindianarmy.nic.in"
+  }
+ }
+}

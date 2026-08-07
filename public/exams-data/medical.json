@@ -1,0 +1,49 @@
+{
+ "updated": "2026-08-08",
+ "category": "Medical",
+ "note": "Fees aur exam format anumaanit hain - official website zaroor check karein.",
+ "default": {
+  "overview": "डॉक्टर और मेडिकल कोर्स में admission के लिए NEET और अन्य मेडिकल entrance exams — MBBS, BDS, AYUSH, PG।",
+  "fees": "NEET ₹1,700 (UR) • ₹1,500 (OBC) • ₹900 (SC/ST/PWD)",
+  "format": "CBT 3 घंटे — 200 MCQ (Physics, Chemistry, Biology)",
+  "validity": "हर साल एक बार",
+  "site": "https://neet.nta.nic.in"
+ },
+ "entries": {
+  "NEET UG": {
+   "overview": "National Eligibility cum Entrance Test — देश के सभी मेडिकल कॉलेजों (MBBS/BDS/AYUSH) में admission।",
+   "fees": "₹1,700 • ₹900 (SC/ST/PWD)",
+   "format": "3 घंटे CBT — 200 MCQ (180 मान्य)",
+   "validity": "हर साल मई में",
+   "site": "https://neet.nta.nic.in"
+  },
+  "NEET PG": {
+   "overview": "MD/MS/PG Diploma में admission — MBBS के बाद।",
+   "fees": "₹3,500-4,000",
+   "format": "3.5 घंटे CBT — 200 Q",
+   "validity": "हर साल",
+   "site": "https://nbe.edu.in"
+  },
+  "INI CET": {
+   "overview": "AIIMS, JIPMER, NIMHANS जैसे Institutes of National Importance में PG।",
+   "fees": "₹3,500",
+   "format": "3 घंटे CBT",
+   "validity": "साल में 2 बार",
+   "site": "https://www.aiimsexams.ac.in"
+  },
+  "AIIMS MBBS": {
+   "overview": "AIIMS में MBBS — अब NEET के माध्यम से।",
+   "fees": "NEET अनुसार",
+   "format": "NEET UG CBT",
+   "validity": "हर साल",
+   "site": "https://www.aiims.edu"
+  },
+  "JIPMER": {
+   "overview": "JIPMER Puducherry MBBS — NEET के माध्यम से।",
+   "fees": "NEET अनुसार",
+   "format": "NEET UG CBT",
+   "validity": "हर साल",
+   "site": "https://jipmer.edu.in"
+  }
+ }
+}

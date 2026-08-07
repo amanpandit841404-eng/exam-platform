@@ -1,0 +1,35 @@
+{
+ "updated": "2026-08-08",
+ "category": "University Admission",
+ "note": "Fees aur exam format anumaanit hain - official website zaroor check karein.",
+ "default": {
+  "overview": "CUET, विश्वविद्यालय प्रवेश परीक्षाएँ और कॉलेज admissions — केंद्रीय और राज्य विश्वविद्यालयों में UG/PG।",
+  "fees": "CUET ₹750-2,500 (विषय अनुसार)",
+  "format": "CBT 2 घंटे — 50 Q प्रति विषय",
+  "validity": "हर साल",
+  "site": "https://cuet.nta.nic.in"
+ },
+ "entries": {
+  "CUET UG": {
+   "overview": "Common University Entrance Test — केंद्रीय विश्वविद्यालयों (DU, BHU, JNU आदि) में UG admission।",
+   "fees": "₹750 (1 विषय) से ₹2,500 तक",
+   "format": "CBT 2 घंटे प्रति विषय",
+   "validity": "हर साल",
+   "site": "https://cuet.nta.nic.in"
+  },
+  "CUET PG": {
+   "overview": "केंद्रीय विश्वविद्यालयों में PG admission।",
+   "fees": "₹1,000-2,500",
+   "format": "CBT 2 घंटे — 75 Q",
+   "validity": "हर साल",
+   "site": "https://cuet.nta.nic.in"
+  },
+  "DUET": {
+   "overview": "Delhi University Entrance Test — DU में PG/professional कोर्स।",
+   "fees": "₹500-750",
+   "format": "CBT",
+   "validity": "हर साल",
+   "site": "https://admission.uod.ac.in"
+  }
+ }
+}

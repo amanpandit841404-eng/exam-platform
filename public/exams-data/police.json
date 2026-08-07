@@ -1,0 +1,56 @@
+{
+ "updated": "2026-08-08",
+ "category": "Police",
+ "note": "Fees aur exam format anumaanit hain - official website zaroor check karein.",
+ "default": {
+  "overview": "राज्य पुलिस में SI, Constable और अन्य पदों की भर्तियाँ — हर राज्य अपनी परीक्षाएँ कराता है। CBT + Physical Test + Interview।",
+  "fees": "₹200-600 (state अनुसार) • SC/ST/महिला को छूट",
+  "format": "CBT + Physical Test (PET) + DV/Interview",
+  "validity": "जरूरत अनुसार भर्तियाँ",
+  "site": "https://uppbpb.gov.in"
+ },
+ "entries": {
+  "UP Police Constable": {
+   "overview": "Uttar Pradesh Police में Constable — सबसे बड़ी पुलिस भर्ती (~60,000 posts)।",
+   "fees": "₹400",
+   "format": "CBT + PET + DV",
+   "validity": "हर कुछ साल में",
+   "site": "https://uppbpb.gov.in"
+  },
+  "UP Police SI": {
+   "overview": "UP Police में Sub-Inspector (ग्रेजुएट)।",
+   "fees": "₹400",
+   "format": "CBT + PET + Interview + DV",
+   "validity": "जरूरत अनुसार",
+   "site": "https://uppbpb.gov.in"
+  },
+  "Delhi Police Constable": {
+   "overview": "Delhi Police में Constable (Executive)।",
+   "fees": "₹100",
+   "format": "CBT + PE/MT + DV",
+   "validity": "जरूरत अनुसार",
+   "site": "https://delhipolice.gov.in"
+  },
+  "Bihar Police": {
+   "overview": "Bihar Police में Constable/SI भर्ती।",
+   "fees": "₹675",
+   "format": "CBT + PET + DV",
+   "validity": "जरूरत अनुसार",
+   "site": "https://csbc.bihar.gov.in"
+  },
+  "MP Police": {
+   "overview": "Madhya Pradesh Police में Constable/SI भर्ती।",
+   "fees": "₹200",
+   "format": "CBT + PET + DV",
+   "validity": "जरूरत अनुसार",
+   "site": "https://www.mppolice.gov.in"
+  },
+  "Rajasthan Police": {
+   "overview": "Rajasthan Police में Constable/SI भर्ती।",
+   "fees": "₹450",
+   "format": "CBT + PET + DV",
+   "validity": "जरूरत अनुसार",
+   "site": "https://police.rajasthan.gov.in"
+  }
+ }
+}

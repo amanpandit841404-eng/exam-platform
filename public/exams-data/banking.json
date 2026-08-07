@@ -1,0 +1,84 @@
+{
+ "updated": "2026-08-08",
+ "category": "Banking",
+ "note": "Fees aur exam format anumaanit hain - official website zaroor check karein.",
+ "default": {
+  "overview": "भारतीय बैंकिंग क्षेत्र (IBPS, SBI, RBI) में हर साल PO, Clerk, SO और RRB के पदों के लिए बड़ी भर्तियाँ निकलती हैं। ग्रेजुएट्स के लिए सबसे लोकप्रिय career options में से एक।",
+  "fees": "₹750-850 (UR) • ₹125-175 (SC/ST/PWD/Women)",
+  "format": "Prelims (CBT) + Mains (CBT) + Interview (PO/SO) / Typing (Clerk)",
+  "validity": "हर साल नियमित भर्तियाँ",
+  "site": "https://www.ibps.in"
+ },
+ "entries": {
+  "IBPS PO": {
+   "overview": "Public Sector Banks में Probationary Officer — 11+ बैंकों (PNB, BOI, Canara आदि) के लिए एक ही exam।",
+   "fees": "₹850 • ₹175 (SC/ST/PWD)",
+   "format": "Prelims (100 Q) + Mains (155 Q) + Interview",
+   "validity": "हर साल",
+   "site": "https://www.ibps.in"
+  },
+  "IBPS Clerk": {
+   "overview": "Public Sector Banks में Clerk (Office Assistant) — ग्रेजुएट्स के लिए।",
+   "fees": "₹850 • ₹175 (SC/ST/PWD)",
+   "format": "Prelims (100 Q) + Mains (190 Q)",
+   "validity": "हर साल",
+   "site": "https://www.ibps.in"
+  },
+  "IBPS SO": {
+   "overview": "Specialist Officer — IT, HR, Marketing, Agriculture, Law जैसे specialist posts।",
+   "fees": "₹850 • ₹175 (SC/ST/PWD)",
+   "format": "Prelims + Mains (Professional) + Interview",
+   "validity": "हर साल",
+   "site": "https://www.ibps.in"
+  },
+  "IBPS RRB": {
+   "overview": "Regional Rural Banks — Officer (Scale I) और Office Assistant के posts।",
+   "fees": "₹850 • ₹175 (SC/ST/PWD)",
+   "format": "Prelims + Mains + Interview (Officer)",
+   "validity": "हर साल",
+   "site": "https://www.ibps.in"
+  },
+  "SBI PO": {
+   "overview": "State Bank of India — Probationary Officer, देश के सबसे बड़े बैंक में।",
+   "fees": "₹750 • ₹125 (SC/ST/PWD)",
+   "format": "Prelims + Mains + Interview",
+   "validity": "हर साल",
+   "site": "https://sbi.co.in"
+  },
+  "SBI Clerk": {
+   "overview": "SBI में Junior Associate (Customer Support) — ग्रेजुएट्स के लिए।",
+   "fees": "₹750 • ₹125 (SC/ST/PWD)",
+   "format": "Prelims + Mains",
+   "validity": "हर साल",
+   "site": "https://sbi.co.in"
+  },
+  "RBI Grade B": {
+   "overview": "Reserve Bank of India में Officer (Grade B) — देश का सबसे प्रतिष्ठित banking exam।",
+   "fees": "₹850 • ₹100 (SC/ST/PWD)",
+   "format": "Phase 1 + Phase 2 + Interview",
+   "validity": "हर साल",
+   "site": "https://www.rbi.org.in"
+  },
+  "RBI Assistant": {
+   "overview": "RBI में Assistant (Office work) — ग्रेजुएट्स के लिए।",
+   "fees": "₹450 • ₹50 (SC/ST/PWD)",
+   "format": "Prelims + Mains",
+   "validity": "हर साल",
+   "site": "https://www.rbi.org.in"
+  },
+  "NABARD": {
+   "overview": "National Bank for Agriculture and Rural Development — Grade A/B posts।",
+   "fees": "₹800 • ₹150 (SC/ST/PWD)",
+   "format": "Phase 1 + Phase 2 + Interview",
+   "validity": "हर साल",
+   "site": "https://www.nabard.org"
+  },
+  "LIC AAO": {
+   "overview": "Life Insurance Corporation — Assistant Administrative Officer।",
+   "fees": "₹700 • ₹85 (SC/ST/PWD)",
+   "format": "Prelims + Mains + Interview",
+   "validity": "जरूरत अनुसार",
+   "site": "https://licindia.in"
+  }
+ }
+}

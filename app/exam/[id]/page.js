@@ -3,6 +3,25 @@ import { useState, useEffect } from "react";
 import { supabase } from "../../lib/supabase";
 import { useParams } from "next/navigation";
 
+const studyCatSlug = (category) => {
+  const c = (category || "").toLowerCase();
+  if (c.includes("professional certification")) return null;
+  if (c.includes("ssc")) return "ssc";
+  if (c.includes("upsc")) return "upsc";
+  if (c.includes("bank")) return "banking";
+  if (c.includes("railway") || c.includes("rrb") || c.includes("rrc") || c.includes("rpf")) return "railway";
+  if (c.includes("psc")) return "state-psc";
+  if (c.includes("defen") || c.includes("armed")) return "defence";
+  if (c.includes("teach") || c.includes("tet") || c.includes("kvs") || c.includes("nvs") || c.includes("dsssb") || c.includes("ctet")) return "teaching";
+  if (c.includes("police")) return "police";
+  if (c.includes("engineer") || c.includes("gate") || c.includes("jee")) return "engineering";
+  if (c.includes("medical") || c.includes("neet") || c.includes("nursing") || c.includes("pharma")) return "medical";
+  if (c.includes("law") || c.includes("court") || c.includes("judic") || c.includes("clat")) return "law";
+  if (c.includes("agriculture") || c.includes("icar")) return "agriculture";
+  if (c.includes("university") || c.includes("cuet")) return "university-admission";
+  return null;
+};
+
 export default function ExamDetailPage() {
   const params = useParams();
   const [exam, setExam] = useState(null);
@@ -11,6 +30,7 @@ export default function ExamDetailPage() {
   const [latestAdmit, setLatestAdmit] = useState(null);
   const [loading, setLoading] = useState(true);
   const [watched, setWatched] = useState(false);
+  const [study, setStudy] = useState(null);
 
   useEffect(() => {
     const watchlist = JSON.parse(localStorage.getItem("sarkarisetu_watchlist") || "[]");
@@ -23,7 +43,8 @@ export default function ExamDetailPage() {
       const { data } = await supabase.from("exams").select("*").eq("id", params.id).single();
       setExam(data);
       if (data) {
-        document.title = data.name + " - Official Website, Result, Admit Card | SarkariSetu India";
+        document.title = data.name + " - Fees, Exam Pattern, Official Website | SarkariSetu India";
+        fetchStudy(data);
         // Fetch related result and admit card
         const [rRes, aRes] = await Promise.all([
           supabase.from("results").select("*").ilike("exam_name", `%${data.name.split(" ")[0]}%`).limit(1),
@@ -33,6 +54,24 @@ export default function ExamDetailPage() {
         if (aRes.data?.[0]) setLatestAdmit(aRes.data[0]);
       }
     } catch(e) { console.error(e); }
+  };
+
+  const fetchStudy = async (exam) => {
+    try {
+      const slug = studyCatSlug(exam.category);
+      if (!slug) return;
+      const res = await fetch("/exams-data/" + slug + ".json");
+      const j = await res.json();
+      const entries = j.entries || {};
+      let entry = entries[exam.name] || null;
+      if (!entry) {
+        const names = Object.keys(entries).sort((a, b) => b.length - a.length);
+        for (const n of names) {
+          if (exam.name.startsWith(n) || n.startsWith(exam.name)) { entry = entries[n]; break; }
+        }
+      }
+      setStudy({ entry: entry || j.default || null, note: j.note || "" });
+    } catch (e) {}
   };
 
   const fetchUpdates = async () => {
@@ -186,6 +225,51 @@ export default function ExamDetailPage() {
             </tbody>
           </table>
         </div>
+
+        {/* STUDY CONTENT */}
+        {study && study.entry && (
+          <div style={{ background: "#fff", borderRadius: 12, padding: 16, border: "1px solid #e5e7eb" }}>
+            <h3 style={{ fontSize: 15, fontWeight: 700, color: "#1e3a5f", margin: "0 0 4px" }}>📌 Exam Jankari</h3>
+            <div style={{ fontSize: 11.5, color: "#6b7280", marginBottom: 8 }}>Fees, Exam Pattern aur Validity — अनुमानित जानकारी</div>
+            <div style={{ display: "flex", flexDirection: "column" }}>
+              {study.entry.fees && (
+                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "9px 0", borderBottom: "1px solid #f3f4f6" }}>
+                  <span style={{ fontSize: 13, color: "#6b7280" }}>💰 Exam Fees</span>
+                  <span style={{ fontSize: 13.5, fontWeight: 700, color: "#1e3a5f", textAlign: "right", paddingLeft: 12 }}>{study.entry.fees}</span>
+                </div>
+              )}
+              {study.entry.format && (
+                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "9px 0", borderBottom: "1px solid #f3f4f6" }}>
+                  <span style={{ fontSize: 13, color: "#6b7280", flexShrink: 0 }}>📝 Exam Pattern</span>
+                  <span style={{ fontSize: 13, color: "#1e3a5f", fontWeight: 600, textAlign: "right", paddingLeft: 12, lineHeight: 1.5 }}>{study.entry.format}</span>
+                </div>
+              )}
+              {study.entry.validity && (
+                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "9px 0", borderBottom: "1px solid #f3f4f6" }}>
+                  <span style={{ fontSize: 13, color: "#6b7280" }}>⏳ Validity</span>
+                  <span style={{ fontSize: 13.5, fontWeight: 700, color: "#1e3a5f", textAlign: "right", paddingLeft: 12 }}>{study.entry.validity}</span>
+                </div>
+              )}
+              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "9px 0" }}>
+                <span style={{ fontSize: 13, color: "#6b7280" }}>🌐 Official Website</span>
+                <a href={study.entry.site || exam.official_website} target="_blank" rel="noopener noreferrer" style={{ fontSize: 13.5, fontWeight: 700, color: "#2563eb", textDecoration: "none" }}>Visit ↗</a>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {study && study.entry && study.entry.overview && (
+          <div style={{ background: "#fff", borderRadius: 12, padding: 16, border: "1px solid #e5e7eb" }}>
+            <h3 style={{ fontSize: 15, fontWeight: 700, color: "#1e3a5f", margin: "0 0 8px" }}>📖 Kya hai ye Exam?</h3>
+            <p style={{ fontSize: 13.5, color: "#4b5563", lineHeight: 1.7, margin: 0 }}>{study.entry.overview}</p>
+          </div>
+        )}
+
+        {study && (
+          <div style={{ fontSize: 11.5, color: "#6b7280", background: "#f8fafc", border: "1px solid #e5e7eb", borderRadius: 10, padding: "10px 14px" }}>
+            ℹ️ {study.note || "Fees aur exam format अनुमानित हैं। Latest fees, syllabus aur dates के लिए official website ज़रूर check करें।"}
+          </div>
+        )}
 
         {/* UPDATES */}
         {updates.length > 0 && (

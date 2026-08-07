@@ -1,0 +1,77 @@
+{
+ "updated": "2026-08-08",
+ "category": "Teaching",
+ "note": "Fees aur exam format anumaanit hain - official website zaroor check karein.",
+ "default": {
+  "overview": "स्कूल शिक्षक बनने के लिए TET (CTET/State TET), KVS, NVS, DSSSB जैसी परीक्षाएँ — हर राज्य में नियमित भर्तियाँ।",
+  "fees": "₹500-1,000 (CTET ₹600/1,000)",
+  "format": "CBT 2 Papers (Paper 1: PRT, Paper 2: TGT/PGT)",
+  "validity": "CTET certificate 7 साल • भर्तियाँ हर साल",
+  "site": "https://ctet.nic.in"
+ },
+ "entries": {
+  "CTET": {
+   "overview": "Central Teacher Eligibility Test — केंद्रीय स्कूलों (KVS, NVS, Central Govt) में शिक्षक बनने के लिए।",
+   "fees": "₹600 (एक paper) / ₹1,000 (दोनों)",
+   "format": "CBT 150 Q प्रति paper — 2.5 घंटे",
+   "validity": "7 साल",
+   "site": "https://ctet.nic.in"
+  },
+  "UPTET": {
+   "overview": "Uttar Pradesh TET — UP के प्राथमिक/उच्च प्राथमिक स्कूलों के शिक्षक।",
+   "fees": "₹600",
+   "format": "CBT 150 Q",
+   "validity": "हर साल",
+   "site": "https://updeled.gov.in"
+  },
+  "REET": {
+   "overview": "Rajasthan Eligibility Examination for Teachers।",
+   "fees": "₹750",
+   "format": "CBT 150 Q",
+   "validity": "3 साल (अब lifetime)",
+   "site": "https://rajeduboard.rajasthan.gov.in"
+  },
+  "HTET": {
+   "overview": "Haryana TET — Haryana स्कूलों के शिक्षक।",
+   "fees": "₹1,000",
+   "format": "CBT 150 Q",
+   "validity": "हर साल",
+   "site": "https://bseh.org.in"
+  },
+  "Bihar STET": {
+   "overview": "Bihar Secondary Teacher Eligibility Test।",
+   "fees": "₹1,000",
+   "format": "CBT",
+   "validity": "हर साल",
+   "site": "https://bsebstet.com"
+  },
+  "KVS": {
+   "overview": "Kendriya Vidyalaya Sangathan — PRT/TGT/PGT भर्ती।",
+   "fees": "₹1,000",
+   "format": "CBT + Interview",
+   "validity": "जरूरत अनुसार",
+   "site": "https://kvsangathan.nic.in"
+  },
+  "NVS": {
+   "overview": "Navodaya Vidyalaya Samiti — PGT/TGT/Staff Nurse भर्ती।",
+   "fees": "₹1,000",
+   "format": "CBT + Interview",
+   "validity": "जरूरत अनुसार",
+   "site": "https://navodaya.gov.in"
+  },
+  "DSSSB": {
+   "overview": "Delhi Subordinate Services Selection Board — Delhi सरकारी स्कूल शिक्षक।",
+   "fees": "₹100",
+   "format": "CBT (200 Q)",
+   "validity": "हर साल",
+   "site": "https://dsssb.delhi.gov.in"
+  },
+  "NET": {
+   "overview": "UGC NET — Assistant Professor + Junior Research Fellowship।",
+   "fees": "₹1,100 (UR)",
+   "format": "CBT 2 papers — 3 घंटे",
+   "validity": "हर साल 2 बार",
+   "site": "https://ugcnet.nta.nic.in"
+  }
+ }
+}

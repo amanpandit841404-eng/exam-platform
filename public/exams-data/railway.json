@@ -1,0 +1,98 @@
+{
+ "updated": "2026-08-08",
+ "category": "Railway",
+ "note": "Fees aur exam format anumaanit hain - official website zaroor check karein.",
+ "default": {
+  "overview": "भारतीय रेलवे (RRB/RRC) में हर साल NTPC, Group D, ALP, JE जैसे बड़े exams होते हैं — 10वीं से ग्रेजुएट तक सभी स्तर के posts।",
+  "fees": "₹500 (UR) • ₹250 (SC/ST/PWD/Women/Ex-SM)",
+  "format": "CBT 1 + CBT 2 + Typing/PET + DV (post अनुसार)",
+  "validity": "हर साल नई भर्तियाँ",
+  "site": "https://rrb.gov.in"
+ },
+ "entries": {
+  "RRB NTPC": {
+   "overview": "RRB NTPC भारतीय रेलवे का सबसे बड़ा और सबसे लोकप्रिय भर्ती परीक्षा है। इसमें Graduate और 12th Pass दोनों स्तर के posts आते हैं — Station Master से लेकर Clerk तक। रेलवे में पक्की नौकरी (Government Job) पाने का सबसे बड़ा मौका।",
+   "fees": "₹500 (UR/OBC/EWS)",
+   "format": "CBT 1 → CBT 2 → Typing Skill Test → DV + Medical • Salary: Pay Level 2-6: ₹19,900 से ₹47,600 (मूल वेतन) + DA, HRA और अन्य भत्ते",
+   "validity": "हर साल/2 साल में नई भर्ती",
+   "site": "https://rrb.gov.in"
+  },
+  "RRB Group D": {
+   "overview": "RRB Group D रेलवे का सबसे बड़ा Level 1 भर्ती है — Track Maintainer, Helper, Pointsman जैसे posts। सिर्फ 10वीं पास के लिए, इसलिए लाखों उम्मीदवार इसे देते हैं। रेलवे की पक्की नौकरी का सबसे आसान योग्यता वाला रास्ता।",
+   "fees": "₹500 (UR/OBC/EWS)",
+   "format": "CBT → PET → DV + Medical • Salary: Pay Level 1: ₹18,000 से ₹56,900 (मूल वेतन ₹18,000) + DA, HRA और भत्ते",
+   "validity": "हर साल/2 साल में नई भर्ती",
+   "site": "https://rrb.gov.in"
+  },
+  "RRB ALP": {
+   "overview": "RRB ALP रेलवे में ट्रेन चलाने वाले सहायक पायलट (Assistant Loco Pilot) की भर्ती है। यह तकनीकी पोस्ट है जिसमें ITI/Diploma धारक आवेदन कर सकते हैं। ट्रेन ड्राइवर बनने का यही पहला कदम है।",
+   "fees": "₹500 (UR/OBC/EWS)",
+   "format": "CBT 1 → CBT 2 Part A → CBT 2 Part B → CBAT → DV + Medical • Salary: Pay Level 2: ₹19,900 से ₹63,200 (मूल वेतन) + DA, HRA, Running Allowance (यात्रा भत्ता)",
+   "validity": "हर साल/2 साल में नई भर्ती",
+   "site": "https://rrb.gov.in"
+  },
+  "RRB JE": {
+   "overview": "RRB JE रेलवे में Junior Engineer (Civil, Electrical, Mechanical, Electronics) की भर्ती है। Diploma या B.E./B.Tech धारकों के लिए। रेलवे के तकनीकी विभाग में सीधी इंजीनियरिंग नौकरी पाने का शानदार मौका।",
+   "fees": "₹500 (UR/OBC/EWS)",
+   "format": "CBT 1 → CBT 2 → DV + Medical • Salary: Pay Level 6: ₹35,400 से ₹1,12,400 (मूल वेतन) + DA, HRA और भत्ते",
+   "validity": "हर साल/2 साल में नई भर्ती",
+   "site": "https://rrb.gov.in"
+  },
+  "RRB SSE": {
+   "overview": "RRB SSE रेलवे का सीनियर इंजीनियरिंग पद है — Degree (B.E./B.Tech) धारकों के लिए। रेलवे में उच्च स्तरीय तकनीकी नौकरी और अच्छा वेतनमान (Level 7) मिलता है।",
+   "fees": "₹500 (UR/OBC/EWS)",
+   "format": "CBT 1 → CBT 2 → DV + Medical • Salary: Pay Level 7: ₹44,900 से ₹1,42,400 (मूल वेतन) + DA, HRA और भत्ते",
+   "validity": "हर साल/2 साल में नई भर्ती",
+   "site": "https://rrb.gov.in"
+  },
+  "RRB Technician": {
+   "overview": "RRB Technician रेलवे के तकनीकी कामों के लिए भर्ती है — Signal, Telecom, Electrical, Mechanical, IT जैसे विभाग। ITI पास करने वालों के लिए रेलवे की सीधी नौकरी का सबसे बड़ा मौका।",
+   "fees": "₹500 (UR/OBC/EWS)",
+   "format": "CBT 1 → CBT 2 → DV + Medical • Salary: Level 2: ₹19,900 से ₹63,200 (Technician III) • Level 4: ₹25,500+ (Technician I)",
+   "validity": "हर साल/2 साल में नई भर्ती",
+   "site": "https://rrb.gov.in"
+  },
+  "RPF Constable": {
+   "overview": "RPF Constable रेलवे की सुरक्षा बल (Railway Protection Force) में भर्ती है। यह पुलिस जैसी नौकरी है जिसमें ट्रेन और स्टेशनों की सुरक्षा की जाती है। 10वीं पास और शारीरिक रूप से फिट उम्मीदवारों के लिए।",
+   "fees": "₹500 (UR/OBC/EWS)",
+   "format": "CBT → PET/PMT → DV • Salary: Pay Level 3: ₹21,700 से ₹69,100 (मूल वेतन) + DA, HRA, वर्दी भत्ता",
+   "validity": "हर साल/2 साल में नई भर्ती",
+   "site": "https://rpf.indianrailways.gov.in"
+  },
+  "RPF SI": {
+   "overview": "RPF SI रेलवे सुरक्षा बल में Sub-Inspector (अधिकारी स्तर) की भर्ती है। Graduation पास उम्मीदवारों के लिए। रेलवे पुलिस में अधिकारी पद और अच्छा वेतनमान (Level 6)।",
+   "fees": "₹500 (UR/OBC/EWS)",
+   "format": "CBT → PET/PMT → DV + Medical • Salary: Pay Level 6: ₹35,400 से ₹1,12,400 (मूल वेतन) + DA, HRA, वर्दी भत्ता",
+   "validity": "हर साल/2 साल में नई भर्ती",
+   "site": "https://rpf.indianrailways.gov.in"
+  },
+  "RRB Paramedical": {
+   "overview": "RRB Paramedical रेलवे अस्पतालों और स्वास्थ्य विभाग के लिए Staff Nurse, Pharmacist, Lab Technician जैसे posts की भर्ती है। मेडिकल/पैरामेडिकल कोर्स करने वालों के लिए रेलवे की सीधी नौकरी।",
+   "fees": "₹500 (UR/OBC/EWS)",
+   "format": "CBT 1 → CBT 2 → DV + Medical • Salary: Pay Level 2-7: ₹19,900 से ₹44,900 (मूल वेतन, post अनुसार) + भत्ते",
+   "validity": "हर साल/2 साल में नई भर्ती",
+   "site": "https://rrb.gov.in"
+  },
+  "RRB Ministerial & Isolated": {
+   "overview": "RRB Ministerial & Isolated Categories में Clerk और Stenographer जैसे ऑफिस posts आते हैं। 12वीं पास के लिए रेलवे की ऑफिस नौकरी — टाइपिंग स्पीड जरूरी है।",
+   "fees": "₹500 (UR/OBC/EWS)",
+   "format": "CBT → Typing Skill Test → DV • Salary: Pay Level 2-5: ₹19,900 से ₹35,400 (मूल वेतन, post अनुसार) + भत्ते",
+   "validity": "हर साल/2 साल में नई भर्ती",
+   "site": "https://rrb.gov.in"
+  },
+  "RRC Apprentice": {
+   "overview": "RRC Apprentice में रेलवे विभागों में ITI पास उम्मीदवारों को ट्रेनिंग के लिए चुना जाता है — Fitter, Electrician, Welder, Machinist जैसे trades। कोई परीक्षा नहीं, सिर्फ अंकों के आधार पर मेरिट लिस्ट बनती है। ट्रेनिंग के बाद रेलवे नौकरी का अनुभव और प्रमाण पत्र मिलता है।",
+   "fees": "₹100 (Application Fee)",
+   "format": "मेरिट लिस्ट → Medical → Document Verification • Salary: Stipend: ~₹7,700 से ₹8,050 प्रति माह (Apprentice Act अनुसार)",
+   "validity": "हर साल/2 साल में नई भर्ती",
+   "site": "https://rrb.gov.in"
+  },
+  "Railway PSU Exams": {
+   "overview": "भारतीय रेलवे की PSU कंपनियाँ (IRCON, RITES, RVNL, DFCCIL, RCF आदि) अपनी अलग-अलग भर्तियाँ निकालती हैं — Junior Engineer, Assistant Engineer, Executive Trainee जैसे posts। ये रेलवे की प्रतिष्ठित कंपनियाँ हैं जिनमें अच्छा वेतन और करियर ग्रोथ मिलती है।",
+   "fees": "कंपनी अनुसार अलग (आमतौर पर ₹500-1,000, SC/ST को छूट)",
+   "format": "CBT/Written → Interview → DV • Salary: ₹30,000 से ₹70,000+ प्रति माह (Level 6-8, company अनुसार)",
+   "validity": "हर साल/2 साल में नई भर्ती",
+   "site": "https://www.indianrailways.gov.in"
+  }
+ }
+}

@@ -1,0 +1,49 @@
+{
+ "updated": "2026-08-08",
+ "category": "Law",
+ "note": "Fees aur exam format anumaanit hain - official website zaroor check karein.",
+ "default": {
+  "overview": "कानूनी शिक्षा (CLAT, AILET) और राज्य न्यायिक सेवा (Judiciary) exams — न्यायाधीश और वकील बनने का रास्ता।",
+  "fees": "CLAT ₹4,000 (UR) • ₹3,500 (SC/ST/OBC/PWD)",
+  "format": "CBT 2 घंटे — 120 MCQ (CLAT)",
+  "validity": "हर साल",
+  "site": "https://consortiumofnlus.ac.in"
+ },
+ "entries": {
+  "CLAT": {
+   "overview": "Common Law Admission Test — 24 NLUs में UG (LLB) और PG (LLM) admission।",
+   "fees": "₹4,000 • ₹3,500 (reserved)",
+   "format": "2 घंटे CBT — 120 Q",
+   "validity": "हर साल दिसंबर में",
+   "site": "https://consortiumofnlus.ac.in"
+  },
+  "AILET": {
+   "overview": "All India Law Entrance Test — NLU Delhi में LLB/LLM admission।",
+   "fees": "₹3,000 • ₹1,500 (SC/ST/PWD)",
+   "format": "90 मिनट CBT — 150 Q",
+   "validity": "हर साल",
+   "site": "https://nationallawuniversitydelhi.in"
+  },
+  "SLAT": {
+   "overview": "Symbiosis Law Admission Test — Symbiosis law campuses।",
+   "fees": "₹2,250",
+   "format": "60 मिनट CBT",
+   "validity": "हर साल",
+   "site": "https://www.set-test.org"
+  },
+  "UP Judiciary": {
+   "overview": "UP PCS (J) — न्यायिक सेवा में न्यायाधीश (Civil Judge) बनने का exam।",
+   "fees": "₹1,000",
+   "format": "Prelims + Mains + Interview",
+   "validity": "जरूरत अनुसार",
+   "site": "https://www.allahabadhighcourt.in"
+  },
+  "Delhi Judiciary": {
+   "overview": "Delhi Judicial Service — Civil Judge भर्ती।",
+   "fees": "₹1,500",
+   "format": "Prelims + Mains + Interview",
+   "validity": "जरूरत अनुसार",
+   "site": "https://delhihighcourt.nic.in"
+  }
+ }
+}
