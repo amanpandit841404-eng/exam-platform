@@ -16,6 +16,7 @@ Allow: /vacancy
 Allow: /jobs
 Allow: /category/
 Allow: /notifications
+Allow: /certifications/
 
 # Disallow admin
 Disallow: /admin/
