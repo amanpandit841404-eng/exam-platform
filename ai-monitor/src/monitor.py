@@ -12,6 +12,8 @@ SUPABASE_URL = os.environ.get("SUPABASE_URL", "https://fbcvxefvvifmxaiqxiuq.supa
 SUPABASE_KEY = os.environ.get("SUPABASE_KEY", "")
 SOURCES_FILE = os.environ.get("SOURCES_FILE", os.path.join(os.path.dirname(__file__), "..", "sources.json"))
 STATE_FILE = os.path.join(os.path.dirname(__file__), "..", "monitor_state.json")
+# State Supabase table me bhi persist hota hai (GitHub Actions fresh-checkout safe)
+STATE_TABLE = "monitor_state"
 
 HEADERS = {"User-Agent": "Mozilla/5.0 (compatible; SarkariSetuMonitor/1.0)"}
 
@@ -22,10 +24,20 @@ def load_sources():
 
 
 def load_state():
-    if os.path.exists(STATE_FILE):
+    # prefer Supabase table, fallback to local file
+    state = {}
+    try:
+        r = requests.get(f"{SUPABASE_URL}/rest/v1/{STATE_TABLE}?select=*&limit=1000",
+                         headers={"apikey": SUPABASE_KEY, "Authorization": f"Bearer {SUPABASE_KEY}"}, timeout=15)
+        if r.status_code == 200:
+            for row in r.json():
+                state[row["source_id"]] = {"hash": row.get("hash", ""), "last_checked": row.get("last_checked", "")}
+    except Exception:
+        pass
+    if not state and os.path.exists(STATE_FILE):
         with open(STATE_FILE) as f:
-            return json.load(f)
-    return {}
+            state = json.load(f)
+    return state
 
 
 def save_state(state):
@@ -100,6 +112,17 @@ def run_monitor():
         supabase_log_event(src, changed, prev or "", h)
         time.sleep(3)  # be polite to govt sites
     save_state(state)
+    # persist state to Supabase (upsert)
+    try:
+        for sid, st in state.items():
+            requests.post(
+                f"{SUPABASE_URL}/rest/v1/{STATE_TABLE}",
+                json={"source_id": sid, "hash": st.get("hash", ""), "last_checked": st.get("last_checked", "")},
+                headers={"apikey": SUPABASE_KEY, "Authorization": f"Bearer {SUPABASE_KEY}",
+                         "Content-Type": "application/json",
+                         "Prefer": "resolution=merge-duplicates"}, timeout=15)
+    except Exception:
+        pass
     print(f"\nDone. {len(changes_found)} sources changed: {changes_found}")
     return changes_found
 
