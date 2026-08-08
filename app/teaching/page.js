@@ -39,24 +39,22 @@ export default function Teaching() {
 
   return (
     <div style={{ minHeight: "100vh", background: bg, fontFamily: "sans-serif", paddingBottom: 80 }}>
-      <div style={{ background: "linear-gradient(135deg,#831843,#db2777)", padding: "18px 16px 16px", color: "#fff" }}>
+      <div style={{ background: data?.hero?.gradient || "linear-gradient(135deg,#831843,#db2777)", padding: "18px 16px 16px", color: "#fff" }}>
         <div style={{ maxWidth: 900, margin: "0 auto" }}>
-          <div style={{ fontSize: 13, opacity: 0.9 }}>🎓 शिक्षक भर्ती & TET Exams</div>
-          <h1 style={{ margin: "6px 0", fontSize: 24, fontWeight: 800 }}>Teaching Exams Center</h1>
-          <div style={{ fontSize: 13, opacity: 0.92, lineHeight: 1.5 }}>
-            CTET, UPTET, REET, KVS, NVS, DSSSB — सभी teaching exams की पूरी जानकारी एक जगह। Posts, Eligibility, Exam Pattern, Syllabus और Salary।
-          </div>
+          <div style={{ fontSize: 13, opacity: 0.9 }}>{data?.hero?.badge || "🎓 शिक्षक भर्ती & TET Exams"}</div>
+          <h1 style={{ margin: "6px 0", fontSize: 24, fontWeight: 800 }}>{data?.hero?.title || "Teaching Exams Center"}</h1>
+          <div style={{ fontSize: 13, opacity: 0.92, lineHeight: 1.5 }}>{data?.hero?.subtitle || "CTET, UPTET, REET, KVS, NVS, DSSSB — सभी teaching exams की पूरी जानकारी एक जगह। Posts, Eligibility, Exam Pattern, Syllabus और Salary।"}</div>
         </div>
       </div>
 
       <div style={{ maxWidth: 900, margin: "0 auto", padding: "14px 14px 0" }}>
         {/* Stats */}
         <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 10, marginBottom: 14 }}>
-          {[
+          {(data?.statsCards || [
             ["📋", exams.length || 12, "Major Exams"],
             ["🏫", "7+", "TET Exams"],
             ["👩‍🏫", "2L+", "Posts हर साल"],
-          ].map(([ic, n, l]) => (
+          ]).map(([ic, n, l]) => (
             <div key={l} style={{ background: cardBg, border: `1px solid ${border}`, borderRadius: 14, padding: "12px 8px", textAlign: "center" }}>
               <div style={{ fontSize: 20 }}>{ic}</div>
               <div style={{ fontSize: 22, fontWeight: 800, color: textMain }}>{n}</div>
@@ -67,14 +65,14 @@ export default function Teaching() {
 
         {/* Quick links */}
         <div style={{ display: "flex", gap: 8, flexWrap: "wrap", marginBottom: 14 }}>
-          {[
+          {(data?.quickLinks || [
             ["/results", "🏆 Teaching Results"],
             ["/admit-cards", "📄 Admit Card"],
             ["/category/teaching", "🎓 All Teaching Exams"],
             ["/syllabus", "📚 Syllabus"],
             ["/notifications", "🔔 Updates"],
             ["https://ctet.nic.in", "🌐 Official CTET Portal"],
-          ].map(([href, label]) => (
+          ]).map(([href, label]) => (
             <a key={href + label} href={href} target={href.startsWith("http") ? "_blank" : undefined} rel="noreferrer"
               style={{ textDecoration: "none", background: cardBg, border: `1px solid ${border}`, color: textMain, fontSize: 12.5, fontWeight: 700, padding: "8px 12px", borderRadius: 999 }}>
               {label}
