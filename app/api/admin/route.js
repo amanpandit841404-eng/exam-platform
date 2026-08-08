@@ -75,7 +75,7 @@ export async function POST(request) {
       return Response.json({ success: false, error: "Invalid secret" });
     }
     // MONITOR STATS (official website coverage + recent monitor events)
-    if (action === "monitor_stats") {
+    if (body.action === "monitor_stats") {
       const countOf = async (q) => {
         const res = await fetch(`${SB}/exams?select=id${q}&limit=1`, {
           headers: { apikey: ANON, Authorization: "Bearer " + ANON, Prefer: "count=exact" },
