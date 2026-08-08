@@ -48,3 +48,8 @@ India's Modern Exam Results Platform
 - /sitemaps/sitemap-results.xml (8,095) + /sitemaps/sitemap-admits.xml (8,111)
 - Total ~70,000 URLs (was 2,225)
 - Bulk-inserted 8,000 result + 8,000 admit_card rows (all active exams w/ official site)
+
+
+## Phase 16 — Full Admin Panel (Aug 8, 2026)
+- /admin upgraded: Exams, Results, Admit Cards, Updates, Upcoming — search + add + edit + delete
+- New /api/admin CRUD API (service-key server-side, password protected)
