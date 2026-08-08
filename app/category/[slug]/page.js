@@ -33,7 +33,7 @@
           if (catData) setCategory(catData);
           document.title = catName + " Exams 2026 - Results, Admit Cards | SarkariSetu India";
           const [examRes, resultRes, admitRes] = await Promise.all([
-            supabase.from("exams").select("id,name,full_name,category").eq("category", catData?.name || slug).order("name"),
+            supabase.from("exams").select("id,name,full_name,category").or(`category.eq.${catData?.slug || slug},category.eq.${catData?.name || slug}`).order("name"),
             supabase.from("results").select("*").order("created_at", { ascending: false }).limit(20),
             supabase.from("admit_cards").select("*").order("created_at", { ascending: false }).limit(20),
           ]);
