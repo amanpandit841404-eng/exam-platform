@@ -253,7 +253,145 @@
               </div>
             )}
 
-            {/* CATEGORIES */}
+            
+                {/* SARKARIRESULT-STYLE QUICK CATEGORIES */}
+                <div style={{ marginBottom: 16 }}>
+
+                  {/* RESULTS */}
+                  <div style={{ background: cardBg, borderRadius: 14, border: `1px solid ${border}`, marginBottom: 12, overflow: 'hidden' }}>
+                    <div style={{ background: 'linear-gradient(135deg,#166534,#16a34a)', color: '#fff', padding: '10px 16px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                      <h2 style={{ margin: 0, fontSize: 14, fontWeight: 800 }}>🏆 Latest Results</h2>
+                      <a href="/results" style={{ color: 'rgba(255,255,255,0.85)', fontSize: 11, fontWeight: 600, textDecoration: 'none' }}>View All →</a>
+                    </div>
+                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(150px, 1fr))', gap: 0 }}>
+                      {[
+                        { label: 'Central Govt Results', href: '/results?cat=central', icon: '🏛️' },
+                        { label: 'State Govt Results', href: '/results?cat=state', icon: '📍' },
+                        { label: 'Board Results', href: '/results?cat=board', icon: '🎓' },
+                        { label: 'University Results', href: '/results?cat=university', icon: '🏫' },
+                        { label: 'Entrance Results', href: '/results?cat=entrance', icon: '📝' },
+                        { label: 'Banking Results', href: '/results?cat=banking', icon: '🏦' },
+                      ].map((item, i) => (
+                        <a key={i} href={item.href} style={{ display: 'flex', alignItems: 'center', gap: 8, padding: '10px 14px', borderBottom: `1px solid ${border}`, borderRight: `1px solid ${border}`, textDecoration: 'none', color: textMain, fontSize: 12, fontWeight: 500, transition: 'background 0.2s' }}>
+                          <span style={{ fontSize: 16 }}>{item.icon}</span>
+                          <span>{item.label}</span>
+                        </a>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* JOBS */}
+                  <div style={{ background: cardBg, borderRadius: 14, border: `1px solid ${border}`, marginBottom: 12, overflow: 'hidden' }}>
+                    <div style={{ background: 'linear-gradient(135deg,#1e3a5f,#2563eb)', color: '#fff', padding: '10px 16px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                      <h2 style={{ margin: 0, fontSize: 14, fontWeight: 800 }}>💼 Latest Jobs / Vacancy</h2>
+                      <a href="/latest-updates" style={{ color: 'rgba(255,255,255,0.85)', fontSize: 11, fontWeight: 600, textDecoration: 'none' }}>View All →</a>
+                    </div>
+                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(150px, 1fr))', gap: 0 }}>
+                      {[
+                        { label: 'Central Govt Jobs', href: '/category/central-government', icon: '🏛️' },
+                        { label: 'State Govt Jobs', href: '/category/state-government', icon: '📍' },
+                        { label: 'PSU Jobs', href: '/psu', icon: '🏭' },
+                        { label: 'Banking Jobs', href: '/banking', icon: '🏦' },
+                        { label: 'Railway Jobs', href: '/railway', icon: '🚂' },
+                        { label: 'Police Jobs', href: '/police', icon: '👮' },
+                        { label: 'Defence Jobs', href: '/defence', icon: '⚔️' },
+                        { label: 'Teaching Jobs', href: '/teaching', icon: '📚' },
+                      ].map((item, i) => (
+                        <a key={i} href={item.href} style={{ display: 'flex', alignItems: 'center', gap: 8, padding: '10px 14px', borderBottom: `1px solid ${border}`, borderRight: `1px solid ${border}`, textDecoration: 'none', color: textMain, fontSize: 12, fontWeight: 500 }}>
+                          <span style={{ fontSize: 16 }}>{item.icon}</span>
+                          <span>{item.label}</span>
+                        </a>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* ADMIT CARD */}
+                  <div style={{ background: cardBg, borderRadius: 14, border: `1px solid ${border}`, marginBottom: 12, overflow: 'hidden' }}>
+                    <div style={{ background: 'linear-gradient(135deg,#c2410c,#ea580c)', color: '#fff', padding: '10px 16px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                      <h2 style={{ margin: 0, fontSize: 14, fontWeight: 800 }}>🎫 Admit Card</h2>
+                      <a href="/admit-cards" style={{ color: 'rgba(255,255,255,0.85)', fontSize: 11, fontWeight: 600, textDecoration: 'none' }}>View All →</a>
+                    </div>
+                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(150px, 1fr))', gap: 0 }}>
+                      {[
+                        { label: 'SSC Admit Card', href: '/ssc', icon: '📋' },
+                        { label: 'Railway Admit Card', href: '/railway', icon: '🚂' },
+                        { label: 'UPSC Admit Card', href: '/upsc', icon: '🏛️' },
+                        { label: 'Banking Admit Card', href: '/banking', icon: '🏦' },
+                        { label: 'Police Admit Card', href: '/police', icon: '👮' },
+                        { label: 'Defence Admit Card', href: '/defence', icon: '⚔️' },
+                        { label: 'Teaching Admit Card', href: '/teaching', icon: '📚' },
+                        { label: 'State Exam Admit Card', href: '/state-psc', icon: '📍' },
+                      ].map((item, i) => (
+                        <a key={i} href={item.href} style={{ display: 'flex', alignItems: 'center', gap: 8, padding: '10px 14px', borderBottom: `1px solid ${border}`, borderRight: `1px solid ${border}`, textDecoration: 'none', color: textMain, fontSize: 12, fontWeight: 500 }}>
+                          <span style={{ fontSize: 16 }}>{item.icon}</span>
+                          <span>{item.label}</span>
+                        </a>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* ANSWER KEY + SYLLABUS */}
+                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, marginBottom: 12 }}>
+                    <div style={{ background: cardBg, borderRadius: 14, border: `1px solid ${border}`, overflow: 'hidden' }}>
+                      <div style={{ background: 'linear-gradient(135deg,#0891b2,#0ea5e9)', color: '#fff', padding: '10px 14px' }}>
+                        <h2 style={{ margin: 0, fontSize: 13, fontWeight: 800 }}>🔑 Answer Key</h2>
+                      </div>
+                      {[
+                        { label: 'SSC', href: '/ssc' },
+                        { label: 'Railway', href: '/railway' },
+                        { label: 'UPSC', href: '/upsc' },
+                        { label: 'State Exams', href: '/state-psc' },
+                        { label: 'Entrance Exams', href: '/latest-updates' },
+                      ].map((item, i) => (
+                        <a key={i} href={item.href} style={{ display: 'block', padding: '8px 14px', borderBottom: `1px solid ${border}`, textDecoration: 'none', color: textMain, fontSize: 12, fontWeight: 500 }}>
+                          🔑 {item.label}
+                        </a>
+                      ))}
+                    </div>
+                    <div style={{ background: cardBg, borderRadius: 14, border: `1px solid ${border}`, overflow: 'hidden' }}>
+                      <div style={{ background: 'linear-gradient(135deg,#7c3aed,#8b5cf6)', color: '#fff', padding: '10px 14px' }}>
+                        <h2 style={{ margin: 0, fontSize: 13, fontWeight: 800 }}>📚 Syllabus</h2>
+                      </div>
+                      {[
+                        { label: 'SSC Syllabus', href: '/ssc' },
+                        { label: 'UPSC Syllabus', href: '/upsc' },
+                        { label: 'Railway Syllabus', href: '/railway' },
+                        { label: 'Banking Syllabus', href: '/banking' },
+                        { label: 'State PSC Syllabus', href: '/state-psc' },
+                      ].map((item, i) => (
+                        <a key={i} href={item.href} style={{ display: 'block', padding: '8px 14px', borderBottom: `1px solid ${border}`, textDecoration: 'none', color: textMain, fontSize: 12, fontWeight: 500 }}>
+                          📚 {item.label}
+                        </a>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* ADMISSION */}
+                  <div style={{ background: cardBg, borderRadius: 14, border: `1px solid ${border}`, marginBottom: 12, overflow: 'hidden' }}>
+                    <div style={{ background: 'linear-gradient(135deg,#831843,#db2777)', color: '#fff', padding: '10px 16px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                      <h2 style={{ margin: 0, fontSize: 14, fontWeight: 800 }}>🎓 Admission</h2>
+                      <a href="/latest-updates" style={{ color: 'rgba(255,255,255,0.85)', fontSize: 11, fontWeight: 600, textDecoration: 'none' }}>View All →</a>
+                    </div>
+                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(140px, 1fr))', gap: 0 }}>
+                      {[
+                        { label: 'NEET UG/PG', href: '/category/medical', icon: '🏥' },
+                        { label: 'JEE Main/Adv', href: '/category/engineering-national', icon: '⚙️' },
+                        { label: 'CUET UG/PG', href: '/category/university-entrance', icon: '🏫' },
+                        { label: 'CLAT', href: '/judiciary', icon: '⚖️' },
+                        { label: 'Polytechnic', href: '/category/polytechnic', icon: '🔧' },
+                        { label: 'ITI Admission', href: '/category/iti', icon: '🛠️' },
+                      ].map((item, i) => (
+                        <a key={i} href={item.href} style={{ display: 'flex', alignItems: 'center', gap: 8, padding: '10px 14px', borderBottom: `1px solid ${border}`, borderRight: `1px solid ${border}`, textDecoration: 'none', color: textMain, fontSize: 12, fontWeight: 500 }}>
+                          <span style={{ fontSize: 16 }}>{item.icon}</span>
+                          <span>{item.label}</span>
+                        </a>
+                      ))}
+                    </div>
+                  </div>
+
+                </div>
+
+    {/* CATEGORIES */}
             <div style={{ background: cardBg, borderRadius: 14, border: `1px solid ${border}`, padding: '14px 16px', marginBottom: 16, boxShadow: '0 2px 8px rgba(0,0,0,0.06)' }}>
               <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill,minmax(300px,1fr))", gap: 10, marginBottom: 16 }}>
 <a href="/ssc" style={{ display: "block", textDecoration: "none", marginBottom: 12, background: darkMode ? "#1e293b" : "linear-gradient(135deg,#312e81,#4f46e5)", borderRadius: 14, padding: "16px 18px", border: `1px solid ${border}` }}>  <div style={{ display: "flex", alignItems: "center", gap: 12 }}>    <span style={{ fontSize: 30 }}>🏢</span>    <div style={{ flex: 1 }}>      <div style={{ fontSize: 15, fontWeight: 800, color: "#fff" }}>SSC Exams Center</div>      <div style={{ fontSize: 12, color: "#cbd5e1", marginTop: 2 }}>SSC CGL, CHSL, MTS, GD, CPO, JE — posts, eligibility, exam pattern, salary सब कुछ एक जगह</div>    </div>    <span style={{ color: "#fff", fontSize: 18 }}>→</span>  </div></a>
