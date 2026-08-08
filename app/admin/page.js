@@ -13,6 +13,7 @@
       { key: "hubs", icon: "🏠", label: "Hub Pages", color: "#0891b2" },
       { key: "categories", icon: "🗂️", label: "Categories", color: "#475569" },
       { key: "monitor", icon: "🤖", label: "Monitor", color: "#9333ea" },
+      { key: "ai_queue", icon: "🧠", label: "AI Queue", color: "#0ea5e9" },
     ];
 
     const FIELD_DEFS = {
@@ -922,6 +923,12 @@
       const [saving, setSaving] = useState(false);
       const [monStats, setMonStats] = useState(null);
       const [monLoading, setMonLoading] = useState(false);
+      const [aiQueue, setAiQueue] = useState([]);
+      const [aiQueueTotal, setAiQueueTotal] = useState(0);
+      const [aiQueueStats, setAiQueueStats] = useState(null);
+      const [aiQueueLoading, setAiQueueLoading] = useState(false);
+      const [aiQueueFilter, setAiQueueFilter] = useState("pending,quick_review,auto_approved");
+      const [aiEditModal, setAiEditModal] = useState(null);
 
       const showToast = (msg, type = "success") => { setToast({ msg, type }); setTimeout(() => setToast(null), 2800); };
 
@@ -957,6 +964,37 @@
         } catch (e) { showToast("Monitor error", "error"); }
         setMonLoading(false);
       }, []);
+
+      const loadAiQueue = useCallback(async (filter) => {
+        setAiQueueLoading(true);
+        try {
+          const statusFilter = filter || aiQueueFilter;
+          const [qr, sr] = await Promise.all([
+            api({ action: "ai_queue_list", status: statusFilter, limit: 50 }),
+            api({ action: "ai_queue_stats" }),
+          ]);
+          if (qr.success) { setAiQueue(qr.data || []); setAiQueueTotal(qr.total || 0); }
+          if (sr.success) setAiQueueStats(sr.counts || {});
+        } catch (e) { showToast("AI Queue error", "error"); }
+        setAiQueueLoading(false);
+      }, [aiQueueFilter]);
+
+      const approveAiItem = async (id, overrides) => {
+        try {
+          const r = await api({ action: "ai_queue_approve", id, overrides: overrides || {} });
+          if (r.success) { showToast("✅ Published to " + r.published_to, "success"); loadAiQueue(); }
+          else showToast(r.error || "Approve failed", "error");
+        } catch (e) { showToast("Approve error", "error"); }
+      };
+
+      const rejectAiItem = async (id) => {
+        if (!confirm("Reject this extraction?")) return;
+        try {
+          const r = await api({ action: "ai_queue_reject", id });
+          if (r.success) { showToast("❌ Rejected", "success"); loadAiQueue(); }
+          else showToast(r.error || "Reject failed", "error");
+        } catch (e) { showToast("Reject error", "error"); }
+      };
 
       const fetchTable = async (t, q) => {
         setLoading(true);
@@ -1442,6 +1480,112 @@
                 )}
               </div>
             )}
+            {tab === "ai_queue" && (
+              <div style={{ padding: "0 0 40px" }}>
+                <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 16, flexWrap: "wrap", gap: 8 }}>
+                  <h2 style={{ margin: 0, fontSize: 20, color: "#fff", fontWeight: 700 }}>🧠 AI Extraction Queue</h2>
+                  <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
+                    {["pending,quick_review,auto_approved", "approved", "rejected", "low_confidence"].map((f) => (
+                      <button key={f} onClick={() => { setAiQueueFilter(f); loadAiQueue(f); }}
+                        style={{ padding: "6px 14px", background: aiQueueFilter === f ? "#0ea5e9" : "#1e3a5f", color: "#fff", border: "none", borderRadius: 8, fontSize: 12, cursor: "pointer", fontWeight: aiQueueFilter === f ? 700 : 400 }}>
+                        {f === "pending,quick_review,auto_approved" ? "🔔 Pending" : f === "approved" ? "✅ Approved" : f === "rejected" ? "❌ Rejected" : "⚠️ Low Conf"}
+                      </button>
+                    ))}
+                    <button onClick={() => loadAiQueue()} style={{ padding: "6px 14px", background: "#334155", color: "#fff", border: "none", borderRadius: 8, fontSize: 12, cursor: "pointer" }}>🔄 Refresh</button>
+                  </div>
+                </div>
+
+                {/* Stats row */}
+                {aiQueueStats && (
+                  <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(120px, 1fr))", gap: 10, marginBottom: 20 }}>
+                    {[
+                      { label: "Pending", key: "pending", color: "#f59e0b" },
+                      { label: "Quick Review", key: "quick_review", color: "#0ea5e9" },
+                      { label: "Auto Approved", key: "auto_approved", color: "#8b5cf6" },
+                      { label: "Approved", key: "approved", color: "#16a34a" },
+                      { label: "Rejected", key: "rejected", color: "#dc2626" },
+                      { label: "Low Conf", key: "low_confidence", color: "#94a3b8" },
+                    ].map(({ label, key, color }) => (
+                      <div key={key} style={{ background: "#1e3a5f", borderRadius: 10, padding: "12px 14px", textAlign: "center" }}>
+                        <div style={{ fontSize: 22, fontWeight: 700, color }}>{(aiQueueStats[key] || 0).toLocaleString()}</div>
+                        <div style={{ fontSize: 11, color: "#94a3b8", marginTop: 2 }}>{label}</div>
+                      </div>
+                    ))}
+                  </div>
+                )}
+
+                {aiQueueLoading && <p style={{ color: "#94a3b8", fontSize: 13 }}>Loading AI Queue...</p>}
+
+                {!aiQueueLoading && aiQueue.length === 0 && (
+                  <div style={{ background: "#1e3a5f", borderRadius: 12, padding: 24, textAlign: "center" }}>
+                    <p style={{ color: "#94a3b8", fontSize: 14, margin: 0 }}>
+                      {aiQueueFilter.includes("pending") ? "🎉 Queue खाली है! कोई pending extraction नहीं।" : "कोई item नहीं मिला।"}
+                    </p>
+                    <p style={{ color: "#64748b", fontSize: 12, marginTop: 8 }}>
+                      AI Extractor तब चलेगा जब GitHub Actions monitor किसी source में change detect करेगा।
+                    </p>
+                  </div>
+                )}
+
+                {aiQueue.map((item) => {
+                  let parsed = {};
+                  try { parsed = JSON.parse(item.extracted_json || "{}"); } catch(e) {}
+                  const conf = Math.round((item.confidence || 0) * 100);
+                  const confColor = conf >= 95 ? "#16a34a" : conf >= 85 ? "#0ea5e9" : conf >= 70 ? "#f59e0b" : "#dc2626";
+                  const statusBadge = {
+                    pending: { bg: "#f59e0b22", color: "#f59e0b", label: "⏳ Pending" },
+                    quick_review: { bg: "#0ea5e922", color: "#0ea5e9", label: "👁️ Quick Review" },
+                    auto_approved: { bg: "#8b5cf622", color: "#8b5cf6", label: "🤖 Auto Approved" },
+                    approved: { bg: "#16a34a22", color: "#16a34a", label: "✅ Approved" },
+                    rejected: { bg: "#dc262622", color: "#dc2626", label: "❌ Rejected" },
+                    low_confidence: { bg: "#94a3b822", color: "#94a3b8", label: "⚠️ Low Conf" },
+                  }[item.status] || { bg: "#33415522", color: "#94a3b8", label: item.status };
+
+                  return (
+                    <div key={item.id} style={{ background: "#1e3a5f", borderRadius: 12, padding: 16, marginBottom: 12, border: "1px solid #334155" }}>
+                      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", flexWrap: "wrap", gap: 8 }}>
+                        <div style={{ flex: 1, minWidth: 200 }}>
+                          <div style={{ display: "flex", gap: 8, alignItems: "center", flexWrap: "wrap", marginBottom: 6 }}>
+                            <span style={{ background: statusBadge.bg, color: statusBadge.color, padding: "2px 10px", borderRadius: 20, fontSize: 11, fontWeight: 600 }}>{statusBadge.label}</span>
+                            <span style={{ background: "#0f172a", color: "#94a3b8", padding: "2px 8px", borderRadius: 20, fontSize: 11 }}>{item.event_type || "other"}</span>
+                            <span style={{ background: "#0f172a", color: confColor, padding: "2px 8px", borderRadius: 20, fontSize: 11, fontWeight: 700 }}>{conf}% conf</span>
+                            <span style={{ color: "#64748b", fontSize: 11 }}>{item.source_name}</span>
+                          </div>
+                          <div style={{ fontSize: 14, fontWeight: 600, color: "#e2e8f0", marginBottom: 4 }}>{item.title || item.exam_name || "Untitled"}</div>
+                          {item.exam_name && item.title !== item.exam_name && <div style={{ fontSize: 12, color: "#94a3b8", marginBottom: 4 }}>📝 {item.exam_name}</div>}
+                          {item.description && <div style={{ fontSize: 12, color: "#64748b", marginBottom: 4 }}>{item.description.slice(0, 150)}{item.description.length > 150 ? "..." : ""}</div>}
+                          {item.official_link && <a href={item.official_link} target="_blank" rel="noopener noreferrer" style={{ fontSize: 11, color: "#0ea5e9" }}>🔗 {item.official_link.slice(0, 60)}...</a>}
+                          {item.vacancy_count && <span style={{ fontSize: 11, color: "#f59e0b", marginLeft: 8 }}>👥 {item.vacancy_count} vacancies</span>}
+                          <div style={{ fontSize: 11, color: "#475569", marginTop: 4 }}>{new Date(item.extracted_at).toLocaleString("en-IN")}</div>
+                        </div>
+                        {(item.status === "pending" || item.status === "quick_review" || item.status === "auto_approved") && (
+                          <div style={{ display: "flex", gap: 6, flexShrink: 0 }}>
+                            <button onClick={() => approveAiItem(item.id)}
+                              style={{ padding: "6px 14px", background: "#16a34a", color: "#fff", border: "none", borderRadius: 8, fontSize: 12, cursor: "pointer", fontWeight: 600 }}>
+                              ✅ Approve
+                            </button>
+                            <button onClick={() => setAiEditModal(item)}
+                              style={{ padding: "6px 14px", background: "#0ea5e9", color: "#fff", border: "none", borderRadius: 8, fontSize: 12, cursor: "pointer" }}>
+                              ✏️ Edit
+                            </button>
+                            <button onClick={() => rejectAiItem(item.id)}
+                              style={{ padding: "6px 14px", background: "#dc2626", color: "#fff", border: "none", borderRadius: 8, fontSize: 12, cursor: "pointer" }}>
+                              ❌ Reject
+                            </button>
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                  );
+                })}
+
+                {aiQueue.length > 0 && (
+                  <p style={{ color: "#64748b", fontSize: 12, textAlign: "center" }}>
+                    Showing {aiQueue.length} of {aiQueueTotal} items
+                  </p>
+                )}
+              </div>
+            )}
             {tab === "hubs" && !hubForm && renderHubGrid()}
             {tab === "hubEditor" && hubForm && renderHubEditor()}
           </div>
@@ -1464,6 +1608,52 @@
                 <div style={{ display: "flex", gap: 8, marginTop: 16 }}>
                   <button onClick={saveRow} style={styles.btn("#16a34a")}>✅ Save</button>
                   <button onClick={() => { setEditing(null); setAdding(null); }} style={{ ...styles.btn("#9ca3af") }}>Cancel</button>
+                </div>
+              </div>
+            </div>
+          )}
+
+          {/* AI Edit Modal */}
+          {aiEditModal && (
+            <div style={styles.modal} onClick={() => setAiEditModal(null)}>
+              <div style={{ ...styles.modalBox, maxWidth: 600 }} onClick={(e) => e.stopPropagation()}>
+                <h3 style={{ margin: "0 0 14px", fontSize: 16, color: "#1e3a5f" }}>✏️ Edit Before Approve — #{aiEditModal.id}</h3>
+                <div style={{ display: "grid", gap: 10 }}>
+                  {[
+                    { key: "exam_name", label: "Exam Name" },
+                    { key: "title", label: "Title" },
+                    { key: "description", label: "Description" },
+                    { key: "official_link", label: "Official Link" },
+                    { key: "vacancy_count", label: "Vacancy Count" },
+                  ].map(({ key, label }) => (
+                    <div key={key}>
+                      <label style={{ display: "block", fontSize: 12, fontWeight: 600, color: "#555", marginBottom: 4 }}>{label}</label>
+                      <input value={aiEditModal[key] || ""} onChange={(e) => setAiEditModal((p) => ({ ...p, [key]: e.target.value }))}
+                        style={{ width: "100%", padding: "8px 10px", border: "1px solid #d1d5db", borderRadius: 8, fontSize: 13, boxSizing: "border-box" }} />
+                    </div>
+                  ))}
+                  <div>
+                    <label style={{ display: "block", fontSize: 12, fontWeight: 600, color: "#555", marginBottom: 4 }}>Event Type</label>
+                    <select value={aiEditModal.event_type || "other"} onChange={(e) => setAiEditModal((p) => ({ ...p, event_type: e.target.value }))}
+                      style={{ width: "100%", padding: "8px 10px", border: "1px solid #d1d5db", borderRadius: 8, fontSize: 13 }}>
+                      {["result", "admit_card", "notification", "answer_key", "syllabus", "cutoff", "interview_schedule", "other"].map((t) => (
+                        <option key={t} value={t}>{t}</option>
+                      ))}
+                    </select>
+                  </div>
+                </div>
+                <div style={{ display: "flex", gap: 8, marginTop: 16 }}>
+                  <button onClick={() => {
+                    approveAiItem(aiEditModal.id, {
+                      exam_name: aiEditModal.exam_name,
+                      title: aiEditModal.title,
+                      description: aiEditModal.description,
+                      official_link: aiEditModal.official_link,
+                      vacancy_count: aiEditModal.vacancy_count ? parseInt(aiEditModal.vacancy_count) : null,
+                    });
+                    setAiEditModal(null);
+                  }} style={styles.btn("#16a34a")}>✅ Approve & Publish</button>
+                  <button onClick={() => setAiEditModal(null)} style={{ ...styles.btn("#9ca3af") }}>Cancel</button>
                 </div>
               </div>
             </div>
