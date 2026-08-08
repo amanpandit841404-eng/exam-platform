@@ -240,8 +240,13 @@ export async function GET(req) {
         if (/(result|merit|shortlist|selected|qualified|declared)/.test(k)) return "result";
         return "general";
       };
-      const { data: recentRows } = await supabase.from("updates").select("title").order("created_at", { ascending: false }).limit(400);
-      const existingTitles = new Set((recentRows || []).map((r) => (r.title || "").toLowerCase().trim()));
+      const { data: recentRows } = await adminSupabase.from("updates").select("title").order("created_at", { ascending: false }).limit(1000);
+      const existingTitles = new Set();
+      (recentRows || []).forEach((r) => {
+        const k = (r.title || "").toLowerCase().trim();
+        existingTitles.add(k);
+        existingTitles.add(k.slice(0, 177));
+      });
       for (const q of NEWS_QUERIES) {
         try {
           const rssUrl = "https://news.google.com/rss/search?q=" + encodeURIComponent(q) + "&hl=en-IN&gl=IN&ceid=IN:en";
@@ -255,7 +260,7 @@ export async function GET(req) {
             let title = tMatch[1].replace(/&amp;/g, "&").replace(/&quot;/g, '"').replace(/&#39;/g, "'").replace(/&lt;/g, "<").replace(/&gt;/g, ">").trim();
             if (!title || title.length < 15) continue;
             const key = title.toLowerCase().trim();
-            if (existingTitles.has(key)) continue;
+            if (existingTitles.has(key) || existingTitles.has(key.slice(0, 177))) continue;
             if (!/(sarkari|result|admit|hall ticket|answer key|exam date|notification|recruitment|shortlist|merit|declared)/.test(key)) continue;
             const examMatch = matchExam(title);
             if (!examMatch && !/(ssc|upsc|rrb|railway|ibps|sbi|rbi|bank|neet|jee|ctet|nta|bpsc|uppsc|mppsc|rpsc|police|nda|cds|afcat|lic|epfo|navy|army|air force|kvs|nvs|dsssb|nmms|ugc net|csir)/.test(key)) continue;
@@ -264,7 +269,7 @@ export async function GET(req) {
             const examId = examMatch ? examMatch[0] : null;
             const link = OFFICIAL_LINKS[examId] || (knownKey ? KNOWN_OFFICIAL[knownKey] : null);
             const insertTitle = title.length > 180 ? title.slice(0, 177) + "..." : title;
-            const { data: dup } = await supabase.from("updates").select("id").eq("title", insertTitle).limit(1);
+            const { data: dup } = await adminSupabase.from("updates").select("id").eq("title", insertTitle).limit(1);
             if (dup && dup.length) continue;
             await supabase.from("updates").insert({
               exam_id: examId,
@@ -276,6 +281,7 @@ export async function GET(req) {
               is_verified: false,
             });
             existingTitles.add(insertTitle.toLowerCase().trim());
+            existingTitles.add(insertTitle.toLowerCase().trim().slice(0, 177));
             realNewsAdded++;
             const examLabel = examMatch ? examMatch[1] : insertTitle.slice(0, 40);
             if (type === "result") {
@@ -297,6 +303,21 @@ export async function GET(req) {
           continue;
         }
         if (realNewsAdded >= 14) break;
+      }
+      // Self-heal: delete any duplicate titles created in this run (keep newest)
+      if (realNewsAdded > 0) {
+        try {
+          const { data: allRows } = await adminSupabase.from("updates").select("id,title").order("created_at", { ascending: false }).limit(1000);
+          const seenT = new Set();
+          for (const u of allRows || []) {
+            const k = (u.title || "").toLowerCase().trim();
+            if (seenT.has(k)) {
+              await adminSupabase.from("updates").delete().eq("id", u.id);
+            } else {
+              seenT.add(k);
+            }
+          }
+        } catch (e) {}
       }
     }
 
@@ -396,4 +417,5 @@ export async function GET(req) {
     return Response.json({ success: false, date: today, error: e.message }, { status: 500 });
   }
 }
+
 
