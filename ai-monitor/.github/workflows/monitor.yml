@@ -20,11 +20,12 @@ jobs:
         working-directory: ai-monitor
         run: pip install -r requirements.txt
 
-      - name: Run monitoring engine
+      - name: Run monitoring + AI extraction engine
         working-directory: ai-monitor
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: python3 src/monitor.py
 
       - name: Run official site detection (light pass)
