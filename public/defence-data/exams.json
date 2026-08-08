@@ -1,545 +1,594 @@
 {
- "updated": "2026-08-08",
- "note": "सभी जानकारी अनुमानित/संकेतात्मक है। Defence exams की dates, fee, age limit और pattern हर cycle बदलते हैं — हमेशा joinindianarmy.nic.in, joinindiannavy.gov.in, indianairforce.nic.in, joincoastguard.gov.in पर official notification ज़रूर चेक करें।",
- "stats": {
-  "exams": 12,
-  "agniveer": 3,
-  "posts": 150000
- },
- "exams": [
-  {
-   "slug": "agniveer-army",
-   "name": "Agniveer (Army)",
-   "emoji": "🪖",
-   "fullName": "Agniveer — Indian Army (Agneepath Scheme)",
-   "tags": [
-    "10th/12th",
-    "Agneepath",
-    "4 साल"
-   ],
-   "officialWebsite": "https://joinindianarmy.nic.in",
-   "examFee": "₹250 (UR/OBC/EWS) • SC/ST मुक्त",
-   "latestStatus": "Indian Army Agniveer की अगली rally notification का इंतज़ार है। पिछला batch 2025 में भर्ती हुआ — joinindianarmy.nic.in चेक करें।",
-   "overview": "Agniveer योजना (Agneepath) के तहत Indian Army में 4 साल की भर्ती होती है — GD, Technical, Clerk/SKT और Tradesman posts के लिए। 4 साल बाद ~25% को regular Army में absorb किया जाता है। देश सेवा का नया रास्ता।",
-   "posts": [
-    "Agniveer General Duty (GD)",
-    "Agniveer Technical",
-    "Agniveer Clerk/SKT",
-    "Agniveer Tradesman"
-   ],
-   "eligibility": "GD: 10th pass (45% marks)। Technical: 12th Science (PCM + Physics/Maths)। Clerk: 12th (50%+ English/Hindi)। आयु: 17.5-21 वर्ष।",
-   "examPattern": [
+  "updated": "2026-08-08T06:34:03.623Z",
+  "note": "सभी जानकारी अनुमानित/संकेतात्मक है। Defence exams की dates, fee, age limit और pattern हर cycle बदलते हैं — हमेशा joinindianarmy.nic.in, joinindiannavy.gov.in, indianairforce.nic.in, joincoastguard.gov.in पर official notification ज़रूर चेक करें।",
+  "stats": {
+    "exams": 12,
+    "agniveer": 3,
+    "posts": 150000
+  },
+  "exams": [
     {
-     "stage": "CEE (Written)",
-     "detail": "Computer Based Exam — Maths, GK, English, Reasoning (post के हिसाब से)"
+      "slug": "agniveer-army",
+      "name": "Agniveer (Army)",
+      "emoji": "🪖",
+      "fullName": "Agniveer — Indian Army (Agneepath Scheme)",
+      "tags": [
+        "10th/12th",
+        "Agneepath",
+        "4 साल"
+      ],
+      "officialWebsite": "https://joinindianarmy.nic.in",
+      "examFee": "₹250 (UR/OBC/EWS) • SC/ST मुक्त",
+      "latestStatus": "Indian Army Agniveer की अगली rally notification का इंतज़ार है। पिछला batch 2025 में भर्ती हुआ — joinindianarmy.nic.in चेक करें।",
+      "overview": "Agniveer योजना (Agneepath) के तहत Indian Army में 4 साल की भर्ती होती है — GD, Technical, Clerk/SKT और Tradesman posts के लिए। 4 साल बाद ~25% को regular Army में absorb किया जाता है। देश सेवा का नया रास्ता।",
+      "posts": [
+        "Agniveer General Duty (GD)",
+        "Agniveer Technical",
+        "Agniveer Clerk/SKT",
+        "Agniveer Tradesman"
+      ],
+      "eligibility": "GD: 10th pass (45% marks)। Technical: 12th Science (PCM + Physics/Maths)। Clerk: 12th (50%+ English/Hindi)। आयु: 17.5-21 वर्ष।",
+      "examPattern": [
+        {
+          "stage": "CEE (Written)",
+          "detail": "Computer Based Exam — Maths, GK, English, Reasoning (post के हिसाब से)"
+        },
+        {
+          "stage": "Physical Fitness Test",
+          "detail": "दौड़ (1.6 km), पुश-अप/चिन-अप, बैठक + Physical Measurement"
+        },
+        {
+          "stage": "Medical",
+          "detail": "Armed Forces Medical Exam + DV"
+        }
+      ],
+      "syllabus": [
+        "Mathematics",
+        "General Knowledge & Current Affairs",
+        "English / Hindi",
+        "Reasoning"
+      ],
+      "salary": "₹30,000 (पहले साल) + हर साल 4% increment • 4 साल में ~₹10.04 लाख Seva Nidhi package",
+      "selectionProcess": "CEE → PFT → Medical → Merit List (Rally स्थानों पर)"
     },
     {
-     "stage": "Physical Fitness Test",
-     "detail": "दौड़ (1.6 km), पुश-अप/चिन-अप, बैठक + Physical Measurement"
+      "slug": "agniveer-vayu",
+      "name": "Agniveer Vayu",
+      "emoji": "✈️",
+      "fullName": "Agniveer Vayu — Indian Air Force (Airmen)",
+      "tags": [
+        "12th",
+        "Air Force",
+        "Science/Any Stream"
+      ],
+      "officialWebsite": "https://indianairforce.nic.in",
+      "examFee": "₹250 (UR/OBC/EWS) • SC/ST मुक्त",
+      "latestStatus": "Agniveer Vayu (IAF) अगले cycle की notification का इंतज़ार है। पिछला intake 2025 में हुआ — indianairforce.nic.in चेक करें।",
+      "overview": "Agniveer Vayu योजना से Indian Air Force में Airmen (अग्निवीर) बनते हैं — Science subjects वालों के लिए W (Weapon) trades और कुछ non-science trades के लिए भी मौका। हवा में सेवा करने का गर्व का रास्ता।",
+      "posts": [
+        "Agniveer Vayu (Science Stream — W/S/L trades)",
+        "Agniveer Vayu (Non-Science Stream — कुछ trades)"
+      ],
+      "eligibility": "12th Science (Physics + Maths) 50%+ (Science stream) या 12th any stream 50%+ (Non-Science)। आयु: 17.5-21 वर्ष।",
+      "examPattern": [
+        {
+          "stage": "Online Exam",
+          "detail": "English, Maths, Physics (Science stream) + Reasoning & General Awareness"
+        },
+        {
+          "stage": "Physical Fitness Test",
+          "detail": "दौड़, पुश-अप/सिट-अप + Physical Measurement"
+        },
+        {
+          "stage": "Medical",
+          "detail": "Air Force Medical Exam"
+        }
+      ],
+      "syllabus": [
+        "English",
+        "Physics",
+        "Mathematics",
+        "Reasoning & General Awareness"
+      ],
+      "salary": "₹30,000 (पहले साल) + 4% yearly increment • ~₹10.04 लाख Seva Nidhi package (4 साल)",
+      "selectionProcess": "Online Exam → PFT → Medical → Merit"
     },
     {
-     "stage": "Medical",
-     "detail": "Armed Forces Medical Exam + DV"
+      "slug": "agniveer-navy",
+      "name": "Agniveer (Navy)",
+      "emoji": "⚓",
+      "fullName": "Agniveer — Indian Navy (SSR & MR)",
+      "tags": [
+        "10th/12th",
+        "Navy",
+        "SSR/MR"
+      ],
+      "officialWebsite": "https://joinindiannavy.gov.in",
+      "examFee": "₹550 (अनुमानित) • SC/ST मुक्त",
+      "latestStatus": "Indian Navy Agniveer SSR/MR अगले cycle की notification का इंतज़ार है। पिछला batch 2025 में हुआ — joinindiannavy.gov.in चेक करें।",
+      "overview": "Indian Navy में Agniveer योजना के तहत SSR (Senior Secondary Recruit) और MR (Matric Recruit) भर्ती होती है — समुद्र पर देश की रक्षा करने वाले बहादुरों के लिए। 4 साल की सेवा + Seva Nidhi package।",
+      "posts": [
+        "Agniveer SSR (Senior Secondary Recruit)",
+        "Agniveer MR (Matric Recruit)"
+      ],
+      "eligibility": "SSR: 12th Science (Physics + Maths) 50%+। MR: 10th pass। आयु: 17.5-21 वर्ष।",
+      "examPattern": [
+        {
+          "stage": "INET-based Exam",
+          "detail": "Online — English, Reasoning, Maths/Science, GK (SSR के लिए)"
+        },
+        {
+          "stage": "PFT",
+          "detail": "Physical Fitness Test (दौड़, पुश-अप, सिट-अप) + Measurement"
+        },
+        {
+          "stage": "Medical",
+          "detail": "Navy Medical Exam"
+        }
+      ],
+      "syllabus": [
+        "English",
+        "Reasoning",
+        "Mathematics / Science",
+        "General Knowledge"
+      ],
+      "salary": "₹30,000 (पहले साल) + 4% increment • ~₹10.04 लाख Seva Nidhi package",
+      "selectionProcess": "Online Exam → PFT → Medical → Merit"
+    },
+    {
+      "slug": "afcat",
+      "name": "AFCAT",
+      "emoji": "🛩️",
+      "fullName": "Air Force Common Admission Test — Flying & Ground Duty",
+      "tags": [
+        "Graduate",
+        "Officer",
+        "Flying/Technical"
+      ],
+      "officialWebsite": "https://afcat.cdac.in",
+      "examFee": "₹550 (UR/OBC/EWS) • SC/ST मुक्त",
+      "latestStatus": "AFCAT का अगला cycle (2/2026) जल्दी आएगा। पिछला AFCAT 2025 में हुआ — afcat.cdac.in पर notification चेक करें।",
+      "overview": "AFCAT Indian Air Force में officer बनने का सबसे popular exam है — Flying Branch (पायलट), Ground Duty (Admin, Logistics, Accounts, Education) और Technical branches के लिए। Written exam + AFSB interview से selection।",
+      "posts": [
+        "Flying Branch (Fighter/Transport/Helicopter Pilot)",
+        "Ground Duty — Administration, Logistics, Accounts, Education",
+        "Technical Branch (AFCAT + EKT के साथ)"
+      ],
+      "eligibility": "Flying: Graduate + 10+2 में Maths/Physics। Ground Duty: किसी भी stream से Graduate। आयु: 20-24 (Flying) • 20-26 (Ground Duty)।",
+      "examPattern": [
+        {
+          "stage": "Written (AFCAT)",
+          "detail": "100 प्रश्न, 300 अंक, 2 घंटे — English, GK, Maths, Reasoning"
+        },
+        {
+          "stage": "EKT (Technical)",
+          "detail": "Engineering Knowledge Test — सिर्फ Technical branch के लिए (50 प्रश्न)"
+        },
+        {
+          "stage": "AFSB Interview",
+          "detail": "Air Force Selection Board — 5 दिन (Officer Intelligence Rating, Tests, Interview)"
+        },
+        {
+          "stage": "Medical",
+          "detail": "Air Force Medical Exam"
+        }
+      ],
+      "syllabus": [
+        "English Comprehension",
+        "General Awareness",
+        "Mathematics",
+        "Reasoning & Military Aptitude",
+        "Engineering (EKT)"
+      ],
+      "salary": "Flying Officer — Pay Level 10 ₹56,100 बेसिक + MSP + Flying Allowance",
+      "selectionProcess": "AFCAT Written → EKT (Tech) → AFSB Interview → Medical → Merit"
+    },
+    {
+      "slug": "inet",
+      "name": "INET",
+      "emoji": "🚢",
+      "fullName": "Indian Navy Entrance Test — SSC Officer Entries",
+      "tags": [
+        "Graduate/B.Tech",
+        "Officer",
+        "Navy"
+      ],
+      "officialWebsite": "https://joinindiannavy.gov.in",
+      "examFee": "₹0-550 (अनुमानित — notification चेक करें)",
+      "latestStatus": "INET अगले cycle की notification का इंतज़ार है। पिछला INET 2025 में हुआ — joinindiannavy.gov.in चेक करें।",
+      "overview": "INET (Indian Navy Entrance Test) से Navy में Short Service Commission (SSC) officers बनते हैं — Executive, Technical और Education branches में। Computer-based test + SSB interview के ज़रिए selection।",
+      "posts": [
+        "SSC Executive (General/IT/Logistics)",
+        "SSC Technical (Engineering branches)",
+        "SSC Education"
+      ],
+      "eligibility": "Graduate (Executive) या B.E./B.Tech (Technical)। आयु: 19-25 वर्ष (entry के हिसाब से)।",
+      "examPattern": [
+        {
+          "stage": "INET (CBT)",
+          "detail": "English, Reasoning & Numerical Ability, General Science, General Knowledge"
+        },
+        {
+          "stage": "SSB Interview",
+          "detail": "5 दिन — Officer Selection Board (Services Selection Board)"
+        },
+        {
+          "stage": "Medical",
+          "detail": "Navy Medical Exam"
+        }
+      ],
+      "syllabus": [
+        "English",
+        "Reasoning & Numerical Ability",
+        "General Science",
+        "General Knowledge & Current Affairs"
+      ],
+      "salary": "Officer pay — Level 10 ₹56,100 बेसिक + MSP + Navy allowances",
+      "selectionProcess": "INET CBT → SSB Interview → Medical → Merit"
+    },
+    {
+      "slug": "coast-guard-navik",
+      "name": "ICG Navik",
+      "emoji": "🛟",
+      "fullName": "Indian Coast Guard — Navik (General Duty & Domestic Branch)",
+      "tags": [
+        "12th Pass",
+        "Coast Guard",
+        "Uniform"
+      ],
+      "officialWebsite": "https://joincoastguard.gov.in",
+      "examFee": "₹300 (अनुमानित) • SC/ST मुक्त",
+      "latestStatus": "ICG Navik अगली notification का इंतज़ार है। पिछली भर्ती 2025 में हुई — joincoastguard.gov.in चेक करें।",
+      "overview": "Indian Coast Guard में Navik (GD) और Navik (DB) के posts के लिए यह भर्ती होती है — समुद्री सीमाओं की रक्षा, rescue operations और national security में अहम भूमिका। 12th pass के लिए बढ़िया uniform job।",
+      "posts": [
+        "Navik (General Duty)",
+        "Navik (Domestic Branch)"
+      ],
+      "eligibility": "12th pass (Maths + Physics for GD — कुछ states में)। आयु: 18-22 वर्ष।",
+      "examPattern": [
+        {
+          "stage": "Stage-I (Written)",
+          "detail": "Maths, Science, English, Reasoning (computer-based)"
+        },
+        {
+          "stage": "Stage-II",
+          "detail": "Physical Fitness Test + आगे की written/merit stage"
+        },
+        {
+          "stage": "Medical",
+          "detail": "Coast Guard Medical Exam"
+        }
+      ],
+      "syllabus": [
+        "Mathematics",
+        "Science (Physics/Chemistry)",
+        "English",
+        "Reasoning"
+      ],
+      "salary": "Pay Level 3-4 — ₹21,700-25,500 बेसिक + Coast Guard allowances",
+      "selectionProcess": "Written → PFT → Medical → Merit"
+    },
+    {
+      "slug": "coast-guard-yantrik",
+      "name": "ICG Yantrik",
+      "emoji": "🔧",
+      "fullName": "Indian Coast Guard — Navik Yantrik (Technical)",
+      "tags": [
+        "12th PCM",
+        "Technical",
+        "Diploma"
+      ],
+      "officialWebsite": "https://joincoastguard.gov.in",
+      "examFee": "₹300 (अनुमानित) • SC/ST मुक्त",
+      "latestStatus": "ICG Yantrik अगली notification का इंतज़ार है। पिछली भर्ती 2025 में हुई — joincoastguard.gov.in चेक करें।",
+      "overview": "ICG Yantrik Coast Guard के जहाजों की machinery, electrical और electronics systems की देखभाल करने वाले technical staff हैं — Mechanical, Electrical और Electronics branches में भर्ती। Technical field वालों के लिए नौसेना-स्तर की नौकरी।",
+      "posts": [
+        "Navik Yantrik (Mechanical)",
+        "Navik Yantrik (Electrical)",
+        "Navik Yantrik (Electronics)"
+      ],
+      "eligibility": "12th Science (Physics + Maths) + relevant branch में Diploma (कुछ cases में ITI)। आयु: 18-22 वर्ष।",
+      "examPattern": [
+        {
+          "stage": "Written",
+          "detail": "Maths, Physics, Chemistry, English, Reasoning (branch-specific technical)"
+        },
+        {
+          "stage": "PFT",
+          "detail": "Physical Fitness Test"
+        },
+        {
+          "stage": "Medical",
+          "detail": "Coast Guard Medical Exam"
+        }
+      ],
+      "syllabus": [
+        "Mathematics",
+        "Physics & Chemistry",
+        "Technical (Mechanical/Electrical/Electronics)",
+        "English & Reasoning"
+      ],
+      "salary": "Pay Level 4-5 — ₹25,500-29,200 बेसिक + allowances",
+      "selectionProcess": "Written → PFT → Medical → Merit"
+    },
+    {
+      "slug": "coast-guard-ac",
+      "name": "ICG Assistant Commandant",
+      "emoji": "🎖️",
+      "fullName": "Indian Coast Guard — Assistant Commandant (Officer)",
+      "tags": [
+        "Graduate",
+        "Officer",
+        "Pilot/GD"
+      ],
+      "officialWebsite": "https://joincoastguard.gov.in",
+      "examFee": "₹300 (अनुमानित) • SC/ST मुक्त",
+      "latestStatus": "ICG Assistant Commandant अगली notification का इंतज़ार है। पिछली भर्ती 2025 में हुई — joincoastguard.gov.in चेक करें।",
+      "overview": "ICG Assistant Commandant Coast Guard में officer rank की भर्ती है — General Duty, Technical (Engineering) और Pilot branches में। लिखित exam, फिर interview और medical से selection — graduates के लिए गौरवपूर्ण officer job।",
+      "posts": [
+        "Assistant Commandant (General Duty)",
+        "Assistant Commandant (Technical/Engineering)",
+        "Assistant Commandant (Pilot)"
+      ],
+      "eligibility": "Graduation (GD: कोई भी stream; Technical: B.E./B.Tech; Pilot: Physics+Maths)। आयु: 21-25 वर्ष (पायलट 19-25)।",
+      "examPattern": [
+        {
+          "stage": "Stage-I (CBT)",
+          "detail": "Maths, Reasoning, General Knowledge, English"
+        },
+        {
+          "stage": "Stage-II",
+          "detail": "Physical Fitness + Interview (Board)"
+        },
+        {
+          "stage": "Stage-III",
+          "detail": "Medical Exam + Final Merit"
+        }
+      ],
+      "syllabus": [
+        "Mathematics",
+        "Reasoning",
+        "General Knowledge",
+        "English"
+      ],
+      "salary": "Officer pay — Level 10 ₹56,100 बेसिक + MSP + Coast Guard allowances",
+      "selectionProcess": "CBT → PFT + Interview → Medical → Merit"
+    },
+    {
+      "slug": "territorial-army",
+      "name": "Territorial Army",
+      "emoji": "🏔️",
+      "fullName": "Territorial Army Officer — Part-time Army Service",
+      "tags": [
+        "Graduate",
+        "Officer",
+        "Part-time"
+      ],
+      "officialWebsite": "https://joinindianarmy.nic.in",
+      "examFee": "₹200 (अनुमानित) • SC/ST मुक्त",
+      "latestStatus": "Territorial Army (Non-Departmental) अगली notification का इंतज़ार है। पिछली भर्ती 2025 में हुई — joinindianarmy.nic.in चेक करें।",
+      "overview": "Territorial Army में officer बनने का अनोखा मौका — जहाँ आप अपनी नागरिक नौकरी के साथ साल में कुछ दिन Army में सेवा करते हैं। Training और operations के दौरान पूरा Army pay मिलता है। देशभक्तों के लिए खास अवसर।",
+      "posts": [
+        "Territorial Army Officer (Non-Departmental)",
+        "TA Officers (Departmental — सरकारी कर्मचारियों के लिए)"
+      ],
+      "eligibility": "Graduation। आयु: 18-42 वर्ष। भारतीय नागरिक।",
+      "examPattern": [
+        {
+          "stage": "Written Exam",
+          "detail": "Reasoning, Elementary Maths, GK, English"
+        },
+        {
+          "stage": "SSB Interview",
+          "detail": "Services Selection Board — Personality & Intelligence"
+        },
+        {
+          "stage": "Medical",
+          "detail": "Army Medical Exam"
+        }
+      ],
+      "syllabus": [
+        "Reasoning",
+        "Elementary Mathematics",
+        "General Knowledge",
+        "English"
+      ],
+      "salary": "सेवा/ट्रेनिंग के दिनों में Army officer pay (Level 10 ₹56,100) + pension के लाभ",
+      "selectionProcess": "Written → SSB → Medical → Commission"
+    },
+    {
+      "slug": "army-ssc-tech",
+      "name": "Army SSC (Tech)",
+      "emoji": "🥇",
+      "fullName": "Indian Army — Short Service Commission (Technical)",
+      "tags": [
+        "B.Tech",
+        "Officer",
+        "SSC"
+      ],
+      "officialWebsite": "https://joinindianarmy.nic.in",
+      "examFee": "₹200 (अनुमानित) • SC/ST मुक्त",
+      "latestStatus": "Army SSC (Tech) अगली notification का इंतज़ार है। पिछली भर्ती 2025 में हुई — joinindianarmy.nic.in चेक करें।",
+      "overview": "Army SSC (Tech) engineers के लिए Indian Army में Short Service Commission का रास्ता है — Engineering graduates को सीधे SSB interview के लिए बुलाया जाता है, कोई लिखित technical exam नहीं। 5+5 साल की सेवा का विकल्प।",
+      "posts": [
+        "SSC (Technical) Officer — Engineering branches (Civil, Mech, ECE, CSE आदि)"
+      ],
+      "eligibility": "B.E./B.Tech में 55%+ (relevant stream)। आयु: 20-27 वर्ष।",
+      "examPattern": [
+        {
+          "stage": "Shortlisting",
+          "detail": "Degree marks के आधार पर SSB के लिए shortlist"
+        },
+        {
+          "stage": "SSB Interview",
+          "detail": "5 दिन — Services Selection Board (2400 अंकों की merit)"
+        },
+        {
+          "stage": "Medical",
+          "detail": "Army Medical Exam"
+        }
+      ],
+      "syllabus": [
+        "SSB Tests (OIR, PPDT, TAT, WAT, SRT, Interview)",
+        "Group Discussions & Tasks"
+      ],
+      "salary": "Officer pay — Level 10 ₹56,100 बेसिक + MSP + Army allowances",
+      "selectionProcess": "Notification → SSB Interview → Medical → Merit"
+    },
+    {
+      "slug": "mns",
+      "name": "MNS (Military Nursing)",
+      "emoji": "🩺",
+      "fullName": "Military Nursing Service — Staff Nurse (B.Sc. Nursing)",
+      "tags": [
+        "B.Sc Nursing",
+        "Nurse",
+        "Medical"
+      ],
+      "officialWebsite": "https://www.mns-officer.in",
+      "examFee": "₹50 (अनुमानित) • मुक्त exemptions",
+      "latestStatus": "MNS अगली notification का इंतज़ार है। पिछली भर्ती 2025 में हुई — mns-officer.in चेक करें।",
+      "overview": "Military Nursing Service (MNS) में B.Sc. (Nursing) वाली उम्मीदवारों को Staff Nurse के रूप में Commission मिलता है — Army hospitals में सेवा करने का सम्मानजनक अवसर। लिखित exam + interview से selection।",
+      "posts": [
+        "MNS Staff Nurse (Short Service Commission)"
+      ],
+      "eligibility": "B.Sc. (Nursing) पूर्ण + Registered Nurse। आयु: 20-35 वर्ष (अनुमानित)।",
+      "examPattern": [
+        {
+          "stage": "Written Exam",
+          "detail": "Nursing subjects, English, General Knowledge"
+        },
+        {
+          "stage": "Interview",
+          "detail": "Officer Interview Board"
+        },
+        {
+          "stage": "Medical",
+          "detail": "Army Medical Exam"
+        }
+      ],
+      "syllabus": [
+        "Nursing (Medical-Surgical, OBG, Community Health)",
+        "English",
+        "General Knowledge"
+      ],
+      "salary": "Officer scale — Level 10 ₹56,100 बेसिक + NPA + allowances",
+      "selectionProcess": "Written → Interview → Medical → Commission"
+    },
+    {
+      "slug": "drdo-ceptam",
+      "name": "DRDO CEPTAM",
+      "emoji": "🧪",
+      "fullName": "DRDO — CEPTAM (Technician A, STA-B व अन्य)",
+      "tags": [
+        "10th/ITI/Diploma",
+        "Scientist Org",
+        "Technical"
+      ],
+      "officialWebsite": "https://www.drdo.gov.in",
+      "examFee": "₹100 (UR/OBC/EWS) • SC/ST/PwD मुक्त (अनुमानित)",
+      "latestStatus": "DRDO CEPTAM अगली notification का इंतज़ार है। पिछली भर्ती 2025 में हुई — drdo.gov.in चेक करें।",
+      "overview": "DRDO CEPTAM से देश की defence research organisation में Technician A, Senior Technical Assistant (STA-B) जैसे technical posts मिलते हैं — जहाँ आप देश के सबसे आधुनिक weapons और technology बनाने में हिस्सा लेते हैं।",
+      "posts": [
+        "Technician A (विभिन्न trades)",
+        "Senior Technical Assistant (STA-B)",
+        "Admin & Allied posts (कुछ cycles में)"
+      ],
+      "eligibility": "Technician A: 10th + ITI। STA-B: Diploma/B.Sc। आयु: 18-28 वर्ष (आरक्षित छूट)।",
+      "examPattern": [
+        {
+          "stage": "Tier-I (CBT)",
+          "detail": "General Awareness, Reasoning, Quantitative Aptitude, English (qualifying)"
+        },
+        {
+          "stage": "Tier-II",
+          "detail": "Technical/Discipline exam (post-specific)"
+        },
+        {
+          "stage": "DV",
+          "detail": "Document Verification"
+        }
+      ],
+      "syllabus": [
+        "General Awareness",
+        "Reasoning",
+        "Quantitative Aptitude",
+        "English",
+        "Technical Subjects"
+      ],
+      "salary": "Level 2-5 — ₹19,900-29,200 बेसिक + DA, HRA, भत्ते",
+      "selectionProcess": "Tier-I → Tier-II → DV"
     }
-   ],
-   "syllabus": [
-    "Mathematics",
-    "General Knowledge & Current Affairs",
-    "English / Hindi",
-    "Reasoning"
-   ],
-   "salary": "₹30,000 (पहले साल) + हर साल 4% increment • 4 साल में ~₹10.04 लाख Seva Nidhi package",
-   "selectionProcess": "CEE → PFT → Medical → Merit List (Rally स्थानों पर)"
-  },
-  {
-   "slug": "agniveer-vayu",
-   "name": "Agniveer Vayu",
-   "emoji": "✈️",
-   "fullName": "Agniveer Vayu — Indian Air Force (Airmen)",
-   "tags": [
-    "12th",
-    "Air Force",
-    "Science/Any Stream"
-   ],
-   "officialWebsite": "https://indianairforce.nic.in",
-   "examFee": "₹250 (UR/OBC/EWS) • SC/ST मुक्त",
-   "latestStatus": "Agniveer Vayu (IAF) अगले cycle की notification का इंतज़ार है। पिछला intake 2025 में हुआ — indianairforce.nic.in चेक करें।",
-   "overview": "Agniveer Vayu योजना से Indian Air Force में Airmen (अग्निवीर) बनते हैं — Science subjects वालों के लिए W (Weapon) trades और कुछ non-science trades के लिए भी मौका। हवा में सेवा करने का गर्व का रास्ता।",
-   "posts": [
-    "Agniveer Vayu (Science Stream — W/S/L trades)",
-    "Agniveer Vayu (Non-Science Stream — कुछ trades)"
-   ],
-   "eligibility": "12th Science (Physics + Maths) 50%+ (Science stream) या 12th any stream 50%+ (Non-Science)। आयु: 17.5-21 वर्ष।",
-   "examPattern": [
+  ],
+  "forces": [
     {
-     "stage": "Online Exam",
-     "detail": "English, Maths, Physics (Science stream) + Reasoning & General Awareness"
+      "name": "Indian Army",
+      "site": "https://joinindianarmy.nic.in"
     },
     {
-     "stage": "Physical Fitness Test",
-     "detail": "दौड़, पुश-अप/सिट-अप + Physical Measurement"
+      "name": "Indian Navy",
+      "site": "https://joinindiannavy.gov.in"
     },
     {
-     "stage": "Medical",
-     "detail": "Air Force Medical Exam"
+      "name": "Indian Air Force",
+      "site": "https://indianairforce.nic.in"
+    },
+    {
+      "name": "Indian Coast Guard",
+      "site": "https://joincoastguard.gov.in"
+    },
+    {
+      "name": "DRDO",
+      "site": "https://www.drdo.gov.in"
     }
-   ],
-   "syllabus": [
-    "English",
-    "Physics",
-    "Mathematics",
-    "Reasoning & General Awareness"
-   ],
-   "salary": "₹30,000 (पहले साल) + 4% yearly increment • ~₹10.04 लाख Seva Nidhi package (4 साल)",
-   "selectionProcess": "Online Exam → PFT → Medical → Merit"
+  ],
+  "hero": {
+    "badge": "🪖 भारतीय रक्षा बल भर्ती",
+    "title": "Defence Exams Center",
+    "subtitle": "Agniveer (Army/Vayu/Navy), AFCAT, INET, Coast Guard — सभी defence exams की पूरी जानकारी एक जगह। Posts, Eligibility, Exam Pattern, Syllabus और Salary।",
+    "gradient": "linear-gradient(135deg,#134e4a,#14b8a6)"
   },
-  {
-   "slug": "agniveer-navy",
-   "name": "Agniveer (Navy)",
-   "emoji": "⚓",
-   "fullName": "Agniveer — Indian Navy (SSR & MR)",
-   "tags": [
-    "10th/12th",
-    "Navy",
-    "SSR/MR"
-   ],
-   "officialWebsite": "https://joinindiannavy.gov.in",
-   "examFee": "₹550 (अनुमानित) • SC/ST मुक्त",
-   "latestStatus": "Indian Navy Agniveer SSR/MR अगले cycle की notification का इंतज़ार है। पिछला batch 2025 में हुआ — joinindiannavy.gov.in चेक करें।",
-   "overview": "Indian Navy में Agniveer योजना के तहत SSR (Senior Secondary Recruit) और MR (Matric Recruit) भर्ती होती है — समुद्र पर देश की रक्षा करने वाले बहादुरों के लिए। 4 साल की सेवा + Seva Nidhi package।",
-   "posts": [
-    "Agniveer SSR (Senior Secondary Recruit)",
-    "Agniveer MR (Matric Recruit)"
-   ],
-   "eligibility": "SSR: 12th Science (Physics + Maths) 50%+। MR: 10th pass। आयु: 17.5-21 वर्ष।",
-   "examPattern": [
-    {
-     "stage": "INET-based Exam",
-     "detail": "Online — English, Reasoning, Maths/Science, GK (SSR के लिए)"
-    },
-    {
-     "stage": "PFT",
-     "detail": "Physical Fitness Test (दौड़, पुश-अप, सिट-अप) + Measurement"
-    },
-    {
-     "stage": "Medical",
-     "detail": "Navy Medical Exam"
-    }
-   ],
-   "syllabus": [
-    "English",
-    "Reasoning",
-    "Mathematics / Science",
-    "General Knowledge"
-   ],
-   "salary": "₹30,000 (पहले साल) + 4% increment • ~₹10.04 लाख Seva Nidhi package",
-   "selectionProcess": "Online Exam → PFT → Medical → Merit"
-  },
-  {
-   "slug": "afcat",
-   "name": "AFCAT",
-   "emoji": "🛩️",
-   "fullName": "Air Force Common Admission Test — Flying & Ground Duty",
-   "tags": [
-    "Graduate",
-    "Officer",
-    "Flying/Technical"
-   ],
-   "officialWebsite": "https://afcat.cdac.in",
-   "examFee": "₹550 (UR/OBC/EWS) • SC/ST मुक्त",
-   "latestStatus": "AFCAT का अगला cycle (2/2026) जल्दी आएगा। पिछला AFCAT 2025 में हुआ — afcat.cdac.in पर notification चेक करें।",
-   "overview": "AFCAT Indian Air Force में officer बनने का सबसे popular exam है — Flying Branch (पायलट), Ground Duty (Admin, Logistics, Accounts, Education) और Technical branches के लिए। Written exam + AFSB interview से selection।",
-   "posts": [
-    "Flying Branch (Fighter/Transport/Helicopter Pilot)",
-    "Ground Duty — Administration, Logistics, Accounts, Education",
-    "Technical Branch (AFCAT + EKT के साथ)"
-   ],
-   "eligibility": "Flying: Graduate + 10+2 में Maths/Physics। Ground Duty: किसी भी stream से Graduate। आयु: 20-24 (Flying) • 20-26 (Ground Duty)।",
-   "examPattern": [
-    {
-     "stage": "Written (AFCAT)",
-     "detail": "100 प्रश्न, 300 अंक, 2 घंटे — English, GK, Maths, Reasoning"
-    },
-    {
-     "stage": "EKT (Technical)",
-     "detail": "Engineering Knowledge Test — सिर्फ Technical branch के लिए (50 प्रश्न)"
-    },
-    {
-     "stage": "AFSB Interview",
-     "detail": "Air Force Selection Board — 5 दिन (Officer Intelligence Rating, Tests, Interview)"
-    },
-    {
-     "stage": "Medical",
-     "detail": "Air Force Medical Exam"
-    }
-   ],
-   "syllabus": [
-    "English Comprehension",
-    "General Awareness",
-    "Mathematics",
-    "Reasoning & Military Aptitude",
-    "Engineering (EKT)"
-   ],
-   "salary": "Flying Officer — Pay Level 10 ₹56,100 बेसिक + MSP + Flying Allowance",
-   "selectionProcess": "AFCAT Written → EKT (Tech) → AFSB Interview → Medical → Merit"
-  },
-  {
-   "slug": "inet",
-   "name": "INET",
-   "emoji": "🚢",
-   "fullName": "Indian Navy Entrance Test — SSC Officer Entries",
-   "tags": [
-    "Graduate/B.Tech",
-    "Officer",
-    "Navy"
-   ],
-   "officialWebsite": "https://joinindiannavy.gov.in",
-   "examFee": "₹0-550 (अनुमानित — notification चेक करें)",
-   "latestStatus": "INET अगले cycle की notification का इंतज़ार है। पिछला INET 2025 में हुआ — joinindiannavy.gov.in चेक करें।",
-   "overview": "INET (Indian Navy Entrance Test) से Navy में Short Service Commission (SSC) officers बनते हैं — Executive, Technical और Education branches में। Computer-based test + SSB interview के ज़रिए selection।",
-   "posts": [
-    "SSC Executive (General/IT/Logistics)",
-    "SSC Technical (Engineering branches)",
-    "SSC Education"
-   ],
-   "eligibility": "Graduate (Executive) या B.E./B.Tech (Technical)। आयु: 19-25 वर्ष (entry के हिसाब से)।",
-   "examPattern": [
-    {
-     "stage": "INET (CBT)",
-     "detail": "English, Reasoning & Numerical Ability, General Science, General Knowledge"
-    },
-    {
-     "stage": "SSB Interview",
-     "detail": "5 दिन — Officer Selection Board (Services Selection Board)"
-    },
-    {
-     "stage": "Medical",
-     "detail": "Navy Medical Exam"
-    }
-   ],
-   "syllabus": [
-    "English",
-    "Reasoning & Numerical Ability",
-    "General Science",
-    "General Knowledge & Current Affairs"
-   ],
-   "salary": "Officer pay — Level 10 ₹56,100 बेसिक + MSP + Navy allowances",
-   "selectionProcess": "INET CBT → SSB Interview → Medical → Merit"
-  },
-  {
-   "slug": "coast-guard-navik",
-   "name": "ICG Navik",
-   "emoji": "🛟",
-   "fullName": "Indian Coast Guard — Navik (General Duty & Domestic Branch)",
-   "tags": [
-    "12th Pass",
-    "Coast Guard",
-    "Uniform"
-   ],
-   "officialWebsite": "https://joincoastguard.gov.in",
-   "examFee": "₹300 (अनुमानित) • SC/ST मुक्त",
-   "latestStatus": "ICG Navik अगली notification का इंतज़ार है। पिछली भर्ती 2025 में हुई — joincoastguard.gov.in चेक करें।",
-   "overview": "Indian Coast Guard में Navik (GD) और Navik (DB) के posts के लिए यह भर्ती होती है — समुद्री सीमाओं की रक्षा, rescue operations और national security में अहम भूमिका। 12th pass के लिए बढ़िया uniform job।",
-   "posts": [
-    "Navik (General Duty)",
-    "Navik (Domestic Branch)"
-   ],
-   "eligibility": "12th pass (Maths + Physics for GD — कुछ states में)। आयु: 18-22 वर्ष।",
-   "examPattern": [
-    {
-     "stage": "Stage-I (Written)",
-     "detail": "Maths, Science, English, Reasoning (computer-based)"
-    },
-    {
-     "stage": "Stage-II",
-     "detail": "Physical Fitness Test + आगे की written/merit stage"
-    },
-    {
-     "stage": "Medical",
-     "detail": "Coast Guard Medical Exam"
-    }
-   ],
-   "syllabus": [
-    "Mathematics",
-    "Science (Physics/Chemistry)",
-    "English",
-    "Reasoning"
-   ],
-   "salary": "Pay Level 3-4 — ₹21,700-25,500 बेसिक + Coast Guard allowances",
-   "selectionProcess": "Written → PFT → Medical → Merit"
-  },
-  {
-   "slug": "coast-guard-yantrik",
-   "name": "ICG Yantrik",
-   "emoji": "🔧",
-   "fullName": "Indian Coast Guard — Navik Yantrik (Technical)",
-   "tags": [
-    "12th PCM",
-    "Technical",
-    "Diploma"
-   ],
-   "officialWebsite": "https://joincoastguard.gov.in",
-   "examFee": "₹300 (अनुमानित) • SC/ST मुक्त",
-   "latestStatus": "ICG Yantrik अगली notification का इंतज़ार है। पिछली भर्ती 2025 में हुई — joincoastguard.gov.in चेक करें।",
-   "overview": "ICG Yantrik Coast Guard के जहाजों की machinery, electrical और electronics systems की देखभाल करने वाले technical staff हैं — Mechanical, Electrical और Electronics branches में भर्ती। Technical field वालों के लिए नौसेना-स्तर की नौकरी।",
-   "posts": [
-    "Navik Yantrik (Mechanical)",
-    "Navik Yantrik (Electrical)",
-    "Navik Yantrik (Electronics)"
-   ],
-   "eligibility": "12th Science (Physics + Maths) + relevant branch में Diploma (कुछ cases में ITI)। आयु: 18-22 वर्ष।",
-   "examPattern": [
-    {
-     "stage": "Written",
-     "detail": "Maths, Physics, Chemistry, English, Reasoning (branch-specific technical)"
-    },
-    {
-     "stage": "PFT",
-     "detail": "Physical Fitness Test"
-    },
-    {
-     "stage": "Medical",
-     "detail": "Coast Guard Medical Exam"
-    }
-   ],
-   "syllabus": [
-    "Mathematics",
-    "Physics & Chemistry",
-    "Technical (Mechanical/Electrical/Electronics)",
-    "English & Reasoning"
-   ],
-   "salary": "Pay Level 4-5 — ₹25,500-29,200 बेसिक + allowances",
-   "selectionProcess": "Written → PFT → Medical → Merit"
-  },
-  {
-   "slug": "coast-guard-ac",
-   "name": "ICG Assistant Commandant",
-   "emoji": "🎖️",
-   "fullName": "Indian Coast Guard — Assistant Commandant (Officer)",
-   "tags": [
-    "Graduate",
-    "Officer",
-    "Pilot/GD"
-   ],
-   "officialWebsite": "https://joincoastguard.gov.in",
-   "examFee": "₹300 (अनुमानित) • SC/ST मुक्त",
-   "latestStatus": "ICG Assistant Commandant अगली notification का इंतज़ार है। पिछली भर्ती 2025 में हुई — joincoastguard.gov.in चेक करें।",
-   "overview": "ICG Assistant Commandant Coast Guard में officer rank की भर्ती है — General Duty, Technical (Engineering) और Pilot branches में। लिखित exam, फिर interview और medical से selection — graduates के लिए गौरवपूर्ण officer job।",
-   "posts": [
-    "Assistant Commandant (General Duty)",
-    "Assistant Commandant (Technical/Engineering)",
-    "Assistant Commandant (Pilot)"
-   ],
-   "eligibility": "Graduation (GD: कोई भी stream; Technical: B.E./B.Tech; Pilot: Physics+Maths)। आयु: 21-25 वर्ष (पायलट 19-25)।",
-   "examPattern": [
-    {
-     "stage": "Stage-I (CBT)",
-     "detail": "Maths, Reasoning, General Knowledge, English"
-    },
-    {
-     "stage": "Stage-II",
-     "detail": "Physical Fitness + Interview (Board)"
-    },
-    {
-     "stage": "Stage-III",
-     "detail": "Medical Exam + Final Merit"
-    }
-   ],
-   "syllabus": [
-    "Mathematics",
-    "Reasoning",
-    "General Knowledge",
-    "English"
-   ],
-   "salary": "Officer pay — Level 10 ₹56,100 बेसिक + MSP + Coast Guard allowances",
-   "selectionProcess": "CBT → PFT + Interview → Medical → Merit"
-  },
-  {
-   "slug": "territorial-army",
-   "name": "Territorial Army",
-   "emoji": "🏔️",
-   "fullName": "Territorial Army Officer — Part-time Army Service",
-   "tags": [
-    "Graduate",
-    "Officer",
-    "Part-time"
-   ],
-   "officialWebsite": "https://joinindianarmy.nic.in",
-   "examFee": "₹200 (अनुमानित) • SC/ST मुक्त",
-   "latestStatus": "Territorial Army (Non-Departmental) अगली notification का इंतज़ार है। पिछली भर्ती 2025 में हुई — joinindianarmy.nic.in चेक करें।",
-   "overview": "Territorial Army में officer बनने का अनोखा मौका — जहाँ आप अपनी नागरिक नौकरी के साथ साल में कुछ दिन Army में सेवा करते हैं। Training और operations के दौरान पूरा Army pay मिलता है। देशभक्तों के लिए खास अवसर।",
-   "posts": [
-    "Territorial Army Officer (Non-Departmental)",
-    "TA Officers (Departmental — सरकारी कर्मचारियों के लिए)"
-   ],
-   "eligibility": "Graduation। आयु: 18-42 वर्ष। भारतीय नागरिक।",
-   "examPattern": [
-    {
-     "stage": "Written Exam",
-     "detail": "Reasoning, Elementary Maths, GK, English"
-    },
-    {
-     "stage": "SSB Interview",
-     "detail": "Services Selection Board — Personality & Intelligence"
-    },
-    {
-     "stage": "Medical",
-     "detail": "Army Medical Exam"
-    }
-   ],
-   "syllabus": [
-    "Reasoning",
-    "Elementary Mathematics",
-    "General Knowledge",
-    "English"
-   ],
-   "salary": "सेवा/ट्रेनिंग के दिनों में Army officer pay (Level 10 ₹56,100) + pension के लाभ",
-   "selectionProcess": "Written → SSB → Medical → Commission"
-  },
-  {
-   "slug": "army-ssc-tech",
-   "name": "Army SSC (Tech)",
-   "emoji": "🥇",
-   "fullName": "Indian Army — Short Service Commission (Technical)",
-   "tags": [
-    "B.Tech",
-    "Officer",
-    "SSC"
-   ],
-   "officialWebsite": "https://joinindianarmy.nic.in",
-   "examFee": "₹200 (अनुमानित) • SC/ST मुक्त",
-   "latestStatus": "Army SSC (Tech) अगली notification का इंतज़ार है। पिछली भर्ती 2025 में हुई — joinindianarmy.nic.in चेक करें।",
-   "overview": "Army SSC (Tech) engineers के लिए Indian Army में Short Service Commission का रास्ता है — Engineering graduates को सीधे SSB interview के लिए बुलाया जाता है, कोई लिखित technical exam नहीं। 5+5 साल की सेवा का विकल्प।",
-   "posts": [
-    "SSC (Technical) Officer — Engineering branches (Civil, Mech, ECE, CSE आदि)"
-   ],
-   "eligibility": "B.E./B.Tech में 55%+ (relevant stream)। आयु: 20-27 वर्ष।",
-   "examPattern": [
-    {
-     "stage": "Shortlisting",
-     "detail": "Degree marks के आधार पर SSB के लिए shortlist"
-    },
-    {
-     "stage": "SSB Interview",
-     "detail": "5 दिन — Services Selection Board (2400 अंकों की merit)"
-    },
-    {
-     "stage": "Medical",
-     "detail": "Army Medical Exam"
-    }
-   ],
-   "syllabus": [
-    "SSB Tests (OIR, PPDT, TAT, WAT, SRT, Interview)",
-    "Group Discussions & Tasks"
-   ],
-   "salary": "Officer pay — Level 10 ₹56,100 बेसिक + MSP + Army allowances",
-   "selectionProcess": "Notification → SSB Interview → Medical → Merit"
-  },
-  {
-   "slug": "mns",
-   "name": "MNS (Military Nursing)",
-   "emoji": "🩺",
-   "fullName": "Military Nursing Service — Staff Nurse (B.Sc. Nursing)",
-   "tags": [
-    "B.Sc Nursing",
-    "Nurse",
-    "Medical"
-   ],
-   "officialWebsite": "https://www.mns-officer.in",
-   "examFee": "₹50 (अनुमानित) • मुक्त exemptions",
-   "latestStatus": "MNS अगली notification का इंतज़ार है। पिछली भर्ती 2025 में हुई — mns-officer.in चेक करें।",
-   "overview": "Military Nursing Service (MNS) में B.Sc. (Nursing) वाली उम्मीदवारों को Staff Nurse के रूप में Commission मिलता है — Army hospitals में सेवा करने का सम्मानजनक अवसर। लिखित exam + interview से selection।",
-   "posts": [
-    "MNS Staff Nurse (Short Service Commission)"
-   ],
-   "eligibility": "B.Sc. (Nursing) पूर्ण + Registered Nurse। आयु: 20-35 वर्ष (अनुमानित)।",
-   "examPattern": [
-    {
-     "stage": "Written Exam",
-     "detail": "Nursing subjects, English, General Knowledge"
-    },
-    {
-     "stage": "Interview",
-     "detail": "Officer Interview Board"
-    },
-    {
-     "stage": "Medical",
-     "detail": "Army Medical Exam"
-    }
-   ],
-   "syllabus": [
-    "Nursing (Medical-Surgical, OBG, Community Health)",
-    "English",
-    "General Knowledge"
-   ],
-   "salary": "Officer scale — Level 10 ₹56,100 बेसिक + NPA + allowances",
-   "selectionProcess": "Written → Interview → Medical → Commission"
-  },
-  {
-   "slug": "drdo-ceptam",
-   "name": "DRDO CEPTAM",
-   "emoji": "🧪",
-   "fullName": "DRDO — CEPTAM (Technician A, STA-B व अन्य)",
-   "tags": [
-    "10th/ITI/Diploma",
-    "Scientist Org",
-    "Technical"
-   ],
-   "officialWebsite": "https://www.drdo.gov.in",
-   "examFee": "₹100 (UR/OBC/EWS) • SC/ST/PwD मुक्त (अनुमानित)",
-   "latestStatus": "DRDO CEPTAM अगली notification का इंतज़ार है। पिछली भर्ती 2025 में हुई — drdo.gov.in चेक करें।",
-   "overview": "DRDO CEPTAM से देश की defence research organisation में Technician A, Senior Technical Assistant (STA-B) जैसे technical posts मिलते हैं — जहाँ आप देश के सबसे आधुनिक weapons और technology बनाने में हिस्सा लेते हैं।",
-   "posts": [
-    "Technician A (विभिन्न trades)",
-    "Senior Technical Assistant (STA-B)",
-    "Admin & Allied posts (कुछ cycles में)"
-   ],
-   "eligibility": "Technician A: 10th + ITI। STA-B: Diploma/B.Sc। आयु: 18-28 वर्ष (आरक्षित छूट)।",
-   "examPattern": [
-    {
-     "stage": "Tier-I (CBT)",
-     "detail": "General Awareness, Reasoning, Quantitative Aptitude, English (qualifying)"
-    },
-    {
-     "stage": "Tier-II",
-     "detail": "Technical/Discipline exam (post-specific)"
-    },
-    {
-     "stage": "DV",
-     "detail": "Document Verification"
-    }
-   ],
-   "syllabus": [
-    "General Awareness",
-    "Reasoning",
-    "Quantitative Aptitude",
-    "English",
-    "Technical Subjects"
-   ],
-   "salary": "Level 2-5 — ₹19,900-29,200 बेसिक + DA, HRA, भत्ते",
-   "selectionProcess": "Tier-I → Tier-II → DV"
-  }
- ],
- "forces": [
-  {
-   "name": "Indian Army",
-   "site": "https://joinindianarmy.nic.in"
-  },
-  {
-   "name": "Indian Navy",
-   "site": "https://joinindiannavy.gov.in"
-  },
-  {
-   "name": "Indian Air Force",
-   "site": "https://indianairforce.nic.in"
-  },
-  {
-   "name": "Indian Coast Guard",
-   "site": "https://joincoastguard.gov.in"
-  },
-  {
-   "name": "DRDO",
-   "site": "https://www.drdo.gov.in"
-  }
- ]
+  "quickLinks": [
+    [
+      "/results",
+      "🏆 Defence Results"
+    ],
+    [
+      "/admit-cards",
+      "📄 Admit Card"
+    ],
+    [
+      "/category/defence",
+      "🪖 All Defence Exams"
+    ],
+    [
+      "/syllabus",
+      "📚 Syllabus"
+    ],
+    [
+      "/notifications",
+      "🔔 Updates"
+    ],
+    [
+      "https://joinindianarmy.nic.in",
+      "🌐 Official Army Portal"
+    ]
+  ],
+  "statsCards": [
+    [
+      "📋",
+      12,
+      "Major Exams"
+    ],
+    [
+      "🪖",
+      "3",
+      "Agniveer Entries"
+    ],
+    [
+      "🌊",
+      "1.5L+",
+      "Posts हर साल"
+    ]
+  ]
 }
