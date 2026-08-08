@@ -1,550 +1,599 @@
 {
- "updated": "2026-08-08",
- "note": "सभी जानकारी अनुमानित/संकेतात्मक है। UPSC हर साल fee, age limit, pattern और dates बदल सकता है — हमेशा upsc.gov.in पर official notification ज़रूर चेक करें।",
- "stats": {
-  "exams": 12,
-  "stages": 3,
-  "services": 8
- },
- "exams": [
-  {
-   "slug": "upsc-cse",
-   "name": "UPSC CSE",
-   "emoji": "🎖️",
-   "fullName": "Civil Services Examination — IAS, IPS, IFS, IRS",
-   "tags": [
-    "Graduate",
-    "IAS/IPS",
-    "Top Exam"
-   ],
-   "officialWebsite": "https://upsc.gov.in",
-   "examFee": "₹100 (UR/OBC/EWS) • महिला/SC/ST/PwD मुक्त",
-   "latestStatus": "UPSC CSE 2026 के mains/exam cycle की तैयारी जारी है। 2027 के notification की तारीख upsc.gov.in पर अपडेट होगी।",
-   "overview": "UPSC CSE देश का सबसे प्रतिष्ठित exam है — जिससे IAS, IPS, IFS, IRS जैसे top services मिलती हैं। तीन stages — Prelims, Mains और Interview। हर साल लाखों aspirants, और चुने जाते हैं ~1,000। यह सिर्फ exam नहीं, जीवन बदलने वाला सफर है।",
-   "posts": [
-    "IAS — Indian Administrative Service",
-    "IPS — Indian Police Service",
-    "IFS — Indian Foreign Service",
-    "IRS (IT) — Income Tax",
-    "IRS (C&CE) — Customs & Excise",
-    "IRTS, IPoS, IA&AS व अन्य Group A/B services"
-   ],
-   "eligibility": "किसी भी मान्यता प्राप्त विश्वविद्यालय से Graduation। आयु: 21-32 वर्ष (IAS/IPS/IFS), attempts: General 6 • OBC 9 • SC/ST unlimited।",
-   "examPattern": [
+  "updated": "2026-08-08T06:34:00.995Z",
+  "note": "सभी जानकारी अनुमानित/संकेतात्मक है। UPSC हर साल fee, age limit, pattern और dates बदल सकता है — हमेशा upsc.gov.in पर official notification ज़रूर चेक करें।",
+  "stats": {
+    "exams": 12,
+    "stages": 3,
+    "services": 8
+  },
+  "exams": [
     {
-     "stage": "Prelims",
-     "detail": "2 papers, 400 अंक, 200 प्रश्न — GS Paper-I + CSAT (Paper-II qualifying, 33% ज़रूरी)"
+      "slug": "upsc-cse",
+      "name": "UPSC CSE",
+      "emoji": "🎖️",
+      "fullName": "Civil Services Examination — IAS, IPS, IFS, IRS",
+      "tags": [
+        "Graduate",
+        "IAS/IPS",
+        "Top Exam"
+      ],
+      "officialWebsite": "https://upsc.gov.in",
+      "examFee": "₹100 (UR/OBC/EWS) • महिला/SC/ST/PwD मुक्त",
+      "latestStatus": "UPSC CSE 2026 के mains/exam cycle की तैयारी जारी है। 2027 के notification की तारीख upsc.gov.in पर अपडेट होगी।",
+      "overview": "UPSC CSE देश का सबसे प्रतिष्ठित exam है — जिससे IAS, IPS, IFS, IRS जैसे top services मिलती हैं। तीन stages — Prelims, Mains और Interview। हर साल लाखों aspirants, और चुने जाते हैं ~1,000। यह सिर्फ exam नहीं, जीवन बदलने वाला सफर है।",
+      "posts": [
+        "IAS — Indian Administrative Service",
+        "IPS — Indian Police Service",
+        "IFS — Indian Foreign Service",
+        "IRS (IT) — Income Tax",
+        "IRS (C&CE) — Customs & Excise",
+        "IRTS, IPoS, IA&AS व अन्य Group A/B services"
+      ],
+      "eligibility": "किसी भी मान्यता प्राप्त विश्वविद्यालय से Graduation। आयु: 21-32 वर्ष (IAS/IPS/IFS), attempts: General 6 • OBC 9 • SC/ST unlimited।",
+      "examPattern": [
+        {
+          "stage": "Prelims",
+          "detail": "2 papers, 400 अंक, 200 प्रश्न — GS Paper-I + CSAT (Paper-II qualifying, 33% ज़रूरी)"
+        },
+        {
+          "stage": "Mains",
+          "detail": "9 papers, 1750 अंक — Essay, GS-I/II/III/IV, Optional, English + Indian Language (qualifying)"
+        },
+        {
+          "stage": "Interview",
+          "detail": "275 अंक — Personality Test (UPSC Board द्वारा)"
+        }
+      ],
+      "syllabus": [
+        "General Studies (History, Geography, Polity, Economy, Science & Tech)",
+        "CSAT (Aptitude)",
+        "Essay",
+        "Optional Subject",
+        "Current Affairs"
+      ],
+      "salary": "Pay Level 10 — ₹56,100 बेसिक (entry) + DA, HRA व भत्ते; IAS में जल्दी promotion से Level 18 तक",
+      "selectionProcess": "Prelims → Mains → Interview → DV"
     },
     {
-     "stage": "Mains",
-     "detail": "9 papers, 1750 अंक — Essay, GS-I/II/III/IV, Optional, English + Indian Language (qualifying)"
+      "slug": "upsc-nda",
+      "name": "UPSC NDA/NA",
+      "emoji": "🛩️",
+      "fullName": "National Defence Academy & Naval Academy Examination",
+      "tags": [
+        "12th Pass",
+        "Army/Navy/Air Force",
+        "Officer"
+      ],
+      "officialWebsite": "https://upsc.gov.in",
+      "examFee": "₹100 (UR/OBC) • महिला/SC/ST मुक्त",
+      "latestStatus": "UPSC NDA/NA अगले cycle की notification का इंतज़ार है। पिछला cycle 2025 में हुआ — upsc.gov.in चेक करें।",
+      "overview": "UPSC NDA/NA 12th pass छात्रों के लिए Indian Army, Navy और Air Force में officer बनने का सबसे सीधा रास्ता। लिखित exam के बाद SSB interview — खुद को साबित करने का मौका। पूरी ट्रेनिंग NDA खडकवासला में।",
+      "posts": [
+        "Indian Army (NDA)",
+        "Indian Navy (NA)",
+        "Indian Air Force (NDA Air Force Wing)"
+      ],
+      "eligibility": "12th pass — Army wing: कोई भी stream; Air Force/Navy: Physics + Maths। आयु: 15.5-19.5 वर्ष, unmarried।",
+      "examPattern": [
+        {
+          "stage": "Written",
+          "detail": "2 papers — Mathematics (300 अंक) + General Ability Test (600 अंक, English+GK)"
+        },
+        {
+          "stage": "SSB Interview",
+          "detail": "5 दिन का Personality & Intelligence Test (900 अंक)"
+        },
+        {
+          "stage": "Medical",
+          "detail": "Armed Forces Medical Exam"
+        }
+      ],
+      "syllabus": [
+        "Mathematics (Algebra, Calculus, Trigonometry, Vectors...)",
+        "English",
+        "General Knowledge (Physics, Chemistry, Biology, History, Geography, Current Affairs)"
+      ],
+      "salary": "Cadet stipend ~₹21,000/माह (ट्रेनिंग के दौरान); Commission के बाद officer pay Level 10 ₹56,100",
+      "selectionProcess": "Written → SSB → Medical → Merit"
     },
     {
-     "stage": "Interview",
-     "detail": "275 अंक — Personality Test (UPSC Board द्वारा)"
+      "slug": "upsc-cds",
+      "name": "UPSC CDS",
+      "emoji": "🚁",
+      "fullName": "Combined Defence Services Examination (IMA/INA/AFA/OTA)",
+      "tags": [
+        "Graduate",
+        "Defence",
+        "SSB"
+      ],
+      "officialWebsite": "https://upsc.gov.in",
+      "examFee": "₹200 (UR/OBC) • महिला/SC/ST मुक्त",
+      "latestStatus": "UPSC CDS अगले cycle की notification का इंतज़ार है। पिछला cycle 2025 में हुआ — upsc.gov.in चेक करें।",
+      "overview": "UPSC CDS graduates के लिए Indian Army (IMA), Navy (INA), Air Force (AFA) और OTA में officer बनने का रास्ता है। लिखित exam + SSB interview से selection — देश की सेवा का सबसे गौरवपूर्ण रास्ता।",
+      "posts": [
+        "Indian Military Academy (IMA) — Army",
+        "Indian Naval Academy (INA) — Navy",
+        "Air Force Academy (AFA) — Air Force",
+        "Officers Training Academy (OTA) — Short Service"
+      ],
+      "eligibility": "Graduation (IMA/OTA: कोई भी stream; INA: B.E./Engineering; AFA: B.E./B.Tech with Physics+Maths)। आयु: 19-25 (IMA/INA/OTA), 20-24 (AFA)।",
+      "examPattern": [
+        {
+          "stage": "Written",
+          "detail": "English (100) + General Knowledge (100) + Elementary Maths (100 — IMA/INA/AFA के लिए)"
+        },
+        {
+          "stage": "SSB Interview",
+          "detail": "5 दिन का Personality Test (300 अंक)"
+        },
+        {
+          "stage": "Medical",
+          "detail": "Armed Forces Medical Exam"
+        }
+      ],
+      "syllabus": [
+        "English",
+        "General Knowledge (History, Geography, Polity, Economy, Science)",
+        "Elementary Mathematics"
+      ],
+      "salary": "Officer pay Level 10 — ₹56,100 बेसिक + MSP व सभी defence भत्ते",
+      "selectionProcess": "Written → SSB → Medical → Merit"
+    },
+    {
+      "slug": "upsc-capf-ac",
+      "name": "UPSC CAPF AC",
+      "emoji": "🛡️",
+      "fullName": "Central Armed Police Forces — Assistant Commandant",
+      "tags": [
+        "Graduate",
+        "Officer Post",
+        "CRPF/BSF/CISF"
+      ],
+      "officialWebsite": "https://upsc.gov.in",
+      "examFee": "₹200 (UR/OBC) • महिला/SC/ST/PwD मुक्त",
+      "latestStatus": "UPSC CAPF AC अगले cycle की notification का इंतज़ार है। पिछला cycle 2025 में हुआ — upsc.gov.in चेक करें।",
+      "overview": "UPSC CAPF AC से CRPF, BSF, CISF, ITBP और SSB में Assistant Commandant (officer rank) बनते हैं — police forces में gazetted officer की नौकरी। लिखित exam + interview + physical test का पूरा सफर।",
+      "posts": [
+        "Assistant Commandant — BSF",
+        "Assistant Commandant — CRPF",
+        "Assistant Commandant — CISF",
+        "Assistant Commandant — ITBP",
+        "Assistant Commandant — SSB"
+      ],
+      "eligibility": "किसी भी मान्यता प्राप्त विश्वविद्यालय से Graduation। आयु: 20-25 वर्ष (आरक्षित वर्गों को छूट), unmarried पुरुष/महिला।",
+      "examPattern": [
+        {
+          "stage": "Paper-I",
+          "detail": "250 अंक, 2 घंटे — General Studies (objective)"
+        },
+        {
+          "stage": "Paper-II",
+          "detail": "200 अंक, 3 घंटे — Essay, Comprehension, Precis (descriptive)"
+        },
+        {
+          "stage": "Interview + PET",
+          "detail": "Personality Test 150 अंक + Physical Efficiency Test + Medical"
+        }
+      ],
+      "syllabus": [
+        "General Studies (History, Polity, Geography, Economy, Science)",
+        "Current Affairs",
+        "Essay & Comprehension",
+        "English/Hindi"
+      ],
+      "salary": "Pay Level 10 — ₹56,100 बेसिक + RRA (₹8,000) + DA, HRA, भत्ते",
+      "selectionProcess": "Paper-I → Paper-II → PET/PST → Interview → Medical → DV"
+    },
+    {
+      "slug": "upsc-cisf-ac",
+      "name": "UPSC CISF AC",
+      "emoji": "🏭",
+      "fullName": "Central Industrial Security Force — Assistant Commandant (Executive)",
+      "tags": [
+        "Graduate",
+        "Officer Post",
+        "CISF"
+      ],
+      "officialWebsite": "https://upsc.gov.in",
+      "examFee": "₹200 (UR/OBC) • महिला/SC/ST/PwD मुक्त",
+      "latestStatus": "UPSC CISF AC अगली notification का इंतज़ार है। पिछली भर्ती 2025 में हुई — upsc.gov.in चेक करें।",
+      "overview": "UPSC CISF AC (Executive) से CISF में Assistant Commandant बनते हैं — देश के industries, airports, ports और nuclear installations की सुरक्षा का ज़िम्मा। एक dedicated UPSC exam जिसमें सिर्फ CISF के लिए भर्ती होती है।",
+      "posts": [
+        "Assistant Commandant (Executive) — CISF"
+      ],
+      "eligibility": "किसी भी मान्यता प्राप्त विश्वविद्यालय से Graduation। आयु: 20-25 वर्ष (आरक्षित वर्गों को छूट), unmarried।",
+      "examPattern": [
+        {
+          "stage": "Paper-I",
+          "detail": "250 अंक — General Studies (objective)"
+        },
+        {
+          "stage": "Paper-II",
+          "detail": "200 अंक — Essay, Comprehension, Precis (descriptive)"
+        },
+        {
+          "stage": "Interview + PET",
+          "detail": "Personality Test 150 अंक + Physical Test + Medical"
+        }
+      ],
+      "syllabus": [
+        "General Studies",
+        "Current Affairs",
+        "Essay & Comprehension",
+        "English/Hindi"
+      ],
+      "salary": "Pay Level 10 — ₹56,100 बेसिक + RRA + DA, HRA, भत्ते",
+      "selectionProcess": "Paper-I → Paper-II → PET → Interview → Medical → DV"
+    },
+    {
+      "slug": "upsc-ese",
+      "name": "UPSC ESE (IES)",
+      "emoji": "⚙️",
+      "fullName": "Engineering Services Examination — Indian Engineering Services",
+      "tags": [
+        "B.Tech",
+        "Engineer",
+        "Group A"
+      ],
+      "officialWebsite": "https://upsc.gov.in",
+      "examFee": "₹200 (UR/OBC) • महिला/SC/ST/PwD मुक्त",
+      "latestStatus": "UPSC ESE अगले cycle की notification का इंतज़ार है। पिछला cycle 2025 में हुआ — upsc.gov.in चेक करें।",
+      "overview": "UPSC ESE (IES) engineers के लिए देश का सबसे प्रतिष्ठित सरकारी exam — जिससे Civil, Mechanical, Electrical और Electronics & Telecom engineers को Indian Engineering Services में Group A posts मिलती हैं (Railways, CPWD, MES, Defence, CWC आदि)।",
+      "posts": [
+        "Indian Railway Service of Engineers",
+        "Central Engineering Service (CPWD)",
+        "Military Engineering Service (MES)",
+        "Central Water Engineering Service (CWC)",
+        "Telecom Engineering Service"
+      ],
+      "eligibility": "Engineering में B.E./B.Tech (Civil/Mechanical/Electrical/Electronics & Telecom) या समकक्ष। आयु: 21-30 वर्ष (आरक्षित वर्गों को छूट)।",
+      "examPattern": [
+        {
+          "stage": "Stage-I (Prelims)",
+          "detail": "2 papers (objective) — General Studies & Engineering Aptitude + Technical paper"
+        },
+        {
+          "stage": "Stage-II (Mains)",
+          "detail": "2 papers (conventional) — Engineering discipline के technical questions"
+        },
+        {
+          "stage": "Stage-III (Interview)",
+          "detail": "Personality Test"
+        }
+      ],
+      "syllabus": [
+        "General Studies & Engineering Aptitude",
+        "Civil / Mechanical / Electrical / Electronics & Telecom Engineering",
+        "Current Affairs"
+      ],
+      "salary": "Pay Level 10 — ₹56,100 बेसिक + DA, HRA, भत्ते",
+      "selectionProcess": "Stage-I → Stage-II → Interview → DV"
+    },
+    {
+      "slug": "upsc-cms",
+      "name": "UPSC CMS",
+      "emoji": "🩺",
+      "fullName": "Combined Medical Services Examination",
+      "tags": [
+        "MBBS",
+        "Doctor",
+        "GDMO"
+      ],
+      "officialWebsite": "https://upsc.gov.in",
+      "examFee": "₹200 (UR/OBC) • महिला/SC/ST/PwD मुक्त",
+      "latestStatus": "UPSC CMS अगले cycle की notification का इंतज़ार है। पिछला cycle 2025 में हुआ — upsc.gov.in चेक करें।",
+      "overview": "UPSC CMS MBBS doctors के लिए सरकारी चिकित्सा सेवा में प्रवेश का exam — जिससे Assistant Surgeon, Medical Officer, General Duty Medical Officer (GDMO) जैसे posts मिलते हैं। एक ही लिखित exam, कोई interview नहीं।",
+      "posts": [
+        "Assistant Surgeon (GDMO)",
+        "Medical Officer (Municipal Corporation)",
+        "Assistant Divisional Medical Officer (Railway)"
+      ],
+      "eligibility": "MBBS पूर्ण (internship सहित), MCI/DCI recognized। आयु: 32 वर्ष (कुछ categories में 35 तक)।",
+      "examPattern": [
+        {
+          "stage": "Written Exam",
+          "detail": "2 papers — Paper-I (250 अंक) + Paper-II (250 अंक), सभी medical subjects पर MCQ"
+        },
+        {
+          "stage": "DV",
+          "detail": "Document Verification (कोई interview नहीं)"
+        }
+      ],
+      "syllabus": [
+        "Medicine, Surgery, Obstetrics & Gynaecology",
+        "Preventive & Social Medicine",
+        "Paediatrics",
+        "Anatomy, Physiology, Biochemistry, Pathology, Pharmacology"
+      ],
+      "salary": "Pay Level 10 — ₹56,100 बेसिक + NPA (Nursing Allowance) + DA, HRA, भत्ते",
+      "selectionProcess": "Written Exam → DV"
+    },
+    {
+      "slug": "upsc-ies-iss",
+      "name": "UPSC IES/ISS",
+      "emoji": "📊",
+      "fullName": "Indian Economic Service & Indian Statistical Service",
+      "tags": [
+        "Post-Graduate",
+        "Economist/Statistician",
+        "Group A"
+      ],
+      "officialWebsite": "https://upsc.gov.in",
+      "examFee": "₹200 (UR/OBC) • महिला/SC/ST/PwD मुक्त",
+      "latestStatus": "UPSC IES/ISS अगले cycle की notification का इंतज़ार है। पिछला cycle 2025 में हुआ — upsc.gov.in चेक करें।",
+      "overview": "UPSC IES/ISS से Economics और Statistics में post-graduate वालों को Indian Economic Service और Indian Statistical Service की Group A posts मिलती हैं — जहाँ वे देश की economic planning और statistics की रीढ़ बनते हैं।",
+      "posts": [
+        "Indian Economic Service (IES)",
+        "Indian Statistical Service (ISS)"
+      ],
+      "eligibility": "IES: Economics/Applied Economics में PG (M.A./M.Sc.)। ISS: Statistics/Maths/Stats में PG। आयु: 21-30 वर्ष (आरक्षित वर्गों को छूट)।",
+      "examPattern": [
+        {
+          "stage": "Written",
+          "detail": "3 papers (300-300-300 अंक) — General English + Economics/Statistics के descriptive papers"
+        },
+        {
+          "stage": "Interview",
+          "detail": "Personality Test (200 अंक)"
+        }
+      ],
+      "syllabus": [
+        "Microeconomics, Macroeconomics, Public Finance, International Trade",
+        "Indian Economy",
+        "Statistics (ISS के लिए)",
+        "English"
+      ],
+      "salary": "Pay Level 10 — ₹56,100 बेसिक + DA, HRA, भत्ते",
+      "selectionProcess": "Written → Interview → DV"
+    },
+    {
+      "slug": "upsc-cgse",
+      "name": "UPSC Combined Geo-Scientist",
+      "emoji": "🪨",
+      "fullName": "Combined Geo-Scientist & Geologist Examination",
+      "tags": [
+        "M.Sc.",
+        "GSI/CGWB",
+        "Scientist Posts"
+      ],
+      "officialWebsite": "https://upsc.gov.in",
+      "examFee": "₹200 (UR/OBC) • महिला/SC/ST/PwD मुक्त",
+      "latestStatus": "UPSC Combined Geo-Scientist अगले cycle की notification का इंतज़ार है। पिछला cycle 2025 में हुआ — upsc.gov.in चेक करें।",
+      "overview": "UPSC Combined Geo-Scientist exam से Geological Survey of India (GSI) और Central Ground Water Board (CGWB) में Geologist, Geophysicist, Chemist और Junior Hydrogeologist के posts मिलते हैं — भू-विज्ञान (Earth Science) वालों के लिए सुनहरा मौका।",
+      "posts": [
+        "Geologist (Group A) — GSI",
+        "Geophysicist (Group A) — GSI",
+        "Chemist (Group A) — GSI",
+        "Junior Hydrogeologist (Group A) — CGWB"
+      ],
+      "eligibility": "Geology/Applied Geology (Geologist), Geophysics (Geophysicist), Chemistry (Chemist), Geology/Hydrogeology (JHG) में M.Sc.। आयु: 21-32 वर्ष (आरक्षित वर्गों को छूट)।",
+      "examPattern": [
+        {
+          "stage": "Written",
+          "detail": "3 papers (400-400-200 अंक) — General English + 2 discipline papers"
+        },
+        {
+          "stage": "Interview",
+          "detail": "Personality Test (200 अंक)"
+        }
+      ],
+      "syllabus": [
+        "Geology (Mineralogy, Petrology, Stratigraphy, Economic Geology)",
+        "Geophysics / Chemistry / Hydrogeology (post के हिसाब से)",
+        "General English"
+      ],
+      "salary": "Pay Level 10 — ₹56,100 बेसिक + DA, HRA, भत्ते",
+      "selectionProcess": "Written → Interview → DV"
+    },
+    {
+      "slug": "upsc-epfo",
+      "name": "UPSC EPFO",
+      "emoji": "💼",
+      "fullName": "EPFO Enforcement Officer & Accounts Officer",
+      "tags": [
+        "Graduate",
+        "EO/AO",
+        "EPFO"
+      ],
+      "officialWebsite": "https://upsc.gov.in",
+      "examFee": "₹500 (UR/OBC) • महिला/SC/ST/PwD मुक्त (अनुमानित — notification चेक करें)",
+      "latestStatus": "UPSC EPFO EO/AO अगली notification का इंतज़ार है। पिछली भर्ती 2023 में हुई थी — upsc.gov.in पर नज़र रखें।",
+      "overview": "UPSC EPFO से Employees' Provident Fund Organisation में Enforcement Officer (EO) और Accounts Officer (AO) बनते हैं — देश के कर्मचारियों के PF का हिसाब-किताब और enforcement का ज़िम्मा।",
+      "posts": [
+        "Enforcement Officer (EO)",
+        "Accounts Officer (AO)"
+      ],
+      "eligibility": "किसी भी मान्यता प्राप्त विश्वविद्यालय से Graduation (AO के लिए Commerce/Accountancy में degree)। आयु: 30 (EO) / 28 (AO) वर्ष तक।",
+      "examPattern": [
+        {
+          "stage": "Paper-I (CBT)",
+          "detail": "120 प्रश्न, 240 अंक — English, Reasoning, General Awareness, Accounting & Audit (AO के लिए)"
+        },
+        {
+          "stage": "Paper-II",
+          "detail": "Descriptive — 3 प्रश्न (100 अंक)"
+        },
+        {
+          "stage": "Interview",
+          "detail": "Personality Test (50 अंक)"
+        }
+      ],
+      "syllabus": [
+        "General English",
+        "Reasoning Ability",
+        "General Awareness (Economy, PF Law)",
+        "Accounting & Audit (AO के लिए)"
+      ],
+      "salary": "Pay Level 8 — ₹47,600 बेसिक + DA, HRA, भत्ते",
+      "selectionProcess": "Paper-I → Paper-II → Interview → DV"
+    },
+    {
+      "slug": "upsc-so-steno",
+      "name": "UPSC SO/Steno",
+      "emoji": "🗂️",
+      "fullName": "Section Officer & Stenographer (Grade A/B) Examination",
+      "tags": [
+        "Graduate",
+        "Ministry Posts",
+        "Group B"
+      ],
+      "officialWebsite": "https://upsc.gov.in",
+      "examFee": "₹200 (UR/OBC) • महिला/SC/ST/PwD मुक्त (अनुमानित — notification चेक करें)",
+      "latestStatus": "UPSC SO/Steno अगली notification का इंतज़ार है। पिछली भर्ती 2023 में हुई थी — upsc.gov.in पर नज़र रखें।",
+      "overview": "UPSC SO/Steno (Grade A/B) से केंद्र सरकार के विभिन्न मंत्रालयों में Section Officer और Stenographer के posts मिलते हैं — Group B gazetted/non-gazetted posts जिनसे सीधे सचिवालय स्तर की नौकरी मिलती है।",
+      "posts": [
+        "Section Officer (Grade A)",
+        "Section Officer (Grade B)",
+        "Stenographer (Grade A)",
+        "Stenographer (Grade B)"
+      ],
+      "eligibility": "किसी भी मान्यता प्राप्त विश्वविद्यालय से Graduation। आयु: 21-30 वर्ष (SO) • 21-27 वर्ष (Steno B) — आरक्षित वर्गों को छूट।",
+      "examPattern": [
+        {
+          "stage": "Paper-I (CBT)",
+          "detail": "200 प्रश्न, 200 अंक — English, Reasoning, General Awareness, Quantitative Aptitude"
+        },
+        {
+          "stage": "Paper-II",
+          "detail": "Descriptive — Essay, Comprehension, Precis (100 अंक)"
+        },
+        {
+          "stage": "Skill Test",
+          "detail": "Stenography test (Steno posts के लिए)"
+        }
+      ],
+      "syllabus": [
+        "English Language",
+        "Reasoning & Aptitude",
+        "General Awareness",
+        "Essay/Precis Writing"
+      ],
+      "salary": "Pay Level 7 (SO) — ₹44,900 / Level 4-7 (Steno) बेसिक + DA, HRA, भत्ते",
+      "selectionProcess": "Paper-I → Paper-II → Skill Test (Steno) → DV"
+    },
+    {
+      "slug": "upsc-ifs",
+      "name": "UPSC IFS (Forest)",
+      "emoji": "🌲",
+      "fullName": "Indian Forest Service — अब Civil Services (CSE) के साथ",
+      "tags": [
+        "Graduate",
+        "Forest Officer",
+        "CSE के साथ"
+      ],
+      "officialWebsite": "https://upsc.gov.in",
+      "examFee": "₹100 (UR/OBC/EWS) • महिला/SC/ST/PwD मुक्त (CSE fee)",
+      "latestStatus": "UPSC IFS अब CSE 2022 से merged है — Forest Service की selection CSE में Forestry optional से होती है। 2026-27 CSE cycle की तैयारी जारी।",
+      "overview": "Indian Forest Service (IFS) अब अलग exam नहीं रहा — 2022 से इसे UPSC Civil Services (CSE) में merge कर दिया गया है। जो CSE देते हैं वे Forestry optional subject के साथ IFS (Forest) के लिए भी eligible रहते हैं। जंगलों और वन्यजीवों की रक्षा करने वाली prestigious service।",
+      "posts": [
+        "Indian Forest Service (IFS) — वन संरक्षक (Conservator of Forests) की शुरुआती पोस्ट"
+      ],
+      "eligibility": "CSE जैसी ही — Graduation (Forestry/Agriculture/Engineering/related subjects optional के लिए)। आयु: 21-32 वर्ष।",
+      "examPattern": [
+        {
+          "stage": "Prelims",
+          "detail": "CSE Prelims — GS-I + CSAT"
+        },
+        {
+          "stage": "Mains",
+          "detail": "CSE Mains — Forestry optional paper सहित"
+        },
+        {
+          "stage": "Interview",
+          "detail": "CSE Personality Test"
+        }
+      ],
+      "syllabus": [
+        "CSE General Studies",
+        "Forestry (optional)",
+        "Essay",
+        "Current Affairs"
+      ],
+      "salary": "Pay Level 10 — ₹56,100 बेसिक + Forest Service allowances",
+      "selectionProcess": "CSE के साथ — Prelims → Mains → Interview"
     }
-   ],
-   "syllabus": [
-    "General Studies (History, Geography, Polity, Economy, Science & Tech)",
-    "CSAT (Aptitude)",
-    "Essay",
-    "Optional Subject",
-    "Current Affairs"
-   ],
-   "salary": "Pay Level 10 — ₹56,100 बेसिक (entry) + DA, HRA व भत्ते; IAS में जल्दी promotion से Level 18 तक",
-   "selectionProcess": "Prelims → Mains → Interview → DV"
-  },
-  {
-   "slug": "upsc-nda",
-   "name": "UPSC NDA/NA",
-   "emoji": "🛩️",
-   "fullName": "National Defence Academy & Naval Academy Examination",
-   "tags": [
-    "12th Pass",
-    "Army/Navy/Air Force",
-    "Officer"
-   ],
-   "officialWebsite": "https://upsc.gov.in",
-   "examFee": "₹100 (UR/OBC) • महिला/SC/ST मुक्त",
-   "latestStatus": "UPSC NDA/NA अगले cycle की notification का इंतज़ार है। पिछला cycle 2025 में हुआ — upsc.gov.in चेक करें।",
-   "overview": "UPSC NDA/NA 12th pass छात्रों के लिए Indian Army, Navy और Air Force में officer बनने का सबसे सीधा रास्ता। लिखित exam के बाद SSB interview — खुद को साबित करने का मौका। पूरी ट्रेनिंग NDA खडकवासला में।",
-   "posts": [
-    "Indian Army (NDA)",
-    "Indian Navy (NA)",
-    "Indian Air Force (NDA Air Force Wing)"
-   ],
-   "eligibility": "12th pass — Army wing: कोई भी stream; Air Force/Navy: Physics + Maths। आयु: 15.5-19.5 वर्ष, unmarried।",
-   "examPattern": [
+  ],
+  "services": [
     {
-     "stage": "Written",
-     "detail": "2 papers — Mathematics (300 अंक) + General Ability Test (600 अंक, English+GK)"
+      "name": "IAS",
+      "sub": "Indian Administrative Service"
     },
     {
-     "stage": "SSB Interview",
-     "detail": "5 दिन का Personality & Intelligence Test (900 अंक)"
+      "name": "IPS",
+      "sub": "Indian Police Service"
     },
     {
-     "stage": "Medical",
-     "detail": "Armed Forces Medical Exam"
+      "name": "IFS",
+      "sub": "Indian Foreign Service"
+    },
+    {
+      "name": "IRS (IT)",
+      "sub": "Income Tax Service"
+    },
+    {
+      "name": "IRS (C&CE)",
+      "sub": "Customs & Central Excise"
+    },
+    {
+      "name": "IA&AS",
+      "sub": "Audit & Accounts Service"
+    },
+    {
+      "name": "IPoS",
+      "sub": "Indian Postal Service"
+    },
+    {
+      "name": "IRTS",
+      "sub": "Railway Traffic Service"
     }
-   ],
-   "syllabus": [
-    "Mathematics (Algebra, Calculus, Trigonometry, Vectors...)",
-    "English",
-    "General Knowledge (Physics, Chemistry, Biology, History, Geography, Current Affairs)"
-   ],
-   "salary": "Cadet stipend ~₹21,000/माह (ट्रेनिंग के दौरान); Commission के बाद officer pay Level 10 ₹56,100",
-   "selectionProcess": "Written → SSB → Medical → Merit"
+  ],
+  "hero": {
+    "badge": "🎖️ भारत की शीर्ष सिविल सेवाएँ",
+    "title": "UPSC Exams Center",
+    "subtitle": "UPSC CSE (IAS/IPS), NDA, CDS, CAPF AC, ESE — सभी UPSC exams की पूरी जानकारी एक जगह। Posts, Eligibility, Exam Pattern, Syllabus और Salary।",
+    "gradient": "linear-gradient(135deg,#7f1d1d,#dc2626)"
   },
-  {
-   "slug": "upsc-cds",
-   "name": "UPSC CDS",
-   "emoji": "🚁",
-   "fullName": "Combined Defence Services Examination (IMA/INA/AFA/OTA)",
-   "tags": [
-    "Graduate",
-    "Defence",
-    "SSB"
-   ],
-   "officialWebsite": "https://upsc.gov.in",
-   "examFee": "₹200 (UR/OBC) • महिला/SC/ST मुक्त",
-   "latestStatus": "UPSC CDS अगले cycle की notification का इंतज़ार है। पिछला cycle 2025 में हुआ — upsc.gov.in चेक करें।",
-   "overview": "UPSC CDS graduates के लिए Indian Army (IMA), Navy (INA), Air Force (AFA) और OTA में officer बनने का रास्ता है। लिखित exam + SSB interview से selection — देश की सेवा का सबसे गौरवपूर्ण रास्ता।",
-   "posts": [
-    "Indian Military Academy (IMA) — Army",
-    "Indian Naval Academy (INA) — Navy",
-    "Air Force Academy (AFA) — Air Force",
-    "Officers Training Academy (OTA) — Short Service"
-   ],
-   "eligibility": "Graduation (IMA/OTA: कोई भी stream; INA: B.E./Engineering; AFA: B.E./B.Tech with Physics+Maths)। आयु: 19-25 (IMA/INA/OTA), 20-24 (AFA)।",
-   "examPattern": [
-    {
-     "stage": "Written",
-     "detail": "English (100) + General Knowledge (100) + Elementary Maths (100 — IMA/INA/AFA के लिए)"
-    },
-    {
-     "stage": "SSB Interview",
-     "detail": "5 दिन का Personality Test (300 अंक)"
-    },
-    {
-     "stage": "Medical",
-     "detail": "Armed Forces Medical Exam"
-    }
-   ],
-   "syllabus": [
-    "English",
-    "General Knowledge (History, Geography, Polity, Economy, Science)",
-    "Elementary Mathematics"
-   ],
-   "salary": "Officer pay Level 10 — ₹56,100 बेसिक + MSP व सभी defence भत्ते",
-   "selectionProcess": "Written → SSB → Medical → Merit"
-  },
-  {
-   "slug": "upsc-capf-ac",
-   "name": "UPSC CAPF AC",
-   "emoji": "🛡️",
-   "fullName": "Central Armed Police Forces — Assistant Commandant",
-   "tags": [
-    "Graduate",
-    "Officer Post",
-    "CRPF/BSF/CISF"
-   ],
-   "officialWebsite": "https://upsc.gov.in",
-   "examFee": "₹200 (UR/OBC) • महिला/SC/ST/PwD मुक्त",
-   "latestStatus": "UPSC CAPF AC अगले cycle की notification का इंतज़ार है। पिछला cycle 2025 में हुआ — upsc.gov.in चेक करें।",
-   "overview": "UPSC CAPF AC से CRPF, BSF, CISF, ITBP और SSB में Assistant Commandant (officer rank) बनते हैं — police forces में gazetted officer की नौकरी। लिखित exam + interview + physical test का पूरा सफर।",
-   "posts": [
-    "Assistant Commandant — BSF",
-    "Assistant Commandant — CRPF",
-    "Assistant Commandant — CISF",
-    "Assistant Commandant — ITBP",
-    "Assistant Commandant — SSB"
-   ],
-   "eligibility": "किसी भी मान्यता प्राप्त विश्वविद्यालय से Graduation। आयु: 20-25 वर्ष (आरक्षित वर्गों को छूट), unmarried पुरुष/महिला।",
-   "examPattern": [
-    {
-     "stage": "Paper-I",
-     "detail": "250 अंक, 2 घंटे — General Studies (objective)"
-    },
-    {
-     "stage": "Paper-II",
-     "detail": "200 अंक, 3 घंटे — Essay, Comprehension, Precis (descriptive)"
-    },
-    {
-     "stage": "Interview + PET",
-     "detail": "Personality Test 150 अंक + Physical Efficiency Test + Medical"
-    }
-   ],
-   "syllabus": [
-    "General Studies (History, Polity, Geography, Economy, Science)",
-    "Current Affairs",
-    "Essay & Comprehension",
-    "English/Hindi"
-   ],
-   "salary": "Pay Level 10 — ₹56,100 बेसिक + RRA (₹8,000) + DA, HRA, भत्ते",
-   "selectionProcess": "Paper-I → Paper-II → PET/PST → Interview → Medical → DV"
-  },
-  {
-   "slug": "upsc-cisf-ac",
-   "name": "UPSC CISF AC",
-   "emoji": "🏭",
-   "fullName": "Central Industrial Security Force — Assistant Commandant (Executive)",
-   "tags": [
-    "Graduate",
-    "Officer Post",
-    "CISF"
-   ],
-   "officialWebsite": "https://upsc.gov.in",
-   "examFee": "₹200 (UR/OBC) • महिला/SC/ST/PwD मुक्त",
-   "latestStatus": "UPSC CISF AC अगली notification का इंतज़ार है। पिछली भर्ती 2025 में हुई — upsc.gov.in चेक करें।",
-   "overview": "UPSC CISF AC (Executive) से CISF में Assistant Commandant बनते हैं — देश के industries, airports, ports और nuclear installations की सुरक्षा का ज़िम्मा। एक dedicated UPSC exam जिसमें सिर्फ CISF के लिए भर्ती होती है।",
-   "posts": [
-    "Assistant Commandant (Executive) — CISF"
-   ],
-   "eligibility": "किसी भी मान्यता प्राप्त विश्वविद्यालय से Graduation। आयु: 20-25 वर्ष (आरक्षित वर्गों को छूट), unmarried।",
-   "examPattern": [
-    {
-     "stage": "Paper-I",
-     "detail": "250 अंक — General Studies (objective)"
-    },
-    {
-     "stage": "Paper-II",
-     "detail": "200 अंक — Essay, Comprehension, Precis (descriptive)"
-    },
-    {
-     "stage": "Interview + PET",
-     "detail": "Personality Test 150 अंक + Physical Test + Medical"
-    }
-   ],
-   "syllabus": [
-    "General Studies",
-    "Current Affairs",
-    "Essay & Comprehension",
-    "English/Hindi"
-   ],
-   "salary": "Pay Level 10 — ₹56,100 बेसिक + RRA + DA, HRA, भत्ते",
-   "selectionProcess": "Paper-I → Paper-II → PET → Interview → Medical → DV"
-  },
-  {
-   "slug": "upsc-ese",
-   "name": "UPSC ESE (IES)",
-   "emoji": "⚙️",
-   "fullName": "Engineering Services Examination — Indian Engineering Services",
-   "tags": [
-    "B.Tech",
-    "Engineer",
-    "Group A"
-   ],
-   "officialWebsite": "https://upsc.gov.in",
-   "examFee": "₹200 (UR/OBC) • महिला/SC/ST/PwD मुक्त",
-   "latestStatus": "UPSC ESE अगले cycle की notification का इंतज़ार है। पिछला cycle 2025 में हुआ — upsc.gov.in चेक करें।",
-   "overview": "UPSC ESE (IES) engineers के लिए देश का सबसे प्रतिष्ठित सरकारी exam — जिससे Civil, Mechanical, Electrical और Electronics & Telecom engineers को Indian Engineering Services में Group A posts मिलती हैं (Railways, CPWD, MES, Defence, CWC आदि)।",
-   "posts": [
-    "Indian Railway Service of Engineers",
-    "Central Engineering Service (CPWD)",
-    "Military Engineering Service (MES)",
-    "Central Water Engineering Service (CWC)",
-    "Telecom Engineering Service"
-   ],
-   "eligibility": "Engineering में B.E./B.Tech (Civil/Mechanical/Electrical/Electronics & Telecom) या समकक्ष। आयु: 21-30 वर्ष (आरक्षित वर्गों को छूट)।",
-   "examPattern": [
-    {
-     "stage": "Stage-I (Prelims)",
-     "detail": "2 papers (objective) — General Studies & Engineering Aptitude + Technical paper"
-    },
-    {
-     "stage": "Stage-II (Mains)",
-     "detail": "2 papers (conventional) — Engineering discipline के technical questions"
-    },
-    {
-     "stage": "Stage-III (Interview)",
-     "detail": "Personality Test"
-    }
-   ],
-   "syllabus": [
-    "General Studies & Engineering Aptitude",
-    "Civil / Mechanical / Electrical / Electronics & Telecom Engineering",
-    "Current Affairs"
-   ],
-   "salary": "Pay Level 10 — ₹56,100 बेसिक + DA, HRA, भत्ते",
-   "selectionProcess": "Stage-I → Stage-II → Interview → DV"
-  },
-  {
-   "slug": "upsc-cms",
-   "name": "UPSC CMS",
-   "emoji": "🩺",
-   "fullName": "Combined Medical Services Examination",
-   "tags": [
-    "MBBS",
-    "Doctor",
-    "GDMO"
-   ],
-   "officialWebsite": "https://upsc.gov.in",
-   "examFee": "₹200 (UR/OBC) • महिला/SC/ST/PwD मुक्त",
-   "latestStatus": "UPSC CMS अगले cycle की notification का इंतज़ार है। पिछला cycle 2025 में हुआ — upsc.gov.in चेक करें।",
-   "overview": "UPSC CMS MBBS doctors के लिए सरकारी चिकित्सा सेवा में प्रवेश का exam — जिससे Assistant Surgeon, Medical Officer, General Duty Medical Officer (GDMO) जैसे posts मिलते हैं। एक ही लिखित exam, कोई interview नहीं।",
-   "posts": [
-    "Assistant Surgeon (GDMO)",
-    "Medical Officer (Municipal Corporation)",
-    "Assistant Divisional Medical Officer (Railway)"
-   ],
-   "eligibility": "MBBS पूर्ण (internship सहित), MCI/DCI recognized। आयु: 32 वर्ष (कुछ categories में 35 तक)।",
-   "examPattern": [
-    {
-     "stage": "Written Exam",
-     "detail": "2 papers — Paper-I (250 अंक) + Paper-II (250 अंक), सभी medical subjects पर MCQ"
-    },
-    {
-     "stage": "DV",
-     "detail": "Document Verification (कोई interview नहीं)"
-    }
-   ],
-   "syllabus": [
-    "Medicine, Surgery, Obstetrics & Gynaecology",
-    "Preventive & Social Medicine",
-    "Paediatrics",
-    "Anatomy, Physiology, Biochemistry, Pathology, Pharmacology"
-   ],
-   "salary": "Pay Level 10 — ₹56,100 बेसिक + NPA (Nursing Allowance) + DA, HRA, भत्ते",
-   "selectionProcess": "Written Exam → DV"
-  },
-  {
-   "slug": "upsc-ies-iss",
-   "name": "UPSC IES/ISS",
-   "emoji": "📊",
-   "fullName": "Indian Economic Service & Indian Statistical Service",
-   "tags": [
-    "Post-Graduate",
-    "Economist/Statistician",
-    "Group A"
-   ],
-   "officialWebsite": "https://upsc.gov.in",
-   "examFee": "₹200 (UR/OBC) • महिला/SC/ST/PwD मुक्त",
-   "latestStatus": "UPSC IES/ISS अगले cycle की notification का इंतज़ार है। पिछला cycle 2025 में हुआ — upsc.gov.in चेक करें।",
-   "overview": "UPSC IES/ISS से Economics और Statistics में post-graduate वालों को Indian Economic Service और Indian Statistical Service की Group A posts मिलती हैं — जहाँ वे देश की economic planning और statistics की रीढ़ बनते हैं।",
-   "posts": [
-    "Indian Economic Service (IES)",
-    "Indian Statistical Service (ISS)"
-   ],
-   "eligibility": "IES: Economics/Applied Economics में PG (M.A./M.Sc.)। ISS: Statistics/Maths/Stats में PG। आयु: 21-30 वर्ष (आरक्षित वर्गों को छूट)।",
-   "examPattern": [
-    {
-     "stage": "Written",
-     "detail": "3 papers (300-300-300 अंक) — General English + Economics/Statistics के descriptive papers"
-    },
-    {
-     "stage": "Interview",
-     "detail": "Personality Test (200 अंक)"
-    }
-   ],
-   "syllabus": [
-    "Microeconomics, Macroeconomics, Public Finance, International Trade",
-    "Indian Economy",
-    "Statistics (ISS के लिए)",
-    "English"
-   ],
-   "salary": "Pay Level 10 — ₹56,100 बेसिक + DA, HRA, भत्ते",
-   "selectionProcess": "Written → Interview → DV"
-  },
-  {
-   "slug": "upsc-cgse",
-   "name": "UPSC Combined Geo-Scientist",
-   "emoji": "🪨",
-   "fullName": "Combined Geo-Scientist & Geologist Examination",
-   "tags": [
-    "M.Sc.",
-    "GSI/CGWB",
-    "Scientist Posts"
-   ],
-   "officialWebsite": "https://upsc.gov.in",
-   "examFee": "₹200 (UR/OBC) • महिला/SC/ST/PwD मुक्त",
-   "latestStatus": "UPSC Combined Geo-Scientist अगले cycle की notification का इंतज़ार है। पिछला cycle 2025 में हुआ — upsc.gov.in चेक करें।",
-   "overview": "UPSC Combined Geo-Scientist exam से Geological Survey of India (GSI) और Central Ground Water Board (CGWB) में Geologist, Geophysicist, Chemist और Junior Hydrogeologist के posts मिलते हैं — भू-विज्ञान (Earth Science) वालों के लिए सुनहरा मौका।",
-   "posts": [
-    "Geologist (Group A) — GSI",
-    "Geophysicist (Group A) — GSI",
-    "Chemist (Group A) — GSI",
-    "Junior Hydrogeologist (Group A) — CGWB"
-   ],
-   "eligibility": "Geology/Applied Geology (Geologist), Geophysics (Geophysicist), Chemistry (Chemist), Geology/Hydrogeology (JHG) में M.Sc.। आयु: 21-32 वर्ष (आरक्षित वर्गों को छूट)।",
-   "examPattern": [
-    {
-     "stage": "Written",
-     "detail": "3 papers (400-400-200 अंक) — General English + 2 discipline papers"
-    },
-    {
-     "stage": "Interview",
-     "detail": "Personality Test (200 अंक)"
-    }
-   ],
-   "syllabus": [
-    "Geology (Mineralogy, Petrology, Stratigraphy, Economic Geology)",
-    "Geophysics / Chemistry / Hydrogeology (post के हिसाब से)",
-    "General English"
-   ],
-   "salary": "Pay Level 10 — ₹56,100 बेसिक + DA, HRA, भत्ते",
-   "selectionProcess": "Written → Interview → DV"
-  },
-  {
-   "slug": "upsc-epfo",
-   "name": "UPSC EPFO",
-   "emoji": "💼",
-   "fullName": "EPFO Enforcement Officer & Accounts Officer",
-   "tags": [
-    "Graduate",
-    "EO/AO",
-    "EPFO"
-   ],
-   "officialWebsite": "https://upsc.gov.in",
-   "examFee": "₹500 (UR/OBC) • महिला/SC/ST/PwD मुक्त (अनुमानित — notification चेक करें)",
-   "latestStatus": "UPSC EPFO EO/AO अगली notification का इंतज़ार है। पिछली भर्ती 2023 में हुई थी — upsc.gov.in पर नज़र रखें।",
-   "overview": "UPSC EPFO से Employees' Provident Fund Organisation में Enforcement Officer (EO) और Accounts Officer (AO) बनते हैं — देश के कर्मचारियों के PF का हिसाब-किताब और enforcement का ज़िम्मा।",
-   "posts": [
-    "Enforcement Officer (EO)",
-    "Accounts Officer (AO)"
-   ],
-   "eligibility": "किसी भी मान्यता प्राप्त विश्वविद्यालय से Graduation (AO के लिए Commerce/Accountancy में degree)। आयु: 30 (EO) / 28 (AO) वर्ष तक।",
-   "examPattern": [
-    {
-     "stage": "Paper-I (CBT)",
-     "detail": "120 प्रश्न, 240 अंक — English, Reasoning, General Awareness, Accounting & Audit (AO के लिए)"
-    },
-    {
-     "stage": "Paper-II",
-     "detail": "Descriptive — 3 प्रश्न (100 अंक)"
-    },
-    {
-     "stage": "Interview",
-     "detail": "Personality Test (50 अंक)"
-    }
-   ],
-   "syllabus": [
-    "General English",
-    "Reasoning Ability",
-    "General Awareness (Economy, PF Law)",
-    "Accounting & Audit (AO के लिए)"
-   ],
-   "salary": "Pay Level 8 — ₹47,600 बेसिक + DA, HRA, भत्ते",
-   "selectionProcess": "Paper-I → Paper-II → Interview → DV"
-  },
-  {
-   "slug": "upsc-so-steno",
-   "name": "UPSC SO/Steno",
-   "emoji": "🗂️",
-   "fullName": "Section Officer & Stenographer (Grade A/B) Examination",
-   "tags": [
-    "Graduate",
-    "Ministry Posts",
-    "Group B"
-   ],
-   "officialWebsite": "https://upsc.gov.in",
-   "examFee": "₹200 (UR/OBC) • महिला/SC/ST/PwD मुक्त (अनुमानित — notification चेक करें)",
-   "latestStatus": "UPSC SO/Steno अगली notification का इंतज़ार है। पिछली भर्ती 2023 में हुई थी — upsc.gov.in पर नज़र रखें।",
-   "overview": "UPSC SO/Steno (Grade A/B) से केंद्र सरकार के विभिन्न मंत्रालयों में Section Officer और Stenographer के posts मिलते हैं — Group B gazetted/non-gazetted posts जिनसे सीधे सचिवालय स्तर की नौकरी मिलती है।",
-   "posts": [
-    "Section Officer (Grade A)",
-    "Section Officer (Grade B)",
-    "Stenographer (Grade A)",
-    "Stenographer (Grade B)"
-   ],
-   "eligibility": "किसी भी मान्यता प्राप्त विश्वविद्यालय से Graduation। आयु: 21-30 वर्ष (SO) • 21-27 वर्ष (Steno B) — आरक्षित वर्गों को छूट।",
-   "examPattern": [
-    {
-     "stage": "Paper-I (CBT)",
-     "detail": "200 प्रश्न, 200 अंक — English, Reasoning, General Awareness, Quantitative Aptitude"
-    },
-    {
-     "stage": "Paper-II",
-     "detail": "Descriptive — Essay, Comprehension, Precis (100 अंक)"
-    },
-    {
-     "stage": "Skill Test",
-     "detail": "Stenography test (Steno posts के लिए)"
-    }
-   ],
-   "syllabus": [
-    "English Language",
-    "Reasoning & Aptitude",
-    "General Awareness",
-    "Essay/Precis Writing"
-   ],
-   "salary": "Pay Level 7 (SO) — ₹44,900 / Level 4-7 (Steno) बेसिक + DA, HRA, भत्ते",
-   "selectionProcess": "Paper-I → Paper-II → Skill Test (Steno) → DV"
-  },
-  {
-   "slug": "upsc-ifs",
-   "name": "UPSC IFS (Forest)",
-   "emoji": "🌲",
-   "fullName": "Indian Forest Service — अब Civil Services (CSE) के साथ",
-   "tags": [
-    "Graduate",
-    "Forest Officer",
-    "CSE के साथ"
-   ],
-   "officialWebsite": "https://upsc.gov.in",
-   "examFee": "₹100 (UR/OBC/EWS) • महिला/SC/ST/PwD मुक्त (CSE fee)",
-   "latestStatus": "UPSC IFS अब CSE 2022 से merged है — Forest Service की selection CSE में Forestry optional से होती है। 2026-27 CSE cycle की तैयारी जारी।",
-   "overview": "Indian Forest Service (IFS) अब अलग exam नहीं रहा — 2022 से इसे UPSC Civil Services (CSE) में merge कर दिया गया है। जो CSE देते हैं वे Forestry optional subject के साथ IFS (Forest) के लिए भी eligible रहते हैं। जंगलों और वन्यजीवों की रक्षा करने वाली prestigious service।",
-   "posts": [
-    "Indian Forest Service (IFS) — वन संरक्षक (Conservator of Forests) की शुरुआती पोस्ट"
-   ],
-   "eligibility": "CSE जैसी ही — Graduation (Forestry/Agriculture/Engineering/related subjects optional के लिए)। आयु: 21-32 वर्ष।",
-   "examPattern": [
-    {
-     "stage": "Prelims",
-     "detail": "CSE Prelims — GS-I + CSAT"
-    },
-    {
-     "stage": "Mains",
-     "detail": "CSE Mains — Forestry optional paper सहित"
-    },
-    {
-     "stage": "Interview",
-     "detail": "CSE Personality Test"
-    }
-   ],
-   "syllabus": [
-    "CSE General Studies",
-    "Forestry (optional)",
-    "Essay",
-    "Current Affairs"
-   ],
-   "salary": "Pay Level 10 — ₹56,100 बेसिक + Forest Service allowances",
-   "selectionProcess": "CSE के साथ — Prelims → Mains → Interview"
-  }
- ],
- "services": [
-  {
-   "name": "IAS",
-   "sub": "Indian Administrative Service"
-  },
-  {
-   "name": "IPS",
-   "sub": "Indian Police Service"
-  },
-  {
-   "name": "IFS",
-   "sub": "Indian Foreign Service"
-  },
-  {
-   "name": "IRS (IT)",
-   "sub": "Income Tax Service"
-  },
-  {
-   "name": "IRS (C&CE)",
-   "sub": "Customs & Central Excise"
-  },
-  {
-   "name": "IA&AS",
-   "sub": "Audit & Accounts Service"
-  },
-  {
-   "name": "IPoS",
-   "sub": "Indian Postal Service"
-  },
-  {
-   "name": "IRTS",
-   "sub": "Railway Traffic Service"
-  }
- ]
+  "quickLinks": [
+    [
+      "/results",
+      "🏆 UPSC Results"
+    ],
+    [
+      "/admit-cards",
+      "📄 Admit Card"
+    ],
+    [
+      "/category/upsc",
+      "🎖️ All UPSC Exams"
+    ],
+    [
+      "/syllabus",
+      "📚 Syllabus"
+    ],
+    [
+      "/notifications",
+      "🔔 Updates"
+    ],
+    [
+      "https://upsc.gov.in",
+      "🌐 Official upsc.gov.in"
+    ]
+  ],
+  "statsCards": [
+    [
+      "📋",
+      12,
+      "Major Exams"
+    ],
+    [
+      "🎯",
+      "3",
+      "CSE Stages"
+    ],
+    [
+      "👑",
+      "8",
+      "Top Services"
+    ]
+  ]
 }
