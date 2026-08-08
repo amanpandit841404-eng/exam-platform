@@ -39,24 +39,22 @@ export default function Banking() {
 
   return (
     <div style={{ minHeight: "100vh", background: bg, fontFamily: "sans-serif", paddingBottom: 80 }}>
-      <div style={{ background: "linear-gradient(135deg,#14532d,#16a34a)", padding: "18px 16px 16px", color: "#fff" }}>
+      <div style={{ background: data?.hero?.gradient || "linear-gradient(135deg,#14532d,#16a34a)", padding: "18px 16px 16px", color: "#fff" }}>
         <div style={{ maxWidth: 900, margin: "0 auto" }}>
-          <div style={{ fontSize: 13, opacity: 0.9 }}>🏦 भारतीय बैंकिंग भर्ती</div>
-          <h1 style={{ margin: "6px 0", fontSize: 24, fontWeight: 800 }}>Banking Exams Center</h1>
-          <div style={{ fontSize: 13, opacity: 0.92, lineHeight: 1.5 }}>
-            IBPS PO, SBI Clerk, RBI Grade B, LIC AAO — सभी बैंकिंग exams की पूरी जानकारी एक जगह। Posts, Eligibility, Exam Pattern, Syllabus और Salary।
-          </div>
+          <div style={{ fontSize: 13, opacity: 0.9 }}>{data?.hero?.badge || "🏦 भारतीय बैंकिंग भर्ती"}</div>
+          <h1 style={{ margin: "6px 0", fontSize: 24, fontWeight: 800 }}>{data?.hero?.title || "Banking Exams Center"}</h1>
+          <div style={{ fontSize: 13, opacity: 0.92, lineHeight: 1.5 }}>{data?.hero?.subtitle || "IBPS PO, SBI Clerk, RBI Grade B, LIC AAO — सभी बैंकिंग exams की पूरी जानकारी एक जगह। Posts, Eligibility, Exam Pattern, Syllabus और Salary।"}</div>
         </div>
       </div>
 
       <div style={{ maxWidth: 900, margin: "0 auto", padding: "14px 14px 0" }}>
         {/* Stats */}
         <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 10, marginBottom: 14 }}>
-          {[
+          {(data?.statsCards || [
             ["📋", exams.length || 11, "Major Exams"],
             ["🏦", "25+", "PSU Banks"],
             ["💸", "1L+", "Posts हर साल"],
-          ].map(([ic, n, l]) => (
+          ]).map(([ic, n, l]) => (
             <div key={l} style={{ background: cardBg, border: `1px solid ${border}`, borderRadius: 14, padding: "12px 8px", textAlign: "center" }}>
               <div style={{ fontSize: 20 }}>{ic}</div>
               <div style={{ fontSize: 22, fontWeight: 800, color: textMain }}>{n}</div>
@@ -67,14 +65,14 @@ export default function Banking() {
 
         {/* Quick links */}
         <div style={{ display: "flex", gap: 8, flexWrap: "wrap", marginBottom: 14 }}>
-          {[
+          {(data?.quickLinks || [
             ["/results", "🏆 Banking Results"],
             ["/admit-cards", "📄 Admit Card"],
             ["/category/banking", "🏦 All Banking Exams"],
             ["/syllabus", "📚 Syllabus"],
             ["/notifications", "🔔 Updates"],
             ["https://www.ibps.in", "🌐 Official ibps.in"],
-          ].map(([href, label]) => (
+          ]).map(([href, label]) => (
             <a key={href + label} href={href} target={href.startsWith("http") ? "_blank" : undefined} rel="noreferrer"
               style={{ textDecoration: "none", background: cardBg, border: `1px solid ${border}`, color: textMain, fontSize: 12.5, fontWeight: 700, padding: "8px 12px", borderRadius: 999 }}>
               {label}
