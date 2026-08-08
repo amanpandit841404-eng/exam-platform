@@ -27,6 +27,7 @@ export default async function sitemap() {
     { url: `${baseUrl}/syllabus`, lastModified: now, changeFrequency: "daily", priority: 0.8 },
     { url: `${baseUrl}/answer-keys`, lastModified: now, changeFrequency: "daily", priority: 0.8 },
     { url: `${baseUrl}/notifications`, lastModified: now, changeFrequency: "hourly", priority: 0.8 },
+    { url: `${baseUrl}/latest-updates`, lastModified: now, changeFrequency: "hourly", priority: 0.9 },
     { url: `${baseUrl}/jobs`, lastModified: now, changeFrequency: "daily", priority: 0.8 },
     { url: `${baseUrl}/cutoff`, lastModified: now, changeFrequency: "daily", priority: 0.8 },
     { url: `${baseUrl}/merit-list`, lastModified: now, changeFrequency: "daily", priority: 0.7 },
@@ -163,3 +164,4 @@ export default async function sitemap() {
   );
   return [...staticPages, ...categoryPages, ...examPages, ...certPages, ...railwayPages, ...bankingPages, ...sscPages, ...upscPages, ...defencePages, ...statePscPages, ...teachingPages, ...policePages, ...psuPages, ...insurancePages, ...postOfficePages, ...healthPages, ...forestPages, ...judiciaryPages, ...resultPages, ...admitPages];
 }
+
