@@ -1,0 +1,466 @@
+{
+ "updated": "2026-08-08",
+ "note": "सभी जानकारी अनुमानित/संकेतात्मक है। स्वास्थ्य विभाग की भर्तियाँ (NORCET, Staff Nurse, CHO आदि) हर cycle में pattern और eligibility बदलती हैं — हमेशा official website पर notification ज़रूर चेक करें।",
+ "stats": {
+  "exams": 12,
+  "orgs": 50,
+  "posts": 100000
+ },
+ "exams": [
+  {
+   "slug": "aiims-norcet",
+   "name": "AIIMS NORCET",
+   "emoji": "🏥",
+   "fullName": "AIIMS Nursing Officer Recruitment Common Eligibility Test",
+   "tags": [
+    "Nursing",
+    "AIIMS",
+    "M.Sc/B.Sc/GNM"
+   ],
+   "officialWebsite": "https://norcet.aiimsexams.ac.in",
+   "examFee": "₹3000 (UR/OBC) • SC/ST/PwD ₹2400 (अनुमानित)",
+   "latestStatus": "AIIMS NORCET अगला cycle जल्दी आएगा। पिछला NORCET 2025 में हुआ — norcet.aiimsexams.ac.in चेक करें।",
+   "overview": "AIIMS NORCET देश के सभी AIIMS hospitals (दिल्ली, भोपाल, रायपुर आदि) में Nursing Officer के लिए common entrance test है — nursing की सबसे प्रतिष्ठित भर्ती।",
+   "posts": [
+    "Nursing Officer (Staff Nurse) — सभी AIIMS"
+   ],
+   "eligibility": "B.Sc (Hons) Nursing / Post-B.Sc Nursing / GNM। आयु: 18-30 वर्ष (आरक्षित छूट)।",
+   "examPattern": [
+    {
+     "stage": "CBT",
+     "detail": "100 प्रश्न, 100 अंक, 90 मिनट — Nursing subjects, GK, Aptitude"
+    },
+    {
+     "stage": "Interview",
+     "detail": "कुछ सालों में interview/verification भी"
+    }
+   ],
+   "syllabus": [
+    "Nursing (Medical-Surgical, OBG, Paediatric, Community)",
+    "General Knowledge",
+    "Aptitude"
+   ],
+   "salary": "Level 7 — ₹44,900 बेसिक + NPA + AIIMS allowances",
+   "selectionProcess": "CBT → Interview/DV"
+  },
+  {
+   "slug": "rrb-staff-nurse",
+   "name": "RRB Staff Nurse",
+   "emoji": "🩺",
+   "fullName": "Railway Recruitment Board — Staff Nurse",
+   "tags": [
+    "Nursing",
+    "Railway",
+    "GNM/B.Sc"
+   ],
+   "officialWebsite": "https://rrb.gov.in",
+   "examFee": "₹500 (UR/OBC) • SC/ST/PwD ₹250 (अनुमानित)",
+   "latestStatus": "RRB Staff Nurse अगली भर्ती का इंतज़ार है। पिछली भर्ती 2025 में हुई — rrb.gov.in चेक करें।",
+   "overview": "RRB Staff Nurse रेलवे अस्पतालों में nurse की भर्ती है — Indian Railways के स्वास्थ्य केंद्रों में सेवा। Railway की सबसे बड़ी paramedical भर्तियों में से एक।",
+   "posts": [
+    "Staff Nurse (रेलवे अस्पताल/हेल्थ यूनिट्स)"
+   ],
+   "eligibility": "GNM / B.Sc Nursing + registered nurse। आयु: 18-33 वर्ष (आरक्षित छूट)।",
+   "examPattern": [
+    {
+     "stage": "CBT",
+     "detail": "100 प्रश्न — Nursing, GK, Aptitude (negative marking)"
+    },
+    {
+     "stage": "DV",
+     "detail": "Document Verification"
+    }
+   ],
+   "syllabus": [
+    "Nursing Subjects",
+    "General Awareness",
+    "Reasoning & Aptitude"
+   ],
+   "salary": "Level 7 — ₹44,900 बेसिक + NPA + Railway allowances",
+   "selectionProcess": "CBT → DV"
+  },
+  {
+   "slug": "nhm-staff-nurse",
+   "name": "NHM Staff Nurse",
+   "emoji": "🏥",
+   "fullName": "National Health Mission — Staff Nurse",
+   "tags": [
+    "Nursing",
+    "State-Level",
+    "GNM/B.Sc"
+   ],
+   "officialWebsite": "https://nhm.gov.in",
+   "examFee": "राज्य के हिसाब से (अनुमानित)",
+   "latestStatus": "NHM Staff Nurse की भर्तियाँ राज्यों में चलती रहती हैं — अपने राज्य के NHM portal चेक करें।",
+   "overview": "NHM (National Health Mission) के तहत हर राज्य अपने जिला अस्पतालों, PHC/CHC में Staff Nurse की बड़ी संख्या में भर्ती करता है — nursing graduates के लिए सबसे बड़ा सरकारी रोज़गार।",
+   "posts": [
+    "Staff Nurse — जिला/ब्लॉक अस्पताल"
+   ],
+   "eligibility": "GNM / B.Sc Nursing। आयु: 18-40 वर्ष (राज्य के हिसाब से)।",
+   "examPattern": [
+    {
+     "stage": "Written/CBT",
+     "detail": "राज्य के अनुसार — Nursing + GK"
+    },
+    {
+     "stage": "Interview/DV",
+     "detail": "कुछ राज्यों में"
+    }
+   ],
+   "syllabus": [
+    "Nursing Subjects",
+    "General Knowledge"
+   ],
+   "salary": "₹25,000-40,000/माह (राज्य के अनुसार, contract/govt scale)",
+   "selectionProcess": "Written → Interview/DV"
+  },
+  {
+   "slug": "esic-nursing-officer",
+   "name": "ESIC Nursing Officer",
+   "emoji": "🩺",
+   "fullName": "ESIC Nursing Officer Recruitment",
+   "tags": [
+    "Nursing",
+    "ESIC",
+    "B.Sc/GNM"
+   ],
+   "officialWebsite": "https://www.esic.gov.in",
+   "examFee": "₹500 (UR/OBC) • SC/ST/PwD मुक्त (अनुमानित)",
+   "latestStatus": "ESIC Nursing Officer अगली भर्ती का इंतज़ार है। पिछली भर्ती 2025 में हुई — esic.gov.in चेक करें।",
+   "overview": "ESIC (Employees State Insurance Corporation) अपने अस्पतालों में Nursing Officer की भर्ती करता है — देशभर के ESIC hospitals में सेवा का मौका।",
+   "posts": [
+    "Nursing Officer"
+   ],
+   "eligibility": "B.Sc Nursing / GNM + registered। आयु: 18-30 वर्ष (आरक्षित छूट)।",
+   "examPattern": [
+    {
+     "stage": "CBT",
+     "detail": "Nursing subjects + GK + Aptitude"
+    },
+    {
+     "stage": "Interview/DV",
+     "detail": "जहाँ applicable"
+    }
+   ],
+   "syllabus": [
+    "Nursing Subjects",
+    "General Awareness",
+    "Aptitude"
+   ],
+   "salary": "Level 7 — ₹44,900 बेसिक + NPA + ESIC allowances",
+   "selectionProcess": "CBT → Interview/DV"
+  },
+  {
+   "slug": "esic-paramedical",
+   "name": "ESIC Paramedical",
+   "emoji": "🧪",
+   "fullName": "ESIC Paramedical Recruitment (Pharmacist, Technician)",
+   "tags": [
+    "Paramedical",
+    "ESIC",
+    "Pharmacist/Technician"
+   ],
+   "officialWebsite": "https://www.esic.gov.in",
+   "examFee": "₹500 (UR/OBC) • SC/ST/PwD मुक्त (अनुमानित)",
+   "latestStatus": "ESIC Paramedical अगली भर्ती का इंतज़ार है। पिछली भर्ती 2025 में हुई — esic.gov.in चेक करें।",
+   "overview": "ESIC अपने अस्पतालों में Pharmacist, Lab Technician, X-Ray Technician जैसे paramedical posts की भर्ती करता है — health sector में technical नौकरी का रास्ता।",
+   "posts": [
+    "Pharmacist",
+    "Laboratory Technician",
+    "X-Ray/ECG Technician व अन्य"
+   ],
+   "eligibility": "संबंधित paramedical degree/diploma (D.Pharm, DMLT आदि)। आयु: 18-30 वर्ष।",
+   "examPattern": [
+    {
+     "stage": "CBT",
+     "detail": "Technical (अपने subject का) + GK + Aptitude"
+    },
+    {
+     "stage": "DV",
+     "detail": "Document Verification"
+    }
+   ],
+   "syllabus": [
+    "Pharmacy/MLT/Technical Subjects",
+    "General Awareness"
+   ],
+   "salary": "Level 5-6 — ₹29,200-35,400 बेसिक + भत्ते",
+   "selectionProcess": "CBT → DV"
+  },
+  {
+   "slug": "up-cho",
+   "name": "UP CHO",
+   "emoji": "💊",
+   "fullName": "UP Community Health Officer (CHO)",
+   "tags": [
+    "B.Sc Nursing/GNM",
+    "Uttar Pradesh",
+    "Health Officer"
+   ],
+   "officialWebsite": "https://upcho.in",
+   "examFee": "₹1600 (UR/OBC) • SC/ST ₹1000 (अनुमानित)",
+   "latestStatus": "UP CHO अगली भर्ती का इंतज़ार है। पिछली भर्ती 2025 में हुई — upcho.in चेक करें।",
+   "overview": "UP CHO उत्तर प्रदेश के आयुष्मान आरोग्य मंदिरों (health & wellness centers) में Community Health Officer की भर्ती है — गाँवों में primary healthcare का ज़िम्मा। UP की बड़ी स्वास्थ्य भर्ती।",
+   "posts": [
+    "Community Health Officer (CHO)"
+   ],
+   "eligibility": "B.Sc Nursing / GNM (चयन के बाद CHO training)। आयु: 21-40 वर्ष (आरक्षित छूट)।",
+   "examPattern": [
+    {
+     "stage": "CBT",
+     "detail": "100 प्रश्न — Nursing, GK, Reasoning"
+    },
+    {
+     "stage": "DV",
+     "detail": "Document Verification"
+    }
+   ],
+   "syllabus": [
+    "Nursing Subjects",
+    "General Knowledge",
+    "Reasoning"
+   ],
+   "salary": "₹25,000-40,000/माह (contract) + incentives",
+   "selectionProcess": "CBT → DV"
+  },
+  {
+   "slug": "aiims-paramedical",
+   "name": "AIIMS Paramedical",
+   "emoji": "🧪",
+   "fullName": "AIIMS Paramedical Recruitment (Technician, OT Attendant)",
+   "tags": [
+    "Paramedical",
+    "AIIMS",
+    "Technician"
+   ],
+   "officialWebsite": "https://www.aiims.edu",
+   "examFee": "₹3000 (UR/OBC) • SC/ST/PwD ₹2400 (अनुमानित)",
+   "latestStatus": "AIIMS Paramedical अगली भर्ती का इंतज़ार है। पिछली भर्ती 2025 में हुई — aiims.edu चेक करें।",
+   "overview": "AIIMS अपने अस्पतालों में Lab Technician, OT Technician, Radio-Imaging Technician जैसे paramedical posts की भर्ती करता है — देश के top hospitals में technical नौकरी।",
+   "posts": [
+    "Lab Technician",
+    "OT Technician",
+    "Radio-Imaging Technician",
+    "Dialysis Technician व अन्य"
+   ],
+   "eligibility": "संबंधित paramedical degree/diploma। आयु: 18-30 वर्ष (आरक्षित छूट)।",
+   "examPattern": [
+    {
+     "stage": "CBT",
+     "detail": "Technical subjects + GK + Aptitude"
+    },
+    {
+     "stage": "DV",
+     "detail": "Document Verification"
+    }
+   ],
+   "syllabus": [
+    "Paramedical Technical Subjects",
+    "General Awareness"
+   ],
+   "salary": "Level 5-7 — ₹29,200-44,900 बेसिक + भत्ते",
+   "selectionProcess": "CBT → DV"
+  },
+  {
+   "slug": "aiims-bsc-nursing",
+   "name": "AIIMS B.Sc Nursing",
+   "emoji": "🎓",
+   "fullName": "AIIMS B.Sc (Hons) Nursing Entrance",
+   "tags": [
+    "12th Science",
+    "Nursing Admission",
+    "AIIMS"
+   ],
+   "officialWebsite": "https://www.aiims.edu",
+   "examFee": "₹3000 (UR/OBC) • SC/ST/PwD ₹2400 (अनुमानित)",
+   "latestStatus": "AIIMS B.Sc Nursing अगला entrance जल्दी आएगा। पिछला exam 2025 में हुआ — aiims.edu चेक करें।",
+   "overview": "AIIMS B.Sc (Hons) Nursing entrance 12th Science students को देश के best nursing colleges में admission देता है — nursing की पढ़ाई AIIMS में करने का सुनहरा मौका, जिसके बाद NORCET से सीधी नौकरी।",
+   "posts": [
+    "B.Sc (Hons) Nursing — AIIMS"
+   ],
+   "eligibility": "12th Science (PCB + English, 55%+)। आयु: 17-22 वर्ष।",
+   "examPattern": [
+    {
+     "stage": "CBT",
+     "detail": "100 प्रश्न — Physics, Chemistry, Biology, English, GK"
+    },
+    {
+     "stage": "DV",
+     "detail": "Document Verification"
+    }
+   ],
+   "syllabus": [
+    "Physics",
+    "Chemistry",
+    "Biology",
+    "English",
+    "General Knowledge"
+   ],
+   "salary": "Admission exam — बाद में nurse बनकर Level 7 ₹44,900+",
+   "selectionProcess": "CBT → DV → Counselling"
+  },
+  {
+   "slug": "icmr-recruitment",
+   "name": "ICMR Recruitment",
+   "emoji": "🔬",
+   "fullName": "ICMR — Scientist & Technical Recruitment",
+   "tags": [
+    "Research",
+    "ICMR",
+    "Scientist/Tech"
+   ],
+   "officialWebsite": "https://www.icmr.nic.in",
+   "examFee": "₹1500 (UR/OBC) • SC/ST/PwD मुक्त (अनुमानित)",
+   "latestStatus": "ICMR अगली भर्ती का इंतज़ार है। पिछली भर्ती 2025 में हुई — icmr.nic.in चेक करें।",
+   "overview": "ICMR (Indian Council of Medical Research) देश की medical research संस्था है — Scientist B/C, Technical Officer, JRF/SRF के लिए भर्ती करता है। Medical research में करियर बनाने वालों के लिए।",
+   "posts": [
+    "Scientist B/C",
+    "Technical Officer",
+    "Project JRF/SRF"
+   ],
+   "eligibility": "Life Science/Medical में PG (Scientist) / B.Sc (Technical)। आयु: 18-35 वर्ष।",
+   "examPattern": [
+    {
+     "stage": "CBT",
+     "detail": "Life Sciences + GK + Aptitude"
+    },
+    {
+     "stage": "Interview",
+     "detail": "Scientist posts के लिए"
+    }
+   ],
+   "syllabus": [
+    "Life Sciences (Bio-Chemistry, Microbiology)",
+    "General Knowledge",
+    "Research Aptitude"
+   ],
+   "salary": "Scientist — Level 10 ₹56,100+; Technical — Level 6 ₹35,400+",
+   "selectionProcess": "CBT → Interview → DV"
+  },
+  {
+   "slug": "bihar-cho",
+   "name": "Bihar CHO",
+   "emoji": "💊",
+   "fullName": "Bihar Community Health Officer (CHO)",
+   "tags": [
+    "B.Sc Nursing/GNM",
+    "Bihar",
+    "Health Officer"
+   ],
+   "officialWebsite": "https://statehealthsocietybihar.org",
+   "examFee": "₹500 (UR/OBC) • SC/ST ₹250 (अनुमानित)",
+   "latestStatus": "Bihar CHO अगली भर्ती का इंतज़ार है। पिछली भर्ती 2025 में हुई — statehealthsocietybihar.org चेक करें।",
+   "overview": "Bihar CHO बिहार के health & wellness centers में Community Health Officer की भर्ती है — बिहार में nursing वालों के लिए सरकारी स्वास्थ्य नौकरी का बड़ा रास्ता।",
+   "posts": [
+    "Community Health Officer (CHO)"
+   ],
+   "eligibility": "B.Sc Nursing / GNM। आयु: 21-40 वर्ष (आरक्षित छूट)।",
+   "examPattern": [
+    {
+     "stage": "CBT",
+     "detail": "Nursing + GK + Reasoning"
+    },
+    {
+     "stage": "DV",
+     "detail": "Document Verification"
+    }
+   ],
+   "syllabus": [
+    "Nursing Subjects",
+    "General Knowledge",
+    "Reasoning"
+   ],
+   "salary": "₹25,000-35,000/माह (contract)",
+   "selectionProcess": "CBT → DV"
+  },
+  {
+   "slug": "state-nursing-officer",
+   "name": "State Nursing Officer",
+   "emoji": "🩺",
+   "fullName": "State Nursing Officer Recruitment (Rajasthan, MP व अन्य)",
+   "tags": [
+    "Nursing",
+    "State-Level",
+    "GNM/B.Sc"
+   ],
+   "officialWebsite": "https://nursing.govexams.com",
+   "examFee": "राज्य के हिसाब से (अनुमानित)",
+   "latestStatus": "राज्यों में Nursing Officer की भर्तियाँ चलती रहती हैं — अपने राज्य के health department portal चेक करें।",
+   "overview": "कई राज्य (Rajasthan, MP, Chhattisgarh, Odisha आदि) अपने अस्पतालों में Nursing Officer/Staff Nurse की बड़ी भर्ती करते हैं — राज्य सरकार के अस्पतालों में स्थिर नौकरी।",
+   "posts": [
+    "Nursing Officer / Staff Nurse — राज्य अस्पताल"
+   ],
+   "eligibility": "GNM / B.Sc Nursing। आयु: 18-40 वर्ष (राज्य के अनुसार)।",
+   "examPattern": [
+    {
+     "stage": "Written/CBT",
+     "detail": "Nursing + GK (राज्य के अनुसार)"
+    },
+    {
+     "stage": "Interview/DV",
+     "detail": "जहाँ applicable"
+    }
+   ],
+   "syllabus": [
+    "Nursing Subjects",
+    "General Knowledge"
+   ],
+   "salary": "Level 6-7 — ₹35,400-44,900 बेसिक + भत्ते",
+   "selectionProcess": "Written → Interview/DV"
+  },
+  {
+   "slug": "esic-pharmacist",
+   "name": "ESIC Pharmacist",
+   "emoji": "💊",
+   "fullName": "ESIC Pharmacist Recruitment",
+   "tags": [
+    "D.Pharm",
+    "Pharmacist",
+    "ESIC"
+   ],
+   "officialWebsite": "https://www.esic.gov.in",
+   "examFee": "₹500 (UR/OBC) • SC/ST/PwD मुक्त (अनुमानित)",
+   "latestStatus": "ESIC Pharmacist अगली भर्ती का इंतज़ार है। पिछली भर्ती 2025 में हुई — esic.gov.in चेक करें।",
+   "overview": "ESIC Pharmacist की भर्ती ESIC hospitals में दवा वितरण और pharmacy management के लिए होती है — D.Pharm वालों के लिए सरकारी नौकरी का सीधा रास्ता।",
+   "posts": [
+    "Pharmacist"
+   ],
+   "eligibility": "D.Pharm / B.Pharm + registered pharmacist। आयु: 18-30 वर्ष (आरक्षित छूट)।",
+   "examPattern": [
+    {
+     "stage": "CBT",
+     "detail": "Pharmacy subjects + GK + Aptitude"
+    },
+    {
+     "stage": "DV",
+     "detail": "Document Verification"
+    }
+   ],
+   "syllabus": [
+    "Pharmaceutics, Pharmacology",
+    "Hospital Pharmacy",
+    "General Awareness"
+   ],
+   "salary": "Level 5 — ₹29,200 बेसिक + भत्ते",
+   "selectionProcess": "CBT → DV"
+  }
+ ],
+ "orgs": [
+  {
+   "name": "AIIMS",
+   "site": "https://www.aiims.edu"
+  },
+  {
+   "name": "ICMR",
+   "site": "https://www.icmr.nic.in"
+  },
+  {
+   "name": "ESIC",
+   "site": "https://www.esic.gov.in"
+  },
+  {
+   "name": "NHM",
+   "site": "https://nhm.gov.in"
+  }
+ ]
+}
