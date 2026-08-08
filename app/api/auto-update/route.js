@@ -71,6 +71,7 @@ export async function GET(req) {
 
   const today = new Date().toISOString().split("T")[0];
   let newsAdded = 0, templateAdded = 0, resultsAdded = 0, admitsAdded = 0;
+  let realNewsAdded = 0;
   let cleanupDone = 0, vacanciesAdded = 0, answersAdded = 0;
 
   try {
@@ -196,8 +197,105 @@ export async function GET(req) {
       }
     }
 
+    // ========== REAL NEWS TRACKER: Google News RSS (daily result/admit card tracking) ==========
+    if (mode === "full" || mode === "news" || mode === "real") {
+      const NEWS_QUERIES = [
+        "sarkari result admit card",
+        "SSC result",
+        "UPSC result",
+        "RRB admit card",
+        "IBPS result",
+        "NTA admit card",
+        "CTET result admit card",
+        "Bihar Police result",
+        "UP Police result",
+        "NEET result",
+        "JEE Main result",
+        "Railway group d result",
+      ];
+      const KNOWN_OFFICIAL = {
+        "up police": "https://uppbpb.gov.in",
+        "bihar police": "https://csbc.bihar.gov.in",
+        "nmms": "https://nmmssa.in",
+        "csir net": "https://csirnet.nta.nic.in",
+        "ugc net": "https://ugcnet.nta.nic.in",
+        "cuet": "https://cuet.nta.nic.in",
+        "neet": "https://neet.nta.nic.in",
+        "jee main": "https://jeemain.nta.ac.in",
+        "navodaya": "https://navodaya.gov.in",
+        "kvs": "https://kvsangathan.nic.in",
+        "ctet": "https://ctet.nic.in",
+      };
+      const classifyUpdate = (t) => {
+        const k = t.toLowerCase();
+        if (/(admit card|hall ticket|call letter|admitcard|hallticket)/.test(k)) return "admit_card";
+        if (/(answer key|answerkey|answer keys|omr)/.test(k)) return "answer_key";
+        if (/(syllabus)/.test(k)) return "syllabus";
+        if (/(result|merit|shortlist|selected|qualified|declared)/.test(k)) return "result";
+        return "general";
+      };
+      const { data: recentRows } = await supabase.from("updates").select("title").order("created_at", { ascending: false }).limit(400);
+      const existingTitles = new Set((recentRows || []).map((r) => (r.title || "").toLowerCase().trim()));
+      for (const q of NEWS_QUERIES) {
+        try {
+          const rssUrl = "https://news.google.com/rss/search?q=" + encodeURIComponent(q) + "&hl=en-IN&gl=IN&ceid=IN:en";
+          const res = await fetch(rssUrl, { signal: AbortSignal.timeout(8000), headers: { "User-Agent": "Mozilla/5.0" } });
+          const xml = await res.text();
+          const items = [...xml.matchAll(/<item>([\s\S]*?)<\/item>/g)];
+          for (const m of items) {
+            if (realNewsAdded >= 14) break;
+            const tMatch = m[1].match(/<title>(.*?)<\/title>/);
+            if (!tMatch) continue;
+            let title = tMatch[1].replace(/&amp;/g, "&").replace(/&quot;/g, '"').replace(/&#39;/g, "'").replace(/&lt;/g, "<").replace(/&gt;/g, ">").trim();
+            if (!title || title.length < 15) continue;
+            const key = title.toLowerCase().trim();
+            if (existingTitles.has(key)) continue;
+            if (!/(sarkari|result|admit|hall ticket|answer key|exam date|notification|recruitment|shortlist|merit|declared)/.test(key)) continue;
+            const examMatch = matchExam(title);
+            if (!examMatch && !/(ssc|upsc|rrb|railway|ibps|sbi|rbi|bank|neet|jee|ctet|nta|bpsc|uppsc|mppsc|rpsc|police|nda|cds|afcat|lic|epfo|navy|army|air force|kvs|nvs|dsssb|nmms|ugc net|csir)/.test(key)) continue;
+            const type = classifyUpdate(title);
+            const knownKey = (examMatch && examMatch[1]) || Object.keys(KNOWN_OFFICIAL).find((kk) => key.includes(kk)) || null;
+            const examId = examMatch ? examMatch[0] : null;
+            const link = OFFICIAL_LINKS[examId] || (knownKey ? KNOWN_OFFICIAL[knownKey] : null);
+            const insertTitle = title.length > 180 ? title.slice(0, 177) + "..." : title;
+            const { data: dup } = await supabase.from("updates").select("id").eq("title", insertTitle).limit(1);
+            if (dup && dup.length) continue;
+            await supabase.from("updates").insert({
+              exam_id: examId,
+              update_type: type,
+              title: insertTitle,
+              description: "Auto-tracked from Google News. Official site par confirm karein.",
+              official_link: link,
+              publish_date: today,
+              is_verified: false,
+            });
+            existingTitles.add(insertTitle.toLowerCase().trim());
+            realNewsAdded++;
+            const examLabel = examMatch ? examMatch[1] : insertTitle.slice(0, 40);
+            if (type === "result") {
+              const { data: rDup } = await adminSupabase.from("results").select("id").eq("result_title", insertTitle).limit(1);
+              if (!rDup || !rDup.length) {
+                await adminSupabase.from("results").insert({ exam_id: examId, exam_name: examLabel, result_title: insertTitle, result_url: link, status: "declared" });
+                resultsAdded++;
+              }
+            }
+            if (type === "admit_card") {
+              const { data: aDup } = await adminSupabase.from("admit_cards").select("id").eq("title", insertTitle).limit(1);
+              if (!aDup || !aDup.length) {
+                await adminSupabase.from("admit_cards").insert({ exam_id: examId, exam_name: examLabel, title: insertTitle, download_url: link, status: "released" });
+                admitsAdded++;
+              }
+            }
+          }
+        } catch (e) {
+          continue;
+        }
+        if (realNewsAdded >= 14) break;
+      }
+    }
+
     // ========== TEMPLATES: Rotating result/admit card templates ==========
-    if (mode === "full" || mode === "templates") {
+    if ((mode === "full" || mode === "templates") && realNewsAdded < 3) {
       const templates = [
         ["SSC CGL","result","SSC CGL Tier 1 result update."],
         ["SSC CHSL","result","SSC CHSL result declared."],
@@ -279,6 +377,7 @@ export async function GET(req) {
       mode,
       duplicates_cleaned: cleanupDone,
       news_monitor_added: newsAdded,
+      real_news_added: realNewsAdded,
       template_added: templateAdded,
       results_auto_added: resultsAdded,
       admit_cards_auto_added: admitsAdded,
@@ -291,3 +390,4 @@ export async function GET(req) {
     return Response.json({ success: false, date: today, error: e.message }, { status: 500 });
   }
 }
+
