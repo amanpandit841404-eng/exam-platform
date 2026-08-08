@@ -10,7 +10,7 @@ export default function ResultsPage() {
 
   useEffect(() => {
     document.title = "Latest Sarkari Result 2026 | SarkariSetu India";
-    supabase.from("results").select("*").order("created_at", { ascending: false })
+    supabase.from("results").select("*").order("created_at", { ascending: false }).limit(200)
       .then(({ data }) => { if (data) setResults(data); setLoading(false); });
   }, []);
 
@@ -30,7 +30,7 @@ export default function ResultsPage() {
         <div style={{ maxWidth: 800, margin: "0 auto" }}>
           <a href="/" style={{ color: "rgba(255,255,255,0.8)", fontSize: 13, textDecoration: "none" }}>← Home</a>
           <h1 style={{ margin: "8px 0 4px", fontSize: 22, fontWeight: 800 }}>🏆 Latest Sarkari Results</h1>
-          <p style={{ margin: "0 0 16px", fontSize: 13, opacity: 0.85 }}>{results.length} results available • Updated daily</p>
+          <p style={{ margin: "0 0 16px", fontSize: 13, opacity: 0.85 }}>{loading ? "Loading results..." : results.length + " results available"} • Updated daily</p>
           <div style={{ position: "relative" }}>
             <span style={{ position: "absolute", left: 12, top: "50%", transform: "translateY(-50%)", fontSize: 16 }}>🔍</span>
             <input placeholder="Search results... (SSC CGL, UPSC, NEET...)"
