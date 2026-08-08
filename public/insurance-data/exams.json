@@ -1,535 +1,584 @@
 {
- "updated": "2026-08-08",
- "note": "सभी जानकारी अनुमानित/संकेतात्मक है। बीमा कंपनियों की भर्ती, fee, pattern और dates बदलती रहती हैं — हमेशा उस कंपनी की official website पर notification ज़रूर चेक करें।",
- "stats": {
-  "exams": 12,
-  "insurers": 10,
-  "posts": 15000
- },
- "exams": [
-  {
-   "slug": "lic-ado",
-   "name": "LIC ADO",
-   "emoji": "💼",
-   "fullName": "LIC Apprentice Development Officer",
-   "tags": [
-    "Graduate",
-    "Sales Officer",
-    "LIC"
-   ],
-   "officialWebsite": "https://licindia.in",
-   "examFee": "₹700 (UR/OBC) • SC/ST/PwD मुक्त (अनुमानित)",
-   "latestStatus": "LIC ADO अगली notification का इंतज़ार है। पिछली भर्ती 2025 में हुई — licindia.in चेक करें।",
-   "overview": "LIC ADO (Apprentice Development Officer) LIC में officer rank की भर्ती है — LIC agents की team संभालते हैं। Written + interview से selection।",
-   "posts": [
-    "Apprentice Development Officer (ADO)"
-   ],
-   "eligibility": "Graduation। आयु: 21-30 वर्ष (आरक्षित छूट)।",
-   "examPattern": [
+  "updated": "2026-08-08T06:34:07.327Z",
+  "note": "सभी जानकारी अनुमानित/संकेतात्मक है। बीमा कंपनियों की भर्ती, fee, pattern और dates बदलती रहती हैं — हमेशा उस कंपनी की official website पर notification ज़रूर चेक करें।",
+  "stats": {
+    "exams": 12,
+    "insurers": 10,
+    "posts": 15000
+  },
+  "exams": [
     {
-     "stage": "Online Exam",
-     "detail": "Reasoning, Numeric, English, GK, Insurance & Financial Awareness (100 अंक)"
+      "slug": "lic-ado",
+      "name": "LIC ADO",
+      "emoji": "💼",
+      "fullName": "LIC Apprentice Development Officer",
+      "tags": [
+        "Graduate",
+        "Sales Officer",
+        "LIC"
+      ],
+      "officialWebsite": "https://licindia.in",
+      "examFee": "₹700 (UR/OBC) • SC/ST/PwD मुक्त (अनुमानित)",
+      "latestStatus": "LIC ADO अगली notification का इंतज़ार है। पिछली भर्ती 2025 में हुई — licindia.in चेक करें।",
+      "overview": "LIC ADO (Apprentice Development Officer) LIC में officer rank की भर्ती है — LIC agents की team संभालते हैं। Written + interview से selection।",
+      "posts": [
+        "Apprentice Development Officer (ADO)"
+      ],
+      "eligibility": "Graduation। आयु: 21-30 वर्ष (आरक्षित छूट)।",
+      "examPattern": [
+        {
+          "stage": "Online Exam",
+          "detail": "Reasoning, Numeric, English, GK, Insurance & Financial Awareness (100 अंक)"
+        },
+        {
+          "stage": "Interview",
+          "detail": "35 अंक — Personality Test"
+        }
+      ],
+      "syllabus": [
+        "Reasoning Ability",
+        "Numerical Ability",
+        "English",
+        "Insurance & Financial Awareness"
+      ],
+      "salary": "₹25,000-30,000/माह (शुरुआत) + incentives, DA, भत्ते",
+      "selectionProcess": "Online Exam → Interview → DV"
     },
     {
-     "stage": "Interview",
-     "detail": "35 अंक — Personality Test"
+      "slug": "niacl-ao",
+      "name": "NIACL AO",
+      "emoji": "🛡️",
+      "fullName": "New India Assurance — Administrative Officer",
+      "tags": [
+        "Graduate",
+        "AO",
+        "General Insurance"
+      ],
+      "officialWebsite": "https://www.newindia.co.in",
+      "examFee": "₹1000 (UR/OBC) • SC/ST/PwD मुक्त (अनुमानित)",
+      "latestStatus": "NIACL AO अगली notification का इंतज़ार है। पिछली भर्ती 2025 में हुई — newindia.co.in चेक करें।",
+      "overview": "New India Assurance देश की सबसे बड़ी general insurance कंपनियों में से एक है — AO की भर्ती prelims + mains + interview से होती है।",
+      "posts": [
+        "Administrative Officer (AO) — Generalist",
+        "AO — Specialist"
+      ],
+      "eligibility": "Graduation (Generalist) / CA/MBBS (Specialist)। आयु: 21-30 वर्ष।",
+      "examPattern": [
+        {
+          "stage": "Prelims",
+          "detail": "100 प्रश्न, 100 अंक — Reasoning, English, Quant (qualifying)"
+        },
+        {
+          "stage": "Mains",
+          "detail": "200 प्रश्न — Reasoning, English, Quant, GK & Insurance + Descriptive"
+        },
+        {
+          "stage": "Interview",
+          "detail": "Personality Test"
+        }
+      ],
+      "syllabus": [
+        "Reasoning & Computer Aptitude",
+        "Quantitative Aptitude",
+        "English",
+        "Insurance & Financial Awareness"
+      ],
+      "salary": "Scale I — ₹50,925-96,765 (शुरुआत ~₹65,000/माह total)",
+      "selectionProcess": "Prelims → Mains → Interview → DV"
+    },
+    {
+      "slug": "nicl-ao",
+      "name": "NICL AO",
+      "emoji": "🛡️",
+      "fullName": "National Insurance Company — Administrative Officer",
+      "tags": [
+        "Graduate",
+        "AO",
+        "General Insurance"
+      ],
+      "officialWebsite": "https://www.nationalinsuranceindia.com",
+      "examFee": "₹1000 (UR/OBC) • SC/ST/PwD मुक्त (अनुमानित)",
+      "latestStatus": "NICL AO अगली notification का इंतज़ार है। पिछली भर्ती 2025 में हुई — nationalinsuranceindia.com चेक करें।",
+      "overview": "National Insurance general insurance की प्रमुख कंपनी है — AO की भर्ती prelims + mains + interview से होती है।",
+      "posts": [
+        "Administrative Officer (AO) — Generalist",
+        "AO — Specialist"
+      ],
+      "eligibility": "Graduation / संबंधित degree। आयु: 21-30 वर्ष।",
+      "examPattern": [
+        {
+          "stage": "Prelims",
+          "detail": "100 प्रश्न, 100 अंक (qualifying)"
+        },
+        {
+          "stage": "Mains",
+          "detail": "200 प्रश्न + Descriptive"
+        },
+        {
+          "stage": "Interview",
+          "detail": "Personality Test"
+        }
+      ],
+      "syllabus": [
+        "Reasoning",
+        "Quantitative Aptitude",
+        "English",
+        "Insurance & Financial Awareness"
+      ],
+      "salary": "Scale I — ₹50,925-96,765 + भत्ते",
+      "selectionProcess": "Prelims → Mains → Interview → DV"
+    },
+    {
+      "slug": "uiic-ao",
+      "name": "UIIC AO",
+      "emoji": "🤝",
+      "fullName": "United India Insurance — Administrative Officer",
+      "tags": [
+        "Graduate",
+        "AO",
+        "General Insurance"
+      ],
+      "officialWebsite": "https://www.uiic.co.in",
+      "examFee": "₹1000 (UR/OBC) • SC/ST/PwD मुक्त (अनुमानित)",
+      "latestStatus": "UIIC AO अगली notification का इंतज़ार है। पिछली भर्ती 2025 में हुई — uiic.co.in चेक करें।",
+      "overview": "United India Insurance general insurance की बड़ी कंपनी है — AO की भर्ती prelims + mains + interview से होती है।",
+      "posts": [
+        "Administrative Officer (AO)"
+      ],
+      "eligibility": "Graduation। आयु: 21-30 वर्ष।",
+      "examPattern": [
+        {
+          "stage": "Prelims",
+          "detail": "100 प्रश्न, 100 अंक (qualifying)"
+        },
+        {
+          "stage": "Mains",
+          "detail": "200 प्रश्न + Descriptive"
+        },
+        {
+          "stage": "Interview",
+          "detail": "Personality Test"
+        }
+      ],
+      "syllabus": [
+        "Reasoning",
+        "Quantitative Aptitude",
+        "English",
+        "Insurance & Financial Awareness"
+      ],
+      "salary": "Scale I — ₹50,925-96,765 + भत्ते",
+      "selectionProcess": "Prelims → Mains → Interview → DV"
+    },
+    {
+      "slug": "irdai-am",
+      "name": "IRDAI AM",
+      "emoji": "📋",
+      "fullName": "IRDAI Assistant Manager (Grade A)",
+      "tags": [
+        "Graduate",
+        "Regulator",
+        "Grade A"
+      ],
+      "officialWebsite": "https://www.irdai.gov.in",
+      "examFee": "₹1000 (UR/OBC) • SC/ST/PwD मुक्त (अनुमानित)",
+      "latestStatus": "IRDAI Assistant Manager अगली notification का इंतज़ार है। पिछली भर्ती 2024 में हुई — irdai.gov.in चेक करें।",
+      "overview": "IRDAI भारत की बीमा नियामक संस्था है — Assistant Manager (Grade A) की भर्ती phase-wise exam + interview से होती है।",
+      "posts": [
+        "Assistant Manager (Grade A) — Legal/Generalist"
+      ],
+      "eligibility": "Graduation (Legal के लिए LLB)। आयु: 21-30 वर्ष।",
+      "examPattern": [
+        {
+          "stage": "Phase-I (CBT)",
+          "detail": "Reasoning, English, Quant, GK & Insurance"
+        },
+        {
+          "stage": "Phase-II (CBT)",
+          "detail": "Descriptive + Knowledge Test"
+        },
+        {
+          "stage": "Phase-III (Interview)",
+          "detail": "Personality Test"
+        }
+      ],
+      "syllabus": [
+        "Reasoning",
+        "Quantitative Aptitude",
+        "English",
+        "Insurance & Financial Awareness"
+      ],
+      "salary": "Grade A — ₹63,200-80,000+ (शुरुआत)",
+      "selectionProcess": "Phase-I → Phase-II → Interview → DV"
+    },
+    {
+      "slug": "gic",
+      "name": "GIC (General Insurance Corp)",
+      "emoji": "🏢",
+      "fullName": "General Insurance Corporation of India — Officer Scale I",
+      "tags": [
+        "Graduate",
+        "Reinsurer",
+        "Scale I"
+      ],
+      "officialWebsite": "https://www.gicofindia.com",
+      "examFee": "₹1000 (UR/OBC) • SC/ST/PwD मुक्त (अनुमानित)",
+      "latestStatus": "GIC अगली notification का इंतज़ार है। पिछली भर्ती 2025 में हुई — gicofindia.com चेक करें।",
+      "overview": "GIC भारत की एकमात्र reinsurance कंपनी है — Scale I Officer की भर्ती phase-wise exam + interview से होती है।",
+      "posts": [
+        "Officer (Scale I)"
+      ],
+      "eligibility": "Graduation। आयु: 21-30 वर्ष।",
+      "examPattern": [
+        {
+          "stage": "Phase-I (CBT)",
+          "detail": "Reasoning, English, Quant, GK & Insurance"
+        },
+        {
+          "stage": "Phase-II (CBT)",
+          "detail": "Descriptive + Technical"
+        },
+        {
+          "stage": "Interview",
+          "detail": "Personality Test"
+        }
+      ],
+      "syllabus": [
+        "Reasoning",
+        "Quantitative Aptitude",
+        "English",
+        "Insurance & Reinsurance"
+      ],
+      "salary": "Scale I — ₹50,925-96,765 + भत्ते",
+      "selectionProcess": "Phase-I → Phase-II → Interview → DV"
+    },
+    {
+      "slug": "oicl-ao",
+      "name": "OICL AO",
+      "emoji": "🕌",
+      "fullName": "Oriental Insurance — Administrative Officer",
+      "tags": [
+        "Graduate",
+        "AO",
+        "General Insurance"
+      ],
+      "officialWebsite": "https://orientalinsurance.org.in",
+      "examFee": "₹1000 (UR/OBC) • SC/ST/PwD मुक्त (अनुमानित)",
+      "latestStatus": "OICL AO अगली notification का इंतज़ार है। पिछली भर्ती 2025 में हुई — orientalinsurance.org.in चेक करें।",
+      "overview": "Oriental Insurance general insurance की प्रमुख कंपनी है — AO की भर्ती prelims + mains + interview से होती है।",
+      "posts": [
+        "Administrative Officer (AO)"
+      ],
+      "eligibility": "Graduation। आयु: 21-30 वर्ष।",
+      "examPattern": [
+        {
+          "stage": "Prelims",
+          "detail": "100 प्रश्न, 100 अंक (qualifying)"
+        },
+        {
+          "stage": "Mains",
+          "detail": "200 प्रश्न + Descriptive"
+        },
+        {
+          "stage": "Interview",
+          "detail": "Personality Test"
+        }
+      ],
+      "syllabus": [
+        "Reasoning",
+        "Quantitative Aptitude",
+        "English",
+        "Insurance & Financial Awareness"
+      ],
+      "salary": "Scale I — ₹50,925-96,765 + भत्ते",
+      "selectionProcess": "Prelims → Mains → Interview → DV"
+    },
+    {
+      "slug": "lic-hfl",
+      "name": "LIC HFL",
+      "emoji": "🏠",
+      "fullName": "LIC Housing Finance — Assistant/Associate Recruitment",
+      "tags": [
+        "Graduate",
+        "Housing Finance",
+        "Assistant"
+      ],
+      "officialWebsite": "https://www.liphflin.com",
+      "examFee": "₹700 (UR/OBC) • SC/ST/PwD मुक्त (अनुमानित)",
+      "latestStatus": "LIC HFL अगली notification का इंतज़ार है। पिछली भर्ती 2025 में हुई — liphflin.com चेक करें।",
+      "overview": "LIC Housing Finance देश की बड़ी housing finance कंपनी है — Assistant, Associate, Legal Officer जैसे posts के लिए भर्ती करती है।",
+      "posts": [
+        "Assistant",
+        "Associate",
+        "Legal Officer"
+      ],
+      "eligibility": "Graduation। आयु: 21-28 वर्ष।",
+      "examPattern": [
+        {
+          "stage": "Online Exam",
+          "detail": "Reasoning, Quant, English, GK & Finance Awareness"
+        },
+        {
+          "stage": "Interview",
+          "detail": "जहाँ applicable"
+        }
+      ],
+      "syllabus": [
+        "Reasoning",
+        "Quantitative Aptitude",
+        "English",
+        "Finance & Housing Awareness"
+      ],
+      "salary": "₹25,000-35,000/माह (शुरुआत) + भत्ते",
+      "selectionProcess": "Online Exam → Interview → DV"
+    },
+    {
+      "slug": "aic",
+      "name": "AIC (Agriculture Insurance)",
+      "emoji": "🌾",
+      "fullName": "Agriculture Insurance Company — Various Posts",
+      "tags": [
+        "Graduate",
+        "Agriculture",
+        "Insurance"
+      ],
+      "officialWebsite": "https://www.aicofindia.com",
+      "examFee": "₹800 (UR/OBC) • SC/ST/PwD मुक्त (अनुमानित)",
+      "latestStatus": "AIC अगली notification का इंतज़ार है। पिछली भर्ती 2025 में हुई — aicofindia.com चेक करें।",
+      "overview": "Agriculture Insurance Company किसानों के फसल बीमा (PMFBY) की कंपनी है — officers और assistants की भर्ती करती है।",
+      "posts": [
+        "Assistant Manager / Officer",
+        "Assistant"
+      ],
+      "eligibility": "Graduation (Agriculture प्राथमिकता)। आयु: 21-30 वर्ष।",
+      "examPattern": [
+        {
+          "stage": "CBT",
+          "detail": "Reasoning, Quant, English, GK & Agriculture/Insurance"
+        },
+        {
+          "stage": "Interview",
+          "detail": "जहाँ applicable"
+        }
+      ],
+      "syllabus": [
+        "Reasoning",
+        "Quantitative Aptitude",
+        "English",
+        "Agriculture & Insurance Awareness"
+      ],
+      "salary": "Officer scale — ₹35,000-50,000/माह + भत्ते",
+      "selectionProcess": "CBT → Interview → DV"
+    },
+    {
+      "slug": "ecgc",
+      "name": "ECGC",
+      "emoji": "🌍",
+      "fullName": "Export Credit Guarantee Corporation — Various Posts",
+      "tags": [
+        "Graduate",
+        "Export Finance",
+        "Officer"
+      ],
+      "officialWebsite": "https://www.ecgc.in",
+      "examFee": "₹500 (UR/OBC) • SC/ST/PwD मुक्त (अनुमानित)",
+      "latestStatus": "ECGC अगली notification का इंतज़ार है। पिछली भर्ती 2024 में हुई — ecgc.in चेक करें।",
+      "overview": "ECGC निर्यातकों को credit guarantee देने वाली कंपनी है — Officers (Scale I) और Assistants की भर्ती करती है।",
+      "posts": [
+        "Officer (Scale I)",
+        "Assistant"
+      ],
+      "eligibility": "Graduation। आयु: 21-30 वर्ष।",
+      "examPattern": [
+        {
+          "stage": "CBT",
+          "detail": "Reasoning, Quant, English, GK & Export/Finance"
+        },
+        {
+          "stage": "Interview",
+          "detail": "Officer posts के लिए"
+        }
+      ],
+      "syllabus": [
+        "Reasoning",
+        "Quantitative Aptitude",
+        "English",
+        "Export & Finance Awareness"
+      ],
+      "salary": "Officer — Scale I ₹50,925-96,765 + भत्ते",
+      "selectionProcess": "CBT → Interview → DV"
+    },
+    {
+      "slug": "niacl-assistant",
+      "name": "NIACL Assistant",
+      "emoji": "🧾",
+      "fullName": "New India Assurance — Assistant",
+      "tags": [
+        "12th Pass",
+        "Assistant",
+        "General Insurance"
+      ],
+      "officialWebsite": "https://www.newindia.co.in",
+      "examFee": "₹850 (UR/OBC) • SC/ST/PwD मुक्त (अनुमानित)",
+      "latestStatus": "NIACL Assistant अगली notification का इंतज़ार है। पिछली भर्ती 2025 में हुई — newindia.co.in चेक करें।",
+      "overview": "NIACL Assistant general insurance में clerk स्तर की भर्ती है — 12th pass के लिए insurance sector में पहली नौकरी का मौका।",
+      "posts": [
+        "Assistant (Clerk)"
+      ],
+      "eligibility": "12th pass। आयु: 18-26 वर्ष।",
+      "examPattern": [
+        {
+          "stage": "Prelims",
+          "detail": "100 प्रश्न — Reasoning, English, Quant (qualifying)"
+        },
+        {
+          "stage": "Mains",
+          "detail": "Reasoning, English, Quant, GK & Insurance"
+        },
+        {
+          "stage": "Interview",
+          "detail": "जहाँ applicable"
+        }
+      ],
+      "syllabus": [
+        "Reasoning",
+        "Quantitative Aptitude",
+        "English",
+        "Insurance & Financial Awareness"
+      ],
+      "salary": "₹25,000-35,000/माह (total) + भत्ते",
+      "selectionProcess": "Prelims → Mains → Interview → DV"
+    },
+    {
+      "slug": "nicl-assistant",
+      "name": "NICL Assistant",
+      "emoji": "🧾",
+      "fullName": "National Insurance — Assistant",
+      "tags": [
+        "12th Pass",
+        "Assistant",
+        "General Insurance"
+      ],
+      "officialWebsite": "https://www.nationalinsuranceindia.com",
+      "examFee": "₹850 (UR/OBC) • SC/ST/PwD मुक्त (अनुमानित)",
+      "latestStatus": "NICL Assistant अगली notification का इंतज़ार है। पिछली भर्ती 2025 में हुई — nationalinsuranceindia.com चेक करें।",
+      "overview": "NICL Assistant National Insurance में clerk स्तर की भर्ती है — 12th pass के लिए स्थिर नौकरी।",
+      "posts": [
+        "Assistant (Clerk)"
+      ],
+      "eligibility": "12th pass। आयु: 18-26 वर्ष।",
+      "examPattern": [
+        {
+          "stage": "Prelims",
+          "detail": "100 प्रश्न — Reasoning, English, Quant (qualifying)"
+        },
+        {
+          "stage": "Mains",
+          "detail": "Reasoning, English, Quant, GK & Insurance"
+        },
+        {
+          "stage": "Interview",
+          "detail": "जहाँ applicable"
+        }
+      ],
+      "syllabus": [
+        "Reasoning",
+        "Quantitative Aptitude",
+        "English",
+        "Insurance & Financial Awareness"
+      ],
+      "salary": "₹25,000-35,000/माह (total) + भत्ते",
+      "selectionProcess": "Prelims → Mains → Interview → DV"
     }
-   ],
-   "syllabus": [
-    "Reasoning Ability",
-    "Numerical Ability",
-    "English",
-    "Insurance & Financial Awareness"
-   ],
-   "salary": "₹25,000-30,000/माह (शुरुआत) + incentives, DA, भत्ते",
-   "selectionProcess": "Online Exam → Interview → DV"
-  },
-  {
-   "slug": "niacl-ao",
-   "name": "NIACL AO",
-   "emoji": "🛡️",
-   "fullName": "New India Assurance — Administrative Officer",
-   "tags": [
-    "Graduate",
-    "AO",
-    "General Insurance"
-   ],
-   "officialWebsite": "https://www.newindia.co.in",
-   "examFee": "₹1000 (UR/OBC) • SC/ST/PwD मुक्त (अनुमानित)",
-   "latestStatus": "NIACL AO अगली notification का इंतज़ार है। पिछली भर्ती 2025 में हुई — newindia.co.in चेक करें।",
-   "overview": "New India Assurance देश की सबसे बड़ी general insurance कंपनियों में से एक है — AO की भर्ती prelims + mains + interview से होती है।",
-   "posts": [
-    "Administrative Officer (AO) — Generalist",
-    "AO — Specialist"
-   ],
-   "eligibility": "Graduation (Generalist) / CA/MBBS (Specialist)। आयु: 21-30 वर्ष।",
-   "examPattern": [
+  ],
+  "insurers": [
     {
-     "stage": "Prelims",
-     "detail": "100 प्रश्न, 100 अंक — Reasoning, English, Quant (qualifying)"
+      "name": "LIC",
+      "site": "https://licindia.in"
     },
     {
-     "stage": "Mains",
-     "detail": "200 प्रश्न — Reasoning, English, Quant, GK & Insurance + Descriptive"
+      "name": "New India Assurance",
+      "site": "https://www.newindia.co.in"
     },
     {
-     "stage": "Interview",
-     "detail": "Personality Test"
+      "name": "National Insurance",
+      "site": "https://www.nationalinsuranceindia.com"
+    },
+    {
+      "name": "United India Insurance",
+      "site": "https://www.uiic.co.in"
+    },
+    {
+      "name": "Oriental Insurance",
+      "site": "https://orientalinsurance.org.in"
+    },
+    {
+      "name": "GIC Re",
+      "site": "https://www.gicofindia.com"
+    },
+    {
+      "name": "IRDAI",
+      "site": "https://www.irdai.gov.in"
+    },
+    {
+      "name": "AIC",
+      "site": "https://www.aicofindia.com"
+    },
+    {
+      "name": "ECGC",
+      "site": "https://www.ecgc.in"
+    },
+    {
+      "name": "LIC HFL",
+      "site": "https://www.liphflin.com"
     }
-   ],
-   "syllabus": [
-    "Reasoning & Computer Aptitude",
-    "Quantitative Aptitude",
-    "English",
-    "Insurance & Financial Awareness"
-   ],
-   "salary": "Scale I — ₹50,925-96,765 (शुरुआत ~₹65,000/माह total)",
-   "selectionProcess": "Prelims → Mains → Interview → DV"
+  ],
+  "hero": {
+    "badge": "🛡️ बीमा कंपनी भर्ती",
+    "title": "Insurance Exams Center",
+    "subtitle": "LIC ADO, NIACL AO, NICL AO, UIIC, IRDAI, GIC — सभी insurance exams की पूरी जानकारी एक जगह। Posts, Eligibility, Exam Pattern, Salary।",
+    "gradient": "linear-gradient(135deg,#4c1d95,#8b5cf6)"
   },
-  {
-   "slug": "nicl-ao",
-   "name": "NICL AO",
-   "emoji": "🛡️",
-   "fullName": "National Insurance Company — Administrative Officer",
-   "tags": [
-    "Graduate",
-    "AO",
-    "General Insurance"
-   ],
-   "officialWebsite": "https://www.nationalinsuranceindia.com",
-   "examFee": "₹1000 (UR/OBC) • SC/ST/PwD मुक्त (अनुमानित)",
-   "latestStatus": "NICL AO अगली notification का इंतज़ार है। पिछली भर्ती 2025 में हुई — nationalinsuranceindia.com चेक करें।",
-   "overview": "National Insurance general insurance की प्रमुख कंपनी है — AO की भर्ती prelims + mains + interview से होती है।",
-   "posts": [
-    "Administrative Officer (AO) — Generalist",
-    "AO — Specialist"
-   ],
-   "eligibility": "Graduation / संबंधित degree। आयु: 21-30 वर्ष।",
-   "examPattern": [
-    {
-     "stage": "Prelims",
-     "detail": "100 प्रश्न, 100 अंक (qualifying)"
-    },
-    {
-     "stage": "Mains",
-     "detail": "200 प्रश्न + Descriptive"
-    },
-    {
-     "stage": "Interview",
-     "detail": "Personality Test"
-    }
-   ],
-   "syllabus": [
-    "Reasoning",
-    "Quantitative Aptitude",
-    "English",
-    "Insurance & Financial Awareness"
-   ],
-   "salary": "Scale I — ₹50,925-96,765 + भत्ते",
-   "selectionProcess": "Prelims → Mains → Interview → DV"
-  },
-  {
-   "slug": "uiic-ao",
-   "name": "UIIC AO",
-   "emoji": "🤝",
-   "fullName": "United India Insurance — Administrative Officer",
-   "tags": [
-    "Graduate",
-    "AO",
-    "General Insurance"
-   ],
-   "officialWebsite": "https://www.uiic.co.in",
-   "examFee": "₹1000 (UR/OBC) • SC/ST/PwD मुक्त (अनुमानित)",
-   "latestStatus": "UIIC AO अगली notification का इंतज़ार है। पिछली भर्ती 2025 में हुई — uiic.co.in चेक करें।",
-   "overview": "United India Insurance general insurance की बड़ी कंपनी है — AO की भर्ती prelims + mains + interview से होती है।",
-   "posts": [
-    "Administrative Officer (AO)"
-   ],
-   "eligibility": "Graduation। आयु: 21-30 वर्ष।",
-   "examPattern": [
-    {
-     "stage": "Prelims",
-     "detail": "100 प्रश्न, 100 अंक (qualifying)"
-    },
-    {
-     "stage": "Mains",
-     "detail": "200 प्रश्न + Descriptive"
-    },
-    {
-     "stage": "Interview",
-     "detail": "Personality Test"
-    }
-   ],
-   "syllabus": [
-    "Reasoning",
-    "Quantitative Aptitude",
-    "English",
-    "Insurance & Financial Awareness"
-   ],
-   "salary": "Scale I — ₹50,925-96,765 + भत्ते",
-   "selectionProcess": "Prelims → Mains → Interview → DV"
-  },
-  {
-   "slug": "irdai-am",
-   "name": "IRDAI AM",
-   "emoji": "📋",
-   "fullName": "IRDAI Assistant Manager (Grade A)",
-   "tags": [
-    "Graduate",
-    "Regulator",
-    "Grade A"
-   ],
-   "officialWebsite": "https://www.irdai.gov.in",
-   "examFee": "₹1000 (UR/OBC) • SC/ST/PwD मुक्त (अनुमानित)",
-   "latestStatus": "IRDAI Assistant Manager अगली notification का इंतज़ार है। पिछली भर्ती 2024 में हुई — irdai.gov.in चेक करें।",
-   "overview": "IRDAI भारत की बीमा नियामक संस्था है — Assistant Manager (Grade A) की भर्ती phase-wise exam + interview से होती है।",
-   "posts": [
-    "Assistant Manager (Grade A) — Legal/Generalist"
-   ],
-   "eligibility": "Graduation (Legal के लिए LLB)। आयु: 21-30 वर्ष।",
-   "examPattern": [
-    {
-     "stage": "Phase-I (CBT)",
-     "detail": "Reasoning, English, Quant, GK & Insurance"
-    },
-    {
-     "stage": "Phase-II (CBT)",
-     "detail": "Descriptive + Knowledge Test"
-    },
-    {
-     "stage": "Phase-III (Interview)",
-     "detail": "Personality Test"
-    }
-   ],
-   "syllabus": [
-    "Reasoning",
-    "Quantitative Aptitude",
-    "English",
-    "Insurance & Financial Awareness"
-   ],
-   "salary": "Grade A — ₹63,200-80,000+ (शुरुआत)",
-   "selectionProcess": "Phase-I → Phase-II → Interview → DV"
-  },
-  {
-   "slug": "gic",
-   "name": "GIC (General Insurance Corp)",
-   "emoji": "🏢",
-   "fullName": "General Insurance Corporation of India — Officer Scale I",
-   "tags": [
-    "Graduate",
-    "Reinsurer",
-    "Scale I"
-   ],
-   "officialWebsite": "https://www.gicofindia.com",
-   "examFee": "₹1000 (UR/OBC) • SC/ST/PwD मुक्त (अनुमानित)",
-   "latestStatus": "GIC अगली notification का इंतज़ार है। पिछली भर्ती 2025 में हुई — gicofindia.com चेक करें।",
-   "overview": "GIC भारत की एकमात्र reinsurance कंपनी है — Scale I Officer की भर्ती phase-wise exam + interview से होती है।",
-   "posts": [
-    "Officer (Scale I)"
-   ],
-   "eligibility": "Graduation। आयु: 21-30 वर्ष।",
-   "examPattern": [
-    {
-     "stage": "Phase-I (CBT)",
-     "detail": "Reasoning, English, Quant, GK & Insurance"
-    },
-    {
-     "stage": "Phase-II (CBT)",
-     "detail": "Descriptive + Technical"
-    },
-    {
-     "stage": "Interview",
-     "detail": "Personality Test"
-    }
-   ],
-   "syllabus": [
-    "Reasoning",
-    "Quantitative Aptitude",
-    "English",
-    "Insurance & Reinsurance"
-   ],
-   "salary": "Scale I — ₹50,925-96,765 + भत्ते",
-   "selectionProcess": "Phase-I → Phase-II → Interview → DV"
-  },
-  {
-   "slug": "oicl-ao",
-   "name": "OICL AO",
-   "emoji": "🕌",
-   "fullName": "Oriental Insurance — Administrative Officer",
-   "tags": [
-    "Graduate",
-    "AO",
-    "General Insurance"
-   ],
-   "officialWebsite": "https://orientalinsurance.org.in",
-   "examFee": "₹1000 (UR/OBC) • SC/ST/PwD मुक्त (अनुमानित)",
-   "latestStatus": "OICL AO अगली notification का इंतज़ार है। पिछली भर्ती 2025 में हुई — orientalinsurance.org.in चेक करें।",
-   "overview": "Oriental Insurance general insurance की प्रमुख कंपनी है — AO की भर्ती prelims + mains + interview से होती है।",
-   "posts": [
-    "Administrative Officer (AO)"
-   ],
-   "eligibility": "Graduation। आयु: 21-30 वर्ष।",
-   "examPattern": [
-    {
-     "stage": "Prelims",
-     "detail": "100 प्रश्न, 100 अंक (qualifying)"
-    },
-    {
-     "stage": "Mains",
-     "detail": "200 प्रश्न + Descriptive"
-    },
-    {
-     "stage": "Interview",
-     "detail": "Personality Test"
-    }
-   ],
-   "syllabus": [
-    "Reasoning",
-    "Quantitative Aptitude",
-    "English",
-    "Insurance & Financial Awareness"
-   ],
-   "salary": "Scale I — ₹50,925-96,765 + भत्ते",
-   "selectionProcess": "Prelims → Mains → Interview → DV"
-  },
-  {
-   "slug": "lic-hfl",
-   "name": "LIC HFL",
-   "emoji": "🏠",
-   "fullName": "LIC Housing Finance — Assistant/Associate Recruitment",
-   "tags": [
-    "Graduate",
-    "Housing Finance",
-    "Assistant"
-   ],
-   "officialWebsite": "https://www.liphflin.com",
-   "examFee": "₹700 (UR/OBC) • SC/ST/PwD मुक्त (अनुमानित)",
-   "latestStatus": "LIC HFL अगली notification का इंतज़ार है। पिछली भर्ती 2025 में हुई — liphflin.com चेक करें।",
-   "overview": "LIC Housing Finance देश की बड़ी housing finance कंपनी है — Assistant, Associate, Legal Officer जैसे posts के लिए भर्ती करती है।",
-   "posts": [
-    "Assistant",
-    "Associate",
-    "Legal Officer"
-   ],
-   "eligibility": "Graduation। आयु: 21-28 वर्ष।",
-   "examPattern": [
-    {
-     "stage": "Online Exam",
-     "detail": "Reasoning, Quant, English, GK & Finance Awareness"
-    },
-    {
-     "stage": "Interview",
-     "detail": "जहाँ applicable"
-    }
-   ],
-   "syllabus": [
-    "Reasoning",
-    "Quantitative Aptitude",
-    "English",
-    "Finance & Housing Awareness"
-   ],
-   "salary": "₹25,000-35,000/माह (शुरुआत) + भत्ते",
-   "selectionProcess": "Online Exam → Interview → DV"
-  },
-  {
-   "slug": "aic",
-   "name": "AIC (Agriculture Insurance)",
-   "emoji": "🌾",
-   "fullName": "Agriculture Insurance Company — Various Posts",
-   "tags": [
-    "Graduate",
-    "Agriculture",
-    "Insurance"
-   ],
-   "officialWebsite": "https://www.aicofindia.com",
-   "examFee": "₹800 (UR/OBC) • SC/ST/PwD मुक्त (अनुमानित)",
-   "latestStatus": "AIC अगली notification का इंतज़ार है। पिछली भर्ती 2025 में हुई — aicofindia.com चेक करें।",
-   "overview": "Agriculture Insurance Company किसानों के फसल बीमा (PMFBY) की कंपनी है — officers और assistants की भर्ती करती है।",
-   "posts": [
-    "Assistant Manager / Officer",
-    "Assistant"
-   ],
-   "eligibility": "Graduation (Agriculture प्राथमिकता)। आयु: 21-30 वर्ष।",
-   "examPattern": [
-    {
-     "stage": "CBT",
-     "detail": "Reasoning, Quant, English, GK & Agriculture/Insurance"
-    },
-    {
-     "stage": "Interview",
-     "detail": "जहाँ applicable"
-    }
-   ],
-   "syllabus": [
-    "Reasoning",
-    "Quantitative Aptitude",
-    "English",
-    "Agriculture & Insurance Awareness"
-   ],
-   "salary": "Officer scale — ₹35,000-50,000/माह + भत्ते",
-   "selectionProcess": "CBT → Interview → DV"
-  },
-  {
-   "slug": "ecgc",
-   "name": "ECGC",
-   "emoji": "🌍",
-   "fullName": "Export Credit Guarantee Corporation — Various Posts",
-   "tags": [
-    "Graduate",
-    "Export Finance",
-    "Officer"
-   ],
-   "officialWebsite": "https://www.ecgc.in",
-   "examFee": "₹500 (UR/OBC) • SC/ST/PwD मुक्त (अनुमानित)",
-   "latestStatus": "ECGC अगली notification का इंतज़ार है। पिछली भर्ती 2024 में हुई — ecgc.in चेक करें।",
-   "overview": "ECGC निर्यातकों को credit guarantee देने वाली कंपनी है — Officers (Scale I) और Assistants की भर्ती करती है।",
-   "posts": [
-    "Officer (Scale I)",
-    "Assistant"
-   ],
-   "eligibility": "Graduation। आयु: 21-30 वर्ष।",
-   "examPattern": [
-    {
-     "stage": "CBT",
-     "detail": "Reasoning, Quant, English, GK & Export/Finance"
-    },
-    {
-     "stage": "Interview",
-     "detail": "Officer posts के लिए"
-    }
-   ],
-   "syllabus": [
-    "Reasoning",
-    "Quantitative Aptitude",
-    "English",
-    "Export & Finance Awareness"
-   ],
-   "salary": "Officer — Scale I ₹50,925-96,765 + भत्ते",
-   "selectionProcess": "CBT → Interview → DV"
-  },
-  {
-   "slug": "niacl-assistant",
-   "name": "NIACL Assistant",
-   "emoji": "🧾",
-   "fullName": "New India Assurance — Assistant",
-   "tags": [
-    "12th Pass",
-    "Assistant",
-    "General Insurance"
-   ],
-   "officialWebsite": "https://www.newindia.co.in",
-   "examFee": "₹850 (UR/OBC) • SC/ST/PwD मुक्त (अनुमानित)",
-   "latestStatus": "NIACL Assistant अगली notification का इंतज़ार है। पिछली भर्ती 2025 में हुई — newindia.co.in चेक करें।",
-   "overview": "NIACL Assistant general insurance में clerk स्तर की भर्ती है — 12th pass के लिए insurance sector में पहली नौकरी का मौका।",
-   "posts": [
-    "Assistant (Clerk)"
-   ],
-   "eligibility": "12th pass। आयु: 18-26 वर्ष।",
-   "examPattern": [
-    {
-     "stage": "Prelims",
-     "detail": "100 प्रश्न — Reasoning, English, Quant (qualifying)"
-    },
-    {
-     "stage": "Mains",
-     "detail": "Reasoning, English, Quant, GK & Insurance"
-    },
-    {
-     "stage": "Interview",
-     "detail": "जहाँ applicable"
-    }
-   ],
-   "syllabus": [
-    "Reasoning",
-    "Quantitative Aptitude",
-    "English",
-    "Insurance & Financial Awareness"
-   ],
-   "salary": "₹25,000-35,000/माह (total) + भत्ते",
-   "selectionProcess": "Prelims → Mains → Interview → DV"
-  },
-  {
-   "slug": "nicl-assistant",
-   "name": "NICL Assistant",
-   "emoji": "🧾",
-   "fullName": "National Insurance — Assistant",
-   "tags": [
-    "12th Pass",
-    "Assistant",
-    "General Insurance"
-   ],
-   "officialWebsite": "https://www.nationalinsuranceindia.com",
-   "examFee": "₹850 (UR/OBC) • SC/ST/PwD मुक्त (अनुमानित)",
-   "latestStatus": "NICL Assistant अगली notification का इंतज़ार है। पिछली भर्ती 2025 में हुई — nationalinsuranceindia.com चेक करें।",
-   "overview": "NICL Assistant National Insurance में clerk स्तर की भर्ती है — 12th pass के लिए स्थिर नौकरी।",
-   "posts": [
-    "Assistant (Clerk)"
-   ],
-   "eligibility": "12th pass। आयु: 18-26 वर्ष।",
-   "examPattern": [
-    {
-     "stage": "Prelims",
-     "detail": "100 प्रश्न — Reasoning, English, Quant (qualifying)"
-    },
-    {
-     "stage": "Mains",
-     "detail": "Reasoning, English, Quant, GK & Insurance"
-    },
-    {
-     "stage": "Interview",
-     "detail": "जहाँ applicable"
-    }
-   ],
-   "syllabus": [
-    "Reasoning",
-    "Quantitative Aptitude",
-    "English",
-    "Insurance & Financial Awareness"
-   ],
-   "salary": "₹25,000-35,000/माह (total) + भत्ते",
-   "selectionProcess": "Prelims → Mains → Interview → DV"
-  }
- ],
- "insurers": [
-  {
-   "name": "LIC",
-   "site": "https://licindia.in"
-  },
-  {
-   "name": "New India Assurance",
-   "site": "https://www.newindia.co.in"
-  },
-  {
-   "name": "National Insurance",
-   "site": "https://www.nationalinsuranceindia.com"
-  },
-  {
-   "name": "United India Insurance",
-   "site": "https://www.uiic.co.in"
-  },
-  {
-   "name": "Oriental Insurance",
-   "site": "https://orientalinsurance.org.in"
-  },
-  {
-   "name": "GIC Re",
-   "site": "https://www.gicofindia.com"
-  },
-  {
-   "name": "IRDAI",
-   "site": "https://www.irdai.gov.in"
-  },
-  {
-   "name": "AIC",
-   "site": "https://www.aicofindia.com"
-  },
-  {
-   "name": "ECGC",
-   "site": "https://www.ecgc.in"
-  },
-  {
-   "name": "LIC HFL",
-   "site": "https://www.liphflin.com"
-  }
- ]
+  "quickLinks": [
+    [
+      "/results",
+      "🏆 Insurance Results"
+    ],
+    [
+      "/admit-cards",
+      "📄 Admit Card"
+    ],
+    [
+      "/banking",
+      "🏦 Banking Center"
+    ],
+    [
+      "/syllabus",
+      "📚 Syllabus"
+    ],
+    [
+      "/notifications",
+      "🔔 Updates"
+    ],
+    [
+      "/search",
+      "🔍 Search Exams"
+    ]
+  ],
+  "statsCards": [
+    [
+      "📋",
+      12,
+      "Major Exams"
+    ],
+    [
+      "🏢",
+      "10+",
+      "Insurers"
+    ],
+    [
+      "💰",
+      "AO/ADO",
+      "Officer Posts"
+    ]
+  ]
 }
