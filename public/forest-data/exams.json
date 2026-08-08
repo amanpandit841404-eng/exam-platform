@@ -1,548 +1,597 @@
 {
- "updated": "2026-08-08",
- "note": "सभी जानकारी अनुमानित/संकेतात्मक है। Forest विभाग की भर्तियाँ (Forest Guard, RFO, Van Rakshak आदि) हर cycle में pattern और eligibility बदलती हैं — हमेशा official website पर notification ज़रूर चेक करें।",
- "stats": {
-  "exams": 12,
-  "states": 7,
-  "posts": 300000
- },
- "exams": [
-  {
-   "slug": "ifs",
-   "name": "UPSC IFoS",
-   "emoji": "🌳",
-   "fullName": "UPSC Indian Forest Service Examination",
-   "tags": [
-    "IFoS",
-    "UPSC",
-    "Group A",
-    "National"
-   ],
-   "officialWebsite": "https://www.upsc.gov.in",
-   "examFee": "₹100 (UR) • SC/ST/PwD/महिला — मुक्त (UPSC सामान्य नियम)",
-   "latestStatus": "IFoS 2026 Prelims 24 मई 2026 को CSE के साथ हुआ। Mains 22 नवंबर 2026 से शुरू होने की उम्मीद — upsconline.nic.in पर notification चेक करें।",
-   "overview": "UPSC Indian Forest Service (IFoS) देश की सबसे प्रतिष्ठित forest service है — Group A central service। Prelims Civil Services (CSE) के साथ, Mains अलग होता है। Forest officer बनने का सबसे बड़ा रास्ता।",
-   "posts": [
-    "IFoS Officer (Group A)",
-    "Deputy Conservator of Forests (DCF) — पोस्टिंग state forest departments में"
-   ],
-   "eligibility": "Bachelor's degree — कम से कम एक subject में: Agriculture, Animal Husbandry & Veterinary Science, Botany, Chemistry, Geology, Mathematics, Physics, Statistics, Zoology या Forestry/Engineering। आयु: 21-32 वर्ष (श्रेणी छूट)।",
-   "examPattern": [
+  "updated": "2026-08-08T06:34:08.392Z",
+  "note": "सभी जानकारी अनुमानित/संकेतात्मक है। Forest विभाग की भर्तियाँ (Forest Guard, RFO, Van Rakshak आदि) हर cycle में pattern और eligibility बदलती हैं — हमेशा official website पर notification ज़रूर चेक करें।",
+  "stats": {
+    "exams": 12,
+    "states": 7,
+    "posts": 300000
+  },
+  "exams": [
     {
-     "stage": "Prelims",
-     "detail": "GS Paper I (200 अंक) + CSAT (200 अंक) — CSE के साथ, मई में"
+      "slug": "ifs",
+      "name": "UPSC IFoS",
+      "emoji": "🌳",
+      "fullName": "UPSC Indian Forest Service Examination",
+      "tags": [
+        "IFoS",
+        "UPSC",
+        "Group A",
+        "National"
+      ],
+      "officialWebsite": "https://www.upsc.gov.in",
+      "examFee": "₹100 (UR) • SC/ST/PwD/महिला — मुक्त (UPSC सामान्य नियम)",
+      "latestStatus": "IFoS 2026 Prelims 24 मई 2026 को CSE के साथ हुआ। Mains 22 नवंबर 2026 से शुरू होने की उम्मीद — upsconline.nic.in पर notification चेक करें।",
+      "overview": "UPSC Indian Forest Service (IFoS) देश की सबसे प्रतिष्ठित forest service है — Group A central service। Prelims Civil Services (CSE) के साथ, Mains अलग होता है। Forest officer बनने का सबसे बड़ा रास्ता।",
+      "posts": [
+        "IFoS Officer (Group A)",
+        "Deputy Conservator of Forests (DCF) — पोस्टिंग state forest departments में"
+      ],
+      "eligibility": "Bachelor's degree — कम से कम एक subject में: Agriculture, Animal Husbandry & Veterinary Science, Botany, Chemistry, Geology, Mathematics, Physics, Statistics, Zoology या Forestry/Engineering। आयु: 21-32 वर्ष (श्रेणी छूट)।",
+      "examPattern": [
+        {
+          "stage": "Prelims",
+          "detail": "GS Paper I (200 अंक) + CSAT (200 अंक) — CSE के साथ, मई में"
+        },
+        {
+          "stage": "Mains",
+          "detail": "6 पेपर — Essay, GS I-IV, Optional subject (Agriculture/Botany/Forestry/Zoology आदि)"
+        },
+        {
+          "stage": "Interview",
+          "detail": "Personality Test — UPSC board, ~275 अंक"
+        }
+      ],
+      "syllabus": [
+        "GS Paper I — History, Geography, Polity, Economy, Environment",
+        "CSAT — Aptitude & Comprehension",
+        "Optional — Agriculture / Botany / Forestry / Zoology / Geology"
+      ],
+      "salary": "Level 10+ — ₹56,100 से ₹1,77,500 (7th CPC) + HRA, DA, allowances",
+      "selectionProcess": "Prelims → Mains → Interview (Personality Test)"
     },
     {
-     "stage": "Mains",
-     "detail": "6 पेपर — Essay, GS I-IV, Optional subject (Agriculture/Botany/Forestry/Zoology आदि)"
+      "slug": "forest-guard",
+      "name": "Forest Guard",
+      "emoji": "🌲",
+      "fullName": "Van Rakshak / Forest Guard Recruitment (All States)",
+      "tags": [
+        "Forest Guard",
+        "Van Rakshak",
+        "10th/12th Pass",
+        "Physical Test"
+      ],
+      "officialWebsite": "https://forests.gov.in",
+      "examFee": "₹100-500 (UR) • SC/ST को छूट — state के अनुसार •",
+      "latestStatus": "Forest Guard भर्तियाँ state-wise चलती रहती हैं — UP, MP, Rajasthan, Uttarakhand, Chhattisgarh, Maharashtra। अपने राज्य के forest department portal पर notification चेक करें।",
+      "overview": "Forest Guard (Van Rakshak) सबसे popular forest post है — हर साल हज़ारों vacancies निकलती हैं। 10वीं/12वीं पास के लिए सबसे बड़ा सरकारी नौकरी का मौका।",
+      "posts": [
+        "Forest Guard / Van Rakshak",
+        "Wildlife Guard",
+        "Forest Watcher (कुछ राज्य)"
+      ],
+      "eligibility": "10वीं/12वीं पास (राज्य के अनुसार)। शारीरिक मानक — पुरुष: 163-165 cm ऊँचाई + 1.6 km दौड़; महिला: 150-152 cm (राज्य नियम)। आयु: 18-40 वर्ष।",
+      "examPattern": [
+        {
+          "stage": "Written Test (CBT)",
+          "detail": "GK, Hindi, Maths, Reasoning — राज्य के अनुसार 60-100 प्रश्न"
+        },
+        {
+          "stage": "Physical Test (PET)",
+          "detail": "दौड़ (walking/race) + ऊँचाई/सीना माप"
+        },
+        {
+          "stage": "DV & Medical",
+          "detail": "Document verification + मेडिकल जाँच"
+        }
+      ],
+      "syllabus": [
+        "General Knowledge",
+        "Hindi",
+        "Mathematics (10वीं स्तर)",
+        "Reasoning",
+        "Forest & Environment Basics"
+      ],
+      "salary": "₹19,500-₹62,000 (state pay band) + allowances — राज्य के अनुसार",
+      "selectionProcess": "Written → Physical Test → DV → Medical"
     },
     {
-     "stage": "Interview",
-     "detail": "Personality Test — UPSC board, ~275 अंक"
+      "slug": "forest-range-officer",
+      "name": "Forest Range Officer",
+      "emoji": "🍃",
+      "fullName": "Forest Range Officer (State PSC) Recruitment",
+      "tags": [
+        "RFO",
+        "State PSC",
+        "Graduate",
+        "Forestry"
+      ],
+      "officialWebsite": "https://uppsc.up.nic.in",
+      "examFee": "₹270 (UR) • SC/ST ₹135 (UPPSC जैसे state PSC नियम) •",
+      "latestStatus": "UPPSC ACF/RFO, APSC Forest Ranger, Kerala PSC Beat Forest Officer जैसी भर्तियाँ चलती रहती हैं। अपने राज्य के PSC पर notification चेक करें।",
+      "overview": "Forest Range Officer (RFO) Forest Guard से ऊपर का post है — state forest department में field-level officer। State PSC के माध्यम से भर्ती होती है।",
+      "posts": [
+        "Range Forest Officer (RFO)",
+        "Deputy Ranger",
+        "Forest Section Officer",
+        "Beat Forest Officer (Kerala)"
+      ],
+      "eligibility": "Graduate — Science/Agriculture/Forestry/Botany preferred (state के अनुसार)। आयु: 21-40 वर्ष (श्रेणी छूट)।",
+      "examPattern": [
+        {
+          "stage": "Prelims",
+          "detail": "GK + Forest/Science subjects — objective, राज्य के अनुसार"
+        },
+        {
+          "stage": "Mains",
+          "detail": "Forestry, Botany, Agriculture, Zoology जैसे descriptive papers"
+        },
+        {
+          "stage": "Interview/Physical",
+          "detail": "जैसा state PSC निर्धारित करे"
+        }
+      ],
+      "syllabus": [
+        "Forestry & Silviculture",
+        "Botany",
+        "Agriculture",
+        "Zoology & Wildlife",
+        "General Studies",
+        "State-specific GK"
+      ],
+      "salary": "Level 8+ — ₹47,600 से ₹1,51,100 (7th CPC state pay) + allowances",
+      "selectionProcess": "Prelims → Mains → Interview → Medical"
+    },
+    {
+      "slug": "forester",
+      "name": "Forester",
+      "emoji": "🌿",
+      "fullName": "Forester (Van Palak) Recruitment — State-wise",
+      "tags": [
+        "Forester",
+        "Van Palak",
+        "State Exam",
+        "10th/12th"
+      ],
+      "officialWebsite": "https://forests.gov.in",
+      "examFee": "₹100-400 (UR) • SC/ST छूट — राज्य के अनुसार •",
+      "latestStatus": "Forester भर्तियाँ state-wise आती हैं (Kerala, Maharashtra, UP, MP आदि)। अपने राज्य के forest department portal देखें।",
+      "overview": "Forester (Van Palak) Forest Guard और RFO के बीच का post है — कई राज्यों में यह exam Forest Guard के साथ ही निकलता है। स्थिर सरकारी नौकरी।",
+      "posts": [
+        "Forester (Van Palak)",
+        "Forest Guard (senior scale, कुछ राज्य)"
+      ],
+      "eligibility": "10वीं/12वीं पास (राज्य के अनुसार, कहीं Diploma preferred)। शारीरिक मानक state-wise। आयु: 18-35 वर्ष।",
+      "examPattern": [
+        {
+          "stage": "Written Test",
+          "detail": "GK, Hindi, Maths, Forest basics — राज्य के अनुसार"
+        },
+        {
+          "stage": "Physical Test",
+          "detail": "दौड़ + शारीरिक माप"
+        }
+      ],
+      "syllabus": [
+        "General Knowledge",
+        "Hindi/State Language",
+        "Mathematics",
+        "Reasoning",
+        "Forest & Environment"
+      ],
+      "salary": "₹25,500-₹81,100 (Level 4) + allowances — राज्य के अनुसार",
+      "selectionProcess": "Written → Physical → DV → Medical"
+    },
+    {
+      "slug": "up-forest-guard",
+      "name": "UP Forest Guard",
+      "emoji": "🌲",
+      "fullName": "UPSSSC Van Rakshak / Forest Guard Recruitment 2026",
+      "tags": [
+        "UPSSSC",
+        "Uttar Pradesh",
+        "UP PET",
+        "708 Posts"
+      ],
+      "officialWebsite": "https://upsssc.gov.in",
+      "examFee": "₹25 (सभी श्रेणियाँ — UPSSSC न्यूनतम फीस) •",
+      "latestStatus": "UPSSSC Forest Guard 2026 — 708 posts (Forest Guard + Wildlife Guard), आवेदन 30 जून से 20 जुलाई 2026 तक। UP PET 2025 scorecard ज़रूरी।",
+      "overview": "UPSSSC Forest Guard (Van Rakshak) उत्तर प्रदेश forest department की भर्ती है — 12वीं पास + UP PET scorecard वालों के लिए। UP की सबसे बड़ी forest भर्तियों में से एक।",
+      "posts": [
+        "Forest Guard (Van Rakshak)",
+        "Wildlife Guard"
+      ],
+      "eligibility": "12वीं पास + UPSSSC PET 2025 scorecard। आयु: 18-40 वर्ष (श्रेणी छूट)। शारीरिक मानक UPSSSC के अनुसार।",
+      "examPattern": [
+        {
+          "stage": "UP PET",
+          "detail": "Qualifying test — 2025 scorecard ज़रूरी"
+        },
+        {
+          "stage": "CBT (Forest Guard Exam)",
+          "detail": "GK, Hindi, Maths, Reasoning — 100 प्रश्न"
+        },
+        {
+          "stage": "Physical Test",
+          "detail": "चलना दौड़ना (walking) test + माप"
+        }
+      ],
+      "syllabus": [
+        "General Knowledge",
+        "Hindi",
+        "Mathematics",
+        "Reasoning",
+        "UP Forest & Environment"
+      ],
+      "salary": "Level 3 — ₹21,700 बेसिक + allowances (UPSSSC pay)",
+      "selectionProcess": "PET → CBT → Physical → DV → Medical"
+    },
+    {
+      "slug": "mp-forest-guard",
+      "name": "MP Forest Guard",
+      "emoji": "🐅",
+      "fullName": "MP Van Rakshak / Forest Guard Recruitment (MPPEB)",
+      "tags": [
+        "Madhya Pradesh",
+        "Van Rakshak",
+        "MPPEB",
+        "Forest"
+      ],
+      "officialWebsite": "https://peb.mp.gov.in",
+      "examFee": "₹100 (UR) • SC/ST/OBC ₹50 (MPPEB नियम) •",
+      "latestStatus": "MP Van Rakshak अगली भर्ती की उम्मीद — MPPEB और MP forest department की official notification चेक करें। पिछली भर्ती में हज़ारों posts निकले थे।",
+      "overview": "MP Van Rakshak (Forest Guard) मध्य प्रदेश forest department की भर्ती है — MP में tiger reserves और बड़े forest areas के कारण लगातार भर्तियाँ होती हैं। MPPEB के माध्यम से exam होता है।",
+      "posts": [
+        "Van Rakshak (Forest Guard)",
+        "Forest Watcher (कुछ cycles)"
+      ],
+      "eligibility": "12वीं पास। शारीरिक मानक — पुरुष: 163 cm ऊँचाई, 1.6 km दौड़ 6.5 मिनट; महिला: 150 cm (MP नियम)। आयु: 18-33 वर्ष।",
+      "examPattern": [
+        {
+          "stage": "Written Test",
+          "detail": "GK, Hindi, Maths, Reasoning — objective"
+        },
+        {
+          "stage": "Physical Test",
+          "detail": "दौड़ + ऊँचाई/सीना माप"
+        },
+        {
+          "stage": "DV & Medical",
+          "detail": "Documents verification + मेडिकल"
+        }
+      ],
+      "syllabus": [
+        "General Knowledge",
+        "Hindi",
+        "Mathematics",
+        "Reasoning",
+        "MP Forest & Wildlife"
+      ],
+      "salary": "₹19,500-₹62,000 (pay band) + allowances — MP state rules",
+      "selectionProcess": "Written → Physical → DV → Medical"
+    },
+    {
+      "slug": "bihar-forest-guard",
+      "name": "Bihar Forest Guard",
+      "emoji": "🌳",
+      "fullName": "Bihar Forest Guard / Van Rakshak Recruitment",
+      "tags": [
+        "Bihar",
+        "Van Rakshak",
+        "Forest Dept",
+        "BPSSC"
+      ],
+      "officialWebsite": "https://forest.bihar.gov.in",
+      "examFee": "₹400-750 (UR) • SC/ST ₹200 (Bihar नियम, अनुमानित) •",
+      "latestStatus": "Bihar Forest Range Officer 2026 (BPSSC) — 16 posts, आवेदन 16 जुलाई से 16 अगस्त 2026। Forest Guard भर्ती के लिए bihar forest department पर नज़र रखें।",
+      "overview": "Bihar Forest Guard भर्ती Bihar forest department के Van Rakshak posts के लिए होती है। Bihar में forest area कम है, इसलिए vacancies सीमित लेकिन प्रतिस्पर्धा तेज़ है।",
+      "posts": [
+        "Forest Guard (Van Rakshak)"
+      ],
+      "eligibility": "12वीं पास। शारीरिक मानक state के अनुसार। आयु: 18-37 वर्ष (श्रेणी छूट)।",
+      "examPattern": [
+        {
+          "stage": "Written Test",
+          "detail": "GK, Hindi, Maths, Reasoning"
+        },
+        {
+          "stage": "Physical Test",
+          "detail": "दौड़ + शारीरिक माप"
+        },
+        {
+          "stage": "DV & Medical",
+          "detail": "Verification + मेडिकल"
+        }
+      ],
+      "syllabus": [
+        "General Knowledge",
+        "Hindi",
+        "Mathematics",
+        "Reasoning",
+        "Forest Basics"
+      ],
+      "salary": "₹21,700 (Level 3) + allowances — Bihar 7th CPC pay",
+      "selectionProcess": "Written → Physical → DV → Medical"
+    },
+    {
+      "slug": "rajasthan-forest-guard",
+      "name": "Rajasthan Forest Guard",
+      "emoji": "🦌",
+      "fullName": "Rajasthan Forest Guard / Van Rakshak Recruitment",
+      "tags": [
+        "Rajasthan",
+        "Van Rakshak",
+        "Forest Dept",
+        "State Exam"
+      ],
+      "officialWebsite": "https://forest.rajasthan.gov.in",
+      "examFee": "₹450 (UR) • SC/ST ₹250 (Rajasthan नियम, अनुमानित) •",
+      "latestStatus": "Rajasthan Forest Guard भर्ती आवधिक रूप से निकलती है — forest.rajasthan.gov.in और Rajasthan forest dept की notification चेक करें।",
+      "overview": "Rajasthan Forest Guard (Van Rakshak) Rajasthan forest department की भर्ती है — राज्य के अरावली और जंगल इलाकों में posts निकलते हैं। Written + physical test से चयन।",
+      "posts": [
+        "Forest Guard (Van Rakshak)"
+      ],
+      "eligibility": "12वीं पास (कुछ cycles में 10वीं भी)। शारीरिक मानक राजस्थान नियम। आयु: 18-40 वर्ष।",
+      "examPattern": [
+        {
+          "stage": "Written Test",
+          "detail": "GK, Hindi, Maths, Reasoning"
+        },
+        {
+          "stage": "Physical Test",
+          "detail": "दौड़ (walking) + माप"
+        }
+      ],
+      "syllabus": [
+        "General Knowledge",
+        "Hindi",
+        "Mathematics",
+        "Reasoning",
+        "Rajasthan Forest & Environment"
+      ],
+      "salary": "₹14,000-₹48,000 (pay scale) + allowances — Rajasthan state rules",
+      "selectionProcess": "Written → Physical → DV → Medical"
+    },
+    {
+      "slug": "uttarakhand-forest-guard",
+      "name": "Uttarakhand Forest Guard",
+      "emoji": "⛰️",
+      "fullName": "Uttarakhand Van Daroga / Forest Guard Recruitment",
+      "tags": [
+        "Uttarakhand",
+        "Van Daroga",
+        "Forest Dept",
+        "Hill State"
+      ],
+      "officialWebsite": "https://forest.uk.gov.in",
+      "examFee": "₹300 (UR) • SC/ST ₹150 (Uttarakhand नियम, अनुमानित) •",
+      "latestStatus": "Uttarakhand Van Daroga (Forest Guard) भर्ती — forest.uk.gov.in पर नवीनतम notification चेक करें। राज्य में forest cover ज़्यादा होने से बार-बार भर्तियाँ होती हैं।",
+      "overview": "Uttarakhand Van Daroga forest department की सबसे popular भर्ती है — 70% से ज़्यादा forest cover वाले राज्य में Van Daroga posts की माँग हमेशा रहती है।",
+      "posts": [
+        "Van Daroga (Forest Guard)",
+        "Forest Watcher (कुछ cycles)"
+      ],
+      "eligibility": "10वीं/12वीं पास। शारीरिक मानक — पुरुष: 163 cm, दौड़ 25 km पैदल/मोटर साइकिल आदि (state नियम)। आयु: 18-42 वर्ष।",
+      "examPattern": [
+        {
+          "stage": "Written Test",
+          "detail": "GK, Hindi, Maths, Reasoning — objective"
+        },
+        {
+          "stage": "Physical Test",
+          "detail": "दौड़ + शारीरिक माप (पहाड़ी इलाका criteria)"
+        }
+      ],
+      "syllabus": [
+        "General Knowledge",
+        "Hindi",
+        "Mathematics",
+        "Reasoning",
+        "Forest & Wildlife (UK)"
+      ],
+      "salary": "₹21,700 (Level 3) + allowances — Uttarakhand state rules",
+      "selectionProcess": "Written → Physical → DV → Medical"
+    },
+    {
+      "slug": "chhattisgarh-forest-guard",
+      "name": "CG Forest Guard",
+      "emoji": "🌴",
+      "fullName": "Chhattisgarh Forest Guard / Van Rakshak Recruitment",
+      "tags": [
+        "Chhattisgarh",
+        "Van Rakshak",
+        "Vyapam",
+        "Forest"
+      ],
+      "officialWebsite": "https://forest.cg.gov.in",
+      "examFee": "₹350 (UR) • SC/ST ₹250 (CG नियम, अनुमानित) •",
+      "latestStatus": "Chhattisgarh Forest Guard भर्ती (CGPSC/Vyapam के माध्यम से) — forest.cg.gov.in पर आगामी notification देखें।",
+      "overview": "Chhattisgarh Forest Guard (Van Rakshak) — छत्तीसगढ़ का बड़ा forest state है, इसलिए भर्तियाँ बार-बार निकलती हैं। Written + physical test से चयन होता है।",
+      "posts": [
+        "Forest Guard (Van Rakshak)"
+      ],
+      "eligibility": "12वीं पास। शारीरिक मानक CG नियम। आयु: 18-30 वर्ष (श्रेणी छूट)।",
+      "examPattern": [
+        {
+          "stage": "Written Test",
+          "detail": "GK, Hindi, Maths, Reasoning"
+        },
+        {
+          "stage": "Physical Test",
+          "detail": "दौड़ + माप"
+        },
+        {
+          "stage": "DV & Medical",
+          "detail": "Verification + मेडिकल"
+        }
+      ],
+      "syllabus": [
+        "General Knowledge",
+        "Hindi",
+        "Mathematics",
+        "Reasoning",
+        "Forest & Environment (CG)"
+      ],
+      "salary": "₹19,500-₹62,000 (pay band) + allowances — CG state rules",
+      "selectionProcess": "Written → Physical → DV → Medical"
+    },
+    {
+      "slug": "maharashtra-forest-guard",
+      "name": "Maharashtra Forest Guard",
+      "emoji": "🐆",
+      "fullName": "Maharashtra Forest Guard / Van Rakshak Recruitment 2026",
+      "tags": [
+        "Maharashtra",
+        "Van Rakshak",
+        "12,991 Posts",
+        "Forest Dept"
+      ],
+      "officialWebsite": "https://mahaforest.gov.in",
+      "examFee": "₹394 (UR) • SC/ST ₹236 (MH नियम, अनुमानित) •",
+      "latestStatus": "Maharashtra Forest Guard 2026 — ~12,991 posts की उम्मीद। Registration मई-जून 2026 के आसपास अपेक्षित — mahaforest.gov.in चेक करें।",
+      "overview": "Maharashtra Forest Guard 2026 देश की सबसे बड़ी forest भर्तियों में से एक है — ~13,000 posts की उम्मीद। Written + physical test से चयन।",
+      "posts": [
+        "Forest Guard (Van Rakshak)"
+      ],
+      "eligibility": "12वीं पास। शारीरिक मानक — पुरुष: 163 cm, 5 km दौड़; महिला: 150 cm (MH नियम)। आयु: 18-33 वर्ष।",
+      "examPattern": [
+        {
+          "stage": "Written Test",
+          "detail": "GK, Hindi/Marathi, Maths, Reasoning"
+        },
+        {
+          "stage": "Physical Test",
+          "detail": "दौड़ + शारीरिक माप"
+        },
+        {
+          "stage": "DV & Medical",
+          "detail": "Verification + मेडिकल"
+        }
+      ],
+      "syllabus": [
+        "General Knowledge",
+        "Marathi/Hindi",
+        "Mathematics",
+        "Reasoning",
+        "Forest & Wildlife (MH)"
+      ],
+      "salary": "₹21,700 (Level 3) + allowances — Maharashtra state rules",
+      "selectionProcess": "Written → Physical → DV → Medical"
+    },
+    {
+      "slug": "fri-icfre",
+      "name": "FRI / ICFRE",
+      "emoji": "🔬",
+      "fullName": "FRI Dehradun / ICFRE Scientist-B & Technical Recruitment",
+      "tags": [
+        "ICFRE",
+        "FRI Dehradun",
+        "Scientist",
+        "Research"
+      ],
+      "officialWebsite": "https://icfre.gov.in",
+      "examFee": "₹500 (UR) • SC/ST ₹250 (अनुमानित) •",
+      "latestStatus": "ICFRE / FRI (Dehradun) Scientist-B व technical भर्तियाँ आवधिक रूप से निकलती हैं — icfre.gov.in पर notification देखें।",
+      "overview": "ICFRE और Forest Research Institute (FRI), Dehradun forestry research का सबसे बड़ा केंद्र है। यहाँ Scientist-B और technical posts के लिए भर्तियाँ होती हैं — science graduates के लिए बढ़िया मौका।",
+      "posts": [
+        "Scientist-B",
+        "Technical Assistant",
+        "Field Assistant",
+        "Research Associate (project-based)"
+      ],
+      "eligibility": "Scientist-B: M.Sc in Forestry/Botany/Life Sciences (या related) + research experience/PhD preferred। Technical: B.Sc/Diploma। आयु: 18-35 वर्ष।",
+      "examPattern": [
+        {
+          "stage": "Written / Screening Test",
+          "detail": "Subject-wise MCQ / descriptive — science subjects"
+        },
+        {
+          "stage": "Interview",
+          "detail": "Expert committee interview + research discussion"
+        }
+      ],
+      "syllabus": [
+        "Forestry Science",
+        "Botany / Plant Sciences",
+        "Environmental Science",
+        "Research Methodology"
+      ],
+      "salary": "Scientist-B — Level 10, ₹56,100 बेसिक + allowances; Technical — Level 5+",
+      "selectionProcess": "Written/Screening → Interview → DV"
     }
-   ],
-   "syllabus": [
-    "GS Paper I — History, Geography, Polity, Economy, Environment",
-    "CSAT — Aptitude & Comprehension",
-    "Optional — Agriculture / Botany / Forestry / Zoology / Geology"
-   ],
-   "salary": "Level 10+ — ₹56,100 से ₹1,77,500 (7th CPC) + HRA, DA, allowances",
-   "selectionProcess": "Prelims → Mains → Interview (Personality Test)"
-  },
-  {
-   "slug": "forest-guard",
-   "name": "Forest Guard",
-   "emoji": "🌲",
-   "fullName": "Van Rakshak / Forest Guard Recruitment (All States)",
-   "tags": [
-    "Forest Guard",
-    "Van Rakshak",
-    "10th/12th Pass",
-    "Physical Test"
-   ],
-   "officialWebsite": "https://forests.gov.in",
-   "examFee": "₹100-500 (UR) • SC/ST को छूट — state के अनुसार •",
-   "latestStatus": "Forest Guard भर्तियाँ state-wise चलती रहती हैं — UP, MP, Rajasthan, Uttarakhand, Chhattisgarh, Maharashtra। अपने राज्य के forest department portal पर notification चेक करें।",
-   "overview": "Forest Guard (Van Rakshak) सबसे popular forest post है — हर साल हज़ारों vacancies निकलती हैं। 10वीं/12वीं पास के लिए सबसे बड़ा सरकारी नौकरी का मौका।",
-   "posts": [
-    "Forest Guard / Van Rakshak",
-    "Wildlife Guard",
-    "Forest Watcher (कुछ राज्य)"
-   ],
-   "eligibility": "10वीं/12वीं पास (राज्य के अनुसार)। शारीरिक मानक — पुरुष: 163-165 cm ऊँचाई + 1.6 km दौड़; महिला: 150-152 cm (राज्य नियम)। आयु: 18-40 वर्ष।",
-   "examPattern": [
+  ],
+  "orgs": [
     {
-     "stage": "Written Test (CBT)",
-     "detail": "GK, Hindi, Maths, Reasoning — राज्य के अनुसार 60-100 प्रश्न"
+      "name": "UPSC",
+      "site": "https://www.upsc.gov.in"
     },
     {
-     "stage": "Physical Test (PET)",
-     "detail": "दौड़ (walking/race) + ऊँचाई/सीना माप"
+      "name": "MoEF&CC (Environment Ministry)",
+      "site": "https://moef.gov.in"
     },
     {
-     "stage": "DV & Medical",
-     "detail": "Document verification + मेडिकल जाँच"
+      "name": "ICFRE",
+      "site": "https://icfre.gov.in"
+    },
+    {
+      "name": "FRI Dehradun",
+      "site": "https://fri.res.in"
+    },
+    {
+      "name": "Wildlife Institute of India",
+      "site": "https://wii.gov.in"
+    },
+    {
+      "name": "Indian Forest Service",
+      "site": "https://ifs.nic.in"
     }
-   ],
-   "syllabus": [
-    "General Knowledge",
-    "Hindi",
-    "Mathematics (10वीं स्तर)",
-    "Reasoning",
-    "Forest & Environment Basics"
-   ],
-   "salary": "₹19,500-₹62,000 (state pay band) + allowances — राज्य के अनुसार",
-   "selectionProcess": "Written → Physical Test → DV → Medical"
+  ],
+  "hero": {
+    "badge": "🌲 वन विभाग भर्ती",
+    "title": "Forest Exams Center",
+    "subtitle": "AIIMS NORCET, RRB Staff Nurse, NHM, ESIC, UP CHO — सभी health exams की पूरी जानकारी एक जगह। Posts, Eligibility, Exam Pattern, Salary।",
+    "gradient": "linear-gradient(135deg,#1a2e05,#65a30d)"
   },
-  {
-   "slug": "forest-range-officer",
-   "name": "Forest Range Officer",
-   "emoji": "🍃",
-   "fullName": "Forest Range Officer (State PSC) Recruitment",
-   "tags": [
-    "RFO",
-    "State PSC",
-    "Graduate",
-    "Forestry"
-   ],
-   "officialWebsite": "https://uppsc.up.nic.in",
-   "examFee": "₹270 (UR) • SC/ST ₹135 (UPPSC जैसे state PSC नियम) •",
-   "latestStatus": "UPPSC ACF/RFO, APSC Forest Ranger, Kerala PSC Beat Forest Officer जैसी भर्तियाँ चलती रहती हैं। अपने राज्य के PSC पर notification चेक करें।",
-   "overview": "Forest Range Officer (RFO) Forest Guard से ऊपर का post है — state forest department में field-level officer। State PSC के माध्यम से भर्ती होती है।",
-   "posts": [
-    "Range Forest Officer (RFO)",
-    "Deputy Ranger",
-    "Forest Section Officer",
-    "Beat Forest Officer (Kerala)"
-   ],
-   "eligibility": "Graduate — Science/Agriculture/Forestry/Botany preferred (state के अनुसार)। आयु: 21-40 वर्ष (श्रेणी छूट)।",
-   "examPattern": [
-    {
-     "stage": "Prelims",
-     "detail": "GK + Forest/Science subjects — objective, राज्य के अनुसार"
-    },
-    {
-     "stage": "Mains",
-     "detail": "Forestry, Botany, Agriculture, Zoology जैसे descriptive papers"
-    },
-    {
-     "stage": "Interview/Physical",
-     "detail": "जैसा state PSC निर्धारित करे"
-    }
-   ],
-   "syllabus": [
-    "Forestry & Silviculture",
-    "Botany",
-    "Agriculture",
-    "Zoology & Wildlife",
-    "General Studies",
-    "State-specific GK"
-   ],
-   "salary": "Level 8+ — ₹47,600 से ₹1,51,100 (7th CPC state pay) + allowances",
-   "selectionProcess": "Prelims → Mains → Interview → Medical"
-  },
-  {
-   "slug": "forester",
-   "name": "Forester",
-   "emoji": "🌿",
-   "fullName": "Forester (Van Palak) Recruitment — State-wise",
-   "tags": [
-    "Forester",
-    "Van Palak",
-    "State Exam",
-    "10th/12th"
-   ],
-   "officialWebsite": "https://forests.gov.in",
-   "examFee": "₹100-400 (UR) • SC/ST छूट — राज्य के अनुसार •",
-   "latestStatus": "Forester भर्तियाँ state-wise आती हैं (Kerala, Maharashtra, UP, MP आदि)। अपने राज्य के forest department portal देखें।",
-   "overview": "Forester (Van Palak) Forest Guard और RFO के बीच का post है — कई राज्यों में यह exam Forest Guard के साथ ही निकलता है। स्थिर सरकारी नौकरी।",
-   "posts": [
-    "Forester (Van Palak)",
-    "Forest Guard (senior scale, कुछ राज्य)"
-   ],
-   "eligibility": "10वीं/12वीं पास (राज्य के अनुसार, कहीं Diploma preferred)। शारीरिक मानक state-wise। आयु: 18-35 वर्ष।",
-   "examPattern": [
-    {
-     "stage": "Written Test",
-     "detail": "GK, Hindi, Maths, Forest basics — राज्य के अनुसार"
-    },
-    {
-     "stage": "Physical Test",
-     "detail": "दौड़ + शारीरिक माप"
-    }
-   ],
-   "syllabus": [
-    "General Knowledge",
-    "Hindi/State Language",
-    "Mathematics",
-    "Reasoning",
-    "Forest & Environment"
-   ],
-   "salary": "₹25,500-₹81,100 (Level 4) + allowances — राज्य के अनुसार",
-   "selectionProcess": "Written → Physical → DV → Medical"
-  },
-  {
-   "slug": "up-forest-guard",
-   "name": "UP Forest Guard",
-   "emoji": "🌲",
-   "fullName": "UPSSSC Van Rakshak / Forest Guard Recruitment 2026",
-   "tags": [
-    "UPSSSC",
-    "Uttar Pradesh",
-    "UP PET",
-    "708 Posts"
-   ],
-   "officialWebsite": "https://upsssc.gov.in",
-   "examFee": "₹25 (सभी श्रेणियाँ — UPSSSC न्यूनतम फीस) •",
-   "latestStatus": "UPSSSC Forest Guard 2026 — 708 posts (Forest Guard + Wildlife Guard), आवेदन 30 जून से 20 जुलाई 2026 तक। UP PET 2025 scorecard ज़रूरी।",
-   "overview": "UPSSSC Forest Guard (Van Rakshak) उत्तर प्रदेश forest department की भर्ती है — 12वीं पास + UP PET scorecard वालों के लिए। UP की सबसे बड़ी forest भर्तियों में से एक।",
-   "posts": [
-    "Forest Guard (Van Rakshak)",
-    "Wildlife Guard"
-   ],
-   "eligibility": "12वीं पास + UPSSSC PET 2025 scorecard। आयु: 18-40 वर्ष (श्रेणी छूट)। शारीरिक मानक UPSSSC के अनुसार।",
-   "examPattern": [
-    {
-     "stage": "UP PET",
-     "detail": "Qualifying test — 2025 scorecard ज़रूरी"
-    },
-    {
-     "stage": "CBT (Forest Guard Exam)",
-     "detail": "GK, Hindi, Maths, Reasoning — 100 प्रश्न"
-    },
-    {
-     "stage": "Physical Test",
-     "detail": "चलना दौड़ना (walking) test + माप"
-    }
-   ],
-   "syllabus": [
-    "General Knowledge",
-    "Hindi",
-    "Mathematics",
-    "Reasoning",
-    "UP Forest & Environment"
-   ],
-   "salary": "Level 3 — ₹21,700 बेसिक + allowances (UPSSSC pay)",
-   "selectionProcess": "PET → CBT → Physical → DV → Medical"
-  },
-  {
-   "slug": "mp-forest-guard",
-   "name": "MP Forest Guard",
-   "emoji": "🐅",
-   "fullName": "MP Van Rakshak / Forest Guard Recruitment (MPPEB)",
-   "tags": [
-    "Madhya Pradesh",
-    "Van Rakshak",
-    "MPPEB",
-    "Forest"
-   ],
-   "officialWebsite": "https://peb.mp.gov.in",
-   "examFee": "₹100 (UR) • SC/ST/OBC ₹50 (MPPEB नियम) •",
-   "latestStatus": "MP Van Rakshak अगली भर्ती की उम्मीद — MPPEB और MP forest department की official notification चेक करें। पिछली भर्ती में हज़ारों posts निकले थे।",
-   "overview": "MP Van Rakshak (Forest Guard) मध्य प्रदेश forest department की भर्ती है — MP में tiger reserves और बड़े forest areas के कारण लगातार भर्तियाँ होती हैं। MPPEB के माध्यम से exam होता है।",
-   "posts": [
-    "Van Rakshak (Forest Guard)",
-    "Forest Watcher (कुछ cycles)"
-   ],
-   "eligibility": "12वीं पास। शारीरिक मानक — पुरुष: 163 cm ऊँचाई, 1.6 km दौड़ 6.5 मिनट; महिला: 150 cm (MP नियम)। आयु: 18-33 वर्ष।",
-   "examPattern": [
-    {
-     "stage": "Written Test",
-     "detail": "GK, Hindi, Maths, Reasoning — objective"
-    },
-    {
-     "stage": "Physical Test",
-     "detail": "दौड़ + ऊँचाई/सीना माप"
-    },
-    {
-     "stage": "DV & Medical",
-     "detail": "Documents verification + मेडिकल"
-    }
-   ],
-   "syllabus": [
-    "General Knowledge",
-    "Hindi",
-    "Mathematics",
-    "Reasoning",
-    "MP Forest & Wildlife"
-   ],
-   "salary": "₹19,500-₹62,000 (pay band) + allowances — MP state rules",
-   "selectionProcess": "Written → Physical → DV → Medical"
-  },
-  {
-   "slug": "bihar-forest-guard",
-   "name": "Bihar Forest Guard",
-   "emoji": "🌳",
-   "fullName": "Bihar Forest Guard / Van Rakshak Recruitment",
-   "tags": [
-    "Bihar",
-    "Van Rakshak",
-    "Forest Dept",
-    "BPSSC"
-   ],
-   "officialWebsite": "https://forest.bihar.gov.in",
-   "examFee": "₹400-750 (UR) • SC/ST ₹200 (Bihar नियम, अनुमानित) •",
-   "latestStatus": "Bihar Forest Range Officer 2026 (BPSSC) — 16 posts, आवेदन 16 जुलाई से 16 अगस्त 2026। Forest Guard भर्ती के लिए bihar forest department पर नज़र रखें।",
-   "overview": "Bihar Forest Guard भर्ती Bihar forest department के Van Rakshak posts के लिए होती है। Bihar में forest area कम है, इसलिए vacancies सीमित लेकिन प्रतिस्पर्धा तेज़ है।",
-   "posts": [
-    "Forest Guard (Van Rakshak)"
-   ],
-   "eligibility": "12वीं पास। शारीरिक मानक state के अनुसार। आयु: 18-37 वर्ष (श्रेणी छूट)।",
-   "examPattern": [
-    {
-     "stage": "Written Test",
-     "detail": "GK, Hindi, Maths, Reasoning"
-    },
-    {
-     "stage": "Physical Test",
-     "detail": "दौड़ + शारीरिक माप"
-    },
-    {
-     "stage": "DV & Medical",
-     "detail": "Verification + मेडिकल"
-    }
-   ],
-   "syllabus": [
-    "General Knowledge",
-    "Hindi",
-    "Mathematics",
-    "Reasoning",
-    "Forest Basics"
-   ],
-   "salary": "₹21,700 (Level 3) + allowances — Bihar 7th CPC pay",
-   "selectionProcess": "Written → Physical → DV → Medical"
-  },
-  {
-   "slug": "rajasthan-forest-guard",
-   "name": "Rajasthan Forest Guard",
-   "emoji": "🦌",
-   "fullName": "Rajasthan Forest Guard / Van Rakshak Recruitment",
-   "tags": [
-    "Rajasthan",
-    "Van Rakshak",
-    "Forest Dept",
-    "State Exam"
-   ],
-   "officialWebsite": "https://forest.rajasthan.gov.in",
-   "examFee": "₹450 (UR) • SC/ST ₹250 (Rajasthan नियम, अनुमानित) •",
-   "latestStatus": "Rajasthan Forest Guard भर्ती आवधिक रूप से निकलती है — forest.rajasthan.gov.in और Rajasthan forest dept की notification चेक करें।",
-   "overview": "Rajasthan Forest Guard (Van Rakshak) Rajasthan forest department की भर्ती है — राज्य के अरावली और जंगल इलाकों में posts निकलते हैं। Written + physical test से चयन।",
-   "posts": [
-    "Forest Guard (Van Rakshak)"
-   ],
-   "eligibility": "12वीं पास (कुछ cycles में 10वीं भी)। शारीरिक मानक राजस्थान नियम। आयु: 18-40 वर्ष।",
-   "examPattern": [
-    {
-     "stage": "Written Test",
-     "detail": "GK, Hindi, Maths, Reasoning"
-    },
-    {
-     "stage": "Physical Test",
-     "detail": "दौड़ (walking) + माप"
-    }
-   ],
-   "syllabus": [
-    "General Knowledge",
-    "Hindi",
-    "Mathematics",
-    "Reasoning",
-    "Rajasthan Forest & Environment"
-   ],
-   "salary": "₹14,000-₹48,000 (pay scale) + allowances — Rajasthan state rules",
-   "selectionProcess": "Written → Physical → DV → Medical"
-  },
-  {
-   "slug": "uttarakhand-forest-guard",
-   "name": "Uttarakhand Forest Guard",
-   "emoji": "⛰️",
-   "fullName": "Uttarakhand Van Daroga / Forest Guard Recruitment",
-   "tags": [
-    "Uttarakhand",
-    "Van Daroga",
-    "Forest Dept",
-    "Hill State"
-   ],
-   "officialWebsite": "https://forest.uk.gov.in",
-   "examFee": "₹300 (UR) • SC/ST ₹150 (Uttarakhand नियम, अनुमानित) •",
-   "latestStatus": "Uttarakhand Van Daroga (Forest Guard) भर्ती — forest.uk.gov.in पर नवीनतम notification चेक करें। राज्य में forest cover ज़्यादा होने से बार-बार भर्तियाँ होती हैं।",
-   "overview": "Uttarakhand Van Daroga forest department की सबसे popular भर्ती है — 70% से ज़्यादा forest cover वाले राज्य में Van Daroga posts की माँग हमेशा रहती है।",
-   "posts": [
-    "Van Daroga (Forest Guard)",
-    "Forest Watcher (कुछ cycles)"
-   ],
-   "eligibility": "10वीं/12वीं पास। शारीरिक मानक — पुरुष: 163 cm, दौड़ 25 km पैदल/मोटर साइकिल आदि (state नियम)। आयु: 18-42 वर्ष।",
-   "examPattern": [
-    {
-     "stage": "Written Test",
-     "detail": "GK, Hindi, Maths, Reasoning — objective"
-    },
-    {
-     "stage": "Physical Test",
-     "detail": "दौड़ + शारीरिक माप (पहाड़ी इलाका criteria)"
-    }
-   ],
-   "syllabus": [
-    "General Knowledge",
-    "Hindi",
-    "Mathematics",
-    "Reasoning",
-    "Forest & Wildlife (UK)"
-   ],
-   "salary": "₹21,700 (Level 3) + allowances — Uttarakhand state rules",
-   "selectionProcess": "Written → Physical → DV → Medical"
-  },
-  {
-   "slug": "chhattisgarh-forest-guard",
-   "name": "CG Forest Guard",
-   "emoji": "🌴",
-   "fullName": "Chhattisgarh Forest Guard / Van Rakshak Recruitment",
-   "tags": [
-    "Chhattisgarh",
-    "Van Rakshak",
-    "Vyapam",
-    "Forest"
-   ],
-   "officialWebsite": "https://forest.cg.gov.in",
-   "examFee": "₹350 (UR) • SC/ST ₹250 (CG नियम, अनुमानित) •",
-   "latestStatus": "Chhattisgarh Forest Guard भर्ती (CGPSC/Vyapam के माध्यम से) — forest.cg.gov.in पर आगामी notification देखें।",
-   "overview": "Chhattisgarh Forest Guard (Van Rakshak) — छत्तीसगढ़ का बड़ा forest state है, इसलिए भर्तियाँ बार-बार निकलती हैं। Written + physical test से चयन होता है।",
-   "posts": [
-    "Forest Guard (Van Rakshak)"
-   ],
-   "eligibility": "12वीं पास। शारीरिक मानक CG नियम। आयु: 18-30 वर्ष (श्रेणी छूट)।",
-   "examPattern": [
-    {
-     "stage": "Written Test",
-     "detail": "GK, Hindi, Maths, Reasoning"
-    },
-    {
-     "stage": "Physical Test",
-     "detail": "दौड़ + माप"
-    },
-    {
-     "stage": "DV & Medical",
-     "detail": "Verification + मेडिकल"
-    }
-   ],
-   "syllabus": [
-    "General Knowledge",
-    "Hindi",
-    "Mathematics",
-    "Reasoning",
-    "Forest & Environment (CG)"
-   ],
-   "salary": "₹19,500-₹62,000 (pay band) + allowances — CG state rules",
-   "selectionProcess": "Written → Physical → DV → Medical"
-  },
-  {
-   "slug": "maharashtra-forest-guard",
-   "name": "Maharashtra Forest Guard",
-   "emoji": "🐆",
-   "fullName": "Maharashtra Forest Guard / Van Rakshak Recruitment 2026",
-   "tags": [
-    "Maharashtra",
-    "Van Rakshak",
-    "12,991 Posts",
-    "Forest Dept"
-   ],
-   "officialWebsite": "https://mahaforest.gov.in",
-   "examFee": "₹394 (UR) • SC/ST ₹236 (MH नियम, अनुमानित) •",
-   "latestStatus": "Maharashtra Forest Guard 2026 — ~12,991 posts की उम्मीद। Registration मई-जून 2026 के आसपास अपेक्षित — mahaforest.gov.in चेक करें।",
-   "overview": "Maharashtra Forest Guard 2026 देश की सबसे बड़ी forest भर्तियों में से एक है — ~13,000 posts की उम्मीद। Written + physical test से चयन।",
-   "posts": [
-    "Forest Guard (Van Rakshak)"
-   ],
-   "eligibility": "12वीं पास। शारीरिक मानक — पुरुष: 163 cm, 5 km दौड़; महिला: 150 cm (MH नियम)। आयु: 18-33 वर्ष।",
-   "examPattern": [
-    {
-     "stage": "Written Test",
-     "detail": "GK, Hindi/Marathi, Maths, Reasoning"
-    },
-    {
-     "stage": "Physical Test",
-     "detail": "दौड़ + शारीरिक माप"
-    },
-    {
-     "stage": "DV & Medical",
-     "detail": "Verification + मेडिकल"
-    }
-   ],
-   "syllabus": [
-    "General Knowledge",
-    "Marathi/Hindi",
-    "Mathematics",
-    "Reasoning",
-    "Forest & Wildlife (MH)"
-   ],
-   "salary": "₹21,700 (Level 3) + allowances — Maharashtra state rules",
-   "selectionProcess": "Written → Physical → DV → Medical"
-  },
-  {
-   "slug": "fri-icfre",
-   "name": "FRI / ICFRE",
-   "emoji": "🔬",
-   "fullName": "FRI Dehradun / ICFRE Scientist-B & Technical Recruitment",
-   "tags": [
-    "ICFRE",
-    "FRI Dehradun",
-    "Scientist",
-    "Research"
-   ],
-   "officialWebsite": "https://icfre.gov.in",
-   "examFee": "₹500 (UR) • SC/ST ₹250 (अनुमानित) •",
-   "latestStatus": "ICFRE / FRI (Dehradun) Scientist-B व technical भर्तियाँ आवधिक रूप से निकलती हैं — icfre.gov.in पर notification देखें।",
-   "overview": "ICFRE और Forest Research Institute (FRI), Dehradun forestry research का सबसे बड़ा केंद्र है। यहाँ Scientist-B और technical posts के लिए भर्तियाँ होती हैं — science graduates के लिए बढ़िया मौका।",
-   "posts": [
-    "Scientist-B",
-    "Technical Assistant",
-    "Field Assistant",
-    "Research Associate (project-based)"
-   ],
-   "eligibility": "Scientist-B: M.Sc in Forestry/Botany/Life Sciences (या related) + research experience/PhD preferred। Technical: B.Sc/Diploma। आयु: 18-35 वर्ष।",
-   "examPattern": [
-    {
-     "stage": "Written / Screening Test",
-     "detail": "Subject-wise MCQ / descriptive — science subjects"
-    },
-    {
-     "stage": "Interview",
-     "detail": "Expert committee interview + research discussion"
-    }
-   ],
-   "syllabus": [
-    "Forestry Science",
-    "Botany / Plant Sciences",
-    "Environmental Science",
-    "Research Methodology"
-   ],
-   "salary": "Scientist-B — Level 10, ₹56,100 बेसिक + allowances; Technical — Level 5+",
-   "selectionProcess": "Written/Screening → Interview → DV"
-  }
- ],
- "orgs": [
-  {
-   "name": "UPSC",
-   "site": "https://www.upsc.gov.in"
-  },
-  {
-   "name": "MoEF&CC (Environment Ministry)",
-   "site": "https://moef.gov.in"
-  },
-  {
-   "name": "ICFRE",
-   "site": "https://icfre.gov.in"
-  },
-  {
-   "name": "FRI Dehradun",
-   "site": "https://fri.res.in"
-  },
-  {
-   "name": "Wildlife Institute of India",
-   "site": "https://wii.gov.in"
-  },
-  {
-   "name": "Indian Forest Service",
-   "site": "https://ifs.nic.in"
-  }
- ]
+  "quickLinks": [
+    [
+      "/results",
+      "🏆 Forest Results"
+    ],
+    [
+      "/admit-cards",
+      "📄 Admit Card"
+    ],
+    [
+      "/category/forest-environment",
+      "🌲 All Forest Exams"
+    ],
+    [
+      "/syllabus",
+      "📚 Syllabus"
+    ],
+    [
+      "/notifications",
+      "🔔 Updates"
+    ],
+    [
+      "/search",
+      "🔍 Search Exams"
+    ]
+  ],
+  "statsCards": [
+    [
+      "📋",
+      12,
+      "Major Exams"
+    ],
+    [
+      "🌲",
+      "50+",
+      "Forest Orgs"
+    ],
+    [
+      "🪖",
+      "3L+",
+      "Forest Posts"
+    ]
+  ]
 }
