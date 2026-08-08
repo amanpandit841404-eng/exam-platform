@@ -405,6 +405,8 @@ export async function GET(req) {
       duplicates_cleaned: cleanupDone,
       news_monitor_added: newsAdded,
       real_news_added: realNewsAdded,
+      debug_build: "v2-fixed-selfheal",
+      debug_recent_count: existingTitles ? existingTitles.size : -1,
       template_added: templateAdded,
       results_auto_added: resultsAdded,
       admit_cards_auto_added: admitsAdded,
