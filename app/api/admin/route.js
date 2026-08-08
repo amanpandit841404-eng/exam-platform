@@ -1,6 +1,6 @@
 const SB = "https://fbcvxefvvifmxaiqxiuq.supabase.co/rest/v1";
 const ANON = "sb_publishable_BShV19iGgcoKLiIsyvQ2Lg_1Lhe9uPV";
-const SERVICE = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZiY3Z4ZWZ2dmlmbXhhaXF4aXVxIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc4MjEwMTg5NiwiZXhwIjoyMDk3Njc3ODk5Nn0.aE96TdR-6EaqzjdI0Ift_-dpmJqFISaaYrlaQlZAZHw";
+const SERVICE = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZiY3Z4ZWZ2dmlmbXhhaXF4aXVxIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc4MjEwMTg5NiwiZXhwIjoyMDk3Njc3ODk2fQ.aE96TdR-6EaqzjdI0Ift_-dpmJqFISaaYrlaQlZAZHw";
 const ADMIN_SECRET = "sarkari123";
 
 const TABLES = ["exams", "results", "admit_cards", "updates", "upcoming_exams"];
