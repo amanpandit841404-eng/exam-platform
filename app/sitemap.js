@@ -128,6 +128,7 @@ export default async function sitemap() {
   const insuranceSlugs = ["lic-ado", "niacl-ao", "nicl-ao", "uiic-ao", "irdai-am", "gic", "oicl-ao", "lic-hfl", "aic", "ecgc", "niacl-assistant", "nicl-assistant"];
   const postOfficeSlugs = ["gds", "postman", "mail-guard", "mts", "postal-assistant", "sorting-assistant", "accountant", "steno", "udc", "driver", "ippb-ja", "india-post-apprentice"];
   const healthSlugs = ["aiims-norcet", "rrb-staff-nurse", "nhm-staff-nurse", "esic-nursing-officer", "esic-paramedical", "up-cho", "aiims-paramedical", "aiims-bsc-nursing", "icmr-recruitment", "bihar-cho", "state-nursing-officer", "esic-pharmacist"];
+  const forestSlugs = ["ifs", "forest-guard", "forest-range-officer", "forester", "up-forest-guard", "mp-forest-guard", "bihar-forest-guard", "rajasthan-forest-guard", "uttarakhand-forest-guard", "chhattisgarh-forest-guard", "maharashtra-forest-guard", "fri-icfre"];
   const defencePages = [{ url: `${baseUrl}/defence`, lastModified: now, changeFrequency: "daily", priority: 0.9 }].concat(
     defenceSlugs.map(slug => ({ url: `${baseUrl}/defence/${slug}`, lastModified: now, changeFrequency: "weekly", priority: 0.8 }))
   );
@@ -153,5 +154,8 @@ export default async function sitemap() {
   const healthPages = [{ url: `${baseUrl}/health`, lastModified: now, changeFrequency: "daily", priority: 0.9 }].concat(
     healthSlugs.map(slug => ({ url: `${baseUrl}/health/${slug}`, lastModified: now, changeFrequency: "weekly", priority: 0.8 }))
   );
-  return [...staticPages, ...categoryPages, ...examPages, ...certPages, ...railwayPages, ...bankingPages, ...sscPages, ...upscPages, ...defencePages, ...statePscPages, ...teachingPages, ...policePages, ...psuPages, ...insurancePages, ...postOfficePages, ...healthPages, ...resultPages, ...admitPages];
+  const forestPages = [{ url: `${baseUrl}/forest`, lastModified: now, changeFrequency: "daily", priority: 0.9 }].concat(
+    forestSlugs.map(slug => ({ url: `${baseUrl}/forest/${slug}`, lastModified: now, changeFrequency: "weekly", priority: 0.8 }))
+  );
+  return [...staticPages, ...categoryPages, ...examPages, ...certPages, ...railwayPages, ...bankingPages, ...sscPages, ...upscPages, ...defencePages, ...statePscPages, ...teachingPages, ...policePages, ...psuPages, ...insurancePages, ...postOfficePages, ...healthPages, ...forestPages, ...resultPages, ...admitPages];
 }
