@@ -1,620 +1,669 @@
 {
- "updated": "2026-08-08",
- "note": "सभी जानकारी अनुमानित/संकेतात्मक है। हर राज्य का PSC अपनी dates, fee, age limit और pattern बदलता है — हमेशा उस राज्य के PSC की official website पर notification ज़रूर चेक करें।",
- "stats": {
-  "exams": 12,
-  "states": 28,
-  "posts": 20000
- },
- "exams": [
-  {
-   "slug": "up-pcs",
-   "name": "UPPSC PCS",
-   "emoji": "🏛️",
-   "fullName": "Uttar Pradesh Public Service Commission — PCS (Pre+Mains)",
-   "tags": [
-    "Uttar Pradesh",
-    "SDM/DSP",
-    "Graduate"
-   ],
-   "officialWebsite": "https://uppsc.up.nic.in",
-   "examFee": "₹125 (UR) • SC/ST/PwD मुक्त (अनुमानित)",
-   "latestStatus": "UPPSC PCS अगले cycle की notification का इंतज़ार है। पिछला exam 2025 में हुआ — uppsc.up.nic.in चेक करें।",
-   "overview": "UPPSC PCS उत्तर प्रदेश में SDM, Deputy Collector, DSP जैसे top administrative posts का exam है। Prelims, Mains और Interview तीनों stages — उत्तर प्रदेश के सबसे बड़े राज्य सेवा exam के रूप में हर साल लाखों आवेदन।",
-   "posts": [
-    "SDM (Deputy Collector)",
-    "Deputy Superintendent of Police (DSP)",
-    "Block Development Officer",
-    "Assistant Commissioner (Commercial Tax)",
-    "District Commandant Home Guards व अन्य"
-   ],
-   "eligibility": "किसी भी मान्यता प्राप्त विश्वविद्यालय से Graduation। आयु: 21-40 वर्ष (आरक्षित छूट)।",
-   "examPattern": [
+  "updated": "2026-08-08T06:34:13.055Z",
+  "note": "सभी जानकारी अनुमानित/संकेतात्मक है। हर राज्य का PSC अपनी dates, fee, age limit और pattern बदलता है — हमेशा उस राज्य के PSC की official website पर notification ज़रूर चेक करें।",
+  "stats": {
+    "exams": 12,
+    "states": 28,
+    "posts": 20000
+  },
+  "exams": [
     {
-     "stage": "Prelims",
-     "detail": "2 papers — GS (150 Qs) + CSAT (100 Qs, qualifying) — 300 अंक"
+      "slug": "up-pcs",
+      "name": "UPPSC PCS",
+      "emoji": "🏛️",
+      "fullName": "Uttar Pradesh Public Service Commission — PCS (Pre+Mains)",
+      "tags": [
+        "Uttar Pradesh",
+        "SDM/DSP",
+        "Graduate"
+      ],
+      "officialWebsite": "https://uppsc.up.nic.in",
+      "examFee": "₹125 (UR) • SC/ST/PwD मुक्त (अनुमानित)",
+      "latestStatus": "UPPSC PCS अगले cycle की notification का इंतज़ार है। पिछला exam 2025 में हुआ — uppsc.up.nic.in चेक करें।",
+      "overview": "UPPSC PCS उत्तर प्रदेश में SDM, Deputy Collector, DSP जैसे top administrative posts का exam है। Prelims, Mains और Interview तीनों stages — उत्तर प्रदेश के सबसे बड़े राज्य सेवा exam के रूप में हर साल लाखों आवेदन।",
+      "posts": [
+        "SDM (Deputy Collector)",
+        "Deputy Superintendent of Police (DSP)",
+        "Block Development Officer",
+        "Assistant Commissioner (Commercial Tax)",
+        "District Commandant Home Guards व अन्य"
+      ],
+      "eligibility": "किसी भी मान्यता प्राप्त विश्वविद्यालय से Graduation। आयु: 21-40 वर्ष (आरक्षित छूट)।",
+      "examPattern": [
+        {
+          "stage": "Prelims",
+          "detail": "2 papers — GS (150 Qs) + CSAT (100 Qs, qualifying) — 300 अंक"
+        },
+        {
+          "stage": "Mains",
+          "detail": "GS-I/II/III/IV + Essay + Optional/Hindi (descriptive)"
+        },
+        {
+          "stage": "Interview",
+          "detail": "Personality Test (मुख्य परीक्षा में qualify करने वालों के लिए)"
+        }
+      ],
+      "syllabus": [
+        "General Studies (History, Polity, Economy, Geography, Science)",
+        "Current Affairs",
+        "CSAT",
+        "Essay & Optional"
+      ],
+      "salary": "Pay Level 8+ — ₹47,600 बेसिक + DA, HRA, भत्ते",
+      "selectionProcess": "Prelims → Mains → Interview → DV"
     },
     {
-     "stage": "Mains",
-     "detail": "GS-I/II/III/IV + Essay + Optional/Hindi (descriptive)"
+      "slug": "bpsc",
+      "name": "BPSC",
+      "emoji": "📜",
+      "fullName": "Bihar Public Service Commission — Combined Competitive Exam (CCE)",
+      "tags": [
+        "Bihar",
+        "SDM/DSP",
+        "Graduate"
+      ],
+      "officialWebsite": "https://bpsc.bih.nic.in",
+      "examFee": "₹750 (UR) • SC/ST/PwD मुक्त (अनुमानित)",
+      "latestStatus": "BPSC अगले cycle (69th-70th) की notification का इंतज़ार है। पिछला exam 2025 में हुआ — bpsc.bih.nic.in चेक करें।",
+      "overview": "BPSC CCE बिहार में Deputy Collector (SDM), DSP, Block Development Officer जैसे posts का सबसे बड़ा exam है। Prelims में सिर्फ GS — कोई CSAT नहीं, इसलिए सीधी तैयारी वाला exam। बिहार के युवाओं का सपना।",
+      "posts": [
+        "SDM (Deputy Collector)",
+        "Deputy Superintendent of Police (DSP)",
+        "Block Development Officer",
+        "Food & Supply Officer व अन्य"
+      ],
+      "eligibility": "किसी भी मान्यता प्राप्त विश्वविद्यालय से Graduation। आयु: 20-37 वर्ष (आरक्षित छूट)।",
+      "examPattern": [
+        {
+          "stage": "Prelims",
+          "detail": "1 paper — GS (150 प्रश्न, 150 अंक), कोई CSAT नहीं"
+        },
+        {
+          "stage": "Mains",
+          "detail": "Qualifying papers (Hindi, English) + Merit papers (GS-I/II, Essay, Optional)"
+        },
+        {
+          "stage": "Interview",
+          "detail": "120 अंक — Personality Test"
+        }
+      ],
+      "syllabus": [
+        "General Studies (Bihar विशेष सहित)",
+        "Current Affairs",
+        "Essay",
+        "Optional Subject"
+      ],
+      "salary": "Pay Level 8+ — ₹47,600 बेसिक + DA, HRA, भत्ते",
+      "selectionProcess": "Prelims → Mains → Interview → DV"
     },
     {
-     "stage": "Interview",
-     "detail": "Personality Test (मुख्य परीक्षा में qualify करने वालों के लिए)"
+      "slug": "mppsc",
+      "name": "MPPSC",
+      "emoji": "🗺️",
+      "fullName": "Madhya Pradesh Public Service Commission — State Service (PCS)",
+      "tags": [
+        "Madhya Pradesh",
+        "SDM/DSP",
+        "Graduate"
+      ],
+      "officialWebsite": "https://mppsc.mp.gov.in",
+      "examFee": "₹500 (UR) • SC/ST/PwD मुक्त (अनुमानित)",
+      "latestStatus": "MPPSC अगले cycle की notification का इंतज़ार है। पिछला exam 2025 में हुआ — mppsc.mp.gov.in चेक करें।",
+      "overview": "MPPSC मध्य प्रदेश में SDM, DSP, Tehsildar, Commercial Tax Officer जैसे राज्य सेवा posts का exam है। Prelims + Mains + Interview — MP के aspirants के लिए सबसे प्रतिष्ठित परीक्षा।",
+      "posts": [
+        "SDM (Deputy Collector)",
+        "Deputy Superintendent of Police (DSP)",
+        "Tehsildar",
+        "Commercial Tax Officer",
+        "जिला शिक्षा अधिकारी व अन्य"
+      ],
+      "eligibility": "किसी भी मान्यता प्राप्त विश्वविद्यालय से Graduation। आयु: 21-40 वर्ष (राजपत्रित पदों पर 21-35) — आरक्षित छूट।",
+      "examPattern": [
+        {
+          "stage": "Prelims",
+          "detail": "2 papers — GS (100 Qs) + CSAT/आधुनिक विषय (qualifying)"
+        },
+        {
+          "stage": "Mains",
+          "detail": "6 papers — GS-I/II/III/IV, Essay, Hindi (descriptive)"
+        },
+        {
+          "stage": "Interview",
+          "detail": "Personality Test"
+        }
+      ],
+      "syllabus": [
+        "General Studies (MP विशेष सहित)",
+        "Current Affairs",
+        "Essay",
+        "Hindi"
+      ],
+      "salary": "Pay Level 8+ — ₹47,600 बेसिक + DA, HRA, भत्ते",
+      "selectionProcess": "Prelims → Mains → Interview → DV"
+    },
+    {
+      "slug": "rpsc-ras",
+      "name": "RPSC RAS",
+      "emoji": "🏜️",
+      "fullName": "Rajasthan Public Service Commission — RAS/RTS Examination",
+      "tags": [
+        "Rajasthan",
+        "RAS",
+        "Graduate"
+      ],
+      "officialWebsite": "https://rpsc.rajasthan.gov.in",
+      "examFee": "₹350 (UR) • SC/ST/PwD मुक्त (अनुमानित)",
+      "latestStatus": "RPSC RAS अगले cycle की notification का इंतज़ार है। पिछला exam 2025 में हुआ — rpsc.rajasthan.gov.in चेक करें।",
+      "overview": "RPSC RAS राजस्थान में RAS (Rajasthan Administrative Services) और RTS के posts का सबसे बड़ा exam है — SDM, DSP, Revenue Officer जैसे posts। राजस्थान के aspirants के लिए सबसे प्रतिष्ठित परीक्षा।",
+      "posts": [
+        "RAS (SDM, Collector-cadre)",
+        "RTS (Revenue)",
+        "DSP (राजस्थान पुलिस)",
+        "तेहसीलदार व अन्य"
+      ],
+      "eligibility": "किसी भी मान्यता प्राप्त विश्वविद्यालय से Graduation। आयु: 21-40 वर्ष (आरक्षित छूट)।",
+      "examPattern": [
+        {
+          "stage": "Prelims",
+          "detail": "1 paper — GS (200 प्रश्न, 200 अंक, 3 घंटे)"
+        },
+        {
+          "stage": "Mains",
+          "detail": "4 papers — GS-I/II/III/IV (राजस्थान विशेष सहित)"
+        },
+        {
+          "stage": "Interview",
+          "detail": "100 अंक — Personality Test"
+        }
+      ],
+      "syllabus": [
+        "History & Culture (राजस्थान)",
+        "Polity, Economy, Geography",
+        "Science & Technology",
+        "Current Affairs"
+      ],
+      "salary": "Pay Level 8+ — ₹47,600 बेसिक + DA, HRA, भत्ते",
+      "selectionProcess": "Prelims → Mains → Interview → DV"
+    },
+    {
+      "slug": "mpsc",
+      "name": "MPSC (Maharashtra)",
+      "emoji": "🌊",
+      "fullName": "Maharashtra Public Service Commission — Rajyaseva",
+      "tags": [
+        "Maharashtra",
+        "Deputy Collector",
+        "Graduate"
+      ],
+      "officialWebsite": "https://mpsc.gov.in",
+      "examFee": "₹544 (UR) • महिला/SC/ST/PwD मुक्त (अनुमानित)",
+      "latestStatus": "MPSC Rajyaseva अगले cycle की notification का इंतज़ार है। पिछला exam 2025 में हुआ — mpsc.gov.in चेक करें।",
+      "overview": "MPSC (महाराष्ट्र) Rajyaseva परीक्षा से Deputy Collector, DSP, Tahsildar जैसे राज्य सेवा posts मिलते हैं — महाराष्ट्र के सबसे बड़े और प्रतिस्पर्धी exams में से एक।",
+      "posts": [
+        "Deputy Collector (डी.सी.)",
+        "Deputy Superintendent of Police (DSP)",
+        "Tahsildar",
+        "PSI (कुछ cycles में)",
+        "State Excise व अन्य"
+      ],
+      "eligibility": "किसी भी मान्यता प्राप्त विश्वविद्यालय से Graduation। आयु: 19-38 वर्ष (आरक्षित छूट)।",
+      "examPattern": [
+        {
+          "stage": "Prelims",
+          "detail": "2 papers — GS (100 Qs) + CSAT (qualifying)"
+        },
+        {
+          "stage": "Mains",
+          "detail": "6 papers — GS-I/II/III/IV, Essay, राज्य विषय"
+        },
+        {
+          "stage": "Interview",
+          "detail": "Personality Test"
+        }
+      ],
+      "syllabus": [
+        "General Studies (महाराष्ट्र विशेष)",
+        "CSAT",
+        "Essay",
+        "Current Affairs"
+      ],
+      "salary": "Pay Level 8+ — ₹47,600 बेसिक + DA, HRA, भत्ते",
+      "selectionProcess": "Prelims → Mains → Interview → DV"
+    },
+    {
+      "slug": "tnpsc",
+      "name": "TNPSC Group 1",
+      "emoji": "🌺",
+      "fullName": "Tamil Nadu Public Service Commission — Group 1 Services",
+      "tags": [
+        "Tamil Nadu",
+        "Deputy Collector",
+        "Graduate"
+      ],
+      "officialWebsite": "https://www.tnpsc.gov.in",
+      "examFee": "₹200 (UR) • SC/ST/PwD मुक्त (अनुमानित)",
+      "latestStatus": "TNPSC Group 1 अगले cycle की notification का इंतज़ार है। पिछला exam 2025 में हुआ — tnpsc.gov.in चेक करें।",
+      "overview": "TNPSC Group 1 तमिलनाडु में Deputy Collector, DSP, Assistant Conservator of Forests जैसे top posts का exam है — तमिलनाडु के aspirants के लिए सबसे प्रतिष्ठित परीक्षा।",
+      "posts": [
+        "Deputy Collector",
+        "Deputy Superintendent of Police (DSP)",
+        "Assistant Conservator of Forests",
+        "District Employment Officer व अन्य"
+      ],
+      "eligibility": "किसी भी मान्यता प्राप्त विश्वविद्यालय से Graduation। आयु: 21-32 वर्ष (post के हिसाब से) — आरक्षित छूट।",
+      "examPattern": [
+        {
+          "stage": "Prelims",
+          "detail": "GS (175 Qs) + Aptitude & Mental Ability (25 Qs) — 300 अंक"
+        },
+        {
+          "stage": "Mains",
+          "detail": "Descriptive — 3 papers (GS, Aptitude, Essay)"
+        },
+        {
+          "stage": "Interview",
+          "detail": "60 अंक — Personality Test"
+        }
+      ],
+      "syllabus": [
+        "General Studies (तमिलनाडु विशेष)",
+        "Aptitude & Mental Ability",
+        "Current Affairs",
+        "Essay"
+      ],
+      "salary": "Pay Level 8+ — ₹47,600 बेसिक + DA, HRA, भत्ते",
+      "selectionProcess": "Prelims → Mains → Interview → DV"
+    },
+    {
+      "slug": "appsc",
+      "name": "APPSC Group 1",
+      "emoji": "🌴",
+      "fullName": "Andhra Pradesh Public Service Commission — Group 1 Services",
+      "tags": [
+        "Andhra Pradesh",
+        "Deputy Collector",
+        "Graduate"
+      ],
+      "officialWebsite": "https://psc.ap.gov.in",
+      "examFee": "₹200 (UR) • SC/ST/PwD मुक्त (अनुमानित)",
+      "latestStatus": "APPSC Group 1 अगले cycle की notification का इंतज़ार है। पिछला exam 2025 में हुआ — psc.ap.gov.in चेक करें।",
+      "overview": "APPSC Group 1 आंध्र प्रदेश में Deputy Collector, DSP, Commercial Tax Officer जैसे top posts का exam है — AP के aspirants के लिए सबसे बड़ी राज्य सेवा परीक्षा।",
+      "posts": [
+        "Deputy Collector",
+        "Deputy Superintendent of Police (DSP)",
+        "Commercial Tax Officer",
+        "Regional Transport Officer व अन्य"
+      ],
+      "eligibility": "किसी भी मान्यता प्राप्त विश्वविद्यालय से Graduation। आयु: 18-42 वर्ष (आरक्षित छूट)।",
+      "examPattern": [
+        {
+          "stage": "Prelims",
+          "detail": "2 papers — GS + Aptitude (objective)"
+        },
+        {
+          "stage": "Mains",
+          "detail": "5 papers — GS-I/II/III/IV + English (descriptive)"
+        },
+        {
+          "stage": "Interview",
+          "detail": "Personality Test"
+        }
+      ],
+      "syllabus": [
+        "General Studies (AP विशेष)",
+        "Aptitude",
+        "Current Affairs",
+        "Essay"
+      ],
+      "salary": "Pay Level 8+ — ₹47,600 बेसिक + DA, HRA, भत्ते",
+      "selectionProcess": "Prelims → Mains → Interview → DV"
+    },
+    {
+      "slug": "tspsc",
+      "name": "TSPSC Group 1",
+      "emoji": "🏞️",
+      "fullName": "Telangana Public Service Commission — Group 1 Services",
+      "tags": [
+        "Telangana",
+        "Deputy Collector",
+        "Graduate"
+      ],
+      "officialWebsite": "https://www.tspsc.gov.in",
+      "examFee": "₹200 (UR) • SC/ST/PwD मुक्त (अनुमानित)",
+      "latestStatus": "TSPSC Group 1 अगले cycle की notification का इंतज़ार है। पिछला exam 2025 में हुआ — tspsc.gov.in चेक करें।",
+      "overview": "TSPSC Group 1 तेलंगाना में Deputy Collector, DSP, Tahsildar जैसे top posts का exam है — तेलंगाना के aspirants के लिए सबसे प्रतिष्ठित राज्य सेवा परीक्षा।",
+      "posts": [
+        "Deputy Collector",
+        "Deputy Superintendent of Police (DSP)",
+        "Tahsildar",
+        "Commercial Tax Officer व अन्य"
+      ],
+      "eligibility": "किसी भी मान्यता प्राप्त विश्वविद्यालय से Graduation। आयु: 18-44 वर्ष (आरक्षित छूट)।",
+      "examPattern": [
+        {
+          "stage": "Prelims",
+          "detail": "2 papers — GS + Aptitude (objective)"
+        },
+        {
+          "stage": "Mains",
+          "detail": "Descriptive papers — GS-I/II/III/IV"
+        },
+        {
+          "stage": "Interview",
+          "detail": "Personality Test"
+        }
+      ],
+      "syllabus": [
+        "General Studies (Telangana विशेष)",
+        "Aptitude",
+        "Current Affairs",
+        "Essay"
+      ],
+      "salary": "Pay Level 8+ — ₹47,600 बेसिक + DA, HRA, भत्ते",
+      "selectionProcess": "Prelims → Mains → Interview → DV"
+    },
+    {
+      "slug": "kpsc-kas",
+      "name": "KPSC KAS",
+      "emoji": "🏔️",
+      "fullName": "Karnataka Public Service Commission — KAS (Karnataka Administrative Service)",
+      "tags": [
+        "Karnataka",
+        "Assistant Commissioner",
+        "Graduate"
+      ],
+      "officialWebsite": "https://kpsc.kar.nic.in",
+      "examFee": "₹600 (UR) • SC/ST/PwD मुक्त (अनुमानित)",
+      "latestStatus": "KPSC KAS अगले cycle की notification का इंतज़ार है। पिछला exam 2025 में हुआ — kpsc.kar.nic.in चेक करें।",
+      "overview": "KPSC KAS कर्नाटक में Assistant Commissioner, Tahsildar, DSP जैसे posts का exam है — कर्नाटक के aspirants के लिए सबसे बड़ी राज्य सेवा परीक्षा।",
+      "posts": [
+        "Assistant Commissioner (KAS)",
+        "Tahsildar",
+        "Deputy Superintendent of Police (DSP)",
+        "Commercial Tax Officer व अन्य"
+      ],
+      "eligibility": "किसी भी मान्यता प्राप्त विश्वविद्यालय से Graduation। आयु: 21-35 वर्ष (आरक्षित छूट)।",
+      "examPattern": [
+        {
+          "stage": "Prelims",
+          "detail": "2 papers — GS + CSAT (qualifying)"
+        },
+        {
+          "stage": "Mains",
+          "detail": "Descriptive — GS-I/II/III/IV + Kannada/English"
+        },
+        {
+          "stage": "Interview",
+          "detail": "Personality Test"
+        }
+      ],
+      "syllabus": [
+        "General Studies (Karnataka विशेष)",
+        "CSAT",
+        "Essay",
+        "Current Affairs"
+      ],
+      "salary": "Pay Level 8+ — ₹47,600 बेसिक + DA, HRA, भत्ते",
+      "selectionProcess": "Prelims → Mains → Interview → DV"
+    },
+    {
+      "slug": "wbpsc",
+      "name": "WBPSC WBCS",
+      "emoji": "🐅",
+      "fullName": "West Bengal Public Service Commission — WBCS (Executive)",
+      "tags": [
+        "West Bengal",
+        "Executive",
+        "Graduate"
+      ],
+      "officialWebsite": "https://wbpsc.gov.in",
+      "examFee": "₹210 (UR) • SC/ST/PwD मुक्त (अनुमानित)",
+      "latestStatus": "WBPSC WBCS अगले cycle की notification का इंतज़ार है। पिछला exam 2025 में हुआ — wbpsc.gov.in चेक करें।",
+      "overview": "WBCS (Executive) पश्चिम बंगाल में DM cadre, Police, Taxation जैसे posts का सबसे बड़ा exam है — West Bengal Civil Services की नींव। Prelims से Interview तक का पूरा सफर।",
+      "posts": [
+        "WBCS (Executive) — DM/Collector cadre",
+        "WBCS (Police)",
+        "WBCS (Taxation)",
+        "WBCS (Food) व अन्य"
+      ],
+      "eligibility": "किसी भी मान्यता प्राप्त विश्वविद्यालय से Graduation। आयु: 21-36 वर्ष (आरक्षित छूट)।",
+      "examPattern": [
+        {
+          "stage": "Prelims",
+          "detail": "GS + Arithmetic (200 अंक, objective)"
+        },
+        {
+          "stage": "Mains",
+          "detail": "6 papers — Bengali/Hindi/English, GS-I/II, Arithmetic, Optional"
+        },
+        {
+          "stage": "Interview",
+          "detail": "Personality Test"
+        }
+      ],
+      "syllabus": [
+        "General Studies (West Bengal विशेष)",
+        "Arithmetic & Reasoning",
+        "Essay",
+        "Optional Subject"
+      ],
+      "salary": "Pay Level 8+ — ₹47,600 बेसिक + DA, HRA, भत्ते",
+      "selectionProcess": "Prelims → Mains → Interview → DV"
+    },
+    {
+      "slug": "kerala-psc",
+      "name": "Kerala PSC",
+      "emoji": "🥥",
+      "fullName": "Kerala Public Service Commission — विभिन्न परीक्षाएँ",
+      "tags": [
+        "Kerala",
+        "LDC/Clerk",
+        "No Fee"
+      ],
+      "officialWebsite": "https://www.keralapsc.gov.in",
+      "examFee": "कोई fee नहीं (सभी exams मुफ्त)",
+      "latestStatus": "Kerala PSC की अगली भर्तियाँ जल्दी आएँगी — keralapsc.gov.in पर नई notification नियमित रूप से देखें।",
+      "overview": "Kerala PSC राज्य की सभी सरकारी भर्तियों (LDC, Clerk, Secretariat Assistant, Gazetted Officers) का एकमात्र आयोग है — और यहाँ सभी exams पूरी तरह free हैं। Kerala का सबसे बड़ा recruitment platform।",
+      "posts": [
+        "LDC / Clerk / Typist",
+        "Secretariat Assistant",
+        "Gazetted Officers (विभिन्न departments)",
+        "Technical & Non-Technical posts"
+      ],
+      "eligibility": "Post के हिसाब से — 10th/12th/Graduate। आयु: 18-41 वर्ष (post के हिसाब से) — आरक्षित छूट।",
+      "examPattern": [
+        {
+          "stage": "Exam (OMR/CBT)",
+          "detail": "Post-specific syllabus — GK, Mental Ability, English/Malayalam"
+        },
+        {
+          "stage": "Interview",
+          "detail": "सिर्फ gazetted/उच्च posts के लिए"
+        }
+      ],
+      "syllabus": [
+        "General Knowledge (Kerala विशेष)",
+        "Mental Ability",
+        "English/Malayalam",
+        "Post-specific subjects"
+      ],
+      "salary": "Pay Level 2-8 — post के हिसाब से",
+      "selectionProcess": "Exam → Interview (उच्च posts) → Rank List"
+    },
+    {
+      "slug": "gpsc",
+      "name": "GPSC (Gujarat)",
+      "emoji": "🦁",
+      "fullName": "Gujarat Public Service Commission — Class 1 & 2 Posts",
+      "tags": [
+        "Gujarat",
+        "Deputy Collector",
+        "Graduate"
+      ],
+      "officialWebsite": "https://gpsc.gujarat.gov.in",
+      "examFee": "₹100 (UR) • SC/ST/PwD मुक्त (अनुमानित)",
+      "latestStatus": "GPSC अगले cycle की notification का इंतज़ार है। पिछला exam 2025 में हुआ — gpsc.gujarat.gov.in चेक करें।",
+      "overview": "GPSC गुजरात में Deputy Collector, Deputy Superintendent of Police जैसे Class 1/2 posts का exam है — गुजरात के aspirants के लिए सबसे बड़ी राज्य सेवा परीक्षा।",
+      "posts": [
+        "Deputy Collector (Dy. Collector)",
+        "Deputy Superintendent of Police (DSP)",
+        "Assistant Commissioner (State Tax)",
+        "District Registrar व अन्य"
+      ],
+      "eligibility": "किसी भी मान्यता प्राप्त विश्वविद्यालय से Graduation। आयु: 20-38 वर्ष (आरक्षित छूट)।",
+      "examPattern": [
+        {
+          "stage": "Prelims",
+          "detail": "2 papers — GS (100 Qs) + CSAT (qualifying)"
+        },
+        {
+          "stage": "Mains",
+          "detail": "Descriptive — GS-I/II/III + Essay + Gujarati/English"
+        },
+        {
+          "stage": "Interview",
+          "detail": "Personality Test"
+        }
+      ],
+      "syllabus": [
+        "General Studies (Gujarat विशेष)",
+        "CSAT",
+        "Essay",
+        "Current Affairs"
+      ],
+      "salary": "Pay Level 8+ — ₹47,600 बेसिक + DA, HRA, भत्ते",
+      "selectionProcess": "Prelims → Mains → Interview → DV"
     }
-   ],
-   "syllabus": [
-    "General Studies (History, Polity, Economy, Geography, Science)",
-    "Current Affairs",
-    "CSAT",
-    "Essay & Optional"
-   ],
-   "salary": "Pay Level 8+ — ₹47,600 बेसिक + DA, HRA, भत्ते",
-   "selectionProcess": "Prelims → Mains → Interview → DV"
-  },
-  {
-   "slug": "bpsc",
-   "name": "BPSC",
-   "emoji": "📜",
-   "fullName": "Bihar Public Service Commission — Combined Competitive Exam (CCE)",
-   "tags": [
-    "Bihar",
-    "SDM/DSP",
-    "Graduate"
-   ],
-   "officialWebsite": "https://bpsc.bih.nic.in",
-   "examFee": "₹750 (UR) • SC/ST/PwD मुक्त (अनुमानित)",
-   "latestStatus": "BPSC अगले cycle (69th-70th) की notification का इंतज़ार है। पिछला exam 2025 में हुआ — bpsc.bih.nic.in चेक करें।",
-   "overview": "BPSC CCE बिहार में Deputy Collector (SDM), DSP, Block Development Officer जैसे posts का सबसे बड़ा exam है। Prelims में सिर्फ GS — कोई CSAT नहीं, इसलिए सीधी तैयारी वाला exam। बिहार के युवाओं का सपना।",
-   "posts": [
-    "SDM (Deputy Collector)",
-    "Deputy Superintendent of Police (DSP)",
-    "Block Development Officer",
-    "Food & Supply Officer व अन्य"
-   ],
-   "eligibility": "किसी भी मान्यता प्राप्त विश्वविद्यालय से Graduation। आयु: 20-37 वर्ष (आरक्षित छूट)।",
-   "examPattern": [
+  ],
+  "statePscs": [
     {
-     "stage": "Prelims",
-     "detail": "1 paper — GS (150 प्रश्न, 150 अंक), कोई CSAT नहीं"
+      "name": "UPPSC (Uttar Pradesh)",
+      "site": "https://uppsc.up.nic.in"
     },
     {
-     "stage": "Mains",
-     "detail": "Qualifying papers (Hindi, English) + Merit papers (GS-I/II, Essay, Optional)"
+      "name": "BPSC (Bihar)",
+      "site": "https://bpsc.bih.nic.in"
     },
     {
-     "stage": "Interview",
-     "detail": "120 अंक — Personality Test"
+      "name": "MPPSC (Madhya Pradesh)",
+      "site": "https://mppsc.mp.gov.in"
+    },
+    {
+      "name": "RPSC (Rajasthan)",
+      "site": "https://rpsc.rajasthan.gov.in"
+    },
+    {
+      "name": "MPSC (Maharashtra)",
+      "site": "https://mpsc.gov.in"
+    },
+    {
+      "name": "TNPSC (Tamil Nadu)",
+      "site": "https://www.tnpsc.gov.in"
+    },
+    {
+      "name": "APPSC (Andhra Pradesh)",
+      "site": "https://psc.ap.gov.in"
+    },
+    {
+      "name": "TSPSC (Telangana)",
+      "site": "https://www.tspsc.gov.in"
+    },
+    {
+      "name": "KPSC (Karnataka)",
+      "site": "https://kpsc.kar.nic.in"
+    },
+    {
+      "name": "WBPSC (West Bengal)",
+      "site": "https://wbpsc.gov.in"
+    },
+    {
+      "name": "Kerala PSC",
+      "site": "https://www.keralapsc.gov.in"
+    },
+    {
+      "name": "GPSC (Gujarat)",
+      "site": "https://gpsc.gujarat.gov.in"
+    },
+    {
+      "name": "OPSC (Odisha)",
+      "site": "https://opsc.gov.in"
+    },
+    {
+      "name": "HPSC (Haryana)",
+      "site": "https://hpsc.gov.in"
+    },
+    {
+      "name": "HPPSC (Himachal Pradesh)",
+      "site": "https://www.hppsc.hp.gov.in"
+    },
+    {
+      "name": "UKPSC (Uttarakhand)",
+      "site": "https://ukpsc.gov.in"
+    },
+    {
+      "name": "CGPSC (Chhattisgarh)",
+      "site": "https://psc.cg.gov.in"
+    },
+    {
+      "name": "JPSC (Jharkhand)",
+      "site": "https://jpsc.gov.in"
+    },
+    {
+      "name": "APSC (Assam)",
+      "site": "https://apsc.nic.in"
+    },
+    {
+      "name": "Goa PSC",
+      "site": "https://gpsc.goa.gov.in"
     }
-   ],
-   "syllabus": [
-    "General Studies (Bihar विशेष सहित)",
-    "Current Affairs",
-    "Essay",
-    "Optional Subject"
-   ],
-   "salary": "Pay Level 8+ — ₹47,600 बेसिक + DA, HRA, भत्ते",
-   "selectionProcess": "Prelims → Mains → Interview → DV"
+  ],
+  "hero": {
+    "badge": "🗺️ राज्य लोक सेवा आयोग भर्ती",
+    "title": "State PSC Exams Center",
+    "subtitle": "UPPSC, BPSC, MPPSC, RPSC (RAS), MPSC, TNPSC — सभी राज्य PSC exams की पूरी जानकारी एक जगह। Posts, Eligibility, Exam Pattern, Syllabus और Salary।",
+    "gradient": "linear-gradient(135deg,#78350f,#d97706)"
   },
-  {
-   "slug": "mppsc",
-   "name": "MPPSC",
-   "emoji": "🗺️",
-   "fullName": "Madhya Pradesh Public Service Commission — State Service (PCS)",
-   "tags": [
-    "Madhya Pradesh",
-    "SDM/DSP",
-    "Graduate"
-   ],
-   "officialWebsite": "https://mppsc.mp.gov.in",
-   "examFee": "₹500 (UR) • SC/ST/PwD मुक्त (अनुमानित)",
-   "latestStatus": "MPPSC अगले cycle की notification का इंतज़ार है। पिछला exam 2025 में हुआ — mppsc.mp.gov.in चेक करें।",
-   "overview": "MPPSC मध्य प्रदेश में SDM, DSP, Tehsildar, Commercial Tax Officer जैसे राज्य सेवा posts का exam है। Prelims + Mains + Interview — MP के aspirants के लिए सबसे प्रतिष्ठित परीक्षा।",
-   "posts": [
-    "SDM (Deputy Collector)",
-    "Deputy Superintendent of Police (DSP)",
-    "Tehsildar",
-    "Commercial Tax Officer",
-    "जिला शिक्षा अधिकारी व अन्य"
-   ],
-   "eligibility": "किसी भी मान्यता प्राप्त विश्वविद्यालय से Graduation। आयु: 21-40 वर्ष (राजपत्रित पदों पर 21-35) — आरक्षित छूट।",
-   "examPattern": [
-    {
-     "stage": "Prelims",
-     "detail": "2 papers — GS (100 Qs) + CSAT/आधुनिक विषय (qualifying)"
-    },
-    {
-     "stage": "Mains",
-     "detail": "6 papers — GS-I/II/III/IV, Essay, Hindi (descriptive)"
-    },
-    {
-     "stage": "Interview",
-     "detail": "Personality Test"
-    }
-   ],
-   "syllabus": [
-    "General Studies (MP विशेष सहित)",
-    "Current Affairs",
-    "Essay",
-    "Hindi"
-   ],
-   "salary": "Pay Level 8+ — ₹47,600 बेसिक + DA, HRA, भत्ते",
-   "selectionProcess": "Prelims → Mains → Interview → DV"
-  },
-  {
-   "slug": "rpsc-ras",
-   "name": "RPSC RAS",
-   "emoji": "🏜️",
-   "fullName": "Rajasthan Public Service Commission — RAS/RTS Examination",
-   "tags": [
-    "Rajasthan",
-    "RAS",
-    "Graduate"
-   ],
-   "officialWebsite": "https://rpsc.rajasthan.gov.in",
-   "examFee": "₹350 (UR) • SC/ST/PwD मुक्त (अनुमानित)",
-   "latestStatus": "RPSC RAS अगले cycle की notification का इंतज़ार है। पिछला exam 2025 में हुआ — rpsc.rajasthan.gov.in चेक करें।",
-   "overview": "RPSC RAS राजस्थान में RAS (Rajasthan Administrative Services) और RTS के posts का सबसे बड़ा exam है — SDM, DSP, Revenue Officer जैसे posts। राजस्थान के aspirants के लिए सबसे प्रतिष्ठित परीक्षा।",
-   "posts": [
-    "RAS (SDM, Collector-cadre)",
-    "RTS (Revenue)",
-    "DSP (राजस्थान पुलिस)",
-    "तेहसीलदार व अन्य"
-   ],
-   "eligibility": "किसी भी मान्यता प्राप्त विश्वविद्यालय से Graduation। आयु: 21-40 वर्ष (आरक्षित छूट)।",
-   "examPattern": [
-    {
-     "stage": "Prelims",
-     "detail": "1 paper — GS (200 प्रश्न, 200 अंक, 3 घंटे)"
-    },
-    {
-     "stage": "Mains",
-     "detail": "4 papers — GS-I/II/III/IV (राजस्थान विशेष सहित)"
-    },
-    {
-     "stage": "Interview",
-     "detail": "100 अंक — Personality Test"
-    }
-   ],
-   "syllabus": [
-    "History & Culture (राजस्थान)",
-    "Polity, Economy, Geography",
-    "Science & Technology",
-    "Current Affairs"
-   ],
-   "salary": "Pay Level 8+ — ₹47,600 बेसिक + DA, HRA, भत्ते",
-   "selectionProcess": "Prelims → Mains → Interview → DV"
-  },
-  {
-   "slug": "mpsc",
-   "name": "MPSC (Maharashtra)",
-   "emoji": "🌊",
-   "fullName": "Maharashtra Public Service Commission — Rajyaseva",
-   "tags": [
-    "Maharashtra",
-    "Deputy Collector",
-    "Graduate"
-   ],
-   "officialWebsite": "https://mpsc.gov.in",
-   "examFee": "₹544 (UR) • महिला/SC/ST/PwD मुक्त (अनुमानित)",
-   "latestStatus": "MPSC Rajyaseva अगले cycle की notification का इंतज़ार है। पिछला exam 2025 में हुआ — mpsc.gov.in चेक करें।",
-   "overview": "MPSC (महाराष्ट्र) Rajyaseva परीक्षा से Deputy Collector, DSP, Tahsildar जैसे राज्य सेवा posts मिलते हैं — महाराष्ट्र के सबसे बड़े और प्रतिस्पर्धी exams में से एक।",
-   "posts": [
-    "Deputy Collector (डी.सी.)",
-    "Deputy Superintendent of Police (DSP)",
-    "Tahsildar",
-    "PSI (कुछ cycles में)",
-    "State Excise व अन्य"
-   ],
-   "eligibility": "किसी भी मान्यता प्राप्त विश्वविद्यालय से Graduation। आयु: 19-38 वर्ष (आरक्षित छूट)।",
-   "examPattern": [
-    {
-     "stage": "Prelims",
-     "detail": "2 papers — GS (100 Qs) + CSAT (qualifying)"
-    },
-    {
-     "stage": "Mains",
-     "detail": "6 papers — GS-I/II/III/IV, Essay, राज्य विषय"
-    },
-    {
-     "stage": "Interview",
-     "detail": "Personality Test"
-    }
-   ],
-   "syllabus": [
-    "General Studies (महाराष्ट्र विशेष)",
-    "CSAT",
-    "Essay",
-    "Current Affairs"
-   ],
-   "salary": "Pay Level 8+ — ₹47,600 बेसिक + DA, HRA, भत्ते",
-   "selectionProcess": "Prelims → Mains → Interview → DV"
-  },
-  {
-   "slug": "tnpsc",
-   "name": "TNPSC Group 1",
-   "emoji": "🌺",
-   "fullName": "Tamil Nadu Public Service Commission — Group 1 Services",
-   "tags": [
-    "Tamil Nadu",
-    "Deputy Collector",
-    "Graduate"
-   ],
-   "officialWebsite": "https://www.tnpsc.gov.in",
-   "examFee": "₹200 (UR) • SC/ST/PwD मुक्त (अनुमानित)",
-   "latestStatus": "TNPSC Group 1 अगले cycle की notification का इंतज़ार है। पिछला exam 2025 में हुआ — tnpsc.gov.in चेक करें।",
-   "overview": "TNPSC Group 1 तमिलनाडु में Deputy Collector, DSP, Assistant Conservator of Forests जैसे top posts का exam है — तमिलनाडु के aspirants के लिए सबसे प्रतिष्ठित परीक्षा।",
-   "posts": [
-    "Deputy Collector",
-    "Deputy Superintendent of Police (DSP)",
-    "Assistant Conservator of Forests",
-    "District Employment Officer व अन्य"
-   ],
-   "eligibility": "किसी भी मान्यता प्राप्त विश्वविद्यालय से Graduation। आयु: 21-32 वर्ष (post के हिसाब से) — आरक्षित छूट।",
-   "examPattern": [
-    {
-     "stage": "Prelims",
-     "detail": "GS (175 Qs) + Aptitude & Mental Ability (25 Qs) — 300 अंक"
-    },
-    {
-     "stage": "Mains",
-     "detail": "Descriptive — 3 papers (GS, Aptitude, Essay)"
-    },
-    {
-     "stage": "Interview",
-     "detail": "60 अंक — Personality Test"
-    }
-   ],
-   "syllabus": [
-    "General Studies (तमिलनाडु विशेष)",
-    "Aptitude & Mental Ability",
-    "Current Affairs",
-    "Essay"
-   ],
-   "salary": "Pay Level 8+ — ₹47,600 बेसिक + DA, HRA, भत्ते",
-   "selectionProcess": "Prelims → Mains → Interview → DV"
-  },
-  {
-   "slug": "appsc",
-   "name": "APPSC Group 1",
-   "emoji": "🌴",
-   "fullName": "Andhra Pradesh Public Service Commission — Group 1 Services",
-   "tags": [
-    "Andhra Pradesh",
-    "Deputy Collector",
-    "Graduate"
-   ],
-   "officialWebsite": "https://psc.ap.gov.in",
-   "examFee": "₹200 (UR) • SC/ST/PwD मुक्त (अनुमानित)",
-   "latestStatus": "APPSC Group 1 अगले cycle की notification का इंतज़ार है। पिछला exam 2025 में हुआ — psc.ap.gov.in चेक करें।",
-   "overview": "APPSC Group 1 आंध्र प्रदेश में Deputy Collector, DSP, Commercial Tax Officer जैसे top posts का exam है — AP के aspirants के लिए सबसे बड़ी राज्य सेवा परीक्षा।",
-   "posts": [
-    "Deputy Collector",
-    "Deputy Superintendent of Police (DSP)",
-    "Commercial Tax Officer",
-    "Regional Transport Officer व अन्य"
-   ],
-   "eligibility": "किसी भी मान्यता प्राप्त विश्वविद्यालय से Graduation। आयु: 18-42 वर्ष (आरक्षित छूट)।",
-   "examPattern": [
-    {
-     "stage": "Prelims",
-     "detail": "2 papers — GS + Aptitude (objective)"
-    },
-    {
-     "stage": "Mains",
-     "detail": "5 papers — GS-I/II/III/IV + English (descriptive)"
-    },
-    {
-     "stage": "Interview",
-     "detail": "Personality Test"
-    }
-   ],
-   "syllabus": [
-    "General Studies (AP विशेष)",
-    "Aptitude",
-    "Current Affairs",
-    "Essay"
-   ],
-   "salary": "Pay Level 8+ — ₹47,600 बेसिक + DA, HRA, भत्ते",
-   "selectionProcess": "Prelims → Mains → Interview → DV"
-  },
-  {
-   "slug": "tspsc",
-   "name": "TSPSC Group 1",
-   "emoji": "🏞️",
-   "fullName": "Telangana Public Service Commission — Group 1 Services",
-   "tags": [
-    "Telangana",
-    "Deputy Collector",
-    "Graduate"
-   ],
-   "officialWebsite": "https://www.tspsc.gov.in",
-   "examFee": "₹200 (UR) • SC/ST/PwD मुक्त (अनुमानित)",
-   "latestStatus": "TSPSC Group 1 अगले cycle की notification का इंतज़ार है। पिछला exam 2025 में हुआ — tspsc.gov.in चेक करें।",
-   "overview": "TSPSC Group 1 तेलंगाना में Deputy Collector, DSP, Tahsildar जैसे top posts का exam है — तेलंगाना के aspirants के लिए सबसे प्रतिष्ठित राज्य सेवा परीक्षा।",
-   "posts": [
-    "Deputy Collector",
-    "Deputy Superintendent of Police (DSP)",
-    "Tahsildar",
-    "Commercial Tax Officer व अन्य"
-   ],
-   "eligibility": "किसी भी मान्यता प्राप्त विश्वविद्यालय से Graduation। आयु: 18-44 वर्ष (आरक्षित छूट)।",
-   "examPattern": [
-    {
-     "stage": "Prelims",
-     "detail": "2 papers — GS + Aptitude (objective)"
-    },
-    {
-     "stage": "Mains",
-     "detail": "Descriptive papers — GS-I/II/III/IV"
-    },
-    {
-     "stage": "Interview",
-     "detail": "Personality Test"
-    }
-   ],
-   "syllabus": [
-    "General Studies (Telangana विशेष)",
-    "Aptitude",
-    "Current Affairs",
-    "Essay"
-   ],
-   "salary": "Pay Level 8+ — ₹47,600 बेसिक + DA, HRA, भत्ते",
-   "selectionProcess": "Prelims → Mains → Interview → DV"
-  },
-  {
-   "slug": "kpsc-kas",
-   "name": "KPSC KAS",
-   "emoji": "🏔️",
-   "fullName": "Karnataka Public Service Commission — KAS (Karnataka Administrative Service)",
-   "tags": [
-    "Karnataka",
-    "Assistant Commissioner",
-    "Graduate"
-   ],
-   "officialWebsite": "https://kpsc.kar.nic.in",
-   "examFee": "₹600 (UR) • SC/ST/PwD मुक्त (अनुमानित)",
-   "latestStatus": "KPSC KAS अगले cycle की notification का इंतज़ार है। पिछला exam 2025 में हुआ — kpsc.kar.nic.in चेक करें।",
-   "overview": "KPSC KAS कर्नाटक में Assistant Commissioner, Tahsildar, DSP जैसे posts का exam है — कर्नाटक के aspirants के लिए सबसे बड़ी राज्य सेवा परीक्षा।",
-   "posts": [
-    "Assistant Commissioner (KAS)",
-    "Tahsildar",
-    "Deputy Superintendent of Police (DSP)",
-    "Commercial Tax Officer व अन्य"
-   ],
-   "eligibility": "किसी भी मान्यता प्राप्त विश्वविद्यालय से Graduation। आयु: 21-35 वर्ष (आरक्षित छूट)।",
-   "examPattern": [
-    {
-     "stage": "Prelims",
-     "detail": "2 papers — GS + CSAT (qualifying)"
-    },
-    {
-     "stage": "Mains",
-     "detail": "Descriptive — GS-I/II/III/IV + Kannada/English"
-    },
-    {
-     "stage": "Interview",
-     "detail": "Personality Test"
-    }
-   ],
-   "syllabus": [
-    "General Studies (Karnataka विशेष)",
-    "CSAT",
-    "Essay",
-    "Current Affairs"
-   ],
-   "salary": "Pay Level 8+ — ₹47,600 बेसिक + DA, HRA, भत्ते",
-   "selectionProcess": "Prelims → Mains → Interview → DV"
-  },
-  {
-   "slug": "wbpsc",
-   "name": "WBPSC WBCS",
-   "emoji": "🐅",
-   "fullName": "West Bengal Public Service Commission — WBCS (Executive)",
-   "tags": [
-    "West Bengal",
-    "Executive",
-    "Graduate"
-   ],
-   "officialWebsite": "https://wbpsc.gov.in",
-   "examFee": "₹210 (UR) • SC/ST/PwD मुक्त (अनुमानित)",
-   "latestStatus": "WBPSC WBCS अगले cycle की notification का इंतज़ार है। पिछला exam 2025 में हुआ — wbpsc.gov.in चेक करें।",
-   "overview": "WBCS (Executive) पश्चिम बंगाल में DM cadre, Police, Taxation जैसे posts का सबसे बड़ा exam है — West Bengal Civil Services की नींव। Prelims से Interview तक का पूरा सफर।",
-   "posts": [
-    "WBCS (Executive) — DM/Collector cadre",
-    "WBCS (Police)",
-    "WBCS (Taxation)",
-    "WBCS (Food) व अन्य"
-   ],
-   "eligibility": "किसी भी मान्यता प्राप्त विश्वविद्यालय से Graduation। आयु: 21-36 वर्ष (आरक्षित छूट)।",
-   "examPattern": [
-    {
-     "stage": "Prelims",
-     "detail": "GS + Arithmetic (200 अंक, objective)"
-    },
-    {
-     "stage": "Mains",
-     "detail": "6 papers — Bengali/Hindi/English, GS-I/II, Arithmetic, Optional"
-    },
-    {
-     "stage": "Interview",
-     "detail": "Personality Test"
-    }
-   ],
-   "syllabus": [
-    "General Studies (West Bengal विशेष)",
-    "Arithmetic & Reasoning",
-    "Essay",
-    "Optional Subject"
-   ],
-   "salary": "Pay Level 8+ — ₹47,600 बेसिक + DA, HRA, भत्ते",
-   "selectionProcess": "Prelims → Mains → Interview → DV"
-  },
-  {
-   "slug": "kerala-psc",
-   "name": "Kerala PSC",
-   "emoji": "🥥",
-   "fullName": "Kerala Public Service Commission — विभिन्न परीक्षाएँ",
-   "tags": [
-    "Kerala",
-    "LDC/Clerk",
-    "No Fee"
-   ],
-   "officialWebsite": "https://www.keralapsc.gov.in",
-   "examFee": "कोई fee नहीं (सभी exams मुफ्त)",
-   "latestStatus": "Kerala PSC की अगली भर्तियाँ जल्दी आएँगी — keralapsc.gov.in पर नई notification नियमित रूप से देखें।",
-   "overview": "Kerala PSC राज्य की सभी सरकारी भर्तियों (LDC, Clerk, Secretariat Assistant, Gazetted Officers) का एकमात्र आयोग है — और यहाँ सभी exams पूरी तरह free हैं। Kerala का सबसे बड़ा recruitment platform।",
-   "posts": [
-    "LDC / Clerk / Typist",
-    "Secretariat Assistant",
-    "Gazetted Officers (विभिन्न departments)",
-    "Technical & Non-Technical posts"
-   ],
-   "eligibility": "Post के हिसाब से — 10th/12th/Graduate। आयु: 18-41 वर्ष (post के हिसाब से) — आरक्षित छूट।",
-   "examPattern": [
-    {
-     "stage": "Exam (OMR/CBT)",
-     "detail": "Post-specific syllabus — GK, Mental Ability, English/Malayalam"
-    },
-    {
-     "stage": "Interview",
-     "detail": "सिर्फ gazetted/उच्च posts के लिए"
-    }
-   ],
-   "syllabus": [
-    "General Knowledge (Kerala विशेष)",
-    "Mental Ability",
-    "English/Malayalam",
-    "Post-specific subjects"
-   ],
-   "salary": "Pay Level 2-8 — post के हिसाब से",
-   "selectionProcess": "Exam → Interview (उच्च posts) → Rank List"
-  },
-  {
-   "slug": "gpsc",
-   "name": "GPSC (Gujarat)",
-   "emoji": "🦁",
-   "fullName": "Gujarat Public Service Commission — Class 1 & 2 Posts",
-   "tags": [
-    "Gujarat",
-    "Deputy Collector",
-    "Graduate"
-   ],
-   "officialWebsite": "https://gpsc.gujarat.gov.in",
-   "examFee": "₹100 (UR) • SC/ST/PwD मुक्त (अनुमानित)",
-   "latestStatus": "GPSC अगले cycle की notification का इंतज़ार है। पिछला exam 2025 में हुआ — gpsc.gujarat.gov.in चेक करें।",
-   "overview": "GPSC गुजरात में Deputy Collector, Deputy Superintendent of Police जैसे Class 1/2 posts का exam है — गुजरात के aspirants के लिए सबसे बड़ी राज्य सेवा परीक्षा।",
-   "posts": [
-    "Deputy Collector (Dy. Collector)",
-    "Deputy Superintendent of Police (DSP)",
-    "Assistant Commissioner (State Tax)",
-    "District Registrar व अन्य"
-   ],
-   "eligibility": "किसी भी मान्यता प्राप्त विश्वविद्यालय से Graduation। आयु: 20-38 वर्ष (आरक्षित छूट)।",
-   "examPattern": [
-    {
-     "stage": "Prelims",
-     "detail": "2 papers — GS (100 Qs) + CSAT (qualifying)"
-    },
-    {
-     "stage": "Mains",
-     "detail": "Descriptive — GS-I/II/III + Essay + Gujarati/English"
-    },
-    {
-     "stage": "Interview",
-     "detail": "Personality Test"
-    }
-   ],
-   "syllabus": [
-    "General Studies (Gujarat विशेष)",
-    "CSAT",
-    "Essay",
-    "Current Affairs"
-   ],
-   "salary": "Pay Level 8+ — ₹47,600 बेसिक + DA, HRA, भत्ते",
-   "selectionProcess": "Prelims → Mains → Interview → DV"
-  }
- ],
- "statePscs": [
-  {
-   "name": "UPPSC (Uttar Pradesh)",
-   "site": "https://uppsc.up.nic.in"
-  },
-  {
-   "name": "BPSC (Bihar)",
-   "site": "https://bpsc.bih.nic.in"
-  },
-  {
-   "name": "MPPSC (Madhya Pradesh)",
-   "site": "https://mppsc.mp.gov.in"
-  },
-  {
-   "name": "RPSC (Rajasthan)",
-   "site": "https://rpsc.rajasthan.gov.in"
-  },
-  {
-   "name": "MPSC (Maharashtra)",
-   "site": "https://mpsc.gov.in"
-  },
-  {
-   "name": "TNPSC (Tamil Nadu)",
-   "site": "https://www.tnpsc.gov.in"
-  },
-  {
-   "name": "APPSC (Andhra Pradesh)",
-   "site": "https://psc.ap.gov.in"
-  },
-  {
-   "name": "TSPSC (Telangana)",
-   "site": "https://www.tspsc.gov.in"
-  },
-  {
-   "name": "KPSC (Karnataka)",
-   "site": "https://kpsc.kar.nic.in"
-  },
-  {
-   "name": "WBPSC (West Bengal)",
-   "site": "https://wbpsc.gov.in"
-  },
-  {
-   "name": "Kerala PSC",
-   "site": "https://www.keralapsc.gov.in"
-  },
-  {
-   "name": "GPSC (Gujarat)",
-   "site": "https://gpsc.gujarat.gov.in"
-  },
-  {
-   "name": "OPSC (Odisha)",
-   "site": "https://opsc.gov.in"
-  },
-  {
-   "name": "HPSC (Haryana)",
-   "site": "https://hpsc.gov.in"
-  },
-  {
-   "name": "HPPSC (Himachal Pradesh)",
-   "site": "https://www.hppsc.hp.gov.in"
-  },
-  {
-   "name": "UKPSC (Uttarakhand)",
-   "site": "https://ukpsc.gov.in"
-  },
-  {
-   "name": "CGPSC (Chhattisgarh)",
-   "site": "https://psc.cg.gov.in"
-  },
-  {
-   "name": "JPSC (Jharkhand)",
-   "site": "https://jpsc.gov.in"
-  },
-  {
-   "name": "APSC (Assam)",
-   "site": "https://apsc.nic.in"
-  },
-  {
-   "name": "Goa PSC",
-   "site": "https://gpsc.goa.gov.in"
-  }
- ]
+  "quickLinks": [
+    [
+      "/results",
+      "🏆 State PSC Results"
+    ],
+    [
+      "/admit-cards",
+      "📄 Admit Card"
+    ],
+    [
+      "/category/state-psc",
+      "🏛️ All State PSC Exams"
+    ],
+    [
+      "/syllabus",
+      "📚 Syllabus"
+    ],
+    [
+      "/notifications",
+      "🔔 Updates"
+    ],
+    [
+      "/search",
+      "🔍 Search Exams"
+    ]
+  ],
+  "statsCards": [
+    [
+      "📋",
+      12,
+      "Major PSCs"
+    ],
+    [
+      "🗺️",
+      "20+",
+      "States Listed"
+    ],
+    [
+      "🏛️",
+      "PCS/RAS",
+      "Top Posts"
+    ]
+  ]
 }
