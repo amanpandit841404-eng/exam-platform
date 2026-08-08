@@ -1,0 +1,515 @@
+{
+ "updated": "2026-08-08",
+ "note": "सभी जानकारी अनुमानित/संकेतात्मक है। हर राज्य की TET, fee, pattern और dates बदलती रहती हैं — हमेशा उस बोर्ड/संगठन की official website पर notification ज़रूर चेक करें।",
+ "stats": {
+  "exams": 12,
+  "tets": 7,
+  "posts": 200000
+ },
+ "exams": [
+  {
+   "slug": "ctet",
+   "name": "CTET",
+   "emoji": "🏫",
+   "fullName": "Central Teacher Eligibility Test (Paper I & II)",
+   "tags": [
+    "12th/B.Ed",
+    "All India",
+    "No Negative"
+   ],
+   "officialWebsite": "https://ctet.nic.in",
+   "examFee": "₹1000 (एक paper) • ₹1200 (दोनों) — SC/ST/PwD 50% छूट (अनुमानित)",
+   "latestStatus": "CTET का अगला cycle जल्दी आएगा। पिछला CTET 2025 में हुआ — ctet.nic.in पर notification चेक करें।",
+   "overview": "CTET केंद्र सरकार के schools (KVS, NVS, Central Schools) में teacher बनने के लिए eligibility certificate देता है — teacher बनने की पहली सीढ़ी। Paper-I (कक्षा 1-5) और Paper-II (कक्षा 6-8)।",
+   "posts": [
+    "PRT (कक्षा 1-5)",
+    "TGT (कक्षा 6-8)"
+   ],
+   "eligibility": "Paper-I: 12th + D.El.Ed। Paper-II: Graduate + B.Ed। आयु: कोई ऊपरी सीमा नहीं।",
+   "examPattern": [
+    {
+     "stage": "Paper-I",
+     "detail": "150 प्रश्न, 150 अंक, 2.5 घंटे — CDP, Maths, EVS, Language I & II"
+    },
+    {
+     "stage": "Paper-II",
+     "detail": "150 प्रश्न, 150 अंक — CDP, Science/Maths या Social Science, Language I & II"
+    }
+   ],
+   "syllabus": [
+    "Child Development & Pedagogy",
+    "Maths / Science / Social Science",
+    "Environmental Studies",
+    "Language I & II"
+   ],
+   "salary": "Eligibility — फिर KVS/NVS/Central Schools में ₹35,400+ (Level 6-7)",
+   "selectionProcess": "CTET पास करें → केंद्रीय schools की भर्ती में apply"
+  },
+  {
+   "slug": "uptet",
+   "name": "UPTET",
+   "emoji": "📘",
+   "fullName": "Uttar Pradesh Teacher Eligibility Test (Paper 1 & 2)",
+   "tags": [
+    "Uttar Pradesh",
+    "12th/B.Ed",
+    "No Negative"
+   ],
+   "officialWebsite": "https://updeled.gov.in",
+   "examFee": "₹600 (एक paper) • ₹1200 (दोनों) — अनुमानित",
+   "latestStatus": "UPTET अगला cycle जल्दी आएगा। पिछला UPTET 2025 में हुआ — updeled.gov.in चेक करें।",
+   "overview": "UPTET उत्तर प्रदेश के primary (1-5) और upper primary (6-8) schools में teacher बनने के लिए eligibility exam है — UP government schools में नौकरी का रास्ता।",
+   "posts": [
+    "Assistant Teacher PRT (1-5)",
+    "Assistant Teacher TGT (6-8)"
+   ],
+   "eligibility": "Paper-I: 12th + D.El.Ed। Paper-II: Graduate + B.Ed। आयु: 18+।",
+   "examPattern": [
+    {
+     "stage": "Paper-I",
+     "detail": "150 प्रश्न, 150 अंक — CDP, Maths, EVS, Language I & II"
+    },
+    {
+     "stage": "Paper-II",
+     "detail": "150 प्रश्न, 150 अंक — CDP, विषय, Language I & II"
+    }
+   ],
+   "syllabus": [
+    "Child Development & Pedagogy",
+    "Maths / Science / Social Science",
+    "Environmental Studies",
+    "Hindi & English"
+   ],
+   "salary": "Eligibility — बाद में UP basic schools में ₹35,400+ (Level 6)",
+   "selectionProcess": "UPTET पास करें → UP schools की भर्ती में apply"
+  },
+  {
+   "slug": "reet",
+   "name": "REET",
+   "emoji": "🏜️",
+   "fullName": "Rajasthan Eligibility Examination for Teachers (Level 1 & 2)",
+   "tags": [
+    "Rajasthan",
+    "12th/B.Ed",
+    "Level 1/2"
+   ],
+   "officialWebsite": "https://education.rajasthan.gov.in",
+   "examFee": "₹600 (एक Level) • ₹1200 (दोनों) — अनुमानित",
+   "latestStatus": "REET अगला cycle जल्दी आएगा। पिछला REET 2025 में हुआ — education.rajasthan.gov.in चेक करें।",
+   "overview": "REET राजस्थान के government schools में teacher बनने के लिए eligibility exam है — Level-1 (कक्षा 1-5) और Level-2 (कक्षा 6-8)। राजस्थान में शिक्षक भर्ती के लिए REET अनिवार्य।",
+   "posts": [
+    "Teacher Level-1 (1-5)",
+    "Teacher Level-2 (6-8)"
+   ],
+   "eligibility": "Level-1: 12th + D.El.Ed। Level-2: Graduate + B.Ed। आयु: 18+।",
+   "examPattern": [
+    {
+     "stage": "Level-1",
+     "detail": "150 प्रश्न, 150 अंक — CDP, Hindi, Maths, EVS, English"
+    },
+    {
+     "stage": "Level-2",
+     "detail": "150 प्रश्न, 150 अंक — CDP, Hindi, English, विषय"
+    }
+   ],
+   "syllabus": [
+    "Child Development & Pedagogy",
+    "Hindi & English",
+    "Maths / Science / Social Science",
+    "Environmental Studies"
+   ],
+   "salary": "Eligibility — बाद में राजस्थान schools में ₹35,400+ (Level 6)",
+   "selectionProcess": "REET पास करें → राजस्थान शिक्षक भर्ती में apply"
+  },
+  {
+   "slug": "kvs",
+   "name": "KVS Recruitment",
+   "emoji": "🏫",
+   "fullName": "Kendriya Vidyalaya Sangathan — PRT/TGT/PGT & Non-Teaching",
+   "tags": [
+    "Central Govt",
+    "PRT/TGT/PGT",
+    "CTET Needed"
+   ],
+   "officialWebsite": "https://kvsangathan.nic.in",
+   "examFee": "₹1000 (UR) • SC/ST/PwD मुक्त (अनुमानित)",
+   "latestStatus": "KVS अगली recruitment notification का इंतज़ार है। पिछली भर्ती 2025 में हुई — kvsangathan.nic.in चेक करें।",
+   "overview": "KVS देश के 1200+ Kendriya Vidyalayas में PRT, TGT, PGT और non-teaching posts की भर्ती करता है — देशभर में transfer का फायदा, केंद्र सरकार की नौकरी। CTET पास होना अनिवार्य।",
+   "posts": [
+    "PRT",
+    "TGT",
+    "PGT",
+    "Non-Teaching (LDC, Steno, Assistant)"
+   ],
+   "eligibility": "PRT: 12th + D.El.Ed + CTET। TGT: Graduate + B.Ed + CTET। PGT: PG + B.Ed।",
+   "examPattern": [
+    {
+     "stage": "CBT",
+     "detail": "PRT 120 / TGT 150 / PGT 160 प्रश्न — Subject + GK + Pedagogy"
+    },
+    {
+     "stage": "Interview",
+     "detail": "कुछ posts के लिए"
+    },
+    {
+     "stage": "DV",
+     "detail": "Document Verification"
+    }
+   ],
+   "syllabus": [
+    "Subject Knowledge",
+    "Teaching Aptitude & Pedagogy",
+    "General Knowledge",
+    "English/Hindi"
+   ],
+   "salary": "Level 6-8 — ₹35,400-47,600 बेसिक + DA, HRA",
+   "selectionProcess": "CBT → Interview (कुछ posts) → DV"
+  },
+  {
+   "slug": "nvs",
+   "name": "NVS Recruitment",
+   "emoji": "🌟",
+   "fullName": "Navodaya Vidyalaya Samiti — TGT/PGT & Non-Teaching",
+   "tags": [
+    "Central Govt",
+    "TGT/PGT",
+    "Residential School"
+   ],
+   "officialWebsite": "https://navodaya.gov.in",
+   "examFee": "₹1500 (UR) • SC/ST/PwD मुक्त (अनुमानित)",
+   "latestStatus": "NVS अगली recruitment notification का इंतज़ार है। पिछली भर्ती 2025 में हुई — navodaya.gov.in चेक करें।",
+   "overview": "NVS देश के 650+ Jawahar Navodaya Vidyalayas में TGT, PGT और non-teaching posts की भर्ती करता है — गाँव-कस्बों के स्कूलों में शिक्षण का मौका।",
+   "posts": [
+    "TGT (6-10)",
+    "PGT (11-12)",
+    "Non-Teaching"
+   ],
+   "eligibility": "TGT: Graduate + B.Ed + CTET। PGT: PG + B.Ed।",
+   "examPattern": [
+    {
+     "stage": "CBT",
+     "detail": "TGT 150 / PGT 160 प्रश्न — Subject + GK + Reasoning"
+    },
+    {
+     "stage": "Interview",
+     "detail": "PGT के लिए"
+    },
+    {
+     "stage": "DV",
+     "detail": "Document Verification"
+    }
+   ],
+   "syllabus": [
+    "Subject Knowledge",
+    "General Knowledge",
+    "Reasoning",
+    "Teaching Aptitude"
+   ],
+   "salary": "Level 6-8 — ₹35,400-47,600 बेसिक + DA, HRA",
+   "selectionProcess": "CBT → Interview (PGT) → DV"
+  },
+  {
+   "slug": "dsssb",
+   "name": "DSSSB",
+   "emoji": "🏛️",
+   "fullName": "Delhi Subordinate Services Selection Board — Teaching & Non-Teaching",
+   "tags": [
+    "Delhi Govt",
+    "TGT/PRT/Assistant",
+    "High Volume"
+   ],
+   "officialWebsite": "https://dsssb.delhi.gov.in",
+   "examFee": "₹100 (UR) • महिला/SC/ST/PwD मुक्त (अनुमानित)",
+   "latestStatus": "DSSSB अगली recruitment notification का इंतज़ार है। पिछली भर्ती 2025 में हुई — dsssb.delhi.gov.in चेक करें।",
+   "overview": "DSSSB दिल्ली सरकार के schools और departments के लिए बड़ी भर्ती करता है — TGT, PRT, Assistant, Steno, LDC जैसे posts। दिल्ली में सरकारी नौकरी का सबसे बड़ा रास्ता।",
+   "posts": [
+    "TGT (विभिन्न विषय)",
+    "PRT",
+    "Assistant / LDC / Steno"
+   ],
+   "eligibility": "Post के हिसाब से — 12th/Diploma/Graduate + B.Ed। आयु: 18-32 (आरक्षित छूट)।",
+   "examPattern": [
+    {
+     "stage": "Tier-I (CBT)",
+     "detail": "100 प्रश्न — GK, Reasoning, Numeric, English/Hindi"
+    },
+    {
+     "stage": "Tier-II (CBT)",
+     "detail": "Subject-specific — Teaching posts के लिए"
+    },
+    {
+     "stage": "Skill/Interview",
+     "detail": "कुछ posts के लिए"
+    }
+   ],
+   "syllabus": [
+    "General Awareness",
+    "Reasoning",
+    "Quantitative Aptitude",
+    "Subject Knowledge"
+   ],
+   "salary": "Level 3-8 — ₹21,700-47,600 बेसिक + DA, HRA (Delhi)",
+   "selectionProcess": "Tier-I → Tier-II → Skill Test/DV"
+  },
+  {
+   "slug": "bihar-tet",
+   "name": "BTET",
+   "emoji": "📜",
+   "fullName": "Bihar Teacher Eligibility Test (Paper 1 & 2)",
+   "tags": [
+    "Bihar",
+    "12th/B.Ed",
+    "No Negative"
+   ],
+   "officialWebsite": "https://biharboardonline.bihar.gov.in",
+   "examFee": "₹600 (एक paper) • ₹1200 (दोनों) — अनुमानित",
+   "latestStatus": "BTET अगला cycle जल्दी आएगा। पिछला BTET 2025 में हुआ — biharboardonline.bihar.gov.in चेक करें।",
+   "overview": "BTET बिहार के government schools में teacher बनने के लिए eligibility exam है — Paper-1 (1-5) और Paper-2 (6-8)। बिहार में शिक्षक भर्ती के लिए अनिवार्य।",
+   "posts": [
+    "Primary Teacher (1-5)",
+    "Upper Primary Teacher (6-8)"
+   ],
+   "eligibility": "Paper-I: 12th + D.El.Ed। Paper-II: Graduate + B.Ed। आयु: 18+।",
+   "examPattern": [
+    {
+     "stage": "Paper-I",
+     "detail": "150 प्रश्न, 150 अंक — CDP, Maths, EVS, Language"
+    },
+    {
+     "stage": "Paper-II",
+     "detail": "150 प्रश्न, 150 अंक — CDP, विषय, Language"
+    }
+   ],
+   "syllabus": [
+    "Child Development & Pedagogy",
+    "Maths / Science / Social Science",
+    "Environmental Studies",
+    "Language"
+   ],
+   "salary": "Eligibility — बाद में बिहार schools में ₹35,400+ (Level 6)",
+   "selectionProcess": "BTET पास करें → बिहार शिक्षक भर्ती में apply"
+  },
+  {
+   "slug": "mp-tet",
+   "name": "MPTET",
+   "emoji": "🗺️",
+   "fullName": "Madhya Pradesh Teacher Eligibility Test (Varg 1/2/3)",
+   "tags": [
+    "Madhya Pradesh",
+    "Varg 1-3",
+    "No Negative"
+   ],
+   "officialWebsite": "https://mptet.mp.gov.in",
+   "examFee": "₹600 (प्रति Varg) — अनुमानित",
+   "latestStatus": "MPTET अगला cycle जल्दी आएगा। पिछला MPTET 2025 में हुआ — mptet.mp.gov.in चेक करें।",
+   "overview": "MPTET मध्य प्रदेश में शिक्षक भर्ती के लिए eligibility exam है — Varg-3 (1-5), Varg-2 (6-8), Varg-1 (9-10)।",
+   "posts": [
+    "Varg-3 — Primary (1-5)",
+    "Varg-2 — Middle (6-8)",
+    "Varg-1 — High School (9-10)"
+   ],
+   "eligibility": "Varg-3: 12th + D.El.Ed। Varg-2/1: Graduate + B.Ed। आयु: 18+।",
+   "examPattern": [
+    {
+     "stage": "Varg-3",
+     "detail": "150 प्रश्न, 150 अंक — CDP, Maths, EVS, Hindi, English"
+    },
+    {
+     "stage": "Varg-2/1",
+     "detail": "150 प्रश्न — CDP, विषय, Hindi, English"
+    }
+   ],
+   "syllabus": [
+    "Child Development & Pedagogy",
+    "Subject Knowledge",
+    "Hindi & English",
+    "Maths / Science / Social Science"
+   ],
+   "salary": "Eligibility — बाद में MP schools में ₹35,400+ (Level 6)",
+   "selectionProcess": "MPTET पास करें → MP शिक्षक भर्ती में apply"
+  },
+  {
+   "slug": "htet",
+   "name": "HTET",
+   "emoji": "🌾",
+   "fullName": "Haryana Teacher Eligibility Test (Level 1/2/3)",
+   "tags": [
+    "Haryana",
+    "Level 1-3",
+    "No Negative"
+   ],
+   "officialWebsite": "https://bseh.org.in",
+   "examFee": "₹600-1000 (Level के हिसाब से) — अनुमानित",
+   "latestStatus": "HTET अगला cycle जल्दी आएगा। पिछला HTET 2025 में हुआ — bseh.org.in चेक करें।",
+   "overview": "HTET हरियाणा के schools में teacher बनने के लिए eligibility exam है — Level-1 (1-5), Level-2 (6-8), Level-3 (9-12)।",
+   "posts": [
+    "PRT (Level-1)",
+    "TGT (Level-2)",
+    "PGT (Level-3)"
+   ],
+   "eligibility": "Level-1: 12th + D.El.Ed। Level-2: Graduate + B.Ed। Level-3: PG + B.Ed।",
+   "examPattern": [
+    {
+     "stage": "Level-1",
+     "detail": "150 प्रश्न, 150 अंक — CDP, Hindi, English, Maths, EVS"
+    },
+    {
+     "stage": "Level-2/3",
+     "detail": "150 प्रश्न — CDP, विषय, Hindi, English"
+    }
+   ],
+   "syllabus": [
+    "Child Development & Pedagogy",
+    "Subject Knowledge",
+    "Hindi & English",
+    "Maths / Science / Social Science"
+   ],
+   "salary": "Eligibility — बाद में Haryana schools में ₹35,400+ (Level 6)",
+   "selectionProcess": "HTET पास करें → हरियाणा शिक्षक भर्ती में apply"
+  },
+  {
+   "slug": "ugc-net",
+   "name": "UGC NET",
+   "emoji": "🎓",
+   "fullName": "UGC NET — Assistant Professor & Junior Research Fellowship",
+   "tags": [
+    "Post-Graduate",
+    "Professor/JRF",
+    "85+ Subjects"
+   ],
+   "officialWebsite": "https://ugcnet.nta.nic.in",
+   "examFee": "₹1100 (UR) • ₹550 (OBC/EWS) • ₹275 (SC/ST/PwD) — अनुमानित",
+   "latestStatus": "UGC NET अगले cycle की notification का इंतज़ार है। पिछला UGC NET 2025 में हुआ — ugcnet.nta.nic.in चेक करें।",
+   "overview": "UGC NET college/university में Assistant Professor बनने और JRF पाने के लिए देश का सबसे बड़ा eligibility exam है — 85+ subjects में।",
+   "posts": [
+    "Assistant Professor",
+    "JRF — Junior Research Fellowship"
+   ],
+   "eligibility": "किसी भी मान्यता प्राप्त विश्वविद्यालय से PG (55%+ / 50% आरक्षित)।",
+   "examPattern": [
+    {
+     "stage": "Paper-I",
+     "detail": "50 प्रश्न — Teaching Aptitude, Research Aptitude, Reasoning (100 अंक)"
+    },
+    {
+     "stage": "Paper-II",
+     "detail": "100 प्रश्न — अपने subject का (200 अंक)"
+    }
+   ],
+   "syllabus": [
+    "Teaching & Research Aptitude",
+    "Reasoning & Comprehension",
+    "Subject-specific",
+    "Current Affairs"
+   ],
+   "salary": "Assistant Professor — Level 10 ₹57,700 + allowances",
+   "selectionProcess": "UGC NET (2 papers) → JRF/Assistant Professor merit"
+  },
+  {
+   "slug": "bed-entrance",
+   "name": "B.Ed Entrance",
+   "emoji": "🎯",
+   "fullName": "B.Ed Entrance Exams (UP B.Ed JEE, BHU, DU व अन्य)",
+   "tags": [
+    "Graduate",
+    "B.Ed Admission",
+    "State-Level"
+   ],
+   "officialWebsite": "https://upbed.upsdc.gov.in",
+   "examFee": "₹600 (UP B.Ed JEE) — अनुमानित",
+   "latestStatus": "UP B.Ed JEE अगले cycle की notification का इंतज़ार है। पिछला exam 2025 में हुआ — upbed.upsdc.gov.in चेक करें।",
+   "overview": "B.Ed entrance exams से government B.Ed colleges में admission मिलता है — teacher बनने के सपने की नींव।",
+   "posts": [
+    "B.Ed Admission — Government/Private Colleges"
+   ],
+   "eligibility": "Graduation (50%+ / 45% आरक्षित)।",
+   "examPattern": [
+    {
+     "stage": "UP B.Ed JEE",
+     "detail": "100 प्रश्न, 400 अंक — GK, Logical Reasoning, Language, Teaching Aptitude"
+    },
+    {
+     "stage": "अन्य",
+     "detail": "BHU/DU/CUCET — अपने-अपने pattern में"
+    }
+   ],
+   "syllabus": [
+    "General Knowledge",
+    "Logical & Analytical Reasoning",
+    "Teaching Aptitude",
+    "Language"
+   ],
+   "salary": "B.Ed के बाद teacher भर्ती exams की eligibility",
+   "selectionProcess": "Entrance → Merit → Counselling → Admission"
+  },
+  {
+   "slug": "awes",
+   "name": "AWES",
+   "emoji": "🪖",
+   "fullName": "Army Welfare Education Society — Army Public Schools (PRT/TGT/PGT)",
+   "tags": [
+    "Army Schools",
+    "PRT/TGT/PGT",
+    "All India"
+   ],
+   "officialWebsite": "https://awesindia.com",
+   "examFee": "₹800 (UR) — अनुमानित",
+   "latestStatus": "AWES अगली recruitment notification का इंतज़ार है। पिछली भर्ती 2025 में हुई — awesindia.com चेक करें।",
+   "overview": "AWES देशभर के 130+ Army Public Schools में PRT, TGT, PGT की भर्ती करता है — सेना के परिवारों के बच्चों को पढ़ाने का सम्मानजनक अवसर।",
+   "posts": [
+    "PRT",
+    "TGT",
+    "PGT",
+    "Non-Teaching Posts"
+   ],
+   "eligibility": "PRT: 12th + D.El.Ed + CTET। TGT: Graduate + B.Ed + CTET। PGT: PG + B.Ed।",
+   "examPattern": [
+    {
+     "stage": "Written (AWES)",
+     "detail": "Subject + Teaching Aptitude + GK"
+    },
+    {
+     "stage": "Interview",
+     "detail": "Demonstration/Skill Test"
+    },
+    {
+     "stage": "DV",
+     "detail": "Document Verification"
+    }
+   ],
+   "syllabus": [
+    "Subject Knowledge",
+    "Teaching Aptitude",
+    "General Knowledge"
+   ],
+   "salary": "Pay matrix + AWES allowances",
+   "selectionProcess": "Written → Interview → DV"
+  }
+ ],
+ "orgs": [
+  {
+   "name": "CBSE",
+   "site": "https://www.cbse.gov.in"
+  },
+  {
+   "name": "KVS (Kendriya Vidyalaya)",
+   "site": "https://kvsangathan.nic.in"
+  },
+  {
+   "name": "NVS (Navodaya Vidyalaya)",
+   "site": "https://navodaya.gov.in"
+  },
+  {
+   "name": "NCERT",
+   "site": "https://ncert.nic.in"
+  },
+  {
+   "name": "NIOS",
+   "site": "https://nios.ac.in"
+  },
+  {
+   "name": "UGC",
+   "site": "https://www.ugc.gov.in"
+  }
+ ]
+}
