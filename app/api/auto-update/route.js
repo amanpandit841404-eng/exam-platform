@@ -225,6 +225,12 @@ export async function GET(req) {
         "navodaya": "https://navodaya.gov.in",
         "kvs": "https://kvsangathan.nic.in",
         "ctet": "https://ctet.nic.in",
+        "upsssc": "https://upsssc.gov.in",
+        "tnpsc": "https://tnpsc.gov.in",
+        "wbpsc": "https://wbpsc.gov.in",
+        "mpsc": "https://mpsc.gov.in",
+        "kpsc": "https://kpsc.kar.nic.in",
+        "apsc": "https://apsc.nic.in",
       };
       const classifyUpdate = (t) => {
         const k = t.toLowerCase();
