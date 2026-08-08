@@ -32,7 +32,7 @@ export default function Certifications() {
           try {
             const { data } = await supabase
               .from("exams")
-              .select("name, category, official_website, description")
+              .select("name, full_name, category, official_website, description")
               .ilike("category", "Professional Certification%")
               .eq("is_active", true)
               .order("name");
@@ -44,6 +44,8 @@ export default function Certifications() {
         }
         load();
       }, []);
+
+      const bodies = useMemo(() => new Set(certs.map((c) => c.full_name).filter(Boolean)).size, [certs]);
 
       const cats = useMemo(() => {
         const m = {};
@@ -77,7 +79,7 @@ export default function Certifications() {
             <div style={{ maxWidth: 1000, margin: "0 auto" }}>
               <a href="/" style={{ color: "#cbd5e1", textDecoration: "none", fontSize: 12 }}>← Home</a>
               <h1 style={{ fontSize: 20, fontWeight: 800, margin: "6px 0 4px" }}>🎓 Professional Certifications</h1>
-              <div style={{ fontSize: 12.5, color: "#cbd5e1" }}>780+ certifications · 29 category pages · एक जगह से पढ़ें और archive करें</div>
+              <div style={{ fontSize: 12.5, color: "#cbd5e1" }}>{certs.length}+ certifications · {cats.length} category pages · एक जगह से पढ़ें और archive करें</div>
             </div>
           </div>
 
@@ -86,7 +88,7 @@ export default function Certifications() {
               {[
                 { icon: "📜", val: certs.length + "+", label: "Certifications", color: "#2563eb", bg: "#eff6ff" },
                 { icon: "🗂️", val: cats.length, label: "Categories", color: "#16a34a", bg: "#f0fdf4" },
-                { icon: "🏢", val: "290+", label: "Issuing Bodies", color: "#ea580c", bg: "#fff7ed" },
+                { icon: "🏢", val: bodies, label: "Issuing Bodies", color: "#ea580c", bg: "#fff7ed" },
               ].map((s, i) => (
                 <div key={i} style={{ background: darkMode ? "#334155" : s.bg, borderRadius: 10, padding: "10px 8px", textAlign: "center", border: `1px solid ${border}` }}>
                   <div style={{ fontSize: 18 }}>{s.icon}</div>
