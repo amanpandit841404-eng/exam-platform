@@ -19,3 +19,9 @@ India's Modern Exam Results Platform
 > [00:51:58] Final deploy check — all 13 hubs live, sitemap 2242.
 - 🌲 Forest Exams Center (IFS, Forest Guard, RFO, Van Rakshak)
 - ⚖️ Judiciary Exams Center (CLAT, AILET, PCS-J, Law Officer)
+
+
+## Daily Updates (Phase 14)
+- Real news tracker: Google News RSS se daily result/admit card tracking (app/api/auto-update/route.js)
+- /latest-updates page: aaj ke updates, filter chips, hub links
+- Homepage: 16th CTA card + आज के अपडेट section
