@@ -91,6 +91,28 @@ export async function POST(request) {
       Prefer: "return=representation",
     };
 
+    // MONITOR STATS (official website coverage + recent monitor events)
+    if (action === "monitor_stats") {
+      const countOf = async (q) => {
+        const res = await fetch(`${SB}/exams?select=id${q}&limit=1`, {
+          headers: { apikey: ANON, Authorization: "Bearer " + ANON, Prefer: "count=exact" },
+          cache: "no-store",
+        });
+        const cr = res.headers.get("content-range") || "";
+        return parseInt(cr.split("/")[1] || "0", 10) || 0;
+      };
+      const [total, withSite, events] = await Promise.all([
+        countOf(""),
+        countOf("&official_website=not.is.null"),
+        fetch(`${SB}/monitor_events?select=*&order=id.desc&limit=20`, { headers: { apikey: ANON, Authorization: "Bearer " + ANON }, cache: "no-store" })
+          .then((r) => (r.ok ? r.json() : [])).catch(() => []),
+      ]);
+      const junk = ["exam.gov.in", "bprd.nic.in", "psc.gov.in", "police.gov.in", "nagarnigam.gov.in", "iimcat.ac.in"];
+      const junkCounts = {};
+      for (const j of junk) junkCounts[j] = await countOf(`&official_website=ilike.*${j}*`);
+      return Response.json({ success: true, total, withSite, blank: total - withSite, pct: total ? Math.round(((withSite) / total) * 1000) / 10 : 0, junkCounts, events });
+    }
+
     // COUNT
     if (action === "count") {
       const res = await fetch(`${SB}/${table}?select=id&limit=1`, {
