@@ -11,3 +11,6 @@ India's Modern Exam Results Platform
 
 
 > Phase 9 (08 Aug 2026): Defence + State PSC Exams Centers live — Agniveer/AFCAT/INET/Coast Guard + UPPSC/BPSC/MPPSC/RPSC/TNPSC. 7 curated hubs, 2164 sitemap URLs.
+
+
+> Phase 10 (08 Aug 2026): Teaching + Police + PSU + Insurance + Post Office + Health Exams Centers live — 6 new hubs, 72 exams, 13 total hubs, 2242 sitemap URLs.
