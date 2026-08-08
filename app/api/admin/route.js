@@ -74,23 +74,6 @@ export async function POST(request) {
     if (!body || body.secret !== ADMIN_SECRET) {
       return Response.json({ success: false, error: "Invalid secret" });
     }
-    const table = body.table;
-    if (!TABLES.includes(table)) {
-      return Response.json({ success: false, error: "Invalid table: " + String(table) });
-    }
-    if (table === "hub_pages") {
-      if (body.action !== "save") return Response.json({ success: false, error: "hub_pages supports only save action" });
-      return saveHubPage(body);
-    }
-    const action = body.action || "list";
-    const key = action === "delete" || action === "update" || action === "insert" ? SERVICE : ANON;
-    const headers = {
-      apikey: key,
-      Authorization: "Bearer " + key,
-      "Content-Type": "application/json",
-      Prefer: "return=representation",
-    };
-
     // MONITOR STATS (official website coverage + recent monitor events)
     if (action === "monitor_stats") {
       const countOf = async (q) => {
@@ -112,6 +95,23 @@ export async function POST(request) {
       for (const j of junk) junkCounts[j] = await countOf(`&official_website=ilike.*${j}*`);
       return Response.json({ success: true, total, withSite, blank: total - withSite, pct: total ? Math.round(((withSite) / total) * 1000) / 10 : 0, junkCounts, events });
     }
+
+    const table = body.table;
+    if (!TABLES.includes(table)) {
+      return Response.json({ success: false, error: "Invalid table: " + String(table) });
+    }
+    if (table === "hub_pages") {
+      if (body.action !== "save") return Response.json({ success: false, error: "hub_pages supports only save action" });
+      return saveHubPage(body);
+    }
+    const action = body.action || "list";
+    const key = action === "delete" || action === "update" || action === "insert" ? SERVICE : ANON;
+    const headers = {
+      apikey: key,
+      Authorization: "Bearer " + key,
+      "Content-Type": "application/json",
+      Prefer: "return=representation",
+    };
 
     // COUNT
     if (action === "count") {
