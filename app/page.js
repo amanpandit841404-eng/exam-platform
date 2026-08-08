@@ -9,10 +9,11 @@
       const [admitCards, setAdmitCards] = useState([]);
       const [upcomingExams, setUpcomingExams] = useState([]);
       const [latestUpdates, setLatestUpdates] = useState([]);
-      const [totalExams, setTotalExams] = useState(52472);
+      const [totalExams, setTotalExams] = useState(0);
       const [totalResults, setTotalResults] = useState(0);
       const [totalAdmits, setTotalAdmits] = useState(0);
       const [searchQuery, setSearchQuery] = useState('');
+      const [statsLoaded, setStatsLoaded] = useState(false);
       const [darkMode, setDarkMode] = useState(false);
       useEffect(() => {
         const saved = localStorage.getItem('sarkari-dark-mode');
@@ -29,7 +30,7 @@
               supabase.from('admit_cards').select('*').order('created_at', { ascending: false }).limit(10),
               supabase.from('upcoming_exams').select('*').order('exam_date', { ascending: true }).limit(20),
               supabase.from('updates').select('*').order('created_at', { ascending: false }).limit(6),
-              supabase.from('exams').select('*', { count: 'exact', head: true }),
+              supabase.from('exams').select('*', { count: 'exact', head: true }).eq('is_active', true),
               supabase.from('results').select('*', { count: 'exact', head: true }),
               supabase.from('admit_cards').select('*', { count: 'exact', head: true }),
             ]);
@@ -49,7 +50,7 @@
             if (countRes.count) setTotalExams(countRes.count);
             if (rCountRes.count) setTotalResults(rCountRes.count);
             if (aCountRes.count) setTotalAdmits(aCountRes.count);
-          } catch (err) { console.error(err); }
+          } catch (err) { console.error(err); } finally { setStatsLoaded(true); }
         }
         fetchData();
       }, []);
@@ -127,10 +128,10 @@
           <div style={{ background: cardBg, borderBottom: `1px solid ${border}`, padding: '12px 16px' }}>
             <div style={{ maxWidth: 1100, margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 8 }}>
               {[
-                { icon: '🏛️', val: totalExams.toLocaleString() + '+', label: 'Total Exams', color: '#2563eb', bg: '#eff6ff' },
-                { icon: '🏆', val: (totalResults || 93) + '+', label: 'Results', color: '#16a34a', bg: '#f0fdf4' },
-                { icon: '🎫', val: (totalAdmits || 95) + '+', label: 'Admit Cards', color: '#ea580c', bg: '#fff7ed' },
-                { icon: '📅', val: upcomingExams.length + '+', label: 'Upcoming', color: '#7c3aed', bg: '#f5f3ff' }
+                { icon: '🏛️', val: statsLoaded ? totalExams.toLocaleString() + '+' : '…', label: 'Total Exams', color: '#2563eb', bg: '#eff6ff' },
+                { icon: '🏆', val: statsLoaded ? totalResults.toLocaleString() + '+' : '…', label: 'Results', color: '#16a34a', bg: '#f0fdf4' },
+                { icon: '🎫', val: statsLoaded ? totalAdmits.toLocaleString() + '+' : '…', label: 'Admit Cards', color: '#ea580c', bg: '#fff7ed' },
+                { icon: '📅', val: statsLoaded ? upcomingExams.length + '+' : '…', label: 'Upcoming', color: '#7c3aed', bg: '#f5f3ff' }
               ].map((s, i) => (
                 <div key={i} style={{ background: darkMode ? '#1e293b' : s.bg, borderRadius: 10, padding: '10px 8px', textAlign: 'center', border: `1px solid ${border}` }}>
                   <div style={{ fontSize: 20 }}>{s.icon}</div>
