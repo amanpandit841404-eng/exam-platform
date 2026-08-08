@@ -1,3 +1,5 @@
+import { NextResponse } from "next/server";
+
 const supabaseUrl = "https://fbcvxefvvifmxaiqxiuq.supabase.co";
 const supabaseKey = "sb_publishable_BShV19iGgcoKLiIsyvQ2Lg_1Lhe9uPV";
 
@@ -15,7 +17,9 @@ async function restGet(path) {
   }
 }
 
-export default async function sitemap() {
+export const dynamic = "force-dynamic";
+
+export async function GET() {
   const baseUrl = "https://exam-platform-beta.vercel.app";
   const now = new Date().toISOString();
 
@@ -127,5 +131,14 @@ export default async function sitemap() {
     judiciarySlugs.map(slug => ({ url: `${baseUrl}/judiciary/${slug}`, lastModified: now, changeFrequency: "weekly", priority: 0.8 }))
   );
 
-  return [...staticPages, ...categoryPages, ...certPages, ...railwayPages, ...bankingPages, ...sscPages, ...upscPages, ...defencePages, ...statePscPages, ...teachingPages, ...policePages, ...psuPages, ...insurancePages, ...postOfficePages, ...healthPages, ...forestPages, ...judiciaryPages];
+  const all = [...staticPages, ...categoryPages, ...certPages, ...railwayPages, ...bankingPages, ...sscPages, ...upscPages, ...defencePages, ...statePscPages, ...teachingPages, ...policePages, ...psuPages, ...insurancePages, ...postOfficePages, ...healthPages, ...forestPages, ...judiciaryPages];
+
+  const urls = all;
+  const xml = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${urls.map((u) => `  <url><loc>${u.url}</loc><lastmod>${u.lastModified}</lastmod><changefreq>${u.changeFrequency}</changefreq><priority>${u.priority}</priority></url>`).join("\n")}
+</urlset>`;
+  return new NextResponse(xml, {
+    headers: { "Content-Type": "application/xml" },
+  });
 }
