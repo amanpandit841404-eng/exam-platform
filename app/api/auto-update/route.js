@@ -264,6 +264,8 @@ export async function GET(req) {
             if (!title || title.length < 15) continue;
             const key = title.toLowerCase().trim();
             if (existingTitles.has(key) || existingTitles.has(key.slice(0, 177))) continue;
+            const years = [...title.matchAll(/20\d{2}/g)].map((m) => parseInt(m[0], 10));
+            if (years.length && Math.max(...years) < new Date().getFullYear() - 1) continue;
             if (!/(sarkari|result|admit|hall ticket|answer key|exam date|notification|recruitment|shortlist|merit|declared)/.test(key)) continue;
             const examMatch = matchExam(title);
             if (!examMatch && !/(ssc|upsc|rrb|railway|ibps|sbi|rbi|bank|neet|jee|ctet|nta|bpsc|uppsc|mppsc|rpsc|police|nda|cds|afcat|lic|epfo|navy|army|air force|kvs|nvs|dsssb|nmms|ugc net|csir)/.test(key)) continue;
@@ -421,7 +423,6 @@ export async function GET(req) {
       duplicates_cleaned: cleanupDone,
       news_monitor_added: newsAdded,
       real_news_added: realNewsAdded,
-      debug_build: "v4-rest",
       template_added: templateAdded,
       results_auto_added: resultsAdded,
       admit_cards_auto_added: admitsAdded,
