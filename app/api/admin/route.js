@@ -92,7 +92,8 @@ export async function POST(request) {
       ]);
       const junk = ["exam.gov.in", "bprd.nic.in", "psc.gov.in", "police.gov.in", "nagarnigam.gov.in", "iimcat.ac.in"];
       const junkCounts = {};
-      for (const j of junk) junkCounts[j] = await countOf(`&official_website=ilike.*${j}*`);
+      // suffix match (no trailing wildcard) — upsc.gov.in/uppolice.gov.in जैसे सही domains को junk नहीं गिनता
+      for (const j of junk) junkCounts[j] = await countOf(`&official_website=ilike.*${j}`);
       return Response.json({ success: true, total, withSite, blank: total - withSite, pct: total ? Math.round(((withSite) / total) * 1000) / 10 : 0, junkCounts, events });
     }
 
