@@ -122,6 +122,12 @@ export default async function sitemap() {
   );
   const defenceSlugs = ["agniveer-army", "agniveer-vayu", "agniveer-navy", "afcat", "inet", "coast-guard-navik", "coast-guard-yantrik", "coast-guard-ac", "territorial-army", "army-ssc-tech", "mns", "drdo-ceptam"];
   const statePscSlugs = ["up-pcs", "bpsc", "mppsc", "rpsc-ras", "mpsc", "tnpsc", "appsc", "tspsc", "kpsc-kas", "wbpsc", "kerala-psc", "gpsc"];
+  const teachingSlugs = ["ctet", "uptet", "reet", "kvs", "nvs", "dsssb", "bihar-tet", "mp-tet", "htet", "ugc-net", "bed-entrance", "awes"];
+  const policeSlugs = ["up-police-constable", "up-police-si", "bihar-police", "mp-police", "rajasthan-police", "maharashtra-police", "gujarat-police", "karnataka-police", "tn-police", "wb-police", "punjab-police", "haryana-police"];
+  const psuSlugs = ["iocl", "ongc", "bhel", "ntpc", "sail", "gail", "bel", "hal", "aai", "coal-india", "nmdc", "nhpc"];
+  const insuranceSlugs = ["lic-ado", "niacl-ao", "nicl-ao", "uiic-ao", "irdai-am", "gic", "oicl-ao", "lic-hfl", "aic", "ecgc", "niacl-assistant", "nicl-assistant"];
+  const post-officeSlugs = ["gds", "postman", "mail-guard", "mts", "postal-assistant", "sorting-assistant", "accountant", "steno", "udc", "driver", "ippb-ja", "india-post-apprentice"];
+  const healthSlugs = ["aiims-norcet", "rrb-staff-nurse", "nhm-staff-nurse", "esic-nursing-officer", "esic-paramedical", "up-cho", "aiims-paramedical", "aiims-bsc-nursing", "icmr-recruitment", "bihar-cho", "state-nursing-officer", "esic-pharmacist"];
   const defencePages = [{ url: `${baseUrl}/defence`, lastModified: now, changeFrequency: "daily", priority: 0.9 }].concat(
     defenceSlugs.map(slug => ({ url: `${baseUrl}/defence/${slug}`, lastModified: now, changeFrequency: "weekly", priority: 0.8 }))
   );
@@ -129,5 +135,23 @@ export default async function sitemap() {
     statePscSlugs.map(slug => ({ url: `${baseUrl}/state-psc/${slug}`, lastModified: now, changeFrequency: "weekly", priority: 0.8 }))
   );
 
-  return [...staticPages, ...categoryPages, ...examPages, ...certPages, ...railwayPages, ...bankingPages, ...sscPages, ...upscPages, ...defencePages, ...statePscPages, ...resultPages, ...admitPages];
+  const teachingPages = [{ url: `${baseUrl}/teaching`, lastModified: now, changeFrequency: "daily", priority: 0.9 }].concat(
+    teachingSlugs.map(slug => ({ url: `${baseUrl}/teaching/${slug}`, lastModified: now, changeFrequency: "weekly", priority: 0.8 }))
+  );
+  const policePages = [{ url: `${baseUrl}/police`, lastModified: now, changeFrequency: "daily", priority: 0.9 }].concat(
+    policeSlugs.map(slug => ({ url: `${baseUrl}/police/${slug}`, lastModified: now, changeFrequency: "weekly", priority: 0.8 }))
+  );
+  const psuPages = [{ url: `${baseUrl}/psu`, lastModified: now, changeFrequency: "daily", priority: 0.9 }].concat(
+    psuSlugs.map(slug => ({ url: `${baseUrl}/psu/${slug}`, lastModified: now, changeFrequency: "weekly", priority: 0.8 }))
+  );
+  const insurancePages = [{ url: `${baseUrl}/insurance`, lastModified: now, changeFrequency: "daily", priority: 0.9 }].concat(
+    insuranceSlugs.map(slug => ({ url: `${baseUrl}/insurance/${slug}`, lastModified: now, changeFrequency: "weekly", priority: 0.8 }))
+  );
+  const post-officePages = [{ url: `${baseUrl}/post-office`, lastModified: now, changeFrequency: "daily", priority: 0.9 }].concat(
+    post-officeSlugs.map(slug => ({ url: `${baseUrl}/post-office/${slug}`, lastModified: now, changeFrequency: "weekly", priority: 0.8 }))
+  );
+  const healthPages = [{ url: `${baseUrl}/health`, lastModified: now, changeFrequency: "daily", priority: 0.9 }].concat(
+    healthSlugs.map(slug => ({ url: `${baseUrl}/health/${slug}`, lastModified: now, changeFrequency: "weekly", priority: 0.8 }))
+  );
+  return [...staticPages, ...categoryPages, ...examPages, ...certPages, ...railwayPages, ...bankingPages, ...sscPages, ...upscPages, ...defencePages, ...statePscPages, ...teachingPages, ...policePages, ...psuPages, ...insurancePages, ...postOfficePages, ...healthPages, ...resultPages, ...admitPages];
 }
