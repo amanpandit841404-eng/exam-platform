@@ -101,6 +101,134 @@ export async function POST(request) {
       return Response.json({ success: true, total, withSite, blank: total - withSite, pct: total ? Math.round(((withSite) / total) * 1000) / 10 : 0, junkCounts, events });
     }
 
+// AI QUEUE ACTIONS — insert after monitor_stats block (line 103)
+// These lines go BEFORE the "const table = body.table;" line
+
+    // AI QUEUE: list pending extractions
+    if (body.action === "ai_queue_list") {
+      const status = body.status || "pending,quick_review,auto_approved";
+      const statuses = status.split(",").map(s => s.trim()).filter(Boolean);
+      const orCond = statuses.map(s => `status.eq.${s}`).join(",");
+      const limit = Math.min(parseInt(body.limit || "50", 10), 200);
+      const offset = parseInt(body.offset || "0", 10);
+      const res = await fetch(
+        `${SB}/ai_extractions?select=*&or=(${orCond})&order=extracted_at.desc&limit=${limit}&offset=${offset}`,
+        { headers: { apikey: ANON, Authorization: "Bearer " + ANON, Prefer: "count=exact" }, cache: "no-store" }
+      );
+      if (!res.ok) return Response.json({ success: false, error: "Fetch failed: " + res.status });
+      const data = await res.json();
+      const cr = res.headers.get("content-range") || "";
+      return Response.json({ success: true, data, total: parseInt(cr.split("/")[1] || "0", 10) || 0 });
+    }
+
+    // AI QUEUE: approve → publish to target table
+    if (body.action === "ai_queue_approve") {
+      const id = parseInt(body.id, 10);
+      if (!id) return Response.json({ success: false, error: "Missing id" });
+      // Get the extraction
+      const extRes = await fetch(`${SB}/ai_extractions?select=*&id=eq.${id}`, {
+        headers: { apikey: SERVICE, Authorization: "Bearer " + SERVICE }, cache: "no-store"
+      });
+      if (!extRes.ok) return Response.json({ success: false, error: "Fetch extraction failed" });
+      const extData = await extRes.json();
+      const ext = extData[0];
+      if (!ext) return Response.json({ success: false, error: "Extraction not found" });
+
+      // Parse extracted_json
+      let item = {};
+      try { item = JSON.parse(ext.extracted_json || "{}"); } catch(e) {}
+
+      // Determine target table based on event_type
+      const eventType = ext.event_type || item.event_type || "other";
+      let targetTable = "updates";
+      let insertRow = {};
+
+      if (eventType === "result") {
+        targetTable = "results";
+        insertRow = {
+          exam_name: ext.exam_name || item.exam_name || "",
+          result_title: ext.title || item.title || "",
+          result_date: item.dates?.result_date || null,
+          result_url: ext.official_link || item.official_link || null,
+          status: "published",
+        };
+      } else if (eventType === "admit_card") {
+        targetTable = "admit_cards";
+        insertRow = {
+          exam_name: ext.exam_name || item.exam_name || "",
+          title: ext.title || item.title || "",
+          download_url: ext.official_link || item.official_link || null,
+          active_from: item.dates?.admit_card_date || null,
+          status: "active",
+        };
+      } else {
+        // updates table (notification, answer_key, syllabus, cutoff, other)
+        targetTable = "updates";
+        insertRow = {
+          update_type: eventType,
+          title: ext.title || item.title || "",
+          description: ext.description || item.description || "",
+          official_link: ext.official_link || item.official_link || null,
+          publish_date: new Date().toISOString().split("T")[0],
+          is_verified: true,
+        };
+      }
+
+      // Override with any edits from body
+      if (body.overrides && typeof body.overrides === "object") {
+        Object.assign(insertRow, body.overrides);
+      }
+
+      // Insert to target table
+      const pubRes = await fetch(`${SB}/${targetTable}`, {
+        method: "POST",
+        headers: { apikey: SERVICE, Authorization: "Bearer " + SERVICE, "Content-Type": "application/json", Prefer: "return=representation" },
+        body: JSON.stringify([insertRow]),
+      });
+      if (!pubRes.ok) {
+        const txt = await pubRes.text();
+        return Response.json({ success: false, error: "Publish failed: " + pubRes.status, detail: txt.slice(0, 200) });
+      }
+      const pubData = await pubRes.json();
+
+      // Mark extraction as approved
+      await fetch(`${SB}/ai_extractions?id=eq.${id}`, {
+        method: "PATCH",
+        headers: { apikey: SERVICE, Authorization: "Bearer " + SERVICE, "Content-Type": "application/json" },
+        body: JSON.stringify({ status: "approved", approved_at: new Date().toISOString() }),
+      });
+
+      return Response.json({ success: true, published_to: targetTable, data: pubData[0] || pubData });
+    }
+
+    // AI QUEUE: reject
+    if (body.action === "ai_queue_reject") {
+      const id = parseInt(body.id, 10);
+      if (!id) return Response.json({ success: false, error: "Missing id" });
+      const res = await fetch(`${SB}/ai_extractions?id=eq.${id}`, {
+        method: "PATCH",
+        headers: { apikey: SERVICE, Authorization: "Bearer " + SERVICE, "Content-Type": "application/json" },
+        body: JSON.stringify({ status: "rejected", approved_at: new Date().toISOString() }),
+      });
+      if (!res.ok) return Response.json({ success: false, error: "Reject failed: " + res.status });
+      return Response.json({ success: true });
+    }
+
+    // AI QUEUE: stats
+    if (body.action === "ai_queue_stats") {
+      const statuses = ["pending", "quick_review", "auto_approved", "approved", "rejected", "low_confidence"];
+      const counts = {};
+      await Promise.all(statuses.map(async (s) => {
+        const r = await fetch(`${SB}/ai_extractions?select=id&status=eq.${s}&limit=1`, {
+          headers: { apikey: ANON, Authorization: "Bearer " + ANON, Prefer: "count=exact" }, cache: "no-store"
+        });
+        const cr = r.headers.get("content-range") || "";
+        counts[s] = parseInt(cr.split("/")[1] || "0", 10) || 0;
+      }));
+      return Response.json({ success: true, counts });
+    }
+
+
     const table = body.table;
     if (!TABLES.includes(table)) {
       return Response.json({ success: false, error: "Invalid table: " + String(table) });
