@@ -86,9 +86,9 @@ export default function Certifications() {
           <div style={{ background: cardBg, borderBottom: `1px solid ${border}`, padding: "12px 16px" }}>
             <div style={{ maxWidth: 1000, margin: "0 auto", display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 8 }}>
               {[
-                { icon: "📜", val: certs.length + "+", label: "Certifications", color: "#2563eb", bg: "#eff6ff" },
-                { icon: "🗂️", val: cats.length, label: "Categories", color: "#16a34a", bg: "#f0fdf4" },
-                { icon: "🏢", val: bodies, label: "Issuing Bodies", color: "#ea580c", bg: "#fff7ed" },
+                { icon: "📜", val: loading ? "…" : certs.length + "+", label: "Certifications", color: "#2563eb", bg: "#eff6ff" },
+                { icon: "🗂️", val: loading ? "…" : cats.length, label: "Categories", color: "#16a34a", bg: "#f0fdf4" },
+                { icon: "🏢", val: loading ? "…" : bodies, label: "Issuing Bodies", color: "#ea580c", bg: "#fff7ed" },
               ].map((s, i) => (
                 <div key={i} style={{ background: darkMode ? "#334155" : s.bg, borderRadius: 10, padding: "10px 8px", textAlign: "center", border: `1px solid ${border}` }}>
                   <div style={{ fontSize: 18 }}>{s.icon}</div>
