@@ -240,7 +240,10 @@ export async function GET(req) {
         if (/(result|merit|shortlist|selected|qualified|declared)/.test(k)) return "result";
         return "general";
       };
-      const { data: recentRows } = await adminSupabase.from("updates").select("title").order("created_at", { ascending: false }).limit(1000);
+      const rRes = await fetch(supabaseUrl + "/rest/v1/updates?select=title&order=created_at.desc&limit=1000", {
+        headers: { apikey: anonKey, Authorization: "Bearer " + anonKey }, cache: "no-store",
+      });
+      const recentRows = rRes.ok ? await rRes.json() : null;
       const existingTitles = new Set();
       (recentRows || []).forEach((r) => {
         const k = (r.title || "").toLowerCase().trim();
@@ -269,16 +272,23 @@ export async function GET(req) {
             const examId = examMatch ? examMatch[0] : null;
             const link = OFFICIAL_LINKS[examId] || (knownKey ? KNOWN_OFFICIAL[knownKey] : null);
             const insertTitle = title.length > 180 ? title.slice(0, 177) + "..." : title;
-            const { data: dup } = await adminSupabase.from("updates").select("id").eq("title", insertTitle).limit(1);
+            const dRes = await fetch(supabaseUrl + "/rest/v1/updates?select=id&title=eq." + encodeURIComponent(insertTitle) + "&limit=1", {
+              headers: { apikey: anonKey, Authorization: "Bearer " + anonKey }, cache: "no-store",
+            });
+            const dup = dRes.ok ? await dRes.json() : null;
             if (dup && dup.length) continue;
-            await supabase.from("updates").insert({
-              exam_id: examId,
-              update_type: type,
-              title: insertTitle,
-              description: "Auto-tracked from Google News. Official site par confirm karein.",
-              official_link: link,
-              publish_date: today,
-              is_verified: false,
+            await fetch(supabaseUrl + "/rest/v1/updates", {
+              method: "POST",
+              headers: { apikey: anonKey, Authorization: "Bearer " + anonKey, "Content-Type": "application/json", Prefer: "return=minimal" },
+              body: JSON.stringify([{
+                exam_id: examId,
+                update_type: type,
+                title: insertTitle,
+                description: "Auto-tracked from Google News. Official site par confirm karein.",
+                official_link: link,
+                publish_date: today,
+                is_verified: false,
+              }]),
             });
             existingTitles.add(insertTitle.toLowerCase().trim());
             existingTitles.add(insertTitle.toLowerCase().trim().slice(0, 177));
@@ -307,12 +317,18 @@ export async function GET(req) {
       // Self-heal: delete any duplicate titles created in this run (keep newest)
       if (realNewsAdded > 0) {
         try {
-          const { data: allRows } = await adminSupabase.from("updates").select("id,title").order("created_at", { ascending: false }).limit(1000);
+          const hRes = await fetch(supabaseUrl + "/rest/v1/updates?select=id,title&order=created_at.desc&limit=1000", {
+            headers: { apikey: serviceKey, Authorization: "Bearer " + serviceKey }, cache: "no-store",
+          });
+          const allRows = hRes.ok ? await hRes.json() : [];
           const seenT = new Set();
-          for (const u of allRows || []) {
+          for (const u of allRows) {
             const k = (u.title || "").toLowerCase().trim();
             if (seenT.has(k)) {
-              await adminSupabase.from("updates").delete().eq("id", u.id);
+              await fetch(supabaseUrl + "/rest/v1/updates?id=eq." + u.id, {
+                method: "DELETE",
+                headers: { apikey: serviceKey, Authorization: "Bearer " + serviceKey },
+              });
             } else {
               seenT.add(k);
             }
@@ -405,6 +421,7 @@ export async function GET(req) {
       duplicates_cleaned: cleanupDone,
       news_monitor_added: newsAdded,
       real_news_added: realNewsAdded,
+      debug_build: "v4-rest",
       template_added: templateAdded,
       results_auto_added: resultsAdded,
       admit_cards_auto_added: admitsAdded,
