@@ -1,449 +1,498 @@
 {
- "updated": "2026-08-08",
- "note": "सभी जानकारी अनुमानित/संकेतात्मक है। India Post की भर्तियाँ (GDS, Postman, MTS आदि) mostly merit-based होती हैं — हमेशा indiapost.gov.in पर official notification ज़रूर चेक करें।",
- "stats": {
-  "exams": 12,
-  "posts": 150000,
-  "merit": 10
- },
- "exams": [
-  {
-   "slug": "gds",
-   "name": "GDS",
-   "emoji": "📮",
-   "fullName": "Gramin Dak Sevak (BPM, ABPM, Dak Sevak)",
-   "tags": [
-    "10th Pass",
-    "Merit-Based",
-    "सबसे बड़ी भर्ती"
-   ],
-   "officialWebsite": "https://indiapostgdsonline.gov.in",
-   "examFee": "₹100 (UR/OBC/EWS) • महिला/SC/ST/PwD मुक्त",
-   "latestStatus": "India Post GDS अगली भर्ती का इंतज़ार है। पिछली भर्ती 2025 में हुई — indiapostgdsonline.gov.in चेक करें।",
-   "overview": "GDS (Gramin Dak Sevak) India Post की सबसे बड़ी भर्ती है — गाँवों में डाक सेवा चलाने वाले BPM, ABPM और Dak Sevak posts। 10th pass के लिए देश में सबसे ज़्यादा posts निकलते हैं — कोई exam नहीं, 10th के marks से ही merit बनती है।",
-   "posts": [
-    "Branch Postmaster (BPM)",
-    "Assistant Branch Postmaster (ABPM)",
-    "Dak Sevak"
-   ],
-   "eligibility": "10th pass (कंप्यूटर ज्ञान + साइकिल अनिवार्य)। आयु: 18-40 वर्ष (आरक्षित छूट)।",
-   "examPattern": [
+  "updated": "2026-08-08T06:34:10.786Z",
+  "note": "सभी जानकारी अनुमानित/संकेतात्मक है। India Post की भर्तियाँ (GDS, Postman, MTS आदि) mostly merit-based होती हैं — हमेशा indiapost.gov.in पर official notification ज़रूर चेक करें।",
+  "stats": {
+    "exams": 12,
+    "posts": 150000,
+    "merit": 10
+  },
+  "exams": [
     {
-     "stage": "Merit List",
-     "detail": "10th के marks के आधार पर (कोई परीक्षा नहीं)"
+      "slug": "gds",
+      "name": "GDS",
+      "emoji": "📮",
+      "fullName": "Gramin Dak Sevak (BPM, ABPM, Dak Sevak)",
+      "tags": [
+        "10th Pass",
+        "Merit-Based",
+        "सबसे बड़ी भर्ती"
+      ],
+      "officialWebsite": "https://indiapostgdsonline.gov.in",
+      "examFee": "₹100 (UR/OBC/EWS) • महिला/SC/ST/PwD मुक्त",
+      "latestStatus": "India Post GDS अगली भर्ती का इंतज़ार है। पिछली भर्ती 2025 में हुई — indiapostgdsonline.gov.in चेक करें।",
+      "overview": "GDS (Gramin Dak Sevak) India Post की सबसे बड़ी भर्ती है — गाँवों में डाक सेवा चलाने वाले BPM, ABPM और Dak Sevak posts। 10th pass के लिए देश में सबसे ज़्यादा posts निकलते हैं — कोई exam नहीं, 10th के marks से ही merit बनती है।",
+      "posts": [
+        "Branch Postmaster (BPM)",
+        "Assistant Branch Postmaster (ABPM)",
+        "Dak Sevak"
+      ],
+      "eligibility": "10th pass (कंप्यूटर ज्ञान + साइकिल अनिवार्य)। आयु: 18-40 वर्ष (आरक्षित छूट)।",
+      "examPattern": [
+        {
+          "stage": "Merit List",
+          "detail": "10th के marks के आधार पर (कोई परीक्षा नहीं)"
+        },
+        {
+          "stage": "DV",
+          "detail": "Document Verification"
+        }
+      ],
+      "syllabus": [
+        "कोई exam नहीं — 10th marks की merit",
+        "कंप्यूटर का बुनियादी ज्ञान"
+      ],
+      "salary": "TRCA ₹12,000-29,380/माह (post के हिसाब से) + allowances",
+      "selectionProcess": "10th marks merit → DV → Engagement"
     },
     {
-     "stage": "DV",
-     "detail": "Document Verification"
-    }
-   ],
-   "syllabus": [
-    "कोई exam नहीं — 10th marks की merit",
-    "कंप्यूटर का बुनियादी ज्ञान"
-   ],
-   "salary": "TRCA ₹12,000-29,380/माह (post के हिसाब से) + allowances",
-   "selectionProcess": "10th marks merit → DV → Engagement"
-  },
-  {
-   "slug": "postman",
-   "name": "Postman",
-   "emoji": "📬",
-   "fullName": "India Post Postman & Mail Guard",
-   "tags": [
-    "12th Pass",
-    "Merit-Based",
-    "Delivery"
-   ],
-   "officialWebsite": "https://indiapost.gov.in",
-   "examFee": "₹100 (UR/OBC/EWS) • महिला/SC/ST/PwD मुक्त",
-   "latestStatus": "India Post Postman अगली भर्ती का इंतज़ार है। पिछली भर्ती 2025 में हुई — indiapost.gov.in चेक करें।",
-   "overview": "Postman डाक विभाग की सबसे जानी-पहचानी भर्ती है — घर-घर पत्र और parcels पहुँचाने का काम। 12th pass के लिए स्थिर सरकारी नौकरी, merit के आधार पर selection।",
-   "posts": [
-    "Postman",
-    "Mail Guard"
-   ],
-   "eligibility": "12th pass। आयु: 18-27 वर्ष (आरक्षित छूट)।",
-   "examPattern": [
-    {
-     "stage": "Merit List",
-     "detail": "12th के marks के आधार पर (कुछ circles में exam भी)"
+      "slug": "postman",
+      "name": "Postman",
+      "emoji": "📬",
+      "fullName": "India Post Postman & Mail Guard",
+      "tags": [
+        "12th Pass",
+        "Merit-Based",
+        "Delivery"
+      ],
+      "officialWebsite": "https://indiapost.gov.in",
+      "examFee": "₹100 (UR/OBC/EWS) • महिला/SC/ST/PwD मुक्त",
+      "latestStatus": "India Post Postman अगली भर्ती का इंतज़ार है। पिछली भर्ती 2025 में हुई — indiapost.gov.in चेक करें।",
+      "overview": "Postman डाक विभाग की सबसे जानी-पहचानी भर्ती है — घर-घर पत्र और parcels पहुँचाने का काम। 12th pass के लिए स्थिर सरकारी नौकरी, merit के आधार पर selection।",
+      "posts": [
+        "Postman",
+        "Mail Guard"
+      ],
+      "eligibility": "12th pass। आयु: 18-27 वर्ष (आरक्षित छूट)।",
+      "examPattern": [
+        {
+          "stage": "Merit List",
+          "detail": "12th के marks के आधार पर (कुछ circles में exam भी)"
+        },
+        {
+          "stage": "DV",
+          "detail": "Document Verification"
+        }
+      ],
+      "syllabus": [
+        "कोई exam नहीं — 12th marks की merit",
+        "स्थानीय भाषा ज्ञान"
+      ],
+      "salary": "Level 3 — ₹21,700 बेसिक + DA, HRA, भत्ते",
+      "selectionProcess": "Merit → DV"
     },
     {
-     "stage": "DV",
-     "detail": "Document Verification"
-    }
-   ],
-   "syllabus": [
-    "कोई exam नहीं — 12th marks की merit",
-    "स्थानीय भाषा ज्ञान"
-   ],
-   "salary": "Level 3 — ₹21,700 बेसिक + DA, HRA, भत्ते",
-   "selectionProcess": "Merit → DV"
-  },
-  {
-   "slug": "mail-guard",
-   "name": "Mail Guard",
-   "emoji": "📭",
-   "fullName": "India Post Mail Guard",
-   "tags": [
-    "12th Pass",
-    "Merit-Based",
-    "Rail Mail"
-   ],
-   "officialWebsite": "https://indiapost.gov.in",
-   "examFee": "₹100 (UR/OBC/EWS) • महिला/SC/ST/PwD मुक्त",
-   "latestStatus": "Mail Guard अगली भर्ती का इंतज़ार है। पिछली भर्ती 2025 में हुई — indiapost.gov.in चेक करें।",
-   "overview": "Mail Guard ट्रेनों में डाक (mail) की सुरक्षा और परिवहन की ज़िम्मेदारी निभाते हैं — Railway Mail Service (RMS) में सफर के साथ नौकरी। 12th pass के लिए बढ़िया मौका।",
-   "posts": [
-    "Mail Guard"
-   ],
-   "eligibility": "12th pass। आयु: 18-27 वर्ष (आरक्षित छूट)।",
-   "examPattern": [
-    {
-     "stage": "Merit List",
-     "detail": "12th marks के आधार पर"
+      "slug": "mail-guard",
+      "name": "Mail Guard",
+      "emoji": "📭",
+      "fullName": "India Post Mail Guard",
+      "tags": [
+        "12th Pass",
+        "Merit-Based",
+        "Rail Mail"
+      ],
+      "officialWebsite": "https://indiapost.gov.in",
+      "examFee": "₹100 (UR/OBC/EWS) • महिला/SC/ST/PwD मुक्त",
+      "latestStatus": "Mail Guard अगली भर्ती का इंतज़ार है। पिछली भर्ती 2025 में हुई — indiapost.gov.in चेक करें।",
+      "overview": "Mail Guard ट्रेनों में डाक (mail) की सुरक्षा और परिवहन की ज़िम्मेदारी निभाते हैं — Railway Mail Service (RMS) में सफर के साथ नौकरी। 12th pass के लिए बढ़िया मौका।",
+      "posts": [
+        "Mail Guard"
+      ],
+      "eligibility": "12th pass। आयु: 18-27 वर्ष (आरक्षित छूट)।",
+      "examPattern": [
+        {
+          "stage": "Merit List",
+          "detail": "12th marks के आधार पर"
+        },
+        {
+          "stage": "DV",
+          "detail": "Document Verification"
+        }
+      ],
+      "syllabus": [
+        "कोई exam नहीं — merit-based"
+      ],
+      "salary": "Level 3 — ₹21,700 बेसिक + DA, HRA, भत्ते",
+      "selectionProcess": "Merit → DV"
     },
     {
-     "stage": "DV",
-     "detail": "Document Verification"
-    }
-   ],
-   "syllabus": [
-    "कोई exam नहीं — merit-based"
-   ],
-   "salary": "Level 3 — ₹21,700 बेसिक + DA, HRA, भत्ते",
-   "selectionProcess": "Merit → DV"
-  },
-  {
-   "slug": "mts",
-   "name": "Post Office MTS",
-   "emoji": "📦",
-   "fullName": "India Post Multi-Tasking Staff",
-   "tags": [
-    "10th Pass",
-    "Merit-Based",
-    "Level 1"
-   ],
-   "officialWebsite": "https://indiapost.gov.in",
-   "examFee": "₹100 (UR/OBC/EWS) • महिला/SC/ST/PwD मुक्त",
-   "latestStatus": "Post Office MTS अगली भर्ती का इंतज़ार है। पिछली भर्ती 2025 में हुई — indiapost.gov.in चेक करें।",
-   "overview": "Post Office MTS डाकघरों में सहायक (सफाई, माल-सामान संभालना) का काम करते हैं — 10th pass के लिए सबसे आसान डाक विभाग की नौकरी। merit के आधार पर selection।",
-   "posts": [
-    "Multi-Tasking Staff (MTS)"
-   ],
-   "eligibility": "10th pass। आयु: 18-25 वर्ष (आरक्षित छूट)।",
-   "examPattern": [
-    {
-     "stage": "Merit List",
-     "detail": "10th marks के आधार पर"
+      "slug": "mts",
+      "name": "Post Office MTS",
+      "emoji": "📦",
+      "fullName": "India Post Multi-Tasking Staff",
+      "tags": [
+        "10th Pass",
+        "Merit-Based",
+        "Level 1"
+      ],
+      "officialWebsite": "https://indiapost.gov.in",
+      "examFee": "₹100 (UR/OBC/EWS) • महिला/SC/ST/PwD मुक्त",
+      "latestStatus": "Post Office MTS अगली भर्ती का इंतज़ार है। पिछली भर्ती 2025 में हुई — indiapost.gov.in चेक करें।",
+      "overview": "Post Office MTS डाकघरों में सहायक (सफाई, माल-सामान संभालना) का काम करते हैं — 10th pass के लिए सबसे आसान डाक विभाग की नौकरी। merit के आधार पर selection।",
+      "posts": [
+        "Multi-Tasking Staff (MTS)"
+      ],
+      "eligibility": "10th pass। आयु: 18-25 वर्ष (आरक्षित छूट)।",
+      "examPattern": [
+        {
+          "stage": "Merit List",
+          "detail": "10th marks के आधार पर"
+        },
+        {
+          "stage": "DV",
+          "detail": "Document Verification"
+        }
+      ],
+      "syllabus": [
+        "कोई exam नहीं — merit-based"
+      ],
+      "salary": "Level 1 — ₹18,000 बेसिक + DA, HRA, भत्ते",
+      "selectionProcess": "Merit → DV"
     },
     {
-     "stage": "DV",
-     "detail": "Document Verification"
-    }
-   ],
-   "syllabus": [
-    "कोई exam नहीं — merit-based"
-   ],
-   "salary": "Level 1 — ₹18,000 बेसिक + DA, HRA, भत्ते",
-   "selectionProcess": "Merit → DV"
-  },
-  {
-   "slug": "postal-assistant",
-   "name": "Postal Assistant (PA)",
-   "emoji": "📨",
-   "fullName": "India Post Postal Assistant / Sorting Assistant",
-   "tags": [
-    "12th Pass",
-    "Counter Work",
-    "Merit-Based"
-   ],
-   "officialWebsite": "https://indiapost.gov.in",
-   "examFee": "₹100 (UR/OBC/EWS) • महिला/SC/ST/PwD मुक्त",
-   "latestStatus": "Postal Assistant अगली भर्ती का इंतज़ार है। पिछली भर्ती 2025 में हुई — indiapost.gov.in चेक करें।",
-   "overview": "Postal Assistant डाकघर के काउंटर पर काम करते हैं — स्पीड पोस्ट, money order, savings account जैसी सेवाएँ। 12th pass के लिए डाक विभाग की पसंदीदा नौकरी।",
-   "posts": [
-    "Postal Assistant (PA)",
-    "Sorting Assistant (SA)"
-   ],
-   "eligibility": "12th pass। आयु: 18-27 वर्ष (आरक्षित छूट)।",
-   "examPattern": [
-    {
-     "stage": "Merit/Exam",
-     "detail": "कुछ circles में merit, कुछ में exam — notification के अनुसार"
+      "slug": "postal-assistant",
+      "name": "Postal Assistant (PA)",
+      "emoji": "📨",
+      "fullName": "India Post Postal Assistant / Sorting Assistant",
+      "tags": [
+        "12th Pass",
+        "Counter Work",
+        "Merit-Based"
+      ],
+      "officialWebsite": "https://indiapost.gov.in",
+      "examFee": "₹100 (UR/OBC/EWS) • महिला/SC/ST/PwD मुक्त",
+      "latestStatus": "Postal Assistant अगली भर्ती का इंतज़ार है। पिछली भर्ती 2025 में हुई — indiapost.gov.in चेक करें।",
+      "overview": "Postal Assistant डाकघर के काउंटर पर काम करते हैं — स्पीड पोस्ट, money order, savings account जैसी सेवाएँ। 12th pass के लिए डाक विभाग की पसंदीदा नौकरी।",
+      "posts": [
+        "Postal Assistant (PA)",
+        "Sorting Assistant (SA)"
+      ],
+      "eligibility": "12th pass। आयु: 18-27 वर्ष (आरक्षित छूट)।",
+      "examPattern": [
+        {
+          "stage": "Merit/Exam",
+          "detail": "कुछ circles में merit, कुछ में exam — notification के अनुसार"
+        },
+        {
+          "stage": "DV",
+          "detail": "Document Verification"
+        }
+      ],
+      "syllabus": [
+        "English, Maths, Reasoning (जहाँ exam हो)"
+      ],
+      "salary": "Level 4 — ₹25,500 बेसिक + DA, HRA, भत्ते",
+      "selectionProcess": "Merit/Exam → DV"
     },
     {
-     "stage": "DV",
-     "detail": "Document Verification"
-    }
-   ],
-   "syllabus": [
-    "English, Maths, Reasoning (जहाँ exam हो)"
-   ],
-   "salary": "Level 4 — ₹25,500 बेसिक + DA, HRA, भत्ते",
-   "selectionProcess": "Merit/Exam → DV"
-  },
-  {
-   "slug": "sorting-assistant",
-   "name": "Sorting Assistant (SA)",
-   "emoji": "📨",
-   "fullName": "India Post Sorting Assistant",
-   "tags": [
-    "12th Pass",
-    "Mail Sorting",
-    "Merit-Based"
-   ],
-   "officialWebsite": "https://indiapost.gov.in",
-   "examFee": "₹100 (UR/OBC/EWS) • महिला/SC/ST/PwD मुक्त",
-   "latestStatus": "Sorting Assistant अगली भर्ती का इंतज़ार है। पिछली भर्ती 2025 में हुई — indiapost.gov.in चेक करें।",
-   "overview": "Sorting Assistant डाक कार्यालयों में मेल को छाँटने (sorting) का काम करते हैं — PA/SA एक ही परीक्षा से भरे जाते हैं। 12th pass के लिए स्थिर नौकरी।",
-   "posts": [
-    "Sorting Assistant (SA)"
-   ],
-   "eligibility": "12th pass। आयु: 18-27 वर्ष (आरक्षित छूट)।",
-   "examPattern": [
-    {
-     "stage": "Merit/Exam",
-     "detail": "notification के अनुसार"
+      "slug": "sorting-assistant",
+      "name": "Sorting Assistant (SA)",
+      "emoji": "📨",
+      "fullName": "India Post Sorting Assistant",
+      "tags": [
+        "12th Pass",
+        "Mail Sorting",
+        "Merit-Based"
+      ],
+      "officialWebsite": "https://indiapost.gov.in",
+      "examFee": "₹100 (UR/OBC/EWS) • महिला/SC/ST/PwD मुक्त",
+      "latestStatus": "Sorting Assistant अगली भर्ती का इंतज़ार है। पिछली भर्ती 2025 में हुई — indiapost.gov.in चेक करें।",
+      "overview": "Sorting Assistant डाक कार्यालयों में मेल को छाँटने (sorting) का काम करते हैं — PA/SA एक ही परीक्षा से भरे जाते हैं। 12th pass के लिए स्थिर नौकरी।",
+      "posts": [
+        "Sorting Assistant (SA)"
+      ],
+      "eligibility": "12th pass। आयु: 18-27 वर्ष (आरक्षित छूट)।",
+      "examPattern": [
+        {
+          "stage": "Merit/Exam",
+          "detail": "notification के अनुसार"
+        },
+        {
+          "stage": "DV",
+          "detail": "Document Verification"
+        }
+      ],
+      "syllabus": [
+        "English, Maths, Reasoning (जहाँ exam हो)"
+      ],
+      "salary": "Level 4 — ₹25,500 बेसिक + DA, HRA, भत्ते",
+      "selectionProcess": "Merit/Exam → DV"
     },
     {
-     "stage": "DV",
-     "detail": "Document Verification"
-    }
-   ],
-   "syllabus": [
-    "English, Maths, Reasoning (जहाँ exam हो)"
-   ],
-   "salary": "Level 4 — ₹25,500 बेसिक + DA, HRA, भत्ते",
-   "selectionProcess": "Merit/Exam → DV"
-  },
-  {
-   "slug": "accountant",
-   "name": "Post Office Accountant",
-   "emoji": "🧮",
-   "fullName": "India Post Accountant",
-   "tags": [
-    "12th Pass",
-    "Accountancy",
-    "Accounts Dept"
-   ],
-   "officialWebsite": "https://indiapost.gov.in",
-   "examFee": "₹100 (UR/OBC/EWS) • महिला/SC/ST/PwD मुक्त",
-   "latestStatus": "Post Office Accountant अगली भर्ती का इंतज़ार है। पिछली भर्ती 2025 में हुई — indiapost.gov.in चेक करें।",
-   "overview": "Post Office Accountant डाक विभाग के accounts का हिसाब रखता है — 12th में Accountancy वालों के लिए खास मौका। merit के आधार पर selection।",
-   "posts": [
-    "Accountant"
-   ],
-   "eligibility": "12th pass (Accountancy विषय)। आयु: 18-27 वर्ष (आरक्षित छूट)।",
-   "examPattern": [
-    {
-     "stage": "Merit/Exam",
-     "detail": "notification के अनुसार"
+      "slug": "accountant",
+      "name": "Post Office Accountant",
+      "emoji": "🧮",
+      "fullName": "India Post Accountant",
+      "tags": [
+        "12th Pass",
+        "Accountancy",
+        "Accounts Dept"
+      ],
+      "officialWebsite": "https://indiapost.gov.in",
+      "examFee": "₹100 (UR/OBC/EWS) • महिला/SC/ST/PwD मुक्त",
+      "latestStatus": "Post Office Accountant अगली भर्ती का इंतज़ार है। पिछली भर्ती 2025 में हुई — indiapost.gov.in चेक करें।",
+      "overview": "Post Office Accountant डाक विभाग के accounts का हिसाब रखता है — 12th में Accountancy वालों के लिए खास मौका। merit के आधार पर selection।",
+      "posts": [
+        "Accountant"
+      ],
+      "eligibility": "12th pass (Accountancy विषय)। आयु: 18-27 वर्ष (आरक्षित छूट)।",
+      "examPattern": [
+        {
+          "stage": "Merit/Exam",
+          "detail": "notification के अनुसार"
+        },
+        {
+          "stage": "DV",
+          "detail": "Document Verification"
+        }
+      ],
+      "syllabus": [
+        "Accountancy",
+        "Basic Maths"
+      ],
+      "salary": "Level 4 — ₹25,500 बेसिक + DA, HRA, भत्ते",
+      "selectionProcess": "Merit/Exam → DV"
     },
     {
-     "stage": "DV",
-     "detail": "Document Verification"
-    }
-   ],
-   "syllabus": [
-    "Accountancy",
-    "Basic Maths"
-   ],
-   "salary": "Level 4 — ₹25,500 बेसिक + DA, HRA, भत्ते",
-   "selectionProcess": "Merit/Exam → DV"
-  },
-  {
-   "slug": "steno",
-   "name": "Post Office Stenographer",
-   "emoji": "⌨️",
-   "fullName": "India Post Stenographer (Grade C & D)",
-   "tags": [
-    "12th Pass",
-    "Steno Skill",
-    "Grade C/D"
-   ],
-   "officialWebsite": "https://indiapost.gov.in",
-   "examFee": "₹100 (UR/OBC/EWS) • महिला/SC/ST/PwD मुक्त",
-   "latestStatus": "Post Office Steno अगली भर्ती का इंतज़ार है। पिछली भर्ती 2025 में हुई — indiapost.gov.in चेक करें।",
-   "overview": "Post Office Stenographer डाक विभाग के दफ्तरों में shorthand टाइपिंग का काम करते हैं — स्टेनो skill वालों के लिए अच्छी नौकरी।",
-   "posts": [
-    "Stenographer Grade C",
-    "Stenographer Grade D"
-   ],
-   "eligibility": "12th pass। आयु: 18-27 वर्ष (आरक्षित छूट)।",
-   "examPattern": [
-    {
-     "stage": "Merit/Exam",
-     "detail": "notification के अनुसार"
+      "slug": "steno",
+      "name": "Post Office Stenographer",
+      "emoji": "⌨️",
+      "fullName": "India Post Stenographer (Grade C & D)",
+      "tags": [
+        "12th Pass",
+        "Steno Skill",
+        "Grade C/D"
+      ],
+      "officialWebsite": "https://indiapost.gov.in",
+      "examFee": "₹100 (UR/OBC/EWS) • महिला/SC/ST/PwD मुक्त",
+      "latestStatus": "Post Office Steno अगली भर्ती का इंतज़ार है। पिछली भर्ती 2025 में हुई — indiapost.gov.in चेक करें।",
+      "overview": "Post Office Stenographer डाक विभाग के दफ्तरों में shorthand टाइपिंग का काम करते हैं — स्टेनो skill वालों के लिए अच्छी नौकरी।",
+      "posts": [
+        "Stenographer Grade C",
+        "Stenographer Grade D"
+      ],
+      "eligibility": "12th pass। आयु: 18-27 वर्ष (आरक्षित छूट)।",
+      "examPattern": [
+        {
+          "stage": "Merit/Exam",
+          "detail": "notification के अनुसार"
+        },
+        {
+          "stage": "Skill Test",
+          "detail": "Stenography test"
+        }
+      ],
+      "syllabus": [
+        "Shorthand (English/Hindi)",
+        "Typing"
+      ],
+      "salary": "Level 4/6 — ₹25,500-35,400 बेसिक + भत्ते",
+      "selectionProcess": "Merit/Exam → Skill Test → DV"
     },
     {
-     "stage": "Skill Test",
-     "detail": "Stenography test"
-    }
-   ],
-   "syllabus": [
-    "Shorthand (English/Hindi)",
-    "Typing"
-   ],
-   "salary": "Level 4/6 — ₹25,500-35,400 बेसिक + भत्ते",
-   "selectionProcess": "Merit/Exam → Skill Test → DV"
-  },
-  {
-   "slug": "udc",
-   "name": "Post Office UDC",
-   "emoji": "🗂️",
-   "fullName": "India Post Upper Division Clerk",
-   "tags": [
-    "Graduate",
-    "Office Work",
-    "Level 4"
-   ],
-   "officialWebsite": "https://indiapost.gov.in",
-   "examFee": "₹100 (UR/OBC/EWS) • महिला/SC/ST/PwD मुक्त",
-   "latestStatus": "Post Office UDC अगली भर्ती का इंतज़ार है। पिछली भर्ती 2025 में हुई — indiapost.gov.in चेक करें।",
-   "overview": "Post Office UDC डाक विभाग के दफ्तरों में clerical काम करते हैं — graduates के लिए डाक विभाग की स्थिर नौकरी।",
-   "posts": [
-    "Upper Division Clerk (UDC)"
-   ],
-   "eligibility": "Graduation। आयु: 18-27 वर्ष (आरक्षित छूट)।",
-   "examPattern": [
-    {
-     "stage": "Merit/Exam",
-     "detail": "notification के अनुसार"
+      "slug": "udc",
+      "name": "Post Office UDC",
+      "emoji": "🗂️",
+      "fullName": "India Post Upper Division Clerk",
+      "tags": [
+        "Graduate",
+        "Office Work",
+        "Level 4"
+      ],
+      "officialWebsite": "https://indiapost.gov.in",
+      "examFee": "₹100 (UR/OBC/EWS) • महिला/SC/ST/PwD मुक्त",
+      "latestStatus": "Post Office UDC अगली भर्ती का इंतज़ार है। पिछली भर्ती 2025 में हुई — indiapost.gov.in चेक करें।",
+      "overview": "Post Office UDC डाक विभाग के दफ्तरों में clerical काम करते हैं — graduates के लिए डाक विभाग की स्थिर नौकरी।",
+      "posts": [
+        "Upper Division Clerk (UDC)"
+      ],
+      "eligibility": "Graduation। आयु: 18-27 वर्ष (आरक्षित छूट)।",
+      "examPattern": [
+        {
+          "stage": "Merit/Exam",
+          "detail": "notification के अनुसार"
+        },
+        {
+          "stage": "DV",
+          "detail": "Document Verification"
+        }
+      ],
+      "syllabus": [
+        "GK, Maths, English (जहाँ exam हो)"
+      ],
+      "salary": "Level 4 — ₹25,500 बेसिक + DA, HRA, भत्ते",
+      "selectionProcess": "Merit/Exam → DV"
     },
     {
-     "stage": "DV",
-     "detail": "Document Verification"
-    }
-   ],
-   "syllabus": [
-    "GK, Maths, English (जहाँ exam हो)"
-   ],
-   "salary": "Level 4 — ₹25,500 बेसिक + DA, HRA, भत्ते",
-   "selectionProcess": "Merit/Exam → DV"
-  },
-  {
-   "slug": "driver",
-   "name": "Post Office Driver",
-   "emoji": "🚚",
-   "fullName": "India Post Motor Vehicle Driver",
-   "tags": [
-    "10th Pass",
-    "Driving",
-    "Postal Vehicles"
-   ],
-   "officialWebsite": "https://indiapost.gov.in",
-   "examFee": "₹100 (UR/OBC/EWS) • महिला/SC/ST/PwD मुक्त",
-   "latestStatus": "Post Office Driver अगली भर्ती का इंतज़ार है। पिछली भर्ती 2025 में हुई — indiapost.gov.in चेक करें।",
-   "overview": "Post Office Driver डाक विभाग के वाहनों से mail और parcels पहुँचाते हैं — valid driving licence वालों के लिए स्थिर सरकारी नौकरी।",
-   "posts": [
-    "Motor Vehicle Driver (MVD)"
-   ],
-   "eligibility": "10th pass + valid driving licence। आयु: 18-27 वर्ष (आरक्षित छूट)।",
-   "examPattern": [
-    {
-     "stage": "Merit/Exam",
-     "detail": "notification के अनुसार"
+      "slug": "driver",
+      "name": "Post Office Driver",
+      "emoji": "🚚",
+      "fullName": "India Post Motor Vehicle Driver",
+      "tags": [
+        "10th Pass",
+        "Driving",
+        "Postal Vehicles"
+      ],
+      "officialWebsite": "https://indiapost.gov.in",
+      "examFee": "₹100 (UR/OBC/EWS) • महिला/SC/ST/PwD मुक्त",
+      "latestStatus": "Post Office Driver अगली भर्ती का इंतज़ार है। पिछली भर्ती 2025 में हुई — indiapost.gov.in चेक करें।",
+      "overview": "Post Office Driver डाक विभाग के वाहनों से mail और parcels पहुँचाते हैं — valid driving licence वालों के लिए स्थिर सरकारी नौकरी।",
+      "posts": [
+        "Motor Vehicle Driver (MVD)"
+      ],
+      "eligibility": "10th pass + valid driving licence। आयु: 18-27 वर्ष (आरक्षित छूट)।",
+      "examPattern": [
+        {
+          "stage": "Merit/Exam",
+          "detail": "notification के अनुसार"
+        },
+        {
+          "stage": "Driving Test",
+          "detail": "जहाँ applicable"
+        }
+      ],
+      "syllabus": [
+        "Traffic Rules",
+        "Driving Skill"
+      ],
+      "salary": "Level 2 — ₹19,900 बेसिक + DA, HRA, भत्ते",
+      "selectionProcess": "Merit/Exam → Driving Test → DV"
     },
     {
-     "stage": "Driving Test",
-     "detail": "जहाँ applicable"
-    }
-   ],
-   "syllabus": [
-    "Traffic Rules",
-    "Driving Skill"
-   ],
-   "salary": "Level 2 — ₹19,900 बेसिक + DA, HRA, भत्ते",
-   "selectionProcess": "Merit/Exam → Driving Test → DV"
-  },
-  {
-   "slug": "ippb-ja",
-   "name": "IPPB Junior Associate",
-   "emoji": "🏦",
-   "fullName": "India Post Payments Bank — Junior Associate (Clerk)",
-   "tags": [
-    "10th Pass",
-    "Payments Bank",
-    "Clerk"
-   ],
-   "officialWebsite": "https://www.ippbonline.com",
-   "examFee": "₹750 (UR/OBC) • SC/ST/PwD मुक्त (अनुमानित)",
-   "latestStatus": "IPPB Junior Associate अगली भर्ती का इंतज़ार है। पिछली भर्ती 2025 में हुई — ippbonline.com चेक करें।",
-   "overview": "IPPB (India Post Payments Bank) गाँवों में banking services देता है — Junior Associate (clerk) की भर्ती में 10th pass के साथ स्थानीय भाषा का ज्ञान चाहिए। Post office + bank दोनों का फायदा।",
-   "posts": [
-    "Junior Associate (Clerk)"
-   ],
-   "eligibility": "10th pass + स्थानीय भाषा (जिले के अनुसार)। आयु: 20-35 वर्ष (आरक्षित छूट)।",
-   "examPattern": [
-    {
-     "stage": "Online Exam",
-     "detail": "Reasoning, Numeric Ability, English/Hindi, Banking GK (जहाँ exam हो)"
+      "slug": "ippb-ja",
+      "name": "IPPB Junior Associate",
+      "emoji": "🏦",
+      "fullName": "India Post Payments Bank — Junior Associate (Clerk)",
+      "tags": [
+        "10th Pass",
+        "Payments Bank",
+        "Clerk"
+      ],
+      "officialWebsite": "https://www.ippbonline.com",
+      "examFee": "₹750 (UR/OBC) • SC/ST/PwD मुक्त (अनुमानित)",
+      "latestStatus": "IPPB Junior Associate अगली भर्ती का इंतज़ार है। पिछली भर्ती 2025 में हुई — ippbonline.com चेक करें।",
+      "overview": "IPPB (India Post Payments Bank) गाँवों में banking services देता है — Junior Associate (clerk) की भर्ती में 10th pass के साथ स्थानीय भाषा का ज्ञान चाहिए। Post office + bank दोनों का फायदा।",
+      "posts": [
+        "Junior Associate (Clerk)"
+      ],
+      "eligibility": "10th pass + स्थानीय भाषा (जिले के अनुसार)। आयु: 20-35 वर्ष (आरक्षित छूट)।",
+      "examPattern": [
+        {
+          "stage": "Online Exam",
+          "detail": "Reasoning, Numeric Ability, English/Hindi, Banking GK (जहाँ exam हो)"
+        },
+        {
+          "stage": "DV",
+          "detail": "Document Verification"
+        }
+      ],
+      "syllabus": [
+        "Reasoning",
+        "Numerical Ability",
+        "English/Hindi",
+        "Banking Awareness"
+      ],
+      "salary": "₹14,000-24,000/माह + भत्ते",
+      "selectionProcess": "Exam → DV"
     },
     {
-     "stage": "DV",
-     "detail": "Document Verification"
+      "slug": "india-post-apprentice",
+      "name": "India Post Apprentice",
+      "emoji": "🧑‍🏭",
+      "fullName": "India Post Trade Apprentice Recruitment",
+      "tags": [
+        "10th/12th/ITI",
+        "Apprentice",
+        "Stipend"
+      ],
+      "officialWebsite": "https://indiapost.gov.in",
+      "examFee": "₹100 (अनुमानित)",
+      "latestStatus": "India Post Apprentice अगली भर्ती का इंतज़ार है। पिछली भर्ती 2025 में हुई — indiapost.gov.in चेक करें।",
+      "overview": "India Post विभिन्न postal circles में Trade Apprentice की भर्ती करता है — Computer Operator, Accountant, Data Entry जैसे trades में। Apprenticeship से experience और stipend दोनों मिलते हैं।",
+      "posts": [
+        "Apprentice (COPA/Computer Operator)",
+        "Apprentice (Accountant)",
+        "Apprentice (Data Entry)"
+      ],
+      "eligibility": "10th/12th/ITI (trade के हिसाब से)। आयु: 18-25 वर्ष (आरक्षित छूट)।",
+      "examPattern": [
+        {
+          "stage": "Merit/Exam",
+          "detail": "notification के अनुसार"
+        },
+        {
+          "stage": "DV",
+          "detail": "Document Verification"
+        }
+      ],
+      "syllabus": [
+        "Trade-related basics",
+        "Computer Knowledge"
+      ],
+      "salary": "Stipend ₹8,000-15,000/माह (trade के हिसाब से)",
+      "selectionProcess": "Merit/Exam → DV"
     }
-   ],
-   "syllabus": [
-    "Reasoning",
-    "Numerical Ability",
-    "English/Hindi",
-    "Banking Awareness"
-   ],
-   "salary": "₹14,000-24,000/माह + भत्ते",
-   "selectionProcess": "Exam → DV"
-  },
-  {
-   "slug": "india-post-apprentice",
-   "name": "India Post Apprentice",
-   "emoji": "🧑‍🏭",
-   "fullName": "India Post Trade Apprentice Recruitment",
-   "tags": [
-    "10th/12th/ITI",
-    "Apprentice",
-    "Stipend"
-   ],
-   "officialWebsite": "https://indiapost.gov.in",
-   "examFee": "₹100 (अनुमानित)",
-   "latestStatus": "India Post Apprentice अगली भर्ती का इंतज़ार है। पिछली भर्ती 2025 में हुई — indiapost.gov.in चेक करें।",
-   "overview": "India Post विभिन्न postal circles में Trade Apprentice की भर्ती करता है — Computer Operator, Accountant, Data Entry जैसे trades में। Apprenticeship से experience और stipend दोनों मिलते हैं।",
-   "posts": [
-    "Apprentice (COPA/Computer Operator)",
-    "Apprentice (Accountant)",
-    "Apprentice (Data Entry)"
-   ],
-   "eligibility": "10th/12th/ITI (trade के हिसाब से)। आयु: 18-25 वर्ष (आरक्षित छूट)।",
-   "examPattern": [
+  ],
+  "services": [
     {
-     "stage": "Merit/Exam",
-     "detail": "notification के अनुसार"
+      "name": "India Post",
+      "site": "https://indiapost.gov.in"
     },
     {
-     "stage": "DV",
-     "detail": "Document Verification"
+      "name": "GDS Portal",
+      "site": "https://indiapostgdsonline.gov.in"
+    },
+    {
+      "name": "IPPB",
+      "site": "https://www.ippbonline.com"
     }
-   ],
-   "syllabus": [
-    "Trade-related basics",
-    "Computer Knowledge"
-   ],
-   "salary": "Stipend ₹8,000-15,000/माह (trade के हिसाब से)",
-   "selectionProcess": "Merit/Exam → DV"
-  }
- ],
- "services": [
-  {
-   "name": "India Post",
-   "site": "https://indiapost.gov.in"
+  ],
+  "hero": {
+    "badge": "📮 डाक विभाग भर्ती",
+    "title": "Post Office Exams Center",
+    "subtitle": "GDS, Postman, Mail Guard, MTS, Postal Assistant, IPPB — सभी post office exams की पूरी जानकारी एक जगह।",
+    "gradient": "linear-gradient(135deg,#064e3b,#10b981)"
   },
-  {
-   "name": "GDS Portal",
-   "site": "https://indiapostgdsonline.gov.in"
-  },
-  {
-   "name": "IPPB",
-   "site": "https://www.ippbonline.com"
-  }
- ]
+  "quickLinks": [
+    [
+      "/results",
+      "🏆 Post Office Results"
+    ],
+    [
+      "/admit-cards",
+      "📄 Admit Card"
+    ],
+    [
+      "/search",
+      "🔍 Search Exams"
+    ],
+    [
+      "/syllabus",
+      "📚 Syllabus"
+    ],
+    [
+      "/notifications",
+      "🔔 Updates"
+    ],
+    [
+      "https://indiapost.gov.in",
+      "🌐 Official India Post"
+    ]
+  ],
+  "statsCards": [
+    [
+      "📋",
+      12,
+      "Major Posts"
+    ],
+    [
+      "📮",
+      "1.5L+",
+      "GDS Posts हर साल"
+    ],
+    [
+      "✅",
+      "10",
+      "Merit-Based"
+    ]
+  ]
 }
