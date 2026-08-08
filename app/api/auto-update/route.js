@@ -38,7 +38,7 @@ const EXAM_IDS = {
   "upsc cse": 301, "upsc capf": 302, "upsc epfo": 303,
   "ibps po": 401, "ibps clerk": 402, "ibps rrb": 403,
   "sbi po": 404, "sbi clerk": 405, "rbi grade b": 406,
-  "railway ntpc": 501, "rrb je": 502, "rrb alp": 503, "rrb group d": 504,
+  "railway ntpc": 501, "rrb ntpc": 501, "rrb je": 502, "rrb alp": 503, "rrb group d": 504, "rrb technician": 504,
   "jee main": 601, "jee advanced": 602,
   "neet ug": 701, "neet pg": 702, "aiims": 703,
   "clat": 801, "nda": 901, "cds": 902,
@@ -231,6 +231,10 @@ export async function GET(req) {
         "mpsc": "https://mpsc.gov.in",
         "kpsc": "https://kpsc.kar.nic.in",
         "apsc": "https://apsc.nic.in",
+        "indian army": "https://joinindianarmy.nic.in",
+        "agniveer": "https://joinindianarmy.nic.in",
+        "rrb technician": "https://www.rrbcdg.gov.in",
+        "rrb ntpc": "https://www.rrbcdg.gov.in",
       };
       const classifyUpdate = (t) => {
         const k = t.toLowerCase();
