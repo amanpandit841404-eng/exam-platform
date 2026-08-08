@@ -39,3 +39,12 @@ India's Modern Exam Results Platform
 - (deploy trigger)
 
 - (deploy trigger)
+
+
+## Phase 15 — Sitemap Index Upgrade (Aug 8, 2026)
+- sitemap.xml is now a sitemap INDEX pointing to 5 sub-sitemaps
+- /sitemap-static.xml (static + hubs + certs)
+- /sitemaps/sitemap-exams-1.xml (27,000 exams) + sitemap-exams-2.xml (25,737 exams)
+- /sitemaps/sitemap-results.xml (8,095) + /sitemaps/sitemap-admits.xml (8,111)
+- Total ~70,000 URLs (was 2,225)
+- Bulk-inserted 8,000 result + 8,000 admit_card rows (all active exams w/ official site)
