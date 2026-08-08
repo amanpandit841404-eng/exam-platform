@@ -1,0 +1,22 @@
+{
+  "updated": "2026-08-08",
+  "sources": [
+    {"id": "upsc", "name": "UPSC", "url": "https://upsc.gov.in", "category": "upsc", "monitor_frequency_min": 180, "status": "ACTIVE"},
+    {"id": "ssc", "name": "SSC", "url": "https://ssc.gov.in", "category": "ssc", "monitor_frequency_min": 180, "status": "ACTIVE"},
+    {"id": "rrb", "name": "RRB", "url": "https://rrbcdg.gov.in", "category": "railway", "monitor_frequency_min": 180, "status": "ACTIVE"},
+    {"id": "ibps", "name": "IBPS", "url": "https://ibps.in", "category": "banking", "monitor_frequency_min": 180, "status": "ACTIVE"},
+    {"id": "sbi", "name": "SBI Careers", "url": "https://sbi.co.in/careers", "category": "banking", "monitor_frequency_min": 180, "status": "ACTIVE"},
+    {"id": "rbi", "name": "RBI", "url": "https://rbi.org.in", "category": "banking", "monitor_frequency_min": 180, "status": "ACTIVE"},
+    {"id": "nta", "name": "NTA", "url": "https://nta.ac.in", "category": "entrance", "monitor_frequency_min": 180, "status": "ACTIVE"},
+    {"id": "ctet", "name": "CTET", "url": "https://ctet.nic.in", "category": "teaching", "monitor_frequency_min": 720, "status": "ACTIVE"},
+    {"id": "bpsc", "name": "BPSC", "url": "https://bpsc.bih.nic.in", "category": "state-psc", "monitor_frequency_min": 720, "status": "ACTIVE"},
+    {"id": "uppsc", "name": "UPPSC", "url": "https://uppsc.up.nic.in", "category": "state-psc", "monitor_frequency_min": 720, "status": "ACTIVE"},
+    {"id": "mppsc", "name": "MPPSC", "url": "https://mppsc.mp.gov.in", "category": "state-psc", "monitor_frequency_min": 720, "status": "ACTIVE"},
+    {"id": "rpsc", "name": "RPSC", "url": "https://rpsc.rajasthan.gov.in", "category": "state-psc", "monitor_frequency_min": 720, "status": "ACTIVE"},
+    {"id": "dsssb", "name": "DSSSB", "url": "https://dsssb.delhi.gov.in", "category": "teaching", "monitor_frequency_min": 720, "status": "ACTIVE"},
+    {"id": "kvs", "name": "KVS", "url": "https://kvsangathan.nic.in", "category": "teaching", "monitor_frequency_min": 720, "status": "ACTIVE"},
+    {"id": "navodaya", "name": "NVS", "url": "https://navodaya.gov.in", "category": "school", "monitor_frequency_min": 720, "status": "ACTIVE"},
+    {"id": "joinarmy", "name": "Indian Army", "url": "https://joinindianarmy.nic.in", "category": "defence", "monitor_frequency_min": 720, "status": "ACTIVE"},
+    {"id": "joinairforce", "name": "Indian Air Force", "url": "https://indianairforce.nic.in", "category": "defence", "monitor_frequency_min": 720, "status": "ACTIVE"}
+  ]
+}
