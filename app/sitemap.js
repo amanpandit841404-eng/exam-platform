@@ -120,6 +120,14 @@ export default async function sitemap() {
   const upscPages = [{ url: `${baseUrl}/upsc`, lastModified: now, changeFrequency: "daily", priority: 0.9 }].concat(
     upscSlugs.map(slug => ({ url: `${baseUrl}/upsc/${slug}`, lastModified: now, changeFrequency: "weekly", priority: 0.8 }))
   );
+  const defenceSlugs = ["agniveer-army", "agniveer-vayu", "agniveer-navy", "afcat", "inet", "coast-guard-navik", "coast-guard-yantrik", "coast-guard-ac", "territorial-army", "army-ssc-tech", "mns", "drdo-ceptam"];
+  const statePscSlugs = ["up-pcs", "bpsc", "mppsc", "rpsc-ras", "mpsc", "tnpsc", "appsc", "tspsc", "kpsc-kas", "wbpsc", "kerala-psc", "gpsc"];
+  const defencePages = [{ url: `${baseUrl}/defence`, lastModified: now, changeFrequency: "daily", priority: 0.9 }].concat(
+    defenceSlugs.map(slug => ({ url: `${baseUrl}/defence/${slug}`, lastModified: now, changeFrequency: "weekly", priority: 0.8 }))
+  );
+  const statePscPages = [{ url: `${baseUrl}/state-psc`, lastModified: now, changeFrequency: "daily", priority: 0.9 }].concat(
+    statePscSlugs.map(slug => ({ url: `${baseUrl}/state-psc/${slug}`, lastModified: now, changeFrequency: "weekly", priority: 0.8 }))
+  );
 
-  return [...staticPages, ...categoryPages, ...examPages, ...certPages, ...railwayPages, ...bankingPages, ...sscPages, ...upscPages, ...resultPages, ...admitPages];
+  return [...staticPages, ...categoryPages, ...examPages, ...certPages, ...railwayPages, ...bankingPages, ...sscPages, ...upscPages, ...defencePages, ...statePscPages, ...resultPages, ...admitPages];
 }
