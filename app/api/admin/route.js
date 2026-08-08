@@ -114,6 +114,7 @@ export async function POST(request) {
           admit_cards: ["exam_name", "title"],
           updates: ["title"],
           upcoming_exams: ["exam_name"],
+          categories: ["name", "slug"],
         }[table] || ["title"];
         const conds = searchFields.map((f) => `${f}.ilike.*${q}*`).join(",");
         path = `${SB}/${table}?select=*&or=(${conds})&order=id.desc&limit=${limit}&offset=${offset}`;
