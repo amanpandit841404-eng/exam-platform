@@ -1,562 +1,611 @@
 {
- "updated": "2026-08-08",
- "note": "सभी जानकारी अनुमानित/संकेतात्मक है। SSC हर साल fee, age limit, exam pattern और posts बदल सकता है — हमेशा ssc.gov.in पर official notification ज़रूर चेक करें।",
- "stats": {
-  "exams": 12,
-  "regions": 10,
-  "posts": 50000
- },
- "exams": [
-  {
-   "slug": "ssc-cgl",
-   "name": "SSC CGL",
-   "emoji": "🏢",
-   "fullName": "Combined Graduate Level Examination (Group B & C Posts)",
-   "tags": [
-    "Graduate",
-    "Group B/C",
-    "IAS जैसे Posts"
-   ],
-   "officialWebsite": "https://ssc.gov.in",
-   "examFee": "₹100 (UR/OBC/EWS) • महिला/SC/ST/PwD मुक्त",
-   "latestStatus": "SSC CGL 2026-27 का अगला cycle notification का इंतज़ार है। पिछला cycle 2025 में हुआ था — ssc.gov.in पर नज़र रखें।",
-   "overview": "SSC CGL सरकारी नौकरी का सबसे लोकप्रिय graduate-level exam है। इससे Group B और Group C के posts मिलते हैं — Assistant Section Officer (CSS), Inspector (Income Tax/Customs/Excise), Sub Inspector (CBI), Auditor, Accountant, Statistical Investigator जैसे बेहतरीन posts। एक ही exam से कई मंत्रालयों और departments में नौकरी का मौका।",
-   "posts": [
-    "Assistant Section Officer (CSS)",
-    "Inspector (CBIC / Income Tax / Customs)",
-    "Sub Inspector (CBI)",
-    "Assistant / Superintendent",
-    "Auditor / Accountant",
-    "Statistical Investigator Gr. II",
-    "Upper Division Clerk (UDC)"
-   ],
-   "eligibility": "किसी भी मान्यता प्राप्त विश्वविद्यालय से Graduation (कुछ posts में specific subjects)। आयु: 18-32 वर्ष (post के हिसाब से 18-27 या 18-30 भी), आरक्षित वर्गों को छूट।",
-   "examPattern": [
+  "updated": "2026-08-08T06:33:59.810Z",
+  "note": "सभी जानकारी अनुमानित/संकेतात्मक है। SSC हर साल fee, age limit, exam pattern और posts बदल सकता है — हमेशा ssc.gov.in पर official notification ज़रूर चेक करें।",
+  "stats": {
+    "exams": 12,
+    "regions": 10,
+    "posts": 50000
+  },
+  "exams": [
     {
-     "stage": "Tier-I (CBT)",
-     "detail": "100 प्रश्न, 200 अंक, 60 मिनट — Reasoning, English, Quant, GK (negative marking 0.50)"
+      "slug": "ssc-cgl",
+      "name": "SSC CGL",
+      "emoji": "🏢",
+      "fullName": "Combined Graduate Level Examination (Group B & C Posts)",
+      "tags": [
+        "Graduate",
+        "Group B/C",
+        "IAS जैसे Posts"
+      ],
+      "officialWebsite": "https://ssc.gov.in",
+      "examFee": "₹100 (UR/OBC/EWS) • महिला/SC/ST/PwD मुक्त",
+      "latestStatus": "SSC CGL 2026-27 का अगला cycle notification का इंतज़ार है। पिछला cycle 2025 में हुआ था — ssc.gov.in पर नज़र रखें।",
+      "overview": "SSC CGL सरकारी नौकरी का सबसे लोकप्रिय graduate-level exam है। इससे Group B और Group C के posts मिलते हैं — Assistant Section Officer (CSS), Inspector (Income Tax/Customs/Excise), Sub Inspector (CBI), Auditor, Accountant, Statistical Investigator जैसे बेहतरीन posts। एक ही exam से कई मंत्रालयों और departments में नौकरी का मौका।",
+      "posts": [
+        "Assistant Section Officer (CSS)",
+        "Inspector (CBIC / Income Tax / Customs)",
+        "Sub Inspector (CBI)",
+        "Assistant / Superintendent",
+        "Auditor / Accountant",
+        "Statistical Investigator Gr. II",
+        "Upper Division Clerk (UDC)"
+      ],
+      "eligibility": "किसी भी मान्यता प्राप्त विश्वविद्यालय से Graduation (कुछ posts में specific subjects)। आयु: 18-32 वर्ष (post के हिसाब से 18-27 या 18-30 भी), आरक्षित वर्गों को छूट।",
+      "examPattern": [
+        {
+          "stage": "Tier-I (CBT)",
+          "detail": "100 प्रश्न, 200 अंक, 60 मिनट — Reasoning, English, Quant, GK (negative marking 0.50)"
+        },
+        {
+          "stage": "Tier-II (CBT)",
+          "detail": "Paper-I (अनिवार्य): 100 प्रश्न × 2 पेपर (Modular + Sectional timing) — कुछ posts के लिए Paper-II भी"
+        },
+        {
+          "stage": "Skill Test",
+          "detail": "DEST/typing — सिर्फ कुछ posts के लिए (जैसे CSS, Steno posts)"
+        }
+      ],
+      "syllabus": [
+        "General Intelligence & Reasoning",
+        "General Awareness",
+        "Quantitative Aptitude",
+        "English Comprehension",
+        "Statistics (जिन posts के लिए applicable)"
+      ],
+      "salary": "Pay Level 4-8 — ₹25,500 से ₹81,100 (बेसिक pay matrix) + DA, HRA, भत्ते",
+      "selectionProcess": "Tier-I → Tier-II → Skill Test/DV → Document Verification"
     },
     {
-     "stage": "Tier-II (CBT)",
-     "detail": "Paper-I (अनिवार्य): 100 प्रश्न × 2 पेपर (Modular + Sectional timing) — कुछ posts के लिए Paper-II भी"
+      "slug": "ssc-chsl",
+      "name": "SSC CHSL",
+      "emoji": "📋",
+      "fullName": "Combined Higher Secondary Level Examination (10+2 Pass)",
+      "tags": [
+        "12th Pass",
+        "LDC/DEO",
+        "High Volume"
+      ],
+      "officialWebsite": "https://ssc.gov.in",
+      "examFee": "₹100 (UR/OBC/EWS) • महिला/SC/ST/PwD मुक्त",
+      "latestStatus": "SSC CHSL 2026 का नया cycle notification का इंतज़ार है। पिछला cycle 2025 में हुआ था — ssc.gov.in पर अपडेट चेक करें।",
+      "overview": "SSC CHSL 12th pass students के लिए सबसे बड़ा सरकारी exam है। इससे Lower Division Clerk (LDC), Data Entry Operator (DEO), Postal Assistant, Court Clerk जैसे लाखों लोगों के सपनों वाले posts मिलते हैं। Exam में कम मेहनत से selection के मौके बहुत अच्छे हैं।",
+      "posts": [
+        "Lower Division Clerk (LDC)",
+        "Data Entry Operator (DEO)",
+        "Postal Assistant / Sorting Assistant",
+        "Court Clerk",
+        "PA/SA (Postal)"
+      ],
+      "eligibility": "किसी भी मान्यता प्राप्त बोर्ड से 12th (10+2) pass। आयु: 18-27 वर्ष (आरक्षित वर्गों को छूट)।",
+      "examPattern": [
+        {
+          "stage": "Tier-I (CBT)",
+          "detail": "100 प्रश्न, 200 अंक, 60 मिनट — Reasoning, English, Quant, GK (negative 0.50)"
+        },
+        {
+          "stage": "Tier-II",
+          "detail": "Descriptive — Essay/Letter (100 अंक, 60 मिनट, हिंदी/English में)"
+        },
+        {
+          "stage": "Skill Test",
+          "detail": "Typing Test (DEO) या DEST — कुछ posts के लिए"
+        }
+      ],
+      "syllabus": [
+        "General Intelligence",
+        "General Awareness",
+        "Quantitative Aptitude",
+        "English Language",
+        "Hindi (Descriptive option)"
+      ],
+      "salary": "Pay Level 2-4 — ₹19,900 से ₹63,200 + DA, HRA, भत्ते",
+      "selectionProcess": "Tier-I → Tier-II → Skill Test → DV"
     },
     {
-     "stage": "Skill Test",
-     "detail": "DEST/typing — सिर्फ कुछ posts के लिए (जैसे CSS, Steno posts)"
+      "slug": "ssc-mts",
+      "name": "SSC MTS",
+      "emoji": "🛠️",
+      "fullName": "Multi-Tasking Staff Examination (10th Pass)",
+      "tags": [
+        "10th Pass",
+        "Sabse Aasaan",
+        "Havildar Posts"
+      ],
+      "officialWebsite": "https://ssc.gov.in",
+      "examFee": "₹100 (UR/OBC/EWS) • महिला/SC/ST/PwD मुक्त",
+      "latestStatus": "SSC MTS 2026 का अगला cycle notification का इंतज़ार है। पिछला cycle 2025 में हुआ था — ssc.gov.in चेक करते रहें।",
+      "overview": "SSC MTS 10th pass उम्मीदवारों के लिए सबसे आसान सरकारी exam है — कम syllabus, कम competition-गैप और सीधा CBT। साथ ही अब MTS में CBIC/CBN के Havildar posts भी आते हैं। जो अभी स्कूल स्तर पर हैं उनके लिए यह सबसे पहला लक्ष्य हो सकता है।",
+      "posts": [
+        "Multi-Tasking Staff (MTS) — सभी मंत्रालय/departments",
+        "Havildar (CBIC & CBN)"
+      ],
+      "eligibility": "किसी भी मान्यता प्राप्त बोर्ड से 10th pass। आयु: 18-25 वर्ष (Havildar के लिए भी), आरक्षित वर्गों को छूट।",
+      "examPattern": [
+        {
+          "stage": "CBT",
+          "detail": "90 प्रश्न, 100 अंक (2 sessions — पहले से अलग pattern अब लागू) — Reasoning, English, Quant, GK"
+        },
+        {
+          "stage": "PET/PST",
+          "detail": "सिर्फ Havildar (CBIC/CBN) posts के लिए — Physical Test"
+        },
+        {
+          "stage": "DV",
+          "detail": "Document Verification"
+        }
+      ],
+      "syllabus": [
+        "General Intelligence & Reasoning",
+        "Numerical Aptitude",
+        "English Language",
+        "General Awareness"
+      ],
+      "salary": "Pay Level 1 — ₹18,000 बेसिक + DA, HRA, भत्ते",
+      "selectionProcess": "CBT → PET/PST (Havildar के लिए) → DV"
+    },
+    {
+      "slug": "ssc-gd",
+      "name": "SSC GD Constable",
+      "emoji": "👮",
+      "fullName": "General Duty Constable (CAPFs, NIA, SSF, Assam Rifles)",
+      "tags": [
+        "10th Pass",
+        "CAPF",
+        "Physical Test"
+      ],
+      "officialWebsite": "https://ssc.gov.in",
+      "examFee": "₹100 (UR/OBC/EWS) • महिला/SC/ST/PwD मुक्त",
+      "latestStatus": "SSC GD 2026-27 का अगला cycle notification का इंतज़ार है। पिछला cycle 2025 में हुआ था — ssc.gov.in पर नज़र रखें।",
+      "overview": "SSC GD Constable से BSF, CISF, CRPF, ITBP, SSB, SSF, NIA और Assam Rifles में Constable बनते हैं। देश की सीमाओं की रक्षा करने वाली सबसे बड़ी भर्ती — हर साल लाखों आवेदन। 10th pass के लिए uniform वाली नौकरी का सीधा रास्ता।",
+      "posts": [
+        "Constable (GD) — BSF, CISF, CRPF, ITBP, SSB",
+        "Constable (GD) — SSF, NIA, Assam Rifles"
+      ],
+      "eligibility": "किसी भी मान्यता प्राप्त बोर्ड से 10th pass। आयु: 18-23 वर्ष (आरक्षित वर्गों को छूट)।",
+      "examPattern": [
+        {
+          "stage": "CBT",
+          "detail": "80 प्रश्न, 160 अंक, 60 मिनट — Reasoning, GK, English, Hindi, Maths (negative 0.50)"
+        },
+        {
+          "stage": "PET/PST",
+          "detail": "Physical Efficiency Test — दौड़ (Race), चिन-अप/सिट-अप, PST (ऊँचाई-सीना माप)"
+        },
+        {
+          "stage": "Medical",
+          "detail": "Medical Examination + Document Verification"
+        }
+      ],
+      "syllabus": [
+        "General Intelligence & Reasoning",
+        "General Knowledge & Awareness",
+        "Elementary Mathematics",
+        "English / Hindi"
+      ],
+      "salary": "Pay Level 3 — ₹21,700 बेसिक + DA, HRA, राशन व अन्य भत्ते (कुल ~₹30,000+ कुछ forces में)",
+      "selectionProcess": "CBT → PET/PST → Medical → DV"
+    },
+    {
+      "slug": "ssc-cpo",
+      "name": "SSC CPO",
+      "emoji": "🛡️",
+      "fullName": "Central Police Organisation (SI & ASI Posts)",
+      "tags": [
+        "Graduate",
+        "Sub Inspector",
+        "Police"
+      ],
+      "officialWebsite": "https://ssc.gov.in",
+      "examFee": "₹100 (UR/OBC/EWS) • महिला/SC/ST/PwD मुक्त",
+      "latestStatus": "SSC CPO 2026 का अगला cycle notification का इंतज़ार है। पिछला cycle 2025 में हुआ था — ssc.gov.in चेक करें।",
+      "overview": "SSC CPO से Sub Inspector के posts मिलते हैं — Delhi Police SI, BSF/CISF/CRPF/ITBP/SSB में SI, CISF SI और SSF में ASI। Graduate students के लिए police department में officer बनने का सीधा रास्ता।",
+      "posts": [
+        "Sub Inspector (Delhi Police)",
+        "Sub Inspector (CAPFs — BSF, CISF, CRPF, ITBP, SSB)",
+        "Sub Inspector (CISF)",
+        "Assistant Sub Inspector (SSF)"
+      ],
+      "eligibility": "किसी भी मान्यता प्राप्त विश्वविद्यालय से Graduation। आयु: 20-25 वर्ष (कुछ posts 18-25), आरक्षित वर्गों को छूट।",
+      "examPattern": [
+        {
+          "stage": "Paper-I (CBT)",
+          "detail": "200 प्रश्न, 200 अंक, 2 घंटे — Reasoning, English, Quant, GK"
+        },
+        {
+          "stage": "Paper-II (CBT)",
+          "detail": "200 प्रश्न, 200 अंक, 2 घंटे — Paper-I में qualify करने वालों के लिए"
+        },
+        {
+          "stage": "PET/PST + Medical",
+          "detail": "Physical Test (दौड़ 1.6 km, चिन-अप/सिट-अप) + स्टैंडर्ड माप"
+        }
+      ],
+      "syllabus": [
+        "General Intelligence & Reasoning",
+        "General Knowledge & Current Affairs",
+        "Quantitative Aptitude",
+        "English Comprehension"
+      ],
+      "salary": "Pay Level 6 — ₹35,400 बेसिक + DA, HRA, भत्ते (कुल ~₹50,000+ मिलकर)",
+      "selectionProcess": "Paper-I → Paper-II → PET/PST → Medical → DV"
+    },
+    {
+      "slug": "ssc-je",
+      "name": "SSC JE",
+      "emoji": "⚙️",
+      "fullName": "Junior Engineer Examination (Civil/Electrical/Mechanical)",
+      "tags": [
+        "Diploma/B.Tech",
+        "Engineer",
+        "CPWD/MES"
+      ],
+      "officialWebsite": "https://ssc.gov.in",
+      "examFee": "₹100 (UR/OBC/EWS) • महिला/SC/ST/PwD मुक्त",
+      "latestStatus": "SSC JE 2026 का अगला cycle notification का इंतज़ार है। पिछला cycle 2025 में हुआ था — ssc.gov.in पर नज़र रखें।",
+      "overview": "SSC JE से CPWD, MES, CWC, BSF, BRO जैसे departments में Junior Engineer (Civil/Electrical/Mechanical) बनते हैं। Diploma और B.Tech दोनों वाले आवेदन कर सकते हैं — engineer बनने का सरकारी रास्ता।",
+      "posts": [
+        "Junior Engineer (Civil)",
+        "Junior Engineer (Electrical)",
+        "Junior Engineer (Mechanical)",
+        "JE (Quality Assurance)"
+      ],
+      "eligibility": "Civil/Electrical/Mechanical में 3 साल का Diploma या B.E./B.Tech। आयु: 18-32 वर्ष (आरक्षित वर्गों को छूट)।",
+      "examPattern": [
+        {
+          "stage": "Paper-I (CBT)",
+          "detail": "200 प्रश्न, 200 अंक, 2 घंटे — General (50) + Technical (150)"
+        },
+        {
+          "stage": "Paper-II (CBT)",
+          "detail": "300 प्रश्न, 300 अंक, 2 घंटे — सिर्फ Technical (Paper-I में qualify करने वालों के लिए)"
+        },
+        {
+          "stage": "DV",
+          "detail": "Document Verification"
+        }
+      ],
+      "syllabus": [
+        "General Awareness",
+        "Reasoning",
+        "Civil Engineering (Technical)",
+        "Electrical Engineering (Technical)",
+        "Mechanical Engineering (Technical)"
+      ],
+      "salary": "Pay Level 6 — ₹35,400 बेसिक + DA, HRA, भत्ते",
+      "selectionProcess": "Paper-I → Paper-II → DV"
+    },
+    {
+      "slug": "ssc-stenographer",
+      "name": "SSC Stenographer",
+      "emoji": "⌨️",
+      "fullName": "Stenographer Grade C & D Examination",
+      "tags": [
+        "12th Pass",
+        "Steno Skill",
+        "Court/Dept Posts"
+      ],
+      "officialWebsite": "https://ssc.gov.in",
+      "examFee": "₹100 (UR/OBC/EWS) • महिला/SC/ST/PwD मुक्त",
+      "latestStatus": "SSC Stenographer 2026 का अगला cycle notification का इंतज़ार है। पिछला cycle 2025 में हुआ था — ssc.gov.in चेक करें।",
+      "overview": "SSC Stenographer से सरकारी departmentों (केंद्रीय मंत्रालय, High Courts, CBI आदि) में Stenographer Grade C और Grade D के posts मिलते हैं। स्टेनो skill वालों के लिए बढ़िया मौका — CBT के बाद स्टेनो टेस्ट से selection।",
+      "posts": [
+        "Stenographer Grade C (Level 6)",
+        "Stenographer Grade D (Level 4)"
+      ],
+      "eligibility": "किसी भी मान्यता प्राप्त बोर्ड से 12th pass। आयु: 18-27 वर्ष (आरक्षित वर्गों को छूट)।",
+      "examPattern": [
+        {
+          "stage": "CBT",
+          "detail": "200 प्रश्न, 200 अंक, 2 घंटे — Reasoning, English, Quant, GK"
+        },
+        {
+          "stage": "Skill Test",
+          "detail": "Stenography — 100 wpm (Grade C) / 80 wpm (Grade D), 10 मिनट dictation"
+        }
+      ],
+      "syllabus": [
+        "General Intelligence & Reasoning",
+        "General Awareness",
+        "Quantitative Aptitude",
+        "English Language & Comprehension"
+      ],
+      "salary": "Pay Level 4 (Gr. D) ₹25,500 / Level 6 (Gr. C) ₹35,400 बेसिक + भत्ते",
+      "selectionProcess": "CBT → Skill Test (Stenography) → DV"
+    },
+    {
+      "slug": "ssc-selection-post",
+      "name": "SSC Selection Post",
+      "emoji": "✅",
+      "fullName": "Selection Post Examination (Phase XIV) — All Level Posts",
+      "tags": [
+        "10th/12th/Graduate",
+        "Phase XIV",
+        "Ministry Posts"
+      ],
+      "officialWebsite": "https://ssc.gov.in",
+      "examFee": "₹100 (UR/OBC/EWS) • महिला/SC/ST/PwD मुक्त",
+      "latestStatus": "SSC Selection Post Phase XIV (2026) की notification का इंतज़ार है। पिछला Phase XIII 2025 में हुआ था — ssc.gov.in चेक करें।",
+      "overview": "SSC Selection Post एक खास exam है जो अलग-अलग मंत्रालयों और departments के रिक्त posts (मैट्रिक से लेकर graduate स्तर तक) के लिए निकलता है — Clerk, Store Keeper, UDC, SI जैसे posts। हर Phase में नए posts की list आती है।",
+      "posts": [
+        "Clerk / UDC / LDC",
+        "Store Keeper / Store Clerk",
+        "Data Entry Operator",
+        "Sub Inspector / Havildar (कुछ posts)",
+        "Assistant / Technician (कुछ posts)"
+      ],
+      "eligibility": "10th / 12th / Graduate — post के हिसाब से। आयु: 18-30 वर्ष (post के हिसाब से बदलती है), आरक्षित वर्गों को छूट।",
+      "examPattern": [
+        {
+          "stage": "CBT",
+          "detail": "100 प्रश्न, 100 अंक, 90 मिनट — Reasoning, English, Quant, GK (10th/12th/Graduate स्तर अलग)"
+        },
+        {
+          "stage": "Skill Test",
+          "detail": "कुछ posts के लिए typing/computer test"
+        },
+        {
+          "stage": "DV",
+          "detail": "Document Verification"
+        }
+      ],
+      "syllabus": [
+        "General Intelligence & Reasoning",
+        "General Awareness",
+        "Quantitative Aptitude",
+        "English Language"
+      ],
+      "salary": "Pay Level 1-6 — ₹18,000 से ₹35,400 बेसिक + भत्ते (post के हिसाब से)",
+      "selectionProcess": "CBT → Skill Test (जहाँ applicable) → DV"
+    },
+    {
+      "slug": "ssc-jht",
+      "name": "SSC JHT",
+      "emoji": "📖",
+      "fullName": "Junior Hindi Translator Examination",
+      "tags": [
+        "Graduate",
+        "Hindi Subject",
+        "Translator Posts"
+      ],
+      "officialWebsite": "https://ssc.gov.in",
+      "examFee": "₹100 (UR/OBC/EWS) • महिला/SC/ST/PwD मुक्त",
+      "latestStatus": "SSC JHT 2026 का अगला cycle notification का इंतज़ार है। पिछला cycle 2025 में हुआ था — ssc.gov.in चेक करें।",
+      "overview": "SSC JHT से केंद्र सरकार के departments (Railway, Posts, Ministries) में Junior Hindi Translator / Junior Translator / Senior Hindi Translator के posts मिलते हैं। हिंदी विषय वाले graduates के लिए खास मौका।",
+      "posts": [
+        "Junior Hindi Translator",
+        "Junior Translator",
+        "Senior Hindi Translator (कुछ departments)"
+      ],
+      "eligibility": "Graduation में Hindi compulsory subject के साथ (कुछ posts में English + Hindi)। आयु: 20-30 वर्ष (आरक्षित वर्गों को छूट)।",
+      "examPattern": [
+        {
+          "stage": "Paper-I (CBT)",
+          "detail": "200 प्रश्न, 200 अंक, 2 घंटे — General Hindi, General English, GK, Reasoning"
+        },
+        {
+          "stage": "Paper-II",
+          "detail": "Descriptive — हिंदी-अंग्रेज़ी translation (100 अंक)"
+        }
+      ],
+      "syllabus": [
+        "हिंदी भाषा एवं व्याकरण",
+        "English Language",
+        "General Knowledge",
+        "Translation (Hindi ↔ English)"
+      ],
+      "salary": "Pay Level 6 — ₹35,400 बेसिक + DA, HRA, भत्ते",
+      "selectionProcess": "Paper-I → Paper-II → DV"
+    },
+    {
+      "slug": "ssc-delhi-police-constable",
+      "name": "SSC Delhi Police Constable",
+      "emoji": "🚔",
+      "fullName": "Delhi Police Constable (Executive) Examination",
+      "tags": [
+        "10th/12th Pass",
+        "Delhi Police",
+        "Physical Test"
+      ],
+      "officialWebsite": "https://ssc.gov.in",
+      "examFee": "₹100 (UR/OBC/EWS) • महिला/SC/ST/PwD मुक्त",
+      "latestStatus": "Delhi Police Constable 2026 की नई भर्ती का इंतज़ार है। पिछली भर्ती 2025 में हुई थी — ssc.gov.in चेक करें।",
+      "overview": "SSC Delhi Police Constable (Executive) से दिल्ली पुलिस में Constable बनते हैं — देश की राजधानी में सेवा करने का मौका। CBT के बाद Physical Test और Medical से selection।",
+      "posts": [
+        "Constable (Executive) — Delhi Police"
+      ],
+      "eligibility": "10+2 (12th) pass। आयु: 18-25 वर्ष (आरक्षित वर्गों को छूट)।",
+      "examPattern": [
+        {
+          "stage": "CBT",
+          "detail": "100 प्रश्न, 100 अंक, 90 मिनट — Reasoning, GK, Quant, English/Hindi"
+        },
+        {
+          "stage": "PET/PST",
+          "detail": "Physical Endurance Test — दौड़, सिट-अप/चिन-अप + Physical Standard Test"
+        },
+        {
+          "stage": "Medical",
+          "detail": "Medical Examination + DV"
+        }
+      ],
+      "syllabus": [
+        "General Intelligence & Reasoning",
+        "General Knowledge & Current Affairs",
+        "Quantitative Aptitude",
+        "English/Hindi"
+      ],
+      "salary": "Pay Level 3 — ₹21,700 बेसिक + DA, HRA, भत्ते",
+      "selectionProcess": "CBT → PET/PST → Medical → DV"
+    },
+    {
+      "slug": "ssc-scientific-assistant",
+      "name": "SSC Scientific Assistant (IMD)",
+      "emoji": "🔬",
+      "fullName": "Scientific Assistant (Meteorology) — India Meteorological Department",
+      "tags": [
+        "B.Sc.",
+        "IMD",
+        "Science Posts"
+      ],
+      "officialWebsite": "https://ssc.gov.in",
+      "examFee": "₹100 (UR/OBC/EWS) • महिला/SC/ST/PwD मुक्त",
+      "latestStatus": "SSC Scientific Assistant (IMD) 2026 की notification का इंतज़ार है। पिछली भर्ती 2025 में हुई थी — ssc.gov.in चेक करें।",
+      "overview": "SSC Scientific Assistant (IMD) से India Meteorological Department में Scientific Assistant के posts मिलते हैं — मौसम विज्ञान की सेवा में B.Sc. (Physics/Mathematics) वालों के लिए खास मौका।",
+      "posts": [
+        "Scientific Assistant (Meteorology) — IMD"
+      ],
+      "eligibility": "B.Sc. (Physics/Mathematics) या समकक्ष। आयु: 18-30 वर्ष (आरक्षित वर्गों को छूट)।",
+      "examPattern": [
+        {
+          "stage": "CBT",
+          "detail": "200 प्रश्न, 200 अंक, 2 घंटे — Reasoning, GK, Physics/Maths (technical)"
+        },
+        {
+          "stage": "Skill Test / DV",
+          "detail": "कंप्यूटर skill test + Document Verification"
+        }
+      ],
+      "syllabus": [
+        "General Intelligence & Reasoning",
+        "General Awareness",
+        "Physics",
+        "Mathematics"
+      ],
+      "salary": "Pay Level 7 — ₹44,900 बेसिक + DA, HRA, भत्ते",
+      "selectionProcess": "CBT → Skill Test → DV"
+    },
+    {
+      "slug": "ssc-havaldar",
+      "name": "SSC Havaldar (CBIC/CBN)",
+      "emoji": "🛂",
+      "fullName": "Havaldar (CBIC & CBN) Examination",
+      "tags": [
+        "12th Pass",
+        "CBIC/CBN",
+        "Customs Posts"
+      ],
+      "officialWebsite": "https://ssc.gov.in",
+      "examFee": "₹100 (UR/OBC/EWS) • महिला/SC/ST/PwD मुक्त",
+      "latestStatus": "SSC Havaldar (CBIC/CBN) 2026 की अगली भर्ती का इंतज़ार है। पिछली भर्ती 2025 में हुई थी — ssc.gov.in चेक करें।",
+      "overview": "SSC Havaldar (CBIC & CBN) से सीमा शुल्क (Customs) और Central Bureau of Narcotics में Havaldar बनते हैं — 12th pass उम्मीदवारों के लिए uniform वाली सरकारी नौकरी का बढ़िया मौका।",
+      "posts": [
+        "Havaldar (CBIC)",
+        "Havaldar (CBN)"
+      ],
+      "eligibility": "किसी भी मान्यता प्राप्त बोर्ड से 12th pass। आयु: 18-25 वर्ष (आरक्षित वर्गों को छूट)।",
+      "examPattern": [
+        {
+          "stage": "CBT",
+          "detail": "100 प्रश्न, 100 अंक, 90 मिनट — Reasoning, GK, Quant, English/Hindi"
+        },
+        {
+          "stage": "PET/PST",
+          "detail": "Physical Efficiency Test + Physical Standard Test"
+        },
+        {
+          "stage": "Medical + DV",
+          "detail": "Medical Examination + Document Verification"
+        }
+      ],
+      "syllabus": [
+        "General Intelligence & Reasoning",
+        "General Awareness",
+        "Quantitative Aptitude",
+        "English/Hindi"
+      ],
+      "salary": "Pay Level 2 — ₹19,900 बेसिक + DA, HRA, भत्ते",
+      "selectionProcess": "CBT → PET/PST → Medical → DV"
     }
-   ],
-   "syllabus": [
-    "General Intelligence & Reasoning",
-    "General Awareness",
-    "Quantitative Aptitude",
-    "English Comprehension",
-    "Statistics (जिन posts के लिए applicable)"
-   ],
-   "salary": "Pay Level 4-8 — ₹25,500 से ₹81,100 (बेसिक pay matrix) + DA, HRA, भत्ते",
-   "selectionProcess": "Tier-I → Tier-II → Skill Test/DV → Document Verification"
-  },
-  {
-   "slug": "ssc-chsl",
-   "name": "SSC CHSL",
-   "emoji": "📋",
-   "fullName": "Combined Higher Secondary Level Examination (10+2 Pass)",
-   "tags": [
-    "12th Pass",
-    "LDC/DEO",
-    "High Volume"
-   ],
-   "officialWebsite": "https://ssc.gov.in",
-   "examFee": "₹100 (UR/OBC/EWS) • महिला/SC/ST/PwD मुक्त",
-   "latestStatus": "SSC CHSL 2026 का नया cycle notification का इंतज़ार है। पिछला cycle 2025 में हुआ था — ssc.gov.in पर अपडेट चेक करें।",
-   "overview": "SSC CHSL 12th pass students के लिए सबसे बड़ा सरकारी exam है। इससे Lower Division Clerk (LDC), Data Entry Operator (DEO), Postal Assistant, Court Clerk जैसे लाखों लोगों के सपनों वाले posts मिलते हैं। Exam में कम मेहनत से selection के मौके बहुत अच्छे हैं।",
-   "posts": [
-    "Lower Division Clerk (LDC)",
-    "Data Entry Operator (DEO)",
-    "Postal Assistant / Sorting Assistant",
-    "Court Clerk",
-    "PA/SA (Postal)"
-   ],
-   "eligibility": "किसी भी मान्यता प्राप्त बोर्ड से 12th (10+2) pass। आयु: 18-27 वर्ष (आरक्षित वर्गों को छूट)।",
-   "examPattern": [
+  ],
+  "regions": [
     {
-     "stage": "Tier-I (CBT)",
-     "detail": "100 प्रश्न, 200 अंक, 60 मिनट — Reasoning, English, Quant, GK (negative 0.50)"
+      "name": "Northern Region (NR)",
+      "sub": "New Delhi"
     },
     {
-     "stage": "Tier-II",
-     "detail": "Descriptive — Essay/Letter (100 अंक, 60 मिनट, हिंदी/English में)"
+      "name": "North Western Region (NWR)",
+      "sub": "Chandigarh"
     },
     {
-     "stage": "Skill Test",
-     "detail": "Typing Test (DEO) या DEST — कुछ posts के लिए"
+      "name": "Western Region (WR)",
+      "sub": "Mumbai"
+    },
+    {
+      "name": "Central Region (CR)",
+      "sub": "Prayagraj"
+    },
+    {
+      "name": "Southern Region (SR)",
+      "sub": "Chennai"
+    },
+    {
+      "name": "South Western Region (SWR)",
+      "sub": "Bengaluru"
+    },
+    {
+      "name": "Eastern Region (ER)",
+      "sub": "Kolkata"
+    },
+    {
+      "name": "North Eastern Region (NER)",
+      "sub": "Guwahati"
+    },
+    {
+      "name": "Karnataka Kerala Region (KKR)",
+      "sub": "Chennai"
+    },
+    {
+      "name": "Madhya Pradesh Region (MPR)",
+      "sub": "Bhopal"
     }
-   ],
-   "syllabus": [
-    "General Intelligence",
-    "General Awareness",
-    "Quantitative Aptitude",
-    "English Language",
-    "Hindi (Descriptive option)"
-   ],
-   "salary": "Pay Level 2-4 — ₹19,900 से ₹63,200 + DA, HRA, भत्ते",
-   "selectionProcess": "Tier-I → Tier-II → Skill Test → DV"
+  ],
+  "hero": {
+    "badge": "🏛️ भारत की सरकारी भर्ती (SSC)",
+    "title": "SSC Exams Center",
+    "subtitle": "SSC CGL, CHSL, MTS, GD, CPO, JE — सभी SSC exams की पूरी जानकारी एक जगह। Posts, Eligibility, Exam Pattern, Syllabus और Salary।",
+    "gradient": "linear-gradient(135deg,#312e81,#4f46e5)"
   },
-  {
-   "slug": "ssc-mts",
-   "name": "SSC MTS",
-   "emoji": "🛠️",
-   "fullName": "Multi-Tasking Staff Examination (10th Pass)",
-   "tags": [
-    "10th Pass",
-    "Sabse Aasaan",
-    "Havildar Posts"
-   ],
-   "officialWebsite": "https://ssc.gov.in",
-   "examFee": "₹100 (UR/OBC/EWS) • महिला/SC/ST/PwD मुक्त",
-   "latestStatus": "SSC MTS 2026 का अगला cycle notification का इंतज़ार है। पिछला cycle 2025 में हुआ था — ssc.gov.in चेक करते रहें।",
-   "overview": "SSC MTS 10th pass उम्मीदवारों के लिए सबसे आसान सरकारी exam है — कम syllabus, कम competition-गैप और सीधा CBT। साथ ही अब MTS में CBIC/CBN के Havildar posts भी आते हैं। जो अभी स्कूल स्तर पर हैं उनके लिए यह सबसे पहला लक्ष्य हो सकता है।",
-   "posts": [
-    "Multi-Tasking Staff (MTS) — सभी मंत्रालय/departments",
-    "Havildar (CBIC & CBN)"
-   ],
-   "eligibility": "किसी भी मान्यता प्राप्त बोर्ड से 10th pass। आयु: 18-25 वर्ष (Havildar के लिए भी), आरक्षित वर्गों को छूट।",
-   "examPattern": [
-    {
-     "stage": "CBT",
-     "detail": "90 प्रश्न, 100 अंक (2 sessions — पहले से अलग pattern अब लागू) — Reasoning, English, Quant, GK"
-    },
-    {
-     "stage": "PET/PST",
-     "detail": "सिर्फ Havildar (CBIC/CBN) posts के लिए — Physical Test"
-    },
-    {
-     "stage": "DV",
-     "detail": "Document Verification"
-    }
-   ],
-   "syllabus": [
-    "General Intelligence & Reasoning",
-    "Numerical Aptitude",
-    "English Language",
-    "General Awareness"
-   ],
-   "salary": "Pay Level 1 — ₹18,000 बेसिक + DA, HRA, भत्ते",
-   "selectionProcess": "CBT → PET/PST (Havildar के लिए) → DV"
-  },
-  {
-   "slug": "ssc-gd",
-   "name": "SSC GD Constable",
-   "emoji": "👮",
-   "fullName": "General Duty Constable (CAPFs, NIA, SSF, Assam Rifles)",
-   "tags": [
-    "10th Pass",
-    "CAPF",
-    "Physical Test"
-   ],
-   "officialWebsite": "https://ssc.gov.in",
-   "examFee": "₹100 (UR/OBC/EWS) • महिला/SC/ST/PwD मुक्त",
-   "latestStatus": "SSC GD 2026-27 का अगला cycle notification का इंतज़ार है। पिछला cycle 2025 में हुआ था — ssc.gov.in पर नज़र रखें।",
-   "overview": "SSC GD Constable से BSF, CISF, CRPF, ITBP, SSB, SSF, NIA और Assam Rifles में Constable बनते हैं। देश की सीमाओं की रक्षा करने वाली सबसे बड़ी भर्ती — हर साल लाखों आवेदन। 10th pass के लिए uniform वाली नौकरी का सीधा रास्ता।",
-   "posts": [
-    "Constable (GD) — BSF, CISF, CRPF, ITBP, SSB",
-    "Constable (GD) — SSF, NIA, Assam Rifles"
-   ],
-   "eligibility": "किसी भी मान्यता प्राप्त बोर्ड से 10th pass। आयु: 18-23 वर्ष (आरक्षित वर्गों को छूट)।",
-   "examPattern": [
-    {
-     "stage": "CBT",
-     "detail": "80 प्रश्न, 160 अंक, 60 मिनट — Reasoning, GK, English, Hindi, Maths (negative 0.50)"
-    },
-    {
-     "stage": "PET/PST",
-     "detail": "Physical Efficiency Test — दौड़ (Race), चिन-अप/सिट-अप, PST (ऊँचाई-सीना माप)"
-    },
-    {
-     "stage": "Medical",
-     "detail": "Medical Examination + Document Verification"
-    }
-   ],
-   "syllabus": [
-    "General Intelligence & Reasoning",
-    "General Knowledge & Awareness",
-    "Elementary Mathematics",
-    "English / Hindi"
-   ],
-   "salary": "Pay Level 3 — ₹21,700 बेसिक + DA, HRA, राशन व अन्य भत्ते (कुल ~₹30,000+ कुछ forces में)",
-   "selectionProcess": "CBT → PET/PST → Medical → DV"
-  },
-  {
-   "slug": "ssc-cpo",
-   "name": "SSC CPO",
-   "emoji": "🛡️",
-   "fullName": "Central Police Organisation (SI & ASI Posts)",
-   "tags": [
-    "Graduate",
-    "Sub Inspector",
-    "Police"
-   ],
-   "officialWebsite": "https://ssc.gov.in",
-   "examFee": "₹100 (UR/OBC/EWS) • महिला/SC/ST/PwD मुक्त",
-   "latestStatus": "SSC CPO 2026 का अगला cycle notification का इंतज़ार है। पिछला cycle 2025 में हुआ था — ssc.gov.in चेक करें।",
-   "overview": "SSC CPO से Sub Inspector के posts मिलते हैं — Delhi Police SI, BSF/CISF/CRPF/ITBP/SSB में SI, CISF SI और SSF में ASI। Graduate students के लिए police department में officer बनने का सीधा रास्ता।",
-   "posts": [
-    "Sub Inspector (Delhi Police)",
-    "Sub Inspector (CAPFs — BSF, CISF, CRPF, ITBP, SSB)",
-    "Sub Inspector (CISF)",
-    "Assistant Sub Inspector (SSF)"
-   ],
-   "eligibility": "किसी भी मान्यता प्राप्त विश्वविद्यालय से Graduation। आयु: 20-25 वर्ष (कुछ posts 18-25), आरक्षित वर्गों को छूट।",
-   "examPattern": [
-    {
-     "stage": "Paper-I (CBT)",
-     "detail": "200 प्रश्न, 200 अंक, 2 घंटे — Reasoning, English, Quant, GK"
-    },
-    {
-     "stage": "Paper-II (CBT)",
-     "detail": "200 प्रश्न, 200 अंक, 2 घंटे — Paper-I में qualify करने वालों के लिए"
-    },
-    {
-     "stage": "PET/PST + Medical",
-     "detail": "Physical Test (दौड़ 1.6 km, चिन-अप/सिट-अप) + स्टैंडर्ड माप"
-    }
-   ],
-   "syllabus": [
-    "General Intelligence & Reasoning",
-    "General Knowledge & Current Affairs",
-    "Quantitative Aptitude",
-    "English Comprehension"
-   ],
-   "salary": "Pay Level 6 — ₹35,400 बेसिक + DA, HRA, भत्ते (कुल ~₹50,000+ मिलकर)",
-   "selectionProcess": "Paper-I → Paper-II → PET/PST → Medical → DV"
-  },
-  {
-   "slug": "ssc-je",
-   "name": "SSC JE",
-   "emoji": "⚙️",
-   "fullName": "Junior Engineer Examination (Civil/Electrical/Mechanical)",
-   "tags": [
-    "Diploma/B.Tech",
-    "Engineer",
-    "CPWD/MES"
-   ],
-   "officialWebsite": "https://ssc.gov.in",
-   "examFee": "₹100 (UR/OBC/EWS) • महिला/SC/ST/PwD मुक्त",
-   "latestStatus": "SSC JE 2026 का अगला cycle notification का इंतज़ार है। पिछला cycle 2025 में हुआ था — ssc.gov.in पर नज़र रखें।",
-   "overview": "SSC JE से CPWD, MES, CWC, BSF, BRO जैसे departments में Junior Engineer (Civil/Electrical/Mechanical) बनते हैं। Diploma और B.Tech दोनों वाले आवेदन कर सकते हैं — engineer बनने का सरकारी रास्ता।",
-   "posts": [
-    "Junior Engineer (Civil)",
-    "Junior Engineer (Electrical)",
-    "Junior Engineer (Mechanical)",
-    "JE (Quality Assurance)"
-   ],
-   "eligibility": "Civil/Electrical/Mechanical में 3 साल का Diploma या B.E./B.Tech। आयु: 18-32 वर्ष (आरक्षित वर्गों को छूट)।",
-   "examPattern": [
-    {
-     "stage": "Paper-I (CBT)",
-     "detail": "200 प्रश्न, 200 अंक, 2 घंटे — General (50) + Technical (150)"
-    },
-    {
-     "stage": "Paper-II (CBT)",
-     "detail": "300 प्रश्न, 300 अंक, 2 घंटे — सिर्फ Technical (Paper-I में qualify करने वालों के लिए)"
-    },
-    {
-     "stage": "DV",
-     "detail": "Document Verification"
-    }
-   ],
-   "syllabus": [
-    "General Awareness",
-    "Reasoning",
-    "Civil Engineering (Technical)",
-    "Electrical Engineering (Technical)",
-    "Mechanical Engineering (Technical)"
-   ],
-   "salary": "Pay Level 6 — ₹35,400 बेसिक + DA, HRA, भत्ते",
-   "selectionProcess": "Paper-I → Paper-II → DV"
-  },
-  {
-   "slug": "ssc-stenographer",
-   "name": "SSC Stenographer",
-   "emoji": "⌨️",
-   "fullName": "Stenographer Grade C & D Examination",
-   "tags": [
-    "12th Pass",
-    "Steno Skill",
-    "Court/Dept Posts"
-   ],
-   "officialWebsite": "https://ssc.gov.in",
-   "examFee": "₹100 (UR/OBC/EWS) • महिला/SC/ST/PwD मुक्त",
-   "latestStatus": "SSC Stenographer 2026 का अगला cycle notification का इंतज़ार है। पिछला cycle 2025 में हुआ था — ssc.gov.in चेक करें।",
-   "overview": "SSC Stenographer से सरकारी departmentों (केंद्रीय मंत्रालय, High Courts, CBI आदि) में Stenographer Grade C और Grade D के posts मिलते हैं। स्टेनो skill वालों के लिए बढ़िया मौका — CBT के बाद स्टेनो टेस्ट से selection।",
-   "posts": [
-    "Stenographer Grade C (Level 6)",
-    "Stenographer Grade D (Level 4)"
-   ],
-   "eligibility": "किसी भी मान्यता प्राप्त बोर्ड से 12th pass। आयु: 18-27 वर्ष (आरक्षित वर्गों को छूट)।",
-   "examPattern": [
-    {
-     "stage": "CBT",
-     "detail": "200 प्रश्न, 200 अंक, 2 घंटे — Reasoning, English, Quant, GK"
-    },
-    {
-     "stage": "Skill Test",
-     "detail": "Stenography — 100 wpm (Grade C) / 80 wpm (Grade D), 10 मिनट dictation"
-    }
-   ],
-   "syllabus": [
-    "General Intelligence & Reasoning",
-    "General Awareness",
-    "Quantitative Aptitude",
-    "English Language & Comprehension"
-   ],
-   "salary": "Pay Level 4 (Gr. D) ₹25,500 / Level 6 (Gr. C) ₹35,400 बेसिक + भत्ते",
-   "selectionProcess": "CBT → Skill Test (Stenography) → DV"
-  },
-  {
-   "slug": "ssc-selection-post",
-   "name": "SSC Selection Post",
-   "emoji": "✅",
-   "fullName": "Selection Post Examination (Phase XIV) — All Level Posts",
-   "tags": [
-    "10th/12th/Graduate",
-    "Phase XIV",
-    "Ministry Posts"
-   ],
-   "officialWebsite": "https://ssc.gov.in",
-   "examFee": "₹100 (UR/OBC/EWS) • महिला/SC/ST/PwD मुक्त",
-   "latestStatus": "SSC Selection Post Phase XIV (2026) की notification का इंतज़ार है। पिछला Phase XIII 2025 में हुआ था — ssc.gov.in चेक करें।",
-   "overview": "SSC Selection Post एक खास exam है जो अलग-अलग मंत्रालयों और departments के रिक्त posts (मैट्रिक से लेकर graduate स्तर तक) के लिए निकलता है — Clerk, Store Keeper, UDC, SI जैसे posts। हर Phase में नए posts की list आती है।",
-   "posts": [
-    "Clerk / UDC / LDC",
-    "Store Keeper / Store Clerk",
-    "Data Entry Operator",
-    "Sub Inspector / Havildar (कुछ posts)",
-    "Assistant / Technician (कुछ posts)"
-   ],
-   "eligibility": "10th / 12th / Graduate — post के हिसाब से। आयु: 18-30 वर्ष (post के हिसाब से बदलती है), आरक्षित वर्गों को छूट।",
-   "examPattern": [
-    {
-     "stage": "CBT",
-     "detail": "100 प्रश्न, 100 अंक, 90 मिनट — Reasoning, English, Quant, GK (10th/12th/Graduate स्तर अलग)"
-    },
-    {
-     "stage": "Skill Test",
-     "detail": "कुछ posts के लिए typing/computer test"
-    },
-    {
-     "stage": "DV",
-     "detail": "Document Verification"
-    }
-   ],
-   "syllabus": [
-    "General Intelligence & Reasoning",
-    "General Awareness",
-    "Quantitative Aptitude",
-    "English Language"
-   ],
-   "salary": "Pay Level 1-6 — ₹18,000 से ₹35,400 बेसिक + भत्ते (post के हिसाब से)",
-   "selectionProcess": "CBT → Skill Test (जहाँ applicable) → DV"
-  },
-  {
-   "slug": "ssc-jht",
-   "name": "SSC JHT",
-   "emoji": "📖",
-   "fullName": "Junior Hindi Translator Examination",
-   "tags": [
-    "Graduate",
-    "Hindi Subject",
-    "Translator Posts"
-   ],
-   "officialWebsite": "https://ssc.gov.in",
-   "examFee": "₹100 (UR/OBC/EWS) • महिला/SC/ST/PwD मुक्त",
-   "latestStatus": "SSC JHT 2026 का अगला cycle notification का इंतज़ार है। पिछला cycle 2025 में हुआ था — ssc.gov.in चेक करें।",
-   "overview": "SSC JHT से केंद्र सरकार के departments (Railway, Posts, Ministries) में Junior Hindi Translator / Junior Translator / Senior Hindi Translator के posts मिलते हैं। हिंदी विषय वाले graduates के लिए खास मौका।",
-   "posts": [
-    "Junior Hindi Translator",
-    "Junior Translator",
-    "Senior Hindi Translator (कुछ departments)"
-   ],
-   "eligibility": "Graduation में Hindi compulsory subject के साथ (कुछ posts में English + Hindi)। आयु: 20-30 वर्ष (आरक्षित वर्गों को छूट)।",
-   "examPattern": [
-    {
-     "stage": "Paper-I (CBT)",
-     "detail": "200 प्रश्न, 200 अंक, 2 घंटे — General Hindi, General English, GK, Reasoning"
-    },
-    {
-     "stage": "Paper-II",
-     "detail": "Descriptive — हिंदी-अंग्रेज़ी translation (100 अंक)"
-    }
-   ],
-   "syllabus": [
-    "हिंदी भाषा एवं व्याकरण",
-    "English Language",
-    "General Knowledge",
-    "Translation (Hindi ↔ English)"
-   ],
-   "salary": "Pay Level 6 — ₹35,400 बेसिक + DA, HRA, भत्ते",
-   "selectionProcess": "Paper-I → Paper-II → DV"
-  },
-  {
-   "slug": "ssc-delhi-police-constable",
-   "name": "SSC Delhi Police Constable",
-   "emoji": "🚔",
-   "fullName": "Delhi Police Constable (Executive) Examination",
-   "tags": [
-    "10th/12th Pass",
-    "Delhi Police",
-    "Physical Test"
-   ],
-   "officialWebsite": "https://ssc.gov.in",
-   "examFee": "₹100 (UR/OBC/EWS) • महिला/SC/ST/PwD मुक्त",
-   "latestStatus": "Delhi Police Constable 2026 की नई भर्ती का इंतज़ार है। पिछली भर्ती 2025 में हुई थी — ssc.gov.in चेक करें।",
-   "overview": "SSC Delhi Police Constable (Executive) से दिल्ली पुलिस में Constable बनते हैं — देश की राजधानी में सेवा करने का मौका। CBT के बाद Physical Test और Medical से selection।",
-   "posts": [
-    "Constable (Executive) — Delhi Police"
-   ],
-   "eligibility": "10+2 (12th) pass। आयु: 18-25 वर्ष (आरक्षित वर्गों को छूट)।",
-   "examPattern": [
-    {
-     "stage": "CBT",
-     "detail": "100 प्रश्न, 100 अंक, 90 मिनट — Reasoning, GK, Quant, English/Hindi"
-    },
-    {
-     "stage": "PET/PST",
-     "detail": "Physical Endurance Test — दौड़, सिट-अप/चिन-अप + Physical Standard Test"
-    },
-    {
-     "stage": "Medical",
-     "detail": "Medical Examination + DV"
-    }
-   ],
-   "syllabus": [
-    "General Intelligence & Reasoning",
-    "General Knowledge & Current Affairs",
-    "Quantitative Aptitude",
-    "English/Hindi"
-   ],
-   "salary": "Pay Level 3 — ₹21,700 बेसिक + DA, HRA, भत्ते",
-   "selectionProcess": "CBT → PET/PST → Medical → DV"
-  },
-  {
-   "slug": "ssc-scientific-assistant",
-   "name": "SSC Scientific Assistant (IMD)",
-   "emoji": "🔬",
-   "fullName": "Scientific Assistant (Meteorology) — India Meteorological Department",
-   "tags": [
-    "B.Sc.",
-    "IMD",
-    "Science Posts"
-   ],
-   "officialWebsite": "https://ssc.gov.in",
-   "examFee": "₹100 (UR/OBC/EWS) • महिला/SC/ST/PwD मुक्त",
-   "latestStatus": "SSC Scientific Assistant (IMD) 2026 की notification का इंतज़ार है। पिछली भर्ती 2025 में हुई थी — ssc.gov.in चेक करें।",
-   "overview": "SSC Scientific Assistant (IMD) से India Meteorological Department में Scientific Assistant के posts मिलते हैं — मौसम विज्ञान की सेवा में B.Sc. (Physics/Mathematics) वालों के लिए खास मौका।",
-   "posts": [
-    "Scientific Assistant (Meteorology) — IMD"
-   ],
-   "eligibility": "B.Sc. (Physics/Mathematics) या समकक्ष। आयु: 18-30 वर्ष (आरक्षित वर्गों को छूट)।",
-   "examPattern": [
-    {
-     "stage": "CBT",
-     "detail": "200 प्रश्न, 200 अंक, 2 घंटे — Reasoning, GK, Physics/Maths (technical)"
-    },
-    {
-     "stage": "Skill Test / DV",
-     "detail": "कंप्यूटर skill test + Document Verification"
-    }
-   ],
-   "syllabus": [
-    "General Intelligence & Reasoning",
-    "General Awareness",
-    "Physics",
-    "Mathematics"
-   ],
-   "salary": "Pay Level 7 — ₹44,900 बेसिक + DA, HRA, भत्ते",
-   "selectionProcess": "CBT → Skill Test → DV"
-  },
-  {
-   "slug": "ssc-havaldar",
-   "name": "SSC Havaldar (CBIC/CBN)",
-   "emoji": "🛂",
-   "fullName": "Havaldar (CBIC & CBN) Examination",
-   "tags": [
-    "12th Pass",
-    "CBIC/CBN",
-    "Customs Posts"
-   ],
-   "officialWebsite": "https://ssc.gov.in",
-   "examFee": "₹100 (UR/OBC/EWS) • महिला/SC/ST/PwD मुक्त",
-   "latestStatus": "SSC Havaldar (CBIC/CBN) 2026 की अगली भर्ती का इंतज़ार है। पिछली भर्ती 2025 में हुई थी — ssc.gov.in चेक करें।",
-   "overview": "SSC Havaldar (CBIC & CBN) से सीमा शुल्क (Customs) और Central Bureau of Narcotics में Havaldar बनते हैं — 12th pass उम्मीदवारों के लिए uniform वाली सरकारी नौकरी का बढ़िया मौका।",
-   "posts": [
-    "Havaldar (CBIC)",
-    "Havaldar (CBN)"
-   ],
-   "eligibility": "किसी भी मान्यता प्राप्त बोर्ड से 12th pass। आयु: 18-25 वर्ष (आरक्षित वर्गों को छूट)।",
-   "examPattern": [
-    {
-     "stage": "CBT",
-     "detail": "100 प्रश्न, 100 अंक, 90 मिनट — Reasoning, GK, Quant, English/Hindi"
-    },
-    {
-     "stage": "PET/PST",
-     "detail": "Physical Efficiency Test + Physical Standard Test"
-    },
-    {
-     "stage": "Medical + DV",
-     "detail": "Medical Examination + Document Verification"
-    }
-   ],
-   "syllabus": [
-    "General Intelligence & Reasoning",
-    "General Awareness",
-    "Quantitative Aptitude",
-    "English/Hindi"
-   ],
-   "salary": "Pay Level 2 — ₹19,900 बेसिक + DA, HRA, भत्ते",
-   "selectionProcess": "CBT → PET/PST → Medical → DV"
-  }
- ],
- "regions": [
-  {
-   "name": "Northern Region (NR)",
-   "sub": "New Delhi"
-  },
-  {
-   "name": "North Western Region (NWR)",
-   "sub": "Chandigarh"
-  },
-  {
-   "name": "Western Region (WR)",
-   "sub": "Mumbai"
-  },
-  {
-   "name": "Central Region (CR)",
-   "sub": "Prayagraj"
-  },
-  {
-   "name": "Southern Region (SR)",
-   "sub": "Chennai"
-  },
-  {
-   "name": "South Western Region (SWR)",
-   "sub": "Bengaluru"
-  },
-  {
-   "name": "Eastern Region (ER)",
-   "sub": "Kolkata"
-  },
-  {
-   "name": "North Eastern Region (NER)",
-   "sub": "Guwahati"
-  },
-  {
-   "name": "Karnataka Kerala Region (KKR)",
-   "sub": "Chennai"
-  },
-  {
-   "name": "Madhya Pradesh Region (MPR)",
-   "sub": "Bhopal"
-  }
- ]
+  "quickLinks": [
+    [
+      "/results",
+      "🏆 SSC Results"
+    ],
+    [
+      "/admit-cards",
+      "📄 Admit Card"
+    ],
+    [
+      "/category/ssc",
+      "🏛️ All SSC Exams"
+    ],
+    [
+      "/syllabus",
+      "📚 Syllabus"
+    ],
+    [
+      "/notifications",
+      "🔔 Updates"
+    ],
+    [
+      "https://ssc.gov.in",
+      "🌐 Official ssc.gov.in"
+    ]
+  ],
+  "statsCards": [
+    [
+      "📋",
+      12,
+      "Major Exams"
+    ],
+    [
+      "🗺️",
+      "10",
+      "Regional Offices"
+    ],
+    [
+      "💸",
+      "5K+",
+      "Posts हर साल"
+    ]
+  ]
 }
