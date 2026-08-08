@@ -1,0 +1,557 @@
+{
+ "updated": "2026-08-08",
+ "note": "सभी जानकारी अनुमानित/संकेतात्मक है। हर राज्य की पुलिस भर्ती की dates, fee, age limit और pattern बदलते हैं — हमेशा उस राज्य के police portal पर official notification ज़रूर चेक करें।",
+ "stats": {
+  "exams": 12,
+  "states": 12,
+  "posts": 500000
+ },
+ "exams": [
+  {
+   "slug": "up-police-constable",
+   "name": "UP Police Constable",
+   "emoji": "👮",
+   "fullName": "Uttar Pradesh Police Constable (CIVIL)",
+   "tags": [
+    "Uttar Pradesh",
+    "10th/12th",
+    "60,000+ Posts"
+   ],
+   "officialWebsite": "https://uppbpb.gov.in",
+   "examFee": "₹400 (UR) • SC/ST मुक्त (अनुमानित)",
+   "latestStatus": "UP Police Constable अगली भर्ती का इंतज़ार है। पिछली भर्ती 2024 में 60,244 posts के लिए हुई थी — uppbpb.gov.in चेक करें।",
+   "overview": "UP Police Constable उत्तर प्रदेश में सबसे बड़ी भर्ती है — पिछली बार 60,000+ posts निकले थे। CBT, physical test और medical से selection। UP के युवाओं का सबसे बड़ा सपना।",
+   "posts": [
+    "Constable (Civil) — UP Police"
+   ],
+   "eligibility": "10+2 (12th) pass। आयु: 18-28 वर्ष (आरक्षित छूट)।",
+   "examPattern": [
+    {
+     "stage": "CBT",
+     "detail": "100 प्रश्न, 100 अंक — GK, Reasoning, Numeric, Hindi, Mental Aptitude (negative 0.25)"
+    },
+    {
+     "stage": "PET/PST",
+     "detail": "दौड़ 4.8 km (पुरुष 28 मिनट) / 2.4 km (महिला 18 मिनट) + माप"
+    },
+    {
+     "stage": "Medical + DV",
+     "detail": "Medical Examination + Document Verification"
+    }
+   ],
+   "syllabus": [
+    "General Knowledge & Current Affairs",
+    "Reasoning",
+    "Numerical Ability",
+    "Hindi"
+   ],
+   "salary": "Level 3 — ₹21,700 बेसिक + DA, HRA, भत्ते",
+   "selectionProcess": "CBT → PET/PST → Medical → DV"
+  },
+  {
+   "slug": "up-police-si",
+   "name": "UP Police SI",
+   "emoji": "🚔",
+   "fullName": "Uttar Pradesh Police Sub Inspector (CIVIL/Platoon Commander)",
+   "tags": [
+    "Uttar Pradesh",
+    "Graduate",
+    "Officer Rank"
+   ],
+   "officialWebsite": "https://uppbpb.gov.in",
+   "examFee": "₹400 (UR) • SC/ST मुक्त (अनुमानित)",
+   "latestStatus": "UP Police SI अगली भर्ती का इंतज़ार है। पिछली भर्ती 2024 में ~5,000 posts के लिए हुई थी — uppbpb.gov.in चेक करें।",
+   "overview": "UP Police SI में officer rank की नौकरी मिलती है — Sub Inspector (CIVIL) और Platoon Commander (PAC) posts। Graduate students के लिए UP police में अधिकारी बनने का रास्ता।",
+   "posts": [
+    "Sub Inspector (CIVIL)",
+    "Sub Inspector (PAC — Platoon Commander)"
+   ],
+   "eligibility": "Graduation। आयु: 21-28 वर्ष (आरक्षित छूट)।",
+   "examPattern": [
+    {
+     "stage": "CBT",
+     "detail": "100 प्रश्न, 100 अंक — GK, Reasoning, Numeric, Hindi (negative 0.25)"
+    },
+    {
+     "stage": "PET/PST",
+     "detail": "दौड़ + माप (स्टैंडर्ड के अनुसार)"
+    },
+    {
+     "stage": "Interview + Medical",
+     "detail": "Personality Test + Medical + DV"
+    }
+   ],
+   "syllabus": [
+    "General Knowledge & Current Affairs",
+    "Reasoning",
+    "Numerical Ability",
+    "Hindi"
+   ],
+   "salary": "Level 6 — ₹35,400 बेसिक + DA, HRA, भत्ते",
+   "selectionProcess": "CBT → PET/PST → Interview → Medical → DV"
+  },
+  {
+   "slug": "bihar-police",
+   "name": "Bihar Police Constable",
+   "emoji": "📜",
+   "fullName": "Bihar Police Constable Recruitment",
+   "tags": [
+    "Bihar",
+    "10th Pass",
+    "High Volume"
+   ],
+   "officialWebsite": "https://csbc.bihar.gov.in",
+   "examFee": "₹450 (UR) • SC/ST मुक्त (अनुमानित)",
+   "latestStatus": "Bihar Police Constable अगली भर्ती का इंतज़ार है। पिछली भर्ती 2024 में ~19,000+ posts के लिए हुई थी — csbc.bihar.gov.in चेक करें।",
+   "overview": "Bihar Police Constable (CSBC) बिहार की सबसे बड़ी पुलिस भर्ती है — 10th pass के लिए खुला रास्ता। CBT + physical test + medical से selection।",
+   "posts": [
+    "Constable (विभिन्न units)",
+    "Constable (SAP — Special Armed Police)"
+   ],
+   "eligibility": "10th pass। आयु: 18-25 वर्ष (आरक्षित छूट)।",
+   "examPattern": [
+    {
+     "stage": "CBT",
+     "detail": "100 प्रश्न, 100 अंक — GK, Reasoning, Numeric, Hindi (negative 0.25)"
+    },
+    {
+     "stage": "PET/PST",
+     "detail": "दौड़ 1.6 km + माप"
+    },
+    {
+     "stage": "Medical + DV",
+     "detail": "Medical + Document Verification"
+    }
+   ],
+   "syllabus": [
+    "General Knowledge & Current Affairs",
+    "Reasoning",
+    "Numerical Ability",
+    "Hindi"
+   ],
+   "salary": "Level 3 — ₹21,700 बेसिक + DA, HRA, भत्ते",
+   "selectionProcess": "CBT → PET/PST → Medical → DV"
+  },
+  {
+   "slug": "mp-police",
+   "name": "MP Police Constable",
+   "emoji": "🗺️",
+   "fullName": "Madhya Pradesh Police Constable",
+   "tags": [
+    "Madhya Pradesh",
+    "10th/12th",
+    "Physical Test"
+   ],
+   "officialWebsite": "https://mppolice.gov.in",
+   "examFee": "₹400 (UR) • SC/ST मुक्त (अनुमानित)",
+   "latestStatus": "MP Police Constable अगली भर्ती का इंतज़ार है। पिछली भर्ती 2024 में हुई थी — mppolice.gov.in चेक करें।",
+   "overview": "MP Police Constable मध्य प्रदेश में पुलिस भर्ती का सबसे बड़ा exam है — CBT + physical test के बाद selection।",
+   "posts": [
+    "Constable (GD)",
+    "Constable (Armed — SAAP)"
+   ],
+   "eligibility": "10+2 (12th) pass (कुछ posts 10th)। आयु: 18-28 वर्ष (आरक्षित छूट)।",
+   "examPattern": [
+    {
+     "stage": "CBT",
+     "detail": "100 प्रश्न, 100 अंक — GK, Reasoning, Maths, Hindi (negative 0.25)"
+    },
+    {
+     "stage": "PET/PST",
+     "detail": "दौड़ 1.6 km + सिट-अप/चिन-अप + माप"
+    },
+    {
+     "stage": "Medical + DV",
+     "detail": "Medical + Document Verification"
+    }
+   ],
+   "syllabus": [
+    "General Knowledge & Current Affairs",
+    "Reasoning",
+    "Numerical Ability",
+    "Hindi"
+   ],
+   "salary": "Level 3 — ₹21,700 बेसिक + DA, HRA, भत्ते",
+   "selectionProcess": "CBT → PET/PST → Medical → DV"
+  },
+  {
+   "slug": "rajasthan-police",
+   "name": "Rajasthan Police",
+   "emoji": "🏜️",
+   "fullName": "Rajasthan Police Constable & SI",
+   "tags": [
+    "Rajasthan",
+    "10th/12th/Graduate",
+    "Constable/SI"
+   ],
+   "officialWebsite": "https://police.rajasthan.gov.in",
+   "examFee": "₹450 (UR) • SC/ST मुक्त (अनुमानित)",
+   "latestStatus": "Rajasthan Police अगली भर्ती का इंतज़ार है। पिछली भर्ती 2025 में हुई थी — police.rajasthan.gov.in चेक करें।",
+   "overview": "Rajasthan Police में Constable और SI दोनों की भर्ती होती है — राजस्थान के सबसे बड़े recruitment exams में से एक।",
+   "posts": [
+    "Constable (GD)",
+    "Sub Inspector (SI)"
+   ],
+   "eligibility": "Constable: 10th/12th। SI: Graduate। आयु: 18-25 / 21-28 — आरक्षित छूट।",
+   "examPattern": [
+    {
+     "stage": "CBT",
+     "detail": "100 प्रश्न, 100 अंक — GK, Reasoning, Maths, Hindi (negative 0.25)"
+    },
+    {
+     "stage": "PET/PST",
+     "detail": "दौड़ + माप"
+    },
+    {
+     "stage": "Medical + DV",
+     "detail": "Medical + Document Verification"
+    }
+   ],
+   "syllabus": [
+    "General Knowledge & Current Affairs",
+    "Reasoning",
+    "Numerical Ability",
+    "Hindi"
+   ],
+   "salary": "Level 3 (Constable) ₹21,700 / Level 6 (SI) ₹35,400 + भत्ते",
+   "selectionProcess": "CBT → PET/PST → Medical → DV"
+  },
+  {
+   "slug": "maharashtra-police",
+   "name": "Maharashtra Police",
+   "emoji": "🌊",
+   "fullName": "Maharashtra Police (PSI & Constable)",
+   "tags": [
+    "Maharashtra",
+    "Graduate/12th",
+    "PSI/Constable"
+   ],
+   "officialWebsite": "https://mahapolice.gov.in",
+   "examFee": "₹500 (PSI) / ₹400 (Constable) — अनुमानित",
+   "latestStatus": "Maharashtra Police अगली भर्ती का इंतज़ार है। पिछली भर्ती 2024-25 में हुई थी — mahapolice.gov.in चेक करें।",
+   "overview": "Maharashtra Police में PSI और Constable की भर्ती होती है — महाराष्ट्र के सबसे बड़े police exams में से एक।",
+   "posts": [
+    "Police Sub Inspector (PSI)",
+    "Constable (विभिन्न units)"
+   ],
+   "eligibility": "PSI: Graduate। Constable: 12th। आयु: 19-28 (PSI) / 18-28 (Constable)।",
+   "examPattern": [
+    {
+     "stage": "CBT",
+     "detail": "100 प्रश्न — GK, Reasoning, Maths, Marathi/English/Hindi"
+    },
+    {
+     "stage": "PET/PST",
+     "detail": "दौड़, सिट-अप, लंबी कूद + माप"
+    },
+    {
+     "stage": "Interview (PSI) + Medical",
+     "detail": "PSI के लिए interview + Medical"
+    }
+   ],
+   "syllabus": [
+    "General Knowledge & Current Affairs",
+    "Reasoning",
+    "Numerical Ability",
+    "Marathi/English/Hindi"
+   ],
+   "salary": "Level 3 (Constable) ₹21,700 / Level 6 (PSI) ₹35,400 + भत्ते",
+   "selectionProcess": "CBT → PET/PST → Interview (PSI) → Medical → DV"
+  },
+  {
+   "slug": "gujarat-police",
+   "name": "Gujarat Police",
+   "emoji": "🦁",
+   "fullName": "Gujarat Police (Constable & SI)",
+   "tags": [
+    "Gujarat",
+    "12th/Graduate",
+    "Constable/SI"
+   ],
+   "officialWebsite": "https://police.gujarat.gov.in",
+   "examFee": "₹500 (UR) • SC/ST मुक्त (अनुमानित)",
+   "latestStatus": "Gujarat Police अगली भर्ती का इंतज़ार है। पिछली भर्ती 2024-25 में हुई थी — police.gujarat.gov.in चेक करें।",
+   "overview": "Gujarat Police में Constable (LRD) और Sub Inspector की भर्ती होती है — Gujarat का सबसे बड़ा police recruitment।",
+   "posts": [
+    "Constable (LRD)",
+    "Sub Inspector (SI)"
+   ],
+   "eligibility": "Constable: 12th। SI: Graduate। आयु: 18-30 वर्ष (आरक्षित छूट)।",
+   "examPattern": [
+    {
+     "stage": "CBT",
+     "detail": "100 प्रश्न — GK, Reasoning, Maths, Gujarati/English/Hindi"
+    },
+    {
+     "stage": "PET/PST",
+     "detail": "दौड़ + माप"
+    },
+    {
+     "stage": "Interview (SI) + Medical",
+     "detail": "SI के लिए interview + Medical"
+    }
+   ],
+   "syllabus": [
+    "General Knowledge & Current Affairs",
+    "Reasoning",
+    "Numerical Ability",
+    "Gujarati/English/Hindi"
+   ],
+   "salary": "Level 3 (Constable) ₹21,700 / Level 6 (SI) ₹35,400 + भत्ते",
+   "selectionProcess": "CBT → PET/PST → Interview (SI) → Medical → DV"
+  },
+  {
+   "slug": "karnataka-police",
+   "name": "Karnataka Police",
+   "emoji": "🏔️",
+   "fullName": "Karnataka Police (PSI & Constable)",
+   "tags": [
+    "Karnataka",
+    "Graduate/12th",
+    "PSI/Constable"
+   ],
+   "officialWebsite": "https://ksp.karnataka.gov.in",
+   "examFee": "₹500 (PSI) / ₹400 (Constable) — अनुमानित",
+   "latestStatus": "Karnataka Police अगली भर्ती का इंतज़ार है। पिछली भर्ती 2024 में हुई थी — ksp.karnataka.gov.in चेक करें।",
+   "overview": "Karnataka Police में PSI और Constable की भर्ती होती है — Karnataka State Police का सबसे बड़ा recruitment।",
+   "posts": [
+    "Police Sub Inspector (PSI)",
+    "Constable"
+   ],
+   "eligibility": "PSI: Graduate। Constable: PUC (12th)। आयु: 19-28 / 18-28।",
+   "examPattern": [
+    {
+     "stage": "CBT",
+     "detail": "100 प्रश्न — GK, Reasoning, Maths, Kannada/English"
+    },
+    {
+     "stage": "PET/PST",
+     "detail": "दौड़ + माप"
+    },
+    {
+     "stage": "Medical + DV",
+     "detail": "Medical + Document Verification"
+    }
+   ],
+   "syllabus": [
+    "General Knowledge & Current Affairs",
+    "Reasoning",
+    "Numerical Ability",
+    "Kannada/English"
+   ],
+   "salary": "Level 3 (Constable) ₹21,700 / Level 6 (PSI) ₹35,400 + भत्ते",
+   "selectionProcess": "CBT → PET/PST → Medical → DV"
+  },
+  {
+   "slug": "tn-police",
+   "name": "Tamil Nadu Police",
+   "emoji": "🌺",
+   "fullName": "Tamil Nadu Police (SI & Constable)",
+   "tags": [
+    "Tamil Nadu",
+    "Graduate/10th-12th",
+    "SI/Constable"
+   ],
+   "officialWebsite": "https://tnpolice.gov.in",
+   "examFee": "₹500 (SI) / ₹200 (Constable) — अनुमानित",
+   "latestStatus": "Tamil Nadu Police अगली भर्ती का इंतज़ार है। पिछली भर्ती 2024 में हुई थी — tnpolice.gov.in चेक करें।",
+   "overview": "Tamil Nadu Police में SI और Constable की भर्ती होती है — written + physical test के बाद selection।",
+   "posts": [
+    "Sub Inspector (SI)",
+    "Constable"
+   ],
+   "eligibility": "SI: Graduate। Constable: 10th/12th। आयु: 18-26 (SI) / 18-24 (Constable)।",
+   "examPattern": [
+    {
+     "stage": "Written",
+     "detail": "GK, Reasoning, Maths, Tamil/English (OMMAT-based)"
+    },
+    {
+     "stage": "PET/PST",
+     "detail": "दौड़ + माप (ऊँचाई-सीना)"
+    },
+    {
+     "stage": "Medical + DV",
+     "detail": "Medical + Document Verification"
+    }
+   ],
+   "syllabus": [
+    "General Knowledge & Current Affairs",
+    "Reasoning",
+    "Numerical Ability",
+    "Tamil/English"
+   ],
+   "salary": "Level 3 (Constable) ₹21,700 / Level 6 (SI) ₹35,400 + भत्ते",
+   "selectionProcess": "Written → PET/PST → Medical → DV"
+  },
+  {
+   "slug": "wb-police",
+   "name": "West Bengal Police",
+   "emoji": "🐅",
+   "fullName": "West Bengal Police (Constable & SI)",
+   "tags": [
+    "West Bengal",
+    "10th/12th/Graduate",
+    "Constable/SI"
+   ],
+   "officialWebsite": "https://wbpolice.gov.in",
+   "examFee": "₹200 (Constable) / ₹400 (SI) — अनुमानित",
+   "latestStatus": "West Bengal Police अगली भर्ती का इंतज़ार है। पिछली भर्ती 2024 में हुई थी — wbpolice.gov.in चेक करें।",
+   "overview": "West Bengal Police में Constable और SI की भर्ती होती है — WB का सबसे बड़ा police recruitment।",
+   "posts": [
+    "Constable",
+    "Sub Inspector (SI)"
+   ],
+   "eligibility": "Constable: 10th। SI: Graduate। आयु: 18-27 / 20-30।",
+   "examPattern": [
+    {
+     "stage": "Written",
+     "detail": "GK, Reasoning, Maths, English/Bengali"
+    },
+    {
+     "stage": "PET/PST",
+     "detail": "दौड़ + माप"
+    },
+    {
+     "stage": "Interview (SI) + Medical",
+     "detail": "SI के लिए interview + Medical"
+    }
+   ],
+   "syllabus": [
+    "General Knowledge & Current Affairs",
+    "Reasoning",
+    "Numerical Ability",
+    "English/Bengali"
+   ],
+   "salary": "Level 3 (Constable) ₹21,700 / Level 6 (SI) ₹35,400 + भत्ते",
+   "selectionProcess": "Written → PET/PST → Interview (SI) → Medical → DV"
+  },
+  {
+   "slug": "punjab-police",
+   "name": "Punjab Police",
+   "emoji": "🌾",
+   "fullName": "Punjab Police (Constable & SI)",
+   "tags": [
+    "Punjab",
+    "10+2/Graduate",
+    "Constable/SI"
+   ],
+   "officialWebsite": "https://punjabpolice.gov.in",
+   "examFee": "₹500 (UR) • SC/ST मुक्त (अनुमानित)",
+   "latestStatus": "Punjab Police अगली भर्ती का इंतज़ार है। पिछली भर्ती 2024 में हुई थी — punjabpolice.gov.in चेक करें।",
+   "overview": "Punjab Police में Constable और SI की भर्ती होती है — Punjab Police Recruitment Board का सबसे बड़ा exam।",
+   "posts": [
+    "Constable",
+    "Sub Inspector (SI)"
+   ],
+   "eligibility": "Constable: 10+2। SI: Graduate। आयु: 18-28 वर्ष (आरक्षित छूट)।",
+   "examPattern": [
+    {
+     "stage": "Written (CBT)",
+     "detail": "GK, Reasoning, Maths, Punjabi/English"
+    },
+    {
+     "stage": "PET/PST",
+     "detail": "दौड़ + माप"
+    },
+    {
+     "stage": "Medical + DV",
+     "detail": "Medical + Document Verification"
+    }
+   ],
+   "syllabus": [
+    "General Knowledge & Current Affairs",
+    "Reasoning",
+    "Numerical Ability",
+    "Punjabi/English"
+   ],
+   "salary": "Level 3 (Constable) ₹21,700 / Level 6 (SI) ₹35,400 + भत्ते",
+   "selectionProcess": "Written → PET/PST → Medical → DV"
+  },
+  {
+   "slug": "haryana-police",
+   "name": "Haryana Police",
+   "emoji": "⭐",
+   "fullName": "Haryana Police (Constable & SI)",
+   "tags": [
+    "Haryana",
+    "10th/12th/Graduate",
+    "Constable/SI"
+   ],
+   "officialWebsite": "https://haryanapolice.gov.in",
+   "examFee": "₹500 (UR) • SC/ST मुक्त (अनुमानित)",
+   "latestStatus": "Haryana Police अगली भर्ती का इंतज़ार है। पिछली भर्ती 2024 में हुई थी — haryanapolice.gov.in चेक करें।",
+   "overview": "Haryana Police में Constable और SI की भर्ती होती है — HSSC के ज़रिए। Written + physical test + medical से selection।",
+   "posts": [
+    "Constable (GD)",
+    "Sub Inspector (SI)",
+    "Constable (Mounted व अन्य)"
+   ],
+   "eligibility": "Constable: 10th/12th। SI: Graduate। आयु: 18-25 / 21-27 — आरक्षित छूट।",
+   "examPattern": [
+    {
+     "stage": "CBT",
+     "detail": "100 प्रश्न — GK, Reasoning, Maths, Hindi/English"
+    },
+    {
+     "stage": "PET/PST",
+     "detail": "दौड़ 2.4 km + माप"
+    },
+    {
+     "stage": "Medical + DV",
+     "detail": "Medical + Document Verification"
+    }
+   ],
+   "syllabus": [
+    "General Knowledge & Current Affairs",
+    "Reasoning",
+    "Numerical Ability",
+    "Hindi/English"
+   ],
+   "salary": "Level 3 (Constable) ₹21,700 / Level 6 (SI) ₹35,400 + भत्ते",
+   "selectionProcess": "CBT → PET/PST → Medical → DV"
+  }
+ ],
+ "stateForces": [
+  {
+   "name": "UP Police",
+   "site": "https://uppbpb.gov.in"
+  },
+  {
+   "name": "Bihar Police (CSBC)",
+   "site": "https://csbc.bihar.gov.in"
+  },
+  {
+   "name": "MP Police",
+   "site": "https://mppolice.gov.in"
+  },
+  {
+   "name": "Rajasthan Police",
+   "site": "https://police.rajasthan.gov.in"
+  },
+  {
+   "name": "Maharashtra Police",
+   "site": "https://mahapolice.gov.in"
+  },
+  {
+   "name": "Gujarat Police",
+   "site": "https://police.gujarat.gov.in"
+  },
+  {
+   "name": "Karnataka Police",
+   "site": "https://ksp.karnataka.gov.in"
+  },
+  {
+   "name": "Tamil Nadu Police",
+   "site": "https://tnpolice.gov.in"
+  },
+  {
+   "name": "West Bengal Police",
+   "site": "https://wbpolice.gov.in"
+  },
+  {
+   "name": "Punjab Police",
+   "site": "https://punjabpolice.gov.in"
+  }
+ ]
+}
