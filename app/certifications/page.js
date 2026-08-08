@@ -45,7 +45,71 @@ export default function Certifications() {
         load();
       }, []);
 
-      const bodies = useMemo(() => new Set(certs.map((c) => c.full_name).filter(Boolean)).size, [certs]);
+      const ORG_PATTERNS = [
+  ["Microsoft", /azure|microsoft|az-\d|dp-\d|pl-\d|sc-\d|ai-\d|power (bi|apps|platform)|xamarin|\.net developer|asp\.net/i],
+  ["Amazon Web Services", /aws|amazon/i],
+  ["Google", /google|gcp|tensorflow|associate cloud engineer|professional cloud|cloud digital leader|professional (data|ml|machine learning) engineer|flutter/i],
+  ["Oracle", /oracle|oci\b|java (se|ee)|mysql database|mysql\b/i],
+  ["Cisco", /cisco|ccna|ccnp|ccie|ccde|ccdp/i],
+  ["CompTIA", /comptia|cysa|pentest\+|security\+|network\+|cloud\+|project\+|linux\+|a\+/i],
+  ["ISC2", /cissp|isc2|hcissp|csslp/i],
+  ["ISACA", /isaca|\bcisa\b|\bcism\b|\bcrisc\b|cgeit/i],
+  ["PMI", /\bpmp\b|\bpmi\b|pgmp|pfmp|\bcapm\b/i],
+  ["SAP", /\bsap\b|abap/i],
+  ["IBM", /\bibm\b|watson|cognos|websphere/i],
+  ["VMware", /vmware|vsphere|vcenter|spring\b/i],
+  ["Red Hat", /red hat|rhcsa|rhce|rhca|openshift|ansible/i],
+  ["Salesforce", /salesforce|trailhead/i],
+  ["Scrum Alliance", /scrum|a-csm|\bcsm\b/i],
+  ["AXELOS", /axelos|itil|prince2|p3o/i],
+  ["Autodesk", /autodesk|autocad|revit|inventor|civil 3d|3ds max|\bmaya\b|fusion 360/i],
+  ["HashiCorp", /hashicorp|terraform|\bvault\b|consul|packer|vagrant/i],
+  ["MongoDB", /mongodb|\bmongo\b/i],
+  ["SAS", /\bsas\b|sas certified/i],
+  ["ISTQB", /istqb|foundation level|test (manager|analyst|designer)/i],
+  ["CNCF", /cncf|kubernetes|\bcka\b|\bckad\b|\bcks\b/i],
+  ["Python Institute", /python institute|pcep|\bpcap\b|\bpcpp\b|openedg/i],
+  ["HubSpot", /hubspot/i],
+  ["Meta", /\bmeta\b|facebook|pytorch/i],
+  ["NVIDIA", /nvidia|cuda/i],
+  ["GIAC/SANS", /giac|sans|gsec|gcih|gcfa|gsna/i],
+  ["Offensive Security", /offensive|oscp|osce|oswp|burp suite/i],
+  ["Juniper", /juniper|jncia|jncip/i],
+  ["MathWorks", /mathworks|matlab|simulink/i],
+  ["Apple", /\bapple\b|arkit|swift\b|\bios\b developer/i],
+  ["DASCA", /dasca/i],
+  ["Scaled Agile", /scaled agile|safe (agile|practitioner|scrum|program|leader)/i],
+  ["ASQ", /\basq\b|quality (auditor|engineer)/i],
+  ["AHLEI", /ahlei|hospitality/i],
+  ["ACCA", /acca/i],
+  ["ICAI", /icai|chartered accountant/i],
+  ["NIELIT", /nielit|\bccc\b/i],
+  ["DGCA/Aviation", /dgca|aircraft maintenance|atpl|\bame\b/i],
+  ["DeepLearning.AI", /deeplearning|ai for everyone/i],
+  ["C++ Institute", /c\+\+|cpp\b|clang/i],
+  ["JetBrains", /jetbrains|kotlin/i],
+  ["Alibaba Cloud", /alibaba/i],
+  ["Huawei", /huawei|hcia|hcip|hcie/i],
+  ["Nutanix", /nutanix|\bncp\b/i],
+  ["Citrix", /citrix|ccp-v/i],
+  ["Zend", /zend|\bzce\b|\bphp\b/i],
+  ["DataCamp", /datacamp/i],
+  ["Udacity", /udacity|nanodegree/i],
+  ["OpenJS Foundation", /node\.js|openjs/i],
+  ["W3C", /w3c/i],
+  ["freeCodeCamp", /freecodecamp/i],
+  ["Unity", /unity/i],
+  ["Posit/RStudio", /rstudio|\br language\b|\br programming\b/i],
+  ["LinkedIn", /linkedin/i],
+  ["Bloomberg", /bloomberg|bqc/i]
+];
+const detectOrg = (name) => {
+  for (let i = 0; i < ORG_PATTERNS.length; i++) {
+    if (ORG_PATTERNS[i][1].test(name || "")) return ORG_PATTERNS[i][0];
+  }
+  return null;
+};
+const bodies = useMemo(() => new Set(certs.map((c) => detectOrg(c.name)).filter(Boolean)).size, [certs]);
 
       const cats = useMemo(() => {
         const m = {};
