@@ -25,3 +25,5 @@ India's Modern Exam Results Platform
 - Real news tracker: Google News RSS se daily result/admit card tracking (app/api/auto-update/route.js)
 - /latest-updates page: aaj ke updates, filter chips, hub links
 - Homepage: 16th CTA card + आज के अपडेट section
+
+- (deploy trigger)
