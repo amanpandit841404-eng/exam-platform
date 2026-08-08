@@ -1,512 +1,561 @@
 {
- "updated": "2026-08-08",
- "note": "सभी जानकारी अनुमानित/संकेतात्मक है। Law प्रवेश (CLAT, AILET आदि) और न्यायिक सेवा (Judicial Services) की भर्तियाँ हर साल dates और pattern बदलती हैं — हमेशा official website पर notification ज़रूर चेक करें।",
- "stats": {
-  "exams": 12,
-  "states": 20,
-  "posts": 500000
- },
- "exams": [
-  {
-   "slug": "clat",
-   "name": "CLAT UG",
-   "emoji": "⚖️",
-   "fullName": "Common Law Admission Test — Undergraduate (25 NLUs)",
-   "tags": [
-    "CLAT",
-    "NLU",
-    "Law Entrance",
-    "National"
-   ],
-   "officialWebsite": "https://consortiumofnlus.ac.in",
-   "examFee": "₹4,000 (UR/OBC/PwD) • SC/ST ₹3,500 (अनुमानित)",
-   "latestStatus": "CLAT 2027 (अगला cycle) आवेदन आम तौर पर अगस्त 2026 में खुलते हैं — consortiumofnlus.ac.in पर नज़र रखें। CLAT 2026 exam 7 दिसंबर 2025 को हुआ था।",
-   "overview": "CLAT भारत की सबसे बड़ी law entrance exam है — 25 National Law Universities (NLUs) में 5-year integrated LL.B. (BA LLB, BBA LLB आदि) के लिए। देश के सारे top law colleges का common entrance।",
-   "posts": [
-    "BA LLB (Hons.) — 5 वर्षीय",
-    "BBA LLB / B.Com LLB / B.Sc LLB — 5 वर्षीय (NLU के अनुसार)"
-   ],
-   "eligibility": "12वीं (किसी भी stream) कम से कम 45% (UR) / 40% (SC/ST/OBC — NLU rules)। कोई ऊपरी आयु सीमा नहीं। 12वीं देने वाले भी आवेदन कर सकते हैं।",
-   "examPattern": [
+  "updated": "2026-08-08T06:34:09.495Z",
+  "note": "सभी जानकारी अनुमानित/संकेतात्मक है। Law प्रवेश (CLAT, AILET आदि) और न्यायिक सेवा (Judicial Services) की भर्तियाँ हर साल dates और pattern बदलती हैं — हमेशा official website पर notification ज़रूर चेक करें।",
+  "stats": {
+    "exams": 12,
+    "states": 20,
+    "posts": 500000
+  },
+  "exams": [
     {
-     "stage": "CBT (2 घंटे)",
-     "detail": "120 प्रश्न, 120 अंक — English, Current Affairs, Legal Reasoning, Logical Reasoning, Quantitative Techniques"
+      "slug": "clat",
+      "name": "CLAT UG",
+      "emoji": "⚖️",
+      "fullName": "Common Law Admission Test — Undergraduate (25 NLUs)",
+      "tags": [
+        "CLAT",
+        "NLU",
+        "Law Entrance",
+        "National"
+      ],
+      "officialWebsite": "https://consortiumofnlus.ac.in",
+      "examFee": "₹4,000 (UR/OBC/PwD) • SC/ST ₹3,500 (अनुमानित)",
+      "latestStatus": "CLAT 2027 (अगला cycle) आवेदन आम तौर पर अगस्त 2026 में खुलते हैं — consortiumofnlus.ac.in पर नज़र रखें। CLAT 2026 exam 7 दिसंबर 2025 को हुआ था।",
+      "overview": "CLAT भारत की सबसे बड़ी law entrance exam है — 25 National Law Universities (NLUs) में 5-year integrated LL.B. (BA LLB, BBA LLB आदि) के लिए। देश के सारे top law colleges का common entrance।",
+      "posts": [
+        "BA LLB (Hons.) — 5 वर्षीय",
+        "BBA LLB / B.Com LLB / B.Sc LLB — 5 वर्षीय (NLU के अनुसार)"
+      ],
+      "eligibility": "12वीं (किसी भी stream) कम से कम 45% (UR) / 40% (SC/ST/OBC — NLU rules)। कोई ऊपरी आयु सीमा नहीं। 12वीं देने वाले भी आवेदन कर सकते हैं।",
+      "examPattern": [
+        {
+          "stage": "CBT (2 घंटे)",
+          "detail": "120 प्रश्न, 120 अंक — English, Current Affairs, Legal Reasoning, Logical Reasoning, Quantitative Techniques"
+        },
+        {
+          "stage": "माइनस मार्किंग",
+          "detail": "हर गलत उत्तर पर 0.25 अंक कटता है"
+        }
+      ],
+      "syllabus": [
+        "English Language (28)",
+        "Current Affairs & GK (28)",
+        "Legal Reasoning (36)",
+        "Logical Reasoning (28)",
+        "Quantitative Techniques (10)"
+      ],
+      "salary": "— प्रवेश परीक्षा (admission) • NLU से LLB के बाद lawyer/judge/corporate career",
+      "selectionProcess": "CLAT Score → Counselling (25 NLUs) → Admission"
     },
     {
-     "stage": "माइनस मार्किंग",
-     "detail": "हर गलत उत्तर पर 0.25 अंक कटता है"
-    }
-   ],
-   "syllabus": [
-    "English Language (28)",
-    "Current Affairs & GK (28)",
-    "Legal Reasoning (36)",
-    "Logical Reasoning (28)",
-    "Quantitative Techniques (10)"
-   ],
-   "salary": "— प्रवेश परीक्षा (admission) • NLU से LLB के बाद lawyer/judge/corporate career",
-   "selectionProcess": "CLAT Score → Counselling (25 NLUs) → Admission"
-  },
-  {
-   "slug": "clat-pg",
-   "name": "CLAT PG",
-   "emoji": "🎓",
-   "fullName": "Common Law Admission Test — Postgraduate (LL.M.)",
-   "tags": [
-    "CLAT PG",
-    "LLM",
-    "NLU",
-    "Law Entrance"
-   ],
-   "officialWebsite": "https://consortiumofnlus.ac.in",
-   "examFee": "₹4,000 (UR) • SC/ST ₹3,500 (अनुमानित)",
-   "latestStatus": "CLAT PG 2027 आवेदन अगस्त-सितंबर 2026 में अपेक्षित — consortiumofnlus.ac.in चेक करें।",
-   "overview": "CLAT PG 25 NLUs में LL.M. (Master of Laws) admission के लिए exam है — law graduates के लिए specialization (Corporate, Criminal, Constitutional Law आदि) का रास्ता।",
-   "posts": [
-    "LL.M. — सभी 25 NLUs में",
-    "विशेष: Constitutional, Corporate, Criminal, Intellectual Property Law"
-   ],
-   "eligibility": "LL.B. (3 या 5 वर्ष) किसी मान्यता प्राप्त university से, कम से कम 50% (UR) / 45% (SC/ST/OBC)।",
-   "examPattern": [
-    {
-     "stage": "CBT (90 मिनट)",
-     "detail": "100 प्रश्न, 150 अंक — Constitutional Law, Jurisprudence, Criminal, Contract, Torts, Property, International Law, Administrative Law"
-    }
-   ],
-   "syllabus": [
-    "Constitutional Law",
-    "Jurisprudence",
-    "Criminal Law",
-    "Contract & Torts",
-    "Property & Administrative Law",
-    "International Law",
-    "Current Legal GK"
-   ],
-   "salary": "— प्रवेश परीक्षा • LLM के बाद academia, litigation, corporate, judiciary",
-   "selectionProcess": "CLAT PG Score → Counselling → Admission"
-  },
-  {
-   "slug": "ailet",
-   "name": "AILET",
-   "emoji": "🏛️",
-   "fullName": "All India Law Entrance Test — NLU Delhi",
-   "tags": [
-    "AILET",
-    "NLU Delhi",
-    "BA LLB",
-    "Law Entrance"
-   ],
-   "officialWebsite": "https://nludelhi.ac.in",
-   "examFee": "₹3,500 (General) • SC/ST/PwD ₹2,500 (अनुमानित)",
-   "latestStatus": "AILET 2027 आवेदन आम तौर पर अगस्त 2026 में खुलते हैं — nludelhi.ac.in चेक करें। AILET 2026 exam 14 दिसंबर 2025 को हुआ।",
-   "overview": "AILET देश के सबसे प्रतिष्ठित law college — NLU Delhi — के BA LLB (Hons.), LLM और PhD programs की entrance exam। NLU Delhi CLAT में हिस्सा नहीं लेता, इसलिए अलग से AILET होता है।",
-   "posts": [
-    "BA LLB (Hons.) — 5 वर्षीय",
-    "LL.M.",
-    "PhD (Law)"
-   ],
-   "eligibility": "12वीं पास (किसी भी stream) — BA LLB के लिए; LLB/LLM — PG के लिए। कोई ऊपरी आयु सीमा नहीं।",
-   "examPattern": [
-    {
-     "stage": "CBT (90 मिनट)",
-     "detail": "150 प्रश्न, 150 अंक — English, GK & Current Affairs, Logical Reasoning, Legal Reasoning, Mathematics (केवल BA LLB)"
-    }
-   ],
-   "syllabus": [
-    "English Language",
-    "General Knowledge & Current Affairs",
-    "Logical Reasoning",
-    "Legal Aptitude & Reasoning",
-    "Basic Mathematics"
-   ],
-   "salary": "— प्रवेश परीक्षा • NLU Delhi से LLB के बाद top law firms, judiciary, litigation",
-   "selectionProcess": "AILET Score → Merit List → Admission"
-  },
-  {
-   "slug": "slat",
-   "name": "SLAT",
-   "emoji": "📚",
-   "fullName": "Symbiosis Law Admission Test (SLS Pune, Noida, Hyderabad, Nagpur)",
-   "tags": [
-    "SLAT",
-    "Symbiosis",
-    "Law Entrance",
-    "Private"
-   ],
-   "officialWebsite": "https://www.sls.edu.in",
-   "examFee": "₹2,250 (प्रति attempt — अनुमानित)",
-   "latestStatus": "SLAT 2027 आवेदन अगस्त-नवंबर 2026 में अपेक्षित — sls.edu.in / getsetadmissions.sls.edu.in देखें। SLAT 2026 दो phases (दिसंबर 2025) में हुआ।",
-   "overview": "SLAT Symbiosis की 4 law schools (Pune, Noida, Hyderabad, Nagpur) में BA LLB (Hons.) और BBA LLB (Hons.) के लिए entrance exam है — देश के best private law colleges में से एक।",
-   "posts": [
-    "BA LLB (Hons.) — 5 वर्षीय",
-    "BBA LLB (Hons.) — 5 वर्षीय"
-   ],
-   "eligibility": "12वीं (किसी भी stream) कम से कम 45%। आवेदन Symbiosis online portal से।",
-   "examPattern": [
-    {
-     "stage": "CBT (2 घंटे)",
-     "detail": "60 प्रश्न, 60 अंक — Logical Reasoning, Legal Reasoning, Analytical Reasoning, Reading Comprehension, GK"
+      "slug": "clat-pg",
+      "name": "CLAT PG",
+      "emoji": "🎓",
+      "fullName": "Common Law Admission Test — Postgraduate (LL.M.)",
+      "tags": [
+        "CLAT PG",
+        "LLM",
+        "NLU",
+        "Law Entrance"
+      ],
+      "officialWebsite": "https://consortiumofnlus.ac.in",
+      "examFee": "₹4,000 (UR) • SC/ST ₹3,500 (अनुमानित)",
+      "latestStatus": "CLAT PG 2027 आवेदन अगस्त-सितंबर 2026 में अपेक्षित — consortiumofnlus.ac.in चेक करें।",
+      "overview": "CLAT PG 25 NLUs में LL.M. (Master of Laws) admission के लिए exam है — law graduates के लिए specialization (Corporate, Criminal, Constitutional Law आदि) का रास्ता।",
+      "posts": [
+        "LL.M. — सभी 25 NLUs में",
+        "विशेष: Constitutional, Corporate, Criminal, Intellectual Property Law"
+      ],
+      "eligibility": "LL.B. (3 या 5 वर्ष) किसी मान्यता प्राप्त university से, कम से कम 50% (UR) / 45% (SC/ST/OBC)।",
+      "examPattern": [
+        {
+          "stage": "CBT (90 मिनट)",
+          "detail": "100 प्रश्न, 150 अंक — Constitutional Law, Jurisprudence, Criminal, Contract, Torts, Property, International Law, Administrative Law"
+        }
+      ],
+      "syllabus": [
+        "Constitutional Law",
+        "Jurisprudence",
+        "Criminal Law",
+        "Contract & Torts",
+        "Property & Administrative Law",
+        "International Law",
+        "Current Legal GK"
+      ],
+      "salary": "— प्रवेश परीक्षा • LLM के बाद academia, litigation, corporate, judiciary",
+      "selectionProcess": "CLAT PG Score → Counselling → Admission"
     },
     {
-     "stage": "Personal Interaction (WAT/PI)",
-     "detail": "SET के बाद SLS में WAT + PI"
-    }
-   ],
-   "syllabus": [
-    "Logical Reasoning",
-    "Legal Reasoning",
-    "Analytical Reasoning",
-    "Reading Comprehension",
-    "General Knowledge"
-   ],
-   "salary": "— प्रवेश परीक्षा • SLS से LLB के बाद litigation, corporate law, judiciary",
-   "selectionProcess": "SLAT Score → WAT/PI → Admission"
-  },
-  {
-   "slug": "mh-cet-law",
-   "name": "MH CET Law",
-   "emoji": "📘",
-   "fullName": "Maharashtra Common Entrance Test for Law (3-yr & 5-yr LLB)",
-   "tags": [
-    "MH CET Law",
-    "Maharashtra",
-    "LLB",
-    "State Exam"
-   ],
-   "officialWebsite": "https://cetcell.mahacet.org",
-   "examFee": "₹800 (UR) • ₹600 (SC/ST/OBC — अनुमानित)",
-   "latestStatus": "MH CET Law 2026 (3-yr LLB अप्रैल, 5-yr LLB मई 2026) हो चुका। अगला cycle 2027 — cetcell.mahacet.org पर notification देखें।",
-   "overview": "MH CET Law महाराष्ट्र के सारे law colleges में 3-year और 5-year LLB admission के लिए state-level entrance exam है — 12वीं के बाद और graduate के बाद दोनों के लिए।",
-   "posts": [
-    "3-Year LLB (graduates के लिए)",
-    "5-Year LLB — BA LLB / BBA LLB / BSL LLB (12वीं के बाद)"
-   ],
-   "eligibility": "5-yr LLB: 12वीं 45% (UR) / 40% (reserved)। 3-yr LLB: Graduate 45% / 40%।",
-   "examPattern": [
-    {
-     "stage": "CBT",
-     "detail": "100 प्रश्न, 100 अंक — Legal Aptitude, GK, Logical & Analytical Reasoning, English, Marathi/Urdu (5-yr); 150 प्रश्न (3-yr)"
-    }
-   ],
-   "syllabus": [
-    "Legal Aptitude & Legal Reasoning",
-    "General Knowledge & Current Affairs",
-    "Logical & Analytical Reasoning",
-    "English",
-    "Marathi / Urdu"
-   ],
-   "salary": "— प्रवेश परीक्षा • LLB के बाद advocate, judiciary, legal officer",
-   "selectionProcess": "MH CET Score → CAP Counselling → Admission"
-  },
-  {
-   "slug": "ap-lawcet",
-   "name": "AP LAWCET",
-   "emoji": "📗",
-   "fullName": "Andhra Pradesh Law Common Entrance Test (3-yr & 5-yr LLB)",
-   "tags": [
-    "AP LAWCET",
-    "Andhra Pradesh",
-    "LLB",
-    "State Exam"
-   ],
-   "officialWebsite": "https://cets.apsche.ap.gov.in",
-   "examFee": "₹950 (UR) • ₹800 (SC/ST/OBC — अनुमानित)",
-   "latestStatus": "AP LAWCET 2026 exam 4 मई 2026 को हुआ, result 18 मई 2026। Counselling जुलाई 2026 से। अगला cycle 2027 में।",
-   "overview": "AP LAWCET आंध्र प्रदेश के law colleges में 3-year और 5-year LLB admission के लिए state exam है — APSCHE के माध्यम से।",
-   "posts": [
-    "3-Year LLB",
-    "5-Year LLB (BA LLB / B.Com LLB / BBA LLB)"
-   ],
-   "eligibility": "5-yr LLB: 12वीं 45% (UR) / 42% (BC) / 40% (SC/ST)। 3-yr LLB: Graduate।",
-   "examPattern": [
-    {
-     "stage": "CBT (90 मिनट)",
-     "detail": "120 प्रश्न, 120 अंक — Aptitude, GK, English, Legal Aptitude"
-    }
-   ],
-   "syllabus": [
-    "Legal Aptitude",
-    "General Knowledge",
-    "English",
-    "Quantitative Aptitude & Reasoning"
-   ],
-   "salary": "— प्रवेश परीक्षा • LLB के बाद advocate, judicial services, corporate",
-   "selectionProcess": "LAWCET Score → Counselling (APSCHE) → Admission"
-  },
-  {
-   "slug": "ts-lawcet",
-   "name": "TS LAWCET",
-   "emoji": "📕",
-   "fullName": "Telangana State Law Common Entrance Test (3-yr & 5-yr LLB)",
-   "tags": [
-    "TS LAWCET",
-    "Telangana",
-    "LLB",
-    "State Exam"
-   ],
-   "officialWebsite": "https://lawcet.tsche.ac.in",
-   "examFee": "₹900 (UR) • ₹800 (SC/ST/OBC — अनुमानित)",
-   "latestStatus": "TS LAWCET 2026 exam 18 मई 2026 को हुआ। Counselling जुलाई 2026 में। अगला cycle 2027 — lawcet.tsche.ac.in देखें।",
-   "overview": "TS LAWCET तेलंगाना के law colleges में 3-year और 5-year LLB admission के लिए state exam है — Osmania University की तरफ से TGCHE के लिए।",
-   "posts": [
-    "3-Year LLB (3YDC)",
-    "5-Year LLB (5YDC — BA LLB, B.Com LLB, BBA LLB)"
-   ],
-   "eligibility": "5-yr LLB: 12वीं 45% (UR) / 42% (BC) / 40% (SC/ST)। 3-yr LLB: Graduate।",
-   "examPattern": [
-    {
-     "stage": "CBT (90 मिनट)",
-     "detail": "120 प्रश्न, 120 अंक — Aptitude, GK, English, Legal Aptitude"
-    }
-   ],
-   "syllabus": [
-    "Legal Aptitude",
-    "General Knowledge",
-    "English",
-    "Quantitative Aptitude & Reasoning"
-   ],
-   "salary": "— प्रवेश परीक्षा • LLB के बाद advocate, judicial services, corporate",
-   "selectionProcess": "LAWCET Score → Counselling (TGCHE) → Admission"
-  },
-  {
-   "slug": "cuet-pg-law",
-   "name": "CUET PG Law",
-   "emoji": "🎯",
-   "fullName": "CUET PG — DU LLB, BHU LLB & University Law Programs",
-   "tags": [
-    "CUET PG",
-    "DU LLB",
-    "BHU LLB",
-    "University"
-   ],
-   "officialWebsite": "https://pgcuet.samarth.ac.in",
-   "examFee": "₹800 (UR) • SC/ST/OBC ₹650 (प्रति subject — अनुमानित)",
-   "latestStatus": "CUET PG 2026 में DU LLB, BHU LLB जैसे university law programs की admission हुई। अगला cycle — exam मार्च 2027 के आसपास।",
-   "overview": "CUET PG अब केंद्रीय विश्वविद्यालयों (Delhi University, BHU आदि) में LLB/LLM programs का common entrance है — एक exam, कई universities।",
-   "posts": [
-    "DU LLB — 3 वर्षीय (Faculty of Law)",
-    "BHU LLB — 3 वर्षीय",
-    "अन्य केंद्रीय विश्वविद्यालयों के LLB/LLM"
-   ],
-   "eligibility": "DU LLB: Graduate (किसी भी विषय)। BHU LLB: Graduate। कुछ programs 12वीं के बाद भी।",
-   "examPattern": [
-    {
-     "stage": "CBT",
-     "detail": "75 प्रश्न, 300 अंक — Legal Studies (जैसा university तय करे)"
-    }
-   ],
-   "syllabus": [
-    "Legal Aptitude & Reasoning",
-    "Constitutional Law Basics",
-    "General Studies",
-    "English"
-   ],
-   "salary": "— प्रवेश परीक्षा • LLB के बाद advocate, judiciary, legal officer",
-   "selectionProcess": "CUET PG Score → University Counselling → Admission"
-  },
-  {
-   "slug": "pcs-j",
-   "name": "PCS-J (Judicial Services)",
-   "emoji": "👨‍⚖️",
-   "fullName": "State Judicial Services Examination (Civil Judge — PCS-J)",
-   "tags": [
-    "PCS-J",
-    "Civil Judge",
-    "Judiciary",
-    "State PSC"
-   ],
-   "officialWebsite": "https://www.upsc.gov.in",
-   "examFee": "₹500-1,000 (UR) • SC/ST छूट — state के अनुसार (अनुमानित)",
-   "latestStatus": "Judicial Services (Civil Judge) भर्तियाँ state-wise चलती रहती हैं — UP, Bihar, MP, Rajasthan, Delhi, Haryana, Punjab, Maharashtra आदि। अपने राज्य की PSC/High Court website पर notification चेक करें।",
-   "overview": "PCS-J (Provincial Civil Services — Judicial) state judiciary में Civil Judge (Junior Division) / Judicial Magistrate बनने की परीक्षा है — law graduate के लिए judge बनने का सबसे बड़ा रास्ता।",
-   "posts": [
-    "Civil Judge (Junior Division)",
-    "Judicial Magistrate (JM)",
-    "Munsif Magistrate (कुछ राज्य)"
-   ],
-   "eligibility": "LL.B. (3/5 वर्ष) किसी मान्यता प्राप्त university से। Advocates Act के तहत practice eligible (अधिकांश राज्य)। आयु: 21-35 वर्ष (श्रेणी छूट)।",
-   "examPattern": [
-    {
-     "stage": "Prelims",
-     "detail": "वस्तुनिष्ठ प्रश्न — Law subjects, GK, Hindi/English"
+      "slug": "ailet",
+      "name": "AILET",
+      "emoji": "🏛️",
+      "fullName": "All India Law Entrance Test — NLU Delhi",
+      "tags": [
+        "AILET",
+        "NLU Delhi",
+        "BA LLB",
+        "Law Entrance"
+      ],
+      "officialWebsite": "https://nludelhi.ac.in",
+      "examFee": "₹3,500 (General) • SC/ST/PwD ₹2,500 (अनुमानित)",
+      "latestStatus": "AILET 2027 आवेदन आम तौर पर अगस्त 2026 में खुलते हैं — nludelhi.ac.in चेक करें। AILET 2026 exam 14 दिसंबर 2025 को हुआ।",
+      "overview": "AILET देश के सबसे प्रतिष्ठित law college — NLU Delhi — के BA LLB (Hons.), LLM और PhD programs की entrance exam। NLU Delhi CLAT में हिस्सा नहीं लेता, इसलिए अलग से AILET होता है।",
+      "posts": [
+        "BA LLB (Hons.) — 5 वर्षीय",
+        "LL.M.",
+        "PhD (Law)"
+      ],
+      "eligibility": "12वीं पास (किसी भी stream) — BA LLB के लिए; LLB/LLM — PG के लिए। कोई ऊपरी आयु सीमा नहीं।",
+      "examPattern": [
+        {
+          "stage": "CBT (90 मिनट)",
+          "detail": "150 प्रश्न, 150 अंक — English, GK & Current Affairs, Logical Reasoning, Legal Reasoning, Mathematics (केवल BA LLB)"
+        }
+      ],
+      "syllabus": [
+        "English Language",
+        "General Knowledge & Current Affairs",
+        "Logical Reasoning",
+        "Legal Aptitude & Reasoning",
+        "Basic Mathematics"
+      ],
+      "salary": "— प्रवेश परीक्षा • NLU Delhi से LLB के बाद top law firms, judiciary, litigation",
+      "selectionProcess": "AILET Score → Merit List → Admission"
     },
     {
-     "stage": "Mains",
-     "detail": "वर्णनात्मक — Law Paper I, II, III + भाषा papers"
+      "slug": "slat",
+      "name": "SLAT",
+      "emoji": "📚",
+      "fullName": "Symbiosis Law Admission Test (SLS Pune, Noida, Hyderabad, Nagpur)",
+      "tags": [
+        "SLAT",
+        "Symbiosis",
+        "Law Entrance",
+        "Private"
+      ],
+      "officialWebsite": "https://www.sls.edu.in",
+      "examFee": "₹2,250 (प्रति attempt — अनुमानित)",
+      "latestStatus": "SLAT 2027 आवेदन अगस्त-नवंबर 2026 में अपेक्षित — sls.edu.in / getsetadmissions.sls.edu.in देखें। SLAT 2026 दो phases (दिसंबर 2025) में हुआ।",
+      "overview": "SLAT Symbiosis की 4 law schools (Pune, Noida, Hyderabad, Nagpur) में BA LLB (Hons.) और BBA LLB (Hons.) के लिए entrance exam है — देश के best private law colleges में से एक।",
+      "posts": [
+        "BA LLB (Hons.) — 5 वर्षीय",
+        "BBA LLB (Hons.) — 5 वर्षीय"
+      ],
+      "eligibility": "12वीं (किसी भी stream) कम से कम 45%। आवेदन Symbiosis online portal से।",
+      "examPattern": [
+        {
+          "stage": "CBT (2 घंटे)",
+          "detail": "60 प्रश्न, 60 अंक — Logical Reasoning, Legal Reasoning, Analytical Reasoning, Reading Comprehension, GK"
+        },
+        {
+          "stage": "Personal Interaction (WAT/PI)",
+          "detail": "SET के बाद SLS में WAT + PI"
+        }
+      ],
+      "syllabus": [
+        "Logical Reasoning",
+        "Legal Reasoning",
+        "Analytical Reasoning",
+        "Reading Comprehension",
+        "General Knowledge"
+      ],
+      "salary": "— प्रवेश परीक्षा • SLS से LLB के बाद litigation, corporate law, judiciary",
+      "selectionProcess": "SLAT Score → WAT/PI → Admission"
     },
     {
-     "stage": "Interview",
-     "detail": "Viva-voce — High Court / PSC board"
+      "slug": "mh-cet-law",
+      "name": "MH CET Law",
+      "emoji": "📘",
+      "fullName": "Maharashtra Common Entrance Test for Law (3-yr & 5-yr LLB)",
+      "tags": [
+        "MH CET Law",
+        "Maharashtra",
+        "LLB",
+        "State Exam"
+      ],
+      "officialWebsite": "https://cetcell.mahacet.org",
+      "examFee": "₹800 (UR) • ₹600 (SC/ST/OBC — अनुमानित)",
+      "latestStatus": "MH CET Law 2026 (3-yr LLB अप्रैल, 5-yr LLB मई 2026) हो चुका। अगला cycle 2027 — cetcell.mahacet.org पर notification देखें।",
+      "overview": "MH CET Law महाराष्ट्र के सारे law colleges में 3-year और 5-year LLB admission के लिए state-level entrance exam है — 12वीं के बाद और graduate के बाद दोनों के लिए।",
+      "posts": [
+        "3-Year LLB (graduates के लिए)",
+        "5-Year LLB — BA LLB / BBA LLB / BSL LLB (12वीं के बाद)"
+      ],
+      "eligibility": "5-yr LLB: 12वीं 45% (UR) / 40% (reserved)। 3-yr LLB: Graduate 45% / 40%।",
+      "examPattern": [
+        {
+          "stage": "CBT",
+          "detail": "100 प्रश्न, 100 अंक — Legal Aptitude, GK, Logical & Analytical Reasoning, English, Marathi/Urdu (5-yr); 150 प्रश्न (3-yr)"
+        }
+      ],
+      "syllabus": [
+        "Legal Aptitude & Legal Reasoning",
+        "General Knowledge & Current Affairs",
+        "Logical & Analytical Reasoning",
+        "English",
+        "Marathi / Urdu"
+      ],
+      "salary": "— प्रवेश परीक्षा • LLB के बाद advocate, judiciary, legal officer",
+      "selectionProcess": "MH CET Score → CAP Counselling → Admission"
+    },
+    {
+      "slug": "ap-lawcet",
+      "name": "AP LAWCET",
+      "emoji": "📗",
+      "fullName": "Andhra Pradesh Law Common Entrance Test (3-yr & 5-yr LLB)",
+      "tags": [
+        "AP LAWCET",
+        "Andhra Pradesh",
+        "LLB",
+        "State Exam"
+      ],
+      "officialWebsite": "https://cets.apsche.ap.gov.in",
+      "examFee": "₹950 (UR) • ₹800 (SC/ST/OBC — अनुमानित)",
+      "latestStatus": "AP LAWCET 2026 exam 4 मई 2026 को हुआ, result 18 मई 2026। Counselling जुलाई 2026 से। अगला cycle 2027 में।",
+      "overview": "AP LAWCET आंध्र प्रदेश के law colleges में 3-year और 5-year LLB admission के लिए state exam है — APSCHE के माध्यम से।",
+      "posts": [
+        "3-Year LLB",
+        "5-Year LLB (BA LLB / B.Com LLB / BBA LLB)"
+      ],
+      "eligibility": "5-yr LLB: 12वीं 45% (UR) / 42% (BC) / 40% (SC/ST)। 3-yr LLB: Graduate।",
+      "examPattern": [
+        {
+          "stage": "CBT (90 मिनट)",
+          "detail": "120 प्रश्न, 120 अंक — Aptitude, GK, English, Legal Aptitude"
+        }
+      ],
+      "syllabus": [
+        "Legal Aptitude",
+        "General Knowledge",
+        "English",
+        "Quantitative Aptitude & Reasoning"
+      ],
+      "salary": "— प्रवेश परीक्षा • LLB के बाद advocate, judicial services, corporate",
+      "selectionProcess": "LAWCET Score → Counselling (APSCHE) → Admission"
+    },
+    {
+      "slug": "ts-lawcet",
+      "name": "TS LAWCET",
+      "emoji": "📕",
+      "fullName": "Telangana State Law Common Entrance Test (3-yr & 5-yr LLB)",
+      "tags": [
+        "TS LAWCET",
+        "Telangana",
+        "LLB",
+        "State Exam"
+      ],
+      "officialWebsite": "https://lawcet.tsche.ac.in",
+      "examFee": "₹900 (UR) • ₹800 (SC/ST/OBC — अनुमानित)",
+      "latestStatus": "TS LAWCET 2026 exam 18 मई 2026 को हुआ। Counselling जुलाई 2026 में। अगला cycle 2027 — lawcet.tsche.ac.in देखें।",
+      "overview": "TS LAWCET तेलंगाना के law colleges में 3-year और 5-year LLB admission के लिए state exam है — Osmania University की तरफ से TGCHE के लिए।",
+      "posts": [
+        "3-Year LLB (3YDC)",
+        "5-Year LLB (5YDC — BA LLB, B.Com LLB, BBA LLB)"
+      ],
+      "eligibility": "5-yr LLB: 12वीं 45% (UR) / 42% (BC) / 40% (SC/ST)। 3-yr LLB: Graduate।",
+      "examPattern": [
+        {
+          "stage": "CBT (90 मिनट)",
+          "detail": "120 प्रश्न, 120 अंक — Aptitude, GK, English, Legal Aptitude"
+        }
+      ],
+      "syllabus": [
+        "Legal Aptitude",
+        "General Knowledge",
+        "English",
+        "Quantitative Aptitude & Reasoning"
+      ],
+      "salary": "— प्रवेश परीक्षा • LLB के बाद advocate, judicial services, corporate",
+      "selectionProcess": "LAWCET Score → Counselling (TGCHE) → Admission"
+    },
+    {
+      "slug": "cuet-pg-law",
+      "name": "CUET PG Law",
+      "emoji": "🎯",
+      "fullName": "CUET PG — DU LLB, BHU LLB & University Law Programs",
+      "tags": [
+        "CUET PG",
+        "DU LLB",
+        "BHU LLB",
+        "University"
+      ],
+      "officialWebsite": "https://pgcuet.samarth.ac.in",
+      "examFee": "₹800 (UR) • SC/ST/OBC ₹650 (प्रति subject — अनुमानित)",
+      "latestStatus": "CUET PG 2026 में DU LLB, BHU LLB जैसे university law programs की admission हुई। अगला cycle — exam मार्च 2027 के आसपास।",
+      "overview": "CUET PG अब केंद्रीय विश्वविद्यालयों (Delhi University, BHU आदि) में LLB/LLM programs का common entrance है — एक exam, कई universities।",
+      "posts": [
+        "DU LLB — 3 वर्षीय (Faculty of Law)",
+        "BHU LLB — 3 वर्षीय",
+        "अन्य केंद्रीय विश्वविद्यालयों के LLB/LLM"
+      ],
+      "eligibility": "DU LLB: Graduate (किसी भी विषय)। BHU LLB: Graduate। कुछ programs 12वीं के बाद भी।",
+      "examPattern": [
+        {
+          "stage": "CBT",
+          "detail": "75 प्रश्न, 300 अंक — Legal Studies (जैसा university तय करे)"
+        }
+      ],
+      "syllabus": [
+        "Legal Aptitude & Reasoning",
+        "Constitutional Law Basics",
+        "General Studies",
+        "English"
+      ],
+      "salary": "— प्रवेश परीक्षा • LLB के बाद advocate, judiciary, legal officer",
+      "selectionProcess": "CUET PG Score → University Counselling → Admission"
+    },
+    {
+      "slug": "pcs-j",
+      "name": "PCS-J (Judicial Services)",
+      "emoji": "👨‍⚖️",
+      "fullName": "State Judicial Services Examination (Civil Judge — PCS-J)",
+      "tags": [
+        "PCS-J",
+        "Civil Judge",
+        "Judiciary",
+        "State PSC"
+      ],
+      "officialWebsite": "https://www.upsc.gov.in",
+      "examFee": "₹500-1,000 (UR) • SC/ST छूट — state के अनुसार (अनुमानित)",
+      "latestStatus": "Judicial Services (Civil Judge) भर्तियाँ state-wise चलती रहती हैं — UP, Bihar, MP, Rajasthan, Delhi, Haryana, Punjab, Maharashtra आदि। अपने राज्य की PSC/High Court website पर notification चेक करें।",
+      "overview": "PCS-J (Provincial Civil Services — Judicial) state judiciary में Civil Judge (Junior Division) / Judicial Magistrate बनने की परीक्षा है — law graduate के लिए judge बनने का सबसे बड़ा रास्ता।",
+      "posts": [
+        "Civil Judge (Junior Division)",
+        "Judicial Magistrate (JM)",
+        "Munsif Magistrate (कुछ राज्य)"
+      ],
+      "eligibility": "LL.B. (3/5 वर्ष) किसी मान्यता प्राप्त university से। Advocates Act के तहत practice eligible (अधिकांश राज्य)। आयु: 21-35 वर्ष (श्रेणी छूट)।",
+      "examPattern": [
+        {
+          "stage": "Prelims",
+          "detail": "वस्तुनिष्ठ प्रश्न — Law subjects, GK, Hindi/English"
+        },
+        {
+          "stage": "Mains",
+          "detail": "वर्णनात्मक — Law Paper I, II, III + भाषा papers"
+        },
+        {
+          "stage": "Interview",
+          "detail": "Viva-voce — High Court / PSC board"
+        }
+      ],
+      "syllabus": [
+        "Indian Penal Code (IPC)",
+        "Code of Civil Procedure (CPC)",
+        "Code of Criminal Procedure (CrPC)",
+        "Constitutional Law",
+        "Evidence Act",
+        "Transfer of Property Act",
+        "State-specific laws"
+      ],
+      "salary": "Level 10+ — ₹77,840 बेसिक + allowances (जैसा राज्य तय करे)",
+      "selectionProcess": "Prelims → Mains → Interview → Medical"
+    },
+    {
+      "slug": "upsc-law-officer",
+      "name": "UPSC Law Officer",
+      "emoji": "🏢",
+      "fullName": "UPSC Law Officer / Legal Advisor / Prosecutor Recruitment",
+      "tags": [
+        "UPSC",
+        "Law Officer",
+        "Legal Advisor",
+        "Central Govt"
+      ],
+      "officialWebsite": "https://www.upsc.gov.in",
+      "examFee": "₹100 (UR) • SC/ST/PwD/महिला मुक्त (UPSC)",
+      "latestStatus": "UPSC Legal Officer / Company Prosecutor भर्ती (Advt 07/2026) — आवेदन 17 जुलाई 2026 तक। नए notifications के लिए upsc.gov.in देखें।",
+      "overview": "UPSC केंद्र सरकार के ministry/department में Law Officer, Assistant Legal Advisor, Company Prosecutor, Public Prosecutor जैसे posts पर भर्तियाँ करता है — law graduates के लिए central government का रास्ता।",
+      "posts": [
+        "Law Officer",
+        "Assistant Legal Advisor",
+        "Company Prosecutor",
+        "Assistant Public Prosecutor",
+        "Examiner of Trade Marks & GI"
+      ],
+      "eligibility": "LL.B. + relevant experience (post के अनुसार)। आयु: 30-35 वर्ष (post के अनुसार, श्रेणी छूट)।",
+      "examPattern": [
+        {
+          "stage": "Written / Screening",
+          "detail": "Law subjects पर वस्तुनिष्ठ/वर्णनात्मक test"
+        },
+        {
+          "stage": "Interview",
+          "detail": "UPSC Personality Test / board interview"
+        }
+      ],
+      "syllabus": [
+        "Constitutional Law",
+        "CrPC & IPC",
+        "CPC",
+        "Company Law",
+        "Evidence Act",
+        "Administrative Law"
+      ],
+      "salary": "Level 10+ — ₹56,100 से ₹1,77,500 (7th CPC) + allowances",
+      "selectionProcess": "Written → Interview → DV"
+    },
+    {
+      "slug": "legal-officer-bank",
+      "name": "Bank Legal Officer",
+      "emoji": "🏦",
+      "fullName": "RBI / IBPS SO / LIC Legal Officer Recruitment",
+      "tags": [
+        "Banking Law",
+        "Legal Officer",
+        "IBPS SO",
+        "RBI"
+      ],
+      "officialWebsite": "https://www.ibps.in",
+      "examFee": "₹850 (UR) • ₹175 (SC/ST/PwD — IBPS नियम)",
+      "latestStatus": "RBI, IBPS SO, LIC जैसी भर्तियों में Legal Officer posts नियमित रूप से निकलते हैं — rbi.org.in, ibps.in, licindia.in पर अगले cycle का notification देखें।",
+      "overview": "बैंकों और वित्तीय संस्थानों (RBI, IBPS Specialist Officer, LIC) में Legal Officer बनने की भर्ती — law graduate के लिए banking sector की सबसे अच्छी नौकरी।",
+      "posts": [
+        "Legal Officer (IBPS SO)",
+        "RBI Legal Officer (Grade B)",
+        "LIC AAO/ADO — Legal",
+        "PSU Bank Legal Officers"
+      ],
+      "eligibility": "LL.B. (3/5 वर्ष) + कुछ posts में experience। आयु: 20-30 वर्ष (IBPS), 21-30 (RBI — श्रेणी छूट)।",
+      "examPattern": [
+        {
+          "stage": "Prelims (SO)",
+          "detail": "English, Reasoning, Quantitative Aptitude (qualifying)"
+        },
+        {
+          "stage": "Mains (Professional)",
+          "detail": "Law subjects का Professional Knowledge paper"
+        },
+        {
+          "stage": "Interview",
+          "detail": "व्यक्तिगत साक्षात्कार"
+        }
+      ],
+      "syllabus": [
+        "Banking Law & Practice",
+        "Company Law",
+        "Contract Act",
+        "Transfer of Property",
+        "CrPC/CPC basics",
+        "SEBI/RBI Regulations"
+      ],
+      "salary": "Level 7+ — ₹48,480 बेसिक (RBI Grade B तक ₹56,100) + allowances",
+      "selectionProcess": "Prelims → Mains → Interview → Medical"
+    },
+    {
+      "slug": "law-clerk-hc",
+      "name": "Law Clerk (HC/SC)",
+      "emoji": "📜",
+      "fullName": "Supreme Court / High Court Law Clerk-cum-Research Assistant",
+      "tags": [
+        "Law Clerk",
+        "Supreme Court",
+        "High Court",
+        "Research"
+      ],
+      "officialWebsite": "https://www.sci.gov.in",
+      "examFee": "आम तौर पर नाममात्र/मुक्त (जैसा court तय करे)",
+      "latestStatus": "सुप्रीम कोर्ट और High Courts में Law Clerk-cum-Research Assistant भर्तियाँ समय-समय पर निकलती हैं — sci.gov.in और अपने state High Court की website देखें।",
+      "overview": "सुप्रीम कोर्ट और High Courts हर साल Law Clerk-cum-Research Assistant चुनते हैं — judges के साथ research और drafting का शानदार अनुभव, law graduates के लिए।",
+      "posts": [
+        "Law Clerk-cum-Research Assistant (SC)",
+        "Law Clerk (High Courts)"
+      ],
+      "eligibility": "LL.B. (fresh graduates को प्राथमिकता)। आयु: 30 वर्ष तक (सामान्य)।",
+      "examPattern": [
+        {
+          "stage": "Written Test",
+          "detail": "Law subjects पर वस्तुनिष्ठ/वर्णनात्मक"
+        },
+        {
+          "stage": "Interview",
+          "detail": "Court committee interview"
+        }
+      ],
+      "syllabus": [
+        "Constitutional Law",
+        "Criminal & Civil Procedure",
+        "Contract Law",
+        "Torts",
+        "Legal Writing & Research"
+      ],
+      "salary": "₹50,000-60,000/माह (stipend/remuneration — court के अनुसार)",
+      "selectionProcess": "Written → Interview → DV"
     }
-   ],
-   "syllabus": [
-    "Indian Penal Code (IPC)",
-    "Code of Civil Procedure (CPC)",
-    "Code of Criminal Procedure (CrPC)",
-    "Constitutional Law",
-    "Evidence Act",
-    "Transfer of Property Act",
-    "State-specific laws"
-   ],
-   "salary": "Level 10+ — ₹77,840 बेसिक + allowances (जैसा राज्य तय करे)",
-   "selectionProcess": "Prelims → Mains → Interview → Medical"
-  },
-  {
-   "slug": "upsc-law-officer",
-   "name": "UPSC Law Officer",
-   "emoji": "🏢",
-   "fullName": "UPSC Law Officer / Legal Advisor / Prosecutor Recruitment",
-   "tags": [
-    "UPSC",
-    "Law Officer",
-    "Legal Advisor",
-    "Central Govt"
-   ],
-   "officialWebsite": "https://www.upsc.gov.in",
-   "examFee": "₹100 (UR) • SC/ST/PwD/महिला मुक्त (UPSC)",
-   "latestStatus": "UPSC Legal Officer / Company Prosecutor भर्ती (Advt 07/2026) — आवेदन 17 जुलाई 2026 तक। नए notifications के लिए upsc.gov.in देखें।",
-   "overview": "UPSC केंद्र सरकार के ministry/department में Law Officer, Assistant Legal Advisor, Company Prosecutor, Public Prosecutor जैसे posts पर भर्तियाँ करता है — law graduates के लिए central government का रास्ता।",
-   "posts": [
-    "Law Officer",
-    "Assistant Legal Advisor",
-    "Company Prosecutor",
-    "Assistant Public Prosecutor",
-    "Examiner of Trade Marks & GI"
-   ],
-   "eligibility": "LL.B. + relevant experience (post के अनुसार)। आयु: 30-35 वर्ष (post के अनुसार, श्रेणी छूट)।",
-   "examPattern": [
+  ],
+  "orgs": [
     {
-     "stage": "Written / Screening",
-     "detail": "Law subjects पर वस्तुनिष्ठ/वर्णनात्मक test"
+      "name": "Consortium of NLUs",
+      "site": "https://consortiumofnlus.ac.in"
     },
     {
-     "stage": "Interview",
-     "detail": "UPSC Personality Test / board interview"
+      "name": "NLU Delhi (AILET)",
+      "site": "https://nludelhi.ac.in"
+    },
+    {
+      "name": "Symbiosis Law Schools",
+      "site": "https://www.sls.edu.in"
+    },
+    {
+      "name": "CET Cell Maharashtra",
+      "site": "https://cetcell.mahacet.org"
+    },
+    {
+      "name": "APSCHE (AP LAWCET)",
+      "site": "https://cets.apsche.ap.gov.in"
+    },
+    {
+      "name": "TGCHE (TS LAWCET)",
+      "site": "https://lawcet.tsche.ac.in"
     }
-   ],
-   "syllabus": [
-    "Constitutional Law",
-    "CrPC & IPC",
-    "CPC",
-    "Company Law",
-    "Evidence Act",
-    "Administrative Law"
-   ],
-   "salary": "Level 10+ — ₹56,100 से ₹1,77,500 (7th CPC) + allowances",
-   "selectionProcess": "Written → Interview → DV"
+  ],
+  "hero": {
+    "badge": "⚖️ न्यायिक विभाग भर्ती",
+    "title": "Judiciary Exams Center",
+    "subtitle": "AIIMS NORCET, RRB Staff Nurse, NHM, ESIC, UP CHO — सभी health exams की पूरी जानकारी एक जगह। Posts, Eligibility, Exam Pattern, Salary।",
+    "gradient": "linear-gradient(135deg,#422006,#ca8a04)"
   },
-  {
-   "slug": "legal-officer-bank",
-   "name": "Bank Legal Officer",
-   "emoji": "🏦",
-   "fullName": "RBI / IBPS SO / LIC Legal Officer Recruitment",
-   "tags": [
-    "Banking Law",
-    "Legal Officer",
-    "IBPS SO",
-    "RBI"
-   ],
-   "officialWebsite": "https://www.ibps.in",
-   "examFee": "₹850 (UR) • ₹175 (SC/ST/PwD — IBPS नियम)",
-   "latestStatus": "RBI, IBPS SO, LIC जैसी भर्तियों में Legal Officer posts नियमित रूप से निकलते हैं — rbi.org.in, ibps.in, licindia.in पर अगले cycle का notification देखें।",
-   "overview": "बैंकों और वित्तीय संस्थानों (RBI, IBPS Specialist Officer, LIC) में Legal Officer बनने की भर्ती — law graduate के लिए banking sector की सबसे अच्छी नौकरी।",
-   "posts": [
-    "Legal Officer (IBPS SO)",
-    "RBI Legal Officer (Grade B)",
-    "LIC AAO/ADO — Legal",
-    "PSU Bank Legal Officers"
-   ],
-   "eligibility": "LL.B. (3/5 वर्ष) + कुछ posts में experience। आयु: 20-30 वर्ष (IBPS), 21-30 (RBI — श्रेणी छूट)।",
-   "examPattern": [
-    {
-     "stage": "Prelims (SO)",
-     "detail": "English, Reasoning, Quantitative Aptitude (qualifying)"
-    },
-    {
-     "stage": "Mains (Professional)",
-     "detail": "Law subjects का Professional Knowledge paper"
-    },
-    {
-     "stage": "Interview",
-     "detail": "व्यक्तिगत साक्षात्कार"
-    }
-   ],
-   "syllabus": [
-    "Banking Law & Practice",
-    "Company Law",
-    "Contract Act",
-    "Transfer of Property",
-    "CrPC/CPC basics",
-    "SEBI/RBI Regulations"
-   ],
-   "salary": "Level 7+ — ₹48,480 बेसिक (RBI Grade B तक ₹56,100) + allowances",
-   "selectionProcess": "Prelims → Mains → Interview → Medical"
-  },
-  {
-   "slug": "law-clerk-hc",
-   "name": "Law Clerk (HC/SC)",
-   "emoji": "📜",
-   "fullName": "Supreme Court / High Court Law Clerk-cum-Research Assistant",
-   "tags": [
-    "Law Clerk",
-    "Supreme Court",
-    "High Court",
-    "Research"
-   ],
-   "officialWebsite": "https://www.sci.gov.in",
-   "examFee": "आम तौर पर नाममात्र/मुक्त (जैसा court तय करे)",
-   "latestStatus": "सुप्रीम कोर्ट और High Courts में Law Clerk-cum-Research Assistant भर्तियाँ समय-समय पर निकलती हैं — sci.gov.in और अपने state High Court की website देखें।",
-   "overview": "सुप्रीम कोर्ट और High Courts हर साल Law Clerk-cum-Research Assistant चुनते हैं — judges के साथ research और drafting का शानदार अनुभव, law graduates के लिए।",
-   "posts": [
-    "Law Clerk-cum-Research Assistant (SC)",
-    "Law Clerk (High Courts)"
-   ],
-   "eligibility": "LL.B. (fresh graduates को प्राथमिकता)। आयु: 30 वर्ष तक (सामान्य)।",
-   "examPattern": [
-    {
-     "stage": "Written Test",
-     "detail": "Law subjects पर वस्तुनिष्ठ/वर्णनात्मक"
-    },
-    {
-     "stage": "Interview",
-     "detail": "Court committee interview"
-    }
-   ],
-   "syllabus": [
-    "Constitutional Law",
-    "Criminal & Civil Procedure",
-    "Contract Law",
-    "Torts",
-    "Legal Writing & Research"
-   ],
-   "salary": "₹50,000-60,000/माह (stipend/remuneration — court के अनुसार)",
-   "selectionProcess": "Written → Interview → DV"
-  }
- ],
- "orgs": [
-  {
-   "name": "Consortium of NLUs",
-   "site": "https://consortiumofnlus.ac.in"
-  },
-  {
-   "name": "NLU Delhi (AILET)",
-   "site": "https://nludelhi.ac.in"
-  },
-  {
-   "name": "Symbiosis Law Schools",
-   "site": "https://www.sls.edu.in"
-  },
-  {
-   "name": "CET Cell Maharashtra",
-   "site": "https://cetcell.mahacet.org"
-  },
-  {
-   "name": "APSCHE (AP LAWCET)",
-   "site": "https://cets.apsche.ap.gov.in"
-  },
-  {
-   "name": "TGCHE (TS LAWCET)",
-   "site": "https://lawcet.tsche.ac.in"
-  }
- ]
+  "quickLinks": [
+    [
+      "/results",
+      "🏆 Judiciary Results"
+    ],
+    [
+      "/admit-cards",
+      "📄 Admit Card"
+    ],
+    [
+      "/category/judiciary-environment",
+      "⚖️ All Judiciary Exams"
+    ],
+    [
+      "/syllabus",
+      "📚 Syllabus"
+    ],
+    [
+      "/notifications",
+      "🔔 Updates"
+    ],
+    [
+      "/search",
+      "🔍 Search Exams"
+    ]
+  ],
+  "statsCards": [
+    [
+      "📋",
+      12,
+      "Major Exams"
+    ],
+    [
+      "⚖️",
+      "50+",
+      "Judiciary Orgs"
+    ],
+    [
+      "🪖",
+      "3L+",
+      "Judiciary Posts"
+    ]
+  ]
 }
