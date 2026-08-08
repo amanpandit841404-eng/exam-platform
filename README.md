@@ -35,3 +35,5 @@ India's Modern Exam Results Platform
 - (deploy trigger)
 
 - (deploy trigger)
+
+- (deploy trigger)
