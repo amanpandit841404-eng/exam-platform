@@ -1,0 +1,543 @@
+{
+ "updated": "2026-08-08",
+ "note": "सभी जानकारी अनुमानित/संकेतात्मक है। हर PSU की भर्ती, fee, age limit और pattern अपने-अपने होते हैं — हमेशा उस PSU की official website पर notification ज़रूर चेक करें। कई PSUs GATE score से भी भर्ती करते हैं।",
+ "stats": {
+  "exams": 12,
+  "psus": 90,
+  "gate": 5
+ },
+ "exams": [
+  {
+   "slug": "iocl",
+   "name": "IOCL",
+   "emoji": "⛽",
+   "fullName": "Indian Oil Corporation — Non-Executive & Apprentice Recruitment",
+   "tags": [
+    "10th/ITI/Diploma",
+    "Oil Sector",
+    "Pan India"
+   ],
+   "officialWebsite": "https://www.iocl.com",
+   "examFee": "₹300 (UR/OBC) • SC/ST/PwD मुक्त (अनुमानित)",
+   "latestStatus": "IOCL अगली भर्ती का इंतज़ार है। पिछली भर्ती 2025 में हुई — iocl.com पर career चेक करें।",
+   "overview": "IOCL देश की सबसे बड़ी oil company है — JE, Attendant (Technical), Trade Apprentice, Accountant जैसे posts के लिए भर्ती करती है। स्थिर नौकरी और बेहतरीन salary package।",
+   "posts": [
+    "Junior Engineering Assistant (JE-IV)",
+    "Attendant (Technical)",
+    "Trade Apprentice"
+   ],
+   "eligibility": "10th/ITI/Diploma/B.Sc (post के हिसाब से)। आयु: 18-26/30 वर्ष (आरक्षित छूट)।",
+   "examPattern": [
+    {
+     "stage": "CBT",
+     "detail": "100 प्रश्न — Technical + General Aptitude"
+    },
+    {
+     "stage": "Skill Test / DV",
+     "detail": "जहाँ applicable + Document Verification"
+    }
+   ],
+   "syllabus": [
+    "Technical (अपने trade का)",
+    "General Awareness",
+    "Numerical Ability",
+    "Reasoning"
+   ],
+   "salary": "Level 5-7 — ₹29,200-44,900 बेसिक + IOCL allowances",
+   "selectionProcess": "CBT → Skill Test → DV"
+  },
+  {
+   "slug": "ongc",
+   "name": "ONGC",
+   "emoji": "🛢️",
+   "fullName": "Oil and Natural Gas Corporation — Non-Executive Recruitment",
+   "tags": [
+    "10th/ITI/Diploma",
+    "Oil & Gas",
+    "High Salary"
+   ],
+   "officialWebsite": "https://www.ongcindia.com",
+   "examFee": "₹500 (UR/OBC) • SC/ST/PwD मुक्त (अनुमानित)",
+   "latestStatus": "ONGC अगली non-executive भर्ती का इंतज़ार है। पिछली भर्ती 2025 में हुई — ongcindia.com चेक करें।",
+   "overview": "ONGC भारत की सबसे बड़ी oil & gas producer है — JE, Technician, Assistant (HR/Finance) जैसे posts के लिए भर्ती करती है। PSU में सबसे अच्छी salary में से एक।",
+   "posts": [
+    "Junior Engineering Assistant",
+    "Technician",
+    "Assistant (HR/Finance)"
+   ],
+   "eligibility": "10th + ITI / Diploma / Graduate (post के हिसाब से)। आयु: 18-30 वर्ष।",
+   "examPattern": [
+    {
+     "stage": "CBT",
+     "detail": "100 प्रश्न — Technical/Discipline + General Aptitude"
+    },
+    {
+     "stage": "Skill Test / DV",
+     "detail": "जहाँ applicable"
+    }
+   ],
+   "syllabus": [
+    "Technical (अपने discipline का)",
+    "General Awareness",
+    "Numerical Ability",
+    "Reasoning"
+   ],
+   "salary": "Level 5-8 — ₹29,200-47,600 बेसिक + ONGC allowances",
+   "selectionProcess": "CBT → Skill Test → DV"
+  },
+  {
+   "slug": "bhel",
+   "name": "BHEL",
+   "emoji": "⚙️",
+   "fullName": "Bharat Heavy Electricals Limited — Apprentice & Trainee",
+   "tags": [
+    "ITI/Diploma",
+    "Engineering",
+    "Apprentice"
+   ],
+   "officialWebsite": "https://www.bhel.com",
+   "examFee": "₹100-500 (post के हिसाब से) — अनुमानित",
+   "latestStatus": "BHEL अगली भर्ती का इंतज़ार है। पिछली भर्ती 2025 में हुई — bhel.com पर career चेक करें।",
+   "overview": "BHEL देश की सबसे बड़ी power equipment manufacturer है — Trade Apprentice, Graduate/Diploma Apprentice और Supervisor Trainee के लिए भर्ती करती है।",
+   "posts": [
+    "Trade Apprentice (ITI)",
+    "Graduate Apprentice",
+    "Diploma Apprentice",
+    "Supervisor Trainee"
+   ],
+   "eligibility": "ITI / Diploma / Graduate। आयु: 18-27 वर्ष।",
+   "examPattern": [
+    {
+     "stage": "CBT",
+     "detail": "Technical + General Aptitude"
+    },
+    {
+     "stage": "DV",
+     "detail": "Document Verification"
+    }
+   ],
+   "syllabus": [
+    "Technical (अपने trade का)",
+    "General Awareness",
+    "Numerical Ability",
+    "Reasoning"
+   ],
+   "salary": "Apprentice stipend ₹7,000-14,000/माह; Trainee बाद में Level 6+ ₹35,400+",
+   "selectionProcess": "CBT → DV"
+  },
+  {
+   "slug": "ntpc",
+   "name": "NTPC",
+   "emoji": "⚡",
+   "fullName": "NTPC Limited — Executive Trainee (GATE) & Diploma Trainee",
+   "tags": [
+    "B.Tech/GATE",
+    "Diploma",
+    "Power Sector"
+   ],
+   "officialWebsite": "https://www.ntpc.co.in",
+   "examFee": "₹300 (UR/OBC) • SC/ST/PwD मुक्त (अनुमानित)",
+   "latestStatus": "NTPC अगली भर्ती का इंतज़ार है। पिछली भर्ती 2025 में हुई — ntpc.co.in पर career चेक करें।",
+   "overview": "NTPC देश की सबसे बड़ी power generation company है — Executive Trainee के लिए GATE score और Diploma holders के लिए Diploma Trainee/AE भर्ती करती है।",
+   "posts": [
+    "Executive Trainee (GATE)",
+    "Diploma Trainee / Assistant Engineer",
+    "Junior Engineer"
+   ],
+   "eligibility": "B.E./B.Tech (GATE) / Diploma। आयु: 18-30 वर्ष।",
+   "examPattern": [
+    {
+     "stage": "GATE Score",
+     "detail": "Executive Trainee — GATE valid score"
+    },
+    {
+     "stage": "CBT (Diploma posts)",
+     "detail": "Technical + Aptitude"
+    },
+    {
+     "stage": "Interview + DV",
+     "detail": "Executive Trainee के लिए"
+    }
+   ],
+   "syllabus": [
+    "Engineering Discipline",
+    "General Aptitude",
+    "Technical (Diploma posts)"
+   ],
+   "salary": "ET — Level 9 ₹56,100; JE — Level 6 ₹35,400+",
+   "selectionProcess": "GATE/CBT → Interview → DV"
+  },
+  {
+   "slug": "sail",
+   "name": "SAIL",
+   "emoji": "🏗️",
+   "fullName": "Steel Authority of India — Management Trainee & Attendant",
+   "tags": [
+    "GATE/B.Tech",
+    "ITI",
+    "Steel Sector"
+   ],
+   "officialWebsite": "https://sail.co.in",
+   "examFee": "₹500 (UR/OBC) • SC/ST/PwD मुक्त (अनुमानित)",
+   "latestStatus": "SAIL अगली भर्ती का इंतज़ार है। पिछली भर्ती 2025 में हुई — sail.co.in पर career चेक करें।",
+   "overview": "SAIL देश की सबसे बड़ी steel company है — Management Trainee (GATE) और Attendant-cum-Technician (ITI) के लिए भर्ती करती है।",
+   "posts": [
+    "Management Trainee (Technical — GATE)",
+    "Attendant-cum-Technician (ITI)"
+   ],
+   "eligibility": "B.E./B.Tech (GATE) / ITI। आयु: 18-28 वर्ष।",
+   "examPattern": [
+    {
+     "stage": "GATE Score",
+     "detail": "Management Trainee"
+    },
+    {
+     "stage": "CBT (ITI posts)",
+     "detail": "Technical + Aptitude"
+    },
+    {
+     "stage": "Interview + DV",
+     "detail": "जहाँ applicable"
+    }
+   ],
+   "syllabus": [
+    "Engineering Discipline",
+    "Technical (ITI posts)",
+    "General Aptitude"
+   ],
+   "salary": "MT — Level 8 ₹47,600; Attendant — Level 2-3 ₹19,900-21,700",
+   "selectionProcess": "GATE/CBT → Interview → DV"
+  },
+  {
+   "slug": "gail",
+   "name": "GAIL",
+   "emoji": "🔥",
+   "fullName": "GAIL (India) Limited — Executive Trainee & JE",
+   "tags": [
+    "GATE/B.Tech",
+    "Diploma",
+    "Gas Sector"
+   ],
+   "officialWebsite": "https://gailonline.com",
+   "examFee": "₹500 (UR/OBC) • SC/ST/PwD मुक्त (अनुमानित)",
+   "latestStatus": "GAIL अगली भर्ती का इंतज़ार है। पिछली भर्ती 2025 में हुई — gailonline.com पर career चेक करें।",
+   "overview": "GAIL देश की सबसे बड़ी natural gas company है — Executive Trainee (GATE) और JE/Attendant (Diploma/ITI) के लिए भर्ती करती है।",
+   "posts": [
+    "Executive Trainee (GATE)",
+    "Junior Engineer (JE)",
+    "Attendant / Technician"
+   ],
+   "eligibility": "B.E./B.Tech (GATE) / Diploma / ITI। आयु: 18-28 वर्ष।",
+   "examPattern": [
+    {
+     "stage": "GATE Score",
+     "detail": "Executive Trainee"
+    },
+    {
+     "stage": "CBT",
+     "detail": "Technical + Aptitude (Diploma/ITI posts)"
+    },
+    {
+     "stage": "Interview + DV",
+     "detail": "जहाँ applicable"
+    }
+   ],
+   "syllabus": [
+    "Engineering Discipline",
+    "Technical",
+    "General Aptitude"
+   ],
+   "salary": "ET — Level 9 ₹56,100; JE — Level 6 ₹35,400+",
+   "selectionProcess": "GATE/CBT → Interview → DV"
+  },
+  {
+   "slug": "bel",
+   "name": "BEL",
+   "emoji": "🛰️",
+   "fullName": "Bharat Electronics Limited — Project Engineer & Technician",
+   "tags": [
+    "B.Tech/Diploma",
+    "Electronics",
+    "Defence PSU"
+   ],
+   "officialWebsite": "https://bel-india.in",
+   "examFee": "₹500 (UR/OBC) • SC/ST/PwD मुक्त (अनुमानित)",
+   "latestStatus": "BEL अगली भर्ती का इंतज़ार है। पिछली भर्ती 2025 में हुई — bel-india.in पर career चेक करें।",
+   "overview": "BEL defence electronics की दिग्गज PSU है — Project Engineer, Trainee Engineer और Technician के लिए भर्ती करती है।",
+   "posts": [
+    "Project Engineer (B.Tech)",
+    "Trainee Engineer",
+    "Technician (Diploma)",
+    "Technician (ITI)"
+   ],
+   "eligibility": "B.E./B.Tech / Diploma / ITI (Electronics)। आयु: 18-28 वर्ष।",
+   "examPattern": [
+    {
+     "stage": "CBT",
+     "detail": "Technical (इलेक्ट्रॉनिक्स) + Aptitude"
+    },
+    {
+     "stage": "Interview / Skill",
+     "detail": "जहाँ applicable"
+    },
+    {
+     "stage": "DV",
+     "detail": "Document Verification"
+    }
+   ],
+   "syllabus": [
+    "Electronics & Communication",
+    "Technical Subjects",
+    "General Aptitude"
+   ],
+   "salary": "PE — ₹40,000-45,000/माह; Technician — Level 4-5 ₹25,500-29,200",
+   "selectionProcess": "CBT → Interview/Skill → DV"
+  },
+  {
+   "slug": "hal",
+   "name": "HAL",
+   "emoji": "✈️",
+   "fullName": "Hindustan Aeronautics Limited — Apprentice & Technical Trainee",
+   "tags": [
+    "ITI/Diploma",
+    "Aviation",
+    "Aerospace"
+   ],
+   "officialWebsite": "https://hal-india.co.in",
+   "examFee": "₹200-500 (post के हिसाब से) — अनुमानित",
+   "latestStatus": "HAL अगली भर्ती का इंतज़ार है। पिछली भर्ती 2025 में हुई — hal-india.co.in पर career चेक करें।",
+   "overview": "HAL देश की aerospace manufacturing company है — Trade Apprentice, Technical Trainee (Diploma) और Graduate Apprentice के लिए भर्ती करती है।",
+   "posts": [
+    "Trade Apprentice (ITI)",
+    "Technical Trainee (Diploma)",
+    "Graduate Apprentice"
+   ],
+   "eligibility": "ITI / Diploma / Graduate। आयु: 18-26 वर्ष।",
+   "examPattern": [
+    {
+     "stage": "Written/CBT",
+     "detail": "Technical + Aptitude"
+    },
+    {
+     "stage": "DV",
+     "detail": "Document Verification"
+    }
+   ],
+   "syllabus": [
+    "Technical (अपने trade का)",
+    "General Awareness",
+    "Numerical Ability"
+   ],
+   "salary": "Apprentice stipend ₹8,000-14,000/माह; Trainee बाद में Level 5+ ₹29,200+",
+   "selectionProcess": "Written/CBT → DV"
+  },
+  {
+   "slug": "aai",
+   "name": "AAI",
+   "emoji": "🛫",
+   "fullName": "Airports Authority of India — Junior Executive (ATC) & JE",
+   "tags": [
+    "B.Tech/Graduate",
+    "Airport",
+    "ATC"
+   ],
+   "officialWebsite": "https://www.aai.aero",
+   "examFee": "₹1000 (UR/OBC) • SC/ST/PwD मुक्त (अनुमानित)",
+   "latestStatus": "AAI अगली भर्ती का इंतज़ार है। पिछली भर्ती 2025 में हुई — aai.aero पर career चेक करें।",
+   "overview": "AAI देश के हवाई अड्डों का प्रबंधन करती है — Junior Executive (Air Traffic Control), JE (Electronics/Civil) जैसे posts के लिए भर्ती करती है।",
+   "posts": [
+    "Junior Executive (ATC)",
+    "Junior Executive (Common Cadre)",
+    "Junior Engineer",
+    "Senior Assistant"
+   ],
+   "eligibility": "Graduate (ATC: Physics/Maths+English) / B.E./Diploma। आयु: 18-27 वर्ष।",
+   "examPattern": [
+    {
+     "stage": "CBT",
+     "detail": "Technical + Aptitude + English"
+    },
+    {
+     "stage": "Voice Test (ATC)",
+     "detail": "ATC के लिए voice & accent"
+    },
+    {
+     "stage": "DV",
+     "detail": "Document Verification"
+    }
+   ],
+   "syllabus": [
+    "Technical (Electronics/Civil)",
+    "General Awareness",
+    "English",
+    "Numerical Ability"
+   ],
+   "salary": "JE — Level 8 ₹47,600; JE(E) — Level 6 ₹35,400+",
+   "selectionProcess": "CBT → Voice Test (ATC) → DV"
+  },
+  {
+   "slug": "coal-india",
+   "name": "Coal India",
+   "emoji": "⛏️",
+   "fullName": "Coal India Limited — Management Trainee & Technical Posts",
+   "tags": [
+    "GATE/B.Tech",
+    "ITI/Diploma",
+    "Mining Sector"
+   ],
+   "officialWebsite": "https://www.coalindia.in",
+   "examFee": "₹1000 (UR/OBC) • SC/ST/PwD मुक्त (अनुमानित)",
+   "latestStatus": "Coal India अगली भर्ती का इंतज़ार है। पिछली भर्ती 2025 में हुई — coalindia.in पर career चेक करें।",
+   "overview": "Coal India दुनिया की सबसे बड़ी coal producer है — Management Trainee (GATE), Mining Sirdar, Technician जैसे posts के लिए भर्ती करती है।",
+   "posts": [
+    "Management Trainee (GATE)",
+    "Mining Sirdar / Overman",
+    "Technician / Attendant"
+   ],
+   "eligibility": "B.E./B.Tech (GATE) / Diploma / ITI। आयु: 18-30 वर्ष।",
+   "examPattern": [
+    {
+     "stage": "GATE Score",
+     "detail": "Management Trainee"
+    },
+    {
+     "stage": "CBT",
+     "detail": "Technical + Aptitude (अन्य posts)"
+    },
+    {
+     "stage": "Interview + DV",
+     "detail": "जहाँ applicable"
+    }
+   ],
+   "syllabus": [
+    "Mining/Engineering Discipline",
+    "Technical",
+    "General Aptitude"
+   ],
+   "salary": "MT — Level 8 ₹47,600; Technician — Level 3-5 ₹21,700-29,200",
+   "selectionProcess": "GATE/CBT → Interview → DV"
+  },
+  {
+   "slug": "nmdc",
+   "name": "NMDC",
+   "emoji": "🏔️",
+   "fullName": "NMDC Limited — Apprentice & Technician",
+   "tags": [
+    "ITI/Diploma",
+    "Mining",
+    "Central PSU"
+   ],
+   "officialWebsite": "https://www.nmdc.co.in",
+   "examFee": "₹100-200 (अनुमानित)",
+   "latestStatus": "NMDC अगली भर्ती का इंतज़ार है। पिछली भर्ती 2025 में हुई — nmdc.co.in पर career चेक करें।",
+   "overview": "NMDC देश की सबसे बड़ी iron ore producer है — Technician, Trade Apprentice और Junior Assistant के लिए भर्ती करती है।",
+   "posts": [
+    "Technician (Diploma)",
+    "Trade Apprentice (ITI)",
+    "Junior Assistant / Operator"
+   ],
+   "eligibility": "ITI / Diploma / Graduate। आयु: 18-27 वर्ष।",
+   "examPattern": [
+    {
+     "stage": "CBT",
+     "detail": "Technical + Aptitude"
+    },
+    {
+     "stage": "DV",
+     "detail": "Document Verification"
+    }
+   ],
+   "syllabus": [
+    "Technical (अपने trade का)",
+    "General Awareness",
+    "Numerical Ability"
+   ],
+   "salary": "Level 2-5 — ₹19,900-29,200 बेसिक + भत्ते",
+   "selectionProcess": "CBT → DV"
+  },
+  {
+   "slug": "nhpc",
+   "name": "NHPC",
+   "emoji": "💧",
+   "fullName": "NHPC Limited — Executive Trainee & Diploma Trainee",
+   "tags": [
+    "GATE/B.Tech",
+    "Diploma",
+    "Hydropower"
+   ],
+   "officialWebsite": "https://www.nhpcindia.com",
+   "examFee": "₹500 (UR/OBC) • SC/ST/PwD मुक्त (अनुमानित)",
+   "latestStatus": "NHPC अगली भर्ती का इंतज़ार है। पिछली भर्ती 2025 में हुई — nhpcindia.com पर career चेक करें।",
+   "overview": "NHPC देश की सबसे बड़ी hydropower company है — Executive Trainee (GATE) और Diploma Trainee के लिए भर्ती करती है।",
+   "posts": [
+    "Executive Trainee (GATE)",
+    "Diploma Trainee",
+    "Junior Engineer"
+   ],
+   "eligibility": "B.E./B.Tech (GATE) / Diploma। आयु: 18-30 वर्ष।",
+   "examPattern": [
+    {
+     "stage": "GATE Score",
+     "detail": "Executive Trainee"
+    },
+    {
+     "stage": "CBT",
+     "detail": "Technical + Aptitude (Diploma posts)"
+    },
+    {
+     "stage": "DV",
+     "detail": "Document Verification"
+    }
+   ],
+   "syllabus": [
+    "Engineering Discipline",
+    "Technical",
+    "General Aptitude"
+   ],
+   "salary": "ET — Level 9 ₹56,100; DT — Level 6 ₹35,400+",
+   "selectionProcess": "GATE/CBT → DV"
+  }
+ ],
+ "psus": [
+  {
+   "name": "IOCL",
+   "site": "https://www.iocl.com"
+  },
+  {
+   "name": "ONGC",
+   "site": "https://www.ongcindia.com"
+  },
+  {
+   "name": "BHEL",
+   "site": "https://www.bhel.com"
+  },
+  {
+   "name": "NTPC",
+   "site": "https://www.ntpc.co.in"
+  },
+  {
+   "name": "SAIL",
+   "site": "https://sail.co.in"
+  },
+  {
+   "name": "GAIL",
+   "site": "https://gailonline.com"
+  },
+  {
+   "name": "HAL",
+   "site": "https://hal-india.co.in"
+  },
+  {
+   "name": "Coal India",
+   "site": "https://www.coalindia.in"
+  },
+  {
+   "name": "NMDC",
+   "site": "https://www.nmdc.co.in"
+  },
+  {
+   "name": "NHPC",
+   "site": "https://www.nhpcindia.com"
+  }
+ ]
+}
