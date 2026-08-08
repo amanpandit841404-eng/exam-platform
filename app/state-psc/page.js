@@ -39,24 +39,22 @@ export default function StatePSC() {
 
   return (
     <div style={{ minHeight: "100vh", background: bg, fontFamily: "sans-serif", paddingBottom: 80 }}>
-      <div style={{ background: "linear-gradient(135deg,#78350f,#d97706)", padding: "18px 16px 16px", color: "#fff" }}>
+      <div style={{ background: data?.hero?.gradient || "linear-gradient(135deg,#78350f,#d97706)", padding: "18px 16px 16px", color: "#fff" }}>
         <div style={{ maxWidth: 900, margin: "0 auto" }}>
-          <div style={{ fontSize: 13, opacity: 0.9 }}>🗺️ राज्य लोक सेवा आयोग भर्ती</div>
-          <h1 style={{ margin: "6px 0", fontSize: 24, fontWeight: 800 }}>State PSC Exams Center</h1>
-          <div style={{ fontSize: 13, opacity: 0.92, lineHeight: 1.5 }}>
-            UPPSC, BPSC, MPPSC, RPSC (RAS), MPSC, TNPSC — सभी राज्य PSC exams की पूरी जानकारी एक जगह। Posts, Eligibility, Exam Pattern, Syllabus और Salary।
-          </div>
+          <div style={{ fontSize: 13, opacity: 0.9 }}>{data?.hero?.badge || "🗺️ राज्य लोक सेवा आयोग भर्ती"}</div>
+          <h1 style={{ margin: "6px 0", fontSize: 24, fontWeight: 800 }}>{data?.hero?.title || "State PSC Exams Center"}</h1>
+          <div style={{ fontSize: 13, opacity: 0.92, lineHeight: 1.5 }}>{data?.hero?.subtitle || "UPPSC, BPSC, MPPSC, RPSC (RAS), MPSC, TNPSC — सभी राज्य PSC exams की पूरी जानकारी एक जगह। Posts, Eligibility, Exam Pattern, Syllabus और Salary।"}</div>
         </div>
       </div>
 
       <div style={{ maxWidth: 900, margin: "0 auto", padding: "14px 14px 0" }}>
         {/* Stats */}
         <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 10, marginBottom: 14 }}>
-          {[
+          {(data?.statsCards || [
             ["📋", exams.length || 12, "Major PSCs"],
             ["🗺️", "20+", "States Listed"],
             ["🏛️", "PCS/RAS", "Top Posts"],
-          ].map(([ic, n, l]) => (
+          ]).map(([ic, n, l]) => (
             <div key={l} style={{ background: cardBg, border: `1px solid ${border}`, borderRadius: 14, padding: "12px 8px", textAlign: "center" }}>
               <div style={{ fontSize: 20 }}>{ic}</div>
               <div style={{ fontSize: 22, fontWeight: 800, color: textMain }}>{n}</div>
@@ -67,14 +65,14 @@ export default function StatePSC() {
 
         {/* Quick links */}
         <div style={{ display: "flex", gap: 8, flexWrap: "wrap", marginBottom: 14 }}>
-          {[
+          {(data?.quickLinks || [
             ["/results", "🏆 State PSC Results"],
             ["/admit-cards", "📄 Admit Card"],
             ["/category/state-psc", "🏛️ All State PSC Exams"],
             ["/syllabus", "📚 Syllabus"],
             ["/notifications", "🔔 Updates"],
             ["/search", "🔍 Search Exams"],
-          ].map(([href, label]) => (
+          ]).map(([href, label]) => (
             <a key={href + label} href={href} target={href.startsWith("http") ? "_blank" : undefined} rel="noreferrer"
               style={{ textDecoration: "none", background: cardBg, border: `1px solid ${border}`, color: textMain, fontSize: 12.5, fontWeight: 700, padding: "8px 12px", borderRadius: 999 }}>
               {label}
