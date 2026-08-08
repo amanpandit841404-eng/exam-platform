@@ -67,7 +67,7 @@ export async function POST(request) {
           updates: ["title"],
           upcoming_exams: ["exam_name"],
         }[table] || ["title"];
-        const conds = searchFields.map((f) => `${f}=ilike.*${q}*`).join(",");
+        const conds = searchFields.map((f) => `${f}.ilike.*${q}*`).join(",");
         path = `${SB}/${table}?select=*&or=(${conds})&order=id.desc&limit=${limit}&offset=${offset}`;
       }
       const res = await fetch(path, { headers: { apikey: ANON, Authorization: "Bearer " + ANON }, cache: "no-store" });
