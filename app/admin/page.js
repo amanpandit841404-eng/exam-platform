@@ -12,6 +12,7 @@
       { key: "upcoming", icon: "📅", label: "Upcoming", color: "#7c3aed" },
       { key: "hubs", icon: "🏠", label: "Hub Pages", color: "#0891b2" },
       { key: "categories", icon: "🗂️", label: "Categories", color: "#475569" },
+      { key: "monitor", icon: "🤖", label: "Monitor", color: "#9333ea" },
     ];
 
     const FIELD_DEFS = {
@@ -919,6 +920,8 @@
       const [hubStatus, setHubStatus] = useState({});
       const [examModal, setExamModal] = useState(null);
       const [saving, setSaving] = useState(false);
+      const [monStats, setMonStats] = useState(null);
+      const [monLoading, setMonLoading] = useState(false);
 
       const showToast = (msg, type = "success") => { setToast({ msg, type }); setTimeout(() => setToast(null), 2800); };
 
@@ -943,6 +946,16 @@
           ]);
           setStats({ exams: ex.count || 0, results: re.count || 0, admits: ad.count || 0, updates: ud.count || 0, upcoming: up.count || 0, categories: cat.count || 0 });
         } catch (e) { showToast("Stats error", "error"); }
+      }, []);
+
+      const loadMonitor = useCallback(async () => {
+        setMonLoading(true);
+        try {
+          const r = await api({ action: "monitor_stats" });
+          if (r.success) setMonStats(r);
+          else showToast(r.error || "Monitor error", "error");
+        } catch (e) { showToast("Monitor error", "error"); }
+        setMonLoading(false);
       }, []);
 
       const fetchTable = async (t, q) => {
@@ -1364,6 +1377,71 @@
             {tab === "updates" && renderRows("updates")}
             {tab === "upcoming" && renderRows("upcoming")}
             {tab === "categories" && renderRows("categories")}
+            {tab === "monitor" && (
+              <div>
+                {monLoading && <p style={{ color: "#fff", fontSize: 13 }}>Loading monitor stats...</p>}
+                {monStats && (
+                  <>
+                    <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill,minmax(160px,1fr))", gap: 10, marginBottom: 16 }}>
+                      <div style={styles.statCard()}>
+                        <div style={{ fontSize: 26, fontWeight: 700, color: "#1e3a5f" }}>{monStats.total?.toLocaleString()}</div>
+                        <div style={{ fontSize: 12, color: "#888" }}>कुल Exams</div>
+                      </div>
+                      <div style={styles.statCard()}>
+                        <div style={{ fontSize: 26, fontWeight: 700, color: "#16a34a" }}>{monStats.withSite?.toLocaleString()}</div>
+                        <div style={{ fontSize: 12, color: "#888" }}>Official Website ✓</div>
+                      </div>
+                      <div style={styles.statCard()}>
+                        <div style={{ fontSize: 26, fontWeight: 700, color: "#dc2626" }}>{monStats.blank?.toLocaleString()}</div>
+                        <div style={{ fontSize: 12, color: "#888" }}>Blank</div>
+                      </div>
+                      <div style={styles.statCard()}>
+                        <div style={{ fontSize: 26, fontWeight: 700, color: "#9333ea" }}>{monStats.pct}%</div>
+                        <div style={{ fontSize: 12, color: "#888" }}>Coverage</div>
+                      </div>
+                    </div>
+                    <div style={{ background: "#fff", borderRadius: 12, padding: 16, marginBottom: 16, boxShadow: "0 1px 4px rgba(0,0,0,0.06)" }}>
+                      <div style={{ fontSize: 15, fontWeight: 600, color: "#1e3a5f", marginBottom: 10 }}>🤖 AI Monitoring — Source Changes</div>
+                      {monStats.events && monStats.events.length > 0 ? (
+                        <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 13 }}>
+                          <thead><tr>{["Source", "Status", "Hash", "Checked At"].map((h) => <th key={h} style={{ textAlign: "left", padding: "8px 6px", borderBottom: "2px solid #e5e7eb", color: "#475569", fontSize: 12 }}>{h}</th>)}</tr></thead>
+                          <tbody>
+                            {monStats.events.slice(0, 15).map((e) => (
+                              <tr key={e.id}>
+                                <td style={{ padding: "8px 6px", borderBottom: "1px solid #f1f5f9" }}>{e.source_name || e.source_id}</td>
+                                <td style={{ padding: "8px 6px", borderBottom: "1px solid #f1f5f9" }}>
+                                  <span style={{ padding: "2px 10px", borderRadius: 999, fontSize: 12, background: e.changed ? "#fef2f2" : "#f0fdf4", color: e.changed ? "#dc2626" : "#16a34a" }}>
+                                    {e.changed ? "CHANGED" : "same"}
+                                  </span>
+                                </td>
+                                <td style={{ padding: "8px 6px", borderBottom: "1px solid #f1f5f9", fontFamily: "monospace", fontSize: 11, color: "#94a3b8" }}>{(e.hash_new || "").slice(0, 10)}</td>
+                                <td style={{ padding: "8px 6px", borderBottom: "1px solid #f1f5f9", color: "#64748b" }}>{e.checked_at ? new Date(e.checked_at).toLocaleString() : "-"}</td>
+                              </tr>
+                            ))}
+                          </tbody>
+                        </table>
+                      ) : (
+                        <p style={{ color: "#94a3b8", fontSize: 13 }}>अभी कोई monitor run नहीं हुआ। GitHub Actions setup करने के बाद यहाँ source changes दिखेंगे। (Setup steps: README.md में)</p>
+                      )}
+                    </div>
+                    <div style={{ background: "#fff", borderRadius: 12, padding: 16, boxShadow: "0 1px 4px rgba(0,0,0,0.06)" }}>
+                      <div style={{ fontSize: 15, fontWeight: 600, color: "#1e3a5f", marginBottom: 10 }}>🧹 Junk Domains बचे</div>
+                      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill,minmax(200px,1fr))", gap: 8 }}>
+                        {Object.entries(monStats.junkCounts || {}).map(([j, c]) => (
+                          <div key={j} style={{ display: "flex", justifyContent: "space-between", padding: "8px 12px", background: "#f8fafc", borderRadius: 8, fontSize: 13 }}>
+                            <span style={{ color: "#475569", fontFamily: "monospace", fontSize: 12 }}>{j}</span>
+                            <span style={{ fontWeight: 600, color: c > 0 ? "#dc2626" : "#16a34a" }}>{c}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                    <div style={{ textAlign: "center", marginTop: 16 }}>
+                      <button onClick={loadMonitor} style={{ padding: "10px 24px", background: "linear-gradient(135deg,#9333ea,#6b21a8)", color: "#fff", border: "none", borderRadius: 10, fontSize: 14, fontWeight: 600, cursor: "pointer" }}>🔄 Refresh Monitor</button>
+                    </div>
+                  </>
+                )}
+              </div>
+            )}
             {tab === "hubs" && !hubForm && renderHubGrid()}
             {tab === "hubEditor" && hubForm && renderHubEditor()}
           </div>
